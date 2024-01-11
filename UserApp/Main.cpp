@@ -3,7 +3,7 @@
 //
 #include "common_inc.h"
 
-uint8_t buffer[1024] = {0};
+uint16_t buffer[1024] = {0};
 
 Key_TypeDef key_value;
 
@@ -42,19 +42,22 @@ void Loop(void)
         }
     }
 
-    if (adc.Is_Finished())
+    if (adc.Scan_Data())
     {
         adc.Stop();
         cout << "adc is ok\n";
-        for (int i = 0; i < ADC_DMA_BUFFER_SIZE; ++i) {
-            cout << adc.Get_Data()[i] << '\n';
+        if (adc.Get_Data(buffer, adc.Get_DataSize()))
+        {
+            for (int i = 0; i < ADC_DMA_BUFFER_SIZE; ++i) {
+                cout << i << "  " << buffer[i] << '\n';
+            }
         }
-        //delay.ms(1000);
+        delay.ms(1000);
         //adc.Start(1000);
     }
     if (cout.Is_ReceivedFinished())
     {
-        cout.GetReceivedData(buffer, cout.Get_ReceivedSize());
+        cout.GetReceivedData((uint8_t *)buffer, cout.Get_ReceivedSize());
         cout << (char *)buffer << '\n';
     }
 }

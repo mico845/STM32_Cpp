@@ -4,12 +4,13 @@
 
 #include "ADC.hpp"
 #include "Platform-Operation/Platform-Operation-STM32_DMA.h"
+#include "Platform-Operation/Platform-Operation-STM32_SYS.h"
 using namespace STM32::STM32_ADC;
 using namespace STM32::STM32_DMA;
 using namespace STM32::STM32_TIM;
 
 ADC::ADC(uint8_t ADC_ID, ADC_CalibrationMode CalibrationMode, ADC_SingleDiff SingleDiff)
-         : adc(STM32::STM32_ADC::MapADC[ADC_ID]), isUseDma(false), isUseTimer(false), flag_finished(false)
+         : adc(STM32::STM32_ADC::MapADC[ADC_ID]), isUseDma(false), isUseTimer(false)
 {
     Calibrate(CalibrationMode, SingleDiff);     //开始校准
     while (LL_ADC_IsCalibrationOnGoing(adc));   //等待校准完成
@@ -19,7 +20,7 @@ ADC::ADC(uint8_t ADC_ID, ADC_CalibrationMode CalibrationMode, ADC_SingleDiff Sin
 
 ADC::ADC(uint8_t ADC_ID, uint8_t DMA_ID, uint8_t STREAM_ID, uint8_t TIMER_ID, ADC_CalibrationMode CalibrationMode, ADC_SingleDiff SingleDiff)
                 :   adc(MapADC[ADC_ID]), adc_dma(MapDMA[DMA_ID]), adc_dma_stream(MapDMA_Stream[STREAM_ID]),
-                    isUseDma(true), isUseTimer(true), flag_finished(false)
+                    isUseDma(true), isUseTimer(true)
 {
     ADC(ADC_ID, DMA_ID, STREAM_ID, TIMER_ID, channel1, CalibrationMode, SingleDiff);
 }
@@ -27,7 +28,7 @@ ADC::ADC(uint8_t ADC_ID, uint8_t DMA_ID, uint8_t STREAM_ID, uint8_t TIMER_ID, AD
 ADC::ADC(uint8_t ADC_ID, uint8_t DMA_ID, uint8_t STREAM_ID, uint8_t PWM_TIMER_ID, Timer_Channel PWM_Channel,
          STM32::STM32_ADC::ADC_CalibrationMode CalibrationMode, STM32::STM32_ADC::ADC_SingleDiff SingleDiff)
                 :   adc(MapADC[ADC_ID]), adc_dma(MapDMA[DMA_ID]), adc_dma_stream(MapDMA_Stream[STREAM_ID]),
-                    isUseDma(true), isUseTimer(true), flag_finished(false)
+                    isUseDma(true), isUseTimer(true)
 {
     timer = PWM(PWM_TIMER_ID, PWM_Channel);
 
@@ -91,19 +92,33 @@ ADC &ADC::Stop(void) {
     }
     return *this;
 }
+#if USE_IRQ_FOR_DATA_HANDLING
+void ADC::Irq_DMA(void) {
+    // 完成中断,当前 DMA 正在使用缓冲区的前半部分,用户可以操作后半部分。
+    if(LL_DMA_IsEnabledIT_TC(adc_dma, adc_dma_stream) && PLATFORM_DMA_IsActiveFlag_TC(adc_dma, adc_dma_stream))
+    {
+        // SCB_InvalidateDCache_by_Addr 的参数是 byte num: uint16_t -> (ADC_DMA_BUFFER_SIZE / 2 )* 2
+        SCB_InvalidateDCache_by_Addr((uint32_t *)(&adc_dma_buffer[ADC_DMA_BUFFER_SIZE / 2]), ADC_DMA_BUFFER_SIZE);
+        bufferADC.Puts((uint16_t *)(&adc_dma_buffer[ADC_DMA_BUFFER_SIZE / 2]), ADC_DMA_BUFFER_SIZE/2);
+        flag_finished = true;
+        Platform_DMA_ClearFlag_TC(adc_dma, adc_dma_stream);
+    }
+    // 半完成中断,当前 DMA 正在使用缓冲区的后半部分,用户可以操作前半部分。
+    if(LL_DMA_IsEnabledIT_HT(adc_dma, adc_dma_stream) && PLATFORM_DMA_IsActiveFlag_HT(adc_dma, adc_dma_stream))
+    {
+        SCB_InvalidateDCache_by_Addr((uint32_t *)(&adc_dma_buffer[0]), ADC_DMA_BUFFER_SIZE);
+        bufferADC.Puts((uint16_t *)(&adc_dma_buffer[0]), ADC_DMA_BUFFER_SIZE/2);
+        Platform_DMA_ClearFlag_HT(adc_dma, adc_dma_stream);
+    }
+}
 
+#elif USE_POLLFOR_FOR_DATA_HANDLING
 void ADC::Irq_DMA(void) {
     // 完成中断
     if(LL_DMA_IsEnabledIT_TC(adc_dma, adc_dma_stream) && PLATFORM_DMA_IsActiveFlag_TC(adc_dma, adc_dma_stream))
     {
-        //保证地址能刷新到全地址
-        if (flag_first)
-        {
-            SCB_InvalidateDCache_by_Addr((uint32_t *)(&adc_dma_buffer[0]), ADC_DMA_BUFFER_SIZE * 2);
-            flag_first = false;
-        }
-        // byte num:uint16_t -> (ADC_DMA_BUFFER_SIZE / 2 )* 2
-        SCB_InvalidateDCache_by_Addr((uint32_t *)(&adc_dma_buffer[0]), ADC_DMA_BUFFER_SIZE);
+        // SCB_InvalidateDCache_by_Addr 的参数是 byte num: uint16_t -> (ADC_DMA_BUFFER_SIZE / 2 )* 2
+        SCB_InvalidateDCache_by_Addr((uint32_t *)(&adc_dma_buffer[ADC_DMA_BUFFER_SIZE / 2]), ADC_DMA_BUFFER_SIZE);
         flag_finished = true;
         Platform_DMA_ClearFlag_TC(adc_dma, adc_dma_stream);
     }
@@ -111,10 +126,12 @@ void ADC::Irq_DMA(void) {
     if(LL_DMA_IsEnabledIT_HT(adc_dma, adc_dma_stream) && PLATFORM_DMA_IsActiveFlag_HT(adc_dma, adc_dma_stream))
     {
 
-        SCB_InvalidateDCache_by_Addr((uint32_t *)(&adc_dma_buffer[ADC_DMA_BUFFER_SIZE / 2]), ADC_DMA_BUFFER_SIZE);
+        SCB_InvalidateDCache_by_Addr((uint32_t *)(&adc_dma_buffer[0]), ADC_DMA_BUFFER_SIZE);
+        flag_halfFinished = true;
         Platform_DMA_ClearFlag_HT(adc_dma, adc_dma_stream);
     }
 }
+#endif
 
 bool ADC::Is_Finished(void) {
     if (flag_finished) {
@@ -124,9 +141,40 @@ bool ADC::Is_Finished(void) {
     return false;
 }
 
-uint16_t *ADC::Get_Data(void) {
-    return adc_dma_buffer;
+bool ADC::Get_Data(uint16_t *buffer, uint32_t number) {
+    if(bufferADC.Size() < number)//没有足够长的数据
+        return false;
+    else
+    {
+        bufferADC.Gets(buffer,number);//数据出队
+        return true;
+    }
 }
+
+uint32_t ADC::Get_DataSize(void) {
+    return bufferADC.Size();
+}
+
+#if USE_POLLFOR_FOR_DATA_HANDLING
+bool ADC::Scan_Data(void) {
+    if (flag_halfFinished)
+    {
+        DISABLE_INT();
+        flag_halfFinished = false;
+        bufferADC.Puts((uint16_t *)(&adc_dma_buffer[0]), ADC_DMA_BUFFER_SIZE/2);
+        ENABLE_INT();
+    }
+    else if (flag_finished)
+    {
+        DISABLE_INT();
+        flag_finished = false;
+        bufferADC.Puts((uint16_t *)(&adc_dma_buffer[ADC_DMA_BUFFER_SIZE / 2]), ADC_DMA_BUFFER_SIZE/2);
+        ENABLE_INT();
+        return true;
+    }
+    return false;
+}
+#endif
 
 
 
