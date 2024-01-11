@@ -24,7 +24,8 @@ GPIO_EXTI& GPIO_EXTI::UnRegisterCallback(void) {
 }
 
 void GPIO_EXTI::Irq(void) {
-    callback_fun();
+    if (callback_fun != nullptr)
+        callback_fun();
     if (LL_EXTI_IsActiveFlag_0_31(exti_line) != RESET)
     {
         LL_EXTI_ClearFlag_0_31(exti_line);

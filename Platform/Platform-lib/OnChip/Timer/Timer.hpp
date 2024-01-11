@@ -43,7 +43,7 @@ public:
 
     uint64_t Get_TimerClock(void);
 
-    bool Is_Timeout(void);
+    bool Is_Timeout(void);  //必须使用中断才能获取标志位
 
     void Irq(void);
 };

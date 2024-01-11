@@ -16,7 +16,7 @@
 #include "stm32h7xx_ll_exti.h"
 #include "stm32h7xx_ll_tim.h"
 #include "stm32h7xx_ll_adc.h"
-
+#include "stm32h7xx_ll_dac.h"
 
 /* STM32 H7 Memory Address Typedef */
 #define     __AT_AXI_SRAM_      __attribute__((section("._AXI_SRAM_Area_512KB")))
@@ -127,6 +127,12 @@ namespace STM32{
            differential = LL_ADC_DIFFERENTIAL_ENDED,
            botn_single_diff = LL_ADC_BOTH_SINGLE_DIFF_ENDED,
         }ADC_SingleDiff;
+    }
+    namespace STM32_DAC{
+#define PLATFORM_DAC_NUM    (1)
+        static DAC_TypeDef *const MapDAC[PLATFORM_DAC_NUM + 1] = {nullptr, DAC1};
+#define PLATFORM_DAC_CHANNEL_NUM    (2)
+        static const uint32_t MapDAC_Channel[PLATFORM_DAC_CHANNEL_NUM + 1] = {0x00, LL_DAC_CHANNEL_1, LL_DAC_CHANNEL_2};
     }
 }
 

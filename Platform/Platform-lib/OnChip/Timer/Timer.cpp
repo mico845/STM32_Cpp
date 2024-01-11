@@ -82,7 +82,8 @@ void Timer::Irq(void)
     if (LL_TIM_IsActiveFlag_UPDATE(tim) == SET)
     {
         isTimeout = true;
-        callback_fun();
+        if (callback_fun != nullptr)
+            callback_fun();
         LL_TIM_ClearFlag_UPDATE(tim);
     }
 }

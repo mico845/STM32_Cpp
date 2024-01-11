@@ -3,45 +3,64 @@
 //
 #include "common_inc.h"
 
-uint16_t buffer[1024] = {0};
+// 循环中需要执行的任务
+static void Task_Key(void);
+static void Task_Led_Flash(void);
+static void Task_ADC_Finished(void);
+static void Task_UART_Finished(void);
 
-Key_TypeDef key_value;
+//初始化需要执行的任务
+static void DAC_WaveStart(void);
 
 void Init(void)
 {
     led.PinkishRed();
     cout << "Hello World" << '\n';
     timer.RegisterCallback(KeyScan10ms).Start(100);
-    delay.ms(1000);
-    adc.Start(1000);
-    cout << "Finished\n";
-   // cout.Receive_Start_DMA();
+    // adc.Start(1000);
+    // cout.Receive_Start_DMA();
+    DAC_WaveStart();
+    cout << "Config Finished\n";
 }
-
-uint8_t count = 0;
 
 void Loop(void)
 {
-    key_value = Key_GetValue();
-    if (key_value == Key1_Down)
-    {
-        led.Yellow();
-    }
-    else if (key_value == Key1_Long)
-    {
-        led.Cyan();
-    }
+    Task_Key();
+    Task_Led_Flash();
+    Task_ADC_Finished();
+    Task_UART_Finished();
+}
 
+static void Task_Key(void)
+{
+    static Key_TypeDef key_value;
+    key_value = Key_GetValue();
+    switch (key_value) {
+        case Key1_Down:{
+            led.Yellow();
+        }break;
+        case Key1_Long:{
+            led.Cyan();
+        }break;
+        default:
+            break;
+    }
+}
+
+static void Task_Led_Flash(void)
+{
+    static uint8_t count = 0;
     if (timer.Is_Timeout())
-    {
-        count++;
-        if (count == 100)
+        if (count++ == 50) // 10ms * N
         {
             led.Toggle();
             count = 0;
         }
-    }
+}
 
+static void Task_ADC_Finished(void)
+{
+    static uint16_t buffer[1024];
     if (adc.Scan_Data())
     {
         adc.Stop();
@@ -52,12 +71,33 @@ void Loop(void)
                 cout << i << "  " << buffer[i] << '\n';
             }
         }
-        delay.ms(1000);
         //adc.Start(1000);
     }
+}
+
+static void Task_UART_Finished(void)
+{
+    static uint8_t buffer[256] = {0};
     if (cout.Is_ReceivedFinished())
     {
         cout.GetReceivedData((uint8_t *)buffer, cout.Get_ReceivedSize());
         cout << (char *)buffer << '\n';
     }
+}
+
+static void DAC_WaveStart(void)
+{
+    uint8_t i;
+    uint16_t g_usWaveBuff[64];
+    for(i =0; i < 32; i++)
+    {
+        g_usWaveBuff[i] = 0;
+    }
+
+    for(i =0; i < 32; i++)
+    {
+        g_usWaveBuff[i+32] = 4095;
+    }
+    dac.Set_DMABuffer(g_usWaveBuff, 64);
+    dac.Start(1000);
 }

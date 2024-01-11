@@ -16,7 +16,8 @@ USART::USART(uint8_t USART_ID, bool IsUseIrq) : usart(MapUSART[USART_ID]), isUse
 USART::USART(uint8_t USART_ID, uint8_t TX_DMA_ID, uint8_t TX_STREAM_ID,
              uint8_t RX_DMA_ID, uint8_t RX_STREAM_ID)
             :   usart(MapUSART[USART_ID]), tx_dma(MapDMA[TX_DMA_ID]), tx_dma_stream(MapDMA_Stream[TX_STREAM_ID]),
-                rx_dma(MapDMA[RX_DMA_ID]), rx_dma_stream(MapDMA_Stream[RX_STREAM_ID])
+                rx_dma(MapDMA[RX_DMA_ID]), rx_dma_stream(MapDMA_Stream[RX_STREAM_ID]),
+                isUseDma(true), isUseIrq(true)
 {
     Set_SendMethod();
     //配置串口方向，发送和接收都要
@@ -161,7 +162,7 @@ void USART::DMA_TX_Enable(uint8_t *mem_addr, uint32_t mem_size) {
 //    LL_DMA_ClearFlag_TE1(tx_dma);
 //    LL_DMA_ClearFlag_DME1(tx_dma);
 //    LL_DMA_ClearFlag_FE1(tx_dma);
-    Platform_DMA_ClearFlag_HT(tx_dma, tx_dma_stream);
+//    Platform_DMA_ClearFlag_HT(tx_dma, tx_dma_stream);
     Platform_DMA_ClearFlag_TC(tx_dma, tx_dma_stream);
 
     LL_DMA_EnableIT_TC(tx_dma, tx_dma_stream);

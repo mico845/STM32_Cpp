@@ -39,7 +39,3 @@ void DMA2_Stream0_IRQHandler(void)
     adc.Irq_DMA();
 }
 
-void TIM1_UP_IRQHandler(void)
-{
-
-}

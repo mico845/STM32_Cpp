@@ -12,5 +12,6 @@ extern      USART        cout;
 extern      Timer        timer;
 extern      ADC          adc;
 extern      PWM          pwm;
+extern      DAC          dac;
 
 #endif //CODE_MACHINE_H
