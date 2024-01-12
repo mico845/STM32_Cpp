@@ -6,11 +6,15 @@
 #define CODE_PLATFORM_LIB_H
 
 #include "DataStructre/Fifo.hpp"
+#include "DataStructre/Array.hpp"
+
+#include "Irq/Irq.hpp"
 
 #include "OnChip/OnChip_inc.hpp"
 #include "OffChip/OffChip_inc.hpp"
 
-#include "Irq/Irq.hpp"
+#include "DSP/DSP.hpp"
+
 
 #include "Machine/Platform-Machine.hpp"
 

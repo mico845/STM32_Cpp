@@ -7,12 +7,14 @@
 #include "OnChip/Timer/Timer.hpp"
 #include "DataStructre/Array.hpp"
 
-#ifndef DAC_DMA_BUFFER_SIZE
-    #define DAC_DMA_BUFFER_SIZE    (1024)
+#ifndef DAC_DMA_BUFFER_MAX_SIZE
+    #define DAC_DMA_BUFFER_MAX_SIZE    (256)
 #endif
 
 class DAC
 {
+public:
+    friend class DDS;
 private:
     /* Variables */
     DAC_TypeDef *dac;
@@ -23,7 +25,7 @@ private:
     bool isUseDmaIrq;
     bool isUseTimer;
     Timer dac_timer;
-    Array<uint16_t, DAC_DMA_BUFFER_SIZE> dac_dma_buffer;
+    Array<uint16_t, DAC_DMA_BUFFER_MAX_SIZE> dac_dma_buffer;
 public:
     /* Variables */
 
@@ -40,10 +42,33 @@ public:
     DAC& Start(uint32_t Freq = 1000);
     DAC& Stop(void);
 
-    void Set_Value(uint16_t Value);
-    bool Set_DMABuffer(uint16_t* buffer, uint32_t size);
+    inline void Set_Value(uint16_t Value);
+    bool Set_DMABuffer(const uint16_t* Buffer, uint32_t Num);
+    void Enable_DMAIrq(void);
+    void Disable_DMAIrq(void);
+    inline void Use_DMAIrq(void);
+    inline void Unuse_DMAIrq(void);
+
+    inline Array<uint16_t, DAC_DMA_BUFFER_MAX_SIZE>* Get_PointBufArray(void);
 
     void Irq_DMA(void);
 };
+
+inline void DAC::Set_Value(uint16_t Value) {
+    LL_DAC_ConvertData12RightAligned(dac, channel, Value);  //在数据保存寄存器中设置要加载的数据
+}
+
+inline void DAC::Use_DMAIrq(void) {
+    isUseDmaIrq = true;
+}
+
+inline void DAC::Unuse_DMAIrq(void) {
+    isUseDmaIrq = false;
+}
+
+inline Array<uint16_t, DAC_DMA_BUFFER_MAX_SIZE> *DAC::Get_PointBufArray(void) {
+    return &dac_dma_buffer;
+}
+
 
 #endif //HELLOWORLD_DAC_HPP

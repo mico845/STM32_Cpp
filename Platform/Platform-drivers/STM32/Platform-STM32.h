@@ -27,6 +27,7 @@
 
 #define     ALIGN_32B(buf)      buf __attribute__ ((aligned (32)))
 
+
 /* Namespace */
 namespace STM32{
     namespace STM32_GPIO{

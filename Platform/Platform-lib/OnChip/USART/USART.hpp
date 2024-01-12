@@ -8,14 +8,14 @@
 #include "DataStructre/Fifo.hpp"
 
 #ifndef USART_TX_BUFFER_SIZE
-    #define USART_TX_BUFFER_SIZE        (256)                   //USART BUFFER FIFO SIZE
+    #define USART_TX_BUFFER_SIZE        (1024)                   //USART BUFFER FIFO SIZE
 #endif
 #ifndef USART_RX_BUFFER_SIZE
     #define USART_RX_BUFFER_SIZE        (256)                    //USART BUFFER FIFO SIZE
 #endif
 
 #ifndef USART_DMA_TX_BUFFER_SIZE
-    #define USART_DMA_TX_BUFFER_SIZE    (20)                    //USART DMA BUFFER SIZE
+    #define USART_DMA_TX_BUFFER_SIZE    (1024)                    //USART DMA BUFFER SIZE
 #endif
 #ifndef USART_DMA_RX_BUFFER_SIZE
     #define USART_DMA_RX_BUFFER_SIZE    (128)                   //USART DMA BUFFER SIZE

@@ -10,16 +10,16 @@ static void Task_ADC_Finished(void);
 static void Task_UART_Finished(void);
 
 //初始化需要执行的任务
-static void DAC_WaveStart(void);
+static void DDS_WaveStart(void);
 
-void Init(void)
+ void Init(void)
 {
     led.PinkishRed();
     cout << "Hello World" << '\n';
     timer.RegisterCallback(KeyScan10ms).Start(100);
     // adc.Start(1000);
     // cout.Receive_Start_DMA();
-    DAC_WaveStart();
+    DDS_WaveStart();
     cout << "Config Finished\n";
 }
 
@@ -85,19 +85,11 @@ static void Task_UART_Finished(void)
     }
 }
 
-static void DAC_WaveStart(void)
-{
-    uint8_t i;
-    uint16_t g_usWaveBuff[64];
-    for(i =0; i < 32; i++)
-    {
-        g_usWaveBuff[i] = 0;
-    }
+#define DDS_ROM_WAVE_SIZE (4096)
+uint16_t SinWave_ROM[DDS_ROM_WAVE_SIZE];
 
-    for(i =0; i < 32; i++)
-    {
-        g_usWaveBuff[i+32] = 4095;
-    }
-    dac.Set_DMABuffer(g_usWaveBuff, 64);
-    dac.Start(1000);
+static void DDS_WaveStart(void)
+{
+    generateSineWaveTable(SinWave_ROM, DDS_ROM_WAVE_SIZE, 3);
+    DDS_Config(dds, 2048000,SinWave_ROM, DDS_ROM_WAVE_SIZE, 40000, 0).Start();
 }

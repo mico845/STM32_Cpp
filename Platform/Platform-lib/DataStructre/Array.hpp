@@ -16,10 +16,10 @@ public:
     uint32_t Size;
     /* constructor */
     Array() : Size(MAX_SIZE) { }
-    Array(uint32_t size) : Size(size) { ASSERT_THROW((!(size >= MAX_SIZE)), "Array Size out of range"); }
+    Array(uint32_t size) : Size(size) { ASSERT_THROW((!(size > MAX_SIZE)), "Array Size out of range"); }
     Array(T buf[], uint32_t size) : Size(size)
     {
-        ASSERT_THROW((!(size >= MAX_SIZE)), "Array Size out of range");
+        ASSERT_THROW((!(size > MAX_SIZE)), "Array Size out of range");
         for (uint32_t i = 0; i < size; ++i) {
             Data[i] = buf[i];
         }
@@ -31,12 +31,12 @@ public:
         return Data[Index];
     }
 
-    void SetBuffer(T *buf, uint32_t num);
+    void SetBuffer(const T *buf, uint32_t num);
 };
 
 template<typename T, uint32_t MAX_SIZE>
-void Array<T, MAX_SIZE>::SetBuffer(T *buf, uint32_t num) {
-    ASSERT_THROW((!(num >= MAX_SIZE)), "Array Index out of range");
+void Array<T, MAX_SIZE>::SetBuffer(const T *buf, uint32_t num) {
+    ASSERT_THROW((!(num > MAX_SIZE)), "Array Size out of range");
     Size = num;
     for (uint32_t i = 0; i < Size; ++i) {
         Data[i] = buf[i];

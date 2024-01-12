@@ -56,7 +56,7 @@ MEMORY
 /* Define output sections */
 SECTIONS
 {
-  /* The startup code goes first into FLASH */
+    /* The startup code goes first into FLASH */
   .isr_vector :
   {
     . = ALIGN(4);

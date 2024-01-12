@@ -20,6 +20,11 @@ void USART1_IRQHandler(void)
     cout.Irq();
 }
 
+void DMA1_Stream2_IRQHandler(void)
+{
+    dds.Irq_DMA();
+}
+
 void TIM7_IRQHandler(void)
 {
     timer.Irq();

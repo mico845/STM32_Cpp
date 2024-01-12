@@ -8,7 +8,7 @@ ALIGN_32B(__AT_SRAM4_     ADC             adc );
 ALIGN_32B(__AT_SRAM4_     DAC             dac );
 __AT_AXI_SRAM_             LED_RGB         led;
 Timer           timer;
-
+DDS             dds;
 
 using namespace STM32::STM32_TIM;
 
@@ -27,6 +27,7 @@ void ClassInit(void)
 
     adc   = ADC(3, 2, 0, 1, channel1);
     dac   = DAC(1, 1, 1, 2, 6);
+    dds   = DDS(&dac);
 }
 
 void HardInit(void)

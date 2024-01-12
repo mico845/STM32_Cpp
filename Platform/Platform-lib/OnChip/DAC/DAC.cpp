@@ -31,18 +31,13 @@ DAC &DAC::Start(uint32_t Freq) {
         LL_DMA_SetMemoryAddress(dma, dma_stream, (uint32_t)(dac_dma_buffer.Data));
         LL_DMA_SetDataLength(dma, dma_stream, dac_dma_buffer.Size);
         if (isUseDmaIrq)
-        {
-            Platform_DMA_ClearFlag_HT(dma, dma_stream);
-            Platform_DMA_ClearFlag_TC(dma, dma_stream);
-            LL_DMA_EnableIT_HT(dma, dma_stream);
-            LL_DMA_EnableIT_TC(dma, dma_stream);
-        }
+            Enable_DMAIrq();
         LL_DMA_EnableStream(dma, dma_stream);
     }
     else
         LL_DAC_ConvertData12RightAligned(dac, channel, 0);
     if (isUseTimer)
-        dac_timer.Start(round((float )Freq * dac_dma_buffer.Size) );
+        dac_timer.Start(Freq);
     return *this;
 }
 
@@ -55,25 +50,16 @@ DAC &DAC::Stop(void) {
     {
         LL_DMA_DisableStream(dma, dma_stream);
         if (isUseDmaIrq)
-        {
-            LL_DMA_DisableIT_HT(dma, dma_stream);
-            LL_DMA_DisableIT_TC(dma, dma_stream);
-            Platform_DMA_ClearFlag_HT(dma, dma_stream);
-            Platform_DMA_ClearFlag_TC(dma, dma_stream);
-        }
+            Disable_DMAIrq();
+
     }
     return *this;
 }
 
-void DAC::Set_Value(uint16_t Value) {
-    LL_DAC_ConvertData12RightAligned(dac, channel, Value);  //在数据保存寄存器中设置要加载的数据
-}
-
-
-bool DAC::Set_DMABuffer(uint16_t* buffer, uint32_t size) {
-    if (size > DAC_DMA_BUFFER_SIZE)
+bool DAC::Set_DMABuffer(const uint16_t* Buffer, uint32_t Num) {
+    if (Num > DAC_DMA_BUFFER_MAX_SIZE)
         return false;
-    dac_dma_buffer.SetBuffer(buffer, size);
+    dac_dma_buffer.SetBuffer(Buffer, Num);
     return true;
 }
 
@@ -83,14 +69,30 @@ void DAC::Irq_DMA(void) {
     if(LL_DMA_IsEnabledIT_TC(dma, dma_stream) && PLATFORM_DMA_IsActiveFlag_TC(dma, dma_stream))
     {
         // SCB_InvalidateDCache_by_Addr 的参数是 byte num: uint16_t -> (DMA_BUFFER_SIZE / 2 )* 2
-        SCB_InvalidateDCache_by_Addr((uint32_t *)(&dac_dma_buffer[DAC_DMA_BUFFER_SIZE / 2]), DAC_DMA_BUFFER_SIZE);
+        SCB_InvalidateDCache_by_Addr((uint32_t *)(&dac_dma_buffer[DAC_DMA_BUFFER_MAX_SIZE / 2]), DAC_DMA_BUFFER_MAX_SIZE);
         Platform_DMA_ClearFlag_TC(dma, dma_stream);
     }
     // 半完成中断
     if(LL_DMA_IsEnabledIT_HT(dma, dma_stream) && PLATFORM_DMA_IsActiveFlag_HT(dma, dma_stream))
     {
-        SCB_InvalidateDCache_by_Addr((uint32_t *)(&dac_dma_buffer[0]), DAC_DMA_BUFFER_SIZE);
+        SCB_InvalidateDCache_by_Addr((uint32_t *)(&dac_dma_buffer[0]), DAC_DMA_BUFFER_MAX_SIZE);
         Platform_DMA_ClearFlag_HT(dma, dma_stream);
     }
 }
+
+void DAC::Enable_DMAIrq(void) {
+    Platform_DMA_ClearFlag_HT(dma, dma_stream);
+    Platform_DMA_ClearFlag_TC(dma, dma_stream);
+    LL_DMA_EnableIT_HT(dma, dma_stream);
+    LL_DMA_EnableIT_TC(dma, dma_stream);
+}
+
+void DAC::Disable_DMAIrq(void) {
+    LL_DMA_DisableIT_HT(dma, dma_stream);
+    LL_DMA_DisableIT_TC(dma, dma_stream);
+    Platform_DMA_ClearFlag_HT(dma, dma_stream);
+    Platform_DMA_ClearFlag_TC(dma, dma_stream);
+}
+
+
 

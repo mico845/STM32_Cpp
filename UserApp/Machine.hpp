@@ -13,5 +13,6 @@ extern      Timer        timer;
 extern      ADC          adc;
 extern      PWM          pwm;
 extern      DAC          dac;
+extern      DDS          dds;
 
 #endif //CODE_MACHINE_H
