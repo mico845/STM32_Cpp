@@ -18,7 +18,7 @@ static void DDS_WaveStart(void);
 {
     led.PinkishRed();
     cout << "Hello World" << '\n';
-    lcd << "Hello World" << TFT_LCD::endl;
+    lcd << "Love me" << TFT_LCD::endl;
     lcd << 520 << TFT_LCD::endl;
     timer.RegisterCallback(KeyScan10ms).Start(100);
     // adc.Start(1000);

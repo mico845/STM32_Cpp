@@ -15,7 +15,7 @@
 
 #include "DSP/DSP.hpp"
 
-
+#include "JumpToBootloader/JumpToBootloader.hpp"
 #include "Machine/Platform-Machine.hpp"
 
 #endif //CODE_PLATFORM_LIB_H
