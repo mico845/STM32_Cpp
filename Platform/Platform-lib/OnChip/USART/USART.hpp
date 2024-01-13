@@ -15,7 +15,7 @@
 #endif
 
 #ifndef USART_DMA_TX_BUFFER_SIZE
-    #define USART_DMA_TX_BUFFER_SIZE    (1024)                    //USART DMA BUFFER SIZE
+    #define USART_DMA_TX_BUFFER_SIZE    (512)                    //USART DMA BUFFER SIZE
 #endif
 #ifndef USART_DMA_RX_BUFFER_SIZE
     #define USART_DMA_RX_BUFFER_SIZE    (128)                   //USART DMA BUFFER SIZE

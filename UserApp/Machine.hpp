@@ -14,5 +14,6 @@ extern      ADC          adc;
 extern      PWM          pwm;
 extern      DAC          dac;
 extern      DDS          dds;
+extern      LCD_SPI      lcd;
 
 #endif //CODE_MACHINE_H

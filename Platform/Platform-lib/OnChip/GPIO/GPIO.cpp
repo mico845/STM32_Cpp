@@ -45,28 +45,6 @@ void GPIO::RCC_Configuration(void) {
         LL_AHB4_GRP1_EnableClock(LL_AHB4_GRP1_PERIPH_GPIOH);
 }
 
-void GPIO::Low(void) {
-    WRITE_REG(port->BSRR, pin << 16U);
-}
-
-void GPIO::High(void) {
-    WRITE_REG(port->BSRR, pin);
-}
-
-void GPIO::Toggle(void) {
-    uint32_t odr = READ_REG(port->ODR);
-    WRITE_REG(port->BSRR, ((odr & pin) << 16u) | (~odr & pin));
-}
-
-bool GPIO::Read(void) {
-    bool bitstatus;
-    if((port->IDR & pin) != (uint32_t) false)
-        bitstatus = true;
-    else
-        bitstatus = false;
-    return bitstatus;
-}
-
 void GPIO::SetConfig(GPIO_Mode Mode, GPIO_OutPutType PutType, GPIO_Pull Pull, GPIO_Speed Speed) {
     LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
 
@@ -77,11 +55,4 @@ void GPIO::SetConfig(GPIO_Mode Mode, GPIO_OutPutType PutType, GPIO_Pull Pull, GP
     GPIO_InitStruct.Pull =  Pull;
 
     LL_GPIO_Init(port, &GPIO_InitStruct);
-}
-
-void GPIO::SetLeveL(bool Level) {
-    if(Level)
-        High();
-    else
-        Low();
 }

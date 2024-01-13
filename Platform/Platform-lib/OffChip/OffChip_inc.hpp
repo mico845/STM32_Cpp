@@ -7,5 +7,6 @@
 
 #include "LED_RGB/LED_RGB.hpp"
 #include "Key/Key.hpp"
+#include "LCD_SPI/LCD_SPI.hpp"
 
 #endif //CODE_OFFCHIP_INC_H

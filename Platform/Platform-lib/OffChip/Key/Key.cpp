@@ -34,7 +34,7 @@ Key_ID Key::Get_ID(void) {
 
 void Key_Init(void)
 {
-    _key[0] = Key(KEY1, C, 13, pullup);
+    _key[0] = Key(KEY1_GPIO_GPIO, KEY1_GPIO_PORT, KEY1_GPIO_PIN, KEY1_GPIO_PULL);
 }
 
 uint8_t Key_Scan(void)

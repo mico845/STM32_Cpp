@@ -3,6 +3,8 @@
 //
 #include "common_inc.h"
 
+using namespace Platform::HardWare;
+
 // 循环中需要执行的任务
 static void Task_Key(void);
 static void Task_Led_Flash(void);
@@ -16,11 +18,12 @@ static void DDS_WaveStart(void);
 {
     led.PinkishRed();
     cout << "Hello World" << '\n';
+    lcd << "Hello World" << TFT_LCD::endl;
+    lcd << 520 << TFT_LCD::endl;
     timer.RegisterCallback(KeyScan10ms).Start(100);
     // adc.Start(1000);
     // cout.Receive_Start_DMA();
-    DDS_WaveStart();
-    cout << "Config Finished\n";
+    // DDS_WaveStart();
 }
 
 void Loop(void)
@@ -85,11 +88,10 @@ static void Task_UART_Finished(void)
     }
 }
 
-#define DDS_ROM_WAVE_SIZE (4096)
-uint16_t SinWave_ROM[DDS_ROM_WAVE_SIZE];
-
 static void DDS_WaveStart(void)
 {
+    #define DDS_ROM_WAVE_SIZE (4096 * 16)
+    static uint16_t SinWave_ROM[DDS_ROM_WAVE_SIZE];
     generateSineWaveTable(SinWave_ROM, DDS_ROM_WAVE_SIZE, 3);
-    DDS_Config(dds, 2048000,SinWave_ROM, DDS_ROM_WAVE_SIZE, 40000, 0).Start();
+    DDS_Config(dds, 4096000,SinWave_ROM, DDS_ROM_WAVE_SIZE, 40000, 0).Start();
 }

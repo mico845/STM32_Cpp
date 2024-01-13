@@ -6,6 +6,15 @@
 #define CODE_KEY_H
 #include "OnChip/GPIO/GPIO.hpp"
 #include "DataStructre/Fifo.hpp"
+
+//定义KEY1_GPIO
+#ifndef KEY1_GPIO_GPIO
+    #define KEY1_GPIO_GPIO     (Platform::HardWare::Key::KEY1)  //ID
+    #define KEY1_GPIO_PORT     (STM32::STM32_GPIO::C)
+    #define KEY1_GPIO_PIN      (13)
+    #define KEY1_GPIO_PULL     (STM32::STM32_GPIO::pullup)
+#endif
+
 namespace Platform::HardWare::Key{
     /*
     按键滤波时间 50ms, 单位 10ms。

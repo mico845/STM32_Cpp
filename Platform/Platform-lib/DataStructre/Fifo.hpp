@@ -28,9 +28,9 @@ public:
     uint32_t Get(T &data);
     uint32_t Puts(T *pData, uint32_t num);
     uint32_t Gets(T *pData, uint32_t num);
-    uint32_t Size(void);
-    uint32_t Get_FreeSize(void);
-    void Clear(void);
+    inline uint32_t Size(void);
+    inline uint32_t Get_FreeSize(void);
+    inline void Clear(void);
 };
 
 /**
@@ -158,7 +158,7 @@ uint32_t Fifo<T,MAX_SIZE>::Gets(T *pData, uint32_t num)
 }
 
 template<typename T, uint32_t MAX_SIZE>
-uint32_t Fifo<T,MAX_SIZE>::Size()
+inline uint32_t Fifo<T,MAX_SIZE>::Size()
 {
     return (size);
 }
@@ -167,7 +167,7 @@ uint32_t Fifo<T,MAX_SIZE>::Size()
  *clear all nodes in buffer
  */
 template<typename T, uint32_t MAX_SIZE>
-void Fifo<T,MAX_SIZE>::Clear()
+inline void Fifo<T,MAX_SIZE>::Clear()
 {
     pwriteIndex = 0;
     preadIndex = 0;
@@ -175,7 +175,7 @@ void Fifo<T,MAX_SIZE>::Clear()
 }
 
 template<typename T, uint32_t MAX_SIZE>
-uint32_t Fifo<T, MAX_SIZE>::Get_FreeSize(void) {
+inline uint32_t Fifo<T, MAX_SIZE>::Get_FreeSize(void) {
     return (MAX_SIZE - size);
 }
 

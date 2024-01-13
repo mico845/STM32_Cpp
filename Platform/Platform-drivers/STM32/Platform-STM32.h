@@ -17,6 +17,7 @@
 #include "stm32h7xx_ll_tim.h"
 #include "stm32h7xx_ll_adc.h"
 #include "stm32h7xx_ll_dac.h"
+#include "stm32h7xx_ll_spi.h"
 
 /* STM32 H7 Memory Address Typedef */
 #define     __AT_AXI_SRAM_      __attribute__((section("._AXI_SRAM_Area_512KB")))

@@ -42,31 +42,31 @@ public:
     DAC& Start(uint32_t Freq = 1000);
     DAC& Stop(void);
 
-    inline void Set_Value(uint16_t Value);
+    __INLINE void Set_Value(uint16_t Value);
     bool Set_DMABuffer(const uint16_t* Buffer, uint32_t Num);
     void Enable_DMAIrq(void);
     void Disable_DMAIrq(void);
-    inline void Use_DMAIrq(void);
-    inline void Unuse_DMAIrq(void);
+    __INLINE void Use_DMAIrq(void);
+    __INLINE  void Unuse_DMAIrq(void);
 
     inline Array<uint16_t, DAC_DMA_BUFFER_MAX_SIZE>* Get_PointBufArray(void);
 
     void Irq_DMA(void);
 };
 
-inline void DAC::Set_Value(uint16_t Value) {
+__INLINE void DAC::Set_Value(uint16_t Value) {
     LL_DAC_ConvertData12RightAligned(dac, channel, Value);  //在数据保存寄存器中设置要加载的数据
 }
 
-inline void DAC::Use_DMAIrq(void) {
+__INLINE void DAC::Use_DMAIrq(void) {
     isUseDmaIrq = true;
 }
 
-inline void DAC::Unuse_DMAIrq(void) {
+__INLINE void DAC::Unuse_DMAIrq(void) {
     isUseDmaIrq = false;
 }
 
-inline Array<uint16_t, DAC_DMA_BUFFER_MAX_SIZE> *DAC::Get_PointBufArray(void) {
+__INLINE Array<uint16_t, DAC_DMA_BUFFER_MAX_SIZE> *DAC::Get_PointBufArray(void) {
     return &dac_dma_buffer;
 }
 
