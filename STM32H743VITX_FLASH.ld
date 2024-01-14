@@ -51,6 +51,7 @@ MEMORY
   SRAM4 (xrw)    : ORIGIN = 0x38000000, LENGTH = 64K
   ITCMRAM (xrw)  : ORIGIN = 0x00000000, LENGTH = 64K
   FLASH (rx)     : ORIGIN = 0x08000000, LENGTH = 2048K
+  FLASH_POINT (rx) : ORIGIN = 0x08000000 + 128K, LENGTH = 1920K  /* 避开第一个扇区，因为第一个扇区是默认Boot启动地址 */
 }
 
 /* Define output sections */
@@ -193,6 +194,12 @@ SECTIONS
        . = ALIGN(4);
        . = ALIGN(4);
       } >SRAM4
+
+     ._CPU_FLASH :
+     {
+      . = ALIGN(4);
+      . = ALIGN(4);
+     } >FLASH_POINT
 
   /* Remove information from the standard libraries */
   /DISCARD/ :

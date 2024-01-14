@@ -25,6 +25,7 @@
 #define     __AT_SRAM2_         __attribute__((section("._SRAM2_Area_128KB")))
 #define     __AT_SRAM3_         __attribute__((section("._SRAM3_Area_32KB")))
 #define     __AT_SRAM4_         __attribute__((section("._SRAM4_Area_64KB")))
+#define     __AT_CPUFLASH_2to8_ __attribute__((section("._CPU_FLASH")))
 
 #define     ALIGN_32B(buf)      buf __attribute__ ((aligned (32)))
 

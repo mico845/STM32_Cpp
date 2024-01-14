@@ -2,6 +2,7 @@
 // Created by Whisky on 12/29/2023.
 //
 #include "common_inc.h"
+#include "OnChip/FLASH/FLASH.hpp"
 
 using namespace Platform::HardWare;
 
@@ -11,15 +12,15 @@ static void Task_Led_Flash(void);
 static void Task_ADC_Finished(void);
 static void Task_UART_Finished(void);
 
-//初始化需要执行的任务
+//需要执行的任务
 static void DDS_WaveStart(void);
+static void Flash_Test(void);
 
  void Init(void)
 {
     led.PinkishRed();
     cout << "Hello World" << '\n';
-    lcd << "Love me" << TFT_LCD::endl;
-    lcd << 520 << TFT_LCD::endl;
+    Flash_Test();
     timer.RegisterCallback(KeyScan10ms).Start(100);
     // adc.Start(1000);
     // cout.Receive_Start_DMA();
@@ -94,4 +95,35 @@ static void DDS_WaveStart(void)
     static uint16_t SinWave_ROM[DDS_ROM_WAVE_SIZE];
     generateSineWaveTable(SinWave_ROM, DDS_ROM_WAVE_SIZE, 3);
     DDS_Config(dds, 4096000,SinWave_ROM, DDS_ROM_WAVE_SIZE, 40000, 0).Start();
+}
+
+static void Flash_Test(void)
+{
+#if 0   //读写变量
+    uint8_t a;
+    uint16_t b;
+    uint32_t c;
+
+    //擦除扇区
+    Platform_Flash_EraseCpuFlash((uint32_t)CPUFLASH_ADDRESS_32B(0));
+    a = 15;
+    b = 18;
+    c = 19;
+    Platform_FLash_WriteCpuFlash((uint32_t)CPUFLASH_ADDRESS_32B(0), (uint8_t *)&a, sizeof (a));
+    Platform_FLash_WriteCpuFlash((uint32_t)CPUFLASH_ADDRESS_32B(1), (uint8_t *)&b, sizeof (b));
+    Platform_FLash_WriteCpuFlash((uint32_t)CPUFLASH_ADDRESS_32B(2), (uint8_t *)&c, sizeof (c));
+    cout << (uint8_t)*(CPUFLASH_ADDRESS_32B(0))  << '\n';
+    cout << (uint16_t)*(CPUFLASH_ADDRESS_32B(1)) << '\n';
+    cout << (uint32_t)*(CPUFLASH_ADDRESS_32B(2)) << '\n';
+#else        //读写结构体
+    struct D{
+     int a = 9;
+     int b = 16;
+    }d;
+    D* pd;
+    Platform_Flash_EraseCpuFlash((uint32_t)CPUFLASH_ADDRESS_32B(0));
+    Platform_FLash_WriteCpuFlash((uint32_t)CPUFLASH_ADDRESS_32B(0), (uint8_t *)&d, sizeof (d));
+    pd = (D *)CPUFLASH_ADDRESS_32B(0);
+    cout << "d.a = " << pd->a << " d.b = " << pd->b << '\n';
+#endif
 }

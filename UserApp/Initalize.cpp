@@ -3,10 +3,10 @@
 //
 #include "common_inc.h"
 
-ALIGN_32B(__AT_SRAM1_     USART           cout);
-ALIGN_32B(__AT_SRAM4_     ADC             adc );
-ALIGN_32B(__AT_SRAM4_     DAC             dac );
-__AT_AXI_SRAM_             LED_RGB         led;
+ALIGN_32B(USART           cout  __AT_SRAM1_);
+ALIGN_32B(ADC             adc   __AT_SRAM4_);
+ALIGN_32B(DAC             dac   __AT_SRAM4_ );
+LED_RGB         led     __AT_AXI_SRAM_;
 Timer           timer;
 DDS             dds;
 LCD_SPI         lcd;

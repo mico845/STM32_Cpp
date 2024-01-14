@@ -5,7 +5,6 @@
 #ifndef CODE_Platform_OPERATION_DMA_H
 #define CODE_Platform_OPERATION_DMA_H
 #include "Platform-STM32.h"
-#include "stm32h7xx_ll_dma.h"
 
 #define PLATFORM_DMA_IsActiveFlag_HT(dma, dma_stream) \
                     ((dma_stream == LL_DMA_STREAM_0) ? LL_DMA_IsActiveFlag_HT0(dma) : \
@@ -29,7 +28,7 @@
 
 
 
-static inline void Platform_DMA_ClearFlag_HT(DMA_TypeDef * dma, uint32_t dma_stream) {
+__STATIC_INLINE void Platform_DMA_ClearFlag_HT(DMA_TypeDef * dma, uint32_t dma_stream) {
     switch (dma_stream) {
         case LL_DMA_STREAM_0:
             LL_DMA_ClearFlag_HT0(dma);
@@ -62,7 +61,7 @@ static inline void Platform_DMA_ClearFlag_HT(DMA_TypeDef * dma, uint32_t dma_str
 }
 
 
-static inline void Platform_DMA_ClearFlag_TC(DMA_TypeDef * dma, uint32_t dma_stream) {
+__STATIC_INLINE void Platform_DMA_ClearFlag_TC(DMA_TypeDef * dma, uint32_t dma_stream) {
     switch (dma_stream) {
         case LL_DMA_STREAM_0:
             LL_DMA_ClearFlag_TC0(dma);

@@ -15,7 +15,7 @@ typedef enum Lock_TypeDef{
                                 do{                                        \
                                     if((__HANDLE__) == Locked)             \
                                     {                                      \
-                                       return;                             \
+                                       return false;                       \
                                     }                                      \
                                     else                                   \
                                     {                                      \

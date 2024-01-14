@@ -74,7 +74,7 @@ list(REMOVE_ITEM SRC_FILES ${EXCLUDED_SOURCES})
 
 file(GLOB_RECURSE SOURCES "startup/*.*" "Drivers/*.*" ${SRC_FILES}
         "UserApp/*.*"
-
+        "Platform/Platform-drivers/STM32/Platform-Operation/*.*"
         "Platform/Platform-lib/*.*"
 
         )

@@ -7,7 +7,7 @@
 
 #include "Platform-STM32.h"
 
-static inline  GPIO_TypeDef* Platform_GPIOPort_Convert(STM32::STM32_GPIO::GPIO_Port Port) {
+__STATIC_INLINE  GPIO_TypeDef* Platform_GPIOPort_Convert(STM32::STM32_GPIO::GPIO_Port Port) {
     if (Port == STM32::STM32_GPIO::A)
         return GPIOA;
     else if (Port == STM32::STM32_GPIO::B)
