@@ -31,10 +31,6 @@
     #define LCD_PWR_PIN     (3)
 #endif
 
-//SPI超时时间
-#ifndef LCD_SPI_TIMEOUT
-    #define LCD_SPI_TIMEOUT (200)
-#endif
 
 //LCD缓存大小设置
 #ifndef LCD_TOTAL_BUF_SIZE

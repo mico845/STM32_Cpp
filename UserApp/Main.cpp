@@ -21,10 +21,11 @@ static void Flash_Test(void);
     led.PinkishRed();
     cout << "Hello World" << '\n';
     Flash_Test();
+    lcd << "hello" << TFT_LCD::endl;
     timer.RegisterCallback(KeyScan10ms).Start(100);
     // adc.Start(1000);
     // cout.Receive_Start_DMA();
-    // DDS_WaveStart();
+ //    DDS_WaveStart();
 }
 
 void Loop(void)
@@ -42,6 +43,7 @@ static void Task_Key(void)
     switch (key_value) {
         case Key1_Down:{
             led.Yellow();
+            JumpToBootloader();
         }break;
         case Key1_Long:{
             led.Cyan();
@@ -121,9 +123,9 @@ static void Flash_Test(void)
      int b = 16;
     }d;
     D* pd;
-    Platform_Flash_EraseCpuFlash((uint32_t)CPUFLASH_ADDRESS_32B(0));
-    Platform_FLash_WriteCpuFlash((uint32_t)CPUFLASH_ADDRESS_32B(0), (uint8_t *)&d, sizeof (d));
-    pd = (D *)CPUFLASH_ADDRESS_32B(0);
+    Platform_Flash_EraseCpuFlash(ADDR_FLASH_SECTOR_3_BANK2);
+    Platform_FLash_WriteCpuFlash(ADDR_FLASH_SECTOR_3_BANK2, (uint8_t *)&d, sizeof (d));
+    pd = (D *)ADDR_FLASH_SECTOR_3_BANK2;
     cout << "d.a = " << pd->a << " d.b = " << pd->b << '\n';
 #endif
 }

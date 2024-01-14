@@ -27,7 +27,7 @@ void ClassInit(void)
     timer = Timer(7, true);
 
     adc   = ADC(3, 2, 0, 1, channel1);
-    dac   = DAC(1, 1, 1, 2, 6);
+    dac   = DAC(1, 1, 2, 1, 6);
     dds   = DDS(&dac);
     lcd   = LCD_SPI(true);
 }

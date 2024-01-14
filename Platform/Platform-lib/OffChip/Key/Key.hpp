@@ -7,6 +7,8 @@
 #include "OnChip/GPIO/GPIO.hpp"
 #include "DataStructre/Fifo.hpp"
 
+//按键数量
+#define KEY_HARD_NUM                (1)
 //定义KEY1_GPIO
 #ifndef KEY1_GPIO_GPIO
     #define KEY1_GPIO_GPIO     (Platform::HardWare::Key::KEY1)  //ID
@@ -84,7 +86,6 @@ public:
     Platform::HardWare::Key::Key_ID Get_ID(void);
 };
 
-#define KEY_HARD_NUM                (1)
 extern Key _key[KEY_HARD_NUM];
 #define KEY_VALUE_FIFO_MAX_SIZE     (10)
 extern Fifo<Platform::HardWare::Key::Key_Value, KEY_VALUE_FIFO_MAX_SIZE> Key_Value_Fifo;
