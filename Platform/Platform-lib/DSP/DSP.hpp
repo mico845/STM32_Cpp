@@ -7,6 +7,7 @@
 
 #include "DDS/DDS.hpp"
 #include "Wavaform_Generate/GenerateWave.hpp"
+#include "FFT/FFT.hpp"
 
 
 #endif //HELLOWORLD_DSP_H

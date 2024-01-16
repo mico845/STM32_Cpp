@@ -19,9 +19,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 11)
 
 #Uncomment for hardware floating point
-#add_compile_definitions(ARM_MATH_CM4;ARM_MATH_MATRIX_CHECK;ARM_MATH_ROUNDING)
-#add_compile_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
-#add_link_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
+add_compile_definitions(ARM_MATH_CM4;ARM_MATH_MATRIX_CHECK;ARM_MATH_ROUNDING)
+add_compile_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
+add_link_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
 
 #Uncomment for software floating point
 #add_compile_options(-mfloat-abi=soft)
@@ -54,11 +54,11 @@ else ()
 endif ()
 
 include_directories(Core/Inc Drivers/STM32H7xx_HAL_Driver/Inc Drivers/CMSIS/Device/ST/STM32H7xx/Include Drivers/CMSIS/Include
-        UserApp
-
         # Platform
         Platform/Platform-lib
         Platform/Platform-drivers/STM32
+
+        UserApp
         )
 add_subdirectory(Platform/Platform-drivers/ARM_DSP)
 
@@ -73,11 +73,10 @@ file(GLOB_RECURSE EXCLUDED_SOURCES
         )
 list(REMOVE_ITEM SRC_FILES ${EXCLUDED_SOURCES})
 
-file(GLOB_RECURSE SOURCES "startup/*.*" "Drivers/*.*" ${SRC_FILES}
-        "UserApp/*.*"
+file(GLOB_RECURSE SOURCES "startup/*.*" "Drivers/*.*"  ${SRC_FILES}
         "Platform/Platform-drivers/STM32/Platform-Operation/*.*"
         "Platform/Platform-lib/*.*"
-
+        "UserApp/*.*"
         )
 
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32H743VITX_FLASH.ld)
@@ -86,7 +85,7 @@ add_link_options(-Wl,-gc-sections,--print-memory-usage,-Map=${PROJECT_BINARY_DIR
 add_link_options(-mcpu=cortex-m7 -mthumb -mthumb-interwork)
 add_link_options(-T ${LINKER_SCRIPT})
 
-add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
+add_executable(${PROJECT_NAME}.elf ${SOURCES}  ${LINKER_SCRIPT} )
 
 # 将ARM_DSP添加为可执行文件的依赖项
 target_link_libraries(${PROJECT_NAME}.elf PRIVATE ARM_DSP)

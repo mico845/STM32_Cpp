@@ -19,10 +19,10 @@ void ClassInit(void)
                         GPIO(C, 1, out),
                         GPIO(C, 2, out)
                         );
-
-    cout  = USART(1,
-                  1,1,
-                  1,0);
+    cout = USART(1, false);
+//    cout  = USART(1,
+//                  1,1,
+//                  1,0);
 
     timer = Timer(7, true);
 

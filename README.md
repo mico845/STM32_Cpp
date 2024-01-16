@@ -326,7 +326,50 @@ static void Task_ADC_Finished(void)
 }
 ```
 
-### （五）DAC模拟DDS
+### （五）DAC输出波形
+`Machine.hpp`
+```cpp
+extern      DAC          dac;
+```
+`Irq.cpp`
+```cpp
+/* DAC */
+DMA_IRQ(2, 1, dac.Irq_DMA())
+```
+`Initalize.cpp`
+```cpp
+ALIGN_32B(DAC             dac   __AT_SRAM4_ );
+void ClassInit(void){
+    dac   = DAC(1, 1, 2, 1, 6);
+}
+```
+
+`Main.cpp`
+```cpp
+//需要执行的任务
+static void DAC_WaveStart(void);
+
+void Init(void)
+{
+    DAC_WaveStart();
+}
+
+void Loop(void)
+{
+    
+}
+
+static void DAC_WaveStart(void)
+{
+    #define DAC_WAVE_SIZE (256)
+    static uint16_t SinWave_ROM[DAC_WAVE_SIZE];
+    generateSineWaveTable(SinWave_ROM, DAC_WAVE_SIZE, 3);
+    if (dac.Set_DMABuffer(SinWave_ROM, DAC_WAVE_SIZE))
+    dac.Start(1000 * DAC_WAVE_SIZE);
+}
+```
+
+### （六）DAC模拟DDS
 `Machine.hpp`
 ```cpp
 extern      DAC          dac;
@@ -371,7 +414,7 @@ static void DDS_WaveStart(void)
 }
 ```
 
-### （六）SPI驱动LCD
+### （七）SPI驱动LCD
 
 `Machine.hpp`
 ```cpp
@@ -438,7 +481,7 @@ void Loop(void)
 }
 ```
 
-### （七）内部Flash的读写
+### （八）内部Flash的读写
 引入头文件
 ```cpp
 #include "OnChip/FLASH/FLASH.hpp"
@@ -475,7 +518,7 @@ void Loop(void)
     cout << "d.a = " << pd->a << " d.b = " << pd->b << '\n';
 ```
 
-### （八）跳进系统BootLoader
+### （九）跳进系统BootLoader
 用按键控制跳进系统BootLoader，按键如之前例程配置
 ```cpp
 // 循环中需要执行的任务
@@ -505,4 +548,61 @@ static void Task_Key(void)
             break;
     }
 }
+```
+
+### （十）执行复数FFT
+- 不限点数CFFT
+使用方法：需修改Platform/Platform-lib/DSP/FFT/InfinitePoint/FFTInc.h中的宏MAX_FFT_N进行点数修改
+```cpp
+#ifndef   MAX_FFT_N
+#define   MAX_FFT_N		 (8192)
+#endif 
+```
+`Main`函数中执行代码：
+```cpp
+static void FFT_Test(void)
+{
+     uint32_t i = 0;
+    struct  compx s[MAX_FFT_N];
+    for(i=0; i<MAX_FFT_N; i++)
+    {
+        /* 波形是由直流分量，500Hz正弦波组成，波形采样率MAX_FFT_N，初始相位60° */
+        s[i].real = 1 + cos(2*3.1415926f*500*i/MAX_FFT_N + 3.1415926f/3);
+        s[i].imag = 0;
+    }
+    CFFT_InfinitePoint(s);
+    FFT_GetPhaseRadians_f32(s, 0.5f);
+    for (i = 0; i < MAX_FFT_N/2; i++)
+    {
+        cout << i << "," << s[i].real << '\n';
+    }
+}
+```
+
+- 固定点数的ARM-DSP库的CFFT
+```cpp
+static void FFT_Test(void)
+{
+#define TEST_LENGTH_SAMPLES 1024
+    float32_t testOutput_f32[TEST_LENGTH_SAMPLES*2];
+    float32_t testInput_f32[TEST_LENGTH_SAMPLES*2];
+    float32_t Phase_f32[TEST_LENGTH_SAMPLES*2]; /* 相位*/
+     uint32_t i = 0;
+
+    for(i=0; i<TEST_LENGTH_SAMPLES; i++)
+    {
+        /* 波形是由直流分量，50Hz 正弦波组成，波形采样率 1024，初始相位 60° */
+        testInput_f32[i*2] = 1 + cos(2*3.1415926f*50*i/1024 + 3.1415926f/3);
+        testInput_f32[i*2+1] = 0;
+    }
+
+    CFFT_ARM_f32(testInput_f32, TEST_LENGTH_SAMPLES);;
+    FFT_GetMagnitude_f32(testInput_f32, TEST_LENGTH_SAMPLES, testOutput_f32);
+    FFT_GetPhaseRadians_f32(testInput_f32, TEST_LENGTH_SAMPLES, Phase_f32, 0.5f);
+    for (i = 0; i < TEST_LENGTH_SAMPLES/2; i++)
+    {
+        cout << i << "," << testOutput_f32[i] << "," << Phase_f32[i]  << '\n';
+    }
+}
+
 ```
