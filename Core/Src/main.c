@@ -120,6 +120,7 @@ int main(void)
   MX_DAC1_Init();
   MX_TIM6_Init();
   MX_SPI6_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */

@@ -19,11 +19,10 @@ void ClassInit(void)
                         GPIO(C, 1, out),
                         GPIO(C, 2, out)
                         );
-    cout = USART(1, false);
+    cout = USART(1, false); // 使用轮询的方式使用USART
 //    cout  = USART(1,
 //                  1,1,
 //                  1,0);
-
     timer = Timer(7, true);
 
     adc   = ADC(3, 2, 0, 1, channel1);

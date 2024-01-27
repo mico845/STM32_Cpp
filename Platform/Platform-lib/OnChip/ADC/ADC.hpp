@@ -9,14 +9,17 @@
 
 #define USE_IRQ_FOR_DATA_HANDLING       (0)         //在中断服务函数里进行数据搬运（双缓冲）
 #define USE_POLLFOR_FOR_DATA_HANDLING   (1)         //在CPU的轮询函数里进行数据搬运（双缓冲）
+#define USE_YOURSELF_DMAIRQ             (0)
 
 #ifndef ADC_BUFFER_SIZE
-    #define ADC_BUFFER_SIZE        (1024)                    //ADC BUFFER FIFO SIZE
+    #define ADC_BUFFER_SIZE        (1)                    //ADC BUFFER FIFO SIZE
 #endif
 
 #ifndef ADC_DMA_BUFFER_SIZE
     #define ADC_DMA_BUFFER_SIZE    (ADC_BUFFER_SIZE)
 #endif
+
+
 
 class ADC
 {
@@ -53,7 +56,7 @@ public:
     ADC& Start(uint32_t SampleRate);
     ADC& Stop(void);
 
-    uint16_t Get_Data_Pollfor(void);    //支持无中断和DMA时使用
+    uint16_t Get_Data_Pollfor(void);    //支持无中断和无DMA时使用
 
     void Irq_DMA(void);
 

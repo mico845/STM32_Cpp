@@ -42,6 +42,10 @@ void FFT_GetMagnitude_f32(struct compx *FFTBuffer);//修改自身结构体，节
 void FFT_GetPhaseRadians_f32(const float32_t *FFTBuffer, uint32_t FFTPoints, float32_t *PhaseBuffer, float32_t CmpValue);
 void FFT_GetPhaseRadians_f32(const struct compx *FFTBuffer, float32_t *PhaseBuffer, float32_t CmpValue);
 void FFT_GetPhaseRadians_f32(struct compx *FFTBuffer, float32_t CmpValue);//修改自身结构体，节约空间，存放在real中
+
+
+/* 需保证CompxBuffer数组大小是ADCPoints的两倍 */
+void ConVert_ADCValue_Compx(const uint16_t *ADCBuffer, uint32_t ADCPoints, float32_t* CompxBuffer);
 #endif
 
 #endif //HELLOWORLD_FFT_H

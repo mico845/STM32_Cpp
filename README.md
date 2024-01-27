@@ -606,3 +606,79 @@ static void FFT_Test(void)
 }
 
 ```
+
+### （十一） FIR滤波
+- FIR非实时滤波
+```cpp
+void Init(void)
+{
+    FIR_Init();
+}
+
+static void FIR_Test(void)
+{
+     uint32_t i;
+    static float32_t testInput_f32_50Hz_200Hz[TEST_LENGTH_SAMPLES]; /* 采样点 */
+    static float32_t testOutput[TEST_LENGTH_SAMPLES]; /* 滤波后的输出 */
+    for(i=0; i<TEST_LENGTH_SAMPLES; i++)
+    {
+/* 50Hz 正弦波+200Hz 正弦波，采样率 1KHz */
+        testInput_f32_50Hz_200Hz[i] = arm_sin_f32(2*3.1415926f*50*i/TEST_LENGTH_SAMPLES) +
+                                      arm_sin_f32(2*3.1415926f*200*i/TEST_LENGTH_SAMPLES);
+    }
+     FIR_Init();
+
+    FIR_Run(testInput_f32_50Hz_200Hz,  TEST_LENGTH_SAMPLES, testOutput);
+    for (i = 0; i < TEST_LENGTH_SAMPLES; i++)
+    {
+        cout << i << "," << testOutput[i] << ","<< testInput_f32_50Hz_200Hz[i]  << '\n';
+    }
+}
+```
+
+- 对ADC采样结果进行FIR后CFFT
+```cpp
+#define ADC_SAMPLERATE (4096000)
+void Init(void)
+{
+    FIR_Init();
+    adc.Start(ADC_SAMPLERATE);
+}
+void Loop(void)
+{
+    Task_ADC_Finished();
+}
+
+static void Task_ADC_Finished(void)
+{
+    static uint16_t     adc_buf[ADC_DMA_BUFFER_SIZE];
+    static float32_t    buffer[ADC_DMA_BUFFER_SIZE*2];
+    static float32_t    Outbuffer[ADC_DMA_BUFFER_SIZE*2];
+    float32_t* p, * outp;
+    if (adc.Scan_Data())
+    {
+        adc.Stop();
+        if (adc.Get_Data(adc_buf, adc.Get_DataSize()))
+        {
+            ConVert_ADCValue_Compx(adc_buf, ADC_DMA_BUFFER_SIZE, buffer);
+#if 1
+            FIR_Run(buffer, ADC_DMA_BUFFER_SIZE, Outbuffer);
+#else
+            for (uint32_t i = 0; i < ADC_DMA_BUFFER_SIZE; ++i) {
+                p = buffer + i;
+                outp = Outbuffer + i;
+                FIR_Run_OnePoint((p), (outp));
+            }
+#endif
+            CFFT_ARM_f32(buffer, ADC_DMA_BUFFER_SIZE);
+            FFT_GetMagnitude_f32(buffer, ADC_DMA_BUFFER_SIZE/2, Outbuffer);
+            for (int i = 0; i < ADC_DMA_BUFFER_SIZE; ++i) {
+                cout << i << "," << Outbuffer[i] << '\n';
+            }
+        }
+        adc.Start(ADC_SAMPLERATE);
+    }
+}
+```
+
+

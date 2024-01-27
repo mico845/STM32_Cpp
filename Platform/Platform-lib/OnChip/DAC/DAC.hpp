@@ -8,7 +8,7 @@
 #include "DataStructre/Array.hpp"
 
 #ifndef DAC_DMA_BUFFER_MAX_SIZE
-    #define DAC_DMA_BUFFER_MAX_SIZE    (256)
+    #define DAC_DMA_BUFFER_MAX_SIZE    (512)
 #endif
 
 class DAC

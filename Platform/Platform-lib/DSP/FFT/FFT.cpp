@@ -229,3 +229,12 @@ bool RIFFT_ARM_f32(float32_t *InPutBuffer, float32_t *FFTBuffer, uint32_t FFTPoi
 {
     return __RFFT_ARM_f32(InPutBuffer, FFTBuffer, FFTPoints, 1);
 }
+
+
+void ConVert_ADCValue_Compx(const uint16_t *ADCBuffer, uint32_t ADCPoints, float32_t* CompxBuffer)
+{
+    for (uint32_t i= 0; i < ADCPoints; ++i) {
+        CompxBuffer[2*i] = ADCBuffer[i];
+        CompxBuffer[2*i+1] = 0;
+    }
+}

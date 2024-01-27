@@ -61,7 +61,6 @@ ADC &ADC::Start(uint32_t SampleRate) {
         LL_DMA_EnableStream(adc_dma, adc_dma_stream);
 
     }
-
     if (isUseTimer)
         timer.Start(SampleRate);
     LL_ADC_REG_StartConversion(adc);
@@ -131,7 +130,39 @@ void ADC::Irq_DMA(void) {
         Platform_DMA_ClearFlag_HT(adc_dma, adc_dma_stream);
     }
 }
+#elif USE_YOURSELF_DMAIRQ
+#include "Machine.hpp"
+float32_t Fir_out[1];
+uint32_t Fir_count = 0;
+float32_t adc_Voltage[1];
+void ADC::Irq_DMA(void) {
+    // 完成中断
+    if(LL_DMA_IsEnabledIT_TC(adc_dma, adc_dma_stream) && PLATFORM_DMA_IsActiveFlag_TC(adc_dma, adc_dma_stream))
+    {
+        // SCB_InvalidateDCache_by_Addr 的参数是 byte num: uint16_t -> (ADC_DMA_BUFFER_SIZE / 2 )* 2
+        SCB_InvalidateDCache_by_Addr((uint32_t *)(&adc_dma_buffer), ADC_DMA_BUFFER_SIZE * 2);
+        adc_Voltage[0] = adc_dma_buffer[0];
+        FIR_Run_OnePoint(adc_Voltage, Fir_out);
+        cout << Fir_count << ',' <<Fir_out[0] <<'\n';
+        Platform_DMA_ClearFlag_TC(adc_dma, adc_dma_stream);
+        if (Fir_count++==1024)
+            Stop();
+        else
+            LL_DMA_EnableStream(adc_dma, adc_dma_stream);
+    }
+//    // 半完成中断
+//    if(LL_DMA_IsEnabledIT_HT(adc_dma, adc_dma_stream) && PLATFORM_DMA_IsActiveFlag_HT(adc_dma, adc_dma_stream))
+//    {
+//
+//        SCB_InvalidateDCache_by_Addr((uint32_t *)(&adc_dma_buffer[0]), ADC_DMA_BUFFER_SIZE);
+//        flag_halfFinished = true;
+//        Platform_DMA_ClearFlag_HT(adc_dma, adc_dma_stream);
+//    }
+}
 #endif
+
+
+
 
 bool ADC::Is_Finished(void) {
     if (flag_finished) {
@@ -150,6 +181,7 @@ bool ADC::Get_Data(uint16_t *buffer, uint32_t number) {
         return true;
     }
 }
+
 
 uint32_t ADC::Get_DataSize(void) {
     return bufferADC.Size();
