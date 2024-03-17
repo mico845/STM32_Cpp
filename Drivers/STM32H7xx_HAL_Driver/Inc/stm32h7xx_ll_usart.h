@@ -186,7 +186,7 @@ typedef struct
   * @{
   */
 
-/** @defgroup USART_LL_EC_CLEAR_FLAG Clear Flags Defines
+/** @defgroup USART_LL_EC_CLEAR_FLAG clear Flags Defines
   * @brief    Flags defines which can be used with LL_USART_WriteReg function
   * @{
   */
@@ -204,12 +204,12 @@ typedef struct
 #define LL_USART_ICR_EOBCF                      USART_ICR_EOBCF               /*!< End of block clear flag */
 #define LL_USART_ICR_UDRCF                      USART_ICR_UDRCF               /*!< SPI Slave Underrun clear flag */
 #define LL_USART_ICR_CMCF                       USART_ICR_CMCF                /*!< Character match clear flag */
-#define LL_USART_ICR_WUCF                       USART_ICR_WUCF                /*!< Wakeup from Stop mode clear flag */
+#define LL_USART_ICR_WUCF                       USART_ICR_WUCF                /*!< Wakeup from stop mode clear flag */
 /**
   * @}
   */
 
-/** @defgroup USART_LL_EC_GET_FLAG Get Flags Defines
+/** @defgroup USART_LL_EC_GET_FLAG get Flags Defines
   * @brief    Flags defines which can be used with LL_USART_ReadReg function
   * @{
   */
@@ -218,7 +218,7 @@ typedef struct
 #define LL_USART_ISR_NE                         USART_ISR_NE                  /*!< Noise detected flag */
 #define LL_USART_ISR_ORE                        USART_ISR_ORE                 /*!< Overrun error flag */
 #define LL_USART_ISR_IDLE                       USART_ISR_IDLE                /*!< Idle line detected flag */
-#define LL_USART_ISR_RXNE_RXFNE                 USART_ISR_RXNE_RXFNE          /*!< Read data register or RX FIFO not empty flag */
+#define LL_USART_ISR_RXNE_RXFNE                 USART_ISR_RXNE_RXFNE          /*!< read data register or RX FIFO not empty flag */
 #define LL_USART_ISR_TC                         USART_ISR_TC                  /*!< Transmission complete flag */
 #define LL_USART_ISR_TXE_TXFNF                  USART_ISR_TXE_TXFNF           /*!< Transmit data register empty or TX FIFO Not Full flag*/
 #define LL_USART_ISR_LBDF                       USART_ISR_LBDF                /*!< LIN break detection flag */
@@ -233,7 +233,7 @@ typedef struct
 #define LL_USART_ISR_CMF                        USART_ISR_CMF                 /*!< Character match flag */
 #define LL_USART_ISR_SBKF                       USART_ISR_SBKF                /*!< Send break flag */
 #define LL_USART_ISR_RWU                        USART_ISR_RWU                 /*!< Receiver wakeup from Mute mode flag */
-#define LL_USART_ISR_WUF                        USART_ISR_WUF                 /*!< Wakeup from Stop mode flag */
+#define LL_USART_ISR_WUF                        USART_ISR_WUF                 /*!< Wakeup from stop mode flag */
 #define LL_USART_ISR_TEACK                      USART_ISR_TEACK               /*!< Transmit enable acknowledge flag */
 #define LL_USART_ISR_REACK                      USART_ISR_REACK               /*!< Receive enable acknowledge flag */
 #define LL_USART_ISR_TXFE                       USART_ISR_TXFE                /*!< TX FIFO empty flag */
@@ -250,7 +250,7 @@ typedef struct
   * @{
   */
 #define LL_USART_CR1_IDLEIE                     USART_CR1_IDLEIE              /*!< IDLE interrupt enable */
-#define LL_USART_CR1_RXNEIE_RXFNEIE             USART_CR1_RXNEIE_RXFNEIE      /*!< Read data register and RXFIFO not empty interrupt enable */
+#define LL_USART_CR1_RXNEIE_RXFNEIE             USART_CR1_RXNEIE_RXFNEIE      /*!< read data register and RXFIFO not empty interrupt enable */
 #define LL_USART_CR1_TCIE                       USART_CR1_TCIE                /*!< Transmission complete interrupt enable */
 #define LL_USART_CR1_TXEIE_TXFNFIE              USART_CR1_TXEIE_TXFNFIE       /*!< Transmit data register empty and TX FIFO not full interrupt enable */
 #define LL_USART_CR1_PEIE                       USART_CR1_PEIE                /*!< Parity error */
@@ -262,7 +262,7 @@ typedef struct
 #define LL_USART_CR2_LBDIE                      USART_CR2_LBDIE               /*!< LIN break detection interrupt enable */
 #define LL_USART_CR3_EIE                        USART_CR3_EIE                 /*!< Error interrupt enable */
 #define LL_USART_CR3_CTSIE                      USART_CR3_CTSIE               /*!< CTS interrupt enable */
-#define LL_USART_CR3_WUFIE                      USART_CR3_WUFIE               /*!< Wakeup from Stop mode interrupt enable */
+#define LL_USART_CR3_WUFIE                      USART_CR3_WUFIE               /*!< Wakeup from stop mode interrupt enable */
 #define LL_USART_CR3_TXFTIE                     USART_CR3_TXFTIE              /*!< TX FIFO threshold interrupt enable */
 #define LL_USART_CR3_TCBGTIE                    USART_CR3_TCBGTIE             /*!< Transmission complete before guard time interrupt enable */
 #define LL_USART_CR3_RXFTIE                     USART_CR3_RXFTIE              /*!< RX FIFO threshold interrupt enable */
@@ -316,9 +316,9 @@ typedef struct
 /** @defgroup USART_LL_EC_DATAWIDTH Datawidth
   * @{
   */
-#define LL_USART_DATAWIDTH_7B                   USART_CR1_M1            /*!< 7 bits word length : Start bit, 7 data bits, n stop bits */
-#define LL_USART_DATAWIDTH_8B                   0x00000000U             /*!< 8 bits word length : Start bit, 8 data bits, n stop bits */
-#define LL_USART_DATAWIDTH_9B                   USART_CR1_M0            /*!< 9 bits word length : Start bit, 9 data bits, n stop bits */
+#define LL_USART_DATAWIDTH_7B                   USART_CR1_M1            /*!< 7 bits word length : start bit, 7 data bits, n stop bits */
+#define LL_USART_DATAWIDTH_8B                   0x00000000U             /*!< 8 bits word length : start bit, 8 data bits, n stop bits */
+#define LL_USART_DATAWIDTH_9B                   USART_CR1_M0            /*!< 9 bits word length : start bit, 9 data bits, n stop bits */
 /**
   * @}
   */
@@ -390,7 +390,7 @@ typedef struct
   * @}
   */
 
-/** @defgroup USART_LL_EC_STOPBITS Stop Bits
+/** @defgroup USART_LL_EC_STOPBITS stop Bits
   * @{
   */
 #define LL_USART_STOPBITS_0_5                   USART_CR2_STOP_0                           /*!< 0.5 stop bit */
@@ -481,7 +481,7 @@ typedef struct
   * @{
   */
 #define LL_USART_WAKEUP_ON_ADDRESS              0x00000000U                             /*!< Wake up active on address match */
-#define LL_USART_WAKEUP_ON_STARTBIT             USART_CR3_WUS_1                         /*!< Wake up active on Start bit detection */
+#define LL_USART_WAKEUP_ON_STARTBIT             USART_CR3_WUS_1                         /*!< Wake up active on start bit detection */
 #define LL_USART_WAKEUP_ON_RXNE                 (USART_CR3_WUS_0 | USART_CR3_WUS_1)     /*!< Wake up active on RXNE */
 /**
   * @}
@@ -517,8 +517,8 @@ typedef struct
 /** @defgroup USART_LL_EC_DMA_REG_DATA DMA Register Data
   * @{
   */
-#define LL_USART_DMA_REG_DATA_TRANSMIT          0x00000000U          /*!< Get address of data register used for transmission */
-#define LL_USART_DMA_REG_DATA_RECEIVE           0x00000001U          /*!< Get address of data register used for reception */
+#define LL_USART_DMA_REG_DATA_TRANSMIT          0x00000000U          /*!< get address of data register used for transmission */
+#define LL_USART_DMA_REG_DATA_RECEIVE           0x00000001U          /*!< get address of data register used for reception */
 /**
   * @}
   */
@@ -546,7 +546,7 @@ typedef struct
 #define LL_USART_WriteReg(__INSTANCE__, __REG__, __VALUE__) WRITE_REG(__INSTANCE__->__REG__, (__VALUE__))
 
 /**
-  * @brief  Read a value in USART register
+  * @brief  read a value in USART register
   * @param  __INSTANCE__ USART Instance
   * @param  __REG__ Register to be read
   * @retval Register value
@@ -810,10 +810,10 @@ __STATIC_INLINE void LL_USART_ConfigFIFOsThreshold(USART_TypeDef *USARTx, uint32
 
 /**
   * @brief  USART enabled in STOP Mode.
-  * @note   When this function is enabled, USART is able to wake up the MCU from Stop mode, provided that
+  * @note   When this function is enabled, USART is able to wake up the MCU from stop mode, provided that
   *         USART clock selection is HSI or LSE in RCC.
   * @note   Macro IS_UART_WAKEUP_FROMSTOP_INSTANCE(USARTx) can be used to check whether or not
-  *         Wake-up from Stop mode feature is supported by the USARTx instance.
+  *         Wake-up from stop mode feature is supported by the USARTx instance.
   * @rmtoll CR1          UESM          LL_USART_EnableInStopMode
   * @param  USARTx USART Instance
   * @retval None
@@ -825,9 +825,9 @@ __STATIC_INLINE void LL_USART_EnableInStopMode(USART_TypeDef *USARTx)
 
 /**
   * @brief  USART disabled in STOP Mode.
-  * @note   When this function is disabled, USART is not able to wake up the MCU from Stop mode
+  * @note   When this function is disabled, USART is not able to wake up the MCU from stop mode
   * @note   Macro IS_UART_WAKEUP_FROMSTOP_INSTANCE(USARTx) can be used to check whether or not
-  *         Wake-up from Stop mode feature is supported by the USARTx instance.
+  *         Wake-up from stop mode feature is supported by the USARTx instance.
   * @rmtoll CR1          UESM          LL_USART_DisableInStopMode
   * @param  USARTx USART Instance
   * @retval None
@@ -838,9 +838,9 @@ __STATIC_INLINE void LL_USART_DisableInStopMode(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Indicate if USART is enabled in STOP Mode (able to wake up MCU from Stop mode or not)
+  * @brief  Indicate if USART is enabled in STOP Mode (able to wake up MCU from stop mode or not)
   * @note   Macro IS_UART_WAKEUP_FROMSTOP_INSTANCE(USARTx) can be used to check whether or not
-  *         Wake-up from Stop mode feature is supported by the USARTx instance.
+  *         Wake-up from stop mode feature is supported by the USARTx instance.
   * @rmtoll CR1          UESM          LL_USART_IsEnabledInStopMode
   * @param  USARTx USART Instance
   * @retval State of bit (1 or 0).
@@ -1324,11 +1324,11 @@ __STATIC_INLINE uint32_t LL_USART_GetStopBitsLength(const USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Configure Character frame format (Datawidth, Parity control, Stop Bits)
+  * @brief  Configure Character frame format (Datawidth, Parity control, stop Bits)
   * @note   Call of this function is equivalent to following function call sequence :
   *         - Data Width configuration using @ref LL_USART_SetDataWidth() function
   *         - Parity Control and mode configuration using @ref LL_USART_SetParity() function
-  *         - Stop bits configuration using @ref LL_USART_SetStopBitsLength() function
+  *         - stop bits configuration using @ref LL_USART_SetStopBitsLength() function
   * @rmtoll CR1          PS            LL_USART_ConfigCharacter\n
   *         CR1          PCE           LL_USART_ConfigCharacter\n
   *         CR1          M0            LL_USART_ConfigCharacter\n
@@ -1607,12 +1607,12 @@ __STATIC_INLINE uint32_t LL_USART_IsEnabledRxTimeout(const USART_TypeDef *USARTx
 
 /**
   * @brief  Set Address of the USART node.
-  * @note   This is used in multiprocessor communication during Mute mode or Stop mode,
+  * @note   This is used in multiprocessor communication during Mute mode or stop mode,
   *         for wake up with address mark detection.
   * @note   4bits address node is used when 4-bit Address Detection is selected in ADDM7.
   *         (b7-b4 should be set to 0)
   *         8bits address node is used when 7-bit Address Detection is selected in ADDM7.
-  *         (This is used in multiprocessor communication during Mute mode or Stop mode,
+  *         (This is used in multiprocessor communication during Mute mode or stop mode,
   *         for wake up with 7-bit address mark detection.
   *         The MSB of the character sent by the transmitter should be equal to 1.
   *         It may also be used for character detection during normal reception,
@@ -1820,7 +1820,7 @@ __STATIC_INLINE uint32_t LL_USART_IsEnabledOverrunDetect(const USART_TypeDef *US
 /**
   * @brief  Select event type for Wake UP Interrupt Flag (WUS[1:0] bits)
   * @note   Macro IS_UART_WAKEUP_FROMSTOP_INSTANCE(USARTx) can be used to check whether or not
-  *         Wake-up from Stop mode feature is supported by the USARTx instance.
+  *         Wake-up from stop mode feature is supported by the USARTx instance.
   * @rmtoll CR3          WUS           LL_USART_SetWKUPType
   * @param  USARTx USART Instance
   * @param  Type This parameter can be one of the following values:
@@ -1837,7 +1837,7 @@ __STATIC_INLINE void LL_USART_SetWKUPType(USART_TypeDef *USARTx, uint32_t Type)
 /**
   * @brief  Return event type for Wake UP Interrupt Flag (WUS[1:0] bits)
   * @note   Macro IS_UART_WAKEUP_FROMSTOP_INSTANCE(USARTx) can be used to check whether or not
-  *         Wake-up from Stop mode feature is supported by the USARTx instance.
+  *         Wake-up from stop mode feature is supported by the USARTx instance.
   * @rmtoll CR3          WUS           LL_USART_GetWKUPType
   * @param  USARTx USART Instance
   * @retval Returned value can be one of the following values:
@@ -1977,7 +1977,7 @@ __STATIC_INLINE void LL_USART_SetRxTimeout(USART_TypeDef *USARTx, uint32_t Timeo
 }
 
 /**
-  * @brief  Get Receiver Time Out Value (expressed in nb of bits duration)
+  * @brief  get Receiver Time Out Value (expressed in nb of bits duration)
   * @rmtoll RTOR         RTO           LL_USART_GetRxTimeout
   * @param  USARTx USART Instance
   * @retval Value between Min_Data=0x00 and Max_Data=0x00FFFFFF
@@ -2000,7 +2000,7 @@ __STATIC_INLINE void LL_USART_SetBlockLength(USART_TypeDef *USARTx, uint32_t Blo
 }
 
 /**
-  * @brief  Get Block Length value in reception
+  * @brief  get Block Length value in reception
   * @rmtoll RTOR         BLEN          LL_USART_GetBlockLength
   * @param  USARTx USART Instance
   * @retval Value between Min_Data=0x00 and Max_Data=0xFF
@@ -2058,7 +2058,7 @@ __STATIC_INLINE uint32_t LL_USART_IsEnabledIrda(const USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Configure IrDA Power Mode (Normal or Low Power)
+  * @brief  Configure IrDA Power Mode (Normal or low Power)
   * @note   Macro IS_IRDA_INSTANCE(USARTx) can be used to check whether or not
   *         IrDA feature is supported by the USARTx instance.
   * @rmtoll CR3          IRLP          LL_USART_SetIrdaPowerMode
@@ -2074,7 +2074,7 @@ __STATIC_INLINE void LL_USART_SetIrdaPowerMode(USART_TypeDef *USARTx, uint32_t P
 }
 
 /**
-  * @brief  Retrieve IrDA Power Mode configuration (Normal or Low Power)
+  * @brief  Retrieve IrDA Power Mode configuration (Normal or low Power)
   * @note   Macro IS_IRDA_INSTANCE(USARTx) can be used to check whether or not
   *         IrDA feature is supported by the USARTx instance.
   * @rmtoll CR3          IRLP          LL_USART_GetIrdaPowerMode
@@ -2090,7 +2090,7 @@ __STATIC_INLINE uint32_t LL_USART_GetIrdaPowerMode(const USART_TypeDef *USARTx)
 
 /**
   * @brief  Set Irda prescaler value, used for dividing the USART clock source
-  *         to achieve the Irda Low Power frequency (8 bits value)
+  *         to achieve the Irda low Power frequency (8 bits value)
   * @note   Macro IS_IRDA_INSTANCE(USARTx) can be used to check whether or not
   *         IrDA feature is supported by the USARTx instance.
   * @rmtoll GTPR         PSC           LL_USART_SetIrdaPrescaler
@@ -2105,7 +2105,7 @@ __STATIC_INLINE void LL_USART_SetIrdaPrescaler(USART_TypeDef *USARTx, uint32_t P
 
 /**
   * @brief  Return Irda prescaler value, used for dividing the USART clock source
-  *         to achieve the Irda Low Power frequency (8 bits value)
+  *         to achieve the Irda low Power frequency (8 bits value)
   * @note   Macro IS_IRDA_INSTANCE(USARTx) can be used to check whether or not
   *         IrDA feature is supported by the USARTx instance.
   * @rmtoll GTPR         PSC           LL_USART_GetIrdaPrescaler
@@ -2655,11 +2655,11 @@ __STATIC_INLINE uint32_t LL_USART_GetDESignalPolarity(const USART_TypeDef *USART
   *           - IREN bit in the USART_CR3 register,
   *           - HDSEL bit in the USART_CR3 register.
   * @note   Call of this function is equivalent to following function call sequence :
-  *         - Clear LINEN in CR2 using @ref LL_USART_DisableLIN() function
-  *         - Clear CLKEN in CR2 using @ref LL_USART_DisableSCLKOutput() function
-  *         - Clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function
-  *         - Clear IREN in CR3 using @ref LL_USART_DisableIrda() function
-  *         - Clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function
+  *         - clear LINEN in CR2 using @ref LL_USART_DisableLIN() function
+  *         - clear CLKEN in CR2 using @ref LL_USART_DisableSCLKOutput() function
+  *         - clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function
+  *         - clear IREN in CR3 using @ref LL_USART_DisableIrda() function
+  *         - clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function
   * @note   Other remaining configurations items related to Asynchronous Mode
   *         (as Baud Rate, Word length, Parity, ...) should be set using
   *         dedicated functions
@@ -2692,10 +2692,10 @@ __STATIC_INLINE void LL_USART_ConfigAsyncMode(USART_TypeDef *USARTx)
   * @note   Macro IS_USART_INSTANCE(USARTx) can be used to check whether or not
   *         Synchronous mode is supported by the USARTx instance.
   * @note   Call of this function is equivalent to following function call sequence :
-  *         - Clear LINEN in CR2 using @ref LL_USART_DisableLIN() function
-  *         - Clear IREN in CR3 using @ref LL_USART_DisableIrda() function
-  *         - Clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function
-  *         - Clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function
+  *         - clear LINEN in CR2 using @ref LL_USART_DisableLIN() function
+  *         - clear IREN in CR3 using @ref LL_USART_DisableIrda() function
+  *         - clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function
+  *         - clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function
   *         - Set CLKEN in CR2 using @ref LL_USART_EnableSCLKOutput() function
   * @note   Other remaining configurations items related to Synchronous Mode
   *         (as Baud Rate, Word length, Parity, Clock Polarity, ...) should be set using
@@ -2731,11 +2731,11 @@ __STATIC_INLINE void LL_USART_ConfigSyncMode(USART_TypeDef *USARTx)
   * @note   Macro IS_UART_LIN_INSTANCE(USARTx) can be used to check whether or not
   *         LIN feature is supported by the USARTx instance.
   * @note   Call of this function is equivalent to following function call sequence :
-  *         - Clear CLKEN in CR2 using @ref LL_USART_DisableSCLKOutput() function
-  *         - Clear STOP in CR2 using @ref LL_USART_SetStopBitsLength() function
-  *         - Clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function
-  *         - Clear IREN in CR3 using @ref LL_USART_DisableIrda() function
-  *         - Clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function
+  *         - clear CLKEN in CR2 using @ref LL_USART_DisableSCLKOutput() function
+  *         - clear STOP in CR2 using @ref LL_USART_SetStopBitsLength() function
+  *         - clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function
+  *         - clear IREN in CR3 using @ref LL_USART_DisableIrda() function
+  *         - clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function
   *         - Set LINEN in CR2 using @ref LL_USART_EnableLIN() function
   * @note   Other remaining configurations items related to LIN Mode
   *         (as Baud Rate, Word length, LIN Break Detection Length, ...) should be set using
@@ -2772,10 +2772,10 @@ __STATIC_INLINE void LL_USART_ConfigLINMode(USART_TypeDef *USARTx)
   * @note   Macro IS_UART_HALFDUPLEX_INSTANCE(USARTx) can be used to check whether or not
   *         Half-Duplex mode is supported by the USARTx instance.
   * @note   Call of this function is equivalent to following function call sequence :
-  *         - Clear LINEN in CR2 using @ref LL_USART_DisableLIN() function
-  *         - Clear CLKEN in CR2 using @ref LL_USART_DisableSCLKOutput() function
-  *         - Clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function
-  *         - Clear IREN in CR3 using @ref LL_USART_DisableIrda() function
+  *         - clear LINEN in CR2 using @ref LL_USART_DisableLIN() function
+  *         - clear CLKEN in CR2 using @ref LL_USART_DisableSCLKOutput() function
+  *         - clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function
+  *         - clear IREN in CR3 using @ref LL_USART_DisableIrda() function
   *         - Set HDSEL in CR3 using @ref LL_USART_EnableHalfDuplex() function
   * @note   Other remaining configurations items related to Half Duplex Mode
   *         (as Baud Rate, Word length, Parity, ...) should be set using
@@ -2806,15 +2806,15 @@ __STATIC_INLINE void LL_USART_ConfigHalfDuplexMode(USART_TypeDef *USARTx)
   *           - LINEN bit in the USART_CR2 register,
   *           - IREN bit in the USART_CR3 register,
   *           - HDSEL bit in the USART_CR3 register.
-  *         This function also configures Stop bits to 1.5 bits and
+  *         This function also configures stop bits to 1.5 bits and
   *         sets the USART in Smartcard mode (SCEN bit).
   *         Clock Output is also enabled (CLKEN).
   * @note   Macro IS_SMARTCARD_INSTANCE(USARTx) can be used to check whether or not
   *         Smartcard feature is supported by the USARTx instance.
   * @note   Call of this function is equivalent to following function call sequence :
-  *         - Clear LINEN in CR2 using @ref LL_USART_DisableLIN() function
-  *         - Clear IREN in CR3 using @ref LL_USART_DisableIrda() function
-  *         - Clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function
+  *         - clear LINEN in CR2 using @ref LL_USART_DisableLIN() function
+  *         - clear IREN in CR3 using @ref LL_USART_DisableIrda() function
+  *         - clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function
   *         - Configure STOP in CR2 using @ref LL_USART_SetStopBitsLength() function
   *         - Set CLKEN in CR2 using @ref LL_USART_EnableSCLKOutput() function
   *         - Set SCEN in CR3 using @ref LL_USART_EnableSmartcard() function
@@ -2855,10 +2855,10 @@ __STATIC_INLINE void LL_USART_ConfigSmartcardMode(USART_TypeDef *USARTx)
   * @note   Macro IS_IRDA_INSTANCE(USARTx) can be used to check whether or not
   *         IrDA feature is supported by the USARTx instance.
   * @note   Call of this function is equivalent to following function call sequence :
-  *         - Clear LINEN in CR2 using @ref LL_USART_DisableLIN() function
-  *         - Clear CLKEN in CR2 using @ref LL_USART_DisableSCLKOutput() function
-  *         - Clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function
-  *         - Clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function
+  *         - clear LINEN in CR2 using @ref LL_USART_DisableLIN() function
+  *         - clear CLKEN in CR2 using @ref LL_USART_DisableSCLKOutput() function
+  *         - clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function
+  *         - clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function
   *         - Configure STOP in CR2 using @ref LL_USART_SetStopBitsLength() function
   *         - Set IREN in CR3 using @ref LL_USART_EnableIrda() function
   * @note   Other remaining configurations items related to Irda Mode
@@ -2896,11 +2896,11 @@ __STATIC_INLINE void LL_USART_ConfigIrdaMode(USART_TypeDef *USARTx)
   *           - IREN bit in the USART_CR3 register,
   *           - HDSEL bit in the USART_CR3 register.
   * @note   Call of this function is equivalent to following function call sequence :
-  *         - Clear LINEN in CR2 using @ref LL_USART_DisableLIN() function
-  *         - Clear CLKEN in CR2 using @ref LL_USART_DisableSCLKOutput() function
-  *         - Clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function
-  *         - Clear IREN in CR3 using @ref LL_USART_DisableIrda() function
-  *         - Clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function
+  *         - clear LINEN in CR2 using @ref LL_USART_DisableLIN() function
+  *         - clear CLKEN in CR2 using @ref LL_USART_DisableSCLKOutput() function
+  *         - clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function
+  *         - clear IREN in CR3 using @ref LL_USART_DisableIrda() function
+  *         - clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function
   * @note   Other remaining configurations items related to Multi processor Mode
   *         (as Baud Rate, Wake Up Method, Node address, ...) should be set using
   *         dedicated functions
@@ -2988,7 +2988,7 @@ __STATIC_INLINE uint32_t LL_USART_IsActiveFlag_IDLE(const USART_TypeDef *USARTx)
 #define LL_USART_IsActiveFlag_RXNE  LL_USART_IsActiveFlag_RXNE_RXFNE /* Redefinition for legacy purpose */
 
 /**
-  * @brief  Check if the USART Read Data Register or USART RX FIFO Not Empty Flag is set or not
+  * @brief  Check if the USART read Data Register or USART RX FIFO Not Empty Flag is set or not
   * @note   Macro IS_UART_FIFO_INSTANCE(USARTx) can be used to check whether or not
   *         FIFO mode feature is supported by the USARTx instance.
   * @rmtoll ISR          RXNE_RXFNE    LL_USART_IsActiveFlag_RXNE_RXFNE
@@ -3175,7 +3175,7 @@ __STATIC_INLINE uint32_t LL_USART_IsActiveFlag_RWU(const USART_TypeDef *USARTx)
 /**
   * @brief  Check if the USART Wake Up from stop mode Flag is set or not
   * @note   Macro IS_UART_WAKEUP_FROMSTOP_INSTANCE(USARTx) can be used to check whether or not
-  *         Wake-up from Stop mode feature is supported by the USARTx instance.
+  *         Wake-up from stop mode feature is supported by the USARTx instance.
   * @rmtoll ISR          WUF           LL_USART_IsActiveFlag_WKUP
   * @param  USARTx USART Instance
   * @retval State of bit (1 or 0).
@@ -3271,7 +3271,7 @@ __STATIC_INLINE uint32_t LL_USART_IsActiveFlag_RXFT(const USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Clear Parity Error Flag
+  * @brief  clear Parity Error Flag
   * @rmtoll ICR          PECF          LL_USART_ClearFlag_PE
   * @param  USARTx USART Instance
   * @retval None
@@ -3282,7 +3282,7 @@ __STATIC_INLINE void LL_USART_ClearFlag_PE(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Clear Framing Error Flag
+  * @brief  clear Framing Error Flag
   * @rmtoll ICR          FECF          LL_USART_ClearFlag_FE
   * @param  USARTx USART Instance
   * @retval None
@@ -3293,7 +3293,7 @@ __STATIC_INLINE void LL_USART_ClearFlag_FE(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Clear Noise Error detected Flag
+  * @brief  clear Noise Error detected Flag
   * @rmtoll ICR          NECF          LL_USART_ClearFlag_NE
   * @param  USARTx USART Instance
   * @retval None
@@ -3304,7 +3304,7 @@ __STATIC_INLINE void LL_USART_ClearFlag_NE(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Clear OverRun Error Flag
+  * @brief  clear OverRun Error Flag
   * @rmtoll ICR          ORECF         LL_USART_ClearFlag_ORE
   * @param  USARTx USART Instance
   * @retval None
@@ -3315,7 +3315,7 @@ __STATIC_INLINE void LL_USART_ClearFlag_ORE(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Clear IDLE line detected Flag
+  * @brief  clear IDLE line detected Flag
   * @rmtoll ICR          IDLECF        LL_USART_ClearFlag_IDLE
   * @param  USARTx USART Instance
   * @retval None
@@ -3326,7 +3326,7 @@ __STATIC_INLINE void LL_USART_ClearFlag_IDLE(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Clear TX FIFO Empty Flag
+  * @brief  clear TX FIFO Empty Flag
   * @note   Macro IS_UART_FIFO_INSTANCE(USARTx) can be used to check whether or not
   *         FIFO mode feature is supported by the USARTx instance.
   * @rmtoll ICR          TXFECF        LL_USART_ClearFlag_TXFE
@@ -3339,7 +3339,7 @@ __STATIC_INLINE void LL_USART_ClearFlag_TXFE(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Clear Transmission Complete Flag
+  * @brief  clear Transmission Complete Flag
   * @rmtoll ICR          TCCF          LL_USART_ClearFlag_TC
   * @param  USARTx USART Instance
   * @retval None
@@ -3350,7 +3350,7 @@ __STATIC_INLINE void LL_USART_ClearFlag_TC(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Clear Smartcard Transmission Complete Before Guard Time Flag
+  * @brief  clear Smartcard Transmission Complete Before Guard Time Flag
   * @rmtoll ICR          TCBGTCF       LL_USART_ClearFlag_TCBGT
   * @param  USARTx USART Instance
   * @retval None
@@ -3361,7 +3361,7 @@ __STATIC_INLINE void LL_USART_ClearFlag_TCBGT(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Clear LIN Break Detection Flag
+  * @brief  clear LIN Break Detection Flag
   * @note   Macro IS_UART_LIN_INSTANCE(USARTx) can be used to check whether or not
   *         LIN feature is supported by the USARTx instance.
   * @rmtoll ICR          LBDCF         LL_USART_ClearFlag_LBD
@@ -3374,7 +3374,7 @@ __STATIC_INLINE void LL_USART_ClearFlag_LBD(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Clear CTS Interrupt Flag
+  * @brief  clear CTS Interrupt Flag
   * @note   Macro IS_UART_HWFLOW_INSTANCE(USARTx) can be used to check whether or not
   *         Hardware Flow control feature is supported by the USARTx instance.
   * @rmtoll ICR          CTSCF         LL_USART_ClearFlag_nCTS
@@ -3387,7 +3387,7 @@ __STATIC_INLINE void LL_USART_ClearFlag_nCTS(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Clear Receiver Time Out Flag
+  * @brief  clear Receiver Time Out Flag
   * @rmtoll ICR          RTOCF         LL_USART_ClearFlag_RTO
   * @param  USARTx USART Instance
   * @retval None
@@ -3398,7 +3398,7 @@ __STATIC_INLINE void LL_USART_ClearFlag_RTO(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Clear End Of Block Flag
+  * @brief  clear End Of Block Flag
   * @note   Macro IS_SMARTCARD_INSTANCE(USARTx) can be used to check whether or not
   *         Smartcard feature is supported by the USARTx instance.
   * @rmtoll ICR          EOBCF         LL_USART_ClearFlag_EOB
@@ -3411,7 +3411,7 @@ __STATIC_INLINE void LL_USART_ClearFlag_EOB(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Clear SPI Slave Underrun Flag
+  * @brief  clear SPI Slave Underrun Flag
   * @note   Macro IS_UART_SPI_SLAVE_INSTANCE(USARTx) can be used to check whether or not
   *         SPI Slave mode feature is supported by the USARTx instance.
   * @rmtoll ICR          UDRCF         LL_USART_ClearFlag_UDR
@@ -3424,7 +3424,7 @@ __STATIC_INLINE void LL_USART_ClearFlag_UDR(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Clear Character Match Flag
+  * @brief  clear Character Match Flag
   * @rmtoll ICR          CMCF          LL_USART_ClearFlag_CM
   * @param  USARTx USART Instance
   * @retval None
@@ -3435,9 +3435,9 @@ __STATIC_INLINE void LL_USART_ClearFlag_CM(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Clear Wake Up from stop mode Flag
+  * @brief  clear Wake Up from stop mode Flag
   * @note   Macro IS_UART_WAKEUP_FROMSTOP_INSTANCE(USARTx) can be used to check whether or not
-  *         Wake-up from Stop mode feature is supported by the USARTx instance.
+  *         Wake-up from stop mode feature is supported by the USARTx instance.
   * @rmtoll ICR          WUCF          LL_USART_ClearFlag_WKUP
   * @param  USARTx USART Instance
   * @retval None
@@ -3619,9 +3619,9 @@ __STATIC_INLINE void LL_USART_EnableIT_CTS(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Enable Wake Up from Stop Mode Interrupt
+  * @brief  Enable Wake Up from stop Mode Interrupt
   * @note   Macro IS_UART_WAKEUP_FROMSTOP_INSTANCE(USARTx) can be used to check whether or not
-  *         Wake-up from Stop mode feature is supported by the USARTx instance.
+  *         Wake-up from stop mode feature is supported by the USARTx instance.
   * @rmtoll CR3          WUFIE         LL_USART_EnableIT_WKUP
   * @param  USARTx USART Instance
   * @retval None
@@ -3836,9 +3836,9 @@ __STATIC_INLINE void LL_USART_DisableIT_CTS(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Disable Wake Up from Stop Mode Interrupt
+  * @brief  Disable Wake Up from stop Mode Interrupt
   * @note   Macro IS_UART_WAKEUP_FROMSTOP_INSTANCE(USARTx) can be used to check whether or not
-  *         Wake-up from Stop mode feature is supported by the USARTx instance.
+  *         Wake-up from stop mode feature is supported by the USARTx instance.
   * @rmtoll CR3          WUFIE         LL_USART_DisableIT_WKUP
   * @param  USARTx USART Instance
   * @retval None
@@ -4049,9 +4049,9 @@ __STATIC_INLINE uint32_t LL_USART_IsEnabledIT_CTS(const USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Check if the USART Wake Up from Stop Mode Interrupt is enabled or disabled.
+  * @brief  Check if the USART Wake Up from stop Mode Interrupt is enabled or disabled.
   * @note   Macro IS_UART_WAKEUP_FROMSTOP_INSTANCE(USARTx) can be used to check whether or not
-  *         Wake-up from Stop mode feature is supported by the USARTx instance.
+  *         Wake-up from stop mode feature is supported by the USARTx instance.
   * @rmtoll CR3          WUFIE         LL_USART_IsEnabledIT_WKUP
   * @param  USARTx USART Instance
   * @retval State of bit (1 or 0).
@@ -4208,7 +4208,7 @@ __STATIC_INLINE uint32_t LL_USART_IsEnabledDMADeactOnRxErr(const USART_TypeDef *
 }
 
 /**
-  * @brief  Get the data register address used for DMA transfer
+  * @brief  get the data register address used for DMA transfer
   * @rmtoll RDR          RDR           LL_USART_DMA_GetRegAddr\n
   * @rmtoll TDR          TDR           LL_USART_DMA_GetRegAddr
   * @param  USARTx USART Instance
@@ -4244,7 +4244,7 @@ __STATIC_INLINE uint32_t LL_USART_DMA_GetRegAddr(const USART_TypeDef *USARTx, ui
   */
 
 /**
-  * @brief  Read Receiver Data register (Receive Data value, 8 bits)
+  * @brief  read Receiver Data register (Receive Data value, 8 bits)
   * @rmtoll RDR          RDR           LL_USART_ReceiveData8
   * @param  USARTx USART Instance
   * @retval Value between Min_Data=0x00 and Max_Data=0xFF
@@ -4255,7 +4255,7 @@ __STATIC_INLINE uint8_t LL_USART_ReceiveData8(const USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Read Receiver Data register (Receive Data value, 9 bits)
+  * @brief  read Receiver Data register (Receive Data value, 9 bits)
   * @rmtoll RDR          RDR           LL_USART_ReceiveData9
   * @param  USARTx USART Instance
   * @retval Value between Min_Data=0x00 and Max_Data=0x1FF
@@ -4322,7 +4322,7 @@ __STATIC_INLINE void LL_USART_RequestBreakSending(USART_TypeDef *USARTx)
 }
 
 /**
-  * @brief  Put USART in mute mode and set the RWU flag
+  * @brief  put USART in mute mode and set the RWU flag
   * @rmtoll RQR          MMRQ          LL_USART_RequestEnterMuteMode
   * @param  USARTx USART Instance
   * @retval None

@@ -1,0 +1,595 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: STM32::USART类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_s_t_m32_1_1_u_s_a_r_t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_s_t_m32_1_1_u_s_a_r_t-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">STM32::USART类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>USART类  
+ <a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ac6fdb430e69210d19af6b3df0b6020ba" id="r_ac6fdb430e69210d19af6b3df0b6020ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6fdb430e69210d19af6b3df0b6020ba">USART</a> ()=default</td></tr>
+<tr class="separator:ac6fdb430e69210d19af6b3df0b6020ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23f77b4677c9fa2e0d27b54e5e3371de" id="r_a23f77b4677c9fa2e0d27b54e5e3371de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23f77b4677c9fa2e0d27b54e5e3371de">~USART</a> ()=default</td></tr>
+<tr class="separator:a23f77b4677c9fa2e0d27b54e5e3371de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27b937e3634b64fc8e824794299e77c1" id="r_a27b937e3634b64fc8e824794299e77c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27b937e3634b64fc8e824794299e77c1">USART</a> (USART_TypeDef *<a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a>, bool IsUseIrq=false)</td></tr>
+<tr class="memdesc:a27b937e3634b64fc8e824794299e77c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">USART类构造函数  <br /></td></tr>
+<tr class="separator:a27b937e3634b64fc8e824794299e77c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcce7c8066d55f3c99e8637b45e9c37b" id="r_adcce7c8066d55f3c99e8637b45e9c37b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcce7c8066d55f3c99e8637b45e9c37b">USART</a> (USART_TypeDef *<a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a>, DMA_TypeDef *TX_DMA, <a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">DMA_Stream</a> TX_DMA_Stream, DMA_TypeDef *RX_DMA, <a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">DMA_Stream</a> RX_DMA_Stream)</td></tr>
+<tr class="memdesc:adcce7c8066d55f3c99e8637b45e9c37b"><td class="mdescLeft">&#160;</td><td class="mdescRight">USART类构造函数  <br /></td></tr>
+<tr class="separator:adcce7c8066d55f3c99e8637b45e9c37b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38a77ba4ba71b14233e343391b3a588a" id="r_a38a77ba4ba71b14233e343391b3a588a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38a77ba4ba71b14233e343391b3a588a">startReceive_DMA</a> (void)</td></tr>
+<tr class="memdesc:a38a77ba4ba71b14233e343391b3a588a"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动接收DMA  <br /></td></tr>
+<tr class="separator:a38a77ba4ba71b14233e343391b3a588a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a912471cc501edec66d0fe8dea1279cb5" id="r_a912471cc501edec66d0fe8dea1279cb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a912471cc501edec66d0fe8dea1279cb5">stopReceive_DMA</a> (void)</td></tr>
+<tr class="memdesc:a912471cc501edec66d0fe8dea1279cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止接收DMA  <br /></td></tr>
+<tr class="separator:a912471cc501edec66d0fe8dea1279cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e16d1703903313fd1aedff9f8317b14" id="r_a9e16d1703903313fd1aedff9f8317b14"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e16d1703903313fd1aedff9f8317b14">getReceivedSize</a> (void)</td></tr>
+<tr class="memdesc:a9e16d1703903313fd1aedff9f8317b14"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取接收到的数据大小  <br /></td></tr>
+<tr class="separator:a9e16d1703903313fd1aedff9f8317b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9f219c9bd568a4ce0b3d89c6b997a09" id="r_ae9f219c9bd568a4ce0b3d89c6b997a09"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9f219c9bd568a4ce0b3d89c6b997a09">getReceivedData</a> (uint8_t *buffer, uint32_t number)</td></tr>
+<tr class="memdesc:ae9f219c9bd568a4ce0b3d89c6b997a09"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取接收到的数据  <br /></td></tr>
+<tr class="separator:ae9f219c9bd568a4ce0b3d89c6b997a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1627200e7f0794a4b95a34dd70a0906e" id="r_a1627200e7f0794a4b95a34dd70a0906e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1627200e7f0794a4b95a34dd70a0906e">isReceivedFinished</a> (void)</td></tr>
+<tr class="memdesc:a1627200e7f0794a4b95a34dd70a0906e"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查接收是否完成  <br /></td></tr>
+<tr class="separator:a1627200e7f0794a4b95a34dd70a0906e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae139a1d819fde2557d040be590b3576d" id="r_ae139a1d819fde2557d040be590b3576d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae139a1d819fde2557d040be590b3576d">operator&lt;&lt;</a> (const char *pStr)</td></tr>
+<tr class="memdesc:ae139a1d819fde2557d040be590b3576d"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt;&lt;运算符重载，用于发送字符串  <br /></td></tr>
+<tr class="separator:ae139a1d819fde2557d040be590b3576d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd0334c0ed3d8b4c8b8d5e42d1b62727" id="r_acd0334c0ed3d8b4c8b8d5e42d1b62727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd0334c0ed3d8b4c8b8d5e42d1b62727">operator&lt;&lt;</a> (const char charactor)</td></tr>
+<tr class="memdesc:acd0334c0ed3d8b4c8b8d5e42d1b62727"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt;&lt;运算符重载，用于发送字符  <br /></td></tr>
+<tr class="separator:acd0334c0ed3d8b4c8b8d5e42d1b62727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf70829e25e80a9921fb3cccc279a03f" id="r_abf70829e25e80a9921fb3cccc279a03f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf70829e25e80a9921fb3cccc279a03f">operator&lt;&lt;</a> (uint32_t val)</td></tr>
+<tr class="memdesc:abf70829e25e80a9921fb3cccc279a03f"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt;&lt;运算符重载，用于发送无符号整数  <br /></td></tr>
+<tr class="separator:abf70829e25e80a9921fb3cccc279a03f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad27f21e9c731aae05c479f987298616d" id="r_ad27f21e9c731aae05c479f987298616d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad27f21e9c731aae05c479f987298616d">operator&lt;&lt;</a> (int val)</td></tr>
+<tr class="memdesc:ad27f21e9c731aae05c479f987298616d"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt;&lt;运算符重载，用于发送整数  <br /></td></tr>
+<tr class="separator:ad27f21e9c731aae05c479f987298616d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26c3578179c2c7f961285cde77b16628" id="r_a26c3578179c2c7f961285cde77b16628"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26c3578179c2c7f961285cde77b16628">operator&lt;&lt;</a> (double val)</td></tr>
+<tr class="memdesc:a26c3578179c2c7f961285cde77b16628"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt;&lt;运算符重载，用于发送浮点数  <br /></td></tr>
+<tr class="separator:a26c3578179c2c7f961285cde77b16628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe89106b73c059b2d2d9cdb62110e591" id="r_afe89106b73c059b2d2d9cdb62110e591"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe89106b73c059b2d2d9cdb62110e591">operator&lt;&lt;</a> (<a class="el" href="struct_s_t_m32_1_1_e_n_d_l.html">ENDL</a> &amp;e)</td></tr>
+<tr class="memdesc:afe89106b73c059b2d2d9cdb62110e591"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt;&lt;运算符重载，用于发送换行符  <br /></td></tr>
+<tr class="separator:afe89106b73c059b2d2d9cdb62110e591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb77d98f3dd0e7f71db3c0e393abbfcc" id="r_adb77d98f3dd0e7f71db3c0e393abbfcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb77d98f3dd0e7f71db3c0e393abbfcc">irq</a> (void)</td></tr>
+<tr class="memdesc:adb77d98f3dd0e7f71db3c0e393abbfcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">USART中断服务函数  <br /></td></tr>
+<tr class="separator:adb77d98f3dd0e7f71db3c0e393abbfcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f263f66be7f8c2c28fbff74c6f0ae5" id="r_ad7f263f66be7f8c2c28fbff74c6f0ae5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7f263f66be7f8c2c28fbff74c6f0ae5">irq_TXDMA</a> (void)</td></tr>
+<tr class="memdesc:ad7f263f66be7f8c2c28fbff74c6f0ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">USART发送的DMA中断服务函数  <br /></td></tr>
+<tr class="separator:ad7f263f66be7f8c2c28fbff74c6f0ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc4f9d52b2f0fd83886e4f06008b04ef" id="r_afc4f9d52b2f0fd83886e4f06008b04ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc4f9d52b2f0fd83886e4f06008b04ef">irq_RXDMA</a> (void)</td></tr>
+<tr class="memdesc:afc4f9d52b2f0fd83886e4f06008b04ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">USART接收的DMA中断服务函数  <br /></td></tr>
+<tr class="separator:afc4f9d52b2f0fd83886e4f06008b04ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>USART类 </p>
+<p>用于控制USART通信。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ac6fdb430e69210d19af6b3df0b6020ba" name="ac6fdb430e69210d19af6b3df0b6020ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6fdb430e69210d19af6b3df0b6020ba">&#9670;&#160;</a></span>USART() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">STM32::USART::USART </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a23f77b4677c9fa2e0d27b54e5e3371de" name="a23f77b4677c9fa2e0d27b54e5e3371de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23f77b4677c9fa2e0d27b54e5e3371de">&#9670;&#160;</a></span>~USART()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">STM32::USART::~USART </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a27b937e3634b64fc8e824794299e77c1" name="a27b937e3634b64fc8e824794299e77c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27b937e3634b64fc8e824794299e77c1">&#9670;&#160;</a></span>USART() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">USART::USART </td>
+          <td>(</td>
+          <td class="paramtype">USART_TypeDef *</td>          <td class="paramname"><span class="paramname"><em>USART</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>IsUseIrq</em><span class="paramdefsep"> = </span><span class="paramdefval">false</span></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USART类构造函数 </p>
+<p>无DMA模式。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html" title="USART类">USART</a></td><td>USART指针 </td></tr>
+    <tr><td class="paramname">IsUseIrq</td><td>是否使用IRQ，默认为false </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adcce7c8066d55f3c99e8637b45e9c37b" name="adcce7c8066d55f3c99e8637b45e9c37b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcce7c8066d55f3c99e8637b45e9c37b">&#9670;&#160;</a></span>USART() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">USART::USART </td>
+          <td>(</td>
+          <td class="paramtype">USART_TypeDef *</td>          <td class="paramname"><span class="paramname"><em>USART</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DMA_TypeDef *</td>          <td class="paramname"><span class="paramname"><em>TX_DMA</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">DMA_Stream</a></td>          <td class="paramname"><span class="paramname"><em>TX_DMA_Stream</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DMA_TypeDef *</td>          <td class="paramname"><span class="paramname"><em>RX_DMA</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">DMA_Stream</a></td>          <td class="paramname"><span class="paramname"><em>RX_DMA_Stream</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USART类构造函数 </p>
+<p>DMA模式。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html" title="USART类">USART</a></td><td>USART指针 </td></tr>
+    <tr><td class="paramname">TX_DMA</td><td>发送DMA指针 </td></tr>
+    <tr><td class="paramname">TX_DMA_Stream</td><td>发送DMA流 </td></tr>
+    <tr><td class="paramname">RX_DMA</td><td>接收DMA指针 </td></tr>
+    <tr><td class="paramname">RX_DMA_Stream</td><td>接收DMA流 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ae9f219c9bd568a4ce0b3d89c6b997a09" name="ae9f219c9bd568a4ce0b3d89c6b997a09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9f219c9bd568a4ce0b3d89c6b997a09">&#9670;&#160;</a></span>getReceivedData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool USART::getReceivedData </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>buffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>number</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取接收到的数据 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>缓冲区指针 </td></tr>
+    <tr><td class="paramname">number</td><td>数据个数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 成功获取到数据 </dd>
+<dd>
+false 所需数据超过接收FIFO缓冲区数据数量 </dd></dl>
+
+</div>
+</div>
+<a id="a9e16d1703903313fd1aedff9f8317b14" name="a9e16d1703903313fd1aedff9f8317b14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e16d1703903313fd1aedff9f8317b14">&#9670;&#160;</a></span>getReceivedSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t USART::getReceivedSize </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取接收到的数据大小 </p>
+<dl class="section return"><dt>返回</dt><dd>uint32_t 接收到的数据大小 </dd></dl>
+
+</div>
+</div>
+<a id="adb77d98f3dd0e7f71db3c0e393abbfcc" name="adb77d98f3dd0e7f71db3c0e393abbfcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb77d98f3dd0e7f71db3c0e393abbfcc">&#9670;&#160;</a></span>irq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void USART::irq </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USART中断服务函数 </p>
+
+</div>
+</div>
+<a id="afc4f9d52b2f0fd83886e4f06008b04ef" name="afc4f9d52b2f0fd83886e4f06008b04ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc4f9d52b2f0fd83886e4f06008b04ef">&#9670;&#160;</a></span>irq_RXDMA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void USART::irq_RXDMA </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USART接收的DMA中断服务函数 </p>
+
+</div>
+</div>
+<a id="ad7f263f66be7f8c2c28fbff74c6f0ae5" name="ad7f263f66be7f8c2c28fbff74c6f0ae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f263f66be7f8c2c28fbff74c6f0ae5">&#9670;&#160;</a></span>irq_TXDMA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void USART::irq_TXDMA </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USART发送的DMA中断服务函数 </p>
+
+</div>
+</div>
+<a id="a1627200e7f0794a4b95a34dd70a0906e" name="a1627200e7f0794a4b95a34dd70a0906e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1627200e7f0794a4b95a34dd70a0906e">&#9670;&#160;</a></span>isReceivedFinished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool USART::isReceivedFinished </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查接收是否完成 </p>
+<dl class="section return"><dt>返回</dt><dd>true 接收完成 </dd>
+<dd>
+false 接收尚未完成 </dd></dl>
+
+</div>
+</div>
+<a id="ae139a1d819fde2557d040be590b3576d" name="ae139a1d819fde2557d040be590b3576d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae139a1d819fde2557d040be590b3576d">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a> &amp; USART::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>pStr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&lt;&lt;运算符重载，用于发送字符串 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pStr</td><td>字符串指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html" title="USART类">USART</a>&amp; 返回USART引用 </dd></dl>
+
+</div>
+</div>
+<a id="acd0334c0ed3d8b4c8b8d5e42d1b62727" name="acd0334c0ed3d8b4c8b8d5e42d1b62727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd0334c0ed3d8b4c8b8d5e42d1b62727">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a> &amp; USART::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const char</td>          <td class="paramname"><span class="paramname"><em>charactor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&lt;&lt;运算符重载，用于发送字符 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">charactor</td><td>字符 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html" title="USART类">USART</a>&amp; 返回USART引用 </dd></dl>
+
+</div>
+</div>
+<a id="a26c3578179c2c7f961285cde77b16628" name="a26c3578179c2c7f961285cde77b16628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c3578179c2c7f961285cde77b16628">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a> &amp; USART::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&lt;&lt;运算符重载，用于发送浮点数 </p>
+<p>修改宏USART_DMA_TX_FLOAT_PRECISION，可以扩展小数显示位数</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>浮点数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html" title="USART类">USART</a>&amp; 返回USART引用 </dd></dl>
+
+</div>
+</div>
+<a id="afe89106b73c059b2d2d9cdb62110e591" name="afe89106b73c059b2d2d9cdb62110e591"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe89106b73c059b2d2d9cdb62110e591">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a> &amp; USART::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_t_m32_1_1_e_n_d_l.html">ENDL</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&lt;&lt;运算符重载，用于发送换行符 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>换行符 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html" title="USART类">USART</a>&amp; 返回USART引用 </dd></dl>
+
+</div>
+</div>
+<a id="ad27f21e9c731aae05c479f987298616d" name="ad27f21e9c731aae05c479f987298616d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad27f21e9c731aae05c479f987298616d">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a> &amp; USART::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&lt;&lt;运算符重载，用于发送整数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>整数 int </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html" title="USART类">USART</a>&amp; 返回USART引用 </dd></dl>
+
+</div>
+</div>
+<a id="abf70829e25e80a9921fb3cccc279a03f" name="abf70829e25e80a9921fb3cccc279a03f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf70829e25e80a9921fb3cccc279a03f">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a> &amp; USART::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&lt;&lt;运算符重载，用于发送无符号整数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>无符号整数 uint32_t </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html" title="USART类">USART</a>&amp; 返回USART引用 </dd></dl>
+
+</div>
+</div>
+<a id="a38a77ba4ba71b14233e343391b3a588a" name="a38a77ba4ba71b14233e343391b3a588a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38a77ba4ba71b14233e343391b3a588a">&#9670;&#160;</a></span>startReceive_DMA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool USART::startReceive_DMA </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>启动接收DMA </p>
+<dl class="section return"><dt>返回</dt><dd>true 成功启动 </dd>
+<dd>
+false 未开启DMA模式 </dd></dl>
+
+</div>
+</div>
+<a id="a912471cc501edec66d0fe8dea1279cb5" name="a912471cc501edec66d0fe8dea1279cb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a912471cc501edec66d0fe8dea1279cb5">&#9670;&#160;</a></span>stopReceive_DMA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void USART::stopReceive_DMA </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>停止接收DMA </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespace_s_t_m32.html">STM32</a></li><li class="navelem"><a class="el" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

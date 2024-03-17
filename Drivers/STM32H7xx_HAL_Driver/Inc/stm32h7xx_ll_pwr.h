@@ -64,29 +64,29 @@ extern "C" {
   * @{
   */
 
-/** @defgroup PWR_LL_EC_CLEAR_FLAG Clear Flags Defines
+/** @defgroup PWR_LL_EC_CLEAR_FLAG clear Flags Defines
   * @brief    Flags defines which can be used with LL_PWR_WriteReg function
   * @{
   */
-#define LL_PWR_FLAG_CPU_CSSF          PWR_CPUCR_CSSF      /*!< Clear flags for CPU  */
+#define LL_PWR_FLAG_CPU_CSSF          PWR_CPUCR_CSSF      /*!< clear flags for CPU  */
 #if defined (DUAL_CORE)
 #define LL_PWR_FLAG_CPU2_CSSF         PWR_CPU2CR_CSSF     /*!< Clear flags for CPU2 */
 #endif /* DUAL_CORE */
-#define LL_PWR_FLAG_WKUPCR_WKUPC6     PWR_WKUPCR_WKUPC6   /*!< Clear PC1 WKUP flag  */
+#define LL_PWR_FLAG_WKUPCR_WKUPC6     PWR_WKUPCR_WKUPC6   /*!< clear PC1 WKUP flag  */
 #if defined (PWR_WKUPCR_WKUPC5)
-#define LL_PWR_FLAG_WKUPCR_WKUPC5     PWR_WKUPCR_WKUPC5   /*!< Clear PI11 WKUP flag */
+#define LL_PWR_FLAG_WKUPCR_WKUPC5     PWR_WKUPCR_WKUPC5   /*!< clear PI11 WKUP flag */
 #endif /* defined (PWR_WKUPCR_WKUPC5) */
-#define LL_PWR_FLAG_WKUPCR_WKUPC4     PWR_WKUPCR_WKUPC4   /*!< Clear PC13 WKUP flag */
+#define LL_PWR_FLAG_WKUPCR_WKUPC4     PWR_WKUPCR_WKUPC4   /*!< clear PC13 WKUP flag */
 #if defined (PWR_WKUPCR_WKUPC3)
-#define LL_PWR_FLAG_WKUPCR_WKUPC3     PWR_WKUPCR_WKUPC3   /*!< Clear PI8 WKUP flag  */
+#define LL_PWR_FLAG_WKUPCR_WKUPC3     PWR_WKUPCR_WKUPC3   /*!< clear PI8 WKUP flag  */
 #endif /* defined (PWR_WKUPCR_WKUPC3) */
-#define LL_PWR_FLAG_WKUPCR_WKUPC2     PWR_WKUPCR_WKUPC2   /*!< Clear PA2 WKUP flag  */
-#define LL_PWR_FLAG_WKUPCR_WKUPC1     PWR_WKUPCR_WKUPC1   /*!< Clear PA0 WKUP flag  */
+#define LL_PWR_FLAG_WKUPCR_WKUPC2     PWR_WKUPCR_WKUPC2   /*!< clear PA2 WKUP flag  */
+#define LL_PWR_FLAG_WKUPCR_WKUPC1     PWR_WKUPCR_WKUPC1   /*!< clear PA0 WKUP flag  */
 /**
   * @}
   */
 
-/** @defgroup PWR_LL_EC_GET_FLAG Get Flags Defines
+/** @defgroup PWR_LL_EC_GET_FLAG get Flags Defines
   * @brief    Flags defines which can be used with LL_PWR_ReadReg function
   * @{
   */
@@ -151,7 +151,7 @@ extern "C" {
   * @{
   */
 #if defined (PWR_CPUCR_PDDS_D2)
-#define LL_PWR_CPU_MODE_D1STOP        0x00000000U           /*!< Enter D1 domain to Stop mode when the CPU enters deepsleep       */
+#define LL_PWR_CPU_MODE_D1STOP        0x00000000U           /*!< Enter D1 domain to stop mode when the CPU enters deepsleep       */
 #define LL_PWR_CPU_MODE_D1STANDBY     PWR_CPUCR_PDDS_D1     /*!< Enter D1 domain to Standby mode when the CPU enters deepsleep    */
 #else
 #define LL_PWR_CPU_MODE_CDSTOP        0x00000000U           /*!< Enter CD domain to Stop mode when the CPU enters deepsleep       */
@@ -159,13 +159,13 @@ extern "C" {
 #endif /* PWR_CPUCR_PDDS_D2 */
 
 #if defined (PWR_CPUCR_PDDS_D2)
-#define LL_PWR_CPU_MODE_D2STOP        0x00000000U           /*!< Enter D2 domain to Stop mode when the CPU enters deepsleep       */
+#define LL_PWR_CPU_MODE_D2STOP        0x00000000U           /*!< Enter D2 domain to stop mode when the CPU enters deepsleep       */
 #define LL_PWR_CPU_MODE_D2STANDBY     PWR_CPUCR_PDDS_D2     /*!< Enter D2 domain to Standby mode when the CPU enters deepsleep    */
 #endif /* PWR_CPUCR_PDDS_D2 */
 
 #if defined (PWR_CPUCR_PDDS_D2)
 #define LL_PWR_CPU_MODE_D3RUN         PWR_CPUCR_RUN_D3      /*!< Keep system D3 domain in Run mode when the CPU enter deepsleep   */
-#define LL_PWR_CPU_MODE_D3STOP        0x00000000U           /*!< Enter D3 domain to Stop mode when the CPU enters deepsleep       */
+#define LL_PWR_CPU_MODE_D3STOP        0x00000000U           /*!< Enter D3 domain to stop mode when the CPU enters deepsleep       */
 #define LL_PWR_CPU_MODE_D3STANDBY     PWR_CPUCR_PDDS_D3     /*!< Enter D3 domain to Standby mode when the CPU enters deepsleep    */
 #else
 #define LL_PWR_CPU_MODE_SRDRUN        PWR_CPUCR_RUN_SRD     /*!< Keep system SRD domain in Run mode when the CPU enter deepsleep  */
@@ -208,7 +208,7 @@ extern "C" {
   * @}
   */
 
-/** @defgroup PWR_LL_EC_STOP_MODE_REGU_VOLTAGE Stop mode Regulator Voltage Scaling
+/** @defgroup PWR_LL_EC_STOP_MODE_REGU_VOLTAGE stop mode Regulator Voltage Scaling
   * @{
   */
 #define LL_PWR_REGU_VOLTAGE_SVOS_SCALE5   PWR_CR1_SVOS_0                    /*!< Select voltage scale 5 when system enters STOP mode */
@@ -329,7 +329,7 @@ extern "C" {
 #define LL_PWR_WriteReg(__REG__, __VALUE__) WRITE_REG(PWR->__REG__, (__VALUE__))
 
 /**
-  * @brief  Read a value in PWR register
+  * @brief  read a value in PWR register
   * @param  __REG__ Register to be read
   * @retval Register value
   */
@@ -364,7 +364,7 @@ __STATIC_INLINE void LL_PWR_SetRegulModeDS(uint32_t RegulMode)
 }
 
 /**
-  * @brief  Get the voltage Regulator mode during deep sleep mode
+  * @brief  get the voltage Regulator mode during deep sleep mode
   * @rmtoll CR1    LPDS         LL_PWR_GetRegulModeDS
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_PWR_REGU_DSMODE_MAIN
@@ -425,7 +425,7 @@ __STATIC_INLINE void LL_PWR_SetPVDLevel(uint32_t PVDLevel)
 }
 
 /**
-  * @brief  Get the voltage threshold detection
+  * @brief  get the voltage threshold detection
   * @rmtoll CR1    PLS       LL_PWR_GetPVDLevel
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_PWR_PVDLEVEL_0
@@ -473,7 +473,7 @@ __STATIC_INLINE uint32_t LL_PWR_IsEnabledBkUpAccess(void)
 }
 
 /**
-  * @brief  Enable the Flash Power Down in Stop Mode
+  * @brief  Enable the Flash Power Down in stop Mode
   * @rmtoll CR1    FLPS       LL_PWR_EnableFlashPowerDown
   * @retval None
   */
@@ -483,7 +483,7 @@ __STATIC_INLINE void LL_PWR_EnableFlashPowerDown(void)
 }
 
 /**
-  * @brief  Disable the Flash Power Down in Stop Mode
+  * @brief  Disable the Flash Power Down in stop Mode
   * @rmtoll CR1    FLPS       LL_PWR_DisableFlashPowerDown
   * @retval None
   */
@@ -493,7 +493,7 @@ __STATIC_INLINE void LL_PWR_DisableFlashPowerDown(void)
 }
 
 /**
-  * @brief  Check if the Flash Power Down in Stop Mode is enabled
+  * @brief  Check if the Flash Power Down in stop Mode is enabled
   * @rmtoll CR1    FLPS       LL_PWR_IsEnabledFlashPowerDown
   * @retval State of bit (1 or 0).
   */
@@ -581,7 +581,7 @@ __STATIC_INLINE void LL_PWR_SetStopModeRegulVoltageScaling(uint32_t VoltageScali
 }
 
 /**
-  * @brief  Get the internal Regulator output voltage in STOP mode
+  * @brief  get the internal Regulator output voltage in STOP mode
   * @rmtoll CR1    SVOS       LL_PWR_GetStopModeRegulVoltageScaling
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_PWR_REGU_VOLTAGE_SVOS_SCALE3
@@ -639,7 +639,7 @@ __STATIC_INLINE void LL_PWR_SetAVDLevel(uint32_t AVDLevel)
 }
 
 /**
-  * @brief  Get the Analog Voltage threshold to be detected by the Analog Power Voltage Detector
+  * @brief  get the Analog Voltage threshold to be detected by the Analog Power Voltage Detector
   * @rmtoll CR1    ALS       LL_PWR_GetAVDLevel
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_PWR_AVDLEVEL_0
@@ -1042,7 +1042,7 @@ __STATIC_INLINE uint32_t LL_PWR_GetSupply(void)
 }
 #else
 /**
-  * @brief  Get the PWR supply
+  * @brief  get the PWR supply
   * @rmtoll CR3          BYPASS          LL_PWR_GetSupply
   * @rmtoll CR3          LDOEN           LL_PWR_GetSupply
   * @rmtoll CR3          SCUEN           LL_PWR_GetSupply
@@ -1101,7 +1101,7 @@ __STATIC_INLINE void LL_PWR_SetBattChargResistor(uint32_t Resistor)
 }
 
 /**
-  * @brief  Get the Battery charge resistor impedance
+  * @brief  get the Battery charge resistor impedance
   * @rmtoll CR3          VBRS          LL_PWR_GetBattChargResistor
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_PWR_BATT_CHARG_RESISTOR_5K
@@ -1217,7 +1217,7 @@ __STATIC_INLINE void LL_PWR_CPU2_SetD1PowerMode(uint32_t PDMode)
 
 #if defined (PWR_CPUCR_PDDS_D2)
 /**
-  * @brief  Get the D1 Domain Power Down mode when the CPU enters deepsleep
+  * @brief  get the D1 Domain Power Down mode when the CPU enters deepsleep
   * @rmtoll CPUCR     PDDS_D1       LL_PWR_CPU_GetD1PowerMode
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_PWR_CPU_MODE_D1STOP
@@ -1287,7 +1287,7 @@ __STATIC_INLINE void LL_PWR_CPU2_SetD2PowerMode(uint32_t PDMode)
 
 #if defined (PWR_CPUCR_PDDS_D2)
 /**
-  * @brief  Get the D2 Domain Power Down mode when the CPU enters deepsleep
+  * @brief  get the D2 Domain Power Down mode when the CPU enters deepsleep
   * @rmtoll CPUCR     PDDS_D2       LL_PWR_CPU_GetD2PowerMode
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_PWR_CPU_MODE_D2STOP
@@ -1358,7 +1358,7 @@ __STATIC_INLINE void LL_PWR_CPU2_SetD3PowerMode(uint32_t PDMode)
 
 #if defined (PWR_CPUCR_PDDS_D2)
 /**
-  * @brief  Get the D3 Domain Power Down mode when the CPU enters deepsleep
+  * @brief  get the D3 Domain Power Down mode when the CPU enters deepsleep
   * @rmtoll CPUCR     PDDS_D3       LL_PWR_CPU_GetD3PowerMode
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_PWR_CPU_MODE_D3STOP
@@ -1582,7 +1582,7 @@ __STATIC_INLINE void LL_PWR_SetRegulVoltageScaling(uint32_t VoltageScaling)
 }
 
 /**
-  * @brief  Get the main internal Regulator output voltage
+  * @brief  get the main internal Regulator output voltage
   * @rmtoll D3CR    VOS       LL_PWR_GetRegulVoltageScaling
   * @note   For all H7 lines except STM32H7Axxx and STM32H7Bxxx lines, checking
   *         VOS0 need the check of PWR_D3CR_VOS[1:0] field and SYSCFG_PWRCR_ODEN bit.
@@ -1727,7 +1727,7 @@ __STATIC_INLINE void LL_PWR_SetWakeUpPinPolarityHigh(uint32_t WakeUpPin)
 }
 
 /**
-  * @brief  Get the Wake-Up pin polarity for the event detection
+  * @brief  get the Wake-Up pin polarity for the event detection
   * @rmtoll WKUPEPR   WKUPP1       LL_PWR_IsWakeUpPinPolarityLow\n
   *         WKUPEPR   WKUPP2       LL_PWR_IsWakeUpPinPolarityLow\n
   *         WKUPEPR   WKUPP3       LL_PWR_IsWakeUpPinPolarityLow\n
@@ -1833,7 +1833,7 @@ __STATIC_INLINE void LL_PWR_SetWakeUpPinPullDown(uint32_t WakeUpPin)
 }
 
 /**
-  * @brief  Get the Wake-Up pin pull
+  * @brief  get the Wake-Up pin pull
   * @rmtoll WKUPEPR   WKUPPUPD1       LL_PWR_GetWakeUpPinPull\n
   *         WKUPEPR   WKUPPUPD2       LL_PWR_GetWakeUpPinPull\n
   *         WKUPEPR   WKUPPUPD3       LL_PWR_GetWakeUpPinPull\n
@@ -1913,7 +1913,7 @@ __STATIC_INLINE uint32_t LL_PWR_IsActiveFlag_MMCVDO(void)
 #endif /* PWR_CSR1_MMCVDO */
 
 /**
-  * @brief  Get Backup Regulator ready Flag
+  * @brief  get Backup Regulator ready Flag
   * @rmtoll CR2   BRRDY       LL_PWR_IsActiveFlag_BRR
   * @retval State of bit (1 or 0).
   */
@@ -2007,7 +2007,7 @@ __STATIC_INLINE uint32_t LL_PWR_IsActiveFlag_HOLD1(void)
 #endif /* DUAL_CORE */
 
 /**
-  * @brief  Get CPU System Stop Flag
+  * @brief  get CPU System stop Flag
   * @rmtoll CPUCR   STOPF       LL_PWR_CPU_IsActiveFlag_STOP
   * @retval State of bit (1 or 0).
   */
@@ -2029,7 +2029,7 @@ __STATIC_INLINE uint32_t LL_PWR_CPU2_IsActiveFlag_STOP(void)
 #endif /* DUAL_CORE */
 
 /**
-  * @brief  Get CPU System Standby Flag
+  * @brief  get CPU System Standby Flag
   * @rmtoll CPUCR   SBF       LL_PWR_CPU_IsActiveFlag_SB
   * @retval State of bit (1 or 0).
   */
@@ -2052,7 +2052,7 @@ __STATIC_INLINE uint32_t LL_PWR_CPU2_IsActiveFlag_SB(void)
 
 #if defined (PWR_CPUCR_SBF_D1)
 /**
-  * @brief  Get CPU D1 Domain Standby Flag
+  * @brief  get CPU D1 Domain Standby Flag
   * @rmtoll CPUCR   SBF_D1       LL_PWR_CPU_IsActiveFlag_SB_D1
   * @retval State of bit (1 or 0).
   */
@@ -2076,7 +2076,7 @@ __STATIC_INLINE uint32_t LL_PWR_CPU2_IsActiveFlag_SB_D1(void)
 
 #if defined (PWR_CPUCR_SBF_D2)
 /**
-  * @brief  Get CPU D2 Domain Standby Flag
+  * @brief  get CPU D2 Domain Standby Flag
   * @rmtoll CPUCR   SBF_D2       LL_PWR_CPU_IsActiveFlag_SB_D2
   * @retval State of bit (1 or 0).
   */
@@ -2115,7 +2115,7 @@ __STATIC_INLINE uint32_t LL_PWR_IsActiveFlag_VOS(void)
 }
 
 /**
-  * @brief  Get Wake-up Flag 6
+  * @brief  get Wake-up Flag 6
   * @rmtoll WKUPFR          WKUPF6          LL_PWR_IsActiveFlag_WU6
   * @retval State of bit (1 or 0).
   */
@@ -2126,7 +2126,7 @@ __STATIC_INLINE uint32_t LL_PWR_IsActiveFlag_WU6(void)
 
 #if defined (PWR_WKUPFR_WKUPF5)
 /**
-  * @brief  Get Wake-up Flag 5
+  * @brief  get Wake-up Flag 5
   * @rmtoll WKUPFR          WKUPF5          LL_PWR_IsActiveFlag_WU5
   * @retval State of bit (1 or 0).
   */
@@ -2137,7 +2137,7 @@ __STATIC_INLINE uint32_t LL_PWR_IsActiveFlag_WU5(void)
 #endif /* defined (PWR_WKUPFR_WKUPF5) */
 
 /**
-  * @brief  Get Wake-up Flag 4
+  * @brief  get Wake-up Flag 4
   * @rmtoll WKUPFR          WKUPF4          LL_PWR_IsActiveFlag_WU4
   * @retval State of bit (1 or 0).
   */
@@ -2148,7 +2148,7 @@ __STATIC_INLINE uint32_t LL_PWR_IsActiveFlag_WU4(void)
 
 #if defined (PWR_WKUPFR_WKUPF3)
 /**
-  * @brief  Get Wake-up Flag 3
+  * @brief  get Wake-up Flag 3
   * @rmtoll WKUPFR          WKUPF3          LL_PWR_IsActiveFlag_WU3
   * @retval State of bit (1 or 0).
   */
@@ -2159,7 +2159,7 @@ __STATIC_INLINE uint32_t LL_PWR_IsActiveFlag_WU3(void)
 #endif /* defined (PWR_WKUPFR_WKUPF3) */
 
 /**
-  * @brief  Get Wake-up Flag 2
+  * @brief  get Wake-up Flag 2
   * @rmtoll WKUPFR          WKUPF2          LL_PWR_IsActiveFlag_WU2
   * @retval State of bit (1 or 0).
   */
@@ -2169,7 +2169,7 @@ __STATIC_INLINE uint32_t LL_PWR_IsActiveFlag_WU2(void)
 }
 
 /**
-  * @brief  Get Wake-up Flag 1
+  * @brief  get Wake-up Flag 1
   * @rmtoll WKUPFR          WKUPF1          LL_PWR_IsActiveFlag_WU1
   * @retval State of bit (1 or 0).
   */
@@ -2179,7 +2179,7 @@ __STATIC_INLINE uint32_t LL_PWR_IsActiveFlag_WU1(void)
 }
 
 /**
-  * @brief  Clear CPU STANDBY, STOP and HOLD flags
+  * @brief  clear CPU STANDBY, STOP and HOLD flags
   * @rmtoll CPUCR   CSSF       LL_PWR_ClearFlag_CPU
   * @retval None
   */
@@ -2201,7 +2201,7 @@ __STATIC_INLINE void LL_PWR_ClearFlag_CPU2(void)
 #endif /* DUAL_CORE */
 
 /**
-  * @brief  Clear Wake-up Flag 6
+  * @brief  clear Wake-up Flag 6
   * @rmtoll WKUPCR          WKUPC6         LL_PWR_ClearFlag_WU6
   * @retval None
   */
@@ -2212,7 +2212,7 @@ __STATIC_INLINE void LL_PWR_ClearFlag_WU6(void)
 
 #if defined (PWR_WKUPCR_WKUPC5)
 /**
-  * @brief  Clear Wake-up Flag 5
+  * @brief  clear Wake-up Flag 5
   * @rmtoll WKUPCR          WKUPC5         LL_PWR_ClearFlag_WU5
   * @retval None
   */
@@ -2223,7 +2223,7 @@ __STATIC_INLINE void LL_PWR_ClearFlag_WU5(void)
 #endif /* defined (PWR_WKUPCR_WKUPC5) */
 
 /**
-  * @brief  Clear Wake-up Flag 4
+  * @brief  clear Wake-up Flag 4
   * @rmtoll WKUPCR          WKUPC4         LL_PWR_ClearFlag_WU4
   * @retval None
   */
@@ -2234,7 +2234,7 @@ __STATIC_INLINE void LL_PWR_ClearFlag_WU4(void)
 
 #if defined (PWR_WKUPCR_WKUPC3)
 /**
-  * @brief  Clear Wake-up Flag 3
+  * @brief  clear Wake-up Flag 3
   * @rmtoll WKUPCR          WKUPC3         LL_PWR_ClearFlag_WU3
   * @retval None
   */
@@ -2245,7 +2245,7 @@ __STATIC_INLINE void LL_PWR_ClearFlag_WU3(void)
 #endif /* defined (PWR_WKUPCR_WKUPC3) */
 
 /**
-  * @brief  Clear Wake-up Flag 2
+  * @brief  clear Wake-up Flag 2
   * @rmtoll WKUPCR          WKUPC2         LL_PWR_ClearFlag_WU2
   * @retval None
   */
@@ -2255,7 +2255,7 @@ __STATIC_INLINE void LL_PWR_ClearFlag_WU2(void)
 }
 
 /**
-  * @brief  Clear Wake-up Flag 1
+  * @brief  clear Wake-up Flag 1
   * @rmtoll WKUPCR          WKUPC1         LL_PWR_ClearFlag_WU1
   * @retval None
   */

@@ -24669,7 +24669,7 @@ void InitTableFFT(uint32_t n)
 *	返 回 值: 无
 *********************************************************************************************************
 */
-void cfft(struct compx *_ptr, uint32_t FFT_N )
+void cfft(struct Compx *_ptr, uint32_t FFT_N )
 {
 	float32_t TempReal1, TempImag1, TempReal2, TempImag2;
 	uint32_t k,i,j,z;

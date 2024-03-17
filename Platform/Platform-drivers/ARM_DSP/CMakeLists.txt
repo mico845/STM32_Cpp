@@ -1,11 +1,3 @@
-
-file(GLOB_RECURSE ASM_SOURCES
-     #   "asm_stm32/src/asm/gcc/cr4_fft_1024_stm32.s"
-#        "asm_stm32/src/asm/gcc/PID_stm32.s"
-#        "asm_stm32/src/asm/gcc/fir_stm32.s"
-  #      "asm_stm32/src/asm/gcc/*.*"
-)
-
 add_library(ARM_DSP
         "Source/BasicMathFunctions/BasicMathFunctions.c"
         "Source/BasicMathFunctions/BasicMathFunctionsF16.c"
@@ -36,11 +28,9 @@ add_library(ARM_DSP
         "Source/TransformFunctions/TransformFunctions.c"
         "Source/TransformFunctions/TransformFunctionsF16.c"
         "Source/WindowFunctions/WindowFunctions.c"
-     #    ${ASM_SOURCES}
 )
 
 target_include_directories(ARM_DSP PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/Include
         ${CMAKE_CURRENT_SOURCE_DIR}/PrivateInclude
-    #    ${CMAKE_CURRENT_SOURCE_DIR}/asm_stm32/inc
 )

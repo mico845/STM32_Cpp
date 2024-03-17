@@ -1,0 +1,777 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-drivers/STM32/FLASH/FLASH.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_f_l_a_s_h_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">FLASH.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_l_l-support_8h_source.html">platform-drivers/STM32/LL-support.h</a>&quot;</code><br />
+</div>
+<p><a href="_f_l_a_s_h_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a968ace31aa81636e4d37d7e2ba9fbc61" id="r_a968ace31aa81636e4d37d7e2ba9fbc61"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a968ace31aa81636e4d37d7e2ba9fbc61">CPU_FLASH_BASE_ADDR</a>&#160;&#160;&#160;(uint32_t)(FLASH_BASE)     /* 0x08000000 */</td></tr>
+<tr class="separator:a968ace31aa81636e4d37d7e2ba9fbc61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dae34ce8163a073ec71597538e67981" id="r_a5dae34ce8163a073ec71597538e67981"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5dae34ce8163a073ec71597538e67981">CPU_FLASH_END_ADDR</a>&#160;&#160;&#160;(uint32_t)(0x081FFFFF)</td></tr>
+<tr class="separator:a5dae34ce8163a073ec71597538e67981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2299b03fe4b3533c0018be1032820203" id="r_a2299b03fe4b3533c0018be1032820203"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2299b03fe4b3533c0018be1032820203">CPU_FLASH_SIZE</a>&#160;&#160;&#160;(2 * 1024 * 1024)  /* Flash 总容量 H743为2MB ，两个bank，8个扇区  */</td></tr>
+<tr class="separator:a2299b03fe4b3533c0018be1032820203"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12d6768a11452c74275433b57e33e075" id="r_a12d6768a11452c74275433b57e33e075"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12d6768a11452c74275433b57e33e075">CPU_FLASH_SECTOR_SIZE</a>&#160;&#160;&#160;(128 * 1024)       /* 扇区大小，单位：字节 */</td></tr>
+<tr class="separator:a12d6768a11452c74275433b57e33e075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15a8729b9c5eb83d46d5f437cd46d874" id="r_a15a8729b9c5eb83d46d5f437cd46d874"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15a8729b9c5eb83d46d5f437cd46d874">FLASH_SECTOR_0</a>&#160;&#160;&#160;0U</td></tr>
+<tr class="separator:a15a8729b9c5eb83d46d5f437cd46d874"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a85d94366030ea8328796169c1bc300" id="r_a2a85d94366030ea8328796169c1bc300"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a85d94366030ea8328796169c1bc300">FLASH_SECTOR_1</a>&#160;&#160;&#160;1U</td></tr>
+<tr class="separator:a2a85d94366030ea8328796169c1bc300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58999952d63fd45dd86b0817ad2a5bae" id="r_a58999952d63fd45dd86b0817ad2a5bae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58999952d63fd45dd86b0817ad2a5bae">FLASH_SECTOR_2</a>&#160;&#160;&#160;2U</td></tr>
+<tr class="separator:a58999952d63fd45dd86b0817ad2a5bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0a0ce95752a56b430c809a88812fed2" id="r_ab0a0ce95752a56b430c809a88812fed2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0a0ce95752a56b430c809a88812fed2">FLASH_SECTOR_3</a>&#160;&#160;&#160;3U</td></tr>
+<tr class="separator:ab0a0ce95752a56b430c809a88812fed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1338c8f4ab3ae74d212c59c7e9e4cc6" id="r_ac1338c8f4ab3ae74d212c59c7e9e4cc6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1338c8f4ab3ae74d212c59c7e9e4cc6">FLASH_SECTOR_4</a>&#160;&#160;&#160;4U</td></tr>
+<tr class="separator:ac1338c8f4ab3ae74d212c59c7e9e4cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8736215a8d3ce115f4281a6d026d0f8" id="r_ad8736215a8d3ce115f4281a6d026d0f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8736215a8d3ce115f4281a6d026d0f8">FLASH_SECTOR_5</a>&#160;&#160;&#160;5U</td></tr>
+<tr class="separator:ad8736215a8d3ce115f4281a6d026d0f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0d1fc04e5918186ac9c228ab4172606" id="r_aa0d1fc04e5918186ac9c228ab4172606"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0d1fc04e5918186ac9c228ab4172606">FLASH_SECTOR_6</a>&#160;&#160;&#160;6U</td></tr>
+<tr class="separator:aa0d1fc04e5918186ac9c228ab4172606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99693b9e0816fdb8706218bc845724ad" id="r_a99693b9e0816fdb8706218bc845724ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99693b9e0816fdb8706218bc845724ad">FLASH_SECTOR_7</a>&#160;&#160;&#160;7U</td></tr>
+<tr class="separator:a99693b9e0816fdb8706218bc845724ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b089d69806a2c1b7af01e40d41e05b9" id="r_a8b089d69806a2c1b7af01e40d41e05b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b089d69806a2c1b7af01e40d41e05b9">ADDR_FLASH_SECTOR_0_BANK1</a>&#160;&#160;&#160;((uint32_t)0x08000000) /* Base @ of Sector 0, 128 Kbytes */</td></tr>
+<tr class="separator:a8b089d69806a2c1b7af01e40d41e05b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c7099e05e47c21e4f9a7f6757da35c5" id="r_a9c7099e05e47c21e4f9a7f6757da35c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c7099e05e47c21e4f9a7f6757da35c5">ADDR_FLASH_SECTOR_1_BANK1</a>&#160;&#160;&#160;((uint32_t)0x08020000) /* Base @ of Sector 1, 128 Kbytes */</td></tr>
+<tr class="separator:a9c7099e05e47c21e4f9a7f6757da35c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac15b6bfdb371196c658201a8b17aa297" id="r_ac15b6bfdb371196c658201a8b17aa297"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac15b6bfdb371196c658201a8b17aa297">ADDR_FLASH_SECTOR_2_BANK1</a>&#160;&#160;&#160;((uint32_t)0x08040000) /* Base @ of Sector 2, 128 Kbytes */</td></tr>
+<tr class="separator:ac15b6bfdb371196c658201a8b17aa297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace94d072601fe760302c376499bbb3e7" id="r_ace94d072601fe760302c376499bbb3e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace94d072601fe760302c376499bbb3e7">ADDR_FLASH_SECTOR_3_BANK1</a>&#160;&#160;&#160;((uint32_t)0x08060000) /* Base @ of Sector 3, 128 Kbytes */</td></tr>
+<tr class="separator:ace94d072601fe760302c376499bbb3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa38c6b15ffc7335fd394b2ffeb1459c8" id="r_aa38c6b15ffc7335fd394b2ffeb1459c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa38c6b15ffc7335fd394b2ffeb1459c8">ADDR_FLASH_SECTOR_4_BANK1</a>&#160;&#160;&#160;((uint32_t)0x08080000) /* Base @ of Sector 4, 128 Kbytes */</td></tr>
+<tr class="separator:aa38c6b15ffc7335fd394b2ffeb1459c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5b77f462da13aa38f2aa3d7be853d22" id="r_ad5b77f462da13aa38f2aa3d7be853d22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5b77f462da13aa38f2aa3d7be853d22">ADDR_FLASH_SECTOR_5_BANK1</a>&#160;&#160;&#160;((uint32_t)0x080A0000) /* Base @ of Sector 5, 128 Kbytes */</td></tr>
+<tr class="separator:ad5b77f462da13aa38f2aa3d7be853d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bd60f2e00c763b59df286149b43aa0e" id="r_a1bd60f2e00c763b59df286149b43aa0e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bd60f2e00c763b59df286149b43aa0e">ADDR_FLASH_SECTOR_6_BANK1</a>&#160;&#160;&#160;((uint32_t)0x080C0000) /* Base @ of Sector 6, 128 Kbytes */</td></tr>
+<tr class="separator:a1bd60f2e00c763b59df286149b43aa0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60b229302e0d41dc320253300b785ca0" id="r_a60b229302e0d41dc320253300b785ca0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60b229302e0d41dc320253300b785ca0">ADDR_FLASH_SECTOR_7_BANK1</a>&#160;&#160;&#160;((uint32_t)0x080E0000) /* Base @ of Sector 7, 128 Kbytes */</td></tr>
+<tr class="separator:a60b229302e0d41dc320253300b785ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9a3ead9a1709ea155746152ad69f5f6" id="r_af9a3ead9a1709ea155746152ad69f5f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9a3ead9a1709ea155746152ad69f5f6">ADDR_FLASH_SECTOR_0_BANK2</a>&#160;&#160;&#160;((uint32_t)0x08100000) /* Base @ of Sector 0, 128 Kbytes */</td></tr>
+<tr class="separator:af9a3ead9a1709ea155746152ad69f5f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69f296cebe026802c713934944e1b073" id="r_a69f296cebe026802c713934944e1b073"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69f296cebe026802c713934944e1b073">ADDR_FLASH_SECTOR_1_BANK2</a>&#160;&#160;&#160;((uint32_t)0x08120000) /* Base @ of Sector 1, 128 Kbytes */</td></tr>
+<tr class="separator:a69f296cebe026802c713934944e1b073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae79222b76ea74f91308a0301fcd96e89" id="r_ae79222b76ea74f91308a0301fcd96e89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae79222b76ea74f91308a0301fcd96e89">ADDR_FLASH_SECTOR_2_BANK2</a>&#160;&#160;&#160;((uint32_t)0x08140000) /* Base @ of Sector 2, 128 Kbytes */</td></tr>
+<tr class="separator:ae79222b76ea74f91308a0301fcd96e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94b98d5c2037d3fc57552d03bfb646ee" id="r_a94b98d5c2037d3fc57552d03bfb646ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94b98d5c2037d3fc57552d03bfb646ee">ADDR_FLASH_SECTOR_3_BANK2</a>&#160;&#160;&#160;((uint32_t)0x08160000) /* Base @ of Sector 3, 128 Kbytes */</td></tr>
+<tr class="separator:a94b98d5c2037d3fc57552d03bfb646ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e0efa32b3a1767cb02b5f123c959852" id="r_a3e0efa32b3a1767cb02b5f123c959852"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e0efa32b3a1767cb02b5f123c959852">ADDR_FLASH_SECTOR_4_BANK2</a>&#160;&#160;&#160;((uint32_t)0x08180000) /* Base @ of Sector 4, 128 Kbytes */</td></tr>
+<tr class="separator:a3e0efa32b3a1767cb02b5f123c959852"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ae9f4032526d51bc7688badc0efd3a8" id="r_a4ae9f4032526d51bc7688badc0efd3a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ae9f4032526d51bc7688badc0efd3a8">ADDR_FLASH_SECTOR_5_BANK2</a>&#160;&#160;&#160;((uint32_t)0x081A0000) /* Base @ of Sector 5, 128 Kbytes */</td></tr>
+<tr class="separator:a4ae9f4032526d51bc7688badc0efd3a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c612bda2be3e57d1713bc3ebe95bb1f" id="r_a6c612bda2be3e57d1713bc3ebe95bb1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c612bda2be3e57d1713bc3ebe95bb1f">ADDR_FLASH_SECTOR_6_BANK2</a>&#160;&#160;&#160;((uint32_t)0x081C0000) /* Base @ of Sector 6, 128 Kbytes */</td></tr>
+<tr class="separator:a6c612bda2be3e57d1713bc3ebe95bb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c6922397747c47c35edd3e06db681b" id="r_a07c6922397747c47c35edd3e06db681b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07c6922397747c47c35edd3e06db681b">ADDR_FLASH_SECTOR_7_BANK2</a>&#160;&#160;&#160;((uint32_t)0x081E0000) /* Base @ of Sector 7, 128 Kbytes */</td></tr>
+<tr class="separator:a07c6922397747c47c35edd3e06db681b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5af916257148ea3d32f5fef8c114cbd9" id="r_a5af916257148ea3d32f5fef8c114cbd9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5af916257148ea3d32f5fef8c114cbd9">FLASH_IS_EQU</a>&#160;&#160;&#160;0   /* Flash内容和待写入的数据相等，不需要擦除和写操作 */</td></tr>
+<tr class="separator:a5af916257148ea3d32f5fef8c114cbd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c8b183ff2f178264cf34f30576afb6" id="r_ac1c8b183ff2f178264cf34f30576afb6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1c8b183ff2f178264cf34f30576afb6">FLASH_REQ_WRITE</a>&#160;&#160;&#160;1	/* Flash不需要擦除，直接写 */</td></tr>
+<tr class="separator:ac1c8b183ff2f178264cf34f30576afb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca24c221b55d327831716ee60fd12b22" id="r_aca24c221b55d327831716ee60fd12b22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca24c221b55d327831716ee60fd12b22">FLASH_REQ_ERASE</a>&#160;&#160;&#160;2	/* Flash需要先擦除,再写 */</td></tr>
+<tr class="separator:aca24c221b55d327831716ee60fd12b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d8a6409cff50c04090cf7f39d21678c" id="r_a3d8a6409cff50c04090cf7f39d21678c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d8a6409cff50c04090cf7f39d21678c">FLASH_PARAM_ERR</a>&#160;&#160;&#160;3	/* 函数参数错误 */</td></tr>
+<tr class="separator:a3d8a6409cff50c04090cf7f39d21678c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a192a5392f0e4b818913f336a44539eb4" id="r_a192a5392f0e4b818913f336a44539eb4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a192a5392f0e4b818913f336a44539eb4">CPUFLASH_ADDRESS_32B</a>(ID)&#160;&#160;&#160;(<a class="el" href="#a4435dab4cc5c7a4d698b296e047a12c3">p_CpuFlashArea</a>+32 * ID)</td></tr>
+<tr class="memdesc:a192a5392f0e4b818913f336a44539eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用指针进行32位对齐的内部FLASH读写  <br /></td></tr>
+<tr class="separator:a192a5392f0e4b818913f336a44539eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:afd9a6d3b3b3eb0ae0db54284182f72d6" id="r_afd9a6d3b3b3eb0ae0db54284182f72d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd9a6d3b3b3eb0ae0db54284182f72d6">Platform_Flash_EraseCpuFlash</a> (uint32_t FlashAddress)</td></tr>
+<tr class="memdesc:afd9a6d3b3b3eb0ae0db54284182f72d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">擦除内部FLASH一个扇区  <br /></td></tr>
+<tr class="separator:afd9a6d3b3b3eb0ae0db54284182f72d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5611a89f3726557a6c40586685089b12" id="r_a5611a89f3726557a6c40586685089b12"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5611a89f3726557a6c40586685089b12">Platform_FLash_WriteCpuFlash</a> (uint32_t FlashAddress, uint8_t *Buffer, uint32_t Size)</td></tr>
+<tr class="memdesc:a5611a89f3726557a6c40586685089b12"><td class="mdescLeft">&#160;</td><td class="mdescRight">写入数据到内部FLASH  <br /></td></tr>
+<tr class="separator:a5611a89f3726557a6c40586685089b12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6659f186fac1d8515818614d6bb964bd" id="r_a6659f186fac1d8515818614d6bb964bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6659f186fac1d8515818614d6bb964bd">Platform_FLash_ReadCpuFlash</a> (uint32_t FlashAddress, uint8_t *Buffer, uint32_t Size)</td></tr>
+<tr class="memdesc:a6659f186fac1d8515818614d6bb964bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取CPU FLASH  <br /></td></tr>
+<tr class="separator:a6659f186fac1d8515818614d6bb964bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a4435dab4cc5c7a4d698b296e047a12c3" id="r_a4435dab4cc5c7a4d698b296e047a12c3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4435dab4cc5c7a4d698b296e047a12c3">p_CpuFlashArea</a> [<a class="el" href="#a12d6768a11452c74275433b57e33e075">CPU_FLASH_SECTOR_SIZE</a>]</td></tr>
+<tr class="memdesc:a4435dab4cc5c7a4d698b296e047a12c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用指针进行内部FLASH读写  <br /></td></tr>
+<tr class="separator:a4435dab4cc5c7a4d698b296e047a12c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a8b089d69806a2c1b7af01e40d41e05b9" name="a8b089d69806a2c1b7af01e40d41e05b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b089d69806a2c1b7af01e40d41e05b9">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_0_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_0_BANK1&#160;&#160;&#160;((uint32_t)0x08000000) /* Base @ of Sector 0, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af9a3ead9a1709ea155746152ad69f5f6" name="af9a3ead9a1709ea155746152ad69f5f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9a3ead9a1709ea155746152ad69f5f6">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_0_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_0_BANK2&#160;&#160;&#160;((uint32_t)0x08100000) /* Base @ of Sector 0, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c7099e05e47c21e4f9a7f6757da35c5" name="a9c7099e05e47c21e4f9a7f6757da35c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c7099e05e47c21e4f9a7f6757da35c5">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_1_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_1_BANK1&#160;&#160;&#160;((uint32_t)0x08020000) /* Base @ of Sector 1, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69f296cebe026802c713934944e1b073" name="a69f296cebe026802c713934944e1b073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69f296cebe026802c713934944e1b073">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_1_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_1_BANK2&#160;&#160;&#160;((uint32_t)0x08120000) /* Base @ of Sector 1, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac15b6bfdb371196c658201a8b17aa297" name="ac15b6bfdb371196c658201a8b17aa297"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac15b6bfdb371196c658201a8b17aa297">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_2_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_2_BANK1&#160;&#160;&#160;((uint32_t)0x08040000) /* Base @ of Sector 2, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae79222b76ea74f91308a0301fcd96e89" name="ae79222b76ea74f91308a0301fcd96e89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae79222b76ea74f91308a0301fcd96e89">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_2_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_2_BANK2&#160;&#160;&#160;((uint32_t)0x08140000) /* Base @ of Sector 2, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace94d072601fe760302c376499bbb3e7" name="ace94d072601fe760302c376499bbb3e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace94d072601fe760302c376499bbb3e7">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_3_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_3_BANK1&#160;&#160;&#160;((uint32_t)0x08060000) /* Base @ of Sector 3, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a94b98d5c2037d3fc57552d03bfb646ee" name="a94b98d5c2037d3fc57552d03bfb646ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94b98d5c2037d3fc57552d03bfb646ee">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_3_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_3_BANK2&#160;&#160;&#160;((uint32_t)0x08160000) /* Base @ of Sector 3, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa38c6b15ffc7335fd394b2ffeb1459c8" name="aa38c6b15ffc7335fd394b2ffeb1459c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38c6b15ffc7335fd394b2ffeb1459c8">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_4_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_4_BANK1&#160;&#160;&#160;((uint32_t)0x08080000) /* Base @ of Sector 4, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3e0efa32b3a1767cb02b5f123c959852" name="a3e0efa32b3a1767cb02b5f123c959852"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e0efa32b3a1767cb02b5f123c959852">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_4_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_4_BANK2&#160;&#160;&#160;((uint32_t)0x08180000) /* Base @ of Sector 4, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5b77f462da13aa38f2aa3d7be853d22" name="ad5b77f462da13aa38f2aa3d7be853d22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b77f462da13aa38f2aa3d7be853d22">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_5_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_5_BANK1&#160;&#160;&#160;((uint32_t)0x080A0000) /* Base @ of Sector 5, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ae9f4032526d51bc7688badc0efd3a8" name="a4ae9f4032526d51bc7688badc0efd3a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ae9f4032526d51bc7688badc0efd3a8">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_5_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_5_BANK2&#160;&#160;&#160;((uint32_t)0x081A0000) /* Base @ of Sector 5, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1bd60f2e00c763b59df286149b43aa0e" name="a1bd60f2e00c763b59df286149b43aa0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bd60f2e00c763b59df286149b43aa0e">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_6_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_6_BANK1&#160;&#160;&#160;((uint32_t)0x080C0000) /* Base @ of Sector 6, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c612bda2be3e57d1713bc3ebe95bb1f" name="a6c612bda2be3e57d1713bc3ebe95bb1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c612bda2be3e57d1713bc3ebe95bb1f">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_6_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_6_BANK2&#160;&#160;&#160;((uint32_t)0x081C0000) /* Base @ of Sector 6, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60b229302e0d41dc320253300b785ca0" name="a60b229302e0d41dc320253300b785ca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60b229302e0d41dc320253300b785ca0">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_7_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_7_BANK1&#160;&#160;&#160;((uint32_t)0x080E0000) /* Base @ of Sector 7, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a07c6922397747c47c35edd3e06db681b" name="a07c6922397747c47c35edd3e06db681b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07c6922397747c47c35edd3e06db681b">&#9670;&#160;</a></span>ADDR_FLASH_SECTOR_7_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDR_FLASH_SECTOR_7_BANK2&#160;&#160;&#160;((uint32_t)0x081E0000) /* Base @ of Sector 7, 128 Kbytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a968ace31aa81636e4d37d7e2ba9fbc61" name="a968ace31aa81636e4d37d7e2ba9fbc61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a968ace31aa81636e4d37d7e2ba9fbc61">&#9670;&#160;</a></span>CPU_FLASH_BASE_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CPU_FLASH_BASE_ADDR&#160;&#160;&#160;(uint32_t)(FLASH_BASE)     /* 0x08000000 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5dae34ce8163a073ec71597538e67981" name="a5dae34ce8163a073ec71597538e67981"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dae34ce8163a073ec71597538e67981">&#9670;&#160;</a></span>CPU_FLASH_END_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CPU_FLASH_END_ADDR&#160;&#160;&#160;(uint32_t)(0x081FFFFF)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a12d6768a11452c74275433b57e33e075" name="a12d6768a11452c74275433b57e33e075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12d6768a11452c74275433b57e33e075">&#9670;&#160;</a></span>CPU_FLASH_SECTOR_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CPU_FLASH_SECTOR_SIZE&#160;&#160;&#160;(128 * 1024)       /* 扇区大小，单位：字节 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2299b03fe4b3533c0018be1032820203" name="a2299b03fe4b3533c0018be1032820203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2299b03fe4b3533c0018be1032820203">&#9670;&#160;</a></span>CPU_FLASH_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CPU_FLASH_SIZE&#160;&#160;&#160;(2 * 1024 * 1024)  /* Flash 总容量 H743为2MB ，两个bank，8个扇区  */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a192a5392f0e4b818913f336a44539eb4" name="a192a5392f0e4b818913f336a44539eb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a192a5392f0e4b818913f336a44539eb4">&#9670;&#160;</a></span>CPUFLASH_ADDRESS_32B</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CPUFLASH_ADDRESS_32B</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">ID</span></td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="#a4435dab4cc5c7a4d698b296e047a12c3">p_CpuFlashArea</a>+32 * ID)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用指针进行32位对齐的内部FLASH读写 </p>
+
+</div>
+</div>
+<a id="a5af916257148ea3d32f5fef8c114cbd9" name="a5af916257148ea3d32f5fef8c114cbd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5af916257148ea3d32f5fef8c114cbd9">&#9670;&#160;</a></span>FLASH_IS_EQU</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_IS_EQU&#160;&#160;&#160;0   /* Flash内容和待写入的数据相等，不需要擦除和写操作 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d8a6409cff50c04090cf7f39d21678c" name="a3d8a6409cff50c04090cf7f39d21678c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d8a6409cff50c04090cf7f39d21678c">&#9670;&#160;</a></span>FLASH_PARAM_ERR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_PARAM_ERR&#160;&#160;&#160;3	/* 函数参数错误 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aca24c221b55d327831716ee60fd12b22" name="aca24c221b55d327831716ee60fd12b22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca24c221b55d327831716ee60fd12b22">&#9670;&#160;</a></span>FLASH_REQ_ERASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_REQ_ERASE&#160;&#160;&#160;2	/* Flash需要先擦除,再写 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac1c8b183ff2f178264cf34f30576afb6" name="ac1c8b183ff2f178264cf34f30576afb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1c8b183ff2f178264cf34f30576afb6">&#9670;&#160;</a></span>FLASH_REQ_WRITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_REQ_WRITE&#160;&#160;&#160;1	/* Flash不需要擦除，直接写 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a15a8729b9c5eb83d46d5f437cd46d874" name="a15a8729b9c5eb83d46d5f437cd46d874"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15a8729b9c5eb83d46d5f437cd46d874">&#9670;&#160;</a></span>FLASH_SECTOR_0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_SECTOR_0&#160;&#160;&#160;0U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sector Number 0 <br  />
+ </p>
+
+</div>
+</div>
+<a id="a2a85d94366030ea8328796169c1bc300" name="a2a85d94366030ea8328796169c1bc300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a85d94366030ea8328796169c1bc300">&#9670;&#160;</a></span>FLASH_SECTOR_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_SECTOR_1&#160;&#160;&#160;1U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sector Number 1 <br  />
+ </p>
+
+</div>
+</div>
+<a id="a58999952d63fd45dd86b0817ad2a5bae" name="a58999952d63fd45dd86b0817ad2a5bae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58999952d63fd45dd86b0817ad2a5bae">&#9670;&#160;</a></span>FLASH_SECTOR_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_SECTOR_2&#160;&#160;&#160;2U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sector Number 2 <br  />
+ </p>
+
+</div>
+</div>
+<a id="ab0a0ce95752a56b430c809a88812fed2" name="ab0a0ce95752a56b430c809a88812fed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0a0ce95752a56b430c809a88812fed2">&#9670;&#160;</a></span>FLASH_SECTOR_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_SECTOR_3&#160;&#160;&#160;3U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sector Number 3 <br  />
+ </p>
+
+</div>
+</div>
+<a id="ac1338c8f4ab3ae74d212c59c7e9e4cc6" name="ac1338c8f4ab3ae74d212c59c7e9e4cc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1338c8f4ab3ae74d212c59c7e9e4cc6">&#9670;&#160;</a></span>FLASH_SECTOR_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_SECTOR_4&#160;&#160;&#160;4U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sector Number 4 <br  />
+ </p>
+
+</div>
+</div>
+<a id="ad8736215a8d3ce115f4281a6d026d0f8" name="ad8736215a8d3ce115f4281a6d026d0f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8736215a8d3ce115f4281a6d026d0f8">&#9670;&#160;</a></span>FLASH_SECTOR_5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_SECTOR_5&#160;&#160;&#160;5U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sector Number 5 <br  />
+ </p>
+
+</div>
+</div>
+<a id="aa0d1fc04e5918186ac9c228ab4172606" name="aa0d1fc04e5918186ac9c228ab4172606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0d1fc04e5918186ac9c228ab4172606">&#9670;&#160;</a></span>FLASH_SECTOR_6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_SECTOR_6&#160;&#160;&#160;6U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sector Number 6 <br  />
+ </p>
+
+</div>
+</div>
+<a id="a99693b9e0816fdb8706218bc845724ad" name="a99693b9e0816fdb8706218bc845724ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99693b9e0816fdb8706218bc845724ad">&#9670;&#160;</a></span>FLASH_SECTOR_7</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_SECTOR_7&#160;&#160;&#160;7U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sector Number 7 <br  />
+ </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="afd9a6d3b3b3eb0ae0db54284182f72d6" name="afd9a6d3b3b3eb0ae0db54284182f72d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9a6d3b3b3eb0ae0db54284182f72d6">&#9670;&#160;</a></span>Platform_Flash_EraseCpuFlash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Platform_Flash_EraseCpuFlash </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FlashAddress</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>擦除内部FLASH一个扇区 </p>
+<p>1、对于同一个地址空间，仅支持一次编程(不推荐二次编程，即使是将相应 bit 由数值 1 编程 0)。 2、只能对已经擦除的空间做编程，擦除 1 个扇区是 128KB。 3、H7 的 Flash 编程时，务必保证要编程的地址是 32 字节对齐的，即此地址对 32 求余为 0。并且编 程的数据必须 32 字节整数倍。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FlashAddress</td><td>要擦除的FLASH地址 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool 如果擦除成功返回true，否则返回false </dd></dl>
+
+</div>
+</div>
+<a id="a6659f186fac1d8515818614d6bb964bd" name="a6659f186fac1d8515818614d6bb964bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6659f186fac1d8515818614d6bb964bd">&#9670;&#160;</a></span>Platform_FLash_ReadCpuFlash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Platform_FLash_ReadCpuFlash </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FlashAddress</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>Buffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>读取CPU FLASH </p>
+<p>1、对于同一个地址空间，仅支持一次编程(不推荐二次编程，即使是将相应 bit 由数值 1 编程 0)。 2、只能对已经擦除的空间做编程，擦除 1 个扇区是 128KB。 3、H7 的 Flash 编程时，务必保证要编程的地址是 32 字节对齐的，即此地址对 32 求余为 0。并且编 程的数据必须 32 字节整数倍。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FlashAddress</td><td>要读取的FLASH地址 </td></tr>
+    <tr><td class="paramname">Buffer</td><td>读取数据的缓冲区 </td></tr>
+    <tr><td class="paramname">Size</td><td>要读取的数据大小 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool 如果读取成功返回true，否则返回false </dd></dl>
+
+</div>
+</div>
+<a id="a5611a89f3726557a6c40586685089b12" name="a5611a89f3726557a6c40586685089b12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5611a89f3726557a6c40586685089b12">&#9670;&#160;</a></span>Platform_FLash_WriteCpuFlash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Platform_FLash_WriteCpuFlash </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FlashAddress</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>Buffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>写入数据到内部FLASH </p>
+<p>1、对于同一个地址空间，仅支持一次编程(不推荐二次编程，即使是将相应 bit 由数值 1 编程 0)。 2、只能对已经擦除的空间做编程，擦除 1 个扇区是 128KB。 3、H7 的 Flash 编程时，务必保证要编程的地址是 32 字节对齐的，即此地址对 32 求余为 0。并且编 程的数据必须 32 字节整数倍。该函数Platform_Flash_EraseCpuFlash对字节数不够 32 字节整数倍的情况自动补0。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FlashAddress</td><td>要写入的FLASH地址 </td></tr>
+    <tr><td class="paramname">Buffer</td><td>要写入的数据缓冲区 </td></tr>
+    <tr><td class="paramname">Size</td><td>要写入的数据大小 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool 如果写入成功返回true，否则返回false </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a4435dab4cc5c7a4d698b296e047a12c3" name="a4435dab4cc5c7a4d698b296e047a12c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4435dab4cc5c7a4d698b296e047a12c3">&#9670;&#160;</a></span>p_CpuFlashArea</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t p_CpuFlashArea[<a class="el" href="#a12d6768a11452c74275433b57e33e075">CPU_FLASH_SECTOR_SIZE</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>使用指针进行内部FLASH读写 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_84d8ddb176e16ca8bccaaa5eeae31ee8.html">platform-drivers</a></li><li class="navelem"><a class="el" href="dir_4c7ecf3a8e2e1382144ef720f571f877.html">STM32</a></li><li class="navelem"><a class="el" href="dir_cafb30cb5c28474342179cff3fd8c1a7.html">FLASH</a></li><li class="navelem"><a class="el" href="_f_l_a_s_h_8hpp.html">FLASH.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

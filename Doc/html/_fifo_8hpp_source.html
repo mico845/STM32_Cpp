@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-lib/DataStructre/Fifo.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_fifo_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">Fifo.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_fifo_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __PLATFORM_FIFO_H__</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __PLATFORM_FIFO_H__</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef __TYPEDEF_LOCK_FUN__</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="_fifo_8hpp.html#a7a3e7313135d79bf7915b192b09d4126">    7</a></span>    <span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="_fifo_8hpp.html#a7a3e7313135d79bf7915b192b09d4126">lock_fun</a>)(void); </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, u<span class="keywordtype">int</span>32_t MAX_SIZE&gt;</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_fifo.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="class_fifo.html">Fifo</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    T buf[MAX_SIZE];         </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    uint32_t current_size;   </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    uint32_t pwriteIndex;   </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    uint32_t preadIndex;    </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    void (*lock)(void);     </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    void (*unlock)(void);   </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_fifo.html#ab66f1a0d287927bb147541d7fc94c868">   35</a></span>    <a class="code hl_function" href="class_fifo.html#ab66f1a0d287927bb147541d7fc94c868">Fifo</a>(<a class="code hl_typedef" href="_fifo_8hpp.html#a7a3e7313135d79bf7915b192b09d4126">lock_fun</a> lock = <span class="keyword">nullptr</span>, <a class="code hl_typedef" href="_fifo_8hpp.html#a7a3e7313135d79bf7915b192b09d4126">lock_fun</a> unlock = <span class="keyword">nullptr</span>);</div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_fifo.html#a6dcc4bc05d4e05a5efcee30d9f3b7a49">   36</a></span>    <a class="code hl_function" href="class_fifo.html#a6dcc4bc05d4e05a5efcee30d9f3b7a49">~Fifo</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_fifo.html#ac665d4f925dcfb9356a25d907a91c223">   43</a></span>    uint32_t <a class="code hl_function" href="class_fifo.html#ac665d4f925dcfb9356a25d907a91c223">put</a>(<span class="keyword">const</span> T &amp;data);</div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_fifo.html#a64abc17d172e36117ce7fe7286a5452d">   49</a></span>    uint32_t <a class="code hl_function" href="class_fifo.html#a64abc17d172e36117ce7fe7286a5452d">get</a>(T &amp;data);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_fifo.html#ad438abe6d3a13181a6973b98a208b2ee">   57</a></span>    uint32_t <a class="code hl_function" href="class_fifo.html#ad438abe6d3a13181a6973b98a208b2ee">puts</a>(T *pData, uint32_t num);</div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_fifo.html#a7167b0f24876c07b0016eeac2544b14a">   64</a></span>    uint32_t <a class="code hl_function" href="class_fifo.html#a7167b0f24876c07b0016eeac2544b14a">gets</a>(T *pData, uint32_t num);</div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_fifo.html#a8f675a1eed53aa13f8202dffd9a9eed7">   69</a></span>    <span class="keyword">inline</span> uint32_t <a class="code hl_function" href="class_fifo.html#a8f675a1eed53aa13f8202dffd9a9eed7">size</a>(<span class="keywordtype">void</span>);</div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_fifo.html#a4e0d0ab0ad09d24a51c383d4bce5d516">   74</a></span>    <span class="keyword">inline</span> uint32_t <a class="code hl_function" href="class_fifo.html#a4e0d0ab0ad09d24a51c383d4bce5d516">getFreeSize</a>(<span class="keywordtype">void</span>);</div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_fifo.html#ae3857e3455069547112d763041da2d84">   78</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_fifo.html#ae3857e3455069547112d763041da2d84">clear</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>};</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, u<span class="keywordtype">int</span>32_t MAX_SIZE&gt;</div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="class_fifo.html#ab66f1a0d287927bb147541d7fc94c868">   85</a></span><a class="code hl_function" href="class_fifo.html#ab66f1a0d287927bb147541d7fc94c868">Fifo&lt;T,MAX_SIZE&gt;::Fifo</a>(<a class="code hl_typedef" href="_fifo_8hpp.html#a7a3e7313135d79bf7915b192b09d4126">lock_fun</a> Lock_fun, <a class="code hl_typedef" href="_fifo_8hpp.html#a7a3e7313135d79bf7915b192b09d4126">lock_fun</a> Unlock_fun)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        :current_size(0), pwriteIndex(0), preadIndex(0), lock(Lock_fun), unlock (Unlock_fun)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
+</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, u<span class="keywordtype">int</span>32_t MAX_SIZE&gt;</div>
+<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="class_fifo.html#a6dcc4bc05d4e05a5efcee30d9f3b7a49">   92</a></span><a class="code hl_function" href="class_fifo.html#a6dcc4bc05d4e05a5efcee30d9f3b7a49">Fifo&lt;T, MAX_SIZE&gt;::~Fifo</a>() {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    current_size = 0;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    pwriteIndex = 0;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    preadIndex = 0;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    lock = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    unlock = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
+</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, u<span class="keywordtype">int</span>32_t MAX_SIZE&gt;</div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="class_fifo.html#ac665d4f925dcfb9356a25d907a91c223">  105</a></span>uint32_t <a class="code hl_function" href="class_fifo.html#ac665d4f925dcfb9356a25d907a91c223">Fifo&lt;T,MAX_SIZE&gt;::put</a>(<span class="keyword">const</span> T &amp;c)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>{</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">if</span>(getFreeSize() == 0)</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">if</span> (lock != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        lock();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    buf[pwriteIndex++] = c;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">if</span> (pwriteIndex &gt;= MAX_SIZE)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        pwriteIndex = 0;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    current_size++;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">if</span> (unlock != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        unlock();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
+</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, u<span class="keywordtype">int</span>32_t MAX_SIZE&gt;</div>
+<div class="foldopen" id="foldopen00125" data-start="{" data-end="}">
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="class_fifo.html#ad438abe6d3a13181a6973b98a208b2ee">  125</a></span>uint32_t <a class="code hl_function" href="class_fifo.html#ad438abe6d3a13181a6973b98a208b2ee">Fifo&lt;T,MAX_SIZE&gt;::puts</a>(T *pData, uint32_t num)</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>{</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    uint32_t w_size, free_size;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">if</span> (num==0)</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    free_size = getFreeSize();</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">if</span>(free_size == 0)</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">if</span>(free_size &lt; num)</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        num = free_size;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    w_size = num;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordflow">if</span> (lock != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        lock();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">while</span>(w_size-- &gt; 0)</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        buf[pwriteIndex++] = *pData++;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">if</span> (pwriteIndex &gt;= MAX_SIZE)</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            pwriteIndex = 0;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        current_size++;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    }</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordflow">if</span> (unlock != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        unlock();</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">return</span> num;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>}</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, u<span class="keywordtype">int</span>32_t MAX_SIZE&gt;</div>
+<div class="foldopen" id="foldopen00157" data-start="{" data-end="}">
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="class_fifo.html#a64abc17d172e36117ce7fe7286a5452d">  157</a></span>uint32_t <a class="code hl_function" href="class_fifo.html#a64abc17d172e36117ce7fe7286a5452d">Fifo&lt;T,MAX_SIZE&gt;::get</a>(T &amp;data)</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>{</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordflow">if</span>(current_size == 0)</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordflow">if</span> (lock != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        lock();</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    data = buf[preadIndex++];</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordflow">if</span> (preadIndex &gt;= MAX_SIZE)</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        preadIndex = 0;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    current_size--;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keywordflow">if</span> (unlock != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        unlock();</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>}</div>
+</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, u<span class="keywordtype">int</span>32_t MAX_SIZE&gt;</div>
+<div class="foldopen" id="foldopen00176" data-start="{" data-end="}">
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="class_fifo.html#a7167b0f24876c07b0016eeac2544b14a">  176</a></span>uint32_t <a class="code hl_function" href="class_fifo.html#a7167b0f24876c07b0016eeac2544b14a">Fifo&lt;T,MAX_SIZE&gt;::gets</a>(T *pData, uint32_t num)</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>{</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    uint32_t r_size, occupy_size;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordflow">if</span> (num==0)</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    occupy_size = current_size;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordflow">if</span>(occupy_size == 0)</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keywordflow">if</span>(occupy_size &lt; num)</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        num = occupy_size;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordflow">if</span> (lock != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        lock();</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    r_size = num;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordflow">while</span>(r_size-- &gt; 0)</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        *pData++ = buf[preadIndex++];</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="keywordflow">if</span> (preadIndex &gt;= MAX_SIZE)</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            preadIndex = 0;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        current_size--;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    }</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keywordflow">if</span> (unlock != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        unlock();</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordflow">return</span> num;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>}</div>
+</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, u<span class="keywordtype">int</span>32_t MAX_SIZE&gt;</div>
+<div class="foldopen" id="foldopen00206" data-start="{" data-end="}">
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="class_fifo.html#a8f675a1eed53aa13f8202dffd9a9eed7">  206</a></span><span class="keyword">inline</span> uint32_t <a class="code hl_function" href="class_fifo.html#a8f675a1eed53aa13f8202dffd9a9eed7">Fifo&lt;T,MAX_SIZE&gt;::size</a>()</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>{</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordflow">return</span> (current_size);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>}</div>
+</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, u<span class="keywordtype">int</span>32_t MAX_SIZE&gt;</div>
+<div class="foldopen" id="foldopen00215" data-start="{" data-end="}">
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="class_fifo.html#ae3857e3455069547112d763041da2d84">  215</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_fifo.html#ae3857e3455069547112d763041da2d84">Fifo&lt;T,MAX_SIZE&gt;::clear</a>()</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>{</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    pwriteIndex = 0;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    preadIndex = 0;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    current_size = 0;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>}</div>
+</div>
+</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, u<span class="keywordtype">int</span>32_t MAX_SIZE&gt;</div>
+<div class="foldopen" id="foldopen00223" data-start="{" data-end="}">
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="class_fifo.html#a4e0d0ab0ad09d24a51c383d4bce5d516">  223</a></span><span class="keyword">inline</span> uint32_t <a class="code hl_function" href="class_fifo.html#a4e0d0ab0ad09d24a51c383d4bce5d516">Fifo&lt;T, MAX_SIZE&gt;::getFreeSize</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keywordflow">return</span> (MAX_SIZE - current_size);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>}</div>
+</div>
+</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="preprocessor">#endif </span><span class="comment">//__PLATFORM_FIFO_H__</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ttc" id="a_fifo_8hpp_html_a7a3e7313135d79bf7915b192b09d4126"><div class="ttname"><a href="_fifo_8hpp.html#a7a3e7313135d79bf7915b192b09d4126">lock_fun</a></div><div class="ttdeci">void(* lock_fun)(void)</div><div class="ttdoc">互斥锁函数类型定义</div><div class="ttdef"><b>Definition</b> Fifo.hpp:7</div></div>
+<div class="ttc" id="aclass_fifo_html"><div class="ttname"><a href="class_fifo.html">Fifo</a></div><div class="ttdoc">环形Fifo模板类</div><div class="ttdef"><b>Definition</b> Fifo.hpp:20</div></div>
+<div class="ttc" id="aclass_fifo_html_a4e0d0ab0ad09d24a51c383d4bce5d516"><div class="ttname"><a href="class_fifo.html#a4e0d0ab0ad09d24a51c383d4bce5d516">Fifo::getFreeSize</a></div><div class="ttdeci">uint32_t getFreeSize(void)</div><div class="ttdoc">获取当前队列中的空闲空间大小</div><div class="ttdef"><b>Definition</b> Fifo.hpp:223</div></div>
+<div class="ttc" id="aclass_fifo_html_a64abc17d172e36117ce7fe7286a5452d"><div class="ttname"><a href="class_fifo.html#a64abc17d172e36117ce7fe7286a5452d">Fifo::get</a></div><div class="ttdeci">uint32_t get(T &amp;data)</div><div class="ttdoc">从队列中取出一个元素</div><div class="ttdef"><b>Definition</b> Fifo.hpp:157</div></div>
+<div class="ttc" id="aclass_fifo_html_a6dcc4bc05d4e05a5efcee30d9f3b7a49"><div class="ttname"><a href="class_fifo.html#a6dcc4bc05d4e05a5efcee30d9f3b7a49">Fifo::~Fifo</a></div><div class="ttdeci">~Fifo()</div><div class="ttdef"><b>Definition</b> Fifo.hpp:92</div></div>
+<div class="ttc" id="aclass_fifo_html_a7167b0f24876c07b0016eeac2544b14a"><div class="ttname"><a href="class_fifo.html#a7167b0f24876c07b0016eeac2544b14a">Fifo::gets</a></div><div class="ttdeci">uint32_t gets(T *pData, uint32_t num)</div><div class="ttdoc">从队列中取出多个元素</div><div class="ttdef"><b>Definition</b> Fifo.hpp:176</div></div>
+<div class="ttc" id="aclass_fifo_html_a8f675a1eed53aa13f8202dffd9a9eed7"><div class="ttname"><a href="class_fifo.html#a8f675a1eed53aa13f8202dffd9a9eed7">Fifo::size</a></div><div class="ttdeci">uint32_t size(void)</div><div class="ttdoc">获取当前队列中的元素个数</div><div class="ttdef"><b>Definition</b> Fifo.hpp:206</div></div>
+<div class="ttc" id="aclass_fifo_html_ab66f1a0d287927bb147541d7fc94c868"><div class="ttname"><a href="class_fifo.html#ab66f1a0d287927bb147541d7fc94c868">Fifo::Fifo</a></div><div class="ttdeci">Fifo(lock_fun lock=nullptr, lock_fun unlock=nullptr)</div><div class="ttdoc">Fifo类构造函数</div><div class="ttdef"><b>Definition</b> Fifo.hpp:85</div></div>
+<div class="ttc" id="aclass_fifo_html_ac665d4f925dcfb9356a25d907a91c223"><div class="ttname"><a href="class_fifo.html#ac665d4f925dcfb9356a25d907a91c223">Fifo::put</a></div><div class="ttdeci">uint32_t put(const T &amp;data)</div><div class="ttdoc">向队列中添加一个元素</div><div class="ttdef"><b>Definition</b> Fifo.hpp:105</div></div>
+<div class="ttc" id="aclass_fifo_html_ad438abe6d3a13181a6973b98a208b2ee"><div class="ttname"><a href="class_fifo.html#ad438abe6d3a13181a6973b98a208b2ee">Fifo::puts</a></div><div class="ttdeci">uint32_t puts(T *pData, uint32_t num)</div><div class="ttdoc">向队列中添加多个元素</div><div class="ttdef"><b>Definition</b> Fifo.hpp:125</div></div>
+<div class="ttc" id="aclass_fifo_html_ae3857e3455069547112d763041da2d84"><div class="ttname"><a href="class_fifo.html#ae3857e3455069547112d763041da2d84">Fifo::clear</a></div><div class="ttdeci">void clear(void)</div><div class="ttdoc">清空队列</div><div class="ttdef"><b>Definition</b> Fifo.hpp:215</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_bc2597cfbec14760d23b28ac592ac7af.html">platform-lib</a></li><li class="navelem"><a class="el" href="dir_942854b58a2b112cfc1e237ce55ab4a1.html">DataStructre</a></li><li class="navelem"><a class="el" href="_fifo_8hpp.html">Fifo.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-drivers/STM32/Timer/Timer.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_timer_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">Timer.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_timer_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __PLATFORM_STM32_TIMER_H__</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __PLATFORM_STM32_TIMER_H__</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_l_l-support_8h.html">platform-drivers/STM32/LL-support.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef SYSTIM_TIMx</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="_timer_8hpp.html#a905670346804f5d35e546f9dde9194ea">    7</a></span><span class="preprocessor">    #define SYSTIM_TIM_ID               7                </span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="_timer_8hpp.html#a94e2b936d8c154d9dfb0b5ffdc62fcac">    8</a></span><span class="preprocessor">    #define _SYSTIM_TIM_LINK(AA,BB)     AA##BB</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="_timer_8hpp.html#af5f6143a27a76a91dd578fdfb9fc7cc7">    9</a></span><span class="preprocessor">    #define __SYSTIM_TIM_LINK(AA,BB)    _SYSTIM_TIM_LINK(AA,BB)</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="_timer_8hpp.html#a32e192ec97916ddde7bf4475924737cf">   10</a></span><span class="preprocessor">    #define SYSTIM_TIMx                 __SYSTIM_TIM_LINK(TIM, SYSTIM_TIM_ID)</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif </span><span class="comment">// !SYSTIM_TIMx</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_s_t_m32.html">STM32</a>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#ifndef __TYPEDEF_TIMER_CALLBACK__</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a47df4af2678cf985205c5de82018dd53">   19</a></span>    <span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="namespace_s_t_m32.html#a47df4af2678cf985205c5de82018dd53">Platform_Timer_CallBack_fun</a>)(void);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_timer.html">   28</a></span><span class="keyword">class </span><a class="code hl_class" href="class_s_t_m32_1_1_timer.html">Timer</a></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">/* Variables */</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_timer.html#a01aec592f214a27cc4f91454cbe7bbf2">   32</a></span>    TIM_TypeDef *<a class="code hl_variable" href="class_s_t_m32_1_1_timer.html#a01aec592f214a27cc4f91454cbe7bbf2">tim</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_timer.html#a0af14ada2596546a81fa79f8849efd70">   33</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_s_t_m32_1_1_timer.html#a0af14ada2596546a81fa79f8849efd70">isUseIrq</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_timer.html#a32acbf701509a0df6970f367392189f9">   34</a></span>    <a class="code hl_typedef" href="namespace_s_t_m32.html#a47df4af2678cf985205c5de82018dd53">Platform_Timer_CallBack_fun</a> <a class="code hl_variable" href="class_s_t_m32_1_1_timer.html#a32acbf701509a0df6970f367392189f9">callback_fun</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_timer.html#aed90d6bb48b00383ff927d3a59d547b8">   35</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_s_t_m32_1_1_timer.html#aed90d6bb48b00383ff927d3a59d547b8">isTimeout</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">/* Variables */</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">/* Constructor */</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_timer.html#a46601f76a4998a0bf65fdef1a1e90bb6">   39</a></span>    <a class="code hl_function" href="class_s_t_m32_1_1_timer.html#a46601f76a4998a0bf65fdef1a1e90bb6">Timer</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_timer.html#af67ba6e6c4413e4ffa9228ce5008821a">   40</a></span>    <a class="code hl_function" href="class_s_t_m32_1_1_timer.html#af67ba6e6c4413e4ffa9228ce5008821a">~Timer</a>() = <span class="keywordflow">default</span>;</div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_timer.html#a69bef237b388c060ca61d361718e6069">   48</a></span>    <a class="code hl_function" href="class_s_t_m32_1_1_timer.html#a69bef237b388c060ca61d361718e6069">Timer</a>(TIM_TypeDef *TIM, <span class="keywordtype">bool</span> IsUseIrq = <span class="keyword">false</span>, <a class="code hl_typedef" href="namespace_s_t_m32.html#a47df4af2678cf985205c5de82018dd53">Platform_Timer_CallBack_fun</a> <a class="code hl_variable" href="class_s_t_m32_1_1_timer.html#a32acbf701509a0df6970f367392189f9">callback_fun</a> = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    : <a class="code hl_variable" href="class_s_t_m32_1_1_timer.html#a01aec592f214a27cc4f91454cbe7bbf2">tim</a>(TIM), <a class="code hl_variable" href="class_s_t_m32_1_1_timer.html#a0af14ada2596546a81fa79f8849efd70">isUseIrq</a>(IsUseIrq), <a class="code hl_variable" href="class_s_t_m32_1_1_timer.html#a32acbf701509a0df6970f367392189f9">callback_fun</a>(<a class="code hl_variable" href="class_s_t_m32_1_1_timer.html#a32acbf701509a0df6970f367392189f9">callback_fun</a>) { }</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">/* Functions */</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_s_t_m32_1_1_timer.html">Timer</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_timer.html#a8aabefbd22231c55c415592c69515fa9">start</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_s_t_m32_1_1_timer.html">Timer</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_timer.html#a8aabefbd22231c55c415592c69515fa9">start</a>(uint32_t timerFreq);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_s_t_m32_1_1_timer.html">Timer</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_timer.html#a8aabefbd22231c55c415592c69515fa9">start</a>(uint32_t timerFreq, uint64_t timerCLK);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_s_t_m32_1_1_timer.html">Timer</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_timer.html#a60845fd041727a2c96edd250b8273fbf">stop</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_s_t_m32_1_1_timer.html">Timer</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_timer.html#a755c93ec63f0fb20777339195c32feb4">setFreq</a>(uint32_t timerFreq);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_s_t_m32_1_1_timer.html">Timer</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_timer.html#a755c93ec63f0fb20777339195c32feb4">setFreq</a>(uint32_t timerFreq, uint64_t timerCLK);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_class" href="class_s_t_m32_1_1_timer.html">Timer</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_timer.html#a4a9a7c28658fbd7b73736956327be076">setCount</a>(uint32_t Count);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_class" href="class_s_t_m32_1_1_timer.html">Timer</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_timer.html#a75f9413ff159456350bd07b298fa62fa">registerCallback</a>(<a class="code hl_typedef" href="namespace_s_t_m32.html#a47df4af2678cf985205c5de82018dd53">Platform_Timer_CallBack_fun</a> CallBack_fun);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_class" href="class_s_t_m32_1_1_timer.html">Timer</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_timer.html#a061b0ec1f38d17933e0a2a724b36ec66">unregisterCallback</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    uint64_t <a class="code hl_function" href="class_s_t_m32_1_1_timer.html#aca0d6be2f6c0415ad6f37cb990f03839">getTimerClock</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_s_t_m32_1_1_timer.html#ac4a4820401bbfd3c16e739d0988248d1">isTimeOut</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_t_m32_1_1_timer.html#a161bf660a12ccd7f27b95ad99e70d6b6">irq</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>};</div>
+</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="keyword">extern</span> Timer <a class="code hl_variable" href="namespace_s_t_m32.html#abf709eaba585c972802d34d697db9af4">sysTimer</a>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>} <span class="comment">//namespace STM32</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="preprocessor">#endif </span><span class="comment">//__PLATFORM_STM32_TIMER_H__</span></div>
+<div class="ttc" id="a_l_l-support_8h_html"><div class="ttname"><a href="_l_l-support_8h.html">LL-support.h</a></div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html">STM32::Timer</a></div><div class="ttdoc">Timer类</div><div class="ttdef"><b>Definition</b> Timer.hpp:29</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_a01aec592f214a27cc4f91454cbe7bbf2"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#a01aec592f214a27cc4f91454cbe7bbf2">STM32::Timer::tim</a></div><div class="ttdeci">TIM_TypeDef * tim</div><div class="ttdef"><b>Definition</b> Timer.hpp:32</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_a061b0ec1f38d17933e0a2a724b36ec66"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#a061b0ec1f38d17933e0a2a724b36ec66">STM32::Timer::unregisterCallback</a></div><div class="ttdeci">Timer &amp; unregisterCallback(void)</div><div class="ttdoc">注销注册定时器回调函数</div><div class="ttdef"><b>Definition</b> Timer.cpp:73</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_a0af14ada2596546a81fa79f8849efd70"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#a0af14ada2596546a81fa79f8849efd70">STM32::Timer::isUseIrq</a></div><div class="ttdeci">bool isUseIrq</div><div class="ttdef"><b>Definition</b> Timer.hpp:33</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_a161bf660a12ccd7f27b95ad99e70d6b6"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#a161bf660a12ccd7f27b95ad99e70d6b6">STM32::Timer::irq</a></div><div class="ttdeci">void irq(void)</div><div class="ttdoc">定时器中断服务函数</div><div class="ttdef"><b>Definition</b> Timer.cpp:78</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_a32acbf701509a0df6970f367392189f9"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#a32acbf701509a0df6970f367392189f9">STM32::Timer::callback_fun</a></div><div class="ttdeci">Platform_Timer_CallBack_fun callback_fun</div><div class="ttdef"><b>Definition</b> Timer.hpp:34</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_a46601f76a4998a0bf65fdef1a1e90bb6"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#a46601f76a4998a0bf65fdef1a1e90bb6">STM32::Timer::Timer</a></div><div class="ttdeci">Timer()=default</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_a4a9a7c28658fbd7b73736956327be076"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#a4a9a7c28658fbd7b73736956327be076">STM32::Timer::setCount</a></div><div class="ttdeci">Timer &amp; setCount(uint32_t Count)</div><div class="ttdoc">设置定时器计数</div><div class="ttdef"><b>Definition</b> Timer.cpp:50</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_a60845fd041727a2c96edd250b8273fbf"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#a60845fd041727a2c96edd250b8273fbf">STM32::Timer::stop</a></div><div class="ttdeci">virtual Timer &amp; stop(void)</div><div class="ttdoc">停止定时器</div><div class="ttdef"><b>Definition</b> Timer.cpp:28</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_a69bef237b388c060ca61d361718e6069"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#a69bef237b388c060ca61d361718e6069">STM32::Timer::Timer</a></div><div class="ttdeci">Timer(TIM_TypeDef *TIM, bool IsUseIrq=false, Platform_Timer_CallBack_fun callback_fun=nullptr)</div><div class="ttdoc">Timer类构造函数</div><div class="ttdef"><b>Definition</b> Timer.hpp:48</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_a755c93ec63f0fb20777339195c32feb4"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#a755c93ec63f0fb20777339195c32feb4">STM32::Timer::setFreq</a></div><div class="ttdeci">virtual Timer &amp; setFreq(uint32_t timerFreq)</div><div class="ttdoc">设置定时器频率</div><div class="ttdef"><b>Definition</b> Timer.cpp:46</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_a75f9413ff159456350bd07b298fa62fa"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#a75f9413ff159456350bd07b298fa62fa">STM32::Timer::registerCallback</a></div><div class="ttdeci">Timer &amp; registerCallback(Platform_Timer_CallBack_fun CallBack_fun)</div><div class="ttdoc">注册定时器回调函数</div><div class="ttdef"><b>Definition</b> Timer.cpp:68</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_a8aabefbd22231c55c415592c69515fa9"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#a8aabefbd22231c55c415592c69515fa9">STM32::Timer::start</a></div><div class="ttdeci">virtual Timer &amp; start(void)</div><div class="ttdoc">启动定时器</div><div class="ttdef"><b>Definition</b> Timer.cpp:8</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_ac4a4820401bbfd3c16e739d0988248d1"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#ac4a4820401bbfd3c16e739d0988248d1">STM32::Timer::isTimeOut</a></div><div class="ttdeci">bool isTimeOut(void)</div><div class="ttdoc">检查定时器是否超时</div><div class="ttdef"><b>Definition</b> Timer.cpp:89</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_aca0d6be2f6c0415ad6f37cb990f03839"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#aca0d6be2f6c0415ad6f37cb990f03839">STM32::Timer::getTimerClock</a></div><div class="ttdeci">uint64_t getTimerClock(void)</div><div class="ttdoc">获取定时器时钟频率</div><div class="ttdef"><b>Definition</b> Timer.cpp:55</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_aed90d6bb48b00383ff927d3a59d547b8"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#aed90d6bb48b00383ff927d3a59d547b8">STM32::Timer::isTimeout</a></div><div class="ttdeci">bool isTimeout</div><div class="ttdef"><b>Definition</b> Timer.hpp:35</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_af67ba6e6c4413e4ffa9228ce5008821a"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#af67ba6e6c4413e4ffa9228ce5008821a">STM32::Timer::~Timer</a></div><div class="ttdeci">~Timer()=default</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html"><div class="ttname"><a href="namespace_s_t_m32.html">STM32</a></div><div class="ttdef"><b>Definition</b> DDS.hpp:5</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a47df4af2678cf985205c5de82018dd53"><div class="ttname"><a href="namespace_s_t_m32.html#a47df4af2678cf985205c5de82018dd53">STM32::Platform_Timer_CallBack_fun</a></div><div class="ttdeci">void(* Platform_Timer_CallBack_fun)(void)</div><div class="ttdoc">定时器回调函数类型</div><div class="ttdef"><b>Definition</b> Timer.hpp:19</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_abf709eaba585c972802d34d697db9af4"><div class="ttname"><a href="namespace_s_t_m32.html#abf709eaba585c972802d34d697db9af4">STM32::sysTimer</a></div><div class="ttdeci">Timer sysTimer</div><div class="ttdoc">Platform库系统定时器</div><div class="ttdef"><b>Definition</b> Timer.cpp:100</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_84d8ddb176e16ca8bccaaa5eeae31ee8.html">platform-drivers</a></li><li class="navelem"><a class="el" href="dir_4c7ecf3a8e2e1382144ef720f571f877.html">STM32</a></li><li class="navelem"><a class="el" href="dir_c55b539d71507b745777b4fbee7b7def.html">Timer</a></li><li class="navelem"><a class="el" href="_timer_8hpp.html">Timer.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

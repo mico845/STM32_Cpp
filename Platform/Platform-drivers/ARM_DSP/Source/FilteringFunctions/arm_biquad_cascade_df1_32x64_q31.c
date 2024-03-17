@@ -33,7 +33,7 @@
  */
 
 /**
-  @defgroup BiquadCascadeDF1_32x64 High Precision Q31 Biquad Cascade Filter
+  @defgroup BiquadCascadeDF1_32x64 high Precision Q31 Biquad Cascade Filter
 
   This function implements a high precision Biquad cascade filter which operates on
   Q31 data values.  The filter coefficients are in 1.31 format and the state variables

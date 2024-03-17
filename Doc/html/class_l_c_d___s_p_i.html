@@ -1,0 +1,853 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: LCD_SPI类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_l_c_d___s_p_i.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_l_c_d___s_p_i-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">LCD_SPI类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>LCD_SPI类  
+ <a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aa8884e7dfd305b2b37b6a782867acf5e" id="r_aa8884e7dfd305b2b37b6a782867acf5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8884e7dfd305b2b37b6a782867acf5e">LCD_SPI</a> ()=default</td></tr>
+<tr class="separator:aa8884e7dfd305b2b37b6a782867acf5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9b01af752f760fc230ce3fe21411c64" id="r_ab9b01af752f760fc230ce3fe21411c64"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9b01af752f760fc230ce3fe21411c64">~LCD_SPI</a> ()=default</td></tr>
+<tr class="separator:ab9b01af752f760fc230ce3fe21411c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae25e4602dadfec012bbbddc72467e450" id="r_ae25e4602dadfec012bbbddc72467e450"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae25e4602dadfec012bbbddc72467e450">LCD_SPI</a> (bool IsUseHorizontal)</td></tr>
+<tr class="memdesc:ae25e4602dadfec012bbbddc72467e450"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD_SPI类构造函数  <br /></td></tr>
+<tr class="separator:ae25e4602dadfec012bbbddc72467e450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7da86a6f295bffef3b9d8a3dc05ad7ae" id="r_a7da86a6f295bffef3b9d8a3dc05ad7ae"><td class="memItemLeft" align="right" valign="top">__INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7da86a6f295bffef3b9d8a3dc05ad7ae">clear</a> (<a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color=<a class="el" href="_l_c_d___s_p_i_8hpp.html#a46899b87954bec3d2ca158543a2fbdc8">DEFAULT_BACK_COLOR</a>)</td></tr>
+<tr class="memdesc:a7da86a6f295bffef3b9d8a3dc05ad7ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">清空LCD屏幕  <br /></td></tr>
+<tr class="separator:a7da86a6f295bffef3b9d8a3dc05ad7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0266865ebbc3c9101dcd11b2c44c33f8" id="r_a0266865ebbc3c9101dcd11b2c44c33f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0266865ebbc3c9101dcd11b2c44c33f8">fill</a> (uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end, <a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color=<a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>)</td></tr>
+<tr class="memdesc:a0266865ebbc3c9101dcd11b2c44c33f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">填充LCD指定区域的颜色  <br /></td></tr>
+<tr class="separator:a0266865ebbc3c9101dcd11b2c44c33f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad565cfe83204cd26ed6dd66f018d9692" id="r_ad565cfe83204cd26ed6dd66f018d9692"><td class="memItemLeft" align="right" valign="top">__INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad565cfe83204cd26ed6dd66f018d9692">draw_Point</a> (uint16_t x, uint16_t y, <a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color=<a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>)</td></tr>
+<tr class="memdesc:ad565cfe83204cd26ed6dd66f018d9692"><td class="mdescLeft">&#160;</td><td class="mdescRight">在LCD屏幕上绘制一个点  <br /></td></tr>
+<tr class="separator:ad565cfe83204cd26ed6dd66f018d9692"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11bd8ec830791cba9420df1b0072b640" id="r_a11bd8ec830791cba9420df1b0072b640"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11bd8ec830791cba9420df1b0072b640">draw_Line</a> (uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, <a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color=<a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>)</td></tr>
+<tr class="memdesc:a11bd8ec830791cba9420df1b0072b640"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制一条直线  <br /></td></tr>
+<tr class="separator:a11bd8ec830791cba9420df1b0072b640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e4bd003407be8d7296929e37781b196" id="r_a3e4bd003407be8d7296929e37781b196"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e4bd003407be8d7296929e37781b196">draw_Rectangle</a> (uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, <a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color=<a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>)</td></tr>
+<tr class="memdesc:a3e4bd003407be8d7296929e37781b196"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制矩形  <br /></td></tr>
+<tr class="separator:a3e4bd003407be8d7296929e37781b196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e18dac19a367376558363492c19b7f0" id="r_a6e18dac19a367376558363492c19b7f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e18dac19a367376558363492c19b7f0">draw_Circle</a> (uint16_t x0, uint16_t y0, uint8_t r, <a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color=<a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>)</td></tr>
+<tr class="memdesc:a6e18dac19a367376558363492c19b7f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制圆形  <br /></td></tr>
+<tr class="separator:a6e18dac19a367376558363492c19b7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c1b19f1ff9d8df61172e36843dbd1f0" id="r_a7c1b19f1ff9d8df61172e36843dbd1f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c1b19f1ff9d8df61172e36843dbd1f0">show_Char</a> (uint16_t x, uint16_t y, char chr, <a class="el" href="_l_c_d___lib_8hpp.html#ab4c2600f00c83150c5a124f21f7887c8">LCD_FontSize_TypeDef</a> size=<a class="el" href="_l_c_d___s_p_i_8hpp.html#a861dac9013af3a7d4e6aee9cd06f7d6b">DEFAULT_FONT_SIZE</a>, <a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color=<a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>, <a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> back_color=<a class="el" href="_l_c_d___s_p_i_8hpp.html#a46899b87954bec3d2ca158543a2fbdc8">DEFAULT_BACK_COLOR</a>)</td></tr>
+<tr class="memdesc:a7c1b19f1ff9d8df61172e36843dbd1f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">在LCD屏幕上显示一个字符  <br /></td></tr>
+<tr class="separator:a7c1b19f1ff9d8df61172e36843dbd1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7d2c005beedb484fe426a147a797c95" id="r_aa7d2c005beedb484fe426a147a797c95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7d2c005beedb484fe426a147a797c95">show_Num</a> (uint16_t x, uint16_t y, uint32_t num, uint8_t len, bool Is_ZeroFill=false, <a class="el" href="_l_c_d___lib_8hpp.html#ab4c2600f00c83150c5a124f21f7887c8">LCD_FontSize_TypeDef</a> size=<a class="el" href="_l_c_d___s_p_i_8hpp.html#a861dac9013af3a7d4e6aee9cd06f7d6b">DEFAULT_FONT_SIZE</a>, <a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color=<a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>, <a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> back_color=<a class="el" href="_l_c_d___s_p_i_8hpp.html#a46899b87954bec3d2ca158543a2fbdc8">DEFAULT_BACK_COLOR</a>)</td></tr>
+<tr class="memdesc:aa7d2c005beedb484fe426a147a797c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">在LCD屏幕上显示一个数字  <br /></td></tr>
+<tr class="separator:aa7d2c005beedb484fe426a147a797c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf90e64cd034edad5410046095f000e4" id="r_adf90e64cd034edad5410046095f000e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf90e64cd034edad5410046095f000e4">show_String</a> (uint16_t x, uint16_t y, const char *str, uint16_t string_width=0, uint16_t string_height=0, <a class="el" href="_l_c_d___lib_8hpp.html#ab4c2600f00c83150c5a124f21f7887c8">LCD_FontSize_TypeDef</a> size=<a class="el" href="_l_c_d___s_p_i_8hpp.html#a861dac9013af3a7d4e6aee9cd06f7d6b">DEFAULT_FONT_SIZE</a>, <a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color=<a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>, <a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> back_color=<a class="el" href="_l_c_d___s_p_i_8hpp.html#a46899b87954bec3d2ca158543a2fbdc8">DEFAULT_BACK_COLOR</a>)</td></tr>
+<tr class="memdesc:adf90e64cd034edad5410046095f000e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">在LCD屏幕上显示一个字符串  <br /></td></tr>
+<tr class="separator:adf90e64cd034edad5410046095f000e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a553032385ae34bc220c31b4059fa7785" id="r_a553032385ae34bc220c31b4059fa7785"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a553032385ae34bc220c31b4059fa7785">show_Image</a> (uint16_t x, uint16_t y, uint16_t Image_width, uint16_t Image_height, const uint8_t *Image)</td></tr>
+<tr class="memdesc:a553032385ae34bc220c31b4059fa7785"><td class="mdescLeft">&#160;</td><td class="mdescRight">在LCD屏幕上显示一幅图像  <br /></td></tr>
+<tr class="separator:a553032385ae34bc220c31b4059fa7785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae4dfe6458f9cb62fd4aff264973092" id="r_a6ae4dfe6458f9cb62fd4aff264973092"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_l_c_d___s_p_i.html">LCD_SPI</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ae4dfe6458f9cb62fd4aff264973092">operator&lt;&lt;</a> (const char *pStr)</td></tr>
+<tr class="memdesc:a6ae4dfe6458f9cb62fd4aff264973092"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载操作符&lt;&lt;，用于将字符串输出到LCD屏幕  <br /></td></tr>
+<tr class="separator:a6ae4dfe6458f9cb62fd4aff264973092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b8fe3e540dab5da961d3346956b5cf" id="r_a51b8fe3e540dab5da961d3346956b5cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_l_c_d___s_p_i.html">LCD_SPI</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51b8fe3e540dab5da961d3346956b5cf">operator&lt;&lt;</a> (<a class="el" href="struct_s_t_m32_1_1_e_n_d_l.html">STM32::ENDL</a> &amp;e)</td></tr>
+<tr class="memdesc:a51b8fe3e540dab5da961d3346956b5cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载操作符&lt;&lt;，用于换行输出  <br /></td></tr>
+<tr class="separator:a51b8fe3e540dab5da961d3346956b5cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84c43b6774ecaad2bf1628198edfe818" id="r_a84c43b6774ecaad2bf1628198edfe818"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_l_c_d___s_p_i.html">LCD_SPI</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84c43b6774ecaad2bf1628198edfe818">operator&lt;&lt;</a> (<a class="el" href="struct_s_t_m32_1_1_c_l_e_a_r.html">STM32::CLEAR</a> &amp;c)</td></tr>
+<tr class="memdesc:a84c43b6774ecaad2bf1628198edfe818"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载操作符&lt;&lt;，用于清屏  <br /></td></tr>
+<tr class="separator:a84c43b6774ecaad2bf1628198edfe818"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da538769896768fa5386629e3c6e7d8" id="r_a2da538769896768fa5386629e3c6e7d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_l_c_d___s_p_i.html">LCD_SPI</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2da538769896768fa5386629e3c6e7d8">operator&lt;&lt;</a> (const char charactor)</td></tr>
+<tr class="memdesc:a2da538769896768fa5386629e3c6e7d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载操作符&lt;&lt;，用于将字符输出到LCD屏幕  <br /></td></tr>
+<tr class="separator:a2da538769896768fa5386629e3c6e7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1d84333b3cbd2288c8212a9431e35a0" id="r_af1d84333b3cbd2288c8212a9431e35a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_l_c_d___s_p_i.html">LCD_SPI</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1d84333b3cbd2288c8212a9431e35a0">operator&lt;&lt;</a> (int val)</td></tr>
+<tr class="memdesc:af1d84333b3cbd2288c8212a9431e35a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载操作符&lt;&lt;，用于将整数输出到LCD屏幕  <br /></td></tr>
+<tr class="separator:af1d84333b3cbd2288c8212a9431e35a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af52beeb3d4376f4331468938256c96ca" id="r_af52beeb3d4376f4331468938256c96ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_l_c_d___s_p_i.html">LCD_SPI</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af52beeb3d4376f4331468938256c96ca">operator&lt;&lt;</a> (double val)</td></tr>
+<tr class="memdesc:af52beeb3d4376f4331468938256c96ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载操作符&lt;&lt;，用于将浮点数输出到LCD屏幕  <br /></td></tr>
+<tr class="separator:af52beeb3d4376f4331468938256c96ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>LCD_SPI类 </p>
+<p>基于SPI通信的LCD屏幕的驱动。 ST7789V3 240RGB x 320 dot 262K Color with Frame Memory Single-Chip TFT Controller/Driver </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aa8884e7dfd305b2b37b6a782867acf5e" name="aa8884e7dfd305b2b37b6a782867acf5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8884e7dfd305b2b37b6a782867acf5e">&#9670;&#160;</a></span>LCD_SPI() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LCD_SPI::LCD_SPI </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab9b01af752f760fc230ce3fe21411c64" name="ab9b01af752f760fc230ce3fe21411c64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9b01af752f760fc230ce3fe21411c64">&#9670;&#160;</a></span>~LCD_SPI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LCD_SPI::~LCD_SPI </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae25e4602dadfec012bbbddc72467e450" name="ae25e4602dadfec012bbbddc72467e450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae25e4602dadfec012bbbddc72467e450">&#9670;&#160;</a></span>LCD_SPI() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LCD_SPI::LCD_SPI </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>IsUseHorizontal</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LCD_SPI类构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">IsUseHorizontal</td><td>调节屏幕方向为水平方向，如果true则水平显示，如果false则竖直显示 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a7da86a6f295bffef3b9d8a3dc05ad7ae" name="a7da86a6f295bffef3b9d8a3dc05ad7ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7da86a6f295bffef3b9d8a3dc05ad7ae">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__INLINE void LCD_SPI::clear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a></td>          <td class="paramname"><span class="paramname"><em>color</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_l_c_d___s_p_i_8hpp.html#a46899b87954bec3d2ca158543a2fbdc8">DEFAULT_BACK_COLOR</a></span></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>清空LCD屏幕 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>清空时填充的颜色，默认为DEFAULT_BACK_COLOR </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6e18dac19a367376558363492c19b7f0" name="a6e18dac19a367376558363492c19b7f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e18dac19a367376558363492c19b7f0">&#9670;&#160;</a></span>draw_Circle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_SPI::draw_Circle </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>x0</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>y0</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>r</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a></td>          <td class="paramname"><span class="paramname"><em>color</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a></span></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>绘制圆形 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x0</td><td>圆心x坐标 </td></tr>
+    <tr><td class="paramname">y0</td><td>圆心y坐标 </td></tr>
+    <tr><td class="paramname">r</td><td>圆半径 </td></tr>
+    <tr><td class="paramname">color</td><td>圆的颜色，默认为DEFAULT_PENCIL_COLOR </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a11bd8ec830791cba9420df1b0072b640" name="a11bd8ec830791cba9420df1b0072b640"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11bd8ec830791cba9420df1b0072b640">&#9670;&#160;</a></span>draw_Line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_SPI::draw_Line </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>x1</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>y1</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>x2</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>y2</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a></td>          <td class="paramname"><span class="paramname"><em>color</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a></span></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>绘制一条直线 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x1</td><td>起始点x坐标 </td></tr>
+    <tr><td class="paramname">y1</td><td>起始点y坐标 </td></tr>
+    <tr><td class="paramname">x2</td><td>结束点x坐标 </td></tr>
+    <tr><td class="paramname">y2</td><td>结束点y坐标 </td></tr>
+    <tr><td class="paramname">color</td><td>线条颜色，默认为DEFAULT_PENCIL_COLOR </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad565cfe83204cd26ed6dd66f018d9692" name="ad565cfe83204cd26ed6dd66f018d9692"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad565cfe83204cd26ed6dd66f018d9692">&#9670;&#160;</a></span>draw_Point()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__INLINE void LCD_SPI::draw_Point </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>x</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>y</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a></td>          <td class="paramname"><span class="paramname"><em>color</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a></span></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在LCD屏幕上绘制一个点 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>点的x坐标 </td></tr>
+    <tr><td class="paramname">y</td><td>点的y坐标 </td></tr>
+    <tr><td class="paramname">color</td><td>点的颜色，默认为DEFAULT_PENCIL_COLOR </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3e4bd003407be8d7296929e37781b196" name="a3e4bd003407be8d7296929e37781b196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e4bd003407be8d7296929e37781b196">&#9670;&#160;</a></span>draw_Rectangle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_SPI::draw_Rectangle </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>x1</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>y1</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>x2</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>y2</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a></td>          <td class="paramname"><span class="paramname"><em>color</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a></span></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>绘制矩形 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x1</td><td>左上角x坐标 </td></tr>
+    <tr><td class="paramname">y1</td><td>左上角y坐标 </td></tr>
+    <tr><td class="paramname">x2</td><td>右下角x坐标 </td></tr>
+    <tr><td class="paramname">y2</td><td>右下角y坐标 </td></tr>
+    <tr><td class="paramname">color</td><td>矩形填充颜色，默认为DEFAULT_PENCIL_COLOR </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0266865ebbc3c9101dcd11b2c44c33f8" name="a0266865ebbc3c9101dcd11b2c44c33f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0266865ebbc3c9101dcd11b2c44c33f8">&#9670;&#160;</a></span>fill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_SPI::fill </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>x_start</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>y_start</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>x_end</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>y_end</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a></td>          <td class="paramname"><span class="paramname"><em>color</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a></span></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>填充LCD指定区域的颜色 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x_start</td><td>填充区域左上角x坐标 </td></tr>
+    <tr><td class="paramname">y_start</td><td>填充区域左上角y坐标 </td></tr>
+    <tr><td class="paramname">x_end</td><td>填充区域右下角x坐标 </td></tr>
+    <tr><td class="paramname">y_end</td><td>填充区域右下角y坐标 </td></tr>
+    <tr><td class="paramname">color</td><td>填充的颜色，默认为DEFAULT_PENCIL_COLOR </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6ae4dfe6458f9cb62fd4aff264973092" name="a6ae4dfe6458f9cb62fd4aff264973092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ae4dfe6458f9cb62fd4aff264973092">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_l_c_d___s_p_i.html">LCD_SPI</a> &amp; LCD_SPI::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>pStr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重载操作符&lt;&lt;，用于将字符串输出到LCD屏幕 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pStr</td><td>要输出的字符串 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_l_c_d___s_p_i.html" title="LCD_SPI类">LCD_SPI</a>&amp; 返回LCD_SPI对象的引用 </dd></dl>
+
+</div>
+</div>
+<a id="a2da538769896768fa5386629e3c6e7d8" name="a2da538769896768fa5386629e3c6e7d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2da538769896768fa5386629e3c6e7d8">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_l_c_d___s_p_i.html">LCD_SPI</a> &amp; LCD_SPI::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const char</td>          <td class="paramname"><span class="paramname"><em>charactor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重载操作符&lt;&lt;，用于将字符输出到LCD屏幕 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">charactor</td><td>要输出的字符 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_l_c_d___s_p_i.html" title="LCD_SPI类">LCD_SPI</a>&amp; 返回LCD_SPI对象的引用 </dd></dl>
+
+</div>
+</div>
+<a id="af52beeb3d4376f4331468938256c96ca" name="af52beeb3d4376f4331468938256c96ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af52beeb3d4376f4331468938256c96ca">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_l_c_d___s_p_i.html">LCD_SPI</a> &amp; LCD_SPI::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重载操作符&lt;&lt;，用于将浮点数输出到LCD屏幕 </p>
+<p>修改宏LCD_STREAM_FLOAT_PRECISION，可以扩展小数显示位数</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>要输出的浮点数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_l_c_d___s_p_i.html" title="LCD_SPI类">LCD_SPI</a>&amp; 返回LCD_SPI对象的引用 </dd></dl>
+
+</div>
+</div>
+<a id="af1d84333b3cbd2288c8212a9431e35a0" name="af1d84333b3cbd2288c8212a9431e35a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1d84333b3cbd2288c8212a9431e35a0">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_l_c_d___s_p_i.html">LCD_SPI</a> &amp; LCD_SPI::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重载操作符&lt;&lt;，用于将整数输出到LCD屏幕 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>要输出的整数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_l_c_d___s_p_i.html" title="LCD_SPI类">LCD_SPI</a>&amp; 返回LCD_SPI对象的引用 </dd></dl>
+
+</div>
+</div>
+<a id="a84c43b6774ecaad2bf1628198edfe818" name="a84c43b6774ecaad2bf1628198edfe818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84c43b6774ecaad2bf1628198edfe818">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_l_c_d___s_p_i.html">LCD_SPI</a> &amp; LCD_SPI::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_t_m32_1_1_c_l_e_a_r.html">STM32::CLEAR</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重载操作符&lt;&lt;，用于清屏 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>清屏对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_l_c_d___s_p_i.html" title="LCD_SPI类">LCD_SPI</a>&amp; 返回LCD_SPI对象的引用 </dd></dl>
+
+</div>
+</div>
+<a id="a51b8fe3e540dab5da961d3346956b5cf" name="a51b8fe3e540dab5da961d3346956b5cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51b8fe3e540dab5da961d3346956b5cf">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_l_c_d___s_p_i.html">LCD_SPI</a> &amp; LCD_SPI::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_t_m32_1_1_e_n_d_l.html">STM32::ENDL</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重载操作符&lt;&lt;，用于换行输出 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>换行对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_l_c_d___s_p_i.html" title="LCD_SPI类">LCD_SPI</a>&amp; 返回LCD_SPI对象的引用 </dd></dl>
+
+</div>
+</div>
+<a id="a7c1b19f1ff9d8df61172e36843dbd1f0" name="a7c1b19f1ff9d8df61172e36843dbd1f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c1b19f1ff9d8df61172e36843dbd1f0">&#9670;&#160;</a></span>show_Char()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_SPI::show_Char </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>x</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>y</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>chr</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_c_d___lib_8hpp.html#ab4c2600f00c83150c5a124f21f7887c8">LCD_FontSize_TypeDef</a></td>          <td class="paramname"><span class="paramname"><em>size</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_l_c_d___s_p_i_8hpp.html#a861dac9013af3a7d4e6aee9cd06f7d6b">DEFAULT_FONT_SIZE</a></span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a></td>          <td class="paramname"><span class="paramname"><em>color</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a></span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a></td>          <td class="paramname"><span class="paramname"><em>back_color</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_l_c_d___s_p_i_8hpp.html#a46899b87954bec3d2ca158543a2fbdc8">DEFAULT_BACK_COLOR</a></span></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在LCD屏幕上显示一个字符 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>字符左上角x坐标 </td></tr>
+    <tr><td class="paramname">y</td><td>字符左上角y坐标 </td></tr>
+    <tr><td class="paramname">chr</td><td>要显示的字符 </td></tr>
+    <tr><td class="paramname">size</td><td>字体大小，默认为DEFAULT_FONT_SIZE </td></tr>
+    <tr><td class="paramname">color</td><td>字体颜色，默认为DEFAULT_PENCIL_COLOR </td></tr>
+    <tr><td class="paramname">back_color</td><td>背景颜色，默认为DEFAULT_BACK_COLOR </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a553032385ae34bc220c31b4059fa7785" name="a553032385ae34bc220c31b4059fa7785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a553032385ae34bc220c31b4059fa7785">&#9670;&#160;</a></span>show_Image()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_SPI::show_Image </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>x</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>y</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>Image_width</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>Image_height</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>Image</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在LCD屏幕上显示一幅图像 </p>
+<p>Image2Lcd取模方式： C语言数据/水平扫描/16位真彩色(RGB565)/高位在前 其他的不要选</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>图像左上角x坐标 </td></tr>
+    <tr><td class="paramname">y</td><td>图像左上角y坐标 </td></tr>
+    <tr><td class="paramname">Image_width</td><td>图像宽度 </td></tr>
+    <tr><td class="paramname">Image_height</td><td>图像高度 </td></tr>
+    <tr><td class="paramname">Image</td><td>图像数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa7d2c005beedb484fe426a147a797c95" name="aa7d2c005beedb484fe426a147a797c95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7d2c005beedb484fe426a147a797c95">&#9670;&#160;</a></span>show_Num()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_SPI::show_Num </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>x</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>y</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>num</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>len</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>Is_ZeroFill</em><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_c_d___lib_8hpp.html#ab4c2600f00c83150c5a124f21f7887c8">LCD_FontSize_TypeDef</a></td>          <td class="paramname"><span class="paramname"><em>size</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_l_c_d___s_p_i_8hpp.html#a861dac9013af3a7d4e6aee9cd06f7d6b">DEFAULT_FONT_SIZE</a></span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a></td>          <td class="paramname"><span class="paramname"><em>color</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a></span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a></td>          <td class="paramname"><span class="paramname"><em>back_color</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_l_c_d___s_p_i_8hpp.html#a46899b87954bec3d2ca158543a2fbdc8">DEFAULT_BACK_COLOR</a></span></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在LCD屏幕上显示一个数字 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>数字左上角x坐标 </td></tr>
+    <tr><td class="paramname">y</td><td>数字左上角y坐标 </td></tr>
+    <tr><td class="paramname">num</td><td>要显示的数字 </td></tr>
+    <tr><td class="paramname">len</td><td>数字长度 </td></tr>
+    <tr><td class="paramname">Is_ZeroFill</td><td>空位是否以0填充，默认为false </td></tr>
+    <tr><td class="paramname">size</td><td>字体大小，默认为DEFAULT_FONT_SIZE </td></tr>
+    <tr><td class="paramname">color</td><td>字体颜色，默认为DEFAULT_PENCIL_COLOR </td></tr>
+    <tr><td class="paramname">back_color</td><td>背景颜色，默认为DEFAULT_BACK_COLOR </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adf90e64cd034edad5410046095f000e4" name="adf90e64cd034edad5410046095f000e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf90e64cd034edad5410046095f000e4">&#9670;&#160;</a></span>show_String()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_SPI::show_String </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>x</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>y</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>str</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>string_width</em><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>string_height</em><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_c_d___lib_8hpp.html#ab4c2600f00c83150c5a124f21f7887c8">LCD_FontSize_TypeDef</a></td>          <td class="paramname"><span class="paramname"><em>size</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_l_c_d___s_p_i_8hpp.html#a861dac9013af3a7d4e6aee9cd06f7d6b">DEFAULT_FONT_SIZE</a></span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a></td>          <td class="paramname"><span class="paramname"><em>color</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a></span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a></td>          <td class="paramname"><span class="paramname"><em>back_color</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_l_c_d___s_p_i_8hpp.html#a46899b87954bec3d2ca158543a2fbdc8">DEFAULT_BACK_COLOR</a></span></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在LCD屏幕上显示一个字符串 </p>
+<p>如果字符串宽度或者高度为0，就默认字符串以（x，y）和（width，height）为文本框，注width为屏幕宽度，height为屏幕高度</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>字符串左上角x坐标 </td></tr>
+    <tr><td class="paramname">y</td><td>字符串左上角y坐标 </td></tr>
+    <tr><td class="paramname">str</td><td>要显示的字符串 </td></tr>
+    <tr><td class="paramname">string_width</td><td>字符串宽度，默认为0 </td></tr>
+    <tr><td class="paramname">string_height</td><td>字符串高度，默认为0 </td></tr>
+    <tr><td class="paramname">size</td><td>字体大小，默认为DEFAULT_FONT_SIZE </td></tr>
+    <tr><td class="paramname">color</td><td>字体颜色，默认为DEFAULT_PENCIL_COLOR </td></tr>
+    <tr><td class="paramname">back_color</td><td>背景颜色，默认为DEFAULT_BACK_COLOR </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_l_c_d___s_p_i.html">LCD_SPI</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

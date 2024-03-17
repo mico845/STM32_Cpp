@@ -1,0 +1,652 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-lib/DSP/FFT/FFT.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_f_f_t_8cpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">FFT.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_f_f_t_8hpp_source.html">platform-lib/DSP/FFT/FFT.hpp</a>&quot;</code><br />
+<code>#include &quot;arm_const_structs.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a71a924b3f633fa03e40053a16b5a6915" id="r_a71a924b3f633fa03e40053a16b5a6915"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71a924b3f633fa03e40053a16b5a6915">FFT_GetMagnitude_f32</a> (const float32_t *FFTBuffer, uint32_t FFTPoints, float32_t *OutputBuffer)</td></tr>
+<tr class="memdesc:a71a924b3f633fa03e40053a16b5a6915"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取FFT结果的幅值  <br /></td></tr>
+<tr class="separator:a71a924b3f633fa03e40053a16b5a6915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af613ebe61787c8fdbd5c74c3c64f5950" id="r_af613ebe61787c8fdbd5c74c3c64f5950"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af613ebe61787c8fdbd5c74c3c64f5950">FFT_GetMagnitude_f32</a> (const struct <a class="el" href="struct_compx.html">Compx</a> *FFTBuffer, float32_t *OutputBuffer)</td></tr>
+<tr class="memdesc:af613ebe61787c8fdbd5c74c3c64f5950"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取FFT结果的幅值  <br /></td></tr>
+<tr class="separator:af613ebe61787c8fdbd5c74c3c64f5950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a891638938f10f0876e6a773d750e9faf" id="r_a891638938f10f0876e6a773d750e9faf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a891638938f10f0876e6a773d750e9faf">FFT_GetMagnitude_f32</a> (struct <a class="el" href="struct_compx.html">Compx</a> *FFTBuffer)</td></tr>
+<tr class="memdesc:a891638938f10f0876e6a773d750e9faf"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取FFT结果的幅值  <br /></td></tr>
+<tr class="separator:a891638938f10f0876e6a773d750e9faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafd328ae01207e74ce100253018a92e9" id="r_aafd328ae01207e74ce100253018a92e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafd328ae01207e74ce100253018a92e9">FFT_GetPhaseRadians_f32</a> (const float32_t *FFTBuffer, uint32_t FFTPoints, float32_t *PhaseBuffer, float32_t CmpValue)</td></tr>
+<tr class="memdesc:aafd328ae01207e74ce100253018a92e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取FFT结果的相角  <br /></td></tr>
+<tr class="separator:aafd328ae01207e74ce100253018a92e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a589a4ad0db44c7d4f5f9bfec53a8848e" id="r_a589a4ad0db44c7d4f5f9bfec53a8848e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a589a4ad0db44c7d4f5f9bfec53a8848e">FFT_GetPhaseRadians_f32</a> (const struct <a class="el" href="struct_compx.html">Compx</a> *FFTBuffer, float32_t *PhaseBuffer, float32_t CmpValue)</td></tr>
+<tr class="memdesc:a589a4ad0db44c7d4f5f9bfec53a8848e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取FFT结果的相角  <br /></td></tr>
+<tr class="separator:a589a4ad0db44c7d4f5f9bfec53a8848e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73ae6a22a81bfaf9cc1972e2925328f9" id="r_a73ae6a22a81bfaf9cc1972e2925328f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73ae6a22a81bfaf9cc1972e2925328f9">FFT_GetPhaseRadians_f32</a> (struct <a class="el" href="struct_compx.html">Compx</a> *FFTBuffer, float32_t CmpValue)</td></tr>
+<tr class="memdesc:a73ae6a22a81bfaf9cc1972e2925328f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取FFT结果的相角  <br /></td></tr>
+<tr class="separator:a73ae6a22a81bfaf9cc1972e2925328f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db09055ea5375dbf993e91fce1b6ac9" id="r_a0db09055ea5375dbf993e91fce1b6ac9"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE const arm_cfft_instance_f32 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0db09055ea5375dbf993e91fce1b6ac9">Get_CFFT_Length</a> (uint32_t FFTPoints)</td></tr>
+<tr class="separator:a0db09055ea5375dbf993e91fce1b6ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a383f439315031316fb98754ff28be27f" id="r_a383f439315031316fb98754ff28be27f"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a383f439315031316fb98754ff28be27f">__CFFT_ARM_f32</a> (float32_t *FFTBuffer, uint32_t FFTPoints, uint32_t ifftFlag)</td></tr>
+<tr class="separator:a383f439315031316fb98754ff28be27f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31a26135816e33fc98a242eaa0a3f329" id="r_a31a26135816e33fc98a242eaa0a3f329"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31a26135816e33fc98a242eaa0a3f329">CFFT_ARM_f32</a> (float32_t *FFTBuffer, uint32_t FFTPoints)</td></tr>
+<tr class="memdesc:a31a26135816e33fc98a242eaa0a3f329"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用ARM DSP库执行单精度浮点数复数FFT  <br /></td></tr>
+<tr class="separator:a31a26135816e33fc98a242eaa0a3f329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18ef78f422c3beb71277730c8a13de33" id="r_a18ef78f422c3beb71277730c8a13de33"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18ef78f422c3beb71277730c8a13de33">CIFFT_ARM_f32</a> (float32_t *FFTBuffer, uint32_t FFTPoints)</td></tr>
+<tr class="memdesc:a18ef78f422c3beb71277730c8a13de33"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用ARM DSP库执行单精度浮点数IFFT  <br /></td></tr>
+<tr class="separator:a18ef78f422c3beb71277730c8a13de33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbf1a2e87ec6709560847ff9aad451e2" id="r_acbf1a2e87ec6709560847ff9aad451e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbf1a2e87ec6709560847ff9aad451e2">CFFT_InfinitePoint</a> (float32_t *FFTBuffer)</td></tr>
+<tr class="memdesc:acbf1a2e87ec6709560847ff9aad451e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行不限点数CFFT  <br /></td></tr>
+<tr class="separator:acbf1a2e87ec6709560847ff9aad451e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb37818a94d76849cecb18d2ac3f2293" id="r_aeb37818a94d76849cecb18d2ac3f2293"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb37818a94d76849cecb18d2ac3f2293">CFFT_InfinitePoint</a> (struct <a class="el" href="struct_compx.html">Compx</a> *FFTBuffer)</td></tr>
+<tr class="memdesc:aeb37818a94d76849cecb18d2ac3f2293"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行不限点数CFFT  <br /></td></tr>
+<tr class="separator:aeb37818a94d76849cecb18d2ac3f2293"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5b506d12aca4cab382a7d6e3e4b247d" id="r_ae5b506d12aca4cab382a7d6e3e4b247d"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5b506d12aca4cab382a7d6e3e4b247d">IS_RFFT_Length</a> (uint32_t FFTPoints)</td></tr>
+<tr class="separator:ae5b506d12aca4cab382a7d6e3e4b247d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ea7093aa69c7b9abfbc75f305c61319" id="r_a6ea7093aa69c7b9abfbc75f305c61319"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ea7093aa69c7b9abfbc75f305c61319">__RFFT_ARM_f32</a> (float32_t *InPutBuffer, float32_t *FFTBuffer, uint32_t FFTPoints, uint32_t ifftFlag)</td></tr>
+<tr class="separator:a6ea7093aa69c7b9abfbc75f305c61319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49d892c6e44d5df11a5bf412c9b93efe" id="r_a49d892c6e44d5df11a5bf412c9b93efe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49d892c6e44d5df11a5bf412c9b93efe">RFFT_ARM_f32</a> (float32_t *InPutBuffer, float32_t *FFTBuffer, uint32_t FFTPoints)</td></tr>
+<tr class="memdesc:a49d892c6e44d5df11a5bf412c9b93efe"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用ARM DSP库执行单精度浮点数实数FFT  <br /></td></tr>
+<tr class="separator:a49d892c6e44d5df11a5bf412c9b93efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ce91a35cdabdd80038b1b4c6b03af22" id="r_a8ce91a35cdabdd80038b1b4c6b03af22"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ce91a35cdabdd80038b1b4c6b03af22">RIFFT_ARM_f32</a> (float32_t *InPutBuffer, float32_t *FFTBuffer, uint32_t FFTPoints)</td></tr>
+<tr class="memdesc:a8ce91a35cdabdd80038b1b4c6b03af22"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用ARM DSP库执行单精度浮点数实数IFFT  <br /></td></tr>
+<tr class="separator:a8ce91a35cdabdd80038b1b4c6b03af22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a127ce273ae56f2b7f545da420a673fbf" id="r_a127ce273ae56f2b7f545da420a673fbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a127ce273ae56f2b7f545da420a673fbf">convert_ADCValue_Compx</a> (const uint16_t *ADCBuffer, uint32_t ADCPoints, float32_t *CompxBuffer)</td></tr>
+<tr class="memdesc:a127ce273ae56f2b7f545da420a673fbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">将ADC采样值转换为复数形式  <br /></td></tr>
+<tr class="separator:a127ce273ae56f2b7f545da420a673fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a383f439315031316fb98754ff28be27f" name="a383f439315031316fb98754ff28be27f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a383f439315031316fb98754ff28be27f">&#9670;&#160;</a></span>__CFFT_ARM_f32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE bool __CFFT_ARM_f32 </td>
+          <td>(</td>
+          <td class="paramtype">float32_t *</td>          <td class="paramname"><span class="paramname"><em>FFTBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FFTPoints</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>ifftFlag</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ea7093aa69c7b9abfbc75f305c61319" name="a6ea7093aa69c7b9abfbc75f305c61319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ea7093aa69c7b9abfbc75f305c61319">&#9670;&#160;</a></span>__RFFT_ARM_f32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE bool __RFFT_ARM_f32 </td>
+          <td>(</td>
+          <td class="paramtype">float32_t *</td>          <td class="paramname"><span class="paramname"><em>InPutBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float32_t *</td>          <td class="paramname"><span class="paramname"><em>FFTBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FFTPoints</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>ifftFlag</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31a26135816e33fc98a242eaa0a3f329" name="a31a26135816e33fc98a242eaa0a3f329"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31a26135816e33fc98a242eaa0a3f329">&#9670;&#160;</a></span>CFFT_ARM_f32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CFFT_ARM_f32 </td>
+          <td>(</td>
+          <td class="paramtype">float32_t *</td>          <td class="paramname"><span class="paramname"><em>FFTBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FFTPoints</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用ARM DSP库执行单精度浮点数复数FFT </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FFTBuffer</td><td>存储FFT结果的数组,含实部和虚部 </td></tr>
+    <tr><td class="paramname">FFTPoints</td><td>复数个数，每个复数是两个float32_t数值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 成功变换 </dd>
+<dd>
+false 尚未变换成功 </dd></dl>
+
+</div>
+</div>
+<a id="acbf1a2e87ec6709560847ff9aad451e2" name="acbf1a2e87ec6709560847ff9aad451e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbf1a2e87ec6709560847ff9aad451e2">&#9670;&#160;</a></span>CFFT_InfinitePoint() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CFFT_InfinitePoint </td>
+          <td>(</td>
+          <td class="paramtype">float32_t *</td>          <td class="paramname"><span class="paramname"><em>FFTBuffer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行不限点数CFFT </p>
+<p>带类型转换（自动将float32_t数组实数在前复数在后进行排列，用法和ARM—DSP库一致）。</p>
+<p>使用时，需修改FFTInc.h中的宏MAX_FFT_N进行点数修改。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FFTBuffer</td><td>存储输入和输出数据的数组 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeb37818a94d76849cecb18d2ac3f2293" name="aeb37818a94d76849cecb18d2ac3f2293"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb37818a94d76849cecb18d2ac3f2293">&#9670;&#160;</a></span>CFFT_InfinitePoint() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CFFT_InfinitePoint </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_compx.html">Compx</a> *</td>          <td class="paramname"><span class="paramname"><em>FFTBuffer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行不限点数CFFT </p>
+<p>高效相对高率，无类型转换。</p>
+<p>使用时，需修改FFTInc.h中的宏MAX_FFT_N进行点数修改。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FFTBuffer</td><td>存储输入和输出数据的数组 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a18ef78f422c3beb71277730c8a13de33" name="a18ef78f422c3beb71277730c8a13de33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18ef78f422c3beb71277730c8a13de33">&#9670;&#160;</a></span>CIFFT_ARM_f32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CIFFT_ARM_f32 </td>
+          <td>(</td>
+          <td class="paramtype">float32_t *</td>          <td class="paramname"><span class="paramname"><em>FFTBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FFTPoints</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用ARM DSP库执行单精度浮点数IFFT </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FFTBuffer</td><td>存储IFFT结果的数组,含实部和虚部 </td></tr>
+    <tr><td class="paramname">FFTPoints</td><td>复数个数，每个复数是两个float32_t数值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 成功变换 </dd>
+<dd>
+false 尚未变换成功 </dd></dl>
+
+</div>
+</div>
+<a id="a127ce273ae56f2b7f545da420a673fbf" name="a127ce273ae56f2b7f545da420a673fbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a127ce273ae56f2b7f545da420a673fbf">&#9670;&#160;</a></span>convert_ADCValue_Compx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void convert_ADCValue_Compx </td>
+          <td>(</td>
+          <td class="paramtype">const uint16_t *</td>          <td class="paramname"><span class="paramname"><em>ADCBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>ADCPoints</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float32_t *</td>          <td class="paramname"><span class="paramname"><em>CompxBuffer</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将ADC采样值转换为复数形式 </p>
+<p>需保证CompxBuffer数组大小是ADCPoints的两倍。</p>
+<p>该函数将ADC采样结果填入数组CompxBuffer，以float32_t数组实数在前复数在后进行排列，虚部自动补0。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ADCBuffer</td><td>存储ADC采样值的数组 </td></tr>
+    <tr><td class="paramname">ADCPoints</td><td>ADC采样点数 </td></tr>
+    <tr><td class="paramname">CompxBuffer</td><td>存储转换后的复数数据的数组 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a71a924b3f633fa03e40053a16b5a6915" name="a71a924b3f633fa03e40053a16b5a6915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71a924b3f633fa03e40053a16b5a6915">&#9670;&#160;</a></span>FFT_GetMagnitude_f32() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FFT_GetMagnitude_f32 </td>
+          <td>(</td>
+          <td class="paramtype">const float32_t *</td>          <td class="paramname"><span class="paramname"><em>FFTBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FFTPoints</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float32_t *</td>          <td class="paramname"><span class="paramname"><em>OutputBuffer</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取FFT结果的幅值 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FFTBuffer</td><td>存储FFT结果的数组,含实部和虚部 </td></tr>
+    <tr><td class="paramname">FFTPoints</td><td>复数个数，每个复数是两个float32_t数值 </td></tr>
+    <tr><td class="paramname">OutputBuffer</td><td>存储幅值结果的数组 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af613ebe61787c8fdbd5c74c3c64f5950" name="af613ebe61787c8fdbd5c74c3c64f5950"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af613ebe61787c8fdbd5c74c3c64f5950">&#9670;&#160;</a></span>FFT_GetMagnitude_f32() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FFT_GetMagnitude_f32 </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="struct_compx.html">Compx</a> *</td>          <td class="paramname"><span class="paramname"><em>FFTBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float32_t *</td>          <td class="paramname"><span class="paramname"><em>OutputBuffer</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取FFT结果的幅值 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FFTBuffer</td><td>存储FFT结果的数组 </td></tr>
+    <tr><td class="paramname">OutputBuffer</td><td>存储幅值结果的数组 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a891638938f10f0876e6a773d750e9faf" name="a891638938f10f0876e6a773d750e9faf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a891638938f10f0876e6a773d750e9faf">&#9670;&#160;</a></span>FFT_GetMagnitude_f32() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FFT_GetMagnitude_f32 </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_compx.html">Compx</a> *</td>          <td class="paramname"><span class="paramname"><em>FFTBuffer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取FFT结果的幅值 </p>
+<p>修改自身结构体，节约空间，存放在struct Compx的成员real中。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FFTBuffer</td><td>存储FFT结果的数组 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aafd328ae01207e74ce100253018a92e9" name="aafd328ae01207e74ce100253018a92e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafd328ae01207e74ce100253018a92e9">&#9670;&#160;</a></span>FFT_GetPhaseRadians_f32() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FFT_GetPhaseRadians_f32 </td>
+          <td>(</td>
+          <td class="paramtype">const float32_t *</td>          <td class="paramname"><span class="paramname"><em>FFTBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FFTPoints</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float32_t *</td>          <td class="paramname"><span class="paramname"><em>PhaseBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float32_t</td>          <td class="paramname"><span class="paramname"><em>CmpValue</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取FFT结果的相角 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FFTBuffer</td><td>存储FFT结果的数组,含实部和虚部 </td></tr>
+    <tr><td class="paramname">FFTPoints</td><td>复数个数，每个复数是两个float32_t数值 </td></tr>
+    <tr><td class="paramname">PhaseBuffer</td><td>求出相位，单位角度制，范围(-180, 180] </td></tr>
+    <tr><td class="paramname">CmpValue</td><td>比较值，需要求出相位的数值 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a589a4ad0db44c7d4f5f9bfec53a8848e" name="a589a4ad0db44c7d4f5f9bfec53a8848e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a589a4ad0db44c7d4f5f9bfec53a8848e">&#9670;&#160;</a></span>FFT_GetPhaseRadians_f32() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FFT_GetPhaseRadians_f32 </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="struct_compx.html">Compx</a> *</td>          <td class="paramname"><span class="paramname"><em>FFTBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float32_t *</td>          <td class="paramname"><span class="paramname"><em>PhaseBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float32_t</td>          <td class="paramname"><span class="paramname"><em>CmpValue</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取FFT结果的相角 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FFTBuffer</td><td>存储FFT结果的数组 </td></tr>
+    <tr><td class="paramname">PhaseBuffer</td><td>求出相位，单位角度制，范围(-180, 180] </td></tr>
+    <tr><td class="paramname">CmpValue</td><td>比较值，需要求出相位的数值 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a73ae6a22a81bfaf9cc1972e2925328f9" name="a73ae6a22a81bfaf9cc1972e2925328f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73ae6a22a81bfaf9cc1972e2925328f9">&#9670;&#160;</a></span>FFT_GetPhaseRadians_f32() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FFT_GetPhaseRadians_f32 </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_compx.html">Compx</a> *</td>          <td class="paramname"><span class="paramname"><em>FFTBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float32_t</td>          <td class="paramname"><span class="paramname"><em>CmpValue</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取FFT结果的相角 </p>
+<p>修改自身结构体，节约空间，存放在struct Compx的成员real中。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FFTBuffer</td><td>存储FFT结果的数组 </td></tr>
+    <tr><td class="paramname">CmpValue</td><td>比较值，需要求出相位的数值 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0db09055ea5375dbf993e91fce1b6ac9" name="a0db09055ea5375dbf993e91fce1b6ac9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0db09055ea5375dbf993e91fce1b6ac9">&#9670;&#160;</a></span>Get_CFFT_Length()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE const arm_cfft_instance_f32 * Get_CFFT_Length </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FFTPoints</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae5b506d12aca4cab382a7d6e3e4b247d" name="ae5b506d12aca4cab382a7d6e3e4b247d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5b506d12aca4cab382a7d6e3e4b247d">&#9670;&#160;</a></span>IS_RFFT_Length()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE bool IS_RFFT_Length </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FFTPoints</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a49d892c6e44d5df11a5bf412c9b93efe" name="a49d892c6e44d5df11a5bf412c9b93efe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49d892c6e44d5df11a5bf412c9b93efe">&#9670;&#160;</a></span>RFFT_ARM_f32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RFFT_ARM_f32 </td>
+          <td>(</td>
+          <td class="paramtype">float32_t *</td>          <td class="paramname"><span class="paramname"><em>InPutBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float32_t *</td>          <td class="paramname"><span class="paramname"><em>FFTBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FFTPoints</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用ARM DSP库执行单精度浮点数实数FFT </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">InPutBuffer</td><td>输入数据的数组 </td></tr>
+    <tr><td class="paramname">FFTBuffer</td><td>输出数据的数组 </td></tr>
+    <tr><td class="paramname">FFTPoints</td><td>FFT的点数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 成功变换 </dd>
+<dd>
+false 尚未变换成功 </dd></dl>
+
+</div>
+</div>
+<a id="a8ce91a35cdabdd80038b1b4c6b03af22" name="a8ce91a35cdabdd80038b1b4c6b03af22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ce91a35cdabdd80038b1b4c6b03af22">&#9670;&#160;</a></span>RIFFT_ARM_f32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RIFFT_ARM_f32 </td>
+          <td>(</td>
+          <td class="paramtype">float32_t *</td>          <td class="paramname"><span class="paramname"><em>InPutBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float32_t *</td>          <td class="paramname"><span class="paramname"><em>FFTBuffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FFTPoints</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用ARM DSP库执行单精度浮点数实数IFFT </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">InPutBuffer</td><td>输入数据的数组 </td></tr>
+    <tr><td class="paramname">FFTBuffer</td><td>输出数据的数组 </td></tr>
+    <tr><td class="paramname">FFTPoints</td><td>IFFT的点数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 成功变换 </dd>
+<dd>
+false 尚未变换成功 </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_bc2597cfbec14760d23b28ac592ac7af.html">platform-lib</a></li><li class="navelem"><a class="el" href="dir_bc8a82e31b7c88fc00198c041298946f.html">DSP</a></li><li class="navelem"><a class="el" href="dir_a7c67b35e73622022bb7f5d280c86136.html">FFT</a></li><li class="navelem"><a class="el" href="_f_f_t_8cpp.html">FFT.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

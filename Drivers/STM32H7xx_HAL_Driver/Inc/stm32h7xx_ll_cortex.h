@@ -12,7 +12,7 @@
     used by user:
       (+) SYSTICK configuration used by LL_mDelay and LL_Init1msTick
           functions
-      (+) Low power mode configuration (SCB register of Cortex-MCU)
+      (+) low power mode configuration (SCB register of Cortex-MCU)
       (+) MPU API to configure and enable regions
       (+) API to access to MCU info (CPUID register)
       (+) API to enable fault handler (SHCSR accesses)
@@ -120,37 +120,37 @@ extern "C" {
   * @}
   */
 
-/** @defgroup CORTEX_LL_EC_REGION_SIZE MPU Region Size
+/** @defgroup CORTEX_LL_EC_REGION_SIZE MPU Region size
   * @{
   */
-#define LL_MPU_REGION_SIZE_32B             (0x04UL << MPU_RASR_SIZE_Pos) /*!< 32B Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_64B             (0x05UL << MPU_RASR_SIZE_Pos) /*!< 64B Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_128B            (0x06UL << MPU_RASR_SIZE_Pos) /*!< 128B Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_256B            (0x07UL << MPU_RASR_SIZE_Pos) /*!< 256B Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_512B            (0x08UL << MPU_RASR_SIZE_Pos) /*!< 512B Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_1KB             (0x09UL << MPU_RASR_SIZE_Pos) /*!< 1KB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_2KB             (0x0AUL << MPU_RASR_SIZE_Pos) /*!< 2KB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_4KB             (0x0BUL << MPU_RASR_SIZE_Pos) /*!< 4KB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_8KB             (0x0CUL << MPU_RASR_SIZE_Pos) /*!< 8KB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_16KB            (0x0DUL << MPU_RASR_SIZE_Pos) /*!< 16KB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_32KB            (0x0EUL << MPU_RASR_SIZE_Pos) /*!< 32KB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_64KB            (0x0FUL << MPU_RASR_SIZE_Pos) /*!< 64KB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_128KB           (0x10UL << MPU_RASR_SIZE_Pos) /*!< 128KB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_256KB           (0x11UL << MPU_RASR_SIZE_Pos) /*!< 256KB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_512KB           (0x12UL << MPU_RASR_SIZE_Pos) /*!< 512KB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_1MB             (0x13UL << MPU_RASR_SIZE_Pos) /*!< 1MB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_2MB             (0x14UL << MPU_RASR_SIZE_Pos) /*!< 2MB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_4MB             (0x15UL << MPU_RASR_SIZE_Pos) /*!< 4MB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_8MB             (0x16UL << MPU_RASR_SIZE_Pos) /*!< 8MB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_16MB            (0x17UL << MPU_RASR_SIZE_Pos) /*!< 16MB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_32MB            (0x18UL << MPU_RASR_SIZE_Pos) /*!< 32MB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_64MB            (0x19UL << MPU_RASR_SIZE_Pos) /*!< 64MB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_128MB           (0x1AUL << MPU_RASR_SIZE_Pos) /*!< 128MB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_256MB           (0x1BUL << MPU_RASR_SIZE_Pos) /*!< 256MB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_512MB           (0x1CUL << MPU_RASR_SIZE_Pos) /*!< 512MB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_1GB             (0x1DUL << MPU_RASR_SIZE_Pos) /*!< 1GB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_2GB             (0x1EUL << MPU_RASR_SIZE_Pos) /*!< 2GB Size of the MPU protection region */
-#define LL_MPU_REGION_SIZE_4GB             (0x1FUL << MPU_RASR_SIZE_Pos) /*!< 4GB Size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_32B             (0x04UL << MPU_RASR_SIZE_Pos) /*!< 32B size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_64B             (0x05UL << MPU_RASR_SIZE_Pos) /*!< 64B size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_128B            (0x06UL << MPU_RASR_SIZE_Pos) /*!< 128B size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_256B            (0x07UL << MPU_RASR_SIZE_Pos) /*!< 256B size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_512B            (0x08UL << MPU_RASR_SIZE_Pos) /*!< 512B size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_1KB             (0x09UL << MPU_RASR_SIZE_Pos) /*!< 1KB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_2KB             (0x0AUL << MPU_RASR_SIZE_Pos) /*!< 2KB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_4KB             (0x0BUL << MPU_RASR_SIZE_Pos) /*!< 4KB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_8KB             (0x0CUL << MPU_RASR_SIZE_Pos) /*!< 8KB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_16KB            (0x0DUL << MPU_RASR_SIZE_Pos) /*!< 16KB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_32KB            (0x0EUL << MPU_RASR_SIZE_Pos) /*!< 32KB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_64KB            (0x0FUL << MPU_RASR_SIZE_Pos) /*!< 64KB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_128KB           (0x10UL << MPU_RASR_SIZE_Pos) /*!< 128KB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_256KB           (0x11UL << MPU_RASR_SIZE_Pos) /*!< 256KB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_512KB           (0x12UL << MPU_RASR_SIZE_Pos) /*!< 512KB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_1MB             (0x13UL << MPU_RASR_SIZE_Pos) /*!< 1MB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_2MB             (0x14UL << MPU_RASR_SIZE_Pos) /*!< 2MB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_4MB             (0x15UL << MPU_RASR_SIZE_Pos) /*!< 4MB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_8MB             (0x16UL << MPU_RASR_SIZE_Pos) /*!< 8MB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_16MB            (0x17UL << MPU_RASR_SIZE_Pos) /*!< 16MB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_32MB            (0x18UL << MPU_RASR_SIZE_Pos) /*!< 32MB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_64MB            (0x19UL << MPU_RASR_SIZE_Pos) /*!< 64MB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_128MB           (0x1AUL << MPU_RASR_SIZE_Pos) /*!< 128MB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_256MB           (0x1BUL << MPU_RASR_SIZE_Pos) /*!< 256MB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_512MB           (0x1CUL << MPU_RASR_SIZE_Pos) /*!< 512MB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_1GB             (0x1DUL << MPU_RASR_SIZE_Pos) /*!< 1GB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_2GB             (0x1EUL << MPU_RASR_SIZE_Pos) /*!< 2GB size of the MPU protection region */
+#define LL_MPU_REGION_SIZE_4GB             (0x1FUL << MPU_RASR_SIZE_Pos) /*!< 4GB size of the MPU protection region */
 /**
   * @}
   */
@@ -257,7 +257,7 @@ __STATIC_INLINE void LL_SYSTICK_SetClkSource(uint32_t Source)
 }
 
 /**
-  * @brief  Get the SysTick clock source
+  * @brief  get the SysTick clock source
   * @rmtoll STK_CTRL     CLKSOURCE     LL_SYSTICK_GetClkSource
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_SYSTICK_CLKSOURCE_HCLK_DIV8
@@ -423,7 +423,7 @@ __STATIC_INLINE void LL_HANDLER_DisableFault(uint32_t Fault)
   */
 
 /**
-  * @brief  Get Implementer code
+  * @brief  get Implementer code
   * @rmtoll SCB_CPUID    IMPLEMENTER   LL_CPUID_GetImplementer
   * @retval Value should be equal to 0x41 for ARM
   */
@@ -433,7 +433,7 @@ __STATIC_INLINE uint32_t LL_CPUID_GetImplementer(void)
 }
 
 /**
-  * @brief  Get Variant number (The r value in the rnpn product revision identifier)
+  * @brief  get Variant number (The r value in the rnpn product revision identifier)
   * @rmtoll SCB_CPUID    VARIANT       LL_CPUID_GetVariant
   * @retval Value between 0 and 255 (0x0: revision 0)
   */
@@ -443,7 +443,7 @@ __STATIC_INLINE uint32_t LL_CPUID_GetVariant(void)
 }
 
 /**
-  * @brief  Get Constant number
+  * @brief  get Constant number
   * @rmtoll SCB_CPUID    ARCHITECTURE  LL_CPUID_GetConstant
   * @retval Value should be equal to 0xF for Cortex-M7 and Cortex-M4 devices
   */
@@ -453,7 +453,7 @@ __STATIC_INLINE uint32_t LL_CPUID_GetConstant(void)
 }
 
 /**
-  * @brief  Get Part number
+  * @brief  get Part number
   * @rmtoll SCB_CPUID    PARTNO        LL_CPUID_GetParNo
   * @retval Value should be equal to 0xC27 for Cortex-M7 and equal to 0xC24 for Cortex-M4
   */
@@ -463,7 +463,7 @@ __STATIC_INLINE uint32_t LL_CPUID_GetParNo(void)
 }
 
 /**
-  * @brief  Get Revision number (The p value in the rnpn product revision identifier, indicates patch release)
+  * @brief  get Revision number (The p value in the rnpn product revision identifier, indicates patch release)
   * @rmtoll SCB_CPUID    REVISION      LL_CPUID_GetRevision
   * @retval Value between 0 and 255 (0x1: patch 1)
   */

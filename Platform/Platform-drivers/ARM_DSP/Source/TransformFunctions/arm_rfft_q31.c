@@ -65,7 +65,7 @@ void arm_split_rifft_q31(
                    The input and output formats for different RFFT sizes and number of bits to upscale are mentioned in the tables below for RFFT and RIFFT:
   @par             Input and Output formats for RFFT Q31
 
-| RFFT Size  | Input Format  | Output Format  | Number of bits to upscale |
+| RFFT size  | Input Format  | Output Format  | Number of bits to upscale |
 | ---------: | ------------: | -------------: | ------------------------: |
 | 32         | 1.31          | 6.26           | 5                         |
 | 64         | 1.31          | 7.25           | 6                         |
@@ -79,7 +79,7 @@ void arm_split_rifft_q31(
              
   @par             Input and Output formats for RIFFT Q31
 
-| RIFFT Size  | Input Format  | Output Format  | Number of bits to upscale |
+| RIFFT size  | Input Format  | Output Format  | Number of bits to upscale |
 | ----------: | ------------: | -------------: | ------------------------: |
 | 32          | 1.31          | 6.26           | 0                         |
 | 64          | 1.31          | 7.25           | 0                         |

@@ -222,7 +222,7 @@ typedef struct
 #define LL_GPIO_WriteReg(__INSTANCE__, __REG__, __VALUE__) WRITE_REG(__INSTANCE__->__REG__, (__VALUE__))
 
 /**
-  * @brief  Read a value in GPIO register
+  * @brief  read a value in GPIO register
   * @param  __INSTANCE__ GPIO Instance
   * @param  __REG__ Register to be read
   * @retval Register value
@@ -384,7 +384,7 @@ __STATIC_INLINE uint32_t LL_GPIO_GetPinOutputType(GPIO_TypeDef *GPIOx, uint32_t 
 
 /**
   * @brief  Configure gpio speed for a dedicated pin on dedicated port.
-  * @note   I/O speed can be Low, Medium, Fast or High speed.
+  * @note   I/O speed can be low, Medium, Fast or high speed.
   * @note   Warning: only one pin can be passed as parameter.
   * @note   Refer to datasheet for frequency specifications and the power
   *         supply and load conditions for each speed.
@@ -421,7 +421,7 @@ __STATIC_INLINE void LL_GPIO_SetPinSpeed(GPIO_TypeDef *GPIOx, uint32_t Pin, uint
 
 /**
   * @brief  Return gpio speed for a dedicated pin on dedicated port.
-  * @note   I/O speed can be Low, Medium, Fast or High speed.
+  * @note   I/O speed can be low, Medium, Fast or high speed.
   * @note   Warning: only one pin can be passed as parameter.
   * @note   Refer to datasheet for frequency specifications and the power
   *         supply and load conditions for each speed.
@@ -916,7 +916,7 @@ __STATIC_INLINE void LL_GPIO_ResetOutputPin(GPIO_TypeDef *GPIOx, uint32_t PinMas
 }
 
 /**
-  * @brief  Toggle data value for several pin of dedicated port.
+  * @brief  toggle data value for several pin of dedicated port.
   * @rmtoll ODR          ODy           LL_GPIO_TogglePin
   * @param  GPIOx GPIO Port
   * @param  PinMask This parameter can be a combination of the following values:

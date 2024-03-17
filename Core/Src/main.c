@@ -72,8 +72,16 @@ static void MPU_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+#if 0
+    uint32_t *SouceAddr = (uint32_t *)FLASH_BANK1_BASE;
+	uint32_t *DestAddr =  (uint32_t *)D1_DTCMRAM_BASE;
 
-  /* USER CODE END 1 */
+	memcpy(DestAddr, SouceAddr, 0x400);
+
+	/* 设置中断向量表到ITCM里面 */
+	SCB->VTOR = D1_DTCMRAM_BASE;
+#endif
+    /* USER CODE END 1 */
 
   /* MPU Configuration--------------------------------------------------------*/
   MPU_Config();

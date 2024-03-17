@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-lib/HardWare/LED_RGB/LED_RGB.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_l_e_d___r_g_b_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">LED_RGB.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_l_e_d___r_g_b_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __HARDWARE_LED_RGB_H__</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __HARDWARE_LED_RGB_H__</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_g_p_i_o_8hpp.html">platform-drivers/STM32/GPIO/GPIO.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef LED_RGB_GPIO</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="_l_e_d___r_g_b_8hpp.html#ac3cd15b8fa6eb62fac8b61d8eb4d4e27">   10</a></span><span class="preprocessor">    #define LED_RGB_GPIO</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">// RED GPIO</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="_l_e_d___r_g_b_8hpp.html#a7959a54f2383757d0007ee4b96071186">   12</a></span><span class="preprocessor">    #define LED_RED_PORT        (GPIOC)     </span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="_l_e_d___r_g_b_8hpp.html#ab9824ab080c30006c1baaa0dd7e863c5">   13</a></span><span class="preprocessor">    #define LED_RED_PIN         (0)         </span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// GREEN GPIO</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="_l_e_d___r_g_b_8hpp.html#a3ed8b1ac183679013d04fa3ebe0e44e5">   15</a></span><span class="preprocessor">    #define LED_GREEN_PORT      (GPIOC)     </span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="_l_e_d___r_g_b_8hpp.html#a0539be032702009fb24beec89c6fa0c0">   16</a></span><span class="preprocessor">    #define LED_GREEN_PIN       (1)         </span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">// BLUE GPIO</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="_l_e_d___r_g_b_8hpp.html#af221b8e5f51eca1e53070bd462fff271">   18</a></span><span class="preprocessor">    #define LED_BLUE_PORT       (GPIOC)     </span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="_l_e_d___r_g_b_8hpp.html#a5aec9d3b503fb1a30a21b16c7be86cff">   19</a></span><span class="preprocessor">    #define LED_BLUE_PIN        (2)         </span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_l_e_d___r_g_b.html">   27</a></span><span class="keyword">class </span><a class="code hl_class" href="class_l_e_d___r_g_b.html">LED_RGB</a></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="_l_e_d___r_g_b_8hpp.html#a1d70154d5848f0df1f83c08b4cd812fb">   30</a></span><span class="preprocessor">    #define __INDEX_LED_R   (0)</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="_l_e_d___r_g_b_8hpp.html#ae5a8e362f6daf9d9ea5b27540c16f1cf">   31</a></span><span class="preprocessor">    #define __INDEX_LED_G   (1)</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="_l_e_d___r_g_b_8hpp.html#a8471f7f5bbe99031a3164b242268ba8e">   32</a></span><span class="preprocessor">    #define __INDEX_LED_B   (2)</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">bool</span> default_led_value;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">bool</span> current_led_value[3];</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">bool</span> toggle_flag = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">/* Variables */</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_l_e_d___r_g_b.html#af25b4ccb457dff0769e789de41035084">   39</a></span>    <a class="code hl_class" href="class_s_t_m32_1_1_g_p_i_o.html">STM32::GPIO</a> <a class="code hl_variable" href="class_l_e_d___r_g_b.html#af25b4ccb457dff0769e789de41035084">Led_R</a>;  </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_l_e_d___r_g_b.html#a39f279449b775fdaac03bca55b9452ba">   40</a></span>    <a class="code hl_class" href="class_s_t_m32_1_1_g_p_i_o.html">STM32::GPIO</a> <a class="code hl_variable" href="class_l_e_d___r_g_b.html#a39f279449b775fdaac03bca55b9452ba">Led_G</a>;  </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_l_e_d___r_g_b.html#af755ec97b57cb8dd0b419aba4446c341">   41</a></span>    <a class="code hl_class" href="class_s_t_m32_1_1_g_p_i_o.html">STM32::GPIO</a> <a class="code hl_variable" href="class_l_e_d___r_g_b.html#af755ec97b57cb8dd0b419aba4446c341">Led_B</a>;  </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">/* Constructor */</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_l_e_d___r_g_b.html#ab4f72d931e21b9fa0a45fa198e57ef14">   43</a></span>    <a class="code hl_function" href="class_l_e_d___r_g_b.html#ab4f72d931e21b9fa0a45fa198e57ef14">LED_RGB</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_l_e_d___r_g_b.html#a3db406e75d31d48a8a5d26e011e2abe0">   44</a></span>    <a class="code hl_function" href="class_l_e_d___r_g_b.html#a3db406e75d31d48a8a5d26e011e2abe0">~LED_RGB</a>() = <span class="keywordflow">default</span>;</div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_l_e_d___r_g_b.html#aec99ad55472b27d1a8320fb438da67b0">   52</a></span>    <a class="code hl_function" href="class_l_e_d___r_g_b.html#aec99ad55472b27d1a8320fb438da67b0">LED_RGB</a>(<a class="code hl_class" href="class_s_t_m32_1_1_g_p_i_o.html">STM32::GPIO</a> LED_R, <a class="code hl_class" href="class_s_t_m32_1_1_g_p_i_o.html">STM32::GPIO</a> LED_G, <a class="code hl_class" href="class_s_t_m32_1_1_g_p_i_o.html">STM32::GPIO</a> LED_B, <span class="keywordtype">bool</span> led_value = <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                    :   default_led_value(led_value),</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                        <a class="code hl_variable" href="class_l_e_d___r_g_b.html#af25b4ccb457dff0769e789de41035084">Led_R</a>(LED_R),</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                        <a class="code hl_variable" href="class_l_e_d___r_g_b.html#a39f279449b775fdaac03bca55b9452ba">Led_G</a>(LED_G),</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                        <a class="code hl_variable" href="class_l_e_d___r_g_b.html#af755ec97b57cb8dd0b419aba4446c341">Led_B</a>(LED_B)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                    { }</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="comment">/* Functions */</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_e_d___r_g_b.html#ab00c25b198864a04012ab3c94c579763">off</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_e_d___r_g_b.html#acb6bca0923024ceabbed06be2bede68c">red</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_e_d___r_g_b.html#a2e272e32036a28dfc16ed830090fdb8a">green</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_e_d___r_g_b.html#a0b5377773281ee7a0f26b4972508e353">blue</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_e_d___r_g_b.html#a1c3510d8ad2c10c4c3be51f647764fd9">yellow</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_e_d___r_g_b.html#abfaa305b86c960d775f9d101e1a75e1d">cyan</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_e_d___r_g_b.html#a5b67439ae3e31e712454770edc2d436d">pinkishRed</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_e_d___r_g_b.html#aa712a06e50258b492f7f044e984eca5c">white</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_e_d___r_g_b.html#aa6dbcfb58de7d8b2ece865e27c2f6213">toggle</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>};</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#endif </span><span class="comment">//__HARDWARE_LED_RGB_H__</span></div>
+<div class="ttc" id="a_g_p_i_o_8hpp_html"><div class="ttname"><a href="_g_p_i_o_8hpp.html">GPIO.hpp</a></div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html"><div class="ttname"><a href="class_l_e_d___r_g_b.html">LED_RGB</a></div><div class="ttdoc">LED_RGB类</div><div class="ttdef"><b>Definition</b> LED_RGB.hpp:28</div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html_a0b5377773281ee7a0f26b4972508e353"><div class="ttname"><a href="class_l_e_d___r_g_b.html#a0b5377773281ee7a0f26b4972508e353">LED_RGB::blue</a></div><div class="ttdeci">void blue(void)</div><div class="ttdoc">RGB灯切换为蓝色</div><div class="ttdef"><b>Definition</b> LED_RGB.cpp:35</div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html_a1c3510d8ad2c10c4c3be51f647764fd9"><div class="ttname"><a href="class_l_e_d___r_g_b.html#a1c3510d8ad2c10c4c3be51f647764fd9">LED_RGB::yellow</a></div><div class="ttdeci">void yellow(void)</div><div class="ttdoc">RGB灯切换为黄色</div><div class="ttdef"><b>Definition</b> LED_RGB.cpp:45</div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html_a2e272e32036a28dfc16ed830090fdb8a"><div class="ttname"><a href="class_l_e_d___r_g_b.html#a2e272e32036a28dfc16ed830090fdb8a">LED_RGB::green</a></div><div class="ttdeci">void green(void)</div><div class="ttdoc">RGB灯切换为绿色</div><div class="ttdef"><b>Definition</b> LED_RGB.cpp:25</div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html_a39f279449b775fdaac03bca55b9452ba"><div class="ttname"><a href="class_l_e_d___r_g_b.html#a39f279449b775fdaac03bca55b9452ba">LED_RGB::Led_G</a></div><div class="ttdeci">STM32::GPIO Led_G</div><div class="ttdoc">绿色LED</div><div class="ttdef"><b>Definition</b> LED_RGB.hpp:40</div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html_a3db406e75d31d48a8a5d26e011e2abe0"><div class="ttname"><a href="class_l_e_d___r_g_b.html#a3db406e75d31d48a8a5d26e011e2abe0">LED_RGB::~LED_RGB</a></div><div class="ttdeci">~LED_RGB()=default</div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html_a5b67439ae3e31e712454770edc2d436d"><div class="ttname"><a href="class_l_e_d___r_g_b.html#a5b67439ae3e31e712454770edc2d436d">LED_RGB::pinkishRed</a></div><div class="ttdeci">void pinkishRed(void)</div><div class="ttdoc">RGB灯切换为粉红色</div><div class="ttdef"><b>Definition</b> LED_RGB.cpp:65</div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html_aa6dbcfb58de7d8b2ece865e27c2f6213"><div class="ttname"><a href="class_l_e_d___r_g_b.html#aa6dbcfb58de7d8b2ece865e27c2f6213">LED_RGB::toggle</a></div><div class="ttdeci">void toggle(void)</div><div class="ttdoc">翻转RGB灯的电平</div><div class="ttdef"><b>Definition</b> LED_RGB.cpp:85</div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html_aa712a06e50258b492f7f044e984eca5c"><div class="ttname"><a href="class_l_e_d___r_g_b.html#aa712a06e50258b492f7f044e984eca5c">LED_RGB::white</a></div><div class="ttdeci">void white(void)</div><div class="ttdoc">RGB灯切换为白色</div><div class="ttdef"><b>Definition</b> LED_RGB.cpp:75</div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html_ab00c25b198864a04012ab3c94c579763"><div class="ttname"><a href="class_l_e_d___r_g_b.html#ab00c25b198864a04012ab3c94c579763">LED_RGB::off</a></div><div class="ttdeci">void off(void)</div><div class="ttdoc">关闭所有LED</div><div class="ttdef"><b>Definition</b> LED_RGB.cpp:5</div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html_ab4f72d931e21b9fa0a45fa198e57ef14"><div class="ttname"><a href="class_l_e_d___r_g_b.html#ab4f72d931e21b9fa0a45fa198e57ef14">LED_RGB::LED_RGB</a></div><div class="ttdeci">LED_RGB()=default</div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html_abfaa305b86c960d775f9d101e1a75e1d"><div class="ttname"><a href="class_l_e_d___r_g_b.html#abfaa305b86c960d775f9d101e1a75e1d">LED_RGB::cyan</a></div><div class="ttdeci">void cyan(void)</div><div class="ttdoc">RGB灯切换为青色</div><div class="ttdef"><b>Definition</b> LED_RGB.cpp:55</div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html_acb6bca0923024ceabbed06be2bede68c"><div class="ttname"><a href="class_l_e_d___r_g_b.html#acb6bca0923024ceabbed06be2bede68c">LED_RGB::red</a></div><div class="ttdeci">void red(void)</div><div class="ttdoc">RGB灯切换为红色</div><div class="ttdef"><b>Definition</b> LED_RGB.cpp:15</div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html_aec99ad55472b27d1a8320fb438da67b0"><div class="ttname"><a href="class_l_e_d___r_g_b.html#aec99ad55472b27d1a8320fb438da67b0">LED_RGB::LED_RGB</a></div><div class="ttdeci">LED_RGB(STM32::GPIO LED_R, STM32::GPIO LED_G, STM32::GPIO LED_B, bool led_value=false)</div><div class="ttdoc">LED_RGB类构造函数</div><div class="ttdef"><b>Definition</b> LED_RGB.hpp:52</div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html_af25b4ccb457dff0769e789de41035084"><div class="ttname"><a href="class_l_e_d___r_g_b.html#af25b4ccb457dff0769e789de41035084">LED_RGB::Led_R</a></div><div class="ttdeci">STM32::GPIO Led_R</div><div class="ttdoc">红色LED</div><div class="ttdef"><b>Definition</b> LED_RGB.hpp:39</div></div>
+<div class="ttc" id="aclass_l_e_d___r_g_b_html_af755ec97b57cb8dd0b419aba4446c341"><div class="ttname"><a href="class_l_e_d___r_g_b.html#af755ec97b57cb8dd0b419aba4446c341">LED_RGB::Led_B</a></div><div class="ttdeci">STM32::GPIO Led_B</div><div class="ttdoc">蓝色LED</div><div class="ttdef"><b>Definition</b> LED_RGB.hpp:41</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_g_p_i_o_html"><div class="ttname"><a href="class_s_t_m32_1_1_g_p_i_o.html">STM32::GPIO</a></div><div class="ttdoc">GPIO类</div><div class="ttdef"><b>Definition</b> GPIO.hpp:69</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_bc2597cfbec14760d23b28ac592ac7af.html">platform-lib</a></li><li class="navelem"><a class="el" href="dir_0608fb62d33f45ab68406becc139393f.html">HardWare</a></li><li class="navelem"><a class="el" href="dir_4c97b0791396712565746416a2510c03.html">LED_RGB</a></li><li class="navelem"><a class="el" href="_l_e_d___r_g_b_8hpp.html">LED_RGB.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,1342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-drivers/STM32/FLASH/FLASH.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_f_l_a_s_h_8cpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">FLASH.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_f_l_a_s_h_8hpp_source.html">platform-drivers/STM32/FLASH/FLASH.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_sys_8hpp_source.html">platform-drivers/STM32/System/Sys.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_lock_8hpp_source.html">platform-lib/System/Lock.hpp</a>&quot;</code><br />
+<code>#include &quot;string.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:afd77e7bf91765d891ce63e2f0084b019" id="r_afd77e7bf91765d891ce63e2f0084b019"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd77e7bf91765d891ce63e2f0084b019">FLASH_KEY1</a>&#160;&#160;&#160;0x45670123U</td></tr>
+<tr class="separator:afd77e7bf91765d891ce63e2f0084b019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee83d0f557e158da52f4a205db6b60a7" id="r_aee83d0f557e158da52f4a205db6b60a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee83d0f557e158da52f4a205db6b60a7">FLASH_KEY2</a>&#160;&#160;&#160;0xCDEF89ABU</td></tr>
+<tr class="separator:aee83d0f557e158da52f4a205db6b60a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77358ba2068c41ff16904cf3fb4a40f2" id="r_a77358ba2068c41ff16904cf3fb4a40f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77358ba2068c41ff16904cf3fb4a40f2">IS_FLASH_PROGRAM_ADDRESS_BANK1</a>(ADDRESS)&#160;&#160;&#160;(((ADDRESS) &gt;= FLASH_BANK1_BASE) &amp;&amp; ((ADDRESS) &lt; FLASH_BANK2_BASE))</td></tr>
+<tr class="separator:a77358ba2068c41ff16904cf3fb4a40f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a364167ca8c91027d4977149130bfff01" id="r_a364167ca8c91027d4977149130bfff01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a364167ca8c91027d4977149130bfff01">IS_FLASH_PROGRAM_ADDRESS_BANK2</a>(ADDRESS)&#160;&#160;&#160;(((ADDRESS) &gt;= FLASH_BANK2_BASE ) &amp;&amp; ((ADDRESS) &lt;= FLASH_END))</td></tr>
+<tr class="separator:a364167ca8c91027d4977149130bfff01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90c8441d56b937cea616856695a8a20a" id="r_a90c8441d56b937cea616856695a8a20a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90c8441d56b937cea616856695a8a20a">IS_FLASH_PROGRAM_ADDRESS</a>(ADDRESS)</td></tr>
+<tr class="separator:a90c8441d56b937cea616856695a8a20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ac3f24496e5de6a2f6bd3ff77f0ca53" id="r_a8ac3f24496e5de6a2f6bd3ff77f0ca53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ac3f24496e5de6a2f6bd3ff77f0ca53">FLASH_BANK_1</a>&#160;&#160;&#160;0x01U</td></tr>
+<tr class="separator:a8ac3f24496e5de6a2f6bd3ff77f0ca53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d2db4c8c74cdf066868801fa264e24b" id="r_a6d2db4c8c74cdf066868801fa264e24b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d2db4c8c74cdf066868801fa264e24b">FLASH_BANK_2</a>&#160;&#160;&#160;0x02U</td></tr>
+<tr class="separator:a6d2db4c8c74cdf066868801fa264e24b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfcad967ad642e113c2811e4ba7588c6" id="r_abfcad967ad642e113c2811e4ba7588c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfcad967ad642e113c2811e4ba7588c6">FLASH_BANK_BOTH</a>&#160;&#160;&#160;(<a class="el" href="#a8ac3f24496e5de6a2f6bd3ff77f0ca53">FLASH_BANK_1</a> | <a class="el" href="#a6d2db4c8c74cdf066868801fa264e24b">FLASH_BANK_2</a>)</td></tr>
+<tr class="separator:abfcad967ad642e113c2811e4ba7588c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1b918da529ea86d8dd916e801630c5d" id="r_ad1b918da529ea86d8dd916e801630c5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1b918da529ea86d8dd916e801630c5d">FLASH_TYPEPROGRAM_FLASHWORD</a>&#160;&#160;&#160;0x01U</td></tr>
+<tr class="separator:ad1b918da529ea86d8dd916e801630c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ee440576558767d822aa9e3112927c1" id="r_a0ee440576558767d822aa9e3112927c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ee440576558767d822aa9e3112927c1">FLASH_FLAG_QW_BANK1</a>&#160;&#160;&#160;FLASH_SR_QW</td></tr>
+<tr class="separator:a0ee440576558767d822aa9e3112927c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5701acddf67d60be5ef4bf1d4b973ee6" id="r_a5701acddf67d60be5ef4bf1d4b973ee6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5701acddf67d60be5ef4bf1d4b973ee6">FLASH_FLAG_QW_BANK2</a>&#160;&#160;&#160;(FLASH_SR_QW       | 0x80000000U)</td></tr>
+<tr class="separator:a5701acddf67d60be5ef4bf1d4b973ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a030207b57606a63c43e1dbab2b6f04bd" id="r_a030207b57606a63c43e1dbab2b6f04bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a030207b57606a63c43e1dbab2b6f04bd">FLASH_FLAG_BSY_BANK1</a>&#160;&#160;&#160;FLASH_SR_BSY</td></tr>
+<tr class="separator:a030207b57606a63c43e1dbab2b6f04bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade53109c1cbabea026ec7b72656a3966" id="r_ade53109c1cbabea026ec7b72656a3966"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade53109c1cbabea026ec7b72656a3966">FLASH_FLAG_WBNE_BANK1</a>&#160;&#160;&#160;FLASH_SR_WBNE</td></tr>
+<tr class="separator:ade53109c1cbabea026ec7b72656a3966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2427edc3cd05cf5259dda182c582947" id="r_af2427edc3cd05cf5259dda182c582947"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2427edc3cd05cf5259dda182c582947">FLASH_FLAG_CRC_BUSY_BANK1</a>&#160;&#160;&#160;FLASH_SR_CRC_BUSY</td></tr>
+<tr class="separator:af2427edc3cd05cf5259dda182c582947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57e725fb9cb93908bd3eb21a405bdd69" id="r_a57e725fb9cb93908bd3eb21a405bdd69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57e725fb9cb93908bd3eb21a405bdd69">FLASH_FLAG_EOP_BANK1</a>&#160;&#160;&#160;FLASH_SR_EOP</td></tr>
+<tr class="separator:a57e725fb9cb93908bd3eb21a405bdd69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab510e8aa73f6fa7e808c8a72fbdd6ca2" id="r_ab510e8aa73f6fa7e808c8a72fbdd6ca2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab510e8aa73f6fa7e808c8a72fbdd6ca2">FLASH_FLAG_WRPERR_BANK1</a>&#160;&#160;&#160;FLASH_SR_WRPERR</td></tr>
+<tr class="separator:ab510e8aa73f6fa7e808c8a72fbdd6ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85dde020ac3a51a238f404cb40480397" id="r_a85dde020ac3a51a238f404cb40480397"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85dde020ac3a51a238f404cb40480397">FLASH_FLAG_PGSERR_BANK1</a>&#160;&#160;&#160;FLASH_SR_PGSERR</td></tr>
+<tr class="separator:a85dde020ac3a51a238f404cb40480397"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a227efcfdd6d50f9a41ac6de7e531708d" id="r_a227efcfdd6d50f9a41ac6de7e531708d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a227efcfdd6d50f9a41ac6de7e531708d">FLASH_FLAG_STRBERR_BANK1</a>&#160;&#160;&#160;FLASH_SR_STRBERR</td></tr>
+<tr class="separator:a227efcfdd6d50f9a41ac6de7e531708d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af90bc8cb3527b9abf6ad9287a75b566c" id="r_af90bc8cb3527b9abf6ad9287a75b566c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af90bc8cb3527b9abf6ad9287a75b566c">FLASH_FLAG_INCERR_BANK1</a>&#160;&#160;&#160;FLASH_SR_INCERR</td></tr>
+<tr class="separator:af90bc8cb3527b9abf6ad9287a75b566c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba699f792634e64a7118ccddc571c1c2" id="r_aba699f792634e64a7118ccddc571c1c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba699f792634e64a7118ccddc571c1c2">FLASH_FLAG_RDPERR_BANK1</a>&#160;&#160;&#160;FLASH_SR_RDPERR</td></tr>
+<tr class="separator:aba699f792634e64a7118ccddc571c1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6563970bd105c1fbdca0c78d8fc90427" id="r_a6563970bd105c1fbdca0c78d8fc90427"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6563970bd105c1fbdca0c78d8fc90427">FLASH_FLAG_RDSERR_BANK1</a>&#160;&#160;&#160;FLASH_SR_RDSERR</td></tr>
+<tr class="separator:a6563970bd105c1fbdca0c78d8fc90427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a51cadd47188b72e509d1498ac337d9" id="r_a8a51cadd47188b72e509d1498ac337d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a51cadd47188b72e509d1498ac337d9">FLASH_FLAG_SNECCERR_BANK1</a>&#160;&#160;&#160;FLASH_SR_SNECCERR</td></tr>
+<tr class="separator:a8a51cadd47188b72e509d1498ac337d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c5335401b6bb576b6bf50aebbe6f76f" id="r_a0c5335401b6bb576b6bf50aebbe6f76f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c5335401b6bb576b6bf50aebbe6f76f">FLASH_FLAG_DBECCERR_BANK1</a>&#160;&#160;&#160;FLASH_SR_DBECCERR</td></tr>
+<tr class="separator:a0c5335401b6bb576b6bf50aebbe6f76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a081695b1abf16e561c349323d8989985" id="r_a081695b1abf16e561c349323d8989985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a081695b1abf16e561c349323d8989985">FLASH_FLAG_CRCEND_BANK1</a>&#160;&#160;&#160;FLASH_SR_CRCEND</td></tr>
+<tr class="separator:a081695b1abf16e561c349323d8989985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2587678ea5d0a5cc7b09f8fc010cfea9" id="r_a2587678ea5d0a5cc7b09f8fc010cfea9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2587678ea5d0a5cc7b09f8fc010cfea9">FLASH_FLAG_CRCRDERR_BANK1</a>&#160;&#160;&#160;FLASH_SR_CRCRDERR</td></tr>
+<tr class="separator:a2587678ea5d0a5cc7b09f8fc010cfea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8378ddf6be6b812b77bec2f805b2579" id="r_aa8378ddf6be6b812b77bec2f805b2579"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8378ddf6be6b812b77bec2f805b2579">FLASH_FLAG_ALL_ERRORS_BANK1</a></td></tr>
+<tr class="separator:aa8378ddf6be6b812b77bec2f805b2579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59ac242648dbe83e88752d467a385db7" id="r_a59ac242648dbe83e88752d467a385db7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59ac242648dbe83e88752d467a385db7">FLASH_FLAG_ALL_BANK1</a></td></tr>
+<tr class="separator:a59ac242648dbe83e88752d467a385db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42fda4a58f603961b7c1fc0a4feaf2b8" id="r_a42fda4a58f603961b7c1fc0a4feaf2b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42fda4a58f603961b7c1fc0a4feaf2b8">FLASH_FLAG_BSY_BANK2</a>&#160;&#160;&#160;(FLASH_SR_BSY      | 0x80000000U)</td></tr>
+<tr class="separator:a42fda4a58f603961b7c1fc0a4feaf2b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a912a02ff60590153a8e9e007938ee5f9" id="r_a912a02ff60590153a8e9e007938ee5f9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a912a02ff60590153a8e9e007938ee5f9">FLASH_FLAG_WBNE_BANK2</a>&#160;&#160;&#160;(FLASH_SR_WBNE     | 0x80000000U)</td></tr>
+<tr class="separator:a912a02ff60590153a8e9e007938ee5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a214c1c06378ddfe0ce2b7edc49a5d162" id="r_a214c1c06378ddfe0ce2b7edc49a5d162"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a214c1c06378ddfe0ce2b7edc49a5d162">FLASH_FLAG_CRC_BUSY_BANK2</a>&#160;&#160;&#160;(FLASH_SR_CRC_BUSY | 0x80000000U)</td></tr>
+<tr class="separator:a214c1c06378ddfe0ce2b7edc49a5d162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7790f9cda82e6fe9a390f61f69756d61" id="r_a7790f9cda82e6fe9a390f61f69756d61"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7790f9cda82e6fe9a390f61f69756d61">FLASH_FLAG_EOP_BANK2</a>&#160;&#160;&#160;(FLASH_SR_EOP      | 0x80000000U)</td></tr>
+<tr class="separator:a7790f9cda82e6fe9a390f61f69756d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a878b104bd42b1b6eeb8dedcd6a01031c" id="r_a878b104bd42b1b6eeb8dedcd6a01031c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a878b104bd42b1b6eeb8dedcd6a01031c">FLASH_FLAG_WRPERR_BANK2</a>&#160;&#160;&#160;(FLASH_SR_WRPERR   | 0x80000000U)</td></tr>
+<tr class="separator:a878b104bd42b1b6eeb8dedcd6a01031c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6b2df64dd23aecf0f8f5099ad2484ac" id="r_ab6b2df64dd23aecf0f8f5099ad2484ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6b2df64dd23aecf0f8f5099ad2484ac">FLASH_FLAG_PGSERR_BANK2</a>&#160;&#160;&#160;(FLASH_SR_PGSERR   | 0x80000000U)</td></tr>
+<tr class="separator:ab6b2df64dd23aecf0f8f5099ad2484ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99d2fb34732a75b6e02456f3670df2a9" id="r_a99d2fb34732a75b6e02456f3670df2a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99d2fb34732a75b6e02456f3670df2a9">FLASH_FLAG_STRBERR_BANK2</a>&#160;&#160;&#160;(FLASH_SR_STRBERR  | 0x80000000U)</td></tr>
+<tr class="separator:a99d2fb34732a75b6e02456f3670df2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2196922a5d364620ab2e9de2379adb88" id="r_a2196922a5d364620ab2e9de2379adb88"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2196922a5d364620ab2e9de2379adb88">FLASH_FLAG_INCERR_BANK2</a>&#160;&#160;&#160;(FLASH_SR_INCERR   | 0x80000000U)</td></tr>
+<tr class="separator:a2196922a5d364620ab2e9de2379adb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75a7af4b405b8018ebe09a99e2e0557b" id="r_a75a7af4b405b8018ebe09a99e2e0557b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75a7af4b405b8018ebe09a99e2e0557b">FLASH_FLAG_RDPERR_BANK2</a>&#160;&#160;&#160;(FLASH_SR_RDPERR   | 0x80000000U)</td></tr>
+<tr class="separator:a75a7af4b405b8018ebe09a99e2e0557b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09a97157e58f3afae7d360422a41466f" id="r_a09a97157e58f3afae7d360422a41466f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09a97157e58f3afae7d360422a41466f">FLASH_FLAG_RDSERR_BANK2</a>&#160;&#160;&#160;(FLASH_SR_RDSERR   | 0x80000000U)</td></tr>
+<tr class="separator:a09a97157e58f3afae7d360422a41466f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a660a348a4057dcffcb5a7e6a83387e55" id="r_a660a348a4057dcffcb5a7e6a83387e55"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a660a348a4057dcffcb5a7e6a83387e55">FLASH_FLAG_SNECCERR_BANK2</a>&#160;&#160;&#160;(FLASH_SR_SNECCERR | 0x80000000U)</td></tr>
+<tr class="separator:a660a348a4057dcffcb5a7e6a83387e55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15ab58de16910d09eb7e1ff0cf90362b" id="r_a15ab58de16910d09eb7e1ff0cf90362b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15ab58de16910d09eb7e1ff0cf90362b">FLASH_FLAG_DBECCERR_BANK2</a>&#160;&#160;&#160;(FLASH_SR_DBECCERR | 0x80000000U)</td></tr>
+<tr class="separator:a15ab58de16910d09eb7e1ff0cf90362b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a455ba548dc86b6fc416c379a5070ec43" id="r_a455ba548dc86b6fc416c379a5070ec43"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a455ba548dc86b6fc416c379a5070ec43">FLASH_FLAG_CRCEND_BANK2</a>&#160;&#160;&#160;(FLASH_SR_CRCEND   | 0x80000000U)</td></tr>
+<tr class="separator:a455ba548dc86b6fc416c379a5070ec43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1469c79515d8e6466551e4db643caa31" id="r_a1469c79515d8e6466551e4db643caa31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1469c79515d8e6466551e4db643caa31">FLASH_FLAG_CRCRDERR_BANK2</a>&#160;&#160;&#160;(FLASH_SR_CRCRDERR | 0x80000000U)</td></tr>
+<tr class="separator:a1469c79515d8e6466551e4db643caa31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54e67730d97e2053d95d04d739560b2d" id="r_a54e67730d97e2053d95d04d739560b2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54e67730d97e2053d95d04d739560b2d">FLASH_FLAG_ALL_ERRORS_BANK2</a></td></tr>
+<tr class="separator:a54e67730d97e2053d95d04d739560b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86f3dba94a395a0a5eaeade371986725" id="r_a86f3dba94a395a0a5eaeade371986725"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86f3dba94a395a0a5eaeade371986725">FLASH_FLAG_ALL_BANK2</a></td></tr>
+<tr class="separator:a86f3dba94a395a0a5eaeade371986725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8988f3b93950e280131360ddbaf0bbe4" id="r_a8988f3b93950e280131360ddbaf0bbe4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8988f3b93950e280131360ddbaf0bbe4">IS_FLASH_FLAG_BANK1</a>(FLAG)&#160;&#160;&#160;(((FLAG) &amp; <a class="el" href="#a59ac242648dbe83e88752d467a385db7">FLASH_FLAG_ALL_BANK1</a>) == (FLAG))</td></tr>
+<tr class="separator:a8988f3b93950e280131360ddbaf0bbe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e0e5131caf945bd01abc3ccc32dd50b" id="r_a9e0e5131caf945bd01abc3ccc32dd50b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e0e5131caf945bd01abc3ccc32dd50b">__FLASH_GET_FLAG_BANK1</a>(__FLAG__)&#160;&#160;&#160;(READ_BIT(FLASH-&gt;SR1, (__FLAG__)) == (__FLAG__))</td></tr>
+<tr class="separator:a9e0e5131caf945bd01abc3ccc32dd50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40b8a1790d487178af495ff14e130dcc" id="r_a40b8a1790d487178af495ff14e130dcc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40b8a1790d487178af495ff14e130dcc">__FLASH_GET_FLAG_BANK2</a>(__FLAG__)&#160;&#160;&#160;(READ_BIT(FLASH-&gt;SR2, ((__FLAG__) &amp; 0x7FFFFFFFU)) == (((__FLAG__) &amp; 0x7FFFFFFFU)))</td></tr>
+<tr class="separator:a40b8a1790d487178af495ff14e130dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e8c2901222bc6368ba1a54036cf7448" id="r_a5e8c2901222bc6368ba1a54036cf7448"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e8c2901222bc6368ba1a54036cf7448">__PLATFORM_FLASH_GET_FLAG</a>(__FLAG__)&#160;&#160;&#160;__HAL_FLASH_GET_FLAG_BANK1(__FLAG__)</td></tr>
+<tr class="separator:a5e8c2901222bc6368ba1a54036cf7448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae19f3e99a532bae9539c10b307f85eea" id="r_ae19f3e99a532bae9539c10b307f85eea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae19f3e99a532bae9539c10b307f85eea">__FLASH_CLEAR_FLAG_BANK1</a>(__FLAG__)&#160;&#160;&#160;WRITE_REG(FLASH-&gt;CCR1, (__FLAG__))</td></tr>
+<tr class="separator:ae19f3e99a532bae9539c10b307f85eea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a700d9c6fc86cbdfaaf90e8a5ee02373e" id="r_a700d9c6fc86cbdfaaf90e8a5ee02373e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a700d9c6fc86cbdfaaf90e8a5ee02373e">__FLASH_CLEAR_FLAG_BANK2</a>(__FLAG__)&#160;&#160;&#160;WRITE_REG(FLASH-&gt;CCR2, ((__FLAG__) &amp; 0x7FFFFFFFU))</td></tr>
+<tr class="separator:a700d9c6fc86cbdfaaf90e8a5ee02373e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f3182b5a6ce3d6738f7c2b02241eea4" id="r_a0f3182b5a6ce3d6738f7c2b02241eea4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f3182b5a6ce3d6738f7c2b02241eea4">FLASH_VOLTAGE_RANGE</a>&#160;&#160;&#160;FLASH_CR_PSIZE_1 /* 3V系统，所有选择电压范围为3——Flash program/erase by 32 bits  */</td></tr>
+<tr class="separator:a0f3182b5a6ce3d6738f7c2b02241eea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a74e8ee51d0c753c4018210533be50782" id="r_a74e8ee51d0c753c4018210533be50782"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74e8ee51d0c753c4018210533be50782">Platform_Flash_Lock</a> (void)</td></tr>
+<tr class="separator:a74e8ee51d0c753c4018210533be50782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f0fe701eeebe06c378aa75c412e4dd5" id="r_a1f0fe701eeebe06c378aa75c412e4dd5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f0fe701eeebe06c378aa75c412e4dd5">Platform_Flash_Unlock</a> (void)</td></tr>
+<tr class="separator:a1f0fe701eeebe06c378aa75c412e4dd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bd7aef1186bc1bc964a36561b491ded" id="r_a2bd7aef1186bc1bc964a36561b491ded"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bd7aef1186bc1bc964a36561b491ded">Platform_FLASH_WaitForLastOperation</a> (uint32_t Bank)</td></tr>
+<tr class="separator:a2bd7aef1186bc1bc964a36561b491ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37d5ebe1d70faa7f3c8155cd7d7ad715" id="r_a37d5ebe1d70faa7f3c8155cd7d7ad715"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37d5ebe1d70faa7f3c8155cd7d7ad715">Platform_Flash_Program</a> (uint32_t TypeProgram, uint32_t FlashAddress, uint32_t DataAddress)</td></tr>
+<tr class="separator:a37d5ebe1d70faa7f3c8155cd7d7ad715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abff9f9d0a59ace4b46e2c0768324838a" id="r_abff9f9d0a59ace4b46e2c0768324838a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abff9f9d0a59ace4b46e2c0768324838a">FLASH_Erase_Sector</a> (uint32_t Sector, uint32_t Banks, uint32_t VoltageRange)</td></tr>
+<tr class="separator:abff9f9d0a59ace4b46e2c0768324838a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a563a03582275023150202058ce5012c9" id="r_a563a03582275023150202058ce5012c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a563a03582275023150202058ce5012c9">Platform_Flash_EraseSector</a> (uint32_t Banks, uint32_t Sector, uint32_t NbSectors)</td></tr>
+<tr class="separator:a563a03582275023150202058ce5012c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23116132cfcf5b116889856e9a42d637" id="r_a23116132cfcf5b116889856e9a42d637"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23116132cfcf5b116889856e9a42d637">CmpCpuFlash</a> (uint32_t _ulFlashAddr, uint8_t *_ucpBuf, uint32_t _ulSize)</td></tr>
+<tr class="separator:a23116132cfcf5b116889856e9a42d637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19ba936d97c7119ed58e320932767a3f" id="r_a19ba936d97c7119ed58e320932767a3f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19ba936d97c7119ed58e320932767a3f">Platform_Flash_GetSector</a> (uint32_t FlashAddress)</td></tr>
+<tr class="separator:a19ba936d97c7119ed58e320932767a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9a6d3b3b3eb0ae0db54284182f72d6" id="r_afd9a6d3b3b3eb0ae0db54284182f72d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd9a6d3b3b3eb0ae0db54284182f72d6">Platform_Flash_EraseCpuFlash</a> (uint32_t FlashAddress)</td></tr>
+<tr class="memdesc:afd9a6d3b3b3eb0ae0db54284182f72d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">擦除内部FLASH一个扇区  <br /></td></tr>
+<tr class="separator:afd9a6d3b3b3eb0ae0db54284182f72d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5611a89f3726557a6c40586685089b12" id="r_a5611a89f3726557a6c40586685089b12"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5611a89f3726557a6c40586685089b12">Platform_FLash_WriteCpuFlash</a> (uint32_t FlashAddress, uint8_t *Buffer, uint32_t Size)</td></tr>
+<tr class="memdesc:a5611a89f3726557a6c40586685089b12"><td class="mdescLeft">&#160;</td><td class="mdescRight">写入数据到内部FLASH  <br /></td></tr>
+<tr class="separator:a5611a89f3726557a6c40586685089b12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6659f186fac1d8515818614d6bb964bd" id="r_a6659f186fac1d8515818614d6bb964bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6659f186fac1d8515818614d6bb964bd">Platform_FLash_ReadCpuFlash</a> (uint32_t FlashAddress, uint8_t *Buffer, uint32_t Size)</td></tr>
+<tr class="memdesc:a6659f186fac1d8515818614d6bb964bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取CPU FLASH  <br /></td></tr>
+<tr class="separator:a6659f186fac1d8515818614d6bb964bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:ad017c5d0621a5ecd74acd2eb6065bde5" id="r_ad017c5d0621a5ecd74acd2eb6065bde5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_lock_8hpp.html#a1a1f5d9910d8f9fd9ec38c35b4876fb5">Lock_TypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad017c5d0621a5ecd74acd2eb6065bde5">platform_flash_lock</a></td></tr>
+<tr class="separator:ad017c5d0621a5ecd74acd2eb6065bde5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3e056098a9f64ec1b06b2ab5e9aab0e" id="r_af3e056098a9f64ec1b06b2ab5e9aab0e"><td class="memItemLeft" align="right" valign="top">uint8_t <a class="el" href="_f_l_a_s_h_8hpp.html#a4435dab4cc5c7a4d698b296e047a12c3">p_CpuFlashArea</a>[<a class="el" href="_f_l_a_s_h_8hpp.html#a12d6768a11452c74275433b57e33e075">CPU_FLASH_SECTOR_SIZE</a>]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3e056098a9f64ec1b06b2ab5e9aab0e">__AT_CPUFLASH_2to8_</a></td></tr>
+<tr class="separator:af3e056098a9f64ec1b06b2ab5e9aab0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ae19f3e99a532bae9539c10b307f85eea" name="ae19f3e99a532bae9539c10b307f85eea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae19f3e99a532bae9539c10b307f85eea">&#9670;&#160;</a></span>__FLASH_CLEAR_FLAG_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __FLASH_CLEAR_FLAG_BANK1</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">__FLAG__</span></td><td>)</td>
+          <td>&#160;&#160;&#160;WRITE_REG(FLASH-&gt;CCR1, (__FLAG__))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a700d9c6fc86cbdfaaf90e8a5ee02373e" name="a700d9c6fc86cbdfaaf90e8a5ee02373e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a700d9c6fc86cbdfaaf90e8a5ee02373e">&#9670;&#160;</a></span>__FLASH_CLEAR_FLAG_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __FLASH_CLEAR_FLAG_BANK2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">__FLAG__</span></td><td>)</td>
+          <td>&#160;&#160;&#160;WRITE_REG(FLASH-&gt;CCR2, ((__FLAG__) &amp; 0x7FFFFFFFU))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9e0e5131caf945bd01abc3ccc32dd50b" name="a9e0e5131caf945bd01abc3ccc32dd50b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e0e5131caf945bd01abc3ccc32dd50b">&#9670;&#160;</a></span>__FLASH_GET_FLAG_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __FLASH_GET_FLAG_BANK1</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">__FLAG__</span></td><td>)</td>
+          <td>&#160;&#160;&#160;(READ_BIT(FLASH-&gt;SR1, (__FLAG__)) == (__FLAG__))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a40b8a1790d487178af495ff14e130dcc" name="a40b8a1790d487178af495ff14e130dcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40b8a1790d487178af495ff14e130dcc">&#9670;&#160;</a></span>__FLASH_GET_FLAG_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __FLASH_GET_FLAG_BANK2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">__FLAG__</span></td><td>)</td>
+          <td>&#160;&#160;&#160;(READ_BIT(FLASH-&gt;SR2, ((__FLAG__) &amp; 0x7FFFFFFFU)) == (((__FLAG__) &amp; 0x7FFFFFFFU)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e8c2901222bc6368ba1a54036cf7448" name="a5e8c2901222bc6368ba1a54036cf7448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e8c2901222bc6368ba1a54036cf7448">&#9670;&#160;</a></span>__PLATFORM_FLASH_GET_FLAG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __PLATFORM_FLASH_GET_FLAG</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">__FLAG__</span></td><td>)</td>
+          <td>&#160;&#160;&#160;__HAL_FLASH_GET_FLAG_BANK1(__FLAG__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ac3f24496e5de6a2f6bd3ff77f0ca53" name="a8ac3f24496e5de6a2f6bd3ff77f0ca53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ac3f24496e5de6a2f6bd3ff77f0ca53">&#9670;&#160;</a></span>FLASH_BANK_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_BANK_1&#160;&#160;&#160;0x01U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bank 1 <br  />
+ </p>
+
+</div>
+</div>
+<a id="a6d2db4c8c74cdf066868801fa264e24b" name="a6d2db4c8c74cdf066868801fa264e24b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d2db4c8c74cdf066868801fa264e24b">&#9670;&#160;</a></span>FLASH_BANK_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_BANK_2&#160;&#160;&#160;0x02U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bank 2 <br  />
+ </p>
+
+</div>
+</div>
+<a id="abfcad967ad642e113c2811e4ba7588c6" name="abfcad967ad642e113c2811e4ba7588c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfcad967ad642e113c2811e4ba7588c6">&#9670;&#160;</a></span>FLASH_BANK_BOTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_BANK_BOTH&#160;&#160;&#160;(<a class="el" href="#a8ac3f24496e5de6a2f6bd3ff77f0ca53">FLASH_BANK_1</a> | <a class="el" href="#a6d2db4c8c74cdf066868801fa264e24b">FLASH_BANK_2</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bank1 and Bank2 <br  />
+ </p>
+
+</div>
+</div>
+<a id="a59ac242648dbe83e88752d467a385db7" name="a59ac242648dbe83e88752d467a385db7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59ac242648dbe83e88752d467a385db7">&#9670;&#160;</a></span>FLASH_FLAG_ALL_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_ALL_BANK1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">                                           (<a class="code hl_define" href="#a030207b57606a63c43e1dbab2b6f04bd">FLASH_FLAG_BSY_BANK1</a>      | <a class="code hl_define" href="#ade53109c1cbabea026ec7b72656a3966">FLASH_FLAG_WBNE_BANK1</a>     | \</div>
+<div class="line">                                           <a class="code hl_define" href="#a0ee440576558767d822aa9e3112927c1">FLASH_FLAG_QW_BANK1</a>       | <a class="code hl_define" href="#af2427edc3cd05cf5259dda182c582947">FLASH_FLAG_CRC_BUSY_BANK1</a> | \</div>
+<div class="line">                                           <a class="code hl_define" href="#a57e725fb9cb93908bd3eb21a405bdd69">FLASH_FLAG_EOP_BANK1</a>      | <a class="code hl_define" href="#a081695b1abf16e561c349323d8989985">FLASH_FLAG_CRCEND_BANK1</a>   | \</div>
+<div class="line">                                           <a class="code hl_define" href="#aa8378ddf6be6b812b77bec2f805b2579">FLASH_FLAG_ALL_ERRORS_BANK1</a>)</div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a030207b57606a63c43e1dbab2b6f04bd"><div class="ttname"><a href="#a030207b57606a63c43e1dbab2b6f04bd">FLASH_FLAG_BSY_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_BSY_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:65</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a081695b1abf16e561c349323d8989985"><div class="ttname"><a href="#a081695b1abf16e561c349323d8989985">FLASH_FLAG_CRCEND_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_CRCEND_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:109</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a0ee440576558767d822aa9e3112927c1"><div class="ttname"><a href="#a0ee440576558767d822aa9e3112927c1">FLASH_FLAG_QW_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_QW_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:58</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a57e725fb9cb93908bd3eb21a405bdd69"><div class="ttname"><a href="#a57e725fb9cb93908bd3eb21a405bdd69">FLASH_FLAG_EOP_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_EOP_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:77</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_aa8378ddf6be6b812b77bec2f805b2579"><div class="ttname"><a href="#aa8378ddf6be6b812b77bec2f805b2579">FLASH_FLAG_ALL_ERRORS_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_ALL_ERRORS_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:125</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_ade53109c1cbabea026ec7b72656a3966"><div class="ttname"><a href="#ade53109c1cbabea026ec7b72656a3966">FLASH_FLAG_WBNE_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_WBNE_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:68</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_af2427edc3cd05cf5259dda182c582947"><div class="ttname"><a href="#af2427edc3cd05cf5259dda182c582947">FLASH_FLAG_CRC_BUSY_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_CRC_BUSY_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:74</div></div>
+</div><!-- fragment --><p>All Bank 1 flags </p>
+
+</div>
+</div>
+<a id="a86f3dba94a395a0a5eaeade371986725" name="a86f3dba94a395a0a5eaeade371986725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86f3dba94a395a0a5eaeade371986725">&#9670;&#160;</a></span>FLASH_FLAG_ALL_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_ALL_BANK2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">                                           (<a class="code hl_define" href="#a42fda4a58f603961b7c1fc0a4feaf2b8">FLASH_FLAG_BSY_BANK2</a>      | <a class="code hl_define" href="#a912a02ff60590153a8e9e007938ee5f9">FLASH_FLAG_WBNE_BANK2</a>     | \</div>
+<div class="line">                                           <a class="code hl_define" href="#a5701acddf67d60be5ef4bf1d4b973ee6">FLASH_FLAG_QW_BANK2</a>       | <a class="code hl_define" href="#a214c1c06378ddfe0ce2b7edc49a5d162">FLASH_FLAG_CRC_BUSY_BANK2</a> | \</div>
+<div class="line">                                           <a class="code hl_define" href="#a7790f9cda82e6fe9a390f61f69756d61">FLASH_FLAG_EOP_BANK2</a>      | <a class="code hl_define" href="#a455ba548dc86b6fc416c379a5070ec43">FLASH_FLAG_CRCEND_BANK2</a>   | \</div>
+<div class="line">                                           <a class="code hl_define" href="#a54e67730d97e2053d95d04d739560b2d">FLASH_FLAG_ALL_ERRORS_BANK2</a>)</div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a214c1c06378ddfe0ce2b7edc49a5d162"><div class="ttname"><a href="#a214c1c06378ddfe0ce2b7edc49a5d162">FLASH_FLAG_CRC_BUSY_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_CRC_BUSY_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:150</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a42fda4a58f603961b7c1fc0a4feaf2b8"><div class="ttname"><a href="#a42fda4a58f603961b7c1fc0a4feaf2b8">FLASH_FLAG_BSY_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_BSY_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:141</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a455ba548dc86b6fc416c379a5070ec43"><div class="ttname"><a href="#a455ba548dc86b6fc416c379a5070ec43">FLASH_FLAG_CRCEND_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_CRCEND_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:185</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a54e67730d97e2053d95d04d739560b2d"><div class="ttname"><a href="#a54e67730d97e2053d95d04d739560b2d">FLASH_FLAG_ALL_ERRORS_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_ALL_ERRORS_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:201</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a5701acddf67d60be5ef4bf1d4b973ee6"><div class="ttname"><a href="#a5701acddf67d60be5ef4bf1d4b973ee6">FLASH_FLAG_QW_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_QW_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:61</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a7790f9cda82e6fe9a390f61f69756d61"><div class="ttname"><a href="#a7790f9cda82e6fe9a390f61f69756d61">FLASH_FLAG_EOP_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_EOP_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:153</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a912a02ff60590153a8e9e007938ee5f9"><div class="ttname"><a href="#a912a02ff60590153a8e9e007938ee5f9">FLASH_FLAG_WBNE_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_WBNE_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:144</div></div>
+</div><!-- fragment --><p>All Bank 2 flags </p>
+
+</div>
+</div>
+<a id="aa8378ddf6be6b812b77bec2f805b2579" name="aa8378ddf6be6b812b77bec2f805b2579"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8378ddf6be6b812b77bec2f805b2579">&#9670;&#160;</a></span>FLASH_FLAG_ALL_ERRORS_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_ALL_ERRORS_BANK1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">                                           (<a class="code hl_define" href="#ab510e8aa73f6fa7e808c8a72fbdd6ca2">FLASH_FLAG_WRPERR_BANK1</a>   | <a class="code hl_define" href="#a85dde020ac3a51a238f404cb40480397">FLASH_FLAG_PGSERR_BANK1</a>   | \</div>
+<div class="line">                                           <a class="code hl_define" href="#a227efcfdd6d50f9a41ac6de7e531708d">FLASH_FLAG_STRBERR_BANK1</a>  | <a class="code hl_define" href="#af90bc8cb3527b9abf6ad9287a75b566c">FLASH_FLAG_INCERR_BANK1</a>   | \</div>
+<div class="line">                                           <a class="code hl_define" href="#aba699f792634e64a7118ccddc571c1c2">FLASH_FLAG_RDPERR_BANK1</a>   | <a class="code hl_define" href="#a6563970bd105c1fbdca0c78d8fc90427">FLASH_FLAG_RDSERR_BANK1</a>   | \</div>
+<div class="line">                                           <a class="code hl_define" href="#a8a51cadd47188b72e509d1498ac337d9">FLASH_FLAG_SNECCERR_BANK1</a> | <a class="code hl_define" href="#a0c5335401b6bb576b6bf50aebbe6f76f">FLASH_FLAG_DBECCERR_BANK1</a> | \</div>
+<div class="line">                                           <a class="code hl_define" href="#a2587678ea5d0a5cc7b09f8fc010cfea9">FLASH_FLAG_CRCRDERR_BANK1</a>)</div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a0c5335401b6bb576b6bf50aebbe6f76f"><div class="ttname"><a href="#a0c5335401b6bb576b6bf50aebbe6f76f">FLASH_FLAG_DBECCERR_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_DBECCERR_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:106</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a227efcfdd6d50f9a41ac6de7e531708d"><div class="ttname"><a href="#a227efcfdd6d50f9a41ac6de7e531708d">FLASH_FLAG_STRBERR_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_STRBERR_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:86</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a2587678ea5d0a5cc7b09f8fc010cfea9"><div class="ttname"><a href="#a2587678ea5d0a5cc7b09f8fc010cfea9">FLASH_FLAG_CRCRDERR_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_CRCRDERR_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:112</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a6563970bd105c1fbdca0c78d8fc90427"><div class="ttname"><a href="#a6563970bd105c1fbdca0c78d8fc90427">FLASH_FLAG_RDSERR_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_RDSERR_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:100</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a85dde020ac3a51a238f404cb40480397"><div class="ttname"><a href="#a85dde020ac3a51a238f404cb40480397">FLASH_FLAG_PGSERR_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_PGSERR_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:83</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a8a51cadd47188b72e509d1498ac337d9"><div class="ttname"><a href="#a8a51cadd47188b72e509d1498ac337d9">FLASH_FLAG_SNECCERR_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_SNECCERR_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:103</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_ab510e8aa73f6fa7e808c8a72fbdd6ca2"><div class="ttname"><a href="#ab510e8aa73f6fa7e808c8a72fbdd6ca2">FLASH_FLAG_WRPERR_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_WRPERR_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:80</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_aba699f792634e64a7118ccddc571c1c2"><div class="ttname"><a href="#aba699f792634e64a7118ccddc571c1c2">FLASH_FLAG_RDPERR_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_RDPERR_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:97</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_af90bc8cb3527b9abf6ad9287a75b566c"><div class="ttname"><a href="#af90bc8cb3527b9abf6ad9287a75b566c">FLASH_FLAG_INCERR_BANK1</a></div><div class="ttdeci">#define FLASH_FLAG_INCERR_BANK1</div><div class="ttdef"><b>Definition</b> FLASH.cpp:89</div></div>
+</div><!-- fragment --><p>All Bank 1 error flags </p>
+
+</div>
+</div>
+<a id="a54e67730d97e2053d95d04d739560b2d" name="a54e67730d97e2053d95d04d739560b2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54e67730d97e2053d95d04d739560b2d">&#9670;&#160;</a></span>FLASH_FLAG_ALL_ERRORS_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_ALL_ERRORS_BANK2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">                                           (<a class="code hl_define" href="#a878b104bd42b1b6eeb8dedcd6a01031c">FLASH_FLAG_WRPERR_BANK2</a>   | <a class="code hl_define" href="#ab6b2df64dd23aecf0f8f5099ad2484ac">FLASH_FLAG_PGSERR_BANK2</a>   | \</div>
+<div class="line">                                           <a class="code hl_define" href="#a99d2fb34732a75b6e02456f3670df2a9">FLASH_FLAG_STRBERR_BANK2</a>  | <a class="code hl_define" href="#a2196922a5d364620ab2e9de2379adb88">FLASH_FLAG_INCERR_BANK2</a>   | \</div>
+<div class="line">                                           <a class="code hl_define" href="#a75a7af4b405b8018ebe09a99e2e0557b">FLASH_FLAG_RDPERR_BANK2</a>   | <a class="code hl_define" href="#a09a97157e58f3afae7d360422a41466f">FLASH_FLAG_RDSERR_BANK2</a>   | \</div>
+<div class="line">                                           <a class="code hl_define" href="#a660a348a4057dcffcb5a7e6a83387e55">FLASH_FLAG_SNECCERR_BANK2</a> | <a class="code hl_define" href="#a15ab58de16910d09eb7e1ff0cf90362b">FLASH_FLAG_DBECCERR_BANK2</a> | \</div>
+<div class="line">                                           <a class="code hl_define" href="#a1469c79515d8e6466551e4db643caa31">FLASH_FLAG_CRCRDERR_BANK2</a>)</div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a09a97157e58f3afae7d360422a41466f"><div class="ttname"><a href="#a09a97157e58f3afae7d360422a41466f">FLASH_FLAG_RDSERR_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_RDSERR_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:176</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a1469c79515d8e6466551e4db643caa31"><div class="ttname"><a href="#a1469c79515d8e6466551e4db643caa31">FLASH_FLAG_CRCRDERR_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_CRCRDERR_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:188</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a15ab58de16910d09eb7e1ff0cf90362b"><div class="ttname"><a href="#a15ab58de16910d09eb7e1ff0cf90362b">FLASH_FLAG_DBECCERR_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_DBECCERR_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:182</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a2196922a5d364620ab2e9de2379adb88"><div class="ttname"><a href="#a2196922a5d364620ab2e9de2379adb88">FLASH_FLAG_INCERR_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_INCERR_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:165</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a660a348a4057dcffcb5a7e6a83387e55"><div class="ttname"><a href="#a660a348a4057dcffcb5a7e6a83387e55">FLASH_FLAG_SNECCERR_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_SNECCERR_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:179</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a75a7af4b405b8018ebe09a99e2e0557b"><div class="ttname"><a href="#a75a7af4b405b8018ebe09a99e2e0557b">FLASH_FLAG_RDPERR_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_RDPERR_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:173</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a878b104bd42b1b6eeb8dedcd6a01031c"><div class="ttname"><a href="#a878b104bd42b1b6eeb8dedcd6a01031c">FLASH_FLAG_WRPERR_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_WRPERR_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:156</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a99d2fb34732a75b6e02456f3670df2a9"><div class="ttname"><a href="#a99d2fb34732a75b6e02456f3670df2a9">FLASH_FLAG_STRBERR_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_STRBERR_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:162</div></div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_ab6b2df64dd23aecf0f8f5099ad2484ac"><div class="ttname"><a href="#ab6b2df64dd23aecf0f8f5099ad2484ac">FLASH_FLAG_PGSERR_BANK2</a></div><div class="ttdeci">#define FLASH_FLAG_PGSERR_BANK2</div><div class="ttdef"><b>Definition</b> FLASH.cpp:159</div></div>
+</div><!-- fragment --><p>All Bank 2 error flags </p>
+
+</div>
+</div>
+<a id="a030207b57606a63c43e1dbab2b6f04bd" name="a030207b57606a63c43e1dbab2b6f04bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a030207b57606a63c43e1dbab2b6f04bd">&#9670;&#160;</a></span>FLASH_FLAG_BSY_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_BSY_BANK1&#160;&#160;&#160;FLASH_SR_BSY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>FLASH Bank 1 Busy flag </p>
+
+</div>
+</div>
+<a id="a42fda4a58f603961b7c1fc0a4feaf2b8" name="a42fda4a58f603961b7c1fc0a4feaf2b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42fda4a58f603961b7c1fc0a4feaf2b8">&#9670;&#160;</a></span>FLASH_FLAG_BSY_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_BSY_BANK2&#160;&#160;&#160;(FLASH_SR_BSY      | 0x80000000U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>FLASH Bank 2 Busy flag </p>
+
+</div>
+</div>
+<a id="af2427edc3cd05cf5259dda182c582947" name="af2427edc3cd05cf5259dda182c582947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2427edc3cd05cf5259dda182c582947">&#9670;&#160;</a></span>FLASH_FLAG_CRC_BUSY_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_CRC_BUSY_BANK1&#160;&#160;&#160;FLASH_SR_CRC_BUSY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>CRC Busy on Bank 1 flag </p>
+
+</div>
+</div>
+<a id="a214c1c06378ddfe0ce2b7edc49a5d162" name="a214c1c06378ddfe0ce2b7edc49a5d162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a214c1c06378ddfe0ce2b7edc49a5d162">&#9670;&#160;</a></span>FLASH_FLAG_CRC_BUSY_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_CRC_BUSY_BANK2&#160;&#160;&#160;(FLASH_SR_CRC_BUSY | 0x80000000U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>CRC Busy on Bank 2 flag </p>
+
+</div>
+</div>
+<a id="a081695b1abf16e561c349323d8989985" name="a081695b1abf16e561c349323d8989985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a081695b1abf16e561c349323d8989985">&#9670;&#160;</a></span>FLASH_FLAG_CRCEND_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_CRCEND_BANK1&#160;&#160;&#160;FLASH_SR_CRCEND</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>CRC End of Calculation on Bank 1 flag </p>
+
+</div>
+</div>
+<a id="a455ba548dc86b6fc416c379a5070ec43" name="a455ba548dc86b6fc416c379a5070ec43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a455ba548dc86b6fc416c379a5070ec43">&#9670;&#160;</a></span>FLASH_FLAG_CRCEND_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_CRCEND_BANK2&#160;&#160;&#160;(FLASH_SR_CRCEND   | 0x80000000U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>CRC End of Calculation on Bank 2 flag </p>
+
+</div>
+</div>
+<a id="a2587678ea5d0a5cc7b09f8fc010cfea9" name="a2587678ea5d0a5cc7b09f8fc010cfea9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2587678ea5d0a5cc7b09f8fc010cfea9">&#9670;&#160;</a></span>FLASH_FLAG_CRCRDERR_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_CRCRDERR_BANK1&#160;&#160;&#160;FLASH_SR_CRCRDERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>CRC read error on Bank 1 flag </p>
+
+</div>
+</div>
+<a id="a1469c79515d8e6466551e4db643caa31" name="a1469c79515d8e6466551e4db643caa31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1469c79515d8e6466551e4db643caa31">&#9670;&#160;</a></span>FLASH_FLAG_CRCRDERR_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_CRCRDERR_BANK2&#160;&#160;&#160;(FLASH_SR_CRCRDERR | 0x80000000U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>CRC read error on Bank 2 flag </p>
+
+</div>
+</div>
+<a id="a0c5335401b6bb576b6bf50aebbe6f76f" name="a0c5335401b6bb576b6bf50aebbe6f76f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c5335401b6bb576b6bf50aebbe6f76f">&#9670;&#160;</a></span>FLASH_FLAG_DBECCERR_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_DBECCERR_BANK1&#160;&#160;&#160;FLASH_SR_DBECCERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Double Detection ECC Error on Bank 1 flag </p>
+
+</div>
+</div>
+<a id="a15ab58de16910d09eb7e1ff0cf90362b" name="a15ab58de16910d09eb7e1ff0cf90362b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15ab58de16910d09eb7e1ff0cf90362b">&#9670;&#160;</a></span>FLASH_FLAG_DBECCERR_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_DBECCERR_BANK2&#160;&#160;&#160;(FLASH_SR_DBECCERR | 0x80000000U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Double Detection ECC Error on Bank 2 flag </p>
+
+</div>
+</div>
+<a id="a57e725fb9cb93908bd3eb21a405bdd69" name="a57e725fb9cb93908bd3eb21a405bdd69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57e725fb9cb93908bd3eb21a405bdd69">&#9670;&#160;</a></span>FLASH_FLAG_EOP_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_EOP_BANK1&#160;&#160;&#160;FLASH_SR_EOP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>End Of Program on Bank 1 flag </p>
+
+</div>
+</div>
+<a id="a7790f9cda82e6fe9a390f61f69756d61" name="a7790f9cda82e6fe9a390f61f69756d61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7790f9cda82e6fe9a390f61f69756d61">&#9670;&#160;</a></span>FLASH_FLAG_EOP_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_EOP_BANK2&#160;&#160;&#160;(FLASH_SR_EOP      | 0x80000000U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>End Of Program on Bank 2 flag </p>
+
+</div>
+</div>
+<a id="af90bc8cb3527b9abf6ad9287a75b566c" name="af90bc8cb3527b9abf6ad9287a75b566c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af90bc8cb3527b9abf6ad9287a75b566c">&#9670;&#160;</a></span>FLASH_FLAG_INCERR_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_INCERR_BANK1&#160;&#160;&#160;FLASH_SR_INCERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Inconsistency Error on Bank 1 flag </p>
+
+</div>
+</div>
+<a id="a2196922a5d364620ab2e9de2379adb88" name="a2196922a5d364620ab2e9de2379adb88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2196922a5d364620ab2e9de2379adb88">&#9670;&#160;</a></span>FLASH_FLAG_INCERR_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_INCERR_BANK2&#160;&#160;&#160;(FLASH_SR_INCERR   | 0x80000000U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Inconsistency Error on Bank 2 flag </p>
+
+</div>
+</div>
+<a id="a85dde020ac3a51a238f404cb40480397" name="a85dde020ac3a51a238f404cb40480397"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85dde020ac3a51a238f404cb40480397">&#9670;&#160;</a></span>FLASH_FLAG_PGSERR_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_PGSERR_BANK1&#160;&#160;&#160;FLASH_SR_PGSERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Program Sequence Error on Bank 1 flag </p>
+
+</div>
+</div>
+<a id="ab6b2df64dd23aecf0f8f5099ad2484ac" name="ab6b2df64dd23aecf0f8f5099ad2484ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6b2df64dd23aecf0f8f5099ad2484ac">&#9670;&#160;</a></span>FLASH_FLAG_PGSERR_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_PGSERR_BANK2&#160;&#160;&#160;(FLASH_SR_PGSERR   | 0x80000000U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Program Sequence Error on Bank 2 flag </p>
+
+</div>
+</div>
+<a id="a0ee440576558767d822aa9e3112927c1" name="a0ee440576558767d822aa9e3112927c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ee440576558767d822aa9e3112927c1">&#9670;&#160;</a></span>FLASH_FLAG_QW_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_QW_BANK1&#160;&#160;&#160;FLASH_SR_QW</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wait Queue on Bank 1 flag </p>
+
+</div>
+</div>
+<a id="a5701acddf67d60be5ef4bf1d4b973ee6" name="a5701acddf67d60be5ef4bf1d4b973ee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5701acddf67d60be5ef4bf1d4b973ee6">&#9670;&#160;</a></span>FLASH_FLAG_QW_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_QW_BANK2&#160;&#160;&#160;(FLASH_SR_QW       | 0x80000000U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wait Queue on Bank 2 flag </p>
+
+</div>
+</div>
+<a id="aba699f792634e64a7118ccddc571c1c2" name="aba699f792634e64a7118ccddc571c1c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba699f792634e64a7118ccddc571c1c2">&#9670;&#160;</a></span>FLASH_FLAG_RDPERR_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_RDPERR_BANK1&#160;&#160;&#160;FLASH_SR_RDPERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>read Protection Error on Bank 1 flag </p>
+
+</div>
+</div>
+<a id="a75a7af4b405b8018ebe09a99e2e0557b" name="a75a7af4b405b8018ebe09a99e2e0557b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75a7af4b405b8018ebe09a99e2e0557b">&#9670;&#160;</a></span>FLASH_FLAG_RDPERR_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_RDPERR_BANK2&#160;&#160;&#160;(FLASH_SR_RDPERR   | 0x80000000U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>read Protection Error on Bank 2 flag </p>
+
+</div>
+</div>
+<a id="a6563970bd105c1fbdca0c78d8fc90427" name="a6563970bd105c1fbdca0c78d8fc90427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6563970bd105c1fbdca0c78d8fc90427">&#9670;&#160;</a></span>FLASH_FLAG_RDSERR_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_RDSERR_BANK1&#160;&#160;&#160;FLASH_SR_RDSERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>read Secured Error on Bank 1 flag </p>
+
+</div>
+</div>
+<a id="a09a97157e58f3afae7d360422a41466f" name="a09a97157e58f3afae7d360422a41466f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09a97157e58f3afae7d360422a41466f">&#9670;&#160;</a></span>FLASH_FLAG_RDSERR_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_RDSERR_BANK2&#160;&#160;&#160;(FLASH_SR_RDSERR   | 0x80000000U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>read Secured Error on Bank 2 flag </p>
+
+</div>
+</div>
+<a id="a8a51cadd47188b72e509d1498ac337d9" name="a8a51cadd47188b72e509d1498ac337d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a51cadd47188b72e509d1498ac337d9">&#9670;&#160;</a></span>FLASH_FLAG_SNECCERR_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_SNECCERR_BANK1&#160;&#160;&#160;FLASH_SR_SNECCERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Single ECC Error Correction on Bank 1 flag </p>
+
+</div>
+</div>
+<a id="a660a348a4057dcffcb5a7e6a83387e55" name="a660a348a4057dcffcb5a7e6a83387e55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a660a348a4057dcffcb5a7e6a83387e55">&#9670;&#160;</a></span>FLASH_FLAG_SNECCERR_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_SNECCERR_BANK2&#160;&#160;&#160;(FLASH_SR_SNECCERR | 0x80000000U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Single ECC Error Correction on Bank 2 flag </p>
+
+</div>
+</div>
+<a id="a227efcfdd6d50f9a41ac6de7e531708d" name="a227efcfdd6d50f9a41ac6de7e531708d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a227efcfdd6d50f9a41ac6de7e531708d">&#9670;&#160;</a></span>FLASH_FLAG_STRBERR_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_STRBERR_BANK1&#160;&#160;&#160;FLASH_SR_STRBERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Strobe Error on Bank 1 flag </p>
+
+</div>
+</div>
+<a id="a99d2fb34732a75b6e02456f3670df2a9" name="a99d2fb34732a75b6e02456f3670df2a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99d2fb34732a75b6e02456f3670df2a9">&#9670;&#160;</a></span>FLASH_FLAG_STRBERR_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_STRBERR_BANK2&#160;&#160;&#160;(FLASH_SR_STRBERR  | 0x80000000U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Strobe Error on Bank 2 flag </p>
+
+</div>
+</div>
+<a id="ade53109c1cbabea026ec7b72656a3966" name="ade53109c1cbabea026ec7b72656a3966"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade53109c1cbabea026ec7b72656a3966">&#9670;&#160;</a></span>FLASH_FLAG_WBNE_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_WBNE_BANK1&#160;&#160;&#160;FLASH_SR_WBNE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Write Buffer Not Empty on Bank 1 flag </p>
+
+</div>
+</div>
+<a id="a912a02ff60590153a8e9e007938ee5f9" name="a912a02ff60590153a8e9e007938ee5f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a912a02ff60590153a8e9e007938ee5f9">&#9670;&#160;</a></span>FLASH_FLAG_WBNE_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_WBNE_BANK2&#160;&#160;&#160;(FLASH_SR_WBNE     | 0x80000000U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Write Buffer Not Empty on Bank 2 flag </p>
+
+</div>
+</div>
+<a id="ab510e8aa73f6fa7e808c8a72fbdd6ca2" name="ab510e8aa73f6fa7e808c8a72fbdd6ca2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab510e8aa73f6fa7e808c8a72fbdd6ca2">&#9670;&#160;</a></span>FLASH_FLAG_WRPERR_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_WRPERR_BANK1&#160;&#160;&#160;FLASH_SR_WRPERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Write Protection Error on Bank 1 flag </p>
+
+</div>
+</div>
+<a id="a878b104bd42b1b6eeb8dedcd6a01031c" name="a878b104bd42b1b6eeb8dedcd6a01031c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a878b104bd42b1b6eeb8dedcd6a01031c">&#9670;&#160;</a></span>FLASH_FLAG_WRPERR_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_FLAG_WRPERR_BANK2&#160;&#160;&#160;(FLASH_SR_WRPERR   | 0x80000000U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Write Protection Error on Bank 2 flag </p>
+
+</div>
+</div>
+<a id="afd77e7bf91765d891ce63e2f0084b019" name="afd77e7bf91765d891ce63e2f0084b019"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd77e7bf91765d891ce63e2f0084b019">&#9670;&#160;</a></span>FLASH_KEY1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_KEY1&#160;&#160;&#160;0x45670123U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aee83d0f557e158da52f4a205db6b60a7" name="aee83d0f557e158da52f4a205db6b60a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee83d0f557e158da52f4a205db6b60a7">&#9670;&#160;</a></span>FLASH_KEY2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_KEY2&#160;&#160;&#160;0xCDEF89ABU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1b918da529ea86d8dd916e801630c5d" name="ad1b918da529ea86d8dd916e801630c5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1b918da529ea86d8dd916e801630c5d">&#9670;&#160;</a></span>FLASH_TYPEPROGRAM_FLASHWORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_TYPEPROGRAM_FLASHWORD&#160;&#160;&#160;0x01U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Program a flash word at a specified address </p>
+
+</div>
+</div>
+<a id="a0f3182b5a6ce3d6738f7c2b02241eea4" name="a0f3182b5a6ce3d6738f7c2b02241eea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f3182b5a6ce3d6738f7c2b02241eea4">&#9670;&#160;</a></span>FLASH_VOLTAGE_RANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_VOLTAGE_RANGE&#160;&#160;&#160;FLASH_CR_PSIZE_1 /* 3V系统，所有选择电压范围为3——Flash program/erase by 32 bits  */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8988f3b93950e280131360ddbaf0bbe4" name="a8988f3b93950e280131360ddbaf0bbe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8988f3b93950e280131360ddbaf0bbe4">&#9670;&#160;</a></span>IS_FLASH_FLAG_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IS_FLASH_FLAG_BANK1</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">FLAG</span></td><td>)</td>
+          <td>&#160;&#160;&#160;(((FLAG) &amp; <a class="el" href="#a59ac242648dbe83e88752d467a385db7">FLASH_FLAG_ALL_BANK1</a>) == (FLAG))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a90c8441d56b937cea616856695a8a20a" name="a90c8441d56b937cea616856695a8a20a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90c8441d56b937cea616856695a8a20a">&#9670;&#160;</a></span>IS_FLASH_PROGRAM_ADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IS_FLASH_PROGRAM_ADDRESS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">ADDRESS</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">                                                 (<a class="code hl_define" href="#a77358ba2068c41ff16904cf3fb4a40f2">IS_FLASH_PROGRAM_ADDRESS_BANK1</a>(ADDRESS) || \</div>
+<div class="line">                                                 IS_FLASH_PROGRAM_ADDRESS_BANK2(ADDRESS))</div>
+<div class="ttc" id="a_f_l_a_s_h_8cpp_html_a77358ba2068c41ff16904cf3fb4a40f2"><div class="ttname"><a href="#a77358ba2068c41ff16904cf3fb4a40f2">IS_FLASH_PROGRAM_ADDRESS_BANK1</a></div><div class="ttdeci">#define IS_FLASH_PROGRAM_ADDRESS_BANK1(ADDRESS)</div><div class="ttdef"><b>Definition</b> FLASH.cpp:15</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a77358ba2068c41ff16904cf3fb4a40f2" name="a77358ba2068c41ff16904cf3fb4a40f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77358ba2068c41ff16904cf3fb4a40f2">&#9670;&#160;</a></span>IS_FLASH_PROGRAM_ADDRESS_BANK1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IS_FLASH_PROGRAM_ADDRESS_BANK1</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">ADDRESS</span></td><td>)</td>
+          <td>&#160;&#160;&#160;(((ADDRESS) &gt;= FLASH_BANK1_BASE) &amp;&amp; ((ADDRESS) &lt; FLASH_BANK2_BASE))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a364167ca8c91027d4977149130bfff01" name="a364167ca8c91027d4977149130bfff01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a364167ca8c91027d4977149130bfff01">&#9670;&#160;</a></span>IS_FLASH_PROGRAM_ADDRESS_BANK2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IS_FLASH_PROGRAM_ADDRESS_BANK2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">ADDRESS</span></td><td>)</td>
+          <td>&#160;&#160;&#160;(((ADDRESS) &gt;= FLASH_BANK2_BASE ) &amp;&amp; ((ADDRESS) &lt;= FLASH_END))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a23116132cfcf5b116889856e9a42d637" name="a23116132cfcf5b116889856e9a42d637"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23116132cfcf5b116889856e9a42d637">&#9670;&#160;</a></span>CmpCpuFlash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t CmpCpuFlash </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>_ulFlashAddr</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>_ucpBuf</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>_ulSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abff9f9d0a59ace4b46e2c0768324838a" name="abff9f9d0a59ace4b46e2c0768324838a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abff9f9d0a59ace4b46e2c0768324838a">&#9670;&#160;</a></span>FLASH_Erase_Sector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FLASH_Erase_Sector </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Sector</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Banks</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>VoltageRange</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd9a6d3b3b3eb0ae0db54284182f72d6" name="afd9a6d3b3b3eb0ae0db54284182f72d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9a6d3b3b3eb0ae0db54284182f72d6">&#9670;&#160;</a></span>Platform_Flash_EraseCpuFlash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Platform_Flash_EraseCpuFlash </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FlashAddress</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>擦除内部FLASH一个扇区 </p>
+<p>1、对于同一个地址空间，仅支持一次编程(不推荐二次编程，即使是将相应 bit 由数值 1 编程 0)。 2、只能对已经擦除的空间做编程，擦除 1 个扇区是 128KB。 3、H7 的 Flash 编程时，务必保证要编程的地址是 32 字节对齐的，即此地址对 32 求余为 0。并且编 程的数据必须 32 字节整数倍。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FlashAddress</td><td>要擦除的FLASH地址 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool 如果擦除成功返回true，否则返回false </dd></dl>
+
+</div>
+</div>
+<a id="a563a03582275023150202058ce5012c9" name="a563a03582275023150202058ce5012c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a563a03582275023150202058ce5012c9">&#9670;&#160;</a></span>Platform_Flash_EraseSector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Platform_Flash_EraseSector </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Banks</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Sector</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>NbSectors</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a19ba936d97c7119ed58e320932767a3f" name="a19ba936d97c7119ed58e320932767a3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19ba936d97c7119ed58e320932767a3f">&#9670;&#160;</a></span>Platform_Flash_GetSector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Platform_Flash_GetSector </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FlashAddress</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74e8ee51d0c753c4018210533be50782" name="a74e8ee51d0c753c4018210533be50782"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74e8ee51d0c753c4018210533be50782">&#9670;&#160;</a></span>Platform_Flash_Lock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Platform_Flash_Lock </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a37d5ebe1d70faa7f3c8155cd7d7ad715" name="a37d5ebe1d70faa7f3c8155cd7d7ad715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37d5ebe1d70faa7f3c8155cd7d7ad715">&#9670;&#160;</a></span>Platform_Flash_Program()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Platform_Flash_Program </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>TypeProgram</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FlashAddress</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>DataAddress</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6659f186fac1d8515818614d6bb964bd" name="a6659f186fac1d8515818614d6bb964bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6659f186fac1d8515818614d6bb964bd">&#9670;&#160;</a></span>Platform_FLash_ReadCpuFlash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Platform_FLash_ReadCpuFlash </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FlashAddress</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>Buffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>读取CPU FLASH </p>
+<p>1、对于同一个地址空间，仅支持一次编程(不推荐二次编程，即使是将相应 bit 由数值 1 编程 0)。 2、只能对已经擦除的空间做编程，擦除 1 个扇区是 128KB。 3、H7 的 Flash 编程时，务必保证要编程的地址是 32 字节对齐的，即此地址对 32 求余为 0。并且编 程的数据必须 32 字节整数倍。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FlashAddress</td><td>要读取的FLASH地址 </td></tr>
+    <tr><td class="paramname">Buffer</td><td>读取数据的缓冲区 </td></tr>
+    <tr><td class="paramname">Size</td><td>要读取的数据大小 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool 如果读取成功返回true，否则返回false </dd></dl>
+
+</div>
+</div>
+<a id="a1f0fe701eeebe06c378aa75c412e4dd5" name="a1f0fe701eeebe06c378aa75c412e4dd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f0fe701eeebe06c378aa75c412e4dd5">&#9670;&#160;</a></span>Platform_Flash_Unlock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Platform_Flash_Unlock </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2bd7aef1186bc1bc964a36561b491ded" name="a2bd7aef1186bc1bc964a36561b491ded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bd7aef1186bc1bc964a36561b491ded">&#9670;&#160;</a></span>Platform_FLASH_WaitForLastOperation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Platform_FLASH_WaitForLastOperation </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Bank</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5611a89f3726557a6c40586685089b12" name="a5611a89f3726557a6c40586685089b12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5611a89f3726557a6c40586685089b12">&#9670;&#160;</a></span>Platform_FLash_WriteCpuFlash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Platform_FLash_WriteCpuFlash </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>FlashAddress</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>Buffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>写入数据到内部FLASH </p>
+<p>1、对于同一个地址空间，仅支持一次编程(不推荐二次编程，即使是将相应 bit 由数值 1 编程 0)。 2、只能对已经擦除的空间做编程，擦除 1 个扇区是 128KB。 3、H7 的 Flash 编程时，务必保证要编程的地址是 32 字节对齐的，即此地址对 32 求余为 0。并且编 程的数据必须 32 字节整数倍。该函数Platform_Flash_EraseCpuFlash对字节数不够 32 字节整数倍的情况自动补0。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FlashAddress</td><td>要写入的FLASH地址 </td></tr>
+    <tr><td class="paramname">Buffer</td><td>要写入的数据缓冲区 </td></tr>
+    <tr><td class="paramname">Size</td><td>要写入的数据大小 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool 如果写入成功返回true，否则返回false </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="af3e056098a9f64ec1b06b2ab5e9aab0e" name="af3e056098a9f64ec1b06b2ab5e9aab0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3e056098a9f64ec1b06b2ab5e9aab0e">&#9670;&#160;</a></span>__AT_CPUFLASH_2to8_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t <a class="el" href="_f_l_a_s_h_8hpp.html#a4435dab4cc5c7a4d698b296e047a12c3">p_CpuFlashArea</a> [<a class="el" href="_f_l_a_s_h_8hpp.html#a12d6768a11452c74275433b57e33e075">CPU_FLASH_SECTOR_SIZE</a>] __AT_CPUFLASH_2to8_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad017c5d0621a5ecd74acd2eb6065bde5" name="ad017c5d0621a5ecd74acd2eb6065bde5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad017c5d0621a5ecd74acd2eb6065bde5">&#9670;&#160;</a></span>platform_flash_lock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_lock_8hpp.html#a1a1f5d9910d8f9fd9ec38c35b4876fb5">Lock_TypeDef</a> platform_flash_lock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_84d8ddb176e16ca8bccaaa5eeae31ee8.html">platform-drivers</a></li><li class="navelem"><a class="el" href="dir_4c7ecf3a8e2e1382144ef720f571f877.html">STM32</a></li><li class="navelem"><a class="el" href="dir_cafb30cb5c28474342179cff3fd8c1a7.html">FLASH</a></li><li class="navelem"><a class="el" href="_f_l_a_s_h_8cpp.html">FLASH.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

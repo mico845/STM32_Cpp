@@ -33,7 +33,7 @@
  */
 
 /**
-  @defgroup Fill Vector Fill
+  @defgroup Fill Vector fill
 
   Fills the destination vector with a constant value.
 
@@ -45,7 +45,7 @@
  */
 
 /**
-  @addtogroup Fill
+  @addtogroup fill
   @{
  */
 
@@ -184,5 +184,5 @@ void arm_fill_f32(
 #endif /* defined(ARM_MATH_MVEF) && !defined(ARM_MATH_AUTOVECTORIZE) */
 
 /**
-  @} end of Fill group
+  @} end of fill group
  */

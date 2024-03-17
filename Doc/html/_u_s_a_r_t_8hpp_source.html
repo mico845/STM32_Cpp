@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-drivers/STM32/USART/USART.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_u_s_a_r_t_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">USART.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_u_s_a_r_t_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef __PLATFORM_STM32_USART_H__</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define __PLATFORM_STM32_USART_H__</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_d_m_a_8hpp.html">platform-drivers/STM32/DMA/DMA.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_sys_8hpp.html">platform-drivers/STM32/System/Sys.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_fifo_8hpp.html">platform-lib/DataStructre/Fifo.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef COUT_USARTx</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="_u_s_a_r_t_8hpp.html#a84716935d8900ce8ea19e08b03e82cb6">   10</a></span><span class="preprocessor">    #define COUT_USART_ID               1               </span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="_u_s_a_r_t_8hpp.html#a11e413b805a2ce05e4daa8d1b5ec5fbe">   11</a></span><span class="preprocessor">    #define _COUT_USART_LINK(AA,BB)     AA##BB</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="_u_s_a_r_t_8hpp.html#a5ac307ed93eeaf52bee8e070c6ede2f0">   12</a></span><span class="preprocessor">    #define __COUT_USART_LINK(AA,BB)    _COUT_USART_LINK(AA,BB)</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="_u_s_a_r_t_8hpp.html#a5353785ef84d34e532a5d0654ae713e0">   13</a></span><span class="preprocessor">    #define COUT_USARTx  __COUT_USART_LINK(USART, COUT_USART_ID)</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#endif </span><span class="comment">// !COUT_USARTx</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_s_t_m32.html">STM32</a></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef USART_TX_BUFFER_SIZE</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="_u_s_a_r_t_8hpp.html#a21d527450b438bba8dab02e03f021ee3">   20</a></span><span class="preprocessor">    #define USART_TX_BUFFER_SIZE        (256)                   </span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#ifndef USART_RX_BUFFER_SIZE</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="_u_s_a_r_t_8hpp.html#ac0999c0821d14cfab43e6f3c778c2b95">   23</a></span><span class="preprocessor">    #define USART_RX_BUFFER_SIZE        (256)                   </span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#ifndef USART_DMA_TX_BUFFER_SIZE</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="_u_s_a_r_t_8hpp.html#ab32c3413797a9b6ff1cb021166f74dc2">   27</a></span><span class="preprocessor">    #define USART_DMA_TX_BUFFER_SIZE    (512)                   </span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#ifndef USART_DMA_RX_BUFFER_SIZE</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="_u_s_a_r_t_8hpp.html#a8c7370864bf4923584f32a051ca7eeb7">   30</a></span><span class="preprocessor">    #define USART_DMA_RX_BUFFER_SIZE    (128)                   </span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#ifndef USART_STREAM_FLOAT_PRECISION</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="_u_s_a_r_t_8hpp.html#ac5a1426fae997ad8f455a786f229ffe1">   34</a></span><span class="preprocessor">#define USART_STREAM_FLOAT_PRECISION    (3)                   </span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_u_s_a_r_t.html">   42</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        USART_TypeDef* usart;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> precision = <a class="code hl_define" href="_u_s_a_r_t_8hpp.html#ac5a1426fae997ad8f455a786f229ffe1">USART_STREAM_FLOAT_PRECISION</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">bool</span> isUseDma;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordtype">bool</span> isUseIrq;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">bool</span> isBusySend = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordtype">bool</span> isRxFinished = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        DMA_TypeDef* tx_dma;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        DMA_TypeDef* rx_dma;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_enumeration" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">DMA_Stream</a> tx_dma_stream;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <a class="code hl_enumeration" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">DMA_Stream</a> rx_dma_stream;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <a class="code hl_class" href="class_fifo.html">Fifo&lt;uint8_t, USART_TX_BUFFER_SIZE&gt;</a> bufferTx;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_class" href="class_fifo.html">Fifo&lt;uint8_t, USART_RX_BUFFER_SIZE&gt;</a> bufferRx;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        uint8_t bufferTxDma[<a class="code hl_define" href="_u_s_a_r_t_8hpp.html#ab32c3413797a9b6ff1cb021166f74dc2">USART_DMA_TX_BUFFER_SIZE</a>];</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        uint8_t bufferRxDma[<a class="code hl_define" href="_u_s_a_r_t_8hpp.html#a8c7370864bf4923584f32a051ca7eeb7">USART_DMA_RX_BUFFER_SIZE</a>];</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        uint32_t last_dmarx_size = 0;  </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordtype">void</span> setSendMethod(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordtype">void</span> sendData_Polling(uint8_t *pbuffer, uint32_t size);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordtype">void</span> sendData_IT(uint8_t *pbuffer, uint32_t size);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordtype">void</span> sendData_DMA(uint8_t *pbuffer, uint32_t size);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordtype">void</span> enableTXDMA(uint8_t *mem_addr, uint32_t mem_size);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        void (<a class="code hl_class" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a>:: *pSendData) (uint8_t *pbuffer, uint32_t size);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_u_s_a_r_t.html#ac6fdb430e69210d19af6b3df0b6020ba">   68</a></span>        <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#ac6fdb430e69210d19af6b3df0b6020ba">USART</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_u_s_a_r_t.html#a23f77b4677c9fa2e0d27b54e5e3371de">   69</a></span>        <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#a23f77b4677c9fa2e0d27b54e5e3371de">~USART</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#ac6fdb430e69210d19af6b3df0b6020ba">USART</a>(USART_TypeDef* <a class="code hl_class" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a>, <span class="keywordtype">bool</span> IsUseIrq = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#ac6fdb430e69210d19af6b3df0b6020ba">USART</a>(USART_TypeDef* <a class="code hl_class" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a>, DMA_TypeDef* TX_DMA, <a class="code hl_enumeration" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">DMA_Stream</a> TX_DMA_Stream, </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                                    DMA_TypeDef* RX_DMA, <a class="code hl_enumeration" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">DMA_Stream</a> RX_DMA_Stream);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#a38a77ba4ba71b14233e343391b3a588a">startReceive_DMA</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#a912471cc501edec66d0fe8dea1279cb5">stopReceive_DMA</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        uint32_t <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#a9e16d1703903313fd1aedff9f8317b14">getReceivedSize</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#ae9f219c9bd568a4ce0b3d89c6b997a09">getReceivedData</a>(uint8_t * buffer, uint32_t number);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#a1627200e7f0794a4b95a34dd70a0906e">isReceivedFinished</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <a class="code hl_class" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#ae139a1d819fde2557d040be590b3576d">operator &lt;&lt;</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pStr);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <a class="code hl_class" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#ae139a1d819fde2557d040be590b3576d">operator &lt;&lt;</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> charactor);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <a class="code hl_class" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#ae139a1d819fde2557d040be590b3576d">operator &lt;&lt;</a>(uint32_t val);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <a class="code hl_class" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#ae139a1d819fde2557d040be590b3576d">operator &lt;&lt;</a>(<span class="keywordtype">int</span> val);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <a class="code hl_class" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#ae139a1d819fde2557d040be590b3576d">operator &lt;&lt;</a>(<span class="keywordtype">double</span> val);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <a class="code hl_class" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#ae139a1d819fde2557d040be590b3576d">operator &lt;&lt;</a>(<a class="code hl_struct" href="struct_s_t_m32_1_1_e_n_d_l.html">ENDL</a>&amp; e);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#adb77d98f3dd0e7f71db3c0e393abbfcc">irq</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#ad7f263f66be7f8c2c28fbff74c6f0ae5">irq_TXDMA</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_t_m32_1_1_u_s_a_r_t.html#afc4f9d52b2f0fd83886e4f06008b04ef">irq_RXDMA</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    };</div>
+</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keyword">extern</span> <a class="code hl_class" href="class_s_t_m32_1_1_u_s_a_r_t.html">USART</a> <a class="code hl_variable" href="namespace_s_t_m32.html#ab2f9c5104bd68d997b774a647d5cbefc">cout</a>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>} <span class="comment">//namespace STM32</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="preprocessor">#endif </span><span class="comment">//__PLATFORM_STM32_USART_H__</span></div>
+<div class="ttc" id="a_d_m_a_8hpp_html"><div class="ttname"><a href="_d_m_a_8hpp.html">DMA.hpp</a></div></div>
+<div class="ttc" id="a_fifo_8hpp_html"><div class="ttname"><a href="_fifo_8hpp.html">Fifo.hpp</a></div></div>
+<div class="ttc" id="a_sys_8hpp_html"><div class="ttname"><a href="_sys_8hpp.html">Sys.hpp</a></div></div>
+<div class="ttc" id="a_u_s_a_r_t_8hpp_html_a8c7370864bf4923584f32a051ca7eeb7"><div class="ttname"><a href="_u_s_a_r_t_8hpp.html#a8c7370864bf4923584f32a051ca7eeb7">USART_DMA_RX_BUFFER_SIZE</a></div><div class="ttdeci">#define USART_DMA_RX_BUFFER_SIZE</div><div class="ttdoc">USART的接收DMA缓存区大小</div><div class="ttdef"><b>Definition</b> USART.hpp:30</div></div>
+<div class="ttc" id="a_u_s_a_r_t_8hpp_html_ab32c3413797a9b6ff1cb021166f74dc2"><div class="ttname"><a href="_u_s_a_r_t_8hpp.html#ab32c3413797a9b6ff1cb021166f74dc2">USART_DMA_TX_BUFFER_SIZE</a></div><div class="ttdeci">#define USART_DMA_TX_BUFFER_SIZE</div><div class="ttdoc">USART的发送DMA缓存区大小</div><div class="ttdef"><b>Definition</b> USART.hpp:27</div></div>
+<div class="ttc" id="a_u_s_a_r_t_8hpp_html_ac5a1426fae997ad8f455a786f229ffe1"><div class="ttname"><a href="_u_s_a_r_t_8hpp.html#ac5a1426fae997ad8f455a786f229ffe1">USART_STREAM_FLOAT_PRECISION</a></div><div class="ttdeci">#define USART_STREAM_FLOAT_PRECISION</div><div class="ttdoc">USART发送流的小数显示位数</div><div class="ttdef"><b>Definition</b> USART.hpp:34</div></div>
+<div class="ttc" id="aclass_fifo_html"><div class="ttname"><a href="class_fifo.html">Fifo</a></div><div class="ttdoc">环形Fifo模板类</div><div class="ttdef"><b>Definition</b> Fifo.hpp:20</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_u_s_a_r_t_html"><div class="ttname"><a href="class_s_t_m32_1_1_u_s_a_r_t.html">STM32::USART</a></div><div class="ttdoc">USART类</div><div class="ttdef"><b>Definition</b> USART.hpp:43</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_u_s_a_r_t_html_a1627200e7f0794a4b95a34dd70a0906e"><div class="ttname"><a href="class_s_t_m32_1_1_u_s_a_r_t.html#a1627200e7f0794a4b95a34dd70a0906e">STM32::USART::isReceivedFinished</a></div><div class="ttdeci">bool isReceivedFinished(void)</div><div class="ttdoc">检查接收是否完成</div><div class="ttdef"><b>Definition</b> USART.cpp:124</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_u_s_a_r_t_html_a23f77b4677c9fa2e0d27b54e5e3371de"><div class="ttname"><a href="class_s_t_m32_1_1_u_s_a_r_t.html#a23f77b4677c9fa2e0d27b54e5e3371de">STM32::USART::~USART</a></div><div class="ttdeci">~USART()=default</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_u_s_a_r_t_html_a38a77ba4ba71b14233e343391b3a588a"><div class="ttname"><a href="class_s_t_m32_1_1_u_s_a_r_t.html#a38a77ba4ba71b14233e343391b3a588a">STM32::USART::startReceive_DMA</a></div><div class="ttdeci">bool startReceive_DMA(void)</div><div class="ttdoc">启动接收DMA</div><div class="ttdef"><b>Definition</b> USART.cpp:100</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_u_s_a_r_t_html_a912471cc501edec66d0fe8dea1279cb5"><div class="ttname"><a href="class_s_t_m32_1_1_u_s_a_r_t.html#a912471cc501edec66d0fe8dea1279cb5">STM32::USART::stopReceive_DMA</a></div><div class="ttdeci">void stopReceive_DMA(void)</div><div class="ttdoc">停止接收DMA</div><div class="ttdef"><b>Definition</b> USART.cpp:118</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_u_s_a_r_t_html_a9e16d1703903313fd1aedff9f8317b14"><div class="ttname"><a href="class_s_t_m32_1_1_u_s_a_r_t.html#a9e16d1703903313fd1aedff9f8317b14">STM32::USART::getReceivedSize</a></div><div class="ttdeci">uint32_t getReceivedSize(void)</div><div class="ttdoc">获取接收到的数据大小</div><div class="ttdef"><b>Definition</b> USART.cpp:134</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_u_s_a_r_t_html_ac6fdb430e69210d19af6b3df0b6020ba"><div class="ttname"><a href="class_s_t_m32_1_1_u_s_a_r_t.html#ac6fdb430e69210d19af6b3df0b6020ba">STM32::USART::USART</a></div><div class="ttdeci">USART()=default</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_u_s_a_r_t_html_ad7f263f66be7f8c2c28fbff74c6f0ae5"><div class="ttname"><a href="class_s_t_m32_1_1_u_s_a_r_t.html#ad7f263f66be7f8c2c28fbff74c6f0ae5">STM32::USART::irq_TXDMA</a></div><div class="ttdeci">void irq_TXDMA(void)</div><div class="ttdoc">USART发送的DMA中断服务函数</div><div class="ttdef"><b>Definition</b> USART.cpp:231</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_u_s_a_r_t_html_adb77d98f3dd0e7f71db3c0e393abbfcc"><div class="ttname"><a href="class_s_t_m32_1_1_u_s_a_r_t.html#adb77d98f3dd0e7f71db3c0e393abbfcc">STM32::USART::irq</a></div><div class="ttdeci">void irq(void)</div><div class="ttdoc">USART中断服务函数</div><div class="ttdef"><b>Definition</b> USART.cpp:260</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_u_s_a_r_t_html_ae139a1d819fde2557d040be590b3576d"><div class="ttname"><a href="class_s_t_m32_1_1_u_s_a_r_t.html#ae139a1d819fde2557d040be590b3576d">STM32::USART::operator&lt;&lt;</a></div><div class="ttdeci">USART &amp; operator&lt;&lt;(const char *pStr)</div><div class="ttdoc">&lt;&lt;运算符重载，用于发送字符串</div><div class="ttdef"><b>Definition</b> USART.cpp:149</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_u_s_a_r_t_html_ae9f219c9bd568a4ce0b3d89c6b997a09"><div class="ttname"><a href="class_s_t_m32_1_1_u_s_a_r_t.html#ae9f219c9bd568a4ce0b3d89c6b997a09">STM32::USART::getReceivedData</a></div><div class="ttdeci">bool getReceivedData(uint8_t *buffer, uint32_t number)</div><div class="ttdoc">获取接收到的数据</div><div class="ttdef"><b>Definition</b> USART.cpp:138</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_u_s_a_r_t_html_afc4f9d52b2f0fd83886e4f06008b04ef"><div class="ttname"><a href="class_s_t_m32_1_1_u_s_a_r_t.html#afc4f9d52b2f0fd83886e4f06008b04ef">STM32::USART::irq_RXDMA</a></div><div class="ttdeci">void irq_RXDMA(void)</div><div class="ttdoc">USART接收的DMA中断服务函数</div><div class="ttdef"><b>Definition</b> USART.cpp:296</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html"><div class="ttname"><a href="namespace_s_t_m32.html">STM32</a></div><div class="ttdef"><b>Definition</b> DDS.hpp:5</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_aaebc058ef0d883a9a3f45c58d5057862"><div class="ttname"><a href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">STM32::DMA_Stream</a></div><div class="ttdeci">DMA_Stream</div><div class="ttdoc">DMA数据流</div><div class="ttdef"><b>Definition</b> DMA.hpp:14</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_ab2f9c5104bd68d997b774a647d5cbefc"><div class="ttname"><a href="namespace_s_t_m32.html#ab2f9c5104bd68d997b774a647d5cbefc">STM32::cout</a></div><div class="ttdeci">USART cout</div><div class="ttdoc">Platform库的串口输出流的实例对象，cout</div><div class="ttdef"><b>Definition</b> USART.cpp:324</div></div>
+<div class="ttc" id="astruct_s_t_m32_1_1_e_n_d_l_html"><div class="ttname"><a href="struct_s_t_m32_1_1_e_n_d_l.html">STM32::ENDL</a></div><div class="ttdoc">换行结构体</div><div class="ttdef"><b>Definition</b> Sys.hpp:14</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_84d8ddb176e16ca8bccaaa5eeae31ee8.html">platform-drivers</a></li><li class="navelem"><a class="el" href="dir_4c7ecf3a8e2e1382144ef720f571f877.html">STM32</a></li><li class="navelem"><a class="el" href="dir_d359d04f14ad770d753f855efc194ea0.html">USART</a></li><li class="navelem"><a class="el" href="_u_s_a_r_t_8hpp.html">USART.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

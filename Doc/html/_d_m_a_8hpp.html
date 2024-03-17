@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-drivers/STM32/DMA/DMA.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_d_m_a_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">DMA.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_l_l-support_8h_source.html">platform-drivers/STM32/LL-support.h</a>&quot;</code><br />
+</div>
+<p><a href="_d_m_a_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespace_s_t_m32" id="r_namespace_s_t_m32"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_t_m32.html">STM32</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a6affbb99d1d797b5a42c86da685582e3" id="r_a6affbb99d1d797b5a42c86da685582e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6affbb99d1d797b5a42c86da685582e3">PLATFORM_DMA_IsActiveFlag_HT</a>(dma,  dma_stream)</td></tr>
+<tr class="memdesc:a6affbb99d1d797b5a42c86da685582e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查DMA传输半完成中断标志位是否已设置  <br /></td></tr>
+<tr class="separator:a6affbb99d1d797b5a42c86da685582e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7c243917a9f0d13d9029960efe89b3c" id="r_aa7c243917a9f0d13d9029960efe89b3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7c243917a9f0d13d9029960efe89b3c">PLATFORM_DMA_IsActiveFlag_TC</a>(dma,  dma_stream)</td></tr>
+<tr class="memdesc:aa7c243917a9f0d13d9029960efe89b3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查DMA传输完成标志位是否已设置  <br /></td></tr>
+<tr class="separator:aa7c243917a9f0d13d9029960efe89b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:aaebc058ef0d883a9a3f45c58d5057862" id="r_aaebc058ef0d883a9a3f45c58d5057862"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">STM32::DMA_Stream</a> { <br />
+&#160;&#160;<a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a70359c66f2b23c56c1f489814aab6268">STM32::DMA_Stream_0</a> = 0x00000000U
+, <a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862ad9a13a3e29a36f9c6b1f3eb80e8520fe">STM32::DMA_Stream_1</a> = 0x00000001U
+, <a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a7ffd32778ac9063526436b38ea58312f">STM32::DMA_Stream_2</a> = 0x00000002U
+, <a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a7ea082b5303caeffd4a15793d058709e">STM32::DMA_Stream_3</a> = 0x00000003U
+, <br />
+&#160;&#160;<a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862aa1af9ee7957899237b9a5766607810ca">STM32::DMA_Stream_4</a> = 0x00000004U
+, <a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a677795c25817bf00df00b67d5ad06319">STM32::DMA_Stream_5</a> = 0x00000005U
+, <a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a3bce9b669dafa8a70f9daa3a852d69d6">STM32::DMA_Stream_6</a> = 0x00000006U
+, <a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a8de28d8b99362579bb8146f1ee074ebe">STM32::DMA_Stream_7</a> = 0x00000007U
+, <br />
+&#160;&#160;<a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a134676879c827aef7e0bf784b7252ad5">STM32::DMA_Stream_ALL</a> = 0xFFFF0000U
+<br />
+ }</td></tr>
+<tr class="memdesc:aaebc058ef0d883a9a3f45c58d5057862"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA数据流  <a href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">更多...</a><br /></td></tr>
+<tr class="separator:aaebc058ef0d883a9a3f45c58d5057862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a041b8fdbd884c1662833d472e1021676" id="r_a041b8fdbd884c1662833d472e1021676"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a041b8fdbd884c1662833d472e1021676">Platform_DMA_ClearFlag_HT</a> (DMA_TypeDef *dma, <a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">STM32::DMA_Stream</a> dma_stream)</td></tr>
+<tr class="memdesc:a041b8fdbd884c1662833d472e1021676"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除DMA传输半完成中断标志位  <br /></td></tr>
+<tr class="separator:a041b8fdbd884c1662833d472e1021676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05c42c0111b0089f3e339c998e618142" id="r_a05c42c0111b0089f3e339c998e618142"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05c42c0111b0089f3e339c998e618142">Platform_DMA_ClearFlag_TC</a> (DMA_TypeDef *dma, <a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">STM32::DMA_Stream</a> dma_stream)</td></tr>
+<tr class="memdesc:a05c42c0111b0089f3e339c998e618142"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除DMA传输完成中断标志位  <br /></td></tr>
+<tr class="separator:a05c42c0111b0089f3e339c998e618142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a6affbb99d1d797b5a42c86da685582e3" name="a6affbb99d1d797b5a42c86da685582e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6affbb99d1d797b5a42c86da685582e3">&#9670;&#160;</a></span>PLATFORM_DMA_IsActiveFlag_HT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PLATFORM_DMA_IsActiveFlag_HT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">dma, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">dma_stream</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a70359c66f2b23c56c1f489814aab6268">STM32::DMA_Stream_0</a>) ? LL_DMA_IsActiveFlag_HT0(dma) : \</div>
+<div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862ad9a13a3e29a36f9c6b1f3eb80e8520fe">STM32::DMA_Stream_1</a>) ? LL_DMA_IsActiveFlag_HT1(dma) : \</div>
+<div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a7ffd32778ac9063526436b38ea58312f">STM32::DMA_Stream_2</a>) ? LL_DMA_IsActiveFlag_HT2(dma) : \</div>
+<div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a7ea082b5303caeffd4a15793d058709e">STM32::DMA_Stream_3</a>) ? LL_DMA_IsActiveFlag_HT3(dma) : \</div>
+<div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862aa1af9ee7957899237b9a5766607810ca">STM32::DMA_Stream_4</a>) ? LL_DMA_IsActiveFlag_HT4(dma) : \</div>
+<div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a677795c25817bf00df00b67d5ad06319">STM32::DMA_Stream_5</a>) ? LL_DMA_IsActiveFlag_HT5(dma) : \</div>
+<div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a3bce9b669dafa8a70f9daa3a852d69d6">STM32::DMA_Stream_6</a>) ? LL_DMA_IsActiveFlag_HT6(dma) : \</div>
+<div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a8de28d8b99362579bb8146f1ee074ebe">STM32::DMA_Stream_7</a>) ? LL_DMA_IsActiveFlag_HT7(dma) : 0))))))))</div>
+<div class="ttc" id="anamespace_s_t_m32_html_aaebc058ef0d883a9a3f45c58d5057862a3bce9b669dafa8a70f9daa3a852d69d6"><div class="ttname"><a href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a3bce9b669dafa8a70f9daa3a852d69d6">STM32::DMA_Stream_6</a></div><div class="ttdeci">@ DMA_Stream_6</div><div class="ttdef"><b>Definition</b> DMA.hpp:21</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_aaebc058ef0d883a9a3f45c58d5057862a677795c25817bf00df00b67d5ad06319"><div class="ttname"><a href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a677795c25817bf00df00b67d5ad06319">STM32::DMA_Stream_5</a></div><div class="ttdeci">@ DMA_Stream_5</div><div class="ttdef"><b>Definition</b> DMA.hpp:20</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_aaebc058ef0d883a9a3f45c58d5057862a70359c66f2b23c56c1f489814aab6268"><div class="ttname"><a href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a70359c66f2b23c56c1f489814aab6268">STM32::DMA_Stream_0</a></div><div class="ttdeci">@ DMA_Stream_0</div><div class="ttdef"><b>Definition</b> DMA.hpp:15</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_aaebc058ef0d883a9a3f45c58d5057862a7ea082b5303caeffd4a15793d058709e"><div class="ttname"><a href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a7ea082b5303caeffd4a15793d058709e">STM32::DMA_Stream_3</a></div><div class="ttdeci">@ DMA_Stream_3</div><div class="ttdef"><b>Definition</b> DMA.hpp:18</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_aaebc058ef0d883a9a3f45c58d5057862a7ffd32778ac9063526436b38ea58312f"><div class="ttname"><a href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a7ffd32778ac9063526436b38ea58312f">STM32::DMA_Stream_2</a></div><div class="ttdeci">@ DMA_Stream_2</div><div class="ttdef"><b>Definition</b> DMA.hpp:17</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_aaebc058ef0d883a9a3f45c58d5057862a8de28d8b99362579bb8146f1ee074ebe"><div class="ttname"><a href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a8de28d8b99362579bb8146f1ee074ebe">STM32::DMA_Stream_7</a></div><div class="ttdeci">@ DMA_Stream_7</div><div class="ttdef"><b>Definition</b> DMA.hpp:22</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_aaebc058ef0d883a9a3f45c58d5057862aa1af9ee7957899237b9a5766607810ca"><div class="ttname"><a href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862aa1af9ee7957899237b9a5766607810ca">STM32::DMA_Stream_4</a></div><div class="ttdeci">@ DMA_Stream_4</div><div class="ttdef"><b>Definition</b> DMA.hpp:19</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_aaebc058ef0d883a9a3f45c58d5057862ad9a13a3e29a36f9c6b1f3eb80e8520fe"><div class="ttname"><a href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862ad9a13a3e29a36f9c6b1f3eb80e8520fe">STM32::DMA_Stream_1</a></div><div class="ttdeci">@ DMA_Stream_1</div><div class="ttdef"><b>Definition</b> DMA.hpp:16</div></div>
+</div><!-- fragment -->
+<p>检查DMA传输半完成中断标志位是否已设置 </p>
+
+</div>
+</div>
+<a id="aa7c243917a9f0d13d9029960efe89b3c" name="aa7c243917a9f0d13d9029960efe89b3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7c243917a9f0d13d9029960efe89b3c">&#9670;&#160;</a></span>PLATFORM_DMA_IsActiveFlag_TC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PLATFORM_DMA_IsActiveFlag_TC</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">dma, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">dma_stream</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a70359c66f2b23c56c1f489814aab6268">STM32::DMA_Stream_0</a>) ? LL_DMA_IsActiveFlag_TC0(dma) : \</div>
+<div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862ad9a13a3e29a36f9c6b1f3eb80e8520fe">STM32::DMA_Stream_1</a>) ? LL_DMA_IsActiveFlag_TC1(dma) : \</div>
+<div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a7ffd32778ac9063526436b38ea58312f">STM32::DMA_Stream_2</a>) ? LL_DMA_IsActiveFlag_TC2(dma) : \</div>
+<div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a7ea082b5303caeffd4a15793d058709e">STM32::DMA_Stream_3</a>) ? LL_DMA_IsActiveFlag_TC3(dma) : \</div>
+<div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862aa1af9ee7957899237b9a5766607810ca">STM32::DMA_Stream_4</a>) ? LL_DMA_IsActiveFlag_TC4(dma) : \</div>
+<div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a677795c25817bf00df00b67d5ad06319">STM32::DMA_Stream_5</a>) ? LL_DMA_IsActiveFlag_TC5(dma) : \</div>
+<div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a3bce9b669dafa8a70f9daa3a852d69d6">STM32::DMA_Stream_6</a>) ? LL_DMA_IsActiveFlag_TC6(dma) : \</div>
+<div class="line">                    ((dma_stream == <a class="code hl_enumvalue" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862a8de28d8b99362579bb8146f1ee074ebe">STM32::DMA_Stream_7</a>) ? LL_DMA_IsActiveFlag_TC7(dma) : 0))))))))</div>
+</div><!-- fragment -->
+<p>检查DMA传输完成标志位是否已设置 </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a041b8fdbd884c1662833d472e1021676" name="a041b8fdbd884c1662833d472e1021676"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a041b8fdbd884c1662833d472e1021676">&#9670;&#160;</a></span>Platform_DMA_ClearFlag_HT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void Platform_DMA_ClearFlag_HT </td>
+          <td>(</td>
+          <td class="paramtype">DMA_TypeDef *</td>          <td class="paramname"><span class="paramname"><em>dma</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">STM32::DMA_Stream</a></td>          <td class="paramname"><span class="paramname"><em>dma_stream</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>清除DMA传输半完成中断标志位 </p>
+
+</div>
+</div>
+<a id="a05c42c0111b0089f3e339c998e618142" name="a05c42c0111b0089f3e339c998e618142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05c42c0111b0089f3e339c998e618142">&#9670;&#160;</a></span>Platform_DMA_ClearFlag_TC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void Platform_DMA_ClearFlag_TC </td>
+          <td>(</td>
+          <td class="paramtype">DMA_TypeDef *</td>          <td class="paramname"><span class="paramname"><em>dma</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">STM32::DMA_Stream</a></td>          <td class="paramname"><span class="paramname"><em>dma_stream</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>清除DMA传输完成中断标志位 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_84d8ddb176e16ca8bccaaa5eeae31ee8.html">platform-drivers</a></li><li class="navelem"><a class="el" href="dir_4c7ecf3a8e2e1382144ef720f571f877.html">STM32</a></li><li class="navelem"><a class="el" href="dir_e3e58d51e53330634af762ab38dc5258.html">DMA</a></li><li class="navelem"><a class="el" href="_d_m_a_8hpp.html">DMA.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

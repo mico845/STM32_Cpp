@@ -32,13 +32,19 @@ extern "C" {
 #define   MAX_FFT_N		 (8192)
 #endif
 
-struct  compx
+/**
+ * @brief 复数类型
+ *
+ * 用于表示复数，具有实部和虚部。
+ */
+struct  Compx
 {
-    float32_t real, imag;
+    float32_t real;  /**< 实部 */
+    float32_t imag;  /**< 虚部 */
 };
 
 void InitTableFFT(uint32_t n);
-void cfft(struct compx *_ptr, uint32_t FFT_N );
+void cfft(struct Compx *_ptr, uint32_t FFT_N );
 
 #ifdef __cplusplus
 }

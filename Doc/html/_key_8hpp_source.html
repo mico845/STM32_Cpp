@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-lib/HardWare/Key/Key.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_key_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">Key.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_key_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __HARDWARE_KEY_H__</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __HARDWARE_KEY_H__</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_g_p_i_o_8hpp.html">platform-drivers/STM32/GPIO/GPIO.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_fifo_8hpp.html">platform-lib/DataStructre/Fifo.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27b">   12</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27baa2a969defdcf0e12ab262fc2526bbb62">   13</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27baa2a969defdcf0e12ab262fc2526bbb62">KEY1</a> = 0,   </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27ba11fd81feb2ad8559d86dfe9752381a92">   14</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27ba11fd81feb2ad8559d86dfe9752381a92">KEY2</a>,       </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27ba9563bd59f355b8cdb39727f995c51f33">   15</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27ba9563bd59f355b8cdb39727f995c51f33">KEY3</a>,       </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27baec8a3617311ffdac328944fe1e482708">NO_KEY</a> = UINT8_MAX  </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27baec8a3617311ffdac328944fe1e482708">   17</a></span>}<a class="code hl_enumeration" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27b">Key_ID</a>;</div>
+</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="_key_8hpp.html#abdff6614f80f2fc9f8db73960686924a">   19</a></span><span class="preprocessor">#define KEY_HARD_NUM                (1)     </span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#ifndef KEY1_GPIO_GPIO</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a2322613e76b8ab9b9e3a9464b841e165">   25</a></span><span class="preprocessor">    #define KEY1_GPIO_GPIO     (KEY1)   </span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a6dc21b45e0ed5035917adec2ab345c95">   26</a></span><span class="preprocessor">    #define KEY1_GPIO_PORT     (GPIOC)  </span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a626f1b653f807fad97a7e5f55329c28a">   27</a></span><span class="preprocessor">    #define KEY1_GPIO_PIN      (13)     </span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a891e5c71684520f40222e840fd1b2565">   28</a></span><span class="preprocessor">    #define KEY1_GPIO_PULL     (STM32::pullup)  </span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a2f8d789b37c284d5d1d35954468f2e2c">   39</a></span><span class="preprocessor">#define KEY_FILTER_TIME 5</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="_key_8hpp.html#adde954ab35c5861c5e642bcb04ca2515">   45</a></span><span class="preprocessor">#define KEY_LONG_TIME 100</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="};">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346">   52</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346ac022d9ce46ab8c8ab944d40fac603404">   54</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346ac022d9ce46ab8c8ab944d40fac603404">Key_Nothing</a> = 0,        </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a5cd7dc1233455ac6bec780fbf542b2c7">   55</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a5cd7dc1233455ac6bec780fbf542b2c7">Key_Down</a>,               </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a86cfc3ded3d7e69392e0a6ed95b16175">   56</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a86cfc3ded3d7e69392e0a6ed95b16175">Key_Up</a>,                 </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a3948c173acb95d281e67886868902338">   57</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a3948c173acb95d281e67886868902338">Key_Long</a>,               </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}<a class="code hl_enumeration" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346">Key_State</a>;</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_enumeration" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27b">Key_ID</a> id;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_enumeration" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346">Key_State</a> state;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}Key_Value;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="_key_8hpp.html#ac0130f99482c5e27094ae26db7d8c076">   67</a></span><span class="preprocessor">#define  KEY_ID_STATE(ID, STATE)        ((ID &lt;&lt; 4) | (STATE))</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="};">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7c">   72</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7cacf4275864acfd8cb8bfc68b565adc7f2">   74</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7cacf4275864acfd8cb8bfc68b565adc7f2">Key_None</a>    = 0, </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca9d3ab24011af63b62cedc77463ccaeb5">   78</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca9d3ab24011af63b62cedc77463ccaeb5">Key1_Down</a>   = <a class="code hl_define" href="_key_8hpp.html#ac0130f99482c5e27094ae26db7d8c076">KEY_ID_STATE</a>(<a class="code hl_enumvalue" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27baa2a969defdcf0e12ab262fc2526bbb62">KEY1</a>, <a class="code hl_enumvalue" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a5cd7dc1233455ac6bec780fbf542b2c7">Key_Down</a>), </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca6ecf89d7736b9d20f86cd3f7185fa4ad">   79</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca6ecf89d7736b9d20f86cd3f7185fa4ad">Key1_Up</a>     = <a class="code hl_define" href="_key_8hpp.html#ac0130f99482c5e27094ae26db7d8c076">KEY_ID_STATE</a>(<a class="code hl_enumvalue" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27baa2a969defdcf0e12ab262fc2526bbb62">KEY1</a>, <a class="code hl_enumvalue" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a86cfc3ded3d7e69392e0a6ed95b16175">Key_Up</a>), </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca4fa04a81f9df21663dcb76a1d6a16760">   80</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca4fa04a81f9df21663dcb76a1d6a16760">Key1_Long</a>   = <a class="code hl_define" href="_key_8hpp.html#ac0130f99482c5e27094ae26db7d8c076">KEY_ID_STATE</a>(<a class="code hl_enumvalue" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27baa2a969defdcf0e12ab262fc2526bbb62">KEY1</a>, <a class="code hl_enumvalue" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a3948c173acb95d281e67886868902338">Key_Long</a>), </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7cac574132c5921591dfbf44ee85274c7fb">   85</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7cac574132c5921591dfbf44ee85274c7fb">Key2_Down</a>   = <a class="code hl_define" href="_key_8hpp.html#ac0130f99482c5e27094ae26db7d8c076">KEY_ID_STATE</a>(<a class="code hl_enumvalue" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27ba11fd81feb2ad8559d86dfe9752381a92">KEY2</a>, <a class="code hl_enumvalue" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a5cd7dc1233455ac6bec780fbf542b2c7">Key_Down</a>), </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca891d3115595e0c397b627bf02178e86f">   86</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca891d3115595e0c397b627bf02178e86f">Key2_Up</a>     = <a class="code hl_define" href="_key_8hpp.html#ac0130f99482c5e27094ae26db7d8c076">KEY_ID_STATE</a>(<a class="code hl_enumvalue" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27ba11fd81feb2ad8559d86dfe9752381a92">KEY2</a>, <a class="code hl_enumvalue" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a86cfc3ded3d7e69392e0a6ed95b16175">Key_Up</a>), </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca7e7b4bc8d096990200f47cd080aa6876">   87</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca7e7b4bc8d096990200f47cd080aa6876">Key2_Long</a>   = <a class="code hl_define" href="_key_8hpp.html#ac0130f99482c5e27094ae26db7d8c076">KEY_ID_STATE</a>(<a class="code hl_enumvalue" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27ba11fd81feb2ad8559d86dfe9752381a92">KEY2</a>, <a class="code hl_enumvalue" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a3948c173acb95d281e67886868902338">Key_Long</a>), </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca96c6fb4689a6adbf66f6fed0380c078a">   92</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca96c6fb4689a6adbf66f6fed0380c078a">Key3_Down</a>   = <a class="code hl_define" href="_key_8hpp.html#ac0130f99482c5e27094ae26db7d8c076">KEY_ID_STATE</a>(<a class="code hl_enumvalue" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27ba9563bd59f355b8cdb39727f995c51f33">KEY3</a>, <a class="code hl_enumvalue" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a5cd7dc1233455ac6bec780fbf542b2c7">Key_Down</a>), </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca37e21592d3fd7a741ac3e4295c6bd9d0">   93</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca37e21592d3fd7a741ac3e4295c6bd9d0">Key3_Up</a>     = <a class="code hl_define" href="_key_8hpp.html#ac0130f99482c5e27094ae26db7d8c076">KEY_ID_STATE</a>(<a class="code hl_enumvalue" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27ba9563bd59f355b8cdb39727f995c51f33">KEY3</a>, <a class="code hl_enumvalue" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a86cfc3ded3d7e69392e0a6ed95b16175">Key_Up</a>), </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca116c2d6b348cb34c559773493efd10cd">   94</a></span>    <a class="code hl_enumvalue" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca116c2d6b348cb34c559773493efd10cd">Key3_Long</a>   = <a class="code hl_define" href="_key_8hpp.html#ac0130f99482c5e27094ae26db7d8c076">KEY_ID_STATE</a>(<a class="code hl_enumvalue" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27ba9563bd59f355b8cdb39727f995c51f33">KEY3</a>, <a class="code hl_enumvalue" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a3948c173acb95d281e67886868902338">Key_Long</a>), </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}<a class="code hl_enumeration" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7c">Key_TypeDef</a>;</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="foldopen" id="foldopen00104" data-start="{" data-end="};">
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_key.html">  104</a></span><span class="keyword">class </span><a class="code hl_class" href="class_key.html">Key</a></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>{</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keyword">friend</span> <span class="keywordtype">void</span> <a class="code hl_friend" href="class_key.html#ad424d50d8377d8a9e26d00990fd6b2eb">Key_Detect</a>(uint8_t index);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_class" href="class_s_t_m32_1_1_g_p_i_o.html">STM32::GPIO</a> key_gpio;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">bool</span> active_level;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <a class="code hl_enumeration" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27b">Key_ID</a> id;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_enumeration" href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346">Key_State</a> state;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    uint8_t filter_count;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    uint16_t long_count;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="class_key.html#a217a606fe2938c4a8001c62a4bffe3de">  116</a></span>    <a class="code hl_function" href="class_key.html#a217a606fe2938c4a8001c62a4bffe3de">Key</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="class_key.html#a483cf4ac032e626cf7a85c9ad9a8e357">  117</a></span>    <a class="code hl_function" href="class_key.html#a483cf4ac032e626cf7a85c9ad9a8e357">~Key</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <a class="code hl_function" href="class_key.html#a217a606fe2938c4a8001c62a4bffe3de">Key</a>(<a class="code hl_enumeration" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27b">Key_ID</a> <a class="code hl_enumeration" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27b">Key_ID</a>, GPIO_TypeDef *Port, uint8_t Pin, <a class="code hl_enumeration" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98">STM32::GPIO_Pull</a> Pull, <span class="keywordtype">bool</span> Active_Level = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_key.html#ae75f65c0d936b5e4a1fb929d01faf0ba">isActive</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <a class="code hl_enumeration" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27b">Key_ID</a> <a class="code hl_function" href="class_key.html#a457fbc62b8c583b6b53938147a493ff2">getID</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>};</div>
+</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="keyword">extern</span> <a class="code hl_class" href="class_key.html">Key</a> <a class="code hl_variable" href="_key_8hpp.html#ac6dfa28f94ba2739e7b00fcc7c1ad7c5">_key</a>[<a class="code hl_define" href="_key_8hpp.html#abdff6614f80f2fc9f8db73960686924a">KEY_HARD_NUM</a>];</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="_key_8hpp.html#aad662a328b983b0dd8c703b5ac4e2bbc">  141</a></span><span class="preprocessor">#define KEY_VALUE_FIFO_MAX_SIZE     (10)                </span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="keyword">extern</span> <a class="code hl_class" href="class_fifo.html">Fifo&lt;Key_Value, KEY_VALUE_FIFO_MAX_SIZE&gt;</a> <a class="code hl_variable" href="_key_8hpp.html#a18e735ce3696d3b2091885f53e4fbe40">Key_Value_Fifo</a>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keywordtype">void</span> <a class="code hl_function" href="_key_8hpp.html#a3f147fc769d371775875ecc2dfe3934d">Key_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><a class="code hl_enumeration" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27b">Key_ID</a> <a class="code hl_function" href="_key_8hpp.html#ace6fd1d5c1eda23c2e7c2203031e2c64">Key_Scan</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="keywordtype">void</span> <a class="code hl_function" href="_key_8hpp.html#a392cfe6ea850ee14ff128daf80d30d86">KeyScan10ms</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="keywordtype">void</span> <a class="code hl_function" href="_key_8hpp.html#ad424d50d8377d8a9e26d00990fd6b2eb">Key_Detect</a>(uint8_t index);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><a class="code hl_enumeration" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7c">Key_TypeDef</a> <a class="code hl_function" href="_key_8hpp.html#a51c6d5464514aad03e3e6a7c019ac1f0">Key_GetValue</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="preprocessor">#endif </span></div>
+<div class="ttc" id="a_fifo_8hpp_html"><div class="ttname"><a href="_fifo_8hpp.html">Fifo.hpp</a></div></div>
+<div class="ttc" id="a_g_p_i_o_8hpp_html"><div class="ttname"><a href="_g_p_i_o_8hpp.html">GPIO.hpp</a></div></div>
+<div class="ttc" id="a_key_8hpp_html_a0ca0271d7da224e6d239140565c3b346"><div class="ttname"><a href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346">Key_State</a></div><div class="ttdeci">Key_State</div><div class="ttdoc">Key的状态</div><div class="ttdef"><b>Definition</b> Key.hpp:53</div></div>
+<div class="ttc" id="a_key_8hpp_html_a0ca0271d7da224e6d239140565c3b346a3948c173acb95d281e67886868902338"><div class="ttname"><a href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a3948c173acb95d281e67886868902338">Key_Long</a></div><div class="ttdeci">@ Key_Long</div><div class="ttdoc">长按</div><div class="ttdef"><b>Definition</b> Key.hpp:57</div></div>
+<div class="ttc" id="a_key_8hpp_html_a0ca0271d7da224e6d239140565c3b346a5cd7dc1233455ac6bec780fbf542b2c7"><div class="ttname"><a href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a5cd7dc1233455ac6bec780fbf542b2c7">Key_Down</a></div><div class="ttdeci">@ Key_Down</div><div class="ttdoc">按键按下</div><div class="ttdef"><b>Definition</b> Key.hpp:55</div></div>
+<div class="ttc" id="a_key_8hpp_html_a0ca0271d7da224e6d239140565c3b346a86cfc3ded3d7e69392e0a6ed95b16175"><div class="ttname"><a href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346a86cfc3ded3d7e69392e0a6ed95b16175">Key_Up</a></div><div class="ttdeci">@ Key_Up</div><div class="ttdoc">按键释放</div><div class="ttdef"><b>Definition</b> Key.hpp:56</div></div>
+<div class="ttc" id="a_key_8hpp_html_a0ca0271d7da224e6d239140565c3b346ac022d9ce46ab8c8ab944d40fac603404"><div class="ttname"><a href="_key_8hpp.html#a0ca0271d7da224e6d239140565c3b346ac022d9ce46ab8c8ab944d40fac603404">Key_Nothing</a></div><div class="ttdeci">@ Key_Nothing</div><div class="ttdoc">无键操作</div><div class="ttdef"><b>Definition</b> Key.hpp:54</div></div>
+<div class="ttc" id="a_key_8hpp_html_a18e735ce3696d3b2091885f53e4fbe40"><div class="ttname"><a href="_key_8hpp.html#a18e735ce3696d3b2091885f53e4fbe40">Key_Value_Fifo</a></div><div class="ttdeci">Fifo&lt; Key_Value, KEY_VALUE_FIFO_MAX_SIZE &gt; Key_Value_Fifo</div><div class="ttdef"><b>Definition</b> Key.cpp:9</div></div>
+<div class="ttc" id="a_key_8hpp_html_a256a72a91b632a8a85649ff41984be7c"><div class="ttname"><a href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7c">Key_TypeDef</a></div><div class="ttdeci">Key_TypeDef</div><div class="ttdoc">各个按键状态</div><div class="ttdef"><b>Definition</b> Key.hpp:73</div></div>
+<div class="ttc" id="a_key_8hpp_html_a256a72a91b632a8a85649ff41984be7ca116c2d6b348cb34c559773493efd10cd"><div class="ttname"><a href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca116c2d6b348cb34c559773493efd10cd">Key3_Long</a></div><div class="ttdeci">@ Key3_Long</div><div class="ttdoc">按键3长按状态</div><div class="ttdef"><b>Definition</b> Key.hpp:94</div></div>
+<div class="ttc" id="a_key_8hpp_html_a256a72a91b632a8a85649ff41984be7ca37e21592d3fd7a741ac3e4295c6bd9d0"><div class="ttname"><a href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca37e21592d3fd7a741ac3e4295c6bd9d0">Key3_Up</a></div><div class="ttdeci">@ Key3_Up</div><div class="ttdoc">按键3释放状态</div><div class="ttdef"><b>Definition</b> Key.hpp:93</div></div>
+<div class="ttc" id="a_key_8hpp_html_a256a72a91b632a8a85649ff41984be7ca4fa04a81f9df21663dcb76a1d6a16760"><div class="ttname"><a href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca4fa04a81f9df21663dcb76a1d6a16760">Key1_Long</a></div><div class="ttdeci">@ Key1_Long</div><div class="ttdoc">按键1长按状态</div><div class="ttdef"><b>Definition</b> Key.hpp:80</div></div>
+<div class="ttc" id="a_key_8hpp_html_a256a72a91b632a8a85649ff41984be7ca6ecf89d7736b9d20f86cd3f7185fa4ad"><div class="ttname"><a href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca6ecf89d7736b9d20f86cd3f7185fa4ad">Key1_Up</a></div><div class="ttdeci">@ Key1_Up</div><div class="ttdoc">按键1释放状态</div><div class="ttdef"><b>Definition</b> Key.hpp:79</div></div>
+<div class="ttc" id="a_key_8hpp_html_a256a72a91b632a8a85649ff41984be7ca7e7b4bc8d096990200f47cd080aa6876"><div class="ttname"><a href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca7e7b4bc8d096990200f47cd080aa6876">Key2_Long</a></div><div class="ttdeci">@ Key2_Long</div><div class="ttdoc">按键2长按状态</div><div class="ttdef"><b>Definition</b> Key.hpp:87</div></div>
+<div class="ttc" id="a_key_8hpp_html_a256a72a91b632a8a85649ff41984be7ca891d3115595e0c397b627bf02178e86f"><div class="ttname"><a href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca891d3115595e0c397b627bf02178e86f">Key2_Up</a></div><div class="ttdeci">@ Key2_Up</div><div class="ttdoc">按键2释放状态</div><div class="ttdef"><b>Definition</b> Key.hpp:86</div></div>
+<div class="ttc" id="a_key_8hpp_html_a256a72a91b632a8a85649ff41984be7ca96c6fb4689a6adbf66f6fed0380c078a"><div class="ttname"><a href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca96c6fb4689a6adbf66f6fed0380c078a">Key3_Down</a></div><div class="ttdeci">@ Key3_Down</div><div class="ttdoc">按键3按下状态</div><div class="ttdef"><b>Definition</b> Key.hpp:92</div></div>
+<div class="ttc" id="a_key_8hpp_html_a256a72a91b632a8a85649ff41984be7ca9d3ab24011af63b62cedc77463ccaeb5"><div class="ttname"><a href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7ca9d3ab24011af63b62cedc77463ccaeb5">Key1_Down</a></div><div class="ttdeci">@ Key1_Down</div><div class="ttdoc">按键1按下状态</div><div class="ttdef"><b>Definition</b> Key.hpp:78</div></div>
+<div class="ttc" id="a_key_8hpp_html_a256a72a91b632a8a85649ff41984be7cac574132c5921591dfbf44ee85274c7fb"><div class="ttname"><a href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7cac574132c5921591dfbf44ee85274c7fb">Key2_Down</a></div><div class="ttdeci">@ Key2_Down</div><div class="ttdoc">按键2按下状态</div><div class="ttdef"><b>Definition</b> Key.hpp:85</div></div>
+<div class="ttc" id="a_key_8hpp_html_a256a72a91b632a8a85649ff41984be7cacf4275864acfd8cb8bfc68b565adc7f2"><div class="ttname"><a href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7cacf4275864acfd8cb8bfc68b565adc7f2">Key_None</a></div><div class="ttdeci">@ Key_None</div><div class="ttdoc">无按键状态</div><div class="ttdef"><b>Definition</b> Key.hpp:74</div></div>
+<div class="ttc" id="a_key_8hpp_html_a392cfe6ea850ee14ff128daf80d30d86"><div class="ttname"><a href="_key_8hpp.html#a392cfe6ea850ee14ff128daf80d30d86">KeyScan10ms</a></div><div class="ttdeci">void KeyScan10ms(void)</div><div class="ttdoc">10毫秒按键扫描</div><div class="ttdef"><b>Definition</b> Key.cpp:47</div></div>
+<div class="ttc" id="a_key_8hpp_html_a3f147fc769d371775875ecc2dfe3934d"><div class="ttname"><a href="_key_8hpp.html#a3f147fc769d371775875ecc2dfe3934d">Key_Init</a></div><div class="ttdeci">void Key_Init(void)</div><div class="ttdoc">初始化每个按键</div><div class="ttdef"><b>Definition</b> Key.cpp:136</div></div>
+<div class="ttc" id="a_key_8hpp_html_a4e56accf9cf93dd3a071c72c4b17a27b"><div class="ttname"><a href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27b">Key_ID</a></div><div class="ttdeci">Key_ID</div><div class="ttdoc">Key的编号</div><div class="ttdef"><b>Definition</b> Key.hpp:12</div></div>
+<div class="ttc" id="a_key_8hpp_html_a4e56accf9cf93dd3a071c72c4b17a27ba11fd81feb2ad8559d86dfe9752381a92"><div class="ttname"><a href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27ba11fd81feb2ad8559d86dfe9752381a92">KEY2</a></div><div class="ttdeci">@ KEY2</div><div class="ttdoc">2号按键</div><div class="ttdef"><b>Definition</b> Key.hpp:14</div></div>
+<div class="ttc" id="a_key_8hpp_html_a4e56accf9cf93dd3a071c72c4b17a27ba9563bd59f355b8cdb39727f995c51f33"><div class="ttname"><a href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27ba9563bd59f355b8cdb39727f995c51f33">KEY3</a></div><div class="ttdeci">@ KEY3</div><div class="ttdoc">3号按键</div><div class="ttdef"><b>Definition</b> Key.hpp:15</div></div>
+<div class="ttc" id="a_key_8hpp_html_a4e56accf9cf93dd3a071c72c4b17a27baa2a969defdcf0e12ab262fc2526bbb62"><div class="ttname"><a href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27baa2a969defdcf0e12ab262fc2526bbb62">KEY1</a></div><div class="ttdeci">@ KEY1</div><div class="ttdoc">1号按键</div><div class="ttdef"><b>Definition</b> Key.hpp:13</div></div>
+<div class="ttc" id="a_key_8hpp_html_a4e56accf9cf93dd3a071c72c4b17a27baec8a3617311ffdac328944fe1e482708"><div class="ttname"><a href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27baec8a3617311ffdac328944fe1e482708">NO_KEY</a></div><div class="ttdeci">@ NO_KEY</div><div class="ttdoc">无按键</div><div class="ttdef"><b>Definition</b> Key.hpp:16</div></div>
+<div class="ttc" id="a_key_8hpp_html_a51c6d5464514aad03e3e6a7c019ac1f0"><div class="ttname"><a href="_key_8hpp.html#a51c6d5464514aad03e3e6a7c019ac1f0">Key_GetValue</a></div><div class="ttdeci">Key_TypeDef Key_GetValue(void)</div><div class="ttdoc">获取按键值</div><div class="ttdef"><b>Definition</b> Key.cpp:122</div></div>
+<div class="ttc" id="a_key_8hpp_html_abdff6614f80f2fc9f8db73960686924a"><div class="ttname"><a href="_key_8hpp.html#abdff6614f80f2fc9f8db73960686924a">KEY_HARD_NUM</a></div><div class="ttdeci">#define KEY_HARD_NUM</div><div class="ttdoc">按钮的数量</div><div class="ttdef"><b>Definition</b> Key.hpp:19</div></div>
+<div class="ttc" id="a_key_8hpp_html_ac0130f99482c5e27094ae26db7d8c076"><div class="ttname"><a href="_key_8hpp.html#ac0130f99482c5e27094ae26db7d8c076">KEY_ID_STATE</a></div><div class="ttdeci">#define KEY_ID_STATE(ID, STATE)</div><div class="ttdef"><b>Definition</b> Key.hpp:67</div></div>
+<div class="ttc" id="a_key_8hpp_html_ac6dfa28f94ba2739e7b00fcc7c1ad7c5"><div class="ttname"><a href="_key_8hpp.html#ac6dfa28f94ba2739e7b00fcc7c1ad7c5">_key</a></div><div class="ttdeci">Key _key[KEY_HARD_NUM]</div><div class="ttdef"><b>Definition</b> Key.cpp:8</div></div>
+<div class="ttc" id="a_key_8hpp_html_ace6fd1d5c1eda23c2e7c2203031e2c64"><div class="ttname"><a href="_key_8hpp.html#ace6fd1d5c1eda23c2e7c2203031e2c64">Key_Scan</a></div><div class="ttdeci">Key_ID Key_Scan(void)</div><div class="ttdoc">按键扫描</div><div class="ttdef"><b>Definition</b> Key.cpp:33</div></div>
+<div class="ttc" id="a_key_8hpp_html_ad424d50d8377d8a9e26d00990fd6b2eb"><div class="ttname"><a href="_key_8hpp.html#ad424d50d8377d8a9e26d00990fd6b2eb">Key_Detect</a></div><div class="ttdeci">void Key_Detect(uint8_t index)</div><div class="ttdoc">单个按键检测函数</div><div class="ttdef"><b>Definition</b> Key.cpp:55</div></div>
+<div class="ttc" id="aclass_fifo_html"><div class="ttname"><a href="class_fifo.html">Fifo</a></div><div class="ttdoc">环形Fifo模板类</div><div class="ttdef"><b>Definition</b> Fifo.hpp:20</div></div>
+<div class="ttc" id="aclass_key_html"><div class="ttname"><a href="class_key.html">Key</a></div><div class="ttdoc">Key类</div><div class="ttdef"><b>Definition</b> Key.hpp:105</div></div>
+<div class="ttc" id="aclass_key_html_a217a606fe2938c4a8001c62a4bffe3de"><div class="ttname"><a href="class_key.html#a217a606fe2938c4a8001c62a4bffe3de">Key::Key</a></div><div class="ttdeci">Key()=default</div></div>
+<div class="ttc" id="aclass_key_html_a457fbc62b8c583b6b53938147a493ff2"><div class="ttname"><a href="class_key.html#a457fbc62b8c583b6b53938147a493ff2">Key::getID</a></div><div class="ttdeci">Key_ID getID(void)</div><div class="ttdoc">获取按键编号</div><div class="ttdef"><b>Definition</b> Key.cpp:29</div></div>
+<div class="ttc" id="aclass_key_html_a483cf4ac032e626cf7a85c9ad9a8e357"><div class="ttname"><a href="class_key.html#a483cf4ac032e626cf7a85c9ad9a8e357">Key::~Key</a></div><div class="ttdeci">~Key()=default</div></div>
+<div class="ttc" id="aclass_key_html_ad424d50d8377d8a9e26d00990fd6b2eb"><div class="ttname"><a href="class_key.html#ad424d50d8377d8a9e26d00990fd6b2eb">Key::Key_Detect</a></div><div class="ttdeci">friend void Key_Detect(uint8_t index)</div><div class="ttdoc">单个按键检测函数</div><div class="ttdef"><b>Definition</b> Key.cpp:55</div></div>
+<div class="ttc" id="aclass_key_html_ae75f65c0d936b5e4a1fb929d01faf0ba"><div class="ttname"><a href="class_key.html#ae75f65c0d936b5e4a1fb929d01faf0ba">Key::isActive</a></div><div class="ttdeci">bool isActive(void)</div><div class="ttdoc">检查按键是否处于活动状态</div><div class="ttdef"><b>Definition</b> Key.cpp:22</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_g_p_i_o_html"><div class="ttname"><a href="class_s_t_m32_1_1_g_p_i_o.html">STM32::GPIO</a></div><div class="ttdoc">GPIO类</div><div class="ttdef"><b>Definition</b> GPIO.hpp:69</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_ae318e101c1d25137bbcd2a3395368e98"><div class="ttname"><a href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98">STM32::GPIO_Pull</a></div><div class="ttdeci">GPIO_Pull</div><div class="ttdoc">GPIO上拉/下拉</div><div class="ttdef"><b>Definition</b> GPIO.hpp:46</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_bc2597cfbec14760d23b28ac592ac7af.html">platform-lib</a></li><li class="navelem"><a class="el" href="dir_0608fb62d33f45ab68406becc139393f.html">HardWare</a></li><li class="navelem"><a class="el" href="dir_fe228ec49debe80fb8e02808b551a08b.html">Key</a></li><li class="navelem"><a class="el" href="_key_8hpp.html">Key.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

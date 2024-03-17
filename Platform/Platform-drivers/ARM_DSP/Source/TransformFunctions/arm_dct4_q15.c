@@ -45,7 +45,7 @@
                    Number of bits downscaled, depends on the size of the transform. The input and output
                    formats for different DCT sizes and number of bits to upscale are mentioned in the table below:
  
-| DCT Size  | Input format  | Output format | Number of bits to upscale |
+| DCT size  | Input format  | Output format | Number of bits to upscale |
 | --------: | ------------: | ------------: | ------------------------: |
 | 2048      | 1.15          | 11.5          | 10                        |
 | 512       | 1.15          | 9.7           | 8                         |

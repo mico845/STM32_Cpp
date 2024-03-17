@@ -1,4 +1,6 @@
-#此文件从模板自动生成! 请勿更改!
+# 可选 Release、RelWithDebInfo、MinSizeRel、Most、Debug
+set(CMAKE_BUILD_TYPE Debug)
+
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_VERSION 1)
 cmake_minimum_required(VERSION 3.27)
@@ -32,8 +34,6 @@ add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-le
 # uncomment to mitigate c++17 absolute addresses warnings
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-register")
 
-# set(CMAKE_BUILD_TYPE Most)
-
 if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     message(STATUS "Maximum optimization for speed")
     add_compile_options(-Ofast)
@@ -54,18 +54,16 @@ else ()
 endif ()
 
 include_directories(Core/Inc Drivers/STM32H7xx_HAL_Driver/Inc Drivers/CMSIS/Device/ST/STM32H7xx/Include Drivers/CMSIS/Include
+        # UserApp
         UserApp
-
         # Platform
-        Platform/Platform-lib
-        Platform/Platform-drivers/STM32
+        Platform
         )
 
-add_subdirectory(Platform/Platform-drivers/ARM_DSP)
+add_subdirectory(Platform/platform-drivers/ARM_DSP)
 
 add_definitions(-DUSE_FULL_LL_DRIVER -DHSE_VALUE=25000000 -DHSE_STARTUP_TIMEOUT=100 -DLSE_STARTUP_TIMEOUT=5000 -DLSE_VALUE=32768 -DEXTERNAL_CLOCK_VALUE=12288000 -DHSI_VALUE=64000000 -DLSI_VALUE=32000 -DVDD_VALUE=3300 -DSTM32H743xx)
 # add_definitions(-DUSE_FULL_LL_DRIVER -DHSE_VALUE=25000000 -DHSE_STARTUP_TIMEOUT=100 -DLSE_STARTUP_TIMEOUT=5000 -DLSE_VALUE=32768 -DEXTERNAL_CLOCK_VALUE=12288000 -DHSI_VALUE=64000000 -DLSI_VALUE=32000 -DSTM32H743xx)
-
 
 
 file(GLOB_RECURSE SRC_FILES "Core/*.*")
@@ -78,9 +76,8 @@ list(REMOVE_ITEM SRC_FILES ${EXCLUDED_SOURCES})
 
 file(GLOB_RECURSE SOURCES "startup/*.*" "Drivers/*.*" ${SRC_FILES}
         "UserApp/*.*"
-        "Platform/Platform-drivers/STM32/Platform-Operation/*.*"
-        "Platform/Platform-lib/*.*"
-
+        "Platform/platform-lib/*.*"
+        "Platform/platform-drivers/STM32/*.*"
         )
 
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32H743VITX_FLASH.ld)

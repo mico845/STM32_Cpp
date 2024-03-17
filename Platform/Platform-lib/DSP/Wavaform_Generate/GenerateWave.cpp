@@ -1,10 +1,5 @@
-//
-// Created by Whisky on 1/13/2024.
-//
-
 #include "GenerateWave.hpp"
-
-
+#include <cmath>
 
 void generateSineWaveTable(uint16_t* Buffer, uint32_t Num, float Amplitude) //正弦波生成波表代码
 {

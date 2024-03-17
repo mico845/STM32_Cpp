@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-drivers/STM32/PWM/PWM.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_p_w_m_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">PWM.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_p_w_m_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __PLATFORM_STM32_PWM_H__</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __PLATFORM_STM32_PWM_H__</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_timer_8hpp.html">platform-drivers/STM32/Timer/Timer.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_s_t_m32.html">STM32</a>{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288">   13</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a5c7770a29a27cb670973754ea03fe6b4">   14</a></span>    <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a5c7770a29a27cb670973754ea03fe6b4">channel1</a>    =   LL_TIM_CHANNEL_CH1,  </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a324add13e5bce1c706ba874a6752e589">   15</a></span>    <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a324add13e5bce1c706ba874a6752e589">channel1N</a>   =   LL_TIM_CHANNEL_CH1N, </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a0cf3adb72fcbf70dc4c0b83ca44e707e">   16</a></span>    <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a0cf3adb72fcbf70dc4c0b83ca44e707e">channel2</a>    =   LL_TIM_CHANNEL_CH2,  </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a2e19d103703f96858dc82d337cd6d218">   17</a></span>    <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a2e19d103703f96858dc82d337cd6d218">channel2N</a>   =   LL_TIM_CHANNEL_CH2N, </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288afab5dfc7a7ca96e346528ceaed5f1c48">   18</a></span>    <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288afab5dfc7a7ca96e346528ceaed5f1c48">channel3</a>    =   LL_TIM_CHANNEL_CH3,  </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a88c3f32cf41efcf4e8e757e3ffbc789e">   19</a></span>    <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a88c3f32cf41efcf4e8e757e3ffbc789e">channel3N</a>   =   LL_TIM_CHANNEL_CH3N, </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288ade62762f9642c10a032f7faf595ec5e1">   20</a></span>    <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288ade62762f9642c10a032f7faf595ec5e1">channel4</a>    =   LL_TIM_CHANNEL_CH4,  </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a48f4238e517123bfb3e2626921abf947">   21</a></span>    <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a48f4238e517123bfb3e2626921abf947">channel5</a>    =   LL_TIM_CHANNEL_CH5,  </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288abdb1a0bd4cfa055d66ca0d1b194d336d">   22</a></span>    <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288abdb1a0bd4cfa055d66ca0d1b194d336d">channel6</a>    =   LL_TIM_CHANNEL_CH6,  </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>} <a class="code hl_enumeration" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288">Timer_Channel</a>;</div>
+</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_p_w_m.html">   30</a></span><span class="keyword">class </span><a class="code hl_class" href="class_s_t_m32_1_1_p_w_m.html">PWM</a> : <a class="code hl_class" href="class_s_t_m32_1_1_timer.html">Timer</a></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_enumeration" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288">Timer_Channel</a> channel;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">/* Variables */</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">/* Constructor */</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_p_w_m.html#ad39f0b5e97e4c932b4a15185870c2522">   37</a></span>    <a class="code hl_function" href="class_s_t_m32_1_1_p_w_m.html#ad39f0b5e97e4c932b4a15185870c2522">PWM</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_p_w_m.html#aa6a776b3de3c0db6c90b29e25eb0413f">   38</a></span>    <a class="code hl_function" href="class_s_t_m32_1_1_p_w_m.html#aa6a776b3de3c0db6c90b29e25eb0413f">~PWM</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_p_w_m.html#afe4a8f372216f9cdb41a0146f77a1599">   48</a></span>    <a class="code hl_function" href="class_s_t_m32_1_1_p_w_m.html#afe4a8f372216f9cdb41a0146f77a1599">PWM</a>(TIM_TypeDef * TIMx, <a class="code hl_enumeration" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288">Timer_Channel</a> Channel, <span class="keywordtype">bool</span> IsUseIrq = <span class="keyword">false</span>, <a class="code hl_typedef" href="namespace_s_t_m32.html#a47df4af2678cf985205c5de82018dd53">Platform_Timer_CallBack_fun</a> <a class="code hl_variable" href="class_s_t_m32_1_1_timer.html#a32acbf701509a0df6970f367392189f9">callback_fun</a> = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                        : <a class="code hl_class" href="class_s_t_m32_1_1_timer.html">Timer</a>(TIMx, IsUseIrq, <a class="code hl_variable" href="class_s_t_m32_1_1_timer.html#a32acbf701509a0df6970f367392189f9">callback_fun</a>), channel(Channel) { }</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">/* Functions */</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_class" href="class_s_t_m32_1_1_p_w_m.html">PWM</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_p_w_m.html#a1c3342c806b38bd0ea426b5d57bb7e0e">start</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_class" href="class_s_t_m32_1_1_p_w_m.html">PWM</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_p_w_m.html#a1c3342c806b38bd0ea426b5d57bb7e0e">start</a>(uint32_t timerFreq);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_class" href="class_s_t_m32_1_1_p_w_m.html">PWM</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_p_w_m.html#a1c3342c806b38bd0ea426b5d57bb7e0e">start</a>(uint32_t timerFreq, uint64_t timerCLK);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_class" href="class_s_t_m32_1_1_p_w_m.html">PWM</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_p_w_m.html#a2c3c98b51019e6f5ae44f47952345171">stop</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_class" href="class_s_t_m32_1_1_p_w_m.html">PWM</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_p_w_m.html#a3482863b9177001491e09789540371b3">setFreq</a>(uint32_t timerFreq, uint64_t timerCLK);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_class" href="class_s_t_m32_1_1_p_w_m.html">PWM</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_p_w_m.html#a3482863b9177001491e09789540371b3">setFreq</a>(uint32_t timerFreq);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>};</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>} <span class="comment">//namespace STM32</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#endif </span><span class="comment">//__PLATFORM_STM32_PWM_H__</span></div>
+<div class="ttc" id="a_timer_8hpp_html"><div class="ttname"><a href="_timer_8hpp.html">Timer.hpp</a></div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_p_w_m_html"><div class="ttname"><a href="class_s_t_m32_1_1_p_w_m.html">STM32::PWM</a></div><div class="ttdoc">PWM类</div><div class="ttdef"><b>Definition</b> PWM.hpp:31</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_p_w_m_html_a1c3342c806b38bd0ea426b5d57bb7e0e"><div class="ttname"><a href="class_s_t_m32_1_1_p_w_m.html#a1c3342c806b38bd0ea426b5d57bb7e0e">STM32::PWM::start</a></div><div class="ttdeci">PWM &amp; start(void)</div><div class="ttdoc">启动PWM输出</div><div class="ttdef"><b>Definition</b> PWM.cpp:22</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_p_w_m_html_a2c3c98b51019e6f5ae44f47952345171"><div class="ttname"><a href="class_s_t_m32_1_1_p_w_m.html#a2c3c98b51019e6f5ae44f47952345171">STM32::PWM::stop</a></div><div class="ttdeci">PWM &amp; stop(void)</div><div class="ttdoc">停止PWM输出</div><div class="ttdef"><b>Definition</b> PWM.cpp:40</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_p_w_m_html_a3482863b9177001491e09789540371b3"><div class="ttname"><a href="class_s_t_m32_1_1_p_w_m.html#a3482863b9177001491e09789540371b3">STM32::PWM::setFreq</a></div><div class="ttdeci">PWM &amp; setFreq(uint32_t timerFreq, uint64_t timerCLK)</div><div class="ttdoc">设置PWM频率</div><div class="ttdef"><b>Definition</b> PWM.cpp:46</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_p_w_m_html_aa6a776b3de3c0db6c90b29e25eb0413f"><div class="ttname"><a href="class_s_t_m32_1_1_p_w_m.html#aa6a776b3de3c0db6c90b29e25eb0413f">STM32::PWM::~PWM</a></div><div class="ttdeci">~PWM()=default</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_p_w_m_html_ad39f0b5e97e4c932b4a15185870c2522"><div class="ttname"><a href="class_s_t_m32_1_1_p_w_m.html#ad39f0b5e97e4c932b4a15185870c2522">STM32::PWM::PWM</a></div><div class="ttdeci">PWM()=default</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_p_w_m_html_afe4a8f372216f9cdb41a0146f77a1599"><div class="ttname"><a href="class_s_t_m32_1_1_p_w_m.html#afe4a8f372216f9cdb41a0146f77a1599">STM32::PWM::PWM</a></div><div class="ttdeci">PWM(TIM_TypeDef *TIMx, Timer_Channel Channel, bool IsUseIrq=false, Platform_Timer_CallBack_fun callback_fun=nullptr)</div><div class="ttdoc">PWM类构造函数</div><div class="ttdef"><b>Definition</b> PWM.hpp:48</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html">STM32::Timer</a></div><div class="ttdoc">Timer类</div><div class="ttdef"><b>Definition</b> Timer.hpp:29</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_timer_html_a32acbf701509a0df6970f367392189f9"><div class="ttname"><a href="class_s_t_m32_1_1_timer.html#a32acbf701509a0df6970f367392189f9">STM32::Timer::callback_fun</a></div><div class="ttdeci">Platform_Timer_CallBack_fun callback_fun</div><div class="ttdef"><b>Definition</b> Timer.hpp:34</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html"><div class="ttname"><a href="namespace_s_t_m32.html">STM32</a></div><div class="ttdef"><b>Definition</b> DDS.hpp:5</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a47df4af2678cf985205c5de82018dd53"><div class="ttname"><a href="namespace_s_t_m32.html#a47df4af2678cf985205c5de82018dd53">STM32::Platform_Timer_CallBack_fun</a></div><div class="ttdeci">void(* Platform_Timer_CallBack_fun)(void)</div><div class="ttdoc">定时器回调函数类型</div><div class="ttdef"><b>Definition</b> Timer.hpp:19</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a7cd6332840702c0622971152b9c0e288"><div class="ttname"><a href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288">STM32::Timer_Channel</a></div><div class="ttdeci">Timer_Channel</div><div class="ttdoc">定时器通道</div><div class="ttdef"><b>Definition</b> PWM.hpp:13</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a7cd6332840702c0622971152b9c0e288a0cf3adb72fcbf70dc4c0b83ca44e707e"><div class="ttname"><a href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a0cf3adb72fcbf70dc4c0b83ca44e707e">STM32::channel2</a></div><div class="ttdeci">@ channel2</div><div class="ttdoc">通道2</div><div class="ttdef"><b>Definition</b> PWM.hpp:16</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a7cd6332840702c0622971152b9c0e288a2e19d103703f96858dc82d337cd6d218"><div class="ttname"><a href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a2e19d103703f96858dc82d337cd6d218">STM32::channel2N</a></div><div class="ttdeci">@ channel2N</div><div class="ttdoc">通道2N</div><div class="ttdef"><b>Definition</b> PWM.hpp:17</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a7cd6332840702c0622971152b9c0e288a324add13e5bce1c706ba874a6752e589"><div class="ttname"><a href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a324add13e5bce1c706ba874a6752e589">STM32::channel1N</a></div><div class="ttdeci">@ channel1N</div><div class="ttdoc">通道1N</div><div class="ttdef"><b>Definition</b> PWM.hpp:15</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a7cd6332840702c0622971152b9c0e288a48f4238e517123bfb3e2626921abf947"><div class="ttname"><a href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a48f4238e517123bfb3e2626921abf947">STM32::channel5</a></div><div class="ttdeci">@ channel5</div><div class="ttdoc">通道5</div><div class="ttdef"><b>Definition</b> PWM.hpp:21</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a7cd6332840702c0622971152b9c0e288a5c7770a29a27cb670973754ea03fe6b4"><div class="ttname"><a href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a5c7770a29a27cb670973754ea03fe6b4">STM32::channel1</a></div><div class="ttdeci">@ channel1</div><div class="ttdoc">通道1</div><div class="ttdef"><b>Definition</b> PWM.hpp:14</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a7cd6332840702c0622971152b9c0e288a88c3f32cf41efcf4e8e757e3ffbc789e"><div class="ttname"><a href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288a88c3f32cf41efcf4e8e757e3ffbc789e">STM32::channel3N</a></div><div class="ttdeci">@ channel3N</div><div class="ttdoc">通道3N</div><div class="ttdef"><b>Definition</b> PWM.hpp:19</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a7cd6332840702c0622971152b9c0e288abdb1a0bd4cfa055d66ca0d1b194d336d"><div class="ttname"><a href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288abdb1a0bd4cfa055d66ca0d1b194d336d">STM32::channel6</a></div><div class="ttdeci">@ channel6</div><div class="ttdoc">通道6</div><div class="ttdef"><b>Definition</b> PWM.hpp:22</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a7cd6332840702c0622971152b9c0e288ade62762f9642c10a032f7faf595ec5e1"><div class="ttname"><a href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288ade62762f9642c10a032f7faf595ec5e1">STM32::channel4</a></div><div class="ttdeci">@ channel4</div><div class="ttdoc">通道4</div><div class="ttdef"><b>Definition</b> PWM.hpp:20</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a7cd6332840702c0622971152b9c0e288afab5dfc7a7ca96e346528ceaed5f1c48"><div class="ttname"><a href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288afab5dfc7a7ca96e346528ceaed5f1c48">STM32::channel3</a></div><div class="ttdeci">@ channel3</div><div class="ttdoc">通道3</div><div class="ttdef"><b>Definition</b> PWM.hpp:18</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_84d8ddb176e16ca8bccaaa5eeae31ee8.html">platform-drivers</a></li><li class="navelem"><a class="el" href="dir_4c7ecf3a8e2e1382144ef720f571f877.html">STM32</a></li><li class="navelem"><a class="el" href="dir_d0e6f57f66aa153c510bf8982272ef65.html">PWM</a></li><li class="navelem"><a class="el" href="_p_w_m_8hpp.html">PWM.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

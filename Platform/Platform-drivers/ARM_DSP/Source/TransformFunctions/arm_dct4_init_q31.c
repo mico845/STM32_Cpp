@@ -59,7 +59,7 @@
                    The normalizing factor is <code>sqrt(2/N)</code>, which depends on the size of transform <code>N</code>.
                    Normalizing factors in 1.31 format are mentioned in the table below for different DCT sizes:
  
-| DCT Size  | Normalizing factor value (hexadecimal)  | 
+| DCT size  | Normalizing factor value (hexadecimal)  |
 | --------: | ---------------------------------------:| 
 | 2048      | 0x4000000                               | 
 | 512       | 0x8000000                               | 

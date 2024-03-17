@@ -1389,7 +1389,7 @@ typedef struct
   */
 
 #if defined(HRTIM1)
-/** @defgroup RCC_LL_EC_HRTIM_CLKSOURCE  High Resolution Timers clock selection
+/** @defgroup RCC_LL_EC_HRTIM_CLKSOURCE  high Resolution Timers clock selection
   * @{
   */
 #define LL_RCC_HRTIM_CLKSOURCE_TIM          (uint32_t)(0x00000000U)           /* HRTIM Clock source is same as other timers */
@@ -1453,7 +1453,7 @@ typedef struct
 #define LL_RCC_WriteReg(__REG__, __VALUE__) WRITE_REG(RCC->__REG__, (__VALUE__))
 
 /**
-  * @brief  Read a value in RCC register
+  * @brief  read a value in RCC register
   * @param  __REG__ Register to be read
   * @retval Register value
   */
@@ -1752,7 +1752,7 @@ __STATIC_INLINE void LL_RCC_HSI_SetDivider(uint32_t Divider)
 }
 
 /**
-  * @brief  Get HSI divider
+  * @brief  get HSI divider
   * @rmtoll CR           HSIDIV        LL_RCC_HSI_GetDivider
   * @retval can be one of the following values:
   *         @arg @ref LL_RCC_HSI_DIV1
@@ -1766,7 +1766,7 @@ __STATIC_INLINE uint32_t LL_RCC_HSI_GetDivider(void)
 }
 
 /**
-  * @brief  Enable HSI oscillator in Stop mode
+  * @brief  Enable HSI oscillator in stop mode
   * @rmtoll CR           HSIKERON         LL_RCC_HSI_EnableStopMode
   * @retval None
   */
@@ -1776,7 +1776,7 @@ __STATIC_INLINE void LL_RCC_HSI_EnableStopMode(void)
 }
 
 /**
-  * @brief  Disable HSI oscillator in Stop mode
+  * @brief  Disable HSI oscillator in stop mode
   * @rmtoll CR           HSION         LL_RCC_HSI_DisableStopMode
   * @retval None
   */
@@ -1786,7 +1786,7 @@ __STATIC_INLINE void LL_RCC_HSI_DisableStopMode(void)
 }
 
 /**
-  * @brief  Get HSI Calibration value
+  * @brief  get HSI Calibration value
   * @note When HSITRIM is written, HSICAL is updated with the sum of
   *       HSITRIM and the factory trim value
   * @rmtoll HSICFGR        HSICAL        LL_RCC_HSI_GetCalibration
@@ -1825,7 +1825,7 @@ __STATIC_INLINE void LL_RCC_HSI_SetCalibTrimming(uint32_t Value)
 }
 
 /**
-  * @brief  Get HSI Calibration trimming
+  * @brief  get HSI Calibration trimming
   * @rmtoll HSICFGR        HSITRIM       LL_RCC_HSI_GetCalibTrimming
   * @retval A value between 0 and 127 (63 for Cut1.x)
   */
@@ -1886,7 +1886,7 @@ __STATIC_INLINE uint32_t LL_RCC_CSI_IsReady(void)
 }
 
 /**
-  * @brief  Enable CSI oscillator in Stop mode
+  * @brief  Enable CSI oscillator in stop mode
   * @rmtoll CR           CSIKERON         LL_RCC_CSI_EnableStopMode
   * @retval None
   */
@@ -1896,7 +1896,7 @@ __STATIC_INLINE void LL_RCC_CSI_EnableStopMode(void)
 }
 
 /**
-  * @brief  Disable CSI oscillator in Stop mode
+  * @brief  Disable CSI oscillator in stop mode
   * @rmtoll CR           CSIKERON         LL_RCC_CSI_DisableStopMode
   * @retval None
   */
@@ -1906,7 +1906,7 @@ __STATIC_INLINE void LL_RCC_CSI_DisableStopMode(void)
 }
 
 /**
-  * @brief  Get CSI Calibration value
+  * @brief  get CSI Calibration value
   * @note When CSITRIM is written, CSICAL is updated with the sum of
   *       CSITRIM and the factory trim value
   * @rmtoll CSICFGR        CSICAL        LL_RCC_CSI_GetCalibration
@@ -1958,7 +1958,7 @@ __STATIC_INLINE void LL_RCC_CSI_SetCalibTrimming(uint32_t Value)
 }
 
 /**
-  * @brief  Get CSI Calibration trimming
+  * @brief  get CSI Calibration trimming
   * @rmtoll CSICFGR        CSITRIM       LL_RCC_CSI_GetCalibTrimming
   * @retval A value between 0 and 31
   */
@@ -2019,7 +2019,7 @@ __STATIC_INLINE uint32_t LL_RCC_HSI48_IsReady(void)
 }
 
 /**
-  * @brief  Get HSI48 Calibration value
+  * @brief  get HSI48 Calibration value
   * @note When HSI48TRIM is written, HSI48CAL is updated with the sum of
   *       HSI48TRIM and the factory trim value
   * @rmtoll CRRCR        HSI48CAL        LL_RCC_HSI48_GetCalibration
@@ -2241,7 +2241,7 @@ __STATIC_INLINE uint32_t LL_RCC_LSE_IsFailureDetected(void)
 }
 
 /**
-  * @brief  Enable  Low Speed External (LSE) crystal.
+  * @brief  Enable  low Speed External (LSE) crystal.
   * @rmtoll BDCR         LSEON         LL_RCC_LSE_Enable
   * @retval None
   */
@@ -2251,7 +2251,7 @@ __STATIC_INLINE void LL_RCC_LSE_Enable(void)
 }
 
 /**
-  * @brief  Disable  Low Speed External (LSE) crystal.
+  * @brief  Disable  low Speed External (LSE) crystal.
   * @rmtoll BDCR         LSEON         LL_RCC_LSE_Disable
   * @retval None
   */
@@ -2323,7 +2323,7 @@ __STATIC_INLINE void LL_RCC_LSE_SetDriveCapability(uint32_t LSEDrive)
 }
 
 /**
-  * @brief  Get LSE oscillator drive capability
+  * @brief  get LSE oscillator drive capability
   * @rmtoll BDCR         LSEDRV        LL_RCC_LSE_GetDriveCapability
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_RCC_LSEDRIVE_LOW
@@ -2408,7 +2408,7 @@ __STATIC_INLINE void LL_RCC_SetSysClkSource(uint32_t Source)
 }
 
 /**
-  * @brief  Get the system clock source
+  * @brief  get the system clock source
   * @rmtoll CFGR         SWS           LL_RCC_GetSysClkSource
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_RCC_SYS_CLKSOURCE_STATUS_HSI
@@ -2435,7 +2435,7 @@ __STATIC_INLINE void LL_RCC_SetSysWakeUpClkSource(uint32_t Source)
 }
 
 /**
-  * @brief  Get the system wakeup clock source
+  * @brief  get the system wakeup clock source
   * @rmtoll CFGR         STOPWUCK           LL_RCC_GetSysWakeUpClkSource
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_RCC_SYSWAKEUP_CLKSOURCE_HSI
@@ -2460,7 +2460,7 @@ __STATIC_INLINE void LL_RCC_SetKerWakeUpClkSource(uint32_t Source)
 }
 
 /**
-  * @brief  Get the kernel wakeup clock source
+  * @brief  get the kernel wakeup clock source
   * @rmtoll CFGR         STOPKERWUCK           LL_RCC_GetKerWakeUpClkSource
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_RCC_KERWAKEUP_CLKSOURCE_HSI
@@ -2600,7 +2600,7 @@ __STATIC_INLINE void LL_RCC_SetAPB4Prescaler(uint32_t Prescaler)
 }
 
 /**
-  * @brief  Get System prescaler
+  * @brief  get System prescaler
   * @rmtoll D1CFGR/CDCFGR1        D1CPRE/CDCPRE          LL_RCC_GetSysPrescaler
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_RCC_SYSCLK_DIV_1
@@ -2623,7 +2623,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetSysPrescaler(void)
 }
 
 /**
-  * @brief  Get AHB prescaler
+  * @brief  get AHB prescaler
   * @rmtoll D1CFGR/ CDCFGR1       HPRE         LL_RCC_GetAHBPrescaler
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_RCC_AHB_DIV_1
@@ -2646,7 +2646,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetAHBPrescaler(void)
 }
 
 /**
-  * @brief  Get APB1 prescaler
+  * @brief  get APB1 prescaler
   * @rmtoll D2CFGR/CDCFGR2         D2PPRE1/CDPPRE1         LL_RCC_GetAPB1Prescaler
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_RCC_APB1_DIV_1
@@ -2665,7 +2665,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetAPB1Prescaler(void)
 }
 
 /**
-  * @brief  Get APB2 prescaler
+  * @brief  get APB2 prescaler
   * @rmtoll D2CFGR/CDCFGR2         D2PPRE2/CDPPRE2         LL_RCC_GetAPB2Prescaler
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_RCC_APB2_DIV_1
@@ -2684,7 +2684,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetAPB2Prescaler(void)
 }
 
 /**
-  * @brief  Get APB3 prescaler
+  * @brief  get APB3 prescaler
   * @rmtoll D1CFGR/CDCFGR1         D1PPRE/CDPPRE         LL_RCC_GetAPB3Prescaler
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_RCC_APB3_DIV_1
@@ -2703,7 +2703,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetAPB3Prescaler(void)
 }
 
 /**
-  * @brief  Get APB4 prescaler
+  * @brief  get APB4 prescaler
   * @rmtoll D3CFGR/SRDCFGR         D3PPRE/SRDPPRE         LL_RCC_GetAPB4Prescaler
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_RCC_APB4_DIV_1
@@ -3348,7 +3348,7 @@ __STATIC_INLINE void LL_RCC_SetADCClockSource(uint32_t ClkSource)
 }
 
 /**
-  * @brief  Get periph clock source
+  * @brief  get periph clock source
   * @rmtoll D1CCIPR  / CDCCIPR       *     LL_RCC_GetClockSource\n
   *         D2CCIP1R / CDCCIP1R      *     LL_RCC_GetClockSource\n
   *         D2CCIP2R / CDCCIP2R      *     LL_RCC_GetClockSource\n
@@ -3474,7 +3474,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetClockSource(uint32_t Periph)
 }
 
 /**
-  * @brief  Get USARTx clock source
+  * @brief  get USARTx clock source
   * @rmtoll D2CCIP2R / CDCCIP2R      USART16SEL     LL_RCC_GetUSARTClockSource\n
   *         D2CCIP2R / CDCCIP2R      USART28SEL     LL_RCC_GetUSARTClockSource
   * @param  Periph This parameter can be one of the following values:
@@ -3500,7 +3500,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetUSARTClockSource(uint32_t Periph)
 }
 
 /**
-  * @brief  Get LPUART clock source
+  * @brief  get LPUART clock source
   * @rmtoll D3CCIPR / SRDCCIPR       LPUART1SEL     LL_RCC_GetLPUARTClockSource
   * @param  Periph This parameter can be one of the following values:
   *         @arg @ref LL_RCC_LPUART1_CLKSOURCE
@@ -3523,7 +3523,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetLPUARTClockSource(uint32_t Periph)
 }
 
 /**
-  * @brief  Get I2Cx clock source
+  * @brief  get I2Cx clock source
   * @rmtoll D2CCIP2R / CDCCIP2R     I2C123SEL       LL_RCC_GetI2CClockSource\n
   *         D3CCIPR  / SRDCCIPR     I2C4SEL         LL_RCC_GetI2CClockSource
   * @param  Periph This parameter can be one of the following values:
@@ -3545,7 +3545,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetI2CClockSource(uint32_t Periph)
 }
 
 /**
-  * @brief  Get LPTIM clock source
+  * @brief  get LPTIM clock source
   * @rmtoll D2CCIP2R / CDCCIP2R      LPTIM1SEL     LL_RCC_GetLPTIMClockSource\n
   *         D3CCIPR  / SRDCCIPR      LPTIM2SEL     LL_RCC_GetLPTIMClockSource\n
   *         D3CCIPR  / SRDCCIPR      LPTIM345SEL   LL_RCC_GetLPTIMClockSource
@@ -3580,7 +3580,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetLPTIMClockSource(uint32_t Periph)
 }
 
 /**
-  * @brief  Get SAIx clock source
+  * @brief  get SAIx clock source
   * @rmtoll D2CCIP1R / CDCCIP1R     SAI1SEL       LL_RCC_GetSAIClockSource\n
   *         D2CCIP1R / CDCCIP1R     SAI23SEL      LL_RCC_GetSAIClockSource
   *         D3CCIPR  / SRDCCIPR     SAI4ASEL      LL_RCC_GetSAIClockSource\n
@@ -3634,7 +3634,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetSAIClockSource(uint32_t Periph)
 }
 
 /**
-  * @brief  Get SDMMC clock source
+  * @brief  get SDMMC clock source
   * @rmtoll D1CCIPR / CDCCIPR      SDMMCSEL      LL_RCC_GetSDMMCClockSource
   * @param  Periph This parameter can be one of the following values:
   *         @arg @ref LL_RCC_SDMMC_CLKSOURCE
@@ -3653,7 +3653,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetSDMMCClockSource(uint32_t Periph)
 }
 
 /**
-  * @brief  Get RNG clock source
+  * @brief  get RNG clock source
   * @rmtoll D2CCIP2R        RNGSEL      LL_RCC_GetRNGClockSource
   * @param  Periph This parameter can be one of the following values:
   *         @arg @ref LL_RCC_RNG_CLKSOURCE
@@ -3674,7 +3674,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetRNGClockSource(uint32_t Periph)
 }
 
 /**
-  * @brief  Get USB clock source
+  * @brief  get USB clock source
   * @rmtoll D2CCIP2R / CDCCIP2R      USBSEL      LL_RCC_GetUSBClockSource
   * @param  Periph This parameter can be one of the following values:
   *         @arg @ref LL_RCC_USB_CLKSOURCE
@@ -3695,7 +3695,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetUSBClockSource(uint32_t Periph)
 }
 
 /**
-  * @brief  Get CEC clock source
+  * @brief  get CEC clock source
   * @rmtoll D2CCIP2R / CDCCIP2R        CECSEL        LL_RCC_GetCECClockSource
   * @param  Periph This parameter can be one of the following values:
   *         @arg @ref LL_RCC_CEC_CLKSOURCE
@@ -3732,7 +3732,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetDSIClockSource(uint32_t Periph)
 #endif /* DSI */
 
 /**
-  * @brief  Get DFSDM Kernel clock source
+  * @brief  get DFSDM Kernel clock source
   * @rmtoll D2CCIP1R / CDCCIP1R         DFSDM1SEL        LL_RCC_GetDFSDMClockSource
   * @param  Periph This parameter can be one of the following values:
   *         @arg @ref LL_RCC_DFSDM1_CLKSOURCE
@@ -3768,7 +3768,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetDFSDM2ClockSource(uint32_t Periph)
 #endif /* DFSDM2_BASE */
 
 /**
-  * @brief  Get FMC Kernel clock source
+  * @brief  get FMC Kernel clock source
   * @rmtoll D1CCIPR / D1CCIPR         FMCSEL        LL_RCC_GetFMCClockSource
   * @param  Periph This parameter can be one of the following values:
   *         @arg @ref LL_RCC_FMC_CLKSOURCE
@@ -3790,7 +3790,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetFMCClockSource(uint32_t Periph)
 
 #if defined(QUADSPI)
 /**
-  * @brief  Get QSPI Kernel clock source
+  * @brief  get QSPI Kernel clock source
   * @rmtoll D1CCIPR  /  CDCCIPR      QSPISEL        LL_RCC_GetQSPIClockSource
   * @param  Periph This parameter can be one of the following values:
   *         @arg @ref LL_RCC_QSPI_CLKSOURCE
@@ -3831,7 +3831,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetOSPIClockSource(uint32_t Periph)
 #endif /* defined(OCTOSPI1) || defined(OCTOSPI2) */
 
 /**
-  * @brief  Get CLKP Kernel clock source
+  * @brief  get CLKP Kernel clock source
   * @rmtoll D1CCIPR /  CDCCIPR       CKPERSEL        LL_RCC_GetCLKPClockSource
   * @param  Periph This parameter can be one of the following values:
   *         @arg @ref LL_RCC_CLKP_CLKSOURCE
@@ -3851,7 +3851,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetCLKPClockSource(uint32_t Periph)
 }
 
 /**
-  * @brief  Get SPIx Kernel clock source
+  * @brief  get SPIx Kernel clock source
   * @rmtoll D2CCIP1R / CDCCIP1R     SPI123SEL       LL_RCC_GetSPIClockSource\n
   *         D2CCIP1R / CDCCIP1R     SPI45SEL        LL_RCC_GetSPIClockSource\n
   *         D3CCIPR  / SRDCCIPR     SPI6SEL         LL_RCC_GetSPIClockSource
@@ -3887,7 +3887,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetSPIClockSource(uint32_t Periph)
 }
 
 /**
-  * @brief  Get SPDIF Kernel clock source
+  * @brief  get SPDIF Kernel clock source
   * @rmtoll D2CCIP1R / CDCCIP1R      SPDIFSEL        LL_RCC_GetSPDIFClockSource
   * @param  Periph This parameter can be one of the following values:
   *         @arg @ref LL_RCC_SPDIF_CLKSOURCE
@@ -3908,7 +3908,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetSPDIFClockSource(uint32_t Periph)
 }
 
 /**
-  * @brief  Get FDCAN Kernel clock source
+  * @brief  get FDCAN Kernel clock source
   * @rmtoll D2CCIP1R / CDCCIP1R       FDCANSEL        LL_RCC_GetFDCANClockSource
   * @param  Periph This parameter can be one of the following values:
   *         @arg @ref LL_RCC_FDCAN_CLKSOURCE
@@ -3928,7 +3928,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetFDCANClockSource(uint32_t Periph)
 }
 
 /**
-  * @brief  Get SWP Kernel clock source
+  * @brief  get SWP Kernel clock source
   * @rmtoll D2CCIP1R / CDCCIP1R       SWPSEL        LL_RCC_GetSWPClockSource
   * @param  Periph This parameter can be one of the following values:
   *         @arg @ref LL_RCC_SWP_CLKSOURCE
@@ -3947,7 +3947,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetSWPClockSource(uint32_t Periph)
 }
 
 /**
-  * @brief  Get ADC Kernel clock source
+  * @brief  get ADC Kernel clock source
   * @rmtoll D3CCIPR / SRDCCIPR       ADCSEL        LL_RCC_GetADCClockSource
   * @param  Periph This parameter can be one of the following values:
   *         @arg @ref LL_RCC_ADC_CLKSOURCE
@@ -3993,7 +3993,7 @@ __STATIC_INLINE void LL_RCC_SetRTCClockSource(uint32_t Source)
 }
 
 /**
-  * @brief  Get RTC Clock Source
+  * @brief  get RTC Clock Source
   * @rmtoll BDCR         RTCSEL        LL_RCC_GetRTCClockSource
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_RCC_RTC_CLKSOURCE_NONE
@@ -4135,7 +4135,7 @@ __STATIC_INLINE void LL_RCC_SetRTC_HSEPrescaler(uint32_t Prescaler)
 }
 
 /**
-  * @brief  Get HSE Prescalers for RTC Clock
+  * @brief  get HSE Prescalers for RTC Clock
   * @rmtoll CFGR         RTCPRE        LL_RCC_GetRTC_HSEPrescaler
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_RCC_RTC_NOCLOCK
@@ -4229,7 +4229,7 @@ __STATIC_INLINE void LL_RCC_SetTIMPrescaler(uint32_t Prescaler)
 }
 
 /**
-  * @brief  Get Timers Clock Prescalers
+  * @brief  get Timers Clock Prescalers
   * @rmtoll CFGR         TIMPRE        LL_RCC_GetTIMPrescaler
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_RCC_TIM_PRESCALER_TWICE
@@ -4250,7 +4250,7 @@ __STATIC_INLINE uint32_t LL_RCC_GetTIMPrescaler(void)
   */
 
 /**
-  * @brief  Set High Resolution Timers Clock Source
+  * @brief  Set high Resolution Timers Clock Source
   * @rmtoll CFGR         HRTIMSEL        LL_RCC_SetHRTIMClockSource
   * @param  Prescaler This parameter can be one of the following values:
   *         @arg @ref LL_RCC_HRTIM_CLKSOURCE_TIM
@@ -4265,7 +4265,7 @@ __STATIC_INLINE void LL_RCC_SetHRTIMClockSource(uint32_t Prescaler)
 
 #if defined(HRTIM1)
 /**
-  * @brief  Get High Resolution Timers Clock Source
+  * @brief  get high Resolution Timers Clock Source
   * @rmtoll CFGR         HRTIMSEL        LL_RCC_GetHRTIMClockSource
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_RCC_HRTIM_CLKSOURCE_TIM
@@ -4301,7 +4301,7 @@ __STATIC_INLINE void LL_RCC_PLL_SetSource(uint32_t PLLSource)
 }
 
 /**
-  * @brief  Get the oscillator used as PLL clock source.
+  * @brief  get the oscillator used as PLL clock source.
   * @rmtoll PLLCKSELR      PLLSRC        LL_RCC_PLL_GetSource
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_RCC_PLLSOURCE_HSI
@@ -4502,7 +4502,7 @@ __STATIC_INLINE void LL_RCC_PLL1_SetVCOInputRange(uint32_t InputRange)
 }
 
 /**
-  * @brief  Get PLL1 N Coefficient
+  * @brief  get PLL1 N Coefficient
   * @rmtoll PLL1DIVR        N1          LL_RCC_PLL1_GetN
   * @retval A value between 4 and 512
   */
@@ -4512,7 +4512,7 @@ __STATIC_INLINE uint32_t LL_RCC_PLL1_GetN(void)
 }
 
 /**
-  * @brief  Get PLL1 M Coefficient
+  * @brief  get PLL1 M Coefficient
   * @rmtoll PLLCKSELR       DIVM1          LL_RCC_PLL1_GetM
   * @retval A value between 0 and 63
   */
@@ -4522,7 +4522,7 @@ __STATIC_INLINE uint32_t LL_RCC_PLL1_GetM(void)
 }
 
 /**
-  * @brief  Get PLL1 P Coefficient
+  * @brief  get PLL1 P Coefficient
   * @rmtoll PLL1DIVR        P1          LL_RCC_PLL1_GetP
   * @retval A value between 2 and 128
   */
@@ -4532,7 +4532,7 @@ __STATIC_INLINE uint32_t LL_RCC_PLL1_GetP(void)
 }
 
 /**
-  * @brief  Get PLL1 Q Coefficient
+  * @brief  get PLL1 Q Coefficient
   * @rmtoll PLL1DIVR        Q1          LL_RCC_PLL1_GetQ
   * @retval A value between 1 and 128
   */
@@ -4542,7 +4542,7 @@ __STATIC_INLINE uint32_t LL_RCC_PLL1_GetQ(void)
 }
 
 /**
-  * @brief  Get PLL1 R Coefficient
+  * @brief  get PLL1 R Coefficient
   * @rmtoll PLL1DIVR        R1          LL_RCC_PLL1_GetR
   * @retval A value between 1 and 128
   */
@@ -4552,7 +4552,7 @@ __STATIC_INLINE uint32_t LL_RCC_PLL1_GetR(void)
 }
 
 /**
-  * @brief  Get PLL1 FRACN Coefficient
+  * @brief  get PLL1 FRACN Coefficient
   * @rmtoll PLL1FRACR      FRACN1          LL_RCC_PLL1_GetFRACN
   * @retval A value between 0 and 8191 (0x1FFF)
   */
@@ -4816,7 +4816,7 @@ __STATIC_INLINE void LL_RCC_PLL2_SetVCOInputRange(uint32_t InputRange)
 }
 
 /**
-  * @brief  Get PLL2 N Coefficient
+  * @brief  get PLL2 N Coefficient
   * @rmtoll PLL2DIVR        N2          LL_RCC_PLL2_GetN
   * @retval A value between 4 and 512
   */
@@ -4826,7 +4826,7 @@ __STATIC_INLINE uint32_t LL_RCC_PLL2_GetN(void)
 }
 
 /**
-  * @brief  Get PLL2 M Coefficient
+  * @brief  get PLL2 M Coefficient
   * @rmtoll PLLCKSELR       DIVM2          LL_RCC_PLL2_GetM
   * @retval A value between 0 and 63
   */
@@ -4836,7 +4836,7 @@ __STATIC_INLINE uint32_t LL_RCC_PLL2_GetM(void)
 }
 
 /**
-  * @brief  Get PLL2 P Coefficient
+  * @brief  get PLL2 P Coefficient
   * @rmtoll PLL2DIVR        P2          LL_RCC_PLL2_GetP
   * @retval A value between 1 and 128
   */
@@ -4846,7 +4846,7 @@ __STATIC_INLINE uint32_t LL_RCC_PLL2_GetP(void)
 }
 
 /**
-  * @brief  Get PLL2 Q Coefficient
+  * @brief  get PLL2 Q Coefficient
   * @rmtoll PLL2DIVR        Q2          LL_RCC_PLL2_GetQ
   * @retval A value between 1 and 128
   */
@@ -4856,7 +4856,7 @@ __STATIC_INLINE uint32_t LL_RCC_PLL2_GetQ(void)
 }
 
 /**
-  * @brief  Get PLL2 R Coefficient
+  * @brief  get PLL2 R Coefficient
   * @rmtoll PLL2DIVR        R2          LL_RCC_PLL2_GetR
   * @retval A value between 1 and 128
   */
@@ -4866,7 +4866,7 @@ __STATIC_INLINE uint32_t LL_RCC_PLL2_GetR(void)
 }
 
 /**
-  * @brief  Get PLL2 FRACN Coefficient
+  * @brief  get PLL2 FRACN Coefficient
   * @rmtoll PLL2FRACR      FRACN2          LL_RCC_PLL2_GetFRACN
   * @retval A value between 0 and 8191 (0x1FFF)
   */
@@ -5128,7 +5128,7 @@ __STATIC_INLINE void LL_RCC_PLL3_SetVCOInputRange(uint32_t InputRange)
 }
 
 /**
-  * @brief  Get PLL3 N Coefficient
+  * @brief  get PLL3 N Coefficient
   * @rmtoll PLL3DIVR        N3          LL_RCC_PLL3_GetN
   * @retval A value between 4 and 512
   */
@@ -5138,7 +5138,7 @@ __STATIC_INLINE uint32_t LL_RCC_PLL3_GetN(void)
 }
 
 /**
-  * @brief  Get PLL3 M Coefficient
+  * @brief  get PLL3 M Coefficient
   * @rmtoll PLLCKSELR       DIVM3          LL_RCC_PLL3_GetM
   * @retval A value between 0 and 63
   */
@@ -5148,7 +5148,7 @@ __STATIC_INLINE uint32_t LL_RCC_PLL3_GetM(void)
 }
 
 /**
-  * @brief  Get PLL3 P Coefficient
+  * @brief  get PLL3 P Coefficient
   * @rmtoll PLL3DIVR        P3          LL_RCC_PLL3_GetP
   * @retval A value between 1 and 128
   */
@@ -5158,7 +5158,7 @@ __STATIC_INLINE uint32_t LL_RCC_PLL3_GetP(void)
 }
 
 /**
-  * @brief  Get PLL3 Q Coefficient
+  * @brief  get PLL3 Q Coefficient
   * @rmtoll PLL3DIVR        Q3          LL_RCC_PLL3_GetQ
   * @retval A value between 1 and 128
   */
@@ -5168,7 +5168,7 @@ __STATIC_INLINE uint32_t LL_RCC_PLL3_GetQ(void)
 }
 
 /**
-  * @brief  Get PLL3 R Coefficient
+  * @brief  get PLL3 R Coefficient
   * @rmtoll PLL3DIVR        R3          LL_RCC_PLL3_GetR
   * @retval A value between 1 and 128
   */
@@ -5178,7 +5178,7 @@ __STATIC_INLINE uint32_t LL_RCC_PLL3_GetR(void)
 }
 
 /**
-  * @brief  Get PLL3 FRACN Coefficient
+  * @brief  get PLL3 FRACN Coefficient
   * @rmtoll PLL3FRACR      FRACN3          LL_RCC_PLL3_GetFRACN
   * @retval A value between 0 and 8191 (0x1FFF)
   */
@@ -5263,7 +5263,7 @@ __STATIC_INLINE void LL_RCC_PLL3_SetFRACN(uint32_t FRACN)
   */
 
 /**
-  * @brief  Clear LSI ready interrupt flag
+  * @brief  clear LSI ready interrupt flag
   * @rmtoll CICR         LSIRDYC       LL_RCC_ClearFlag_LSIRDY
   * @retval None
   */
@@ -5273,7 +5273,7 @@ __STATIC_INLINE void LL_RCC_ClearFlag_LSIRDY(void)
 }
 
 /**
-  * @brief  Clear LSE ready interrupt flag
+  * @brief  clear LSE ready interrupt flag
   * @rmtoll CICR         LSERDYC       LL_RCC_ClearFlag_LSERDY
   * @retval None
   */
@@ -5283,7 +5283,7 @@ __STATIC_INLINE void LL_RCC_ClearFlag_LSERDY(void)
 }
 
 /**
-  * @brief  Clear HSI ready interrupt flag
+  * @brief  clear HSI ready interrupt flag
   * @rmtoll CICR         HSIRDYC       LL_RCC_ClearFlag_HSIRDY
   * @retval None
   */
@@ -5293,7 +5293,7 @@ __STATIC_INLINE void LL_RCC_ClearFlag_HSIRDY(void)
 }
 
 /**
-  * @brief  Clear HSE ready interrupt flag
+  * @brief  clear HSE ready interrupt flag
   * @rmtoll CICR         HSERDYC       LL_RCC_ClearFlag_HSERDY
   * @retval None
   */
@@ -5303,7 +5303,7 @@ __STATIC_INLINE void LL_RCC_ClearFlag_HSERDY(void)
 }
 
 /**
-  * @brief  Clear CSI ready interrupt flag
+  * @brief  clear CSI ready interrupt flag
   * @rmtoll CICR         CSIRDYC       LL_RCC_ClearFlag_CSIRDY
   * @retval None
   */
@@ -5313,7 +5313,7 @@ __STATIC_INLINE void LL_RCC_ClearFlag_CSIRDY(void)
 }
 
 /**
-  * @brief  Clear HSI48 ready interrupt flag
+  * @brief  clear HSI48 ready interrupt flag
   * @rmtoll CICR         HSI48RDYC       LL_RCC_ClearFlag_HSI48RDY
   * @retval None
   */
@@ -5323,7 +5323,7 @@ __STATIC_INLINE void LL_RCC_ClearFlag_HSI48RDY(void)
 }
 
 /**
-  * @brief  Clear PLL1 ready interrupt flag
+  * @brief  clear PLL1 ready interrupt flag
   * @rmtoll CICR         PLL1RDYC       LL_RCC_ClearFlag_PLL1RDY
   * @retval None
   */
@@ -5333,7 +5333,7 @@ __STATIC_INLINE void LL_RCC_ClearFlag_PLL1RDY(void)
 }
 
 /**
-  * @brief  Clear PLL2 ready interrupt flag
+  * @brief  clear PLL2 ready interrupt flag
   * @rmtoll CICR         PLL2RDYC       LL_RCC_ClearFlag_PLL2RDY
   * @retval None
   */
@@ -5343,7 +5343,7 @@ __STATIC_INLINE void LL_RCC_ClearFlag_PLL2RDY(void)
 }
 
 /**
-  * @brief  Clear PLL3 ready interrupt flag
+  * @brief  clear PLL3 ready interrupt flag
   * @rmtoll CICR         PLL3RDYC       LL_RCC_ClearFlag_PLL3RDY
   * @retval None
   */
@@ -5353,7 +5353,7 @@ __STATIC_INLINE void LL_RCC_ClearFlag_PLL3RDY(void)
 }
 
 /**
-  * @brief  Clear LSE Clock security system interrupt flag
+  * @brief  clear LSE Clock security system interrupt flag
   * @rmtoll CICR         LSECSSC         LL_RCC_ClearFlag_LSECSS
   * @retval None
   */
@@ -5363,7 +5363,7 @@ __STATIC_INLINE void LL_RCC_ClearFlag_LSECSS(void)
 }
 
 /**
-  * @brief  Clear HSE Clock security system interrupt flag
+  * @brief  clear HSE Clock security system interrupt flag
   * @rmtoll CICR         HSECSSC         LL_RCC_ClearFlag_HSECSS
   * @retval None
   */
@@ -5483,7 +5483,7 @@ __STATIC_INLINE uint32_t LL_RCC_IsActiveFlag_HSECSS(void)
 }
 
 /**
-  * @brief  Check if RCC flag Low Power D1 reset is set or not.
+  * @brief  Check if RCC flag low Power D1 reset is set or not.
   * @rmtoll RSR          LPWRRSTF       LL_RCC_IsActiveFlag_LPWRRST (*)\n
   *         RSR          LPWR1RSTF      LL_RCC_IsActiveFlag_LPWRRST (**)
   *
@@ -6336,7 +6336,7 @@ void LL_RCC_DeInit(void);
   * @}
   */
 
-/** @defgroup RCC_LL_EF_Get_Freq Get system and peripherals clocks frequency functions
+/** @defgroup RCC_LL_EF_Get_Freq get system and peripherals clocks frequency functions
   * @{
   */
 uint32_t    LL_RCC_CalcPLLClockFreq(uint32_t PLLInputFreq, uint32_t M, uint32_t N, uint32_t FRACN, uint32_t PQR);

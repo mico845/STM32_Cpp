@@ -48,7 +48,7 @@
                    The input and output formats for different DCT sizes and number of bits to upscale are
                    mentioned in the table below:
 
-| DCT Size  | Input format  | Output format | Number of bits to upscale |
+| DCT size  | Input format  | Output format | Number of bits to upscale |
 | --------: | ------------: | ------------: | ------------------------: |
 | 2048      | 2.30          | 12.20         | 11                        |
 | 512       | 2.30          | 10.22         | 9                         |

@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-drivers/STM32/GPIO/GPIO.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_g_p_i_o_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">GPIO.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_g_p_i_o_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __PLATFORM_STM32_GPIO_H__</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __PLATFORM_STM32_GPIO_H__</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_l_l-support_8h.html">platform-drivers/STM32/LL-support.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_s_t_m32.html">STM32</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="_g_p_i_o_8hpp.html#a4c8e68c7a91384f7655d00e7b36a8799">    9</a></span><span class="preprocessor">    #define PLATFORM_GPIO_PIN_NUM (16U)</span></div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a8eab622f54dcd3352a14232dd1703ddb">   10</a></span>    <span class="keyword">static</span> <span class="keyword">const</span> uint32_t <a class="code hl_variable" href="namespace_s_t_m32.html#a8eab622f54dcd3352a14232dd1703ddb">MapGPIOPin</a>[<a class="code hl_define" href="_g_p_i_o_8hpp.html#a4c8e68c7a91384f7655d00e7b36a8799">PLATFORM_GPIO_PIN_NUM</a>] = { LL_GPIO_PIN_0, LL_GPIO_PIN_1, LL_GPIO_PIN_2, LL_GPIO_PIN_3, LL_GPIO_PIN_4,</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>                                                             LL_GPIO_PIN_5, LL_GPIO_PIN_6, LL_GPIO_PIN_7, LL_GPIO_PIN_8, LL_GPIO_PIN_9,</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>                                                            LL_GPIO_PIN_10, LL_GPIO_PIN_11, LL_GPIO_PIN_12, LL_GPIO_PIN_13, LL_GPIO_PIN_14,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                                                            LL_GPIO_PIN_15 };</div>
+</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696">   19</a></span>    <span class="keyword">typedef</span> <span class="keyword">enum</span>   </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696ab2fde8960f25d864d1509a3e58f98f57">   21</a></span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696ab2fde8960f25d864d1509a3e58f98f57">in</a>          =       LL_GPIO_MODE_INPUT ,        </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696a2ebee616e8d2624ce8b2e4e4add9809f">   22</a></span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696a2ebee616e8d2624ce8b2e4e4add9809f">out</a>         =       LL_GPIO_MODE_OUTPUT,        </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696aefec47ded45e09acbb32d1daf5ef7c3d">   23</a></span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696aefec47ded45e09acbb32d1daf5ef7c3d">analog</a>      =       LL_GPIO_MODE_ANALOG,        </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696a292253515f2df515d13e0a372495952c">   24</a></span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696a292253515f2df515d13e0a372495952c">alternate</a>   =       LL_GPIO_MODE_ALTERNATE,     </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }<a class="code hl_enumeration" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696">GPIO_Mode</a>;</div>
+</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37e">   32</a></span>    <span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37ea1937bb46476c81b8af1dd7ab8236da01">   34</a></span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37ea1937bb46476c81b8af1dd7ab8236da01">slow</a>        =       LL_GPIO_SPEED_FREQ_LOW,      </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37ea020eeaf185751313648862673088c70b">   35</a></span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37ea020eeaf185751313648862673088c70b">medium</a>      =       LL_GPIO_SPEED_FREQ_MEDIUM,   </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37ea08edeaf6874b169e34cdba5278389258">   36</a></span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37ea08edeaf6874b169e34cdba5278389258">fast</a>        =       LL_GPIO_SPEED_FREQ_HIGH,     </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37eadbab0a0fabc9ad9d61e79a591b5c17c1">very_fast</a>   =       LL_GPIO_SPEED_FREQ_VERY_HIGH </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37eadbab0a0fabc9ad9d61e79a591b5c17c1">   38</a></span>    }<a class="code hl_enumeration" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37e">GPIO_Speed</a>;</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98">   45</a></span>    <span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98a14d130b53b4d0abe5046e818edc63f52">   47</a></span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98a14d130b53b4d0abe5046e818edc63f52">pullno</a>      =       LL_GPIO_PULL_NO,     </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98a0fc2d6751c9bc84070a38de29acd8a2c">   48</a></span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98a0fc2d6751c9bc84070a38de29acd8a2c">pullup</a>      =       LL_GPIO_PULL_UP,     </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98a51e5b2f01db34f99312bf1ff8e6eb9b9">pulludown</a>   =       LL_GPIO_PULL_DOWN   </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98a51e5b2f01db34f99312bf1ff8e6eb9b9">   50</a></span>    }<a class="code hl_enumeration" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98">GPIO_Pull</a>;</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="};">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0f">   57</a></span>    <span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0fa736b56067eef30dba1ca7c7333b3e946">   59</a></span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0fa736b56067eef30dba1ca7c7333b3e946">pp</a>          =       LL_GPIO_OUTPUT_PUSHPULL,   </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0fa88c2bc6c4675fab301a0dee1daff01db">od</a>          =       LL_GPIO_OUTPUT_OPENDRAIN    </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0fa88c2bc6c4675fab301a0dee1daff01db">   61</a></span>    }<a class="code hl_enumeration" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0f">GPIO_OutPutType</a>;</div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="};">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_g_p_i_o.html">   68</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_s_t_m32_1_1_g_p_i_o.html">GPIO</a></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        GPIO_TypeDef* port;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        uint32_t pin;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_g_p_i_o.html#a48abdda3cd5998812d62563cadae4ede">   74</a></span>        <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#a48abdda3cd5998812d62563cadae4ede">GPIO</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_g_p_i_o.html#a9dcddecd8635f3449a579ebeb08f2c3d">   75</a></span>        <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#a9dcddecd8635f3449a579ebeb08f2c3d">~GPIO</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#a48abdda3cd5998812d62563cadae4ede">GPIO</a>(GPIO_TypeDef* Port, uint8_t Pin, <a class="code hl_enumeration" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696">STM32::GPIO_Mode</a> Mode = <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696a2ebee616e8d2624ce8b2e4e4add9809f">STM32::out</a>, <a class="code hl_enumeration" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0f">STM32::GPIO_OutPutType</a> PutType = <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0fa736b56067eef30dba1ca7c7333b3e946">STM32::pp</a>,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                                <a class="code hl_enumeration" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98">STM32::GPIO_Pull</a> Pull = <a class="code hl_enumvalue" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98a14d130b53b4d0abe5046e818edc63f52">STM32::pullno</a>, <a class="code hl_enumeration" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37e">STM32::GPIO_Speed</a> Speed = <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37ea08edeaf6874b169e34cdba5278389258">STM32::fast</a>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#a945e5b5a9e0e032dae1dda653484e41b">low</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#ad87fe8e2a90a74f7b05084738c5b2600">high</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#acb325f1f1677b9aa02d608a87e6f1d01">toggle</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#a12ebfe491b3d608f43ea7ed4c8dea46a">read</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#aa3519280390ddcb2d3f8ef633a85053d">setValue</a>(<span class="keywordtype">bool</span>);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keyword">inline</span> uint32_t <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#ad40273ed844471c343c0792365d1cbea">readPort</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#af5be0131f534c2675953ff8403e0d953">setConfig</a>(<a class="code hl_enumeration" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696">STM32::GPIO_Mode</a> Mode = <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696a2ebee616e8d2624ce8b2e4e4add9809f">STM32::out</a>, <a class="code hl_enumeration" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0f">STM32::GPIO_OutPutType</a> PutType = <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0fa736b56067eef30dba1ca7c7333b3e946">STM32::pp</a>, <a class="code hl_enumeration" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98">STM32::GPIO_Pull</a> Pull = <a class="code hl_enumvalue" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98a14d130b53b4d0abe5046e818edc63f52">STM32::pullno</a>, <a class="code hl_enumeration" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37e">GPIO_Speed</a> Speed = <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37ea08edeaf6874b169e34cdba5278389258">fast</a>);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    };</div>
+</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="foldopen" id="foldopen00133" data-start="{" data-end="}">
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_g_p_i_o.html#a945e5b5a9e0e032dae1dda653484e41b">  133</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#a945e5b5a9e0e032dae1dda653484e41b">GPIO::low</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        WRITE_REG(port-&gt;BSRR, pin &lt;&lt; 16U);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
+</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="foldopen" id="foldopen00137" data-start="{" data-end="}">
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_g_p_i_o.html#ad87fe8e2a90a74f7b05084738c5b2600">  137</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#ad87fe8e2a90a74f7b05084738c5b2600">GPIO::high</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        WRITE_REG(port-&gt;BSRR, pin);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    }</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="foldopen" id="foldopen00141" data-start="{" data-end="}">
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_g_p_i_o.html#acb325f1f1677b9aa02d608a87e6f1d01">  141</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#acb325f1f1677b9aa02d608a87e6f1d01">GPIO::toggle</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        uint32_t odr = READ_REG(port-&gt;ODR);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        WRITE_REG(port-&gt;BSRR, ((odr &amp; pin) &lt;&lt; 16u) | (~odr &amp; pin));</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    }</div>
+</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="foldopen" id="foldopen00146" data-start="{" data-end="}">
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_g_p_i_o.html#a12ebfe491b3d608f43ea7ed4c8dea46a">  146</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#a12ebfe491b3d608f43ea7ed4c8dea46a">GPIO::read</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordtype">bool</span> bitstatus;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keywordflow">if</span>((port-&gt;IDR &amp; pin) != (uint32_t) <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        bitstatus = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        bitstatus = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordflow">return</span> bitstatus;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
+</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_g_p_i_o.html#aa3519280390ddcb2d3f8ef633a85053d">  155</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#aa3519280390ddcb2d3f8ef633a85053d">GPIO::setValue</a>(<span class="keywordtype">bool</span> value) {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordflow">if</span>(value)</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#ad87fe8e2a90a74f7b05084738c5b2600">high</a>();</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#a945e5b5a9e0e032dae1dda653484e41b">low</a>();</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
+</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_g_p_i_o.html#ad40273ed844471c343c0792365d1cbea">  162</a></span>    <span class="keyword">inline</span> uint32_t <a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#ad40273ed844471c343c0792365d1cbea">GPIO::readPort</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">return</span> (uint32_t)(READ_REG(port-&gt;IDR));</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
+</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>}<span class="comment">//namespace STM32</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="preprocessor">#endif </span><span class="comment">//__PLATFORM_STM32_GPIO_H__</span></div>
+<div class="ttc" id="a_g_p_i_o_8hpp_html_a4c8e68c7a91384f7655d00e7b36a8799"><div class="ttname"><a href="_g_p_i_o_8hpp.html#a4c8e68c7a91384f7655d00e7b36a8799">PLATFORM_GPIO_PIN_NUM</a></div><div class="ttdeci">#define PLATFORM_GPIO_PIN_NUM</div><div class="ttdef"><b>Definition</b> GPIO.hpp:9</div></div>
+<div class="ttc" id="a_l_l-support_8h_html"><div class="ttname"><a href="_l_l-support_8h.html">LL-support.h</a></div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_g_p_i_o_html"><div class="ttname"><a href="class_s_t_m32_1_1_g_p_i_o.html">STM32::GPIO</a></div><div class="ttdoc">GPIO类</div><div class="ttdef"><b>Definition</b> GPIO.hpp:69</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_g_p_i_o_html_a12ebfe491b3d608f43ea7ed4c8dea46a"><div class="ttname"><a href="class_s_t_m32_1_1_g_p_i_o.html#a12ebfe491b3d608f43ea7ed4c8dea46a">STM32::GPIO::read</a></div><div class="ttdeci">bool read(void)</div><div class="ttdoc">读取GPIO引脚的电平状态</div><div class="ttdef"><b>Definition</b> GPIO.hpp:146</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_g_p_i_o_html_a48abdda3cd5998812d62563cadae4ede"><div class="ttname"><a href="class_s_t_m32_1_1_g_p_i_o.html#a48abdda3cd5998812d62563cadae4ede">STM32::GPIO::GPIO</a></div><div class="ttdeci">GPIO()=default</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_g_p_i_o_html_a945e5b5a9e0e032dae1dda653484e41b"><div class="ttname"><a href="class_s_t_m32_1_1_g_p_i_o.html#a945e5b5a9e0e032dae1dda653484e41b">STM32::GPIO::low</a></div><div class="ttdeci">void low(void)</div><div class="ttdoc">将GPIO引脚置为低电平</div><div class="ttdef"><b>Definition</b> GPIO.hpp:133</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_g_p_i_o_html_a9dcddecd8635f3449a579ebeb08f2c3d"><div class="ttname"><a href="class_s_t_m32_1_1_g_p_i_o.html#a9dcddecd8635f3449a579ebeb08f2c3d">STM32::GPIO::~GPIO</a></div><div class="ttdeci">~GPIO()=default</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_g_p_i_o_html_aa3519280390ddcb2d3f8ef633a85053d"><div class="ttname"><a href="class_s_t_m32_1_1_g_p_i_o.html#aa3519280390ddcb2d3f8ef633a85053d">STM32::GPIO::setValue</a></div><div class="ttdeci">void setValue(bool)</div><div class="ttdoc">设置GPIO引脚的电平状态</div><div class="ttdef"><b>Definition</b> GPIO.hpp:155</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_g_p_i_o_html_acb325f1f1677b9aa02d608a87e6f1d01"><div class="ttname"><a href="class_s_t_m32_1_1_g_p_i_o.html#acb325f1f1677b9aa02d608a87e6f1d01">STM32::GPIO::toggle</a></div><div class="ttdeci">void toggle(void)</div><div class="ttdoc">翻转GPIO引脚的电平状态</div><div class="ttdef"><b>Definition</b> GPIO.hpp:141</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_g_p_i_o_html_ad40273ed844471c343c0792365d1cbea"><div class="ttname"><a href="class_s_t_m32_1_1_g_p_i_o.html#ad40273ed844471c343c0792365d1cbea">STM32::GPIO::readPort</a></div><div class="ttdeci">uint32_t readPort(void)</div><div class="ttdoc">读取GPIO端口的输入数据寄存器的值</div><div class="ttdef"><b>Definition</b> GPIO.hpp:162</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_g_p_i_o_html_ad87fe8e2a90a74f7b05084738c5b2600"><div class="ttname"><a href="class_s_t_m32_1_1_g_p_i_o.html#ad87fe8e2a90a74f7b05084738c5b2600">STM32::GPIO::high</a></div><div class="ttdeci">void high(void)</div><div class="ttdoc">将GPIO引脚置为高电平</div><div class="ttdef"><b>Definition</b> GPIO.hpp:137</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_g_p_i_o_html_af5be0131f534c2675953ff8403e0d953"><div class="ttname"><a href="class_s_t_m32_1_1_g_p_i_o.html#af5be0131f534c2675953ff8403e0d953">STM32::GPIO::setConfig</a></div><div class="ttdeci">void setConfig(STM32::GPIO_Mode Mode=STM32::out, STM32::GPIO_OutPutType PutType=STM32::pp, STM32::GPIO_Pull Pull=STM32::pullno, GPIO_Speed Speed=fast)</div><div class="ttdoc">设置GPIO配置</div><div class="ttdef"><b>Definition</b> GPIO.cpp:38</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html"><div class="ttname"><a href="namespace_s_t_m32.html">STM32</a></div><div class="ttdef"><b>Definition</b> DDS.hpp:5</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a51eae231b0c699eb696cf1baf5508696"><div class="ttname"><a href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696">STM32::GPIO_Mode</a></div><div class="ttdeci">GPIO_Mode</div><div class="ttdoc">GPIO模式</div><div class="ttdef"><b>Definition</b> GPIO.hpp:20</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a51eae231b0c699eb696cf1baf5508696a292253515f2df515d13e0a372495952c"><div class="ttname"><a href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696a292253515f2df515d13e0a372495952c">STM32::alternate</a></div><div class="ttdeci">@ alternate</div><div class="ttdoc">复用模式</div><div class="ttdef"><b>Definition</b> GPIO.hpp:24</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a51eae231b0c699eb696cf1baf5508696a2ebee616e8d2624ce8b2e4e4add9809f"><div class="ttname"><a href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696a2ebee616e8d2624ce8b2e4e4add9809f">STM32::out</a></div><div class="ttdeci">@ out</div><div class="ttdoc">输出模式</div><div class="ttdef"><b>Definition</b> GPIO.hpp:22</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a51eae231b0c699eb696cf1baf5508696ab2fde8960f25d864d1509a3e58f98f57"><div class="ttname"><a href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696ab2fde8960f25d864d1509a3e58f98f57">STM32::in</a></div><div class="ttdeci">@ in</div><div class="ttdoc">输入模式</div><div class="ttdef"><b>Definition</b> GPIO.hpp:21</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a51eae231b0c699eb696cf1baf5508696aefec47ded45e09acbb32d1daf5ef7c3d"><div class="ttname"><a href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696aefec47ded45e09acbb32d1daf5ef7c3d">STM32::analog</a></div><div class="ttdeci">@ analog</div><div class="ttdoc">模拟模式</div><div class="ttdef"><b>Definition</b> GPIO.hpp:23</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a5d0725f1a4f50c363a07f20517379a0f"><div class="ttname"><a href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0f">STM32::GPIO_OutPutType</a></div><div class="ttdeci">GPIO_OutPutType</div><div class="ttdoc">GPIO输出类型</div><div class="ttdef"><b>Definition</b> GPIO.hpp:58</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a5d0725f1a4f50c363a07f20517379a0fa736b56067eef30dba1ca7c7333b3e946"><div class="ttname"><a href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0fa736b56067eef30dba1ca7c7333b3e946">STM32::pp</a></div><div class="ttdeci">@ pp</div><div class="ttdoc">推挽输出</div><div class="ttdef"><b>Definition</b> GPIO.hpp:59</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a5d0725f1a4f50c363a07f20517379a0fa88c2bc6c4675fab301a0dee1daff01db"><div class="ttname"><a href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0fa88c2bc6c4675fab301a0dee1daff01db">STM32::od</a></div><div class="ttdeci">@ od</div><div class="ttdoc">开漏输出</div><div class="ttdef"><b>Definition</b> GPIO.hpp:60</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a8cb6d08f56ce63f58551b3067d1dc37e"><div class="ttname"><a href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37e">STM32::GPIO_Speed</a></div><div class="ttdeci">GPIO_Speed</div><div class="ttdoc">GPIO速度</div><div class="ttdef"><b>Definition</b> GPIO.hpp:33</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a8cb6d08f56ce63f58551b3067d1dc37ea020eeaf185751313648862673088c70b"><div class="ttname"><a href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37ea020eeaf185751313648862673088c70b">STM32::medium</a></div><div class="ttdeci">@ medium</div><div class="ttdoc">中速</div><div class="ttdef"><b>Definition</b> GPIO.hpp:35</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a8cb6d08f56ce63f58551b3067d1dc37ea08edeaf6874b169e34cdba5278389258"><div class="ttname"><a href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37ea08edeaf6874b169e34cdba5278389258">STM32::fast</a></div><div class="ttdeci">@ fast</div><div class="ttdoc">快速</div><div class="ttdef"><b>Definition</b> GPIO.hpp:36</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a8cb6d08f56ce63f58551b3067d1dc37ea1937bb46476c81b8af1dd7ab8236da01"><div class="ttname"><a href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37ea1937bb46476c81b8af1dd7ab8236da01">STM32::slow</a></div><div class="ttdeci">@ slow</div><div class="ttdoc">低速</div><div class="ttdef"><b>Definition</b> GPIO.hpp:34</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a8cb6d08f56ce63f58551b3067d1dc37eadbab0a0fabc9ad9d61e79a591b5c17c1"><div class="ttname"><a href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37eadbab0a0fabc9ad9d61e79a591b5c17c1">STM32::very_fast</a></div><div class="ttdeci">@ very_fast</div><div class="ttdoc">非常快速</div><div class="ttdef"><b>Definition</b> GPIO.hpp:37</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a8eab622f54dcd3352a14232dd1703ddb"><div class="ttname"><a href="namespace_s_t_m32.html#a8eab622f54dcd3352a14232dd1703ddb">STM32::MapGPIOPin</a></div><div class="ttdeci">static const uint32_t MapGPIOPin[PLATFORM_GPIO_PIN_NUM]</div><div class="ttdef"><b>Definition</b> GPIO.hpp:10</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_ae318e101c1d25137bbcd2a3395368e98"><div class="ttname"><a href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98">STM32::GPIO_Pull</a></div><div class="ttdeci">GPIO_Pull</div><div class="ttdoc">GPIO上拉/下拉</div><div class="ttdef"><b>Definition</b> GPIO.hpp:46</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_ae318e101c1d25137bbcd2a3395368e98a0fc2d6751c9bc84070a38de29acd8a2c"><div class="ttname"><a href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98a0fc2d6751c9bc84070a38de29acd8a2c">STM32::pullup</a></div><div class="ttdeci">@ pullup</div><div class="ttdoc">上拉</div><div class="ttdef"><b>Definition</b> GPIO.hpp:48</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_ae318e101c1d25137bbcd2a3395368e98a14d130b53b4d0abe5046e818edc63f52"><div class="ttname"><a href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98a14d130b53b4d0abe5046e818edc63f52">STM32::pullno</a></div><div class="ttdeci">@ pullno</div><div class="ttdoc">不上拉/下拉</div><div class="ttdef"><b>Definition</b> GPIO.hpp:47</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_ae318e101c1d25137bbcd2a3395368e98a51e5b2f01db34f99312bf1ff8e6eb9b9"><div class="ttname"><a href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98a51e5b2f01db34f99312bf1ff8e6eb9b9">STM32::pulludown</a></div><div class="ttdeci">@ pulludown</div><div class="ttdoc">下拉</div><div class="ttdef"><b>Definition</b> GPIO.hpp:49</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_84d8ddb176e16ca8bccaaa5eeae31ee8.html">platform-drivers</a></li><li class="navelem"><a class="el" href="dir_4c7ecf3a8e2e1382144ef720f571f877.html">STM32</a></li><li class="navelem"><a class="el" href="dir_fd23702672911c9ace2c459f5408a22e.html">GPIO</a></li><li class="navelem"><a class="el" href="_g_p_i_o_8hpp.html">GPIO.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

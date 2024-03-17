@@ -3,41 +3,58 @@
 头文件路径
 ```
 UserApp
-Platform/Platform-lib
-Platform/Platform-drivers/STM32
+Platform
 ```
 源文件路径
 ```
 "UserApp/*.*"
-"Platform/Platform-drivers/STM32/Platform-Operation/*.*"
-"Platform/Platform-lib/*.*"
+"Platform/platform-lib/*.*"
+"Platform/platform-drivers/*.*"
 ```
-源文件需过滤文件：
-```
-Core/Src/stm32h7xx_it.c
-```
-
-
+第三方库依赖
+- ARM-DSP库
+    直接导入`Platform/platform-drivers/ARM_DSP/CMakeLists.txt`。
 
 用户需要操作的文件夹为UserApp文件夹
 **UserApp**
 - [ `common_inc.h` ]    C和C++混编头文件
-- [ `Initalize.cpp` ]   初始化
-- [ `Irq.cpp` ]         设置中断
+- [ `Irq.cpp` ]         中断服务函数
 - [ `Machine.hpp` ]     声明全局对象
 - [ `Main.cpp` ]        主函数
 
-其中着重需要操作的是`Initalize.cpp`、`Machine.hpp`、`Irq.cpp`、`Main.cpp`。
-
-### 一般流程
+### 一般流程 （单文件）
 1. **提前根据需求在STM32CubeMX中进行硬件配置，并生成初始化代码（选择LL库）**
 2. 在`Main.cpp`中声明定义，包括对对象的赋值。（一定要在函数中赋值的形式构造对象，不然容易造成操作执行顺序和硬件初始化先后混乱的现象）
+
+例如：
+```cpp
+Timer timer(6, true);
+void Init(void)
+{
+    timer.registerCallback(KeyScan10ms).start(100);
+}
+```
+必须改为
 ```cpp
 Timer timer;
 void Init(void)
 {
-    timer = Timer(7, true);
-    timer.RegisterCallback(KeyScan10ms).Start(100);
+    timer = Timer(6, true);
+    timer.registerCallback(KeyScan10ms).start(100);
+}
+```
+
+完整代码即：
+```cpp
+#include "common_inc.h"
+
+using namespace STM32;
+
+Timer timer;
+void Init(void)
+{
+    timer = Timer(6, true);
+    timer.registerCallback(KeyScan10ms).start(100);
 }
 void Loop(void)
 {
@@ -46,79 +63,113 @@ void Loop(void)
 ```
 3. 为其在`Irq.cpp`中添加中断服务函数。
 ```cpp
-TIM_IRQ(7, timer.Irq())
+TIM_IRQ(6)
+{
+    timer.irq();
+}
 ```
 
-### 一般流程
+### 一般流程（多文件项目）
 若需要头文件中`extern` 声明全局对象，可以例照以下方式：
 1. **提前根据需求在STM32CubeMX中进行硬件配置，并生成初始化代码（选择LL库）**
 2. 在`Machine.hpp`声明全局对象
 ```cpp
-extern      Timer        timer;
+/**< 用于存放全局调用的对象 */
+    extern  Timer   timer;
+}
 ```
-3. 在`Initalize.cpp`中定义，并在`ClassInit`中赋值。（也可以在`Main.cpp`中的`Init`中进行，）
+3. 在`Main.cpp`中定义，并在`Init`函数中赋值。（也可以在别的文件中进行类似操作）
 ```cpp
 Timer           timer;
-void ClassInit(void)
+void Init(void)
 {
-    timer = Timer(7, true);
+    timer = Timer(6, true);
 }
 ```
 4. 如果有中断需求，在`Irq.cpp`中添加中断服务函数。
 ```cpp
-TIM_IRQ(7, timer.Irq())
-```
-5. 在`Main.cpp`中使用。
-```cpp
-void Init(void)
+TIM_IRQ(6)
 {
-    timer.RegisterCallback(KeyScan10ms).Start(100);
+    timer.irq();
 }
-void Loop(void)
+```
+5. 在对应文件中引用`Machine.hpp`后使用对象`timer`。
+```cpp
+#include "Machine.hpp"
+void Fun(void)
 {
-
+    timer.registerCallback(KeyScan10ms).start(100);
 }
 ```
    
 
 ## 二、接口操作
-
-...正在制作中
+见`Doc`里面的`API.html`。
 
 ## 三、使用案例
 ### （一）闪光灯
-`Machine.hpp`
+
+**Platform系统定时器修改默认配置**
+库里自带一个系统定时器，默认为TIM7（需自行在STM32CubeMX打开使能）
+如需更换其他定时器，可修改`Platform/platform-drivers/STM32/Timer/Timer.hpp`中的宏`SYSTIM_TIM_ID`进行切换定时器号`TIMx`。
 ```cpp
-extern      LED_RGB      led;
-extern      Timer        timer;
+#ifndef SYSTIM_TIMx
+    #define SYSTIM_TIM_ID               7                /**< Platform库系统定时器使用的定时器号 */
+    #define _SYSTIM_TIM_LINK(AA,BB)     AA##BB
+    #define __SYSTIM_TIM_LINK(AA,BB)    _SYSTIM_TIM_LINK(AA,BB)
+    #define SYSTIM_TIMx                 __SYSTIM_TIM_LINK(TIM, SYSTIM_TIM_ID)
+#endif // !SYSTIM_TIMx
 ```
+
+**LED_RGB的GPIO设置**
+可更改`Platform/platform-lib/HardWare/LED_RGB/LED_RGB.hpp`中的引脚定义
+```cpp
+/**
+ * @brief 定义LED_RGB_GPIO
+ */
+#ifndef LED_RGB_GPIO
+#define LED_RGB_GPIO
+// RED GPIO
+#define LED_RED_PORT        (GPIOC)     /**< RED灯的GPIO端口 */
+#define LED_RED_PIN         (0)         /**< RED灯的GPIO引脚号 */
+// GREEN GPIO
+#define LED_GREEN_PORT      (GPIOC)     /**< GREEN灯的GPIO端口 */
+#define LED_GREEN_PIN       (1)         /**< GREEN灯的GPIO引脚号 */
+// BLUE GPIO
+#define LED_BLUE_PORT       (GPIOC)     /**< BLUE灯的GPIO端口 */
+#define LED_BLUE_PIN        (2)         /**< BLUE灯的GPIO引脚号 */
+#endif
+```
+在`Machine.hpp`中添加全局对象
+```cpp
+/**< 用于存放全局调用的对象 */
+	extern LED_RGB led;
+```
+
+代码使用示例：
 `Irq.cpp`
+使能需要的中断
 ```cpp
 /* TIM */
-TIM_IRQ(7, timer.Irq())
-```
-`Initalize.cpp`
-```cpp
-LED_RGB         led  ;
-Timer           timer;
-void ClassInit(void){
-    led     =   LED_RGB(GPIO(C, 0, out),
-                        GPIO(C, 1, out),
-                        GPIO(C, 2, out)
-                        );
-    timer = Timer(7, true);
+TIM_IRQ(SYSTIM_TIM_ID)
+{
+    sysTimer.irq();
 }
 ```
 
 `Main.cpp`
 ```cpp
+#include "common_inc.h"
+
+using namespace STM32;
+
 // 循环中需要执行的任务
 static void Task_Led_Flash(void);
 
 void Init(void)
 {
-    led.PinkishRed();//初始粉色
-    timer.Start(100);
+    led.pinkishRed();//初始粉色
+    sysTimer.registerCallback(KeyScan10ms).start(100);
 }
 
 void Loop(void)
@@ -129,60 +180,44 @@ void Loop(void)
 static void Task_Led_Flash(void)
 {
     static uint8_t count = 0;
-    if (timer.Is_Timeout())
+    if (sysTimer.isTimeOut())
         if (count++ == 50) // 10ms * N
         {
-            led.Toggle();
+            led.toggle();
             count = 0;
         }
 }
-
 ```
-
 
 
 ### （二）按键检测
 
-`Machine.hpp`
-```cpp
-extern      LED_RGB      led;
-extern      Timer        timer;
-```
 `Irq.cpp`
 ```cpp
 /* TIM */
-TIM_IRQ(7, timer.Irq())
-```
-`Initalize.cpp`
-```cpp
-LED_RGB         led  ;
-Timer           timer;
-void ClassInit(void){
-    led     =   LED_RGB(GPIO(C, 0, out),
-                        GPIO(C, 1, out),
-                        GPIO(C, 2, out)
-                        );
-    timer = Timer(7, true);
-}
-void HardInit(void)
+TIM_IRQ(SYSTIM_TIM_ID)
 {
-    Key_Init();
+    sysTimer.irq();
 }
+
 ```
-进入`Platform/Platform-lib/OffChip/Key/Key.hpp`
+**按键引脚配置**
+进入`Platform/platform-lib/HardWare/Key/Key.hpp`
 可以更改相关宏定义：
 ```cpp
-//按键数量
-#define KEY_HARD_NUM                (1)
-//定义KEY1_GPIO
+#define KEY_HARD_NUM                (1)     /**< 按钮的数量 */
+
+/**
+ * @brief 定义KEY1_GPIO
+ */
 #ifndef KEY1_GPIO_GPIO
-    #define KEY1_GPIO_GPIO     (Platform::HardWare::Key::KEY1)  //ID
-    #define KEY1_GPIO_PORT     (STM32::STM32_GPIO::C)
-    #define KEY1_GPIO_PIN      (13)
-    #define KEY1_GPIO_PULL     (STM32::STM32_GPIO::pullup)
+    #define KEY1_GPIO_GPIO     (KEY1)   /**< KEY1的编号 */
+    #define KEY1_GPIO_PORT     (GPIOC)  /**< KEY1的GPIO端口 */
+    #define KEY1_GPIO_PIN      (13)     /**< KEY1的GPIO引脚号 */
+    #define KEY1_GPIO_PULL     (STM32::pullup)  /**< KEY1的上/下拉 */
 #endif
 ```
-并在`Platform/Platform-lib/OffChip/Key/Key.cpp`中的`Key_Init`添加更多的按钮
+并在`Platform/platform-lib/HardWare/Key/Key.cpp`中的`Key_Init`添加更多的按钮
 ```cpp
 void Key_Init(void)
 {
@@ -190,17 +225,19 @@ void Key_Init(void)
     /* 自行添加 */
 }
 ```
-
-
+代码使用示例：
 `Main.cpp`
 ```cpp
+#include "common_inc.h"
+
+using namespace STM32;
 // 循环中需要执行的任务
 static void Task_Key(void);
 
 void Init(void)
 {
-    led.PinkishRed();//初始粉色
-    timer.RegisterCallback(KeyScan10ms).Start(100); //开启一个定时10ms溢满的定时器
+    led.pinkishRed();//初始粉色
+    sysTimer.registerCallback(KeyScan10ms).start(100); //开启一个定时10ms溢满的定时器
 }
 
 void Loop(void)
@@ -214,10 +251,10 @@ static void Task_Key(void)
     key_value = Key_GetValue();
     switch (key_value) {
         case Key1_Down:{
-            led.Yellow();
+            led.yellow();
         }break;
         case Key1_Long:{
-            led.Cyan();
+            led.cyan();
         }break;
         default:
             break;
@@ -226,36 +263,58 @@ static void Task_Key(void)
 ```
 
 ### （三）串口收发
-`Machine.hpp`
+**串口数据流修改默认配置**
+修改`Platform/platform-drivers/STM32/USART/USART.hpp`中的宏`COUT_USARTx`，即可切换默认的串口输出流。
 ```cpp
-extern      USART        cout;
+#ifndef COUT_USARTx
+    #define COUT_USART_ID               1               /**< Platform库串口输出流（cout）所使用的串口号 */
+    #define _COUT_USART_LINK(AA,BB)     AA##BB
+    #define __COUT_USART_LINK(AA,BB)    _COUT_USART_LINK(AA,BB)
+    #define COUT_USARTx  __COUT_USART_LINK(USART, COUT_USART_ID)
+#endif // !COUT_USARTx
 ```
+
 `Irq.cpp`
 ```cpp
 /* USART */
-USART_IRQ(1, cout.Irq())
-DMA_IRQ(1, 0, cout.Irq_RX_DMA())
-DMA_IRQ(1, 1, cout.Irq_TX_DMA())
-```
-`Initalize.cpp`
-```cpp
-ALIGN_32B(USART           cout  __AT_SRAM1_);
-void ClassInit(void){
-    cout  = USART(1,
-                  1,1,
-                  1,0);
+USART_IRQ(COUT_USART_ID)
+{
+    cout.irq();
 }
+```
+代码使用示例：
+
+- 使用串口数据流`cout`进行数据发送
+
+```cpp
+    cout << "hello" << endl; // 发送"hello"并换行
+```
+- 使用DMA配置USART进行数据收发
+
+为了方便全局调用串口对象，我们在`Machine.hpp`添加串口对象。
+```cpp
+/**< 用于存放全局调用的对象 */
+extern STM32::USART com;
 ```
 
 `Main.cpp`
 ```cpp
+#include "common_inc.h"
+
+using namespace STM32;
+
+ALIGN_32B(USART com  __AT_SRAM1_); //实例化对象，存放于AT_SRAM1并32位对齐
+
 // 循环中需要执行的任务
 static void Task_UART_Finished(void);
 
 void Init(void)
 {
-    cout << "Hello World" << '\n';
-    cout.Receive_Start_DMA();
+    com = USART(USART1,
+          DMA1, DMA_Stream_1,
+          DMA1,DMA_Stream_0);
+    com << "Hello World!!!" << '\n';
+    com.startReceive_DMA();
 }
 
 void Loop(void)
@@ -266,41 +325,45 @@ void Loop(void)
 static void Task_UART_Finished(void)
 {
     static uint8_t buffer[256] = {0};
-    if (cout.Is_ReceivedFinished())
+    if (com.isReceivedFinished())
     {
-        cout.GetReceivedData((uint8_t *)buffer, cout.Get_ReceivedSize());
-        cout << (char *)buffer << '\n';
+        com.getReceivedData((uint8_t *)buffer, com.getReceivedSize());
+        com << (char *)buffer << '\n';
     }
 }
+
 ```
 ### （四）ADC采集
 `Machine.hpp`
 ```cpp
-extern      ADC          adc;
+/**< 用于存放全局调用的对象 */
+extern STM32::ADC          adc;
 ```
 `Irq.cpp`
 ```cpp
 /* ADC */
-DMA_IRQ(2, 0, adc.Irq_DMA())
-```
-`Initalize.cpp`
-```cpp
-using namespace STM32::STM32_TIM;
-
-ALIGN_32B(ADC             adc   __AT_SRAM4_);
-void ClassInit(void){
-    adc   = ADC(3, 2, 0, 1, channel1);
+DMA_IRQ(2, 0)
+{
+    adc.irq_DMA();
 }
+
 ```
 
 `Main.cpp`
 ```cpp
+#include "common_inc.h"
+
+using namespace STM32;
+
 // 循环中需要执行的任务
 static void Task_ADC_Finished(void);
 
+ALIGN_32B(ADC             adc   __AT_SRAM4_);
+
 void Init(void)
 {
-    adc.Start(1000);
+    adc   = ADC(ADC3, DMA2, DMA_Stream_0, TIM1, channel1);
+    adc.start(409600);
 }
 
 void Loop(void)
@@ -311,17 +374,16 @@ void Loop(void)
 static void Task_ADC_Finished(void)
 {
     static uint16_t buffer[1024];
-    if (adc.Scan_Data())
+    if (adc.scanData())
     {
-        adc.Stop();
-        cout << "adc is ok\n";
-        if (adc.Get_Data(buffer, adc.Get_DataSize()))
+        adc.stop();
+        if (adc.getData(buffer, adc.getDataSize()))
         {
             for (int i = 0; i < ADC_DMA_BUFFER_SIZE; ++i) {
-                cout << i << "  " << buffer[i] << '\n';
+                cout << i << "," << buffer[i] << '\n';
             }
         }
-        //adc.Start(1000);
+        //adc.start(409600);
     }
 }
 ```
@@ -329,34 +391,39 @@ static void Task_ADC_Finished(void)
 ### （五）DAC输出波形
 `Machine.hpp`
 ```cpp
-extern      DAC          dac;
+/**< 用于存放全局调用的对象 */
+extern STM32::DAC          dac;
 ```
 `Irq.cpp`
 ```cpp
 /* DAC */
-DMA_IRQ(2, 1, dac.Irq_DMA())
-```
-`Initalize.cpp`
-```cpp
-ALIGN_32B(DAC             dac   __AT_SRAM4_ );
-void ClassInit(void){
-    dac   = DAC(1, 1, 2, 1, 6);
+DMA_IRQ(2, 1)
+{
+    dac.irq_DMA();
 }
+
 ```
 
 `Main.cpp`
 ```cpp
-//需要执行的任务
+#include "common_inc.h"
+
+using namespace STM32;
+
+// 需要执行的任务
 static void DAC_WaveStart(void);
+
+ALIGN_32B(DAC             dac   __AT_SRAM4_ );
 
 void Init(void)
 {
+    dac   = DAC(DAC1, 1, DMA2, DMA_Stream_1, TIM6);
     DAC_WaveStart();
 }
 
 void Loop(void)
 {
-    
+
 }
 
 static void DAC_WaveStart(void)
@@ -364,39 +431,47 @@ static void DAC_WaveStart(void)
     #define DAC_WAVE_SIZE (256)
     static uint16_t SinWave_ROM[DAC_WAVE_SIZE];
     generateSineWaveTable(SinWave_ROM, DAC_WAVE_SIZE, 3);
-    if (dac.Set_DMABuffer(SinWave_ROM, DAC_WAVE_SIZE))
-    dac.Start(1000 * DAC_WAVE_SIZE);
+    if (dac.setDMABuffer(SinWave_ROM, DAC_WAVE_SIZE))
+        dac.start(1000 * DAC_WAVE_SIZE);
 }
+
+
 ```
 
 ### （六）DAC模拟DDS
 `Machine.hpp`
 ```cpp
-extern      DAC          dac;
-extern      DDS          dds;
+/**< 用于存放全局调用的对象 */
+extern STM32::DAC          dac;
+extern STM32::DDS          dds;
 ```
 `Irq.cpp`
 ```cpp
 /* DDS */
-DMA_IRQ(2, 1, dds.Irq_DMA())
-```
-`Initalize.cpp`
-```cpp
-ALIGN_32B(DAC             dac   __AT_SRAM4_ );
-DDS             dds;
-void ClassInit(void){
-    dac   = DAC(1, 1, 2, 1, 6);
-    dds   = DDS(&dac);
+DMA_IRQ(2, 1)
+{
+    dds.irq_DMA();
 }
 ```
 
 `Main.cpp`
 ```cpp
-//需要执行的任务
+#include "common_inc.h"
+
+using namespace STM32;
+
+// 需要执行的任务
 static void DDS_WaveStart(void);
+
+ALIGN_32B(ADC             adc   __AT_SRAM4_);
+ALIGN_32B(DAC             dac   __AT_SRAM4_ );
+
+DDS             dds;
 
 void Init(void)
 {
+    dac   = DAC(DAC1, 1, DMA2, DMA_Stream_1, TIM6);
+    dds   = DDS(&dac);
     DDS_WaveStart();
 }
 
@@ -410,83 +485,67 @@ static void DDS_WaveStart(void)
     #define DDS_ROM_WAVE_SIZE (4096 * 16)
     static uint16_t SinWave_ROM[DDS_ROM_WAVE_SIZE];
     generateSineWaveTable(SinWave_ROM, DDS_ROM_WAVE_SIZE, 3);
-    DDS_Config(dds, 4096000,SinWave_ROM, DDS_ROM_WAVE_SIZE, 40000, 0).Start();
+    DDS_Config(dds, 4096000,SinWave_ROM, DDS_ROM_WAVE_SIZE, 40000, 0).start();
 }
 ```
 
 ### （七）SPI驱动LCD
 
-`Machine.hpp`
-```cpp
-extern      LCD_SPI      lcd;
-```
-`Irq.cpp`
-```cpp
-/* TIM */
-TIM_IRQ(7, timer.Irq())
-```
-`Initalize.cpp`
-```cpp
-LED_RGB         led  ;
-Timer           timer;
-void ClassInit(void){
-    lcd   = LCD_SPI(true);
-}
-void HardInit(void)
-{
-    lcd.Clear();
-}
-```
-进入`Platform/Platform-lib/OffChip/LCD_SPI/LCD_SPI.hpp`
+**LCD引脚配置**
+进入`Platform/platform-lib/HardWare/LCD_SPI/LCD_SPI.hpp`
 可以更改相关宏定义：
 ```cpp
-// 定义LCD所使用的SPI
 #ifndef LCD_SPI_HANDEL
-    #define LCD_SPI_HANDEL  (SPI6)
+    #define LCD_SPI_HANDEL  (SPI6)   /**< LCD使用的SPI指针 */
 #endif
-//定义LCD_DC
+
 #ifndef LCD_DC_GPIO
     #define LCD_DC_GPIO
-    #define LCD_DC_PORT     (STM32::STM32_GPIO::B)
-    #define LCD_DC_PIN      (4)
+    #define LCD_DC_PORT     (GPIOB) /**< LCD_DC的GPIO端口 */
+    #define LCD_DC_PIN      (4)     /**< LCD_DC的GPIO引脚号 */
 #endif
-//定义LCD_RST
+
 #ifndef LCD_RST_GPIO
     #define LCD_RST_GPIO
-    #define LCD_RST_PORT    (STM32::STM32_GPIO::D)
-    #define LCD_RST_PIN     (4)
+    #define LCD_RST_PORT    (GPIOD) /**< LCD_RST的GPIO端口 */
+    #define LCD_RST_PIN     (4)     /**< LCD_RST的GPIO引脚号 */
 #endif
-//定义LCD_PWR
+
 #ifndef LCD_PWR_GPIO
     #define LCD_PWR_GPIO
-    #define LCD_PWR_PORT    (STM32::STM32_GPIO::D)
-    #define LCD_PWR_PIN     (3)
+    #define LCD_PWR_PORT    (GPIOD) /**< LCD_PWR的GPIO引脚号 */
+    #define LCD_PWR_PIN     (3)     /**< LCD_PWR的GPIO引脚号 */
 #endif
 ```
+代码使用示例：
 
 `Main.cpp`
 ```cpp
-using namespace Platform::HardWare;
+#include "common_inc.h"
+
+using namespace STM32;
+
+LCD_SPI lcd;
+
 void Init(void)
 {
-    lcd << "hello" << TFT_LCD::endl;
-    lcd << "world" << TFT_LCD::endl;
-    delay.ms(2000);
-    lcd << TFT_LCD::clear;
+    lcd   = LCD_SPI(true);
+    lcd.clear();
+    lcd << "hello world!" << endl;
+    lcd << "Ricky!" << endl;
+    delay_ms(1000);
+    lcd << clear;
 }
 
 void Loop(void)
 {
-    
+
 }
 ```
 
 ### （八）内部Flash的读写
-引入头文件
-```cpp
-#include "OnChip/FLASH/FLASH.hpp"
-```
-编写写入变量并读出的例程：
+
+- 写入变量并读出的例程：
 ```cpp
     uint8_t a;
     uint16_t b;
@@ -505,7 +564,7 @@ void Loop(void)
     cout << (uint32_t)*(CPUFLASH_ADDRESS_32B(2)) << '\n';
 ```
 
-编写写入结构体并读出的例程：
+- 写入结构体并读出的例程：
 ```cpp
     struct D{
         int a = 9;
@@ -521,28 +580,34 @@ void Loop(void)
 ### （九）跳进系统BootLoader
 用按键控制跳进系统BootLoader，按键如之前例程配置
 ```cpp
+#include "common_inc.h"
+
+using namespace STM32;
+
 // 循环中需要执行的任务
 static void Task_Key(void);
 
- void Init(void)
+void Init(void)
 {
-    timer.RegisterCallback(KeyScan10ms).Start(100);
+    sysTimer.registerCallback(KeyScan10ms).start(100);
 }
+
 void Loop(void)
 {
     Task_Key();
 }
+
 static void Task_Key(void)
 {
     static Key_TypeDef key_value;
     key_value = Key_GetValue();
     switch (key_value) {
         case Key1_Down:{
-            led.Yellow();
-            JumpToBootloader();
+            led.yellow();
         }break;
         case Key1_Long:{
-            led.Cyan();
+            led.cyan();
+            jumpToBootloader(); //跳进系统BootLoader
         }break;
         default:
             break;
@@ -563,7 +628,7 @@ static void Task_Key(void)
 static void FFT_Test(void)
 {
      uint32_t i = 0;
-    struct  compx s[MAX_FFT_N];
+    struct  Compx s[MAX_FFT_N];
     for(i=0; i<MAX_FFT_N; i++)
     {
         /* 波形是由直流分量，500Hz正弦波组成，波形采样率MAX_FFT_N，初始相位60° */
@@ -612,7 +677,7 @@ static void FFT_Test(void)
 ```cpp
 void Init(void)
 {
-    FIR_Init();
+    FIR_Init(); //FIR初始化才能使用
 }
 
 static void FIR_Test(void)
@@ -641,8 +706,8 @@ static void FIR_Test(void)
 #define ADC_SAMPLERATE (4096000)
 void Init(void)
 {
-    FIR_Init();
-    adc.Start(ADC_SAMPLERATE);
+    FIR_Init(); //FIR初始化才能使用
+    adc.start(ADC_SAMPLERATE);
 }
 void Loop(void)
 {
@@ -655,12 +720,12 @@ static void Task_ADC_Finished(void)
     static float32_t    buffer[ADC_DMA_BUFFER_SIZE*2];
     static float32_t    Outbuffer[ADC_DMA_BUFFER_SIZE*2];
     float32_t* p, * outp;
-    if (adc.Scan_Data())
+    if (adc.scanData())
     {
-        adc.Stop();
-        if (adc.Get_Data(adc_buf, adc.Get_DataSize()))
+        adc.stop();
+        if (adc.getData(adc_buf, adc.getDataSize()))
         {
-            ConVert_ADCValue_Compx(adc_buf, ADC_DMA_BUFFER_SIZE, buffer);
+            convert_ADCValue_Compx(adc_buf, ADC_DMA_BUFFER_SIZE, buffer);
 #if 1
             FIR_Run(buffer, ADC_DMA_BUFFER_SIZE, Outbuffer);
 #else
@@ -676,7 +741,7 @@ static void Task_ADC_Finished(void)
                 cout << i << "," << Outbuffer[i] << '\n';
             }
         }
-        adc.Start(ADC_SAMPLERATE);
+        adc.start(ADC_SAMPLERATE);
     }
 }
 ```

@@ -85,7 +85,7 @@ extern "C"
  * specifies the number of columns, and <code>pData</code> points to the
  * data array.
  *
- * \par Size Checking
+ * \par size Checking
  * By default all of the matrix functions perform size checking on the input and
  * output matrices. For example, the matrix addition function verifies that the
  * two input matrices and the output matrix all have the same number of rows and

@@ -1,36 +1,81 @@
-//
-// Created by Whisky on 12/30/2023.
-//
+#ifndef __PLATFORM_FIFO_H__
+#define __PLATFORM_FIFO_H__
 
-#ifndef CODE_FIFO_H
-#define CODE_FIFO_H
+#include <stdint.h>
 
 #ifndef __TYPEDEF_LOCK_FUN__
-    typedef void (*lock_fun)(void);
+    typedef void (*lock_fun)(void); /**< 互斥锁函数类型定义 */
 #endif
 
+/**
+ * @brief 环形Fifo模板类
+ *
+ * 用于实现环形FIFO数据结构。
+ *
+ * @tparam T 元素类型
+ * @tparam MAX_SIZE FIFO最大大小
+ */
 template<typename T, uint32_t MAX_SIZE>
 class Fifo
 {
 private:
-    T buf[MAX_SIZE];
-    uint32_t size;          /* 有效数据大小 */
-    uint32_t pwriteIndex;   /* 写索引 */
-    uint32_t preadIndex;    /* 读索引 */
-    void (*lock)(void);	    /* 互斥上锁 */
-    void (*unlock)(void);   /* 互斥解锁 */
+    T buf[MAX_SIZE];         /**< 存储数据的缓冲区 */
+    uint32_t current_size;   /**< 有效数据大小 */
+    uint32_t pwriteIndex;   /**< 写索引 */
+    uint32_t preadIndex;    /**< 读索引 */
+    void (*lock)(void);	    /**< 互斥上锁函数指针 */
+    void (*unlock)(void);   /**< 互斥解锁函数指针 */
 public:
 
+    /**
+     * @brief Fifo类构造函数
+     * @param Lock_fun 互斥锁函数指针，默认为nullptr
+     * @param Unlock_fun 互斥解锁函数指针，默认为nullptr
+     */
     Fifo(lock_fun lock = nullptr, lock_fun unlock = nullptr);
     ~Fifo();
 
-    uint32_t Put(const T &data);
-    uint32_t Get(T &data);
-    uint32_t Puts(T *pData, uint32_t num);
-    uint32_t Gets(T *pData, uint32_t num);
-    inline uint32_t Size(void);
-    inline uint32_t Get_FreeSize(void);
-    inline void Clear(void);
+    /**
+     * @brief 向队列中添加一个元素
+     * @param data 要添加的元素
+     * @return uint32_t 添加是否成功，成功返回1，失败返回0
+     */
+    uint32_t put(const T &data);
+    /**
+     * @brief 从队列中取出一个元素
+     * @param data 存储取出的元素
+     * @return uint32_t 取出是否成功，成功返回1，失败返回0
+     */
+    uint32_t get(T &data);
+
+    /**
+     * @brief 向队列中添加多个元素
+     * @param pData 要添加的元素数组指针
+     * @param num 要添加的元素个数
+     * @return uint32_t 添加成功的元素个数
+     */
+    uint32_t puts(T *pData, uint32_t num);
+    /**
+     * @brief 从队列中取出多个元素
+     * @param pData 存储取出的元素的数组指针
+     * @param num 要取出的元素个数
+     * @return uint32_t 实际取出的元素个数
+     */
+    uint32_t gets(T *pData, uint32_t num);
+    /**
+     * @brief 获取当前队列中的元素个数
+     * @return uint32_t 当前队列中的元素个数
+     */
+    inline uint32_t size(void);
+    /**
+     * @brief 获取当前队列中的空闲空间大小
+     * @return uint32_t 当前队列中的空闲空间大小
+     */
+    inline uint32_t getFreeSize(void);
+    /**
+     * @brief 清空队列
+     */
+    inline void clear(void);
 };
 
 /**
@@ -38,14 +83,14 @@ public:
  */
 template<typename T, uint32_t MAX_SIZE>
 Fifo<T,MAX_SIZE>::Fifo(lock_fun Lock_fun, lock_fun Unlock_fun)
-        :size(0), pwriteIndex(0), preadIndex(0), lock(Lock_fun), unlock (Unlock_fun)
+        :current_size(0), pwriteIndex(0), preadIndex(0), lock(Lock_fun), unlock (Unlock_fun)
 {
 
 }
 
 template<typename T, uint32_t MAX_SIZE>
 Fifo<T, MAX_SIZE>::~Fifo() {
-    size = 0;
+    current_size = 0;
     pwriteIndex = 0;
     preadIndex = 0;
     lock = nullptr;
@@ -57,16 +102,16 @@ Fifo<T, MAX_SIZE>::~Fifo() {
  * input one node to buffer
  */
 template<typename T, uint32_t MAX_SIZE>
-uint32_t Fifo<T,MAX_SIZE>::Put(const T &c)
+uint32_t Fifo<T,MAX_SIZE>::put(const T &c)
 {
-    if(Get_FreeSize() == 0)
+    if(getFreeSize() == 0)
         return 0;
     if (lock != nullptr)
         lock();
     buf[pwriteIndex++] = c;
     if (pwriteIndex >= MAX_SIZE)
         pwriteIndex = 0;
-    size++;
+    current_size++;
     if (unlock != nullptr)
         unlock();
     return 1;
@@ -77,13 +122,13 @@ uint32_t Fifo<T,MAX_SIZE>::Put(const T &c)
  * input multi nodes to buffer
  */
 template<typename T, uint32_t MAX_SIZE>
-uint32_t Fifo<T,MAX_SIZE>::Puts(T *pData, uint32_t num)
+uint32_t Fifo<T,MAX_SIZE>::puts(T *pData, uint32_t num)
 {
     uint32_t w_size, free_size;
     if (num==0)
         return 0;
 
-    free_size = Get_FreeSize();
+    free_size = getFreeSize();
     if(free_size == 0)
         return 0;
 
@@ -98,7 +143,7 @@ uint32_t Fifo<T,MAX_SIZE>::Puts(T *pData, uint32_t num)
         buf[pwriteIndex++] = *pData++;
         if (pwriteIndex >= MAX_SIZE)
             pwriteIndex = 0;
-        size++;
+        current_size++;
     }
     if (unlock != nullptr)
         unlock();
@@ -109,16 +154,16 @@ uint32_t Fifo<T,MAX_SIZE>::Puts(T *pData, uint32_t num)
  * get one node from buffer
  */
 template<typename T, uint32_t MAX_SIZE>
-uint32_t Fifo<T,MAX_SIZE>::Get(T &data)
+uint32_t Fifo<T,MAX_SIZE>::get(T &data)
 {
-    if(size == 0)
+    if(current_size == 0)
         return 0;
     if (lock != nullptr)
         lock();
     data = buf[preadIndex++];
     if (preadIndex >= MAX_SIZE)
         preadIndex = 0;
-    size--;
+    current_size--;
     if (unlock != nullptr)
         unlock();
     return 1;
@@ -128,13 +173,13 @@ uint32_t Fifo<T,MAX_SIZE>::Get(T &data)
  * get multi nodes from buffer
  */
 template<typename T, uint32_t MAX_SIZE>
-uint32_t Fifo<T,MAX_SIZE>::Gets(T *pData, uint32_t num)
+uint32_t Fifo<T,MAX_SIZE>::gets(T *pData, uint32_t num)
 {
     uint32_t r_size, occupy_size;
     if (num==0)
         return 0;
 
-    occupy_size = size;
+    occupy_size = current_size;
 
     if(occupy_size == 0)
         return 0;
@@ -150,7 +195,7 @@ uint32_t Fifo<T,MAX_SIZE>::Gets(T *pData, uint32_t num)
         *pData++ = buf[preadIndex++];
         if (preadIndex >= MAX_SIZE)
             preadIndex = 0;
-        size--;
+        current_size--;
     }
     if (unlock != nullptr)
         unlock();
@@ -158,26 +203,25 @@ uint32_t Fifo<T,MAX_SIZE>::Gets(T *pData, uint32_t num)
 }
 
 template<typename T, uint32_t MAX_SIZE>
-inline uint32_t Fifo<T,MAX_SIZE>::Size()
+inline uint32_t Fifo<T,MAX_SIZE>::size()
 {
-    return (size);
+    return (current_size);
 }
 
 /**
  *clear all nodes in buffer
  */
 template<typename T, uint32_t MAX_SIZE>
-inline void Fifo<T,MAX_SIZE>::Clear()
+inline void Fifo<T,MAX_SIZE>::clear()
 {
     pwriteIndex = 0;
     preadIndex = 0;
-    size = 0;
+    current_size = 0;
 }
 
 template<typename T, uint32_t MAX_SIZE>
-inline uint32_t Fifo<T, MAX_SIZE>::Get_FreeSize(void) {
-    return (MAX_SIZE - size);
+inline uint32_t Fifo<T, MAX_SIZE>::getFreeSize(void) {
+    return (MAX_SIZE - current_size);
 }
 
-
-#endif //CODE_FIFO_H
+#endif //__PLATFORM_FIFO_H__

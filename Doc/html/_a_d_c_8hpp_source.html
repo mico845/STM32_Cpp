@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-drivers/STM32/ADC/ADC.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_a_d_c_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">ADC.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_a_d_c_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __PLATFORM_STM32_ADC_H__</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __PLATFORM_STM32_ADC_H__</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_p_w_m_8hpp.html">platform-drivers/STM32/PWM/PWM.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_fifo_8hpp.html">platform-lib/DataStructre/Fifo.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_d_m_a_8hpp.html">platform-drivers/STM32/DMA/DMA.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="_a_d_c_8hpp.html#a1c114ef4a5f64b0d9b5baa79deb15e3a">    8</a></span><span class="preprocessor">#define USE_IRQ_FOR_DATA_HANDLING       (0)         </span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="_a_d_c_8hpp.html#a8d61e0a5809d3f78210067e6306198c1">    9</a></span><span class="preprocessor">#define USE_POLLFOR_FOR_DATA_HANDLING   (1)         </span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="_a_d_c_8hpp.html#a43b26b63912d90bce991b3fcf083f2d5">   10</a></span><span class="preprocessor">#define USE_YOURSELF_DMAIRQ             (0)         </span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_s_t_m32.html">STM32</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#ifndef ADC_BUFFER_SIZE</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="_a_d_c_8hpp.html#a602abb8ec84dcb3b6f854a738310ea46">   16</a></span><span class="preprocessor">    #define ADC_BUFFER_SIZE        (1024)                    </span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef ADC_DMA_BUFFER_SIZE</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="_a_d_c_8hpp.html#ad26be876c434128f9b942a1172f86f7b">   20</a></span><span class="preprocessor">    #define ADC_DMA_BUFFER_SIZE    (ADC_BUFFER_SIZE)        </span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6b">   28</a></span>    <span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6ba1fe747e151c96c94ace2eb366106cbcf">   30</a></span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6ba1fe747e151c96c94ace2eb366106cbcf">offset</a>              =   LL_ADC_CALIB_OFFSET,          </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6baf412f4cebedb540a5b43770bf26b87db">   31</a></span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6baf412f4cebedb540a5b43770bf26b87db">linearity</a>           =   LL_ADC_CALIB_LINEARITY,       </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6ba6889f5822f40d21fd168540198e65de8">offset_linearity</a>    =   LL_ADC_CALIB_OFFSET_LINEARITY </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6ba6889f5822f40d21fd168540198e65de8">   33</a></span>    }<a class="code hl_enumeration" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6b">ADC_CalibrationMode</a>;</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64">   40</a></span>    <span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64a964d17c4f4e65acfa7ead1639c17fabf">   42</a></span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64a964d17c4f4e65acfa7ead1639c17fabf">single</a>       = LL_ADC_SINGLE_ENDED,                    </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64ad7e8010bb109f2320f70f35bb1525274">   43</a></span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64ad7e8010bb109f2320f70f35bb1525274">differential</a> = LL_ADC_DIFFERENTIAL_ENDED,              </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64a564be97f69bbc678b6849f66f86131b5">botn_single_diff</a> = LL_ADC_BOTH_SINGLE_DIFF_ENDED       </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64a564be97f69bbc678b6849f66f86131b5">   45</a></span>    }<a class="code hl_enumeration" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64">ADC_SingleDiff</a>;</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="};">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_a_d_c.html">   52</a></span><span class="keyword">class </span><a class="code hl_class" href="class_s_t_m32_1_1_a_d_c.html">ADC</a></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">/* Variables */</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    ADC_TypeDef* adc;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_class" href="class_s_t_m32_1_1_p_w_m.html">PWM</a> timer;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">bool</span> isUseDma;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">bool</span> isUseTimer;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    DMA_TypeDef* adc_dma;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_enumeration" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">DMA_Stream</a> adc_dma_stream;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    uint16_t adc_dma_buffer[<a class="code hl_define" href="_a_d_c_8hpp.html#ad26be876c434128f9b942a1172f86f7b">ADC_DMA_BUFFER_SIZE</a>];</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_class" href="class_fifo.html">Fifo&lt;uint16_t, ADC_BUFFER_SIZE&gt;</a> bufferADC;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">bool</span> flag_finished = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">bool</span> flag_halfFinished = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="comment">/* Variables */</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">/* Constructor */</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_a_d_c.html#ac67fc160e58552cf40f3ea06125f11b7">   70</a></span>    <a class="code hl_function" href="class_s_t_m32_1_1_a_d_c.html#ac67fc160e58552cf40f3ea06125f11b7">ADC</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_a_d_c.html#aaf0ac84f73f587f286c915f412418f63">   71</a></span>    <a class="code hl_function" href="class_s_t_m32_1_1_a_d_c.html#aaf0ac84f73f587f286c915f412418f63">~ADC</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_function" href="class_s_t_m32_1_1_a_d_c.html#ac67fc160e58552cf40f3ea06125f11b7">ADC</a>(ADC_TypeDef* ADCx,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <a class="code hl_enumeration" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6b">ADC_CalibrationMode</a> CalibrationMode = <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6ba1fe747e151c96c94ace2eb366106cbcf">offset</a>,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <a class="code hl_enumeration" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64">ADC_SingleDiff</a> SingleDiff = <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64a964d17c4f4e65acfa7ead1639c17fabf">single</a>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_function" href="class_s_t_m32_1_1_a_d_c.html#ac67fc160e58552cf40f3ea06125f11b7">ADC</a>(ADC_TypeDef* ADCx, DMA_TypeDef* ADC_DMA, <a class="code hl_enumeration" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">DMA_Stream</a> ADC_DMA_Stream, TIM_TypeDef *TIMx,</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <a class="code hl_enumeration" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6b">ADC_CalibrationMode</a> CalibrationMode = <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6ba1fe747e151c96c94ace2eb366106cbcf">offset</a>,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <a class="code hl_enumeration" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64">ADC_SingleDiff</a> SingleDiff = <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64a964d17c4f4e65acfa7ead1639c17fabf">single</a>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <a class="code hl_function" href="class_s_t_m32_1_1_a_d_c.html#ac67fc160e58552cf40f3ea06125f11b7">ADC</a>(ADC_TypeDef* ADCx, DMA_TypeDef* ADC_DMA, <a class="code hl_enumeration" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">DMA_Stream</a> ADC_DMA_Stream, TIM_TypeDef *PWMx, <a class="code hl_enumeration" href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288">STM32::Timer_Channel</a> PWM_Channel,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <a class="code hl_enumeration" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6b">ADC_CalibrationMode</a> CalibrationMode = <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6ba1fe747e151c96c94ace2eb366106cbcf">offset</a>,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <a class="code hl_enumeration" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64">ADC_SingleDiff</a> SingleDiff = <a class="code hl_enumvalue" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64a964d17c4f4e65acfa7ead1639c17fabf">single</a>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="comment">/* Functions */</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_class" href="class_s_t_m32_1_1_a_d_c.html">ADC</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_a_d_c.html#a280a154e3be2e9bc3b59252f0fd058d2">calibrate</a>(<a class="code hl_enumeration" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6b">ADC_CalibrationMode</a> CalibrationMode, <a class="code hl_enumeration" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64">ADC_SingleDiff</a> SingleDiff);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <a class="code hl_class" href="class_s_t_m32_1_1_a_d_c.html">ADC</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_a_d_c.html#a0e6fc0e4fda99334395c12be2872241a">start</a>(uint32_t SampleRate);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_class" href="class_s_t_m32_1_1_a_d_c.html">ADC</a>&amp; <a class="code hl_function" href="class_s_t_m32_1_1_a_d_c.html#a4c04e0ebffd17b875ac185d2041cacab">stop</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    uint16_t <a class="code hl_function" href="class_s_t_m32_1_1_a_d_c.html#a6ac2459acde39cf52b8d157ba1060341">getData_Pollfor</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_a_d_c.html#aa911cb147cf22c2906ee1c33000f3751">  154</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_t_m32_1_1_a_d_c.html#aa911cb147cf22c2906ee1c33000f3751">irq_DMA</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_s_t_m32_1_1_a_d_c.html#a031d1777dd8f71ad5ad55d22ba04f404">isFinished</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_s_t_m32_1_1_a_d_c.html#aa87fa887df33b70bf2a87f9fe6ebd53f">getData</a>(uint16_t *buffer, uint32_t number);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    uint32_t <a class="code hl_function" href="class_s_t_m32_1_1_a_d_c.html#a14a023169be2d4f5eab5dbdb9c54c1c6">getDataSize</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="preprocessor">#if USE_POLLFOR_FOR_DATA_HANDLING</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="class_s_t_m32_1_1_a_d_c.html#ab5faff91bde422d02eaae0f9b2039486">  187</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_s_t_m32_1_1_a_d_c.html#ab5faff91bde422d02eaae0f9b2039486">scanData</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>};</div>
+</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>} <span class="comment">//namespace STM32</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="preprocessor">#endif </span><span class="comment">//__PLATFORM_STM32_ADC_H__</span></div>
+<div class="ttc" id="a_a_d_c_8hpp_html_ad26be876c434128f9b942a1172f86f7b"><div class="ttname"><a href="_a_d_c_8hpp.html#ad26be876c434128f9b942a1172f86f7b">ADC_DMA_BUFFER_SIZE</a></div><div class="ttdeci">#define ADC_DMA_BUFFER_SIZE</div><div class="ttdoc">ADC的DMA缓存区大小</div><div class="ttdef"><b>Definition</b> ADC.hpp:20</div></div>
+<div class="ttc" id="a_d_m_a_8hpp_html"><div class="ttname"><a href="_d_m_a_8hpp.html">DMA.hpp</a></div></div>
+<div class="ttc" id="a_fifo_8hpp_html"><div class="ttname"><a href="_fifo_8hpp.html">Fifo.hpp</a></div></div>
+<div class="ttc" id="a_p_w_m_8hpp_html"><div class="ttname"><a href="_p_w_m_8hpp.html">PWM.hpp</a></div></div>
+<div class="ttc" id="aclass_fifo_html"><div class="ttname"><a href="class_fifo.html">Fifo</a></div><div class="ttdoc">环形Fifo模板类</div><div class="ttdef"><b>Definition</b> Fifo.hpp:20</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_a_d_c_html"><div class="ttname"><a href="class_s_t_m32_1_1_a_d_c.html">STM32::ADC</a></div><div class="ttdoc">ADC类</div><div class="ttdef"><b>Definition</b> ADC.hpp:53</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_a_d_c_html_a031d1777dd8f71ad5ad55d22ba04f404"><div class="ttname"><a href="class_s_t_m32_1_1_a_d_c.html#a031d1777dd8f71ad5ad55d22ba04f404">STM32::ADC::isFinished</a></div><div class="ttdeci">bool isFinished(void)</div><div class="ttdoc">检查ADC转换是否完成</div><div class="ttdef"><b>Definition</b> ADC.cpp:160</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_a_d_c_html_a0e6fc0e4fda99334395c12be2872241a"><div class="ttname"><a href="class_s_t_m32_1_1_a_d_c.html#a0e6fc0e4fda99334395c12be2872241a">STM32::ADC::start</a></div><div class="ttdeci">ADC &amp; start(uint32_t SampleRate)</div><div class="ttdoc">启动ADC转换</div><div class="ttdef"><b>Definition</b> ADC.cpp:43</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_a_d_c_html_a14a023169be2d4f5eab5dbdb9c54c1c6"><div class="ttname"><a href="class_s_t_m32_1_1_a_d_c.html#a14a023169be2d4f5eab5dbdb9c54c1c6">STM32::ADC::getDataSize</a></div><div class="ttdeci">uint32_t getDataSize(void)</div><div class="ttdoc">获取ADC缓冲区中当前可用数据的数量</div><div class="ttdef"><b>Definition</b> ADC.cpp:178</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_a_d_c_html_a280a154e3be2e9bc3b59252f0fd058d2"><div class="ttname"><a href="class_s_t_m32_1_1_a_d_c.html#a280a154e3be2e9bc3b59252f0fd058d2">STM32::ADC::calibrate</a></div><div class="ttdeci">ADC &amp; calibrate(ADC_CalibrationMode CalibrationMode, ADC_SingleDiff SingleDiff)</div><div class="ttdoc">对ADC进行校准</div><div class="ttdef"><b>Definition</b> ADC.cpp:36</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_a_d_c_html_a4c04e0ebffd17b875ac185d2041cacab"><div class="ttname"><a href="class_s_t_m32_1_1_a_d_c.html#a4c04e0ebffd17b875ac185d2041cacab">STM32::ADC::stop</a></div><div class="ttdeci">ADC &amp; stop(void)</div><div class="ttdoc">停止ADC转换</div><div class="ttdef"><b>Definition</b> ADC.cpp:71</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_a_d_c_html_a6ac2459acde39cf52b8d157ba1060341"><div class="ttname"><a href="class_s_t_m32_1_1_a_d_c.html#a6ac2459acde39cf52b8d157ba1060341">STM32::ADC::getData_Pollfor</a></div><div class="ttdeci">uint16_t getData_Pollfor(void)</div><div class="ttdoc">从ADC获取数据（轮询方式）</div><div class="ttdef"><b>Definition</b> ADC.cpp:64</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_a_d_c_html_aa87fa887df33b70bf2a87f9fe6ebd53f"><div class="ttname"><a href="class_s_t_m32_1_1_a_d_c.html#aa87fa887df33b70bf2a87f9fe6ebd53f">STM32::ADC::getData</a></div><div class="ttdeci">bool getData(uint16_t *buffer, uint32_t number)</div><div class="ttdoc">从ADC缓冲区中获取数据</div><div class="ttdef"><b>Definition</b> ADC.cpp:168</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_a_d_c_html_aa911cb147cf22c2906ee1c33000f3751"><div class="ttname"><a href="class_s_t_m32_1_1_a_d_c.html#aa911cb147cf22c2906ee1c33000f3751">STM32::ADC::irq_DMA</a></div><div class="ttdeci">virtual void irq_DMA(void)</div><div class="ttdoc">DMA中断服务函数</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_a_d_c_html_aaf0ac84f73f587f286c915f412418f63"><div class="ttname"><a href="class_s_t_m32_1_1_a_d_c.html#aaf0ac84f73f587f286c915f412418f63">STM32::ADC::~ADC</a></div><div class="ttdeci">~ADC()=default</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_a_d_c_html_ab5faff91bde422d02eaae0f9b2039486"><div class="ttname"><a href="class_s_t_m32_1_1_a_d_c.html#ab5faff91bde422d02eaae0f9b2039486">STM32::ADC::scanData</a></div><div class="ttdeci">bool scanData(void)</div><div class="ttdoc">扫描ADC缓冲区以获取数据</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_a_d_c_html_ac67fc160e58552cf40f3ea06125f11b7"><div class="ttname"><a href="class_s_t_m32_1_1_a_d_c.html#ac67fc160e58552cf40f3ea06125f11b7">STM32::ADC::ADC</a></div><div class="ttdeci">ADC()=default</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_p_w_m_html"><div class="ttname"><a href="class_s_t_m32_1_1_p_w_m.html">STM32::PWM</a></div><div class="ttdoc">PWM类</div><div class="ttdef"><b>Definition</b> PWM.hpp:31</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html"><div class="ttname"><a href="namespace_s_t_m32.html">STM32</a></div><div class="ttdef"><b>Definition</b> DDS.hpp:5</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a4de993b51cb9d81ddb0e2adcfe501a6b"><div class="ttname"><a href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6b">STM32::ADC_CalibrationMode</a></div><div class="ttdeci">ADC_CalibrationMode</div><div class="ttdoc">ADC校准模式</div><div class="ttdef"><b>Definition</b> ADC.hpp:29</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a4de993b51cb9d81ddb0e2adcfe501a6ba1fe747e151c96c94ace2eb366106cbcf"><div class="ttname"><a href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6ba1fe747e151c96c94ace2eb366106cbcf">STM32::offset</a></div><div class="ttdeci">@ offset</div><div class="ttdoc">偏移校准</div><div class="ttdef"><b>Definition</b> ADC.hpp:30</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a4de993b51cb9d81ddb0e2adcfe501a6ba6889f5822f40d21fd168540198e65de8"><div class="ttname"><a href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6ba6889f5822f40d21fd168540198e65de8">STM32::offset_linearity</a></div><div class="ttdeci">@ offset_linearity</div><div class="ttdoc">偏移和线性校准</div><div class="ttdef"><b>Definition</b> ADC.hpp:32</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a4de993b51cb9d81ddb0e2adcfe501a6baf412f4cebedb540a5b43770bf26b87db"><div class="ttname"><a href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6baf412f4cebedb540a5b43770bf26b87db">STM32::linearity</a></div><div class="ttdeci">@ linearity</div><div class="ttdoc">线性校准</div><div class="ttdef"><b>Definition</b> ADC.hpp:31</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a7cd6332840702c0622971152b9c0e288"><div class="ttname"><a href="namespace_s_t_m32.html#a7cd6332840702c0622971152b9c0e288">STM32::Timer_Channel</a></div><div class="ttdeci">Timer_Channel</div><div class="ttdoc">定时器通道</div><div class="ttdef"><b>Definition</b> PWM.hpp:13</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a895017a7b0440b97d435429803b66d64"><div class="ttname"><a href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64">STM32::ADC_SingleDiff</a></div><div class="ttdeci">ADC_SingleDiff</div><div class="ttdoc">ADC单端/差分模式</div><div class="ttdef"><b>Definition</b> ADC.hpp:41</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a895017a7b0440b97d435429803b66d64a564be97f69bbc678b6849f66f86131b5"><div class="ttname"><a href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64a564be97f69bbc678b6849f66f86131b5">STM32::botn_single_diff</a></div><div class="ttdeci">@ botn_single_diff</div><div class="ttdoc">单端和差分模式</div><div class="ttdef"><b>Definition</b> ADC.hpp:44</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a895017a7b0440b97d435429803b66d64a964d17c4f4e65acfa7ead1639c17fabf"><div class="ttname"><a href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64a964d17c4f4e65acfa7ead1639c17fabf">STM32::single</a></div><div class="ttdeci">@ single</div><div class="ttdoc">单端模式</div><div class="ttdef"><b>Definition</b> ADC.hpp:42</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_a895017a7b0440b97d435429803b66d64ad7e8010bb109f2320f70f35bb1525274"><div class="ttname"><a href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64ad7e8010bb109f2320f70f35bb1525274">STM32::differential</a></div><div class="ttdeci">@ differential</div><div class="ttdoc">差分模式</div><div class="ttdef"><b>Definition</b> ADC.hpp:43</div></div>
+<div class="ttc" id="anamespace_s_t_m32_html_aaebc058ef0d883a9a3f45c58d5057862"><div class="ttname"><a href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">STM32::DMA_Stream</a></div><div class="ttdeci">DMA_Stream</div><div class="ttdoc">DMA数据流</div><div class="ttdef"><b>Definition</b> DMA.hpp:14</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_84d8ddb176e16ca8bccaaa5eeae31ee8.html">platform-drivers</a></li><li class="navelem"><a class="el" href="dir_4c7ecf3a8e2e1382144ef720f571f877.html">STM32</a></li><li class="navelem"><a class="el" href="dir_315e1dcbc90e98f1b0e48a68a85f48f0.html">ADC</a></li><li class="navelem"><a class="el" href="_a_d_c_8hpp.html">ADC.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

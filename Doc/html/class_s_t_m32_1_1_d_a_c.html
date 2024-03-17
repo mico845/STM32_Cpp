@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: STM32::DAC类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_s_t_m32_1_1_d_a_c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="class_s_t_m32_1_1_d_a_c-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">STM32::DAC类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>DAC类  
+ <a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae0b36817112b60e4a7a86f7a9549422c" id="r_ae0b36817112b60e4a7a86f7a9549422c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0b36817112b60e4a7a86f7a9549422c">DAC</a> ()=default</td></tr>
+<tr class="separator:ae0b36817112b60e4a7a86f7a9549422c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab50446b9d15ef4a61af5ddcbc46e7d7d" id="r_ab50446b9d15ef4a61af5ddcbc46e7d7d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab50446b9d15ef4a61af5ddcbc46e7d7d">~DAC</a> ()=default</td></tr>
+<tr class="separator:ab50446b9d15ef4a61af5ddcbc46e7d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af92d4d21db5489b22666cac06c1ba4b1" id="r_af92d4d21db5489b22666cac06c1ba4b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af92d4d21db5489b22666cac06c1ba4b1">DAC</a> (DAC_TypeDef *DACx, uint8_t DAC_Channel)</td></tr>
+<tr class="memdesc:af92d4d21db5489b22666cac06c1ba4b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">DAC类构造函数  <br /></td></tr>
+<tr class="separator:af92d4d21db5489b22666cac06c1ba4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf06318646fc9d915c9393e2f6bc1233" id="r_aaf06318646fc9d915c9393e2f6bc1233"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf06318646fc9d915c9393e2f6bc1233">DAC</a> (DAC_TypeDef *DACx, uint8_t DAC_Channel, DMA_TypeDef *DAC_DMA, <a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">DMA_Stream</a> DAC_DMA_Stream, TIM_TypeDef *TIMx, bool IsUseDMA_Irq=false)</td></tr>
+<tr class="memdesc:aaf06318646fc9d915c9393e2f6bc1233"><td class="mdescLeft">&#160;</td><td class="mdescRight">DAC类构造函数  <br /></td></tr>
+<tr class="separator:aaf06318646fc9d915c9393e2f6bc1233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4c63e6a818aabf66703b41c12958b5a" id="r_af4c63e6a818aabf66703b41c12958b5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_t_m32_1_1_d_a_c.html">DAC</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4c63e6a818aabf66703b41c12958b5a">start</a> (uint32_t Freq=1000)</td></tr>
+<tr class="memdesc:af4c63e6a818aabf66703b41c12958b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动DAC转换  <br /></td></tr>
+<tr class="separator:af4c63e6a818aabf66703b41c12958b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f8cccba3fa3275ed367133a85468af5" id="r_a6f8cccba3fa3275ed367133a85468af5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_t_m32_1_1_d_a_c.html">DAC</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f8cccba3fa3275ed367133a85468af5">stop</a> (void)</td></tr>
+<tr class="memdesc:a6f8cccba3fa3275ed367133a85468af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止DAC转换  <br /></td></tr>
+<tr class="separator:a6f8cccba3fa3275ed367133a85468af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a031b4c19d90f7634b5309a2522105223" id="r_a031b4c19d90f7634b5309a2522105223"><td class="memItemLeft" align="right" valign="top">__INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a031b4c19d90f7634b5309a2522105223">setValue</a> (uint16_t Value)</td></tr>
+<tr class="memdesc:a031b4c19d90f7634b5309a2522105223"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置DAC输出值  <br /></td></tr>
+<tr class="separator:a031b4c19d90f7634b5309a2522105223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d80db7c72a4c3dd775986d2fc6332e" id="r_ad6d80db7c72a4c3dd775986d2fc6332e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6d80db7c72a4c3dd775986d2fc6332e">setDMABuffer</a> (const uint16_t *Buffer, uint32_t Num)</td></tr>
+<tr class="memdesc:ad6d80db7c72a4c3dd775986d2fc6332e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置DAC的DMA缓冲区  <br /></td></tr>
+<tr class="separator:ad6d80db7c72a4c3dd775986d2fc6332e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6571c3b252109b116588123a885a9366" id="r_a6571c3b252109b116588123a885a9366"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6571c3b252109b116588123a885a9366">enableDMAIrq</a> (void)</td></tr>
+<tr class="memdesc:a6571c3b252109b116588123a885a9366"><td class="mdescLeft">&#160;</td><td class="mdescRight">开启DMA中断  <br /></td></tr>
+<tr class="separator:a6571c3b252109b116588123a885a9366"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e0fbe93f17fc2deeed72a5122016c86" id="r_a0e0fbe93f17fc2deeed72a5122016c86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e0fbe93f17fc2deeed72a5122016c86">disableDMAIrq</a> (void)</td></tr>
+<tr class="memdesc:a0e0fbe93f17fc2deeed72a5122016c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭DMA中断  <br /></td></tr>
+<tr class="separator:a0e0fbe93f17fc2deeed72a5122016c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2031ec8f2a4fd20f1c4e4a3e60bb7a5" id="r_ac2031ec8f2a4fd20f1c4e4a3e60bb7a5"><td class="memItemLeft" align="right" valign="top">__INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2031ec8f2a4fd20f1c4e4a3e60bb7a5">useDMAIrq</a> (void)</td></tr>
+<tr class="memdesc:ac2031ec8f2a4fd20f1c4e4a3e60bb7a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">允许DMA中断  <br /></td></tr>
+<tr class="separator:ac2031ec8f2a4fd20f1c4e4a3e60bb7a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f31c85ec1f29ba5b6a731d5655cd604" id="r_a4f31c85ec1f29ba5b6a731d5655cd604"><td class="memItemLeft" align="right" valign="top">__INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f31c85ec1f29ba5b6a731d5655cd604">unuseDMAIrq</a> (void)</td></tr>
+<tr class="memdesc:a4f31c85ec1f29ba5b6a731d5655cd604"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁止DMA中断  <br /></td></tr>
+<tr class="separator:a4f31c85ec1f29ba5b6a731d5655cd604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af57e01c7b72097082e3cdeda2d71eaa7" id="r_af57e01c7b72097082e3cdeda2d71eaa7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_array.html">Array</a>&lt; uint16_t, <a class="el" href="_d_a_c_8hpp.html#a3a76842dcc82597bdb3e7b697c08ae98">DAC_DMA_BUFFER_MAX_SIZE</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af57e01c7b72097082e3cdeda2d71eaa7">getPointBufArray</a> (void)</td></tr>
+<tr class="memdesc:af57e01c7b72097082e3cdeda2d71eaa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取DMA缓冲区的指针  <br /></td></tr>
+<tr class="separator:af57e01c7b72097082e3cdeda2d71eaa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe953153f8f2d358a4ac71db42a02ff4" id="r_afe953153f8f2d358a4ac71db42a02ff4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe953153f8f2d358a4ac71db42a02ff4">irq_DMA</a> (void)</td></tr>
+<tr class="memdesc:afe953153f8f2d358a4ac71db42a02ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA中断服务函数  <br /></td></tr>
+<tr class="separator:afe953153f8f2d358a4ac71db42a02ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af666dc64c23b36162f76349bfdec8f68" id="r_af666dc64c23b36162f76349bfdec8f68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af666dc64c23b36162f76349bfdec8f68">setFreq</a> (uint32_t Freq)</td></tr>
+<tr class="separator:af666dc64c23b36162f76349bfdec8f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:a3f95c7637cac19c4a5597917e6cff4a1" id="r_a3f95c7637cac19c4a5597917e6cff4a1"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f95c7637cac19c4a5597917e6cff4a1">DDS</a></td></tr>
+<tr class="separator:a3f95c7637cac19c4a5597917e6cff4a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>DAC类 </p>
+<p>用于控制DAC（数模转换器）。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ae0b36817112b60e4a7a86f7a9549422c" name="ae0b36817112b60e4a7a86f7a9549422c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0b36817112b60e4a7a86f7a9549422c">&#9670;&#160;</a></span>DAC() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">STM32::DAC::DAC </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab50446b9d15ef4a61af5ddcbc46e7d7d" name="ab50446b9d15ef4a61af5ddcbc46e7d7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab50446b9d15ef4a61af5ddcbc46e7d7d">&#9670;&#160;</a></span>~DAC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">STM32::DAC::~DAC </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af92d4d21db5489b22666cac06c1ba4b1" name="af92d4d21db5489b22666cac06c1ba4b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af92d4d21db5489b22666cac06c1ba4b1">&#9670;&#160;</a></span>DAC() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">STM32::DAC::DAC </td>
+          <td>(</td>
+          <td class="paramtype">DAC_TypeDef *</td>          <td class="paramname"><span class="paramname"><em>DACx</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>DAC_Channel</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>DAC类构造函数 </p>
+<p>不使用DMA和定时器。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">DACx</td><td>DAC指针 </td></tr>
+    <tr><td class="paramname">DAC_Channel</td><td>DAC通道号 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaf06318646fc9d915c9393e2f6bc1233" name="aaf06318646fc9d915c9393e2f6bc1233"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf06318646fc9d915c9393e2f6bc1233">&#9670;&#160;</a></span>DAC() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DAC::DAC </td>
+          <td>(</td>
+          <td class="paramtype">DAC_TypeDef *</td>          <td class="paramname"><span class="paramname"><em>DACx</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>DAC_Channel</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DMA_TypeDef *</td>          <td class="paramname"><span class="paramname"><em>DAC_DMA</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_t_m32.html#aaebc058ef0d883a9a3f45c58d5057862">DMA_Stream</a></td>          <td class="paramname"><span class="paramname"><em>DAC_DMA_Stream</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TIM_TypeDef *</td>          <td class="paramname"><span class="paramname"><em>TIMx</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>IsUseDMA_Irq</em><span class="paramdefsep"> = </span><span class="paramdefval">false</span></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DAC类构造函数 </p>
+<p>使用DMA和定时器。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">DACx</td><td>DAC指针 </td></tr>
+    <tr><td class="paramname">DAC_Channel</td><td>DAC通道号 </td></tr>
+    <tr><td class="paramname">DAC_DMA</td><td>DMA指针 </td></tr>
+    <tr><td class="paramname">DAC_DMA_Stream</td><td>DMA流 </td></tr>
+    <tr><td class="paramname">TIMx</td><td>定时器指针 </td></tr>
+    <tr><td class="paramname">IsUseDMA_Irq</td><td>是否使用DMA中断，默认不使用 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a0e0fbe93f17fc2deeed72a5122016c86" name="a0e0fbe93f17fc2deeed72a5122016c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e0fbe93f17fc2deeed72a5122016c86">&#9670;&#160;</a></span>disableDMAIrq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DAC::disableDMAIrq </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>关闭DMA中断 </p>
+
+</div>
+</div>
+<a id="a6571c3b252109b116588123a885a9366" name="a6571c3b252109b116588123a885a9366"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6571c3b252109b116588123a885a9366">&#9670;&#160;</a></span>enableDMAIrq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DAC::enableDMAIrq </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>开启DMA中断 </p>
+
+</div>
+</div>
+<a id="af57e01c7b72097082e3cdeda2d71eaa7" name="af57e01c7b72097082e3cdeda2d71eaa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af57e01c7b72097082e3cdeda2d71eaa7">&#9670;&#160;</a></span>getPointBufArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__INLINE <a class="el" href="class_array.html">Array</a>&lt; uint16_t, <a class="el" href="_d_a_c_8hpp.html#a3a76842dcc82597bdb3e7b697c08ae98">DAC_DMA_BUFFER_MAX_SIZE</a> &gt; * STM32::DAC::getPointBufArray </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取DMA缓冲区的指针 </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_array.html">Array&lt;uint16_t, DAC_DMA_BUFFER_MAX_SIZE&gt;</a>* DAC的缓冲区的指针 </dd></dl>
+
+</div>
+</div>
+<a id="afe953153f8f2d358a4ac71db42a02ff4" name="afe953153f8f2d358a4ac71db42a02ff4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe953153f8f2d358a4ac71db42a02ff4">&#9670;&#160;</a></span>irq_DMA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DAC::irq_DMA </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>DMA中断服务函数 </p>
+
+</div>
+</div>
+<a id="ad6d80db7c72a4c3dd775986d2fc6332e" name="ad6d80db7c72a4c3dd775986d2fc6332e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6d80db7c72a4c3dd775986d2fc6332e">&#9670;&#160;</a></span>setDMABuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DAC::setDMABuffer </td>
+          <td>(</td>
+          <td class="paramtype">const uint16_t *</td>          <td class="paramname"><span class="paramname"><em>Buffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Num</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置DAC的DMA缓冲区 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Buffer</td><td>缓冲区指针 </td></tr>
+    <tr><td class="paramname">Num</td><td>缓冲区中的数据数量 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 成功设置DMA缓冲区 </dd>
+<dd>
+false 超出DMA缓冲区最大大小 </dd></dl>
+
+</div>
+</div>
+<a id="af666dc64c23b36162f76349bfdec8f68" name="af666dc64c23b36162f76349bfdec8f68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af666dc64c23b36162f76349bfdec8f68">&#9670;&#160;</a></span>setFreq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DAC::setFreq </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Freq</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a031b4c19d90f7634b5309a2522105223" name="a031b4c19d90f7634b5309a2522105223"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a031b4c19d90f7634b5309a2522105223">&#9670;&#160;</a></span>setValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__INLINE void STM32::DAC::setValue </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>Value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置DAC输出值 </p>
+<p>在数据保存寄存器中设置要加载的数据。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Value</td><td>输出值 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af4c63e6a818aabf66703b41c12958b5a" name="af4c63e6a818aabf66703b41c12958b5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4c63e6a818aabf66703b41c12958b5a">&#9670;&#160;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_t_m32_1_1_d_a_c.html">DAC</a> &amp; DAC::start </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Freq</em><span class="paramdefsep"> = </span><span class="paramdefval">1000</span></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>启动DAC转换 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Freq</td><td>触发频率（单位：Hz），默认为1000Hz </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_s_t_m32_1_1_d_a_c.html" title="DAC类">DAC</a>&amp; 返回DAC对象的引用 </dd></dl>
+
+</div>
+</div>
+<a id="a6f8cccba3fa3275ed367133a85468af5" name="a6f8cccba3fa3275ed367133a85468af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f8cccba3fa3275ed367133a85468af5">&#9670;&#160;</a></span>stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_t_m32_1_1_d_a_c.html">DAC</a> &amp; DAC::stop </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>停止DAC转换 </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_s_t_m32_1_1_d_a_c.html" title="DAC类">DAC</a>&amp; 返回DAC对象的引用 </dd></dl>
+
+</div>
+</div>
+<a id="a4f31c85ec1f29ba5b6a731d5655cd604" name="a4f31c85ec1f29ba5b6a731d5655cd604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f31c85ec1f29ba5b6a731d5655cd604">&#9670;&#160;</a></span>unuseDMAIrq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__INLINE void STM32::DAC::unuseDMAIrq </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>禁止DMA中断 </p>
+
+</div>
+</div>
+<a id="ac2031ec8f2a4fd20f1c4e4a3e60bb7a5" name="ac2031ec8f2a4fd20f1c4e4a3e60bb7a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2031ec8f2a4fd20f1c4e4a3e60bb7a5">&#9670;&#160;</a></span>useDMAIrq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__INLINE void STM32::DAC::useDMAIrq </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>允许DMA中断 </p>
+
+</div>
+</div>
+<h2 class="groupheader">友元及相关函数文档</h2>
+<a id="a3f95c7637cac19c4a5597917e6cff4a1" name="a3f95c7637cac19c4a5597917e6cff4a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f95c7637cac19c4a5597917e6cff4a1">&#9670;&#160;</a></span>DDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_s_t_m32_1_1_d_d_s.html">DDS</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespace_s_t_m32.html">STM32</a></li><li class="navelem"><a class="el" href="class_s_t_m32_1_1_d_a_c.html">DAC</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

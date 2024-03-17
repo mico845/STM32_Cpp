@@ -66,7 +66,7 @@ extern "C" {
 /** @defgroup DMAMUX_LL_Exported_Constants DMAMUX Exported Constants
   * @{
   */
-/** @defgroup DMAMUX_LL_EC_CLEAR_FLAG Clear Flags Defines
+/** @defgroup DMAMUX_LL_EC_CLEAR_FLAG clear Flags Defines
   * @brief    Flags defines which can be used with LL_DMAMUX_WriteReg function
   * @{
   */
@@ -98,7 +98,7 @@ extern "C" {
   * @}
   */
 
-/** @defgroup DMAMUX_LL_EC_GET_FLAG Get Flags Defines
+/** @defgroup DMAMUX_LL_EC_GET_FLAG get Flags Defines
   * @brief    Flags defines which can be used with LL_DMAMUX_ReadReg function
   * @{
   */
@@ -518,7 +518,7 @@ extern "C" {
 #define LL_DMAMUX_WriteReg(__INSTANCE__, __REG__, __VALUE__) WRITE_REG(__INSTANCE__->__REG__, (__VALUE__))
 
 /**
-  * @brief  Read a value in DMAMUX register
+  * @brief  read a value in DMAMUX register
   * @param  __INSTANCE__ DMAMUX Instance
   * @param  __REG__ Register to be read
   * @retval Register value
@@ -734,7 +734,7 @@ __STATIC_INLINE void LL_DMAMUX_SetRequestID(DMAMUX_Channel_TypeDef *DMAMUXx, uin
 }
 
 /**
-  * @brief  Get DMAMUX request ID for DMAMUX Channel x.
+  * @brief  get DMAMUX request ID for DMAMUX Channel x.
   * @note   DMAMUX1 channel 0 to 7  are mapped to DMA1 channel 0 to 7.
   *         DMAMUX1 channel 8 to 15 are mapped to DMA2 channel 0 to 7.
   *         DMAMUX2 channel 0 to 7  are mapped to BDMA channel 0 to 7.
@@ -958,7 +958,7 @@ __STATIC_INLINE void LL_DMAMUX_SetSyncRequestNb(DMAMUX_Channel_TypeDef *DMAMUXx,
 }
 
 /**
-  * @brief  Get the number of DMA request that will be autorized after a synchronization event and/or the number of DMA request needed to generate an event.
+  * @brief  get the number of DMA request that will be autorized after a synchronization event and/or the number of DMA request needed to generate an event.
   * @rmtoll CxCR         NBREQ         LL_DMAMUX_GetSyncRequestNb
   * @param  DMAMUXx DMAMUXx Instance
   * @param  Channel This parameter can be one of the following values:
@@ -1023,7 +1023,7 @@ __STATIC_INLINE void LL_DMAMUX_SetSyncPolarity(DMAMUX_Channel_TypeDef *DMAMUXx, 
 }
 
 /**
-  * @brief  Get the polarity of the signal on which the DMA request is synchronized.
+  * @brief  get the polarity of the signal on which the DMA request is synchronized.
   * @rmtoll CxCR         SPOL          LL_DMAMUX_GetSyncPolarity
   * @param  DMAMUXx DMAMUXx Instance
   * @param  Channel This parameter can be one of the following values:
@@ -1292,7 +1292,7 @@ __STATIC_INLINE void LL_DMAMUX_SetSyncID(DMAMUX_Channel_TypeDef *DMAMUXx, uint32
 }
 
 /**
-  * @brief  Get DMAMUX synchronization ID  on DMAMUX Channel x.
+  * @brief  get DMAMUX synchronization ID  on DMAMUX Channel x.
   * @rmtoll CxCR         SYNC_ID       LL_DMAMUX_GetSyncID
   * @param  DMAMUXx DMAMUXx Instance
   * @param  Channel This parameter can be one of the following values:
@@ -1435,7 +1435,7 @@ __STATIC_INLINE void LL_DMAMUX_SetRequestGenPolarity(DMAMUX_Channel_TypeDef *DMA
 }
 
 /**
-  * @brief  Get the polarity of the signal on which the DMA request is generated.
+  * @brief  get the polarity of the signal on which the DMA request is generated.
   * @rmtoll RGxCR        GPOL          LL_DMAMUX_GetRequestGenPolarity
   * @param  DMAMUXx DMAMUXx Instance
   * @param  RequestGenChannel This parameter can be one of the following values:
@@ -1485,7 +1485,7 @@ __STATIC_INLINE void LL_DMAMUX_SetGenRequestNb(DMAMUX_Channel_TypeDef *DMAMUXx, 
 }
 
 /**
-  * @brief  Get the number of DMA request that will be autorized after a generation event.
+  * @brief  get the number of DMA request that will be autorized after a generation event.
   * @rmtoll RGxCR        GNBREQ        LL_DMAMUX_GetGenRequestNb
   * @param  DMAMUXx DMAMUXx Instance
   * @param  RequestGenChannel This parameter can be one of the following values:
@@ -1569,7 +1569,7 @@ __STATIC_INLINE void LL_DMAMUX_SetRequestSignalID(DMAMUX_Channel_TypeDef *DMAMUX
 }
 
 /**
-  * @brief  Get DMAMUX external Request Signal ID set on DMAMUX Channel x.
+  * @brief  get DMAMUX external Request Signal ID set on DMAMUX Channel x.
   * @rmtoll RGxCR        SIG_ID        LL_DMAMUX_GetRequestSignalID
   * @param  DMAMUXx DMAMUXx Instance
   * @param  RequestGenChannel This parameter can be one of the following values:
@@ -1623,7 +1623,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_GetRequestSignalID(DMAMUX_Channel_TypeDef *DM
   */
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 0.
+  * @brief  get Synchronization Event Overrun Flag Channel 0.
   * @rmtoll CSR          SOF0          LL_DMAMUX_IsActiveFlag_SO0
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1636,7 +1636,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO0(DMAMUX_Channel_TypeDef *DMAM
 }
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 1.
+  * @brief  get Synchronization Event Overrun Flag Channel 1.
   * @rmtoll CSR          SOF1          LL_DMAMUX_IsActiveFlag_SO1
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1649,7 +1649,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO1(DMAMUX_Channel_TypeDef *DMAM
 }
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 2.
+  * @brief  get Synchronization Event Overrun Flag Channel 2.
   * @rmtoll CSR          SOF2          LL_DMAMUX_IsActiveFlag_SO2
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1662,7 +1662,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO2(DMAMUX_Channel_TypeDef *DMAM
 }
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 3.
+  * @brief  get Synchronization Event Overrun Flag Channel 3.
   * @rmtoll CSR          SOF3          LL_DMAMUX_IsActiveFlag_SO3
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1675,7 +1675,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO3(DMAMUX_Channel_TypeDef *DMAM
 }
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 4.
+  * @brief  get Synchronization Event Overrun Flag Channel 4.
   * @rmtoll CSR          SOF4          LL_DMAMUX_IsActiveFlag_SO4
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1688,7 +1688,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO4(DMAMUX_Channel_TypeDef *DMAM
 }
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 5.
+  * @brief  get Synchronization Event Overrun Flag Channel 5.
   * @rmtoll CSR          SOF5          LL_DMAMUX_IsActiveFlag_SO5
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1701,7 +1701,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO5(DMAMUX_Channel_TypeDef *DMAM
 }
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 6.
+  * @brief  get Synchronization Event Overrun Flag Channel 6.
   * @rmtoll CSR          SOF6          LL_DMAMUX_IsActiveFlag_SO6
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1714,7 +1714,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO6(DMAMUX_Channel_TypeDef *DMAM
 }
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 7.
+  * @brief  get Synchronization Event Overrun Flag Channel 7.
   * @rmtoll CSR          SOF7          LL_DMAMUX_IsActiveFlag_SO7
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1727,7 +1727,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO7(DMAMUX_Channel_TypeDef *DMAM
 }
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 8.
+  * @brief  get Synchronization Event Overrun Flag Channel 8.
   * @rmtoll CSR          SOF8          LL_DMAMUX_IsActiveFlag_SO8
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1740,7 +1740,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO8(DMAMUX_Channel_TypeDef *DMAM
 }
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 9.
+  * @brief  get Synchronization Event Overrun Flag Channel 9.
   * @rmtoll CSR          SOF9          LL_DMAMUX_IsActiveFlag_SO9
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1753,7 +1753,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO9(DMAMUX_Channel_TypeDef *DMAM
 }
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 10.
+  * @brief  get Synchronization Event Overrun Flag Channel 10.
   * @rmtoll CSR          SOF10         LL_DMAMUX_IsActiveFlag_SO10
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1766,7 +1766,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO10(DMAMUX_Channel_TypeDef *DMA
 }
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 11.
+  * @brief  get Synchronization Event Overrun Flag Channel 11.
   * @rmtoll CSR          SOF11         LL_DMAMUX_IsActiveFlag_SO11
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1779,7 +1779,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO11(DMAMUX_Channel_TypeDef *DMA
 }
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 12.
+  * @brief  get Synchronization Event Overrun Flag Channel 12.
   * @rmtoll CSR          SOF12         LL_DMAMUX_IsActiveFlag_SO12
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1792,7 +1792,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO12(DMAMUX_Channel_TypeDef *DMA
 }
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 13.
+  * @brief  get Synchronization Event Overrun Flag Channel 13.
   * @rmtoll CSR          SOF13         LL_DMAMUX_IsActiveFlag_SO13
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1805,7 +1805,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO13(DMAMUX_Channel_TypeDef *DMA
 }
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 14.
+  * @brief  get Synchronization Event Overrun Flag Channel 14.
   * @rmtoll CSR          SOF14         LL_DMAMUX_IsActiveFlag_SO14
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1818,7 +1818,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO14(DMAMUX_Channel_TypeDef *DMA
 }
 
 /**
-  * @brief  Get Synchronization Event Overrun Flag Channel 15.
+  * @brief  get Synchronization Event Overrun Flag Channel 15.
   * @rmtoll CSR          SOF15         LL_DMAMUX_IsActiveFlag_SO15
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1831,7 +1831,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_SO15(DMAMUX_Channel_TypeDef *DMA
 }
 
 /**
-  * @brief  Get Request Generator 0 Trigger Event Overrun Flag.
+  * @brief  get Request Generator 0 Trigger Event Overrun Flag.
   * @rmtoll RGSR         OF0           LL_DMAMUX_IsActiveFlag_RGO0
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1844,7 +1844,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_RGO0(DMAMUX_Channel_TypeDef *DMA
 }
 
 /**
-  * @brief  Get Request Generator 1 Trigger Event Overrun Flag.
+  * @brief  get Request Generator 1 Trigger Event Overrun Flag.
   * @rmtoll RGSR         OF1           LL_DMAMUX_IsActiveFlag_RGO1
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1857,7 +1857,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_RGO1(DMAMUX_Channel_TypeDef *DMA
 }
 
 /**
-  * @brief  Get Request Generator 2 Trigger Event Overrun Flag.
+  * @brief  get Request Generator 2 Trigger Event Overrun Flag.
   * @rmtoll RGSR         OF2           LL_DMAMUX_IsActiveFlag_RGO2
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1870,7 +1870,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_RGO2(DMAMUX_Channel_TypeDef *DMA
 }
 
 /**
-  * @brief  Get Request Generator 3 Trigger Event Overrun Flag.
+  * @brief  get Request Generator 3 Trigger Event Overrun Flag.
   * @rmtoll RGSR         OF3           LL_DMAMUX_IsActiveFlag_RGO3
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1883,7 +1883,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_RGO3(DMAMUX_Channel_TypeDef *DMA
 }
 
 /**
-  * @brief  Get Request Generator 4 Trigger Event Overrun Flag.
+  * @brief  get Request Generator 4 Trigger Event Overrun Flag.
   * @rmtoll RGSR         OF4           LL_DMAMUX_IsActiveFlag_RGO4
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1896,7 +1896,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_RGO4(DMAMUX_Channel_TypeDef *DMA
 }
 
 /**
-  * @brief  Get Request Generator 5 Trigger Event Overrun Flag.
+  * @brief  get Request Generator 5 Trigger Event Overrun Flag.
   * @rmtoll RGSR         OF5           LL_DMAMUX_IsActiveFlag_RGO5
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1909,7 +1909,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_RGO5(DMAMUX_Channel_TypeDef *DMA
 }
 
 /**
-  * @brief  Get Request Generator 6 Trigger Event Overrun Flag.
+  * @brief  get Request Generator 6 Trigger Event Overrun Flag.
   * @rmtoll RGSR         OF6           LL_DMAMUX_IsActiveFlag_RGO6
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1922,7 +1922,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_RGO6(DMAMUX_Channel_TypeDef *DMA
 }
 
 /**
-  * @brief  Get Request Generator 7 Trigger Event Overrun Flag.
+  * @brief  get Request Generator 7 Trigger Event Overrun Flag.
   * @rmtoll RGSR         OF7           LL_DMAMUX_IsActiveFlag_RGO7
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval State of bit (1 or 0).
@@ -1935,7 +1935,7 @@ __STATIC_INLINE uint32_t LL_DMAMUX_IsActiveFlag_RGO7(DMAMUX_Channel_TypeDef *DMA
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 0.
+  * @brief  clear Synchronization Event Overrun Flag Channel 0.
   * @rmtoll CFR          CSOF0         LL_DMAMUX_ClearFlag_SO0
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -1948,7 +1948,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO0(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 1.
+  * @brief  clear Synchronization Event Overrun Flag Channel 1.
   * @rmtoll CFR          CSOF1         LL_DMAMUX_ClearFlag_SO1
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -1961,7 +1961,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO1(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 2.
+  * @brief  clear Synchronization Event Overrun Flag Channel 2.
   * @rmtoll CFR          CSOF2         LL_DMAMUX_ClearFlag_SO2
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -1974,7 +1974,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO2(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 3.
+  * @brief  clear Synchronization Event Overrun Flag Channel 3.
   * @rmtoll CFR          CSOF3         LL_DMAMUX_ClearFlag_SO3
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -1987,7 +1987,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO3(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 4.
+  * @brief  clear Synchronization Event Overrun Flag Channel 4.
   * @rmtoll CFR          CSOF4         LL_DMAMUX_ClearFlag_SO4
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2000,7 +2000,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO4(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 5.
+  * @brief  clear Synchronization Event Overrun Flag Channel 5.
   * @rmtoll CFR          CSOF5         LL_DMAMUX_ClearFlag_SO5
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2013,7 +2013,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO5(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 6.
+  * @brief  clear Synchronization Event Overrun Flag Channel 6.
   * @rmtoll CFR          CSOF6         LL_DMAMUX_ClearFlag_SO6
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2026,7 +2026,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO6(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 7.
+  * @brief  clear Synchronization Event Overrun Flag Channel 7.
   * @rmtoll CFR          CSOF7         LL_DMAMUX_ClearFlag_SO7
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2039,7 +2039,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO7(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 8.
+  * @brief  clear Synchronization Event Overrun Flag Channel 8.
   * @rmtoll CFR          CSOF8         LL_DMAMUX_ClearFlag_SO8
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2052,7 +2052,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO8(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 9.
+  * @brief  clear Synchronization Event Overrun Flag Channel 9.
   * @rmtoll CFR          CSOF9         LL_DMAMUX_ClearFlag_SO9
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2065,7 +2065,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO9(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 10.
+  * @brief  clear Synchronization Event Overrun Flag Channel 10.
   * @rmtoll CFR          CSOF10        LL_DMAMUX_ClearFlag_SO10
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2078,7 +2078,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO10(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 11.
+  * @brief  clear Synchronization Event Overrun Flag Channel 11.
   * @rmtoll CFR          CSOF11        LL_DMAMUX_ClearFlag_SO11
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2091,7 +2091,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO11(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 12.
+  * @brief  clear Synchronization Event Overrun Flag Channel 12.
   * @rmtoll CFR          CSOF12        LL_DMAMUX_ClearFlag_SO12
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2104,7 +2104,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO12(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 13.
+  * @brief  clear Synchronization Event Overrun Flag Channel 13.
   * @rmtoll CFR          CSOF13        LL_DMAMUX_ClearFlag_SO13
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2117,7 +2117,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO13(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 14.
+  * @brief  clear Synchronization Event Overrun Flag Channel 14.
   * @rmtoll CFR          CSOF14        LL_DMAMUX_ClearFlag_SO14
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2130,7 +2130,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO14(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Synchronization Event Overrun Flag Channel 15.
+  * @brief  clear Synchronization Event Overrun Flag Channel 15.
   * @rmtoll CFR          CSOF15        LL_DMAMUX_ClearFlag_SO15
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2143,7 +2143,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_SO15(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Request Generator 0 Trigger Event Overrun Flag.
+  * @brief  clear Request Generator 0 Trigger Event Overrun Flag.
   * @rmtoll RGCFR        COF0          LL_DMAMUX_ClearFlag_RGO0
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2156,7 +2156,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_RGO0(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Request Generator 1 Trigger Event Overrun Flag.
+  * @brief  clear Request Generator 1 Trigger Event Overrun Flag.
   * @rmtoll RGCFR        COF1          LL_DMAMUX_ClearFlag_RGO1
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2169,7 +2169,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_RGO1(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Request Generator 2 Trigger Event Overrun Flag.
+  * @brief  clear Request Generator 2 Trigger Event Overrun Flag.
   * @rmtoll RGCFR        COF2          LL_DMAMUX_ClearFlag_RGO2
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2182,7 +2182,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_RGO2(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Request Generator 3 Trigger Event Overrun Flag.
+  * @brief  clear Request Generator 3 Trigger Event Overrun Flag.
   * @rmtoll RGCFR        COF3          LL_DMAMUX_ClearFlag_RGO3
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2195,7 +2195,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_RGO3(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Request Generator 4 Trigger Event Overrun Flag.
+  * @brief  clear Request Generator 4 Trigger Event Overrun Flag.
   * @rmtoll RGCFR        COF4          LL_DMAMUX_ClearFlag_RGO4
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2208,7 +2208,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_RGO4(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Request Generator 5 Trigger Event Overrun Flag.
+  * @brief  clear Request Generator 5 Trigger Event Overrun Flag.
   * @rmtoll RGCFR        COF5          LL_DMAMUX_ClearFlag_RGO5
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2221,7 +2221,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_RGO5(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Request Generator 6 Trigger Event Overrun Flag.
+  * @brief  clear Request Generator 6 Trigger Event Overrun Flag.
   * @rmtoll RGCFR        COF6          LL_DMAMUX_ClearFlag_RGO6
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None
@@ -2234,7 +2234,7 @@ __STATIC_INLINE void LL_DMAMUX_ClearFlag_RGO6(DMAMUX_Channel_TypeDef *DMAMUXx)
 }
 
 /**
-  * @brief  Clear Request Generator 7 Trigger Event Overrun Flag.
+  * @brief  clear Request Generator 7 Trigger Event Overrun Flag.
   * @rmtoll RGCFR        COF7          LL_DMAMUX_ClearFlag_RGO7
   * @param  DMAMUXx DMAMUXx DMAMUXx Instance
   * @retval None

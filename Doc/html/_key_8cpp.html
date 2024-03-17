@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-lib/HardWare/Key/Key.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_key_8cpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">Key.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_key_8hpp_source.html">platform-lib/HardWare/Key/Key.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_delay_8hpp_source.html">platform-drivers/STM32/Delay/Delay.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="call_init_functions_8hpp_source.html">platform-lib/System/callInitFunctions.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_timer_8hpp_source.html">platform-drivers/STM32/Timer/Timer.hpp</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ad424d50d8377d8a9e26d00990fd6b2eb" id="r_ad424d50d8377d8a9e26d00990fd6b2eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad424d50d8377d8a9e26d00990fd6b2eb">Key_Detect</a> (uint8_t index)</td></tr>
+<tr class="memdesc:ad424d50d8377d8a9e26d00990fd6b2eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">单个按键检测函数  <br /></td></tr>
+<tr class="separator:ad424d50d8377d8a9e26d00990fd6b2eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6fd1d5c1eda23c2e7c2203031e2c64" id="r_ace6fd1d5c1eda23c2e7c2203031e2c64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27b">Key_ID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace6fd1d5c1eda23c2e7c2203031e2c64">Key_Scan</a> (void)</td></tr>
+<tr class="memdesc:ace6fd1d5c1eda23c2e7c2203031e2c64"><td class="mdescLeft">&#160;</td><td class="mdescRight">按键扫描  <br /></td></tr>
+<tr class="separator:ace6fd1d5c1eda23c2e7c2203031e2c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a392cfe6ea850ee14ff128daf80d30d86" id="r_a392cfe6ea850ee14ff128daf80d30d86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a392cfe6ea850ee14ff128daf80d30d86">KeyScan10ms</a> (void)</td></tr>
+<tr class="memdesc:a392cfe6ea850ee14ff128daf80d30d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">10毫秒按键扫描  <br /></td></tr>
+<tr class="separator:a392cfe6ea850ee14ff128daf80d30d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fefcf739e686138486e2782376db82d" id="r_a1fefcf739e686138486e2782376db82d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7c">Key_TypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fefcf739e686138486e2782376db82d">TypeConverse_KeyValue</a> (Key_Value value)</td></tr>
+<tr class="separator:a1fefcf739e686138486e2782376db82d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51c6d5464514aad03e3e6a7c019ac1f0" id="r_a51c6d5464514aad03e3e6a7c019ac1f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7c">Key_TypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51c6d5464514aad03e3e6a7c019ac1f0">Key_GetValue</a> (void)</td></tr>
+<tr class="memdesc:a51c6d5464514aad03e3e6a7c019ac1f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取按键值  <br /></td></tr>
+<tr class="separator:a51c6d5464514aad03e3e6a7c019ac1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f147fc769d371775875ecc2dfe3934d" id="r_a3f147fc769d371775875ecc2dfe3934d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f147fc769d371775875ecc2dfe3934d">Key_Init</a> (void)</td></tr>
+<tr class="memdesc:a3f147fc769d371775875ecc2dfe3934d"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化每个按键  <br /></td></tr>
+<tr class="separator:a3f147fc769d371775875ecc2dfe3934d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecff4360a3236732546833ba35e07975" id="r_aecff4360a3236732546833ba35e07975"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecff4360a3236732546833ba35e07975">INIT_FUNCTION</a> (KEY_INIT)</td></tr>
+<tr class="separator:aecff4360a3236732546833ba35e07975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:ac6dfa28f94ba2739e7b00fcc7c1ad7c5" id="r_ac6dfa28f94ba2739e7b00fcc7c1ad7c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_key.html">Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6dfa28f94ba2739e7b00fcc7c1ad7c5">_key</a> [<a class="el" href="_key_8hpp.html#abdff6614f80f2fc9f8db73960686924a">KEY_HARD_NUM</a>]</td></tr>
+<tr class="separator:ac6dfa28f94ba2739e7b00fcc7c1ad7c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18e735ce3696d3b2091885f53e4fbe40" id="r_a18e735ce3696d3b2091885f53e4fbe40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_fifo.html">Fifo</a>&lt; Key_Value, <a class="el" href="_key_8hpp.html#aad662a328b983b0dd8c703b5ac4e2bbc">KEY_VALUE_FIFO_MAX_SIZE</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18e735ce3696d3b2091885f53e4fbe40">Key_Value_Fifo</a></td></tr>
+<tr class="separator:a18e735ce3696d3b2091885f53e4fbe40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="aecff4360a3236732546833ba35e07975" name="aecff4360a3236732546833ba35e07975"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecff4360a3236732546833ba35e07975">&#9670;&#160;</a></span>INIT_FUNCTION()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">INIT_FUNCTION </td>
+          <td>(</td>
+          <td class="paramtype">KEY_INIT</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad424d50d8377d8a9e26d00990fd6b2eb" name="ad424d50d8377d8a9e26d00990fd6b2eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad424d50d8377d8a9e26d00990fd6b2eb">&#9670;&#160;</a></span>Key_Detect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Key_Detect </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>单个按键检测函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>按键索引 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a51c6d5464514aad03e3e6a7c019ac1f0" name="a51c6d5464514aad03e3e6a7c019ac1f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51c6d5464514aad03e3e6a7c019ac1f0">&#9670;&#160;</a></span>Key_GetValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7c">Key_TypeDef</a> Key_GetValue </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取按键值 </p>
+<dl class="section return"><dt>返回</dt><dd>Key_TypeDef 从按键FIFO缓冲区中读取被按下的值 </dd></dl>
+
+</div>
+</div>
+<a id="a3f147fc769d371775875ecc2dfe3934d" name="a3f147fc769d371775875ecc2dfe3934d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f147fc769d371775875ecc2dfe3934d">&#9670;&#160;</a></span>Key_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Key_Init </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>初始化每个按键 </p>
+
+</div>
+</div>
+<a id="ace6fd1d5c1eda23c2e7c2203031e2c64" name="ace6fd1d5c1eda23c2e7c2203031e2c64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace6fd1d5c1eda23c2e7c2203031e2c64">&#9670;&#160;</a></span>Key_Scan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_key_8hpp.html#a4e56accf9cf93dd3a071c72c4b17a27b">Key_ID</a> Key_Scan </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>按键扫描 </p>
+<dl class="section return"><dt>返回</dt><dd>Key_ID 被触发按键的编号 </dd></dl>
+
+</div>
+</div>
+<a id="a392cfe6ea850ee14ff128daf80d30d86" name="a392cfe6ea850ee14ff128daf80d30d86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a392cfe6ea850ee14ff128daf80d30d86">&#9670;&#160;</a></span>KeyScan10ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeyScan10ms </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>10毫秒按键扫描 </p>
+<p>放在10ms触发的任务中。 </p>
+
+</div>
+</div>
+<a id="a1fefcf739e686138486e2782376db82d" name="a1fefcf739e686138486e2782376db82d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fefcf739e686138486e2782376db82d">&#9670;&#160;</a></span>TypeConverse_KeyValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_key_8hpp.html#a256a72a91b632a8a85649ff41984be7c">Key_TypeDef</a> TypeConverse_KeyValue </td>
+          <td>(</td>
+          <td class="paramtype">Key_Value</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="ac6dfa28f94ba2739e7b00fcc7c1ad7c5" name="ac6dfa28f94ba2739e7b00fcc7c1ad7c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6dfa28f94ba2739e7b00fcc7c1ad7c5">&#9670;&#160;</a></span>_key</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_key.html">Key</a> _key[<a class="el" href="_key_8hpp.html#abdff6614f80f2fc9f8db73960686924a">KEY_HARD_NUM</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a18e735ce3696d3b2091885f53e4fbe40" name="a18e735ce3696d3b2091885f53e4fbe40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18e735ce3696d3b2091885f53e4fbe40">&#9670;&#160;</a></span>Key_Value_Fifo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_fifo.html">Fifo</a>&lt;Key_Value, <a class="el" href="_key_8hpp.html#aad662a328b983b0dd8c703b5ac4e2bbc">KEY_VALUE_FIFO_MAX_SIZE</a>&gt; Key_Value_Fifo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_bc2597cfbec14760d23b28ac592ac7af.html">platform-lib</a></li><li class="navelem"><a class="el" href="dir_0608fb62d33f45ab68406becc139393f.html">HardWare</a></li><li class="navelem"><a class="el" href="dir_fe228ec49debe80fb8e02808b551a08b.html">Key</a></li><li class="navelem"><a class="el" href="_key_8cpp.html">Key.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

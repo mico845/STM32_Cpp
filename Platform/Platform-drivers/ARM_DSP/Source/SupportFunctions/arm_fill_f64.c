@@ -33,7 +33,7 @@
  */
 
 /**
-  @addtogroup Fill
+  @addtogroup fill
   @{
  */
 
@@ -66,5 +66,5 @@ void arm_fill_f64(
 }
 
 /**
-  @} end of Fill group
+  @} end of fill group
  */

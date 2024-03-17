@@ -1,8 +1,4 @@
-//
-// Created by Whisky on 1/16/2024.
-//
-
-#include "FIR.hpp"
+#include "platform-lib/DSP/FIR/FIR.hpp"
 
 arm_fir_instance_f32 fir_instance_f32;
 uint32_t blockSize = BLOCK_SIZE;

@@ -1,3 +1,5 @@
+#include <stdint.h>
+
 #ifndef DDS_ROM_SIN_WAVE_SIZE
 #define DDS_ROM_SIN_WAVE_SIZE    (131072)
 #endif

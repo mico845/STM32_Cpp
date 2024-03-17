@@ -478,7 +478,7 @@ typedef struct
 #define LL_DAC_WriteReg(__INSTANCE__, __REG__, __VALUE__) WRITE_REG(__INSTANCE__->__REG__, (__VALUE__))
 
 /**
-  * @brief  Read a value in DAC register
+  * @brief  read a value in DAC register
   * @param  __INSTANCE__ DAC Instance
   * @param  __REG__ Register to be read
   * @retval Register value
@@ -603,7 +603,7 @@ __STATIC_INLINE void LL_DAC_SetMode(DAC_TypeDef *DACx, uint32_t DAC_Channel, uin
 }
 
 /**
-  * @brief  Get the operating mode for the selected DAC channel:
+  * @brief  get the operating mode for the selected DAC channel:
   *         calibration or normal operating mode.
   * @rmtoll CR       CEN1           LL_DAC_GetMode\n
   *         CR       CEN2           LL_DAC_GetMode
@@ -643,7 +643,7 @@ __STATIC_INLINE void LL_DAC_SetTrimmingValue(DAC_TypeDef *DACx, uint32_t DAC_Cha
 }
 
 /**
-  * @brief  Get the offset trimming value for the selected DAC channel.
+  * @brief  get the offset trimming value for the selected DAC channel.
   *         Trimming has an impact when output buffer is enabled
   *         and is intended to replace factory calibration default values.
   * @rmtoll CCR      OTRIM1         LL_DAC_GetTrimmingValue\n
@@ -711,7 +711,7 @@ __STATIC_INLINE void LL_DAC_SetTriggerSource(DAC_TypeDef *DACx, uint32_t DAC_Cha
 }
 
 /**
-  * @brief  Get the conversion trigger source for the selected DAC channel.
+  * @brief  get the conversion trigger source for the selected DAC channel.
   * @note   For conversion trigger source to be effective, DAC trigger
   *         must be enabled using function @ref LL_DAC_EnableTrigger().
   * @note   Availability of parameters of trigger sources from timer
@@ -779,7 +779,7 @@ __STATIC_INLINE void LL_DAC_SetWaveAutoGeneration(DAC_TypeDef *DACx, uint32_t DA
 }
 
 /**
-  * @brief  Get the waveform automatic generation mode
+  * @brief  get the waveform automatic generation mode
   *         for the selected DAC channel.
   * @rmtoll CR       WAVE1          LL_DAC_GetWaveAutoGeneration\n
   *         CR       WAVE2          LL_DAC_GetWaveAutoGeneration
@@ -836,7 +836,7 @@ __STATIC_INLINE void LL_DAC_SetWaveNoiseLFSR(DAC_TypeDef *DACx, uint32_t DAC_Cha
 }
 
 /**
-  * @brief  Get the noise waveform generation for the selected DAC channel:
+  * @brief  get the noise waveform generation for the selected DAC channel:
   *         Noise mode and parameters LFSR (linear feedback shift register).
   * @rmtoll CR       MAMP1          LL_DAC_GetWaveNoiseLFSR\n
   *         CR       MAMP2          LL_DAC_GetWaveNoiseLFSR
@@ -903,7 +903,7 @@ __STATIC_INLINE void LL_DAC_SetWaveTriangleAmplitude(DAC_TypeDef *DACx, uint32_t
 }
 
 /**
-  * @brief  Get the triangle waveform generation for the selected DAC channel:
+  * @brief  get the triangle waveform generation for the selected DAC channel:
   *         triangle mode and amplitude.
   * @rmtoll CR       MAMP1          LL_DAC_GetWaveTriangleAmplitude\n
   *         CR       MAMP2          LL_DAC_GetWaveTriangleAmplitude
@@ -1012,7 +1012,7 @@ __STATIC_INLINE void LL_DAC_SetOutputMode(DAC_TypeDef *DACx, uint32_t DAC_Channe
 }
 
 /**
-  * @brief  Get the output mode normal or sample-and-hold for the selected DAC channel.
+  * @brief  get the output mode normal or sample-and-hold for the selected DAC channel.
   * @rmtoll CR       MODE1          LL_DAC_GetOutputMode\n
   *         CR       MODE2          LL_DAC_GetOutputMode
   * @param  DACx DAC instance
@@ -1055,7 +1055,7 @@ __STATIC_INLINE void LL_DAC_SetOutputBuffer(DAC_TypeDef *DACx, uint32_t DAC_Chan
 }
 
 /**
-  * @brief  Get the output buffer state for the selected DAC channel.
+  * @brief  get the output buffer state for the selected DAC channel.
   * @rmtoll CR       MODE1          LL_DAC_GetOutputBuffer\n
   *         CR       MODE2          LL_DAC_GetOutputBuffer
   * @param  DACx DAC instance
@@ -1104,7 +1104,7 @@ __STATIC_INLINE void LL_DAC_SetOutputConnection(DAC_TypeDef *DACx, uint32_t DAC_
 }
 
 /**
-  * @brief  Get the output connection for the selected DAC channel.
+  * @brief  get the output connection for the selected DAC channel.
   * @note   On this STM32 series, output connection depends on output mode (normal or
   *         sample and hold) and output buffer state.
   *         - if output connection is set to internal path and output buffer
@@ -1157,7 +1157,7 @@ __STATIC_INLINE void LL_DAC_SetSampleAndHoldSampleTime(DAC_TypeDef *DACx, uint32
 }
 
 /**
-  * @brief  Get the sample-and-hold timing for the selected DAC channel:
+  * @brief  get the sample-and-hold timing for the selected DAC channel:
   *         sample time
   * @rmtoll SHSR1    TSAMPLE1       LL_DAC_GetSampleAndHoldSampleTime\n
   *         SHSR2    TSAMPLE2       LL_DAC_GetSampleAndHoldSampleTime
@@ -1195,7 +1195,7 @@ __STATIC_INLINE void LL_DAC_SetSampleAndHoldHoldTime(DAC_TypeDef *DACx, uint32_t
 }
 
 /**
-  * @brief  Get the sample-and-hold timing for the selected DAC channel:
+  * @brief  get the sample-and-hold timing for the selected DAC channel:
   *         hold time
   * @rmtoll SHHR     THOLD1         LL_DAC_GetSampleAndHoldHoldTime\n
   *         SHHR     THOLD2         LL_DAC_GetSampleAndHoldHoldTime
@@ -1232,7 +1232,7 @@ __STATIC_INLINE void LL_DAC_SetSampleAndHoldRefreshTime(DAC_TypeDef *DACx, uint3
 }
 
 /**
-  * @brief  Get the sample-and-hold timing for the selected DAC channel:
+  * @brief  get the sample-and-hold timing for the selected DAC channel:
   *         refresh time
   * @rmtoll SHRR     TREFRESH1      LL_DAC_GetSampleAndHoldRefreshTime\n
   *         SHRR     TREFRESH2      LL_DAC_GetSampleAndHoldRefreshTime
@@ -1294,7 +1294,7 @@ __STATIC_INLINE void LL_DAC_DisableDMAReq(DAC_TypeDef *DACx, uint32_t DAC_Channe
 }
 
 /**
-  * @brief  Get DAC DMA transfer request state of the selected channel.
+  * @brief  get DAC DMA transfer request state of the selected channel.
   *         (0: DAC DMA transfer request is disabled, 1: DAC DMA transfer request is enabled)
   * @rmtoll CR       DMAEN1         LL_DAC_IsDMAReqEnabled\n
   *         CR       DMAEN2         LL_DAC_IsDMAReqEnabled
@@ -1394,7 +1394,7 @@ __STATIC_INLINE void LL_DAC_Disable(DAC_TypeDef *DACx, uint32_t DAC_Channel)
 }
 
 /**
-  * @brief  Get DAC enable state of the selected channel.
+  * @brief  get DAC enable state of the selected channel.
   *         (0: DAC channel is disabled, 1: DAC channel is enabled)
   * @rmtoll CR       EN1            LL_DAC_IsEnabled\n
   *         CR       EN2            LL_DAC_IsEnabled
@@ -1452,7 +1452,7 @@ __STATIC_INLINE void LL_DAC_DisableTrigger(DAC_TypeDef *DACx, uint32_t DAC_Chann
 }
 
 /**
-  * @brief  Get DAC trigger state of the selected channel.
+  * @brief  get DAC trigger state of the selected channel.
   *         (0: DAC trigger is disabled, 1: DAC trigger is enabled)
   * @rmtoll CR       TEN1           LL_DAC_IsTriggerEnabled\n
   *         CR       TEN2           LL_DAC_IsTriggerEnabled
@@ -1652,7 +1652,7 @@ __STATIC_INLINE uint32_t LL_DAC_RetrieveOutputData(DAC_TypeDef *DACx, uint32_t D
   */
 
 /**
-  * @brief  Get DAC calibration offset flag for DAC channel 1
+  * @brief  get DAC calibration offset flag for DAC channel 1
   * @rmtoll SR       CAL_FLAG1      LL_DAC_IsActiveFlag_CAL1
   * @param  DACx DAC instance
   * @retval State of bit (1 or 0).
@@ -1664,7 +1664,7 @@ __STATIC_INLINE uint32_t LL_DAC_IsActiveFlag_CAL1(DAC_TypeDef *DACx)
 
 
 /**
-  * @brief  Get DAC calibration offset flag for DAC channel 2
+  * @brief  get DAC calibration offset flag for DAC channel 2
   * @rmtoll SR       CAL_FLAG2      LL_DAC_IsActiveFlag_CAL2
   * @param  DACx DAC instance
   * @retval State of bit (1 or 0).
@@ -1676,7 +1676,7 @@ __STATIC_INLINE uint32_t LL_DAC_IsActiveFlag_CAL2(DAC_TypeDef *DACx)
 
 
 /**
-  * @brief  Get DAC busy writing sample time flag for DAC channel 1
+  * @brief  get DAC busy writing sample time flag for DAC channel 1
   * @rmtoll SR       BWST1          LL_DAC_IsActiveFlag_BWST1
   * @param  DACx DAC instance
   * @retval State of bit (1 or 0).
@@ -1687,7 +1687,7 @@ __STATIC_INLINE uint32_t LL_DAC_IsActiveFlag_BWST1(DAC_TypeDef *DACx)
 }
 
 /**
-  * @brief  Get DAC busy writing sample time flag for DAC channel 2
+  * @brief  get DAC busy writing sample time flag for DAC channel 2
   * @rmtoll SR       BWST2          LL_DAC_IsActiveFlag_BWST2
   * @param  DACx DAC instance
   * @retval State of bit (1 or 0).
@@ -1699,7 +1699,7 @@ __STATIC_INLINE uint32_t LL_DAC_IsActiveFlag_BWST2(DAC_TypeDef *DACx)
 
 
 /**
-  * @brief  Get DAC underrun flag for DAC channel 1
+  * @brief  get DAC underrun flag for DAC channel 1
   * @rmtoll SR       DMAUDR1        LL_DAC_IsActiveFlag_DMAUDR1
   * @param  DACx DAC instance
   * @retval State of bit (1 or 0).
@@ -1711,7 +1711,7 @@ __STATIC_INLINE uint32_t LL_DAC_IsActiveFlag_DMAUDR1(DAC_TypeDef *DACx)
 
 
 /**
-  * @brief  Get DAC underrun flag for DAC channel 2
+  * @brief  get DAC underrun flag for DAC channel 2
   * @rmtoll SR       DMAUDR2        LL_DAC_IsActiveFlag_DMAUDR2
   * @param  DACx DAC instance
   * @retval State of bit (1 or 0).
@@ -1723,7 +1723,7 @@ __STATIC_INLINE uint32_t LL_DAC_IsActiveFlag_DMAUDR2(DAC_TypeDef *DACx)
 
 
 /**
-  * @brief  Clear DAC underrun flag for DAC channel 1
+  * @brief  clear DAC underrun flag for DAC channel 1
   * @rmtoll SR       DMAUDR1        LL_DAC_ClearFlag_DMAUDR1
   * @param  DACx DAC instance
   * @retval None
@@ -1735,7 +1735,7 @@ __STATIC_INLINE void LL_DAC_ClearFlag_DMAUDR1(DAC_TypeDef *DACx)
 
 
 /**
-  * @brief  Clear DAC underrun flag for DAC channel 2
+  * @brief  clear DAC underrun flag for DAC channel 2
   * @rmtoll SR       DMAUDR2        LL_DAC_ClearFlag_DMAUDR2
   * @param  DACx DAC instance
   * @retval None
@@ -1803,7 +1803,7 @@ __STATIC_INLINE void LL_DAC_DisableIT_DMAUDR2(DAC_TypeDef *DACx)
 
 
 /**
-  * @brief  Get DMA underrun interrupt for DAC channel 1
+  * @brief  get DMA underrun interrupt for DAC channel 1
   * @rmtoll CR       DMAUDRIE1      LL_DAC_IsEnabledIT_DMAUDR1
   * @param  DACx DAC instance
   * @retval State of bit (1 or 0).
@@ -1815,7 +1815,7 @@ __STATIC_INLINE uint32_t LL_DAC_IsEnabledIT_DMAUDR1(DAC_TypeDef *DACx)
 
 
 /**
-  * @brief  Get DMA underrun interrupt for DAC channel 2
+  * @brief  get DMA underrun interrupt for DAC channel 2
   * @rmtoll CR       DMAUDRIE2      LL_DAC_IsEnabledIT_DMAUDR2
   * @param  DACx DAC instance
   * @retval State of bit (1 or 0).

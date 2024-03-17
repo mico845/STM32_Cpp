@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-lib/HardWare/LCD_SPI/LCD_SPI.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_l_c_d___s_p_i_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">LCD_SPI.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_l_c_d___s_p_i_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __HARDWARE_LCD_SPI_H__</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __HARDWARE_LCD_SPI_H__</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_g_p_i_o_8hpp.html">platform-drivers/STM32/GPIO/GPIO.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_l_c_d___lib_8hpp.html">platform-lib/HardWare/LCD_SPI/LCD_Lib.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_sys_8hpp.html">platform-drivers/STM32/System/Sys.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_s_p_i_8hpp.html">platform-drivers/STM32/SPI/SPI.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef LCD_SPI_HANDEL</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="_l_c_d___s_p_i_8hpp.html#ace33abb9f24aa3d6d056e4327c32f3ff">   10</a></span><span class="preprocessor">    #define LCD_SPI_HANDEL  (SPI6)   </span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifndef LCD_DC_GPIO</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="_l_c_d___s_p_i_8hpp.html#a93265c090fc78bed43c2aa9c786cfb40">   14</a></span><span class="preprocessor">    #define LCD_DC_GPIO</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="_l_c_d___s_p_i_8hpp.html#a9d7ba5e3ae28efced2a48e390fd38434">   15</a></span><span class="preprocessor">    #define LCD_DC_PORT     (GPIOB) </span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="_l_c_d___s_p_i_8hpp.html#a402d8ccd0bb0a6cc377222e75b8e050e">   16</a></span><span class="preprocessor">    #define LCD_DC_PIN      (4)     </span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef LCD_RST_GPIO</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="_l_c_d___s_p_i_8hpp.html#addda83d3c22042f740b41d54de0e3ea0">   20</a></span><span class="preprocessor">    #define LCD_RST_GPIO</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="_l_c_d___s_p_i_8hpp.html#a774d1462751965473d6cc3a4ec270336">   21</a></span><span class="preprocessor">    #define LCD_RST_PORT    (GPIOD) </span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="_l_c_d___s_p_i_8hpp.html#a9d11073f149e02e0a07937196d1e5a8e">   22</a></span><span class="preprocessor">    #define LCD_RST_PIN     (4)     </span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#ifndef LCD_PWR_GPIO</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="_l_c_d___s_p_i_8hpp.html#aa1799323ab2e080192d628c2bd2d6575">   26</a></span><span class="preprocessor">    #define LCD_PWR_GPIO</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="_l_c_d___s_p_i_8hpp.html#a64738cb8430b3ffe5557ec9a6234f5b0">   27</a></span><span class="preprocessor">    #define LCD_PWR_PORT    (GPIOD) </span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="_l_c_d___s_p_i_8hpp.html#aa614e7e68f3a60ccaaf3e8b3c8093c61">   28</a></span><span class="preprocessor">    #define LCD_PWR_PIN     (3)     </span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#ifndef LCD_TOTAL_BUF_SIZE</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="_l_c_d___s_p_i_8hpp.html#a3f548ee3a22cc84caae1ff9fe3e506d9">   32</a></span><span class="preprocessor">    #define LCD_TOTAL_BUF_SIZE  (240*135*2)     </span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#ifndef LCD_BUF_SIZE</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="_l_c_d___s_p_i_8hpp.html#a1c0a29559fd012050f5ede5966f83082">   35</a></span><span class="preprocessor">    #define LCD_BUF_SIZE (1152)</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">extern</span> <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a>        <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>;   </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">extern</span> <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a>        <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#a46899b87954bec3d2ca158543a2fbdc8">DEFAULT_BACK_COLOR</a>;     </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">extern</span> <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#ab4c2600f00c83150c5a124f21f7887c8">LCD_FontSize_TypeDef</a>     <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#a861dac9013af3a7d4e6aee9cd06f7d6b">DEFAULT_FONT_SIZE</a>;      </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#ifndef LCD_STREAM_FLOAT_PRECISION</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="_l_c_d___s_p_i_8hpp.html#a44be1662a157fa282888c626f8d090b5">   45</a></span><span class="preprocessor">#define LCD_STREAM_FLOAT_PRECISION    (3)                   </span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="};">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_l_c_d___s_p_i.html">   56</a></span><span class="keyword">class </span><a class="code hl_class" href="class_l_c_d___s_p_i.html">LCD_SPI</a></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">/* Variables */</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_class" href="class_s_t_m32_1_1_g_p_i_o.html">STM32::GPIO</a> gpio_dc;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_class" href="class_s_t_m32_1_1_g_p_i_o.html">STM32::GPIO</a> gpio_rst;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_class" href="class_s_t_m32_1_1_g_p_i_o.html">STM32::GPIO</a> gpio_pwr;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">bool</span> isUseHorizontal;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    uint8_t width;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    uint8_t height;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    uint8_t lcd_buf[<a class="code hl_define" href="_l_c_d___s_p_i_8hpp.html#a1c0a29559fd012050f5ede5966f83082">LCD_BUF_SIZE</a>];</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    uint8_t current_x = 0;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    uint8_t current_y = 0;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> precision = <a class="code hl_define" href="_l_c_d___s_p_i_8hpp.html#a44be1662a157fa282888c626f8d090b5">LCD_STREAM_FLOAT_PRECISION</a>; <span class="comment">// 小数显示位数</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="comment">/* Functions */</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    __INLINE <span class="keywordtype">void</span> writeCmd(uint8_t cmd);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    __INLINE <span class="keywordtype">void</span> writeData(uint8_t data);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    __INLINE <span class="keywordtype">void</span> writeDataHalfWord(uint16_t data);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">void</span> memoryDataAccessControl(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">void</span> setAddress(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="comment">/* Variables */</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="comment">/* Constructor */</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_l_c_d___s_p_i.html#aa8884e7dfd305b2b37b6a782867acf5e">   84</a></span>    <a class="code hl_function" href="class_l_c_d___s_p_i.html#aa8884e7dfd305b2b37b6a782867acf5e">LCD_SPI</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="class_l_c_d___s_p_i.html#ab9b01af752f760fc230ce3fe21411c64">   85</a></span>    <a class="code hl_function" href="class_l_c_d___s_p_i.html#ab9b01af752f760fc230ce3fe21411c64">~LCD_SPI</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_function" href="class_l_c_d___s_p_i.html#aa8884e7dfd305b2b37b6a782867acf5e">LCD_SPI</a>(<span class="keywordtype">bool</span> IsUseHorizontal);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">/* Functions */</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    __INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_c_d___s_p_i.html#a7da86a6f295bffef3b9d8a3dc05ad7ae">clear</a>(<a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color = <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#a46899b87954bec3d2ca158543a2fbdc8">DEFAULT_BACK_COLOR</a>);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_c_d___s_p_i.html#a0266865ebbc3c9101dcd11b2c44c33f8">fill</a>(uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end,</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>              <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color = <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    __INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_c_d___s_p_i.html#ad565cfe83204cd26ed6dd66f018d9692">draw_Point</a>(uint16_t x, uint16_t y,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                             <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color = <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_c_d___s_p_i.html#a11bd8ec830791cba9420df1b0072b640">draw_Line</a>(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                   <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color = <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_c_d___s_p_i.html#a3e4bd003407be8d7296929e37781b196">draw_Rectangle</a>(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                        <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color = <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_c_d___s_p_i.html#a6e18dac19a367376558363492c19b7f0">draw_Circle</a>(uint16_t x0, uint16_t y0, uint8_t r,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                     <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color = <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_c_d___s_p_i.html#a7c1b19f1ff9d8df61172e36843dbd1f0">show_Char</a>(uint16_t x, uint16_t y, <span class="keywordtype">char</span> chr,</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                   <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#ab4c2600f00c83150c5a124f21f7887c8">LCD_FontSize_TypeDef</a> size = <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#a861dac9013af3a7d4e6aee9cd06f7d6b">DEFAULT_FONT_SIZE</a>,</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                   <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color = <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>,</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                   <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> back_color = <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#a46899b87954bec3d2ca158543a2fbdc8">DEFAULT_BACK_COLOR</a>);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_c_d___s_p_i.html#aa7d2c005beedb484fe426a147a797c95">show_Num</a>(uint16_t x, uint16_t y, uint32_t num, uint8_t len, <span class="keywordtype">bool</span> Is_ZeroFill = <span class="keyword">false</span>,</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                  <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#ab4c2600f00c83150c5a124f21f7887c8">LCD_FontSize_TypeDef</a> size = <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#a861dac9013af3a7d4e6aee9cd06f7d6b">DEFAULT_FONT_SIZE</a>,</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                  <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color = <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>,</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                  <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> back_color = <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#a46899b87954bec3d2ca158543a2fbdc8">DEFAULT_BACK_COLOR</a>);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_c_d___s_p_i.html#adf90e64cd034edad5410046095f000e4">show_String</a>(uint16_t x, uint16_t y, <span class="keyword">const</span> <span class="keywordtype">char</span> *str,</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                     uint16_t string_width = 0,</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                     uint16_t string_height = 0,</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                     <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#ab4c2600f00c83150c5a124f21f7887c8">LCD_FontSize_TypeDef</a> size = <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#a861dac9013af3a7d4e6aee9cd06f7d6b">DEFAULT_FONT_SIZE</a>,</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                     <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color = <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a>,</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                     <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> back_color = <a class="code hl_variable" href="_l_c_d___s_p_i_8hpp.html#a46899b87954bec3d2ca158543a2fbdc8">DEFAULT_BACK_COLOR</a>);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_c_d___s_p_i.html#a553032385ae34bc220c31b4059fa7785">show_Image</a>(uint16_t x, uint16_t y, uint16_t Image_width, uint16_t Image_height, <span class="keyword">const</span> uint8_t *Image);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="comment">//LCD支持流操作</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <a class="code hl_class" href="class_l_c_d___s_p_i.html">LCD_SPI</a>&amp; <a class="code hl_function" href="class_l_c_d___s_p_i.html#a6ae4dfe6458f9cb62fd4aff264973092">operator &lt;&lt;</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pStr);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <a class="code hl_class" href="class_l_c_d___s_p_i.html">LCD_SPI</a>&amp; <a class="code hl_function" href="class_l_c_d___s_p_i.html#a6ae4dfe6458f9cb62fd4aff264973092">operator &lt;&lt;</a>(<a class="code hl_struct" href="struct_s_t_m32_1_1_e_n_d_l.html">STM32::ENDL</a>&amp; e);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <a class="code hl_class" href="class_l_c_d___s_p_i.html">LCD_SPI</a>&amp; <a class="code hl_function" href="class_l_c_d___s_p_i.html#a6ae4dfe6458f9cb62fd4aff264973092">operator &lt;&lt;</a>(<a class="code hl_struct" href="struct_s_t_m32_1_1_c_l_e_a_r.html">STM32::CLEAR</a>&amp; c);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <a class="code hl_class" href="class_l_c_d___s_p_i.html">LCD_SPI</a>&amp; <a class="code hl_function" href="class_l_c_d___s_p_i.html#a6ae4dfe6458f9cb62fd4aff264973092">operator &lt;&lt;</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> charactor);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <a class="code hl_class" href="class_l_c_d___s_p_i.html">LCD_SPI</a>&amp; <a class="code hl_function" href="class_l_c_d___s_p_i.html#a6ae4dfe6458f9cb62fd4aff264973092">operator &lt;&lt;</a>(<span class="keywordtype">int</span> val);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <a class="code hl_class" href="class_l_c_d___s_p_i.html">LCD_SPI</a>&amp; <a class="code hl_function" href="class_l_c_d___s_p_i.html#a6ae4dfe6458f9cb62fd4aff264973092">operator &lt;&lt;</a>(<span class="keywordtype">double</span> val);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>};</div>
+</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="foldopen" id="foldopen00256" data-start="{" data-end="}">
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="_l_c_d___s_p_i_8hpp.html#a482d39b27dd7206d40b11919a9dee953">  256</a></span>__STATIC_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="_l_c_d___s_p_i_8hpp.html#a482d39b27dd7206d40b11919a9dee953">LCD_SPI_SendBytes</a>(<span class="keyword">const</span> uint8_t* data, uint16_t size)</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>{</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <a class="code hl_function" href="_s_p_i_8hpp.html#a35e2edeb7036e8e17dbfe56788db2530">SPI_SendBytes</a>(<a class="code hl_define" href="_l_c_d___s_p_i_8hpp.html#ace33abb9f24aa3d6d056e4327c32f3ff">LCD_SPI_HANDEL</a>, data, size);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>}</div>
+</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="foldopen" id="foldopen00261" data-start="{" data-end="}">
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno"><a class="line" href="_l_c_d___s_p_i_8hpp.html#a57d156c32bad6fcdb09631e54c738391">  261</a></span>__STATIC_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="_l_c_d___s_p_i_8hpp.html#a57d156c32bad6fcdb09631e54c738391">LCD_SPI_SendByte</a>(<span class="keyword">const</span> uint8_t data)</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>{</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <a class="code hl_function" href="_s_p_i_8hpp.html#aa7ddda4d7f2bc05d854213304e89adfb">SPI_SendByte</a>(<a class="code hl_define" href="_l_c_d___s_p_i_8hpp.html#ace33abb9f24aa3d6d056e4327c32f3ff">LCD_SPI_HANDEL</a>, data);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>}</div>
+</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>__INLINE <span class="keywordtype">void</span> LCD_SPI::writeCmd(uint8_t cmd)</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>{</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    gpio_dc.<a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#a945e5b5a9e0e032dae1dda653484e41b">low</a>();</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <a class="code hl_function" href="_l_c_d___s_p_i_8hpp.html#a57d156c32bad6fcdb09631e54c738391">LCD_SPI_SendByte</a>(cmd);</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>}</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>__INLINE <span class="keywordtype">void</span> LCD_SPI::writeData(uint8_t data)</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>{</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    gpio_dc.<a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#ad87fe8e2a90a74f7b05084738c5b2600">high</a>();</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <a class="code hl_function" href="_l_c_d___s_p_i_8hpp.html#a57d156c32bad6fcdb09631e54c738391">LCD_SPI_SendByte</a>(data);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>}</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>__INLINE <span class="keywordtype">void</span> LCD_SPI::writeDataHalfWord(uint16_t data)</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>{</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    uint8_t buffer[2] = {0};</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    buffer[0] = data &gt;&gt; 8;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    buffer[1] = data;</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    gpio_dc.<a class="code hl_function" href="class_s_t_m32_1_1_g_p_i_o.html#ad87fe8e2a90a74f7b05084738c5b2600">high</a>();</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    <a class="code hl_function" href="_l_c_d___s_p_i_8hpp.html#a482d39b27dd7206d40b11919a9dee953">LCD_SPI_SendBytes</a>(buffer, 2);</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>}</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
+<div class="foldopen" id="foldopen00288" data-start="{" data-end="}">
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno"><a class="line" href="class_l_c_d___s_p_i.html#ad565cfe83204cd26ed6dd66f018d9692">  288</a></span>__INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_c_d___s_p_i.html#ad565cfe83204cd26ed6dd66f018d9692">LCD_SPI::draw_Point</a>(uint16_t x, uint16_t y, <a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color)</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>{</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    setAddress(x, y, x, y);</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    writeDataHalfWord(color);</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>}</div>
+</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
+<div class="foldopen" id="foldopen00294" data-start="{" data-end="}">
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="class_l_c_d___s_p_i.html#a7da86a6f295bffef3b9d8a3dc05ad7ae">  294</a></span>__INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_c_d___s_p_i.html#a7da86a6f295bffef3b9d8a3dc05ad7ae">LCD_SPI::clear</a>(<a class="code hl_enumeration" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> color) {</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <a class="code hl_function" href="class_l_c_d___s_p_i.html#a0266865ebbc3c9101dcd11b2c44c33f8">fill</a>(0, 0, width, height, color);</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>}</div>
+</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="preprocessor">#endif </span><span class="comment">//__HARDWARE_LCD_SPI_H__</span></div>
+<div class="ttc" id="a_g_p_i_o_8hpp_html"><div class="ttname"><a href="_g_p_i_o_8hpp.html">GPIO.hpp</a></div></div>
+<div class="ttc" id="a_l_c_d___lib_8hpp_html"><div class="ttname"><a href="_l_c_d___lib_8hpp.html">LCD_Lib.hpp</a></div></div>
+<div class="ttc" id="a_l_c_d___lib_8hpp_html_a8d314c0721065f3cd4613369f418ef07"><div class="ttname"><a href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a></div><div class="ttdeci">LCD_Color_TypeDef</div><div class="ttdef"><b>Definition</b> LCD_Lib.hpp:10</div></div>
+<div class="ttc" id="a_l_c_d___lib_8hpp_html_ab4c2600f00c83150c5a124f21f7887c8"><div class="ttname"><a href="_l_c_d___lib_8hpp.html#ab4c2600f00c83150c5a124f21f7887c8">LCD_FontSize_TypeDef</a></div><div class="ttdeci">LCD_FontSize_TypeDef</div><div class="ttdef"><b>Definition</b> LCD_Lib.hpp:42</div></div>
+<div class="ttc" id="a_l_c_d___s_p_i_8hpp_html_a1c0a29559fd012050f5ede5966f83082"><div class="ttname"><a href="_l_c_d___s_p_i_8hpp.html#a1c0a29559fd012050f5ede5966f83082">LCD_BUF_SIZE</a></div><div class="ttdeci">#define LCD_BUF_SIZE</div><div class="ttdef"><b>Definition</b> LCD_SPI.hpp:35</div></div>
+<div class="ttc" id="a_l_c_d___s_p_i_8hpp_html_a44be1662a157fa282888c626f8d090b5"><div class="ttname"><a href="_l_c_d___s_p_i_8hpp.html#a44be1662a157fa282888c626f8d090b5">LCD_STREAM_FLOAT_PRECISION</a></div><div class="ttdeci">#define LCD_STREAM_FLOAT_PRECISION</div><div class="ttdoc">LCD输出流的小数显示位数</div><div class="ttdef"><b>Definition</b> LCD_SPI.hpp:45</div></div>
+<div class="ttc" id="a_l_c_d___s_p_i_8hpp_html_a46899b87954bec3d2ca158543a2fbdc8"><div class="ttname"><a href="_l_c_d___s_p_i_8hpp.html#a46899b87954bec3d2ca158543a2fbdc8">DEFAULT_BACK_COLOR</a></div><div class="ttdeci">LCD_Color_TypeDef DEFAULT_BACK_COLOR</div><div class="ttdoc">LCD默认背景颜色</div><div class="ttdef"><b>Definition</b> LCD_SPI.cpp:10</div></div>
+<div class="ttc" id="a_l_c_d___s_p_i_8hpp_html_a482d39b27dd7206d40b11919a9dee953"><div class="ttname"><a href="_l_c_d___s_p_i_8hpp.html#a482d39b27dd7206d40b11919a9dee953">LCD_SPI_SendBytes</a></div><div class="ttdeci">__STATIC_INLINE void LCD_SPI_SendBytes(const uint8_t *data, uint16_t size)</div><div class="ttdef"><b>Definition</b> LCD_SPI.hpp:256</div></div>
+<div class="ttc" id="a_l_c_d___s_p_i_8hpp_html_a57d156c32bad6fcdb09631e54c738391"><div class="ttname"><a href="_l_c_d___s_p_i_8hpp.html#a57d156c32bad6fcdb09631e54c738391">LCD_SPI_SendByte</a></div><div class="ttdeci">__STATIC_INLINE void LCD_SPI_SendByte(const uint8_t data)</div><div class="ttdef"><b>Definition</b> LCD_SPI.hpp:261</div></div>
+<div class="ttc" id="a_l_c_d___s_p_i_8hpp_html_a861dac9013af3a7d4e6aee9cd06f7d6b"><div class="ttname"><a href="_l_c_d___s_p_i_8hpp.html#a861dac9013af3a7d4e6aee9cd06f7d6b">DEFAULT_FONT_SIZE</a></div><div class="ttdeci">LCD_FontSize_TypeDef DEFAULT_FONT_SIZE</div><div class="ttdoc">LCD默认字体大小</div><div class="ttdef"><b>Definition</b> LCD_SPI.cpp:12</div></div>
+<div class="ttc" id="a_l_c_d___s_p_i_8hpp_html_ab274148aa95d0e436212a703d19582a3"><div class="ttname"><a href="_l_c_d___s_p_i_8hpp.html#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a></div><div class="ttdeci">LCD_Color_TypeDef DEFAULT_PENCIL_COLOR</div><div class="ttdoc">LCD默认画笔颜色</div><div class="ttdef"><b>Definition</b> LCD_SPI.cpp:8</div></div>
+<div class="ttc" id="a_l_c_d___s_p_i_8hpp_html_ace33abb9f24aa3d6d056e4327c32f3ff"><div class="ttname"><a href="_l_c_d___s_p_i_8hpp.html#ace33abb9f24aa3d6d056e4327c32f3ff">LCD_SPI_HANDEL</a></div><div class="ttdeci">#define LCD_SPI_HANDEL</div><div class="ttdoc">LCD使用的SPI指针</div><div class="ttdef"><b>Definition</b> LCD_SPI.hpp:10</div></div>
+<div class="ttc" id="a_s_p_i_8hpp_html"><div class="ttname"><a href="_s_p_i_8hpp.html">SPI.hpp</a></div></div>
+<div class="ttc" id="a_s_p_i_8hpp_html_a35e2edeb7036e8e17dbfe56788db2530"><div class="ttname"><a href="_s_p_i_8hpp.html#a35e2edeb7036e8e17dbfe56788db2530">SPI_SendBytes</a></div><div class="ttdeci">__STATIC_INLINE void SPI_SendBytes(SPI_TypeDef *spi, const uint8_t *data, uint16_t size)</div><div class="ttdef"><b>Definition</b> SPI.hpp:6</div></div>
+<div class="ttc" id="a_s_p_i_8hpp_html_aa7ddda4d7f2bc05d854213304e89adfb"><div class="ttname"><a href="_s_p_i_8hpp.html#aa7ddda4d7f2bc05d854213304e89adfb">SPI_SendByte</a></div><div class="ttdeci">__STATIC_INLINE void SPI_SendByte(SPI_TypeDef *spi, const uint8_t data)</div><div class="ttdef"><b>Definition</b> SPI.hpp:27</div></div>
+<div class="ttc" id="a_sys_8hpp_html"><div class="ttname"><a href="_sys_8hpp.html">Sys.hpp</a></div></div>
+<div class="ttc" id="aclass_l_c_d___s_p_i_html"><div class="ttname"><a href="class_l_c_d___s_p_i.html">LCD_SPI</a></div><div class="ttdoc">LCD_SPI类</div><div class="ttdef"><b>Definition</b> LCD_SPI.hpp:57</div></div>
+<div class="ttc" id="aclass_l_c_d___s_p_i_html_a0266865ebbc3c9101dcd11b2c44c33f8"><div class="ttname"><a href="class_l_c_d___s_p_i.html#a0266865ebbc3c9101dcd11b2c44c33f8">LCD_SPI::fill</a></div><div class="ttdeci">void fill(uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end, LCD_Color_TypeDef color=DEFAULT_PENCIL_COLOR)</div><div class="ttdoc">填充LCD指定区域的颜色</div><div class="ttdef"><b>Definition</b> LCD_SPI.cpp:185</div></div>
+<div class="ttc" id="aclass_l_c_d___s_p_i_html_a11bd8ec830791cba9420df1b0072b640"><div class="ttname"><a href="class_l_c_d___s_p_i.html#a11bd8ec830791cba9420df1b0072b640">LCD_SPI::draw_Line</a></div><div class="ttdeci">void draw_Line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, LCD_Color_TypeDef color=DEFAULT_PENCIL_COLOR)</div><div class="ttdoc">绘制一条直线</div><div class="ttdef"><b>Definition</b> LCD_SPI.cpp:226</div></div>
+<div class="ttc" id="aclass_l_c_d___s_p_i_html_a3e4bd003407be8d7296929e37781b196"><div class="ttname"><a href="class_l_c_d___s_p_i.html#a3e4bd003407be8d7296929e37781b196">LCD_SPI::draw_Rectangle</a></div><div class="ttdeci">void draw_Rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, LCD_Color_TypeDef color=DEFAULT_PENCIL_COLOR)</div><div class="ttdoc">绘制矩形</div><div class="ttdef"><b>Definition</b> LCD_SPI.cpp:296</div></div>
+<div class="ttc" id="aclass_l_c_d___s_p_i_html_a553032385ae34bc220c31b4059fa7785"><div class="ttname"><a href="class_l_c_d___s_p_i.html#a553032385ae34bc220c31b4059fa7785">LCD_SPI::show_Image</a></div><div class="ttdeci">void show_Image(uint16_t x, uint16_t y, uint16_t Image_width, uint16_t Image_height, const uint8_t *Image)</div><div class="ttdoc">在LCD屏幕上显示一幅图像</div><div class="ttdef"><b>Definition</b> LCD_SPI.cpp:488</div></div>
+<div class="ttc" id="aclass_l_c_d___s_p_i_html_a6ae4dfe6458f9cb62fd4aff264973092"><div class="ttname"><a href="class_l_c_d___s_p_i.html#a6ae4dfe6458f9cb62fd4aff264973092">LCD_SPI::operator&lt;&lt;</a></div><div class="ttdeci">LCD_SPI &amp; operator&lt;&lt;(const char *pStr)</div><div class="ttdoc">重载操作符&lt;&lt;，用于将字符串输出到LCD屏幕</div><div class="ttdef"><b>Definition</b> LCD_SPI.cpp:496</div></div>
+<div class="ttc" id="aclass_l_c_d___s_p_i_html_a6e18dac19a367376558363492c19b7f0"><div class="ttname"><a href="class_l_c_d___s_p_i.html#a6e18dac19a367376558363492c19b7f0">LCD_SPI::draw_Circle</a></div><div class="ttdeci">void draw_Circle(uint16_t x0, uint16_t y0, uint8_t r, LCD_Color_TypeDef color=DEFAULT_PENCIL_COLOR)</div><div class="ttdoc">绘制圆形</div><div class="ttdef"><b>Definition</b> LCD_SPI.cpp:304</div></div>
+<div class="ttc" id="aclass_l_c_d___s_p_i_html_a7c1b19f1ff9d8df61172e36843dbd1f0"><div class="ttname"><a href="class_l_c_d___s_p_i.html#a7c1b19f1ff9d8df61172e36843dbd1f0">LCD_SPI::show_Char</a></div><div class="ttdeci">void show_Char(uint16_t x, uint16_t y, char chr, LCD_FontSize_TypeDef size=DEFAULT_FONT_SIZE, LCD_Color_TypeDef color=DEFAULT_PENCIL_COLOR, LCD_Color_TypeDef back_color=DEFAULT_BACK_COLOR)</div><div class="ttdoc">在LCD屏幕上显示一个字符</div><div class="ttdef"><b>Definition</b> LCD_SPI.cpp:335</div></div>
+<div class="ttc" id="aclass_l_c_d___s_p_i_html_a7da86a6f295bffef3b9d8a3dc05ad7ae"><div class="ttname"><a href="class_l_c_d___s_p_i.html#a7da86a6f295bffef3b9d8a3dc05ad7ae">LCD_SPI::clear</a></div><div class="ttdeci">__INLINE void clear(LCD_Color_TypeDef color=DEFAULT_BACK_COLOR)</div><div class="ttdoc">清空LCD屏幕</div><div class="ttdef"><b>Definition</b> LCD_SPI.hpp:294</div></div>
+<div class="ttc" id="aclass_l_c_d___s_p_i_html_aa7d2c005beedb484fe426a147a797c95"><div class="ttname"><a href="class_l_c_d___s_p_i.html#aa7d2c005beedb484fe426a147a797c95">LCD_SPI::show_Num</a></div><div class="ttdeci">void show_Num(uint16_t x, uint16_t y, uint32_t num, uint8_t len, bool Is_ZeroFill=false, LCD_FontSize_TypeDef size=DEFAULT_FONT_SIZE, LCD_Color_TypeDef color=DEFAULT_PENCIL_COLOR, LCD_Color_TypeDef back_color=DEFAULT_BACK_COLOR)</div><div class="ttdoc">在LCD屏幕上显示一个数字</div><div class="ttdef"><b>Definition</b> LCD_SPI.cpp:424</div></div>
+<div class="ttc" id="aclass_l_c_d___s_p_i_html_aa8884e7dfd305b2b37b6a782867acf5e"><div class="ttname"><a href="class_l_c_d___s_p_i.html#aa8884e7dfd305b2b37b6a782867acf5e">LCD_SPI::LCD_SPI</a></div><div class="ttdeci">LCD_SPI()=default</div></div>
+<div class="ttc" id="aclass_l_c_d___s_p_i_html_ab9b01af752f760fc230ce3fe21411c64"><div class="ttname"><a href="class_l_c_d___s_p_i.html#ab9b01af752f760fc230ce3fe21411c64">LCD_SPI::~LCD_SPI</a></div><div class="ttdeci">~LCD_SPI()=default</div></div>
+<div class="ttc" id="aclass_l_c_d___s_p_i_html_ad565cfe83204cd26ed6dd66f018d9692"><div class="ttname"><a href="class_l_c_d___s_p_i.html#ad565cfe83204cd26ed6dd66f018d9692">LCD_SPI::draw_Point</a></div><div class="ttdeci">__INLINE void draw_Point(uint16_t x, uint16_t y, LCD_Color_TypeDef color=DEFAULT_PENCIL_COLOR)</div><div class="ttdoc">在LCD屏幕上绘制一个点</div><div class="ttdef"><b>Definition</b> LCD_SPI.hpp:288</div></div>
+<div class="ttc" id="aclass_l_c_d___s_p_i_html_adf90e64cd034edad5410046095f000e4"><div class="ttname"><a href="class_l_c_d___s_p_i.html#adf90e64cd034edad5410046095f000e4">LCD_SPI::show_String</a></div><div class="ttdeci">void show_String(uint16_t x, uint16_t y, const char *str, uint16_t string_width=0, uint16_t string_height=0, LCD_FontSize_TypeDef size=DEFAULT_FONT_SIZE, LCD_Color_TypeDef color=DEFAULT_PENCIL_COLOR, LCD_Color_TypeDef back_color=DEFAULT_BACK_COLOR)</div><div class="ttdoc">在LCD屏幕上显示一个字符串</div><div class="ttdef"><b>Definition</b> LCD_SPI.cpp:455</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_g_p_i_o_html"><div class="ttname"><a href="class_s_t_m32_1_1_g_p_i_o.html">STM32::GPIO</a></div><div class="ttdoc">GPIO类</div><div class="ttdef"><b>Definition</b> GPIO.hpp:69</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_g_p_i_o_html_a945e5b5a9e0e032dae1dda653484e41b"><div class="ttname"><a href="class_s_t_m32_1_1_g_p_i_o.html#a945e5b5a9e0e032dae1dda653484e41b">STM32::GPIO::low</a></div><div class="ttdeci">void low(void)</div><div class="ttdoc">将GPIO引脚置为低电平</div><div class="ttdef"><b>Definition</b> GPIO.hpp:133</div></div>
+<div class="ttc" id="aclass_s_t_m32_1_1_g_p_i_o_html_ad87fe8e2a90a74f7b05084738c5b2600"><div class="ttname"><a href="class_s_t_m32_1_1_g_p_i_o.html#ad87fe8e2a90a74f7b05084738c5b2600">STM32::GPIO::high</a></div><div class="ttdeci">void high(void)</div><div class="ttdoc">将GPIO引脚置为高电平</div><div class="ttdef"><b>Definition</b> GPIO.hpp:137</div></div>
+<div class="ttc" id="astruct_s_t_m32_1_1_c_l_e_a_r_html"><div class="ttname"><a href="struct_s_t_m32_1_1_c_l_e_a_r.html">STM32::CLEAR</a></div><div class="ttdoc">清屏结构体</div><div class="ttdef"><b>Definition</b> Sys.hpp:25</div></div>
+<div class="ttc" id="astruct_s_t_m32_1_1_e_n_d_l_html"><div class="ttname"><a href="struct_s_t_m32_1_1_e_n_d_l.html">STM32::ENDL</a></div><div class="ttdoc">换行结构体</div><div class="ttdef"><b>Definition</b> Sys.hpp:14</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_bc2597cfbec14760d23b28ac592ac7af.html">platform-lib</a></li><li class="navelem"><a class="el" href="dir_0608fb62d33f45ab68406becc139393f.html">HardWare</a></li><li class="navelem"><a class="el" href="dir_c15988983daa88687b2d54c870b2701a.html">LCD_SPI</a></li><li class="navelem"><a class="el" href="_l_c_d___s_p_i_8hpp.html">LCD_SPI.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

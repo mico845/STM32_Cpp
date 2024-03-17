@@ -140,7 +140,7 @@ typedef struct
   * @{
   */
 
-/** @defgroup SPI_LL_EC_GET_FLAG Get Flags Defines
+/** @defgroup SPI_LL_EC_GET_FLAG get Flags Defines
   * @brief    Flags defines which can be used with LL_SPI_ReadReg function
   * @{
   */
@@ -521,7 +521,7 @@ typedef struct
 #define LL_SPI_WriteReg(__INSTANCE__, __REG__, __VALUE__) WRITE_REG(__INSTANCE__->__REG__, (__VALUE__))
 
 /**
-  * @brief  Read a value in SPI register
+  * @brief  read a value in SPI register
   * @param  __INSTANCE__ SPI Instance
   * @param  __REG__ Register to be read
   * @retval Register value
@@ -666,7 +666,7 @@ __STATIC_INLINE void LL_SPI_SetMode(SPI_TypeDef *SPIx, uint32_t Mode)
 }
 
 /**
-  * @brief  Get SPI Mode (Master or Slave)
+  * @brief  get SPI Mode (Master or Slave)
   * @rmtoll CFG2         MASTER        LL_SPI_GetMode
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -707,7 +707,7 @@ __STATIC_INLINE void LL_SPI_SetMasterSSIdleness(SPI_TypeDef *SPIx, uint32_t Mast
 }
 
 /**
-  * @brief  Get the configured Idleness applied by master
+  * @brief  get the configured Idleness applied by master
   * @rmtoll CFG2         MSSI          LL_SPI_GetMasterSSIdleness
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -762,7 +762,7 @@ __STATIC_INLINE void LL_SPI_SetInterDataIdleness(SPI_TypeDef *SPIx, uint32_t Mas
 }
 
 /**
-  * @brief  Get the configured inter data idleness
+  * @brief  get the configured inter data idleness
   * @rmtoll CFG2         MIDI          LL_SPI_SetInterDataIdleness
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -802,7 +802,7 @@ __STATIC_INLINE void LL_SPI_SetTransferSize(SPI_TypeDef *SPIx, uint32_t Count)
 }
 
 /**
-  * @brief  Get transfer size
+  * @brief  get transfer size
   * @note    Count is the number of frame to be transferred
   * @rmtoll CR2          TSIZE         LL_SPI_GetTransferSize
   * @param  SPIx SPI Instance
@@ -827,7 +827,7 @@ __STATIC_INLINE void LL_SPI_SetReloadSize(SPI_TypeDef *SPIx, uint32_t Count)
 }
 
 /**
-  * @brief  Get reload transfer size
+  * @brief  get reload transfer size
   * @note    Count is the number of frame to be transferred
   * @rmtoll CR2          TSER          LL_SPI_GetReloadSize
   * @param  SPIx SPI Instance
@@ -877,7 +877,7 @@ __STATIC_INLINE void LL_SPI_SetTxCRCInitPattern(SPI_TypeDef *SPIx, uint32_t TXCR
 }
 
 /**
-  * @brief  Get Tx CRC Initialization Pattern
+  * @brief  get Tx CRC Initialization Pattern
   * @rmtoll CR1          TCRCINI         LL_SPI_GetTxCRCInitPattern
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -904,7 +904,7 @@ __STATIC_INLINE void LL_SPI_SetRxCRCInitPattern(SPI_TypeDef *SPIx, uint32_t RXCR
 }
 
 /**
-  * @brief  Get Rx CRC Initialization Pattern
+  * @brief  get Rx CRC Initialization Pattern
   * @rmtoll CR1          RCRCINI         LL_SPI_GetRxCRCInitPattern
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -932,7 +932,7 @@ __STATIC_INLINE void LL_SPI_SetInternalSSLevel(SPI_TypeDef *SPIx, uint32_t SSLev
 }
 
 /**
-  * @brief  Get internal SS input level
+  * @brief  get internal SS input level
   * @rmtoll CR1          SSI           LL_SPI_GetInternalSSLevel
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -989,7 +989,7 @@ __STATIC_INLINE void LL_SPI_SuspendMasterTransfer(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Start effective transfer on wire for Master configuration
+  * @brief  start effective transfer on wire for Master configuration
   * @rmtoll CR1          CSTART        LL_SPI_StartMasterTransfer
   * @param  SPIx SPI Instance
   * @retval None
@@ -1060,7 +1060,7 @@ __STATIC_INLINE void LL_SPI_SetUDRConfiguration(SPI_TypeDef *SPIx, uint32_t UDRC
 }
 
 /**
-  * @brief  Get Underrun behavior
+  * @brief  get Underrun behavior
   * @rmtoll CFG1         UDRCFG        LL_SPI_GetUDRConfiguration
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -1090,7 +1090,7 @@ __STATIC_INLINE void LL_SPI_SetUDRDetection(SPI_TypeDef *SPIx, uint32_t UDRDetec
 }
 
 /**
-  * @brief  Get Underrun Detection method
+  * @brief  get Underrun Detection method
   * @rmtoll CFG1         UDRDET        LL_SPI_GetUDRDetection
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -1119,7 +1119,7 @@ __STATIC_INLINE void LL_SPI_SetStandard(SPI_TypeDef *SPIx, uint32_t Standard)
 }
 
 /**
-  * @brief  Get Serial protocol used
+  * @brief  get Serial protocol used
   * @rmtoll CFG2         SP            LL_SPI_GetStandard
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -1148,7 +1148,7 @@ __STATIC_INLINE void LL_SPI_SetClockPhase(SPI_TypeDef *SPIx, uint32_t ClockPhase
 }
 
 /**
-  * @brief  Get Clock phase
+  * @brief  get Clock phase
   * @rmtoll CFG2         CPHA          LL_SPI_GetClockPhase
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -1177,7 +1177,7 @@ __STATIC_INLINE void LL_SPI_SetClockPolarity(SPI_TypeDef *SPIx, uint32_t ClockPo
 }
 
 /**
-  * @brief  Get Clock polarity
+  * @brief  get Clock polarity
   * @rmtoll CFG2         CPOL          LL_SPI_GetClockPolarity
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -1206,7 +1206,7 @@ __STATIC_INLINE void LL_SPI_SetNSSPolarity(SPI_TypeDef *SPIx, uint32_t NSSPolari
 }
 
 /**
-  * @brief  Get NSS polarity
+  * @brief  get NSS polarity
   * @rmtoll CFG2         SSIOP          LL_SPI_GetNSSPolarity
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -1241,7 +1241,7 @@ __STATIC_INLINE void LL_SPI_SetBaudRatePrescaler(SPI_TypeDef *SPIx, uint32_t Bau
 }
 
 /**
-  * @brief  Get Baudrate Prescaler
+  * @brief  get Baudrate Prescaler
   * @rmtoll CFG1         MBR           LL_SPI_GetBaudRatePrescaler
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -1276,7 +1276,7 @@ __STATIC_INLINE void LL_SPI_SetTransferBitOrder(SPI_TypeDef *SPIx, uint32_t BitO
 }
 
 /**
-  * @brief  Get Transfer Bit Order
+  * @brief  get Transfer Bit Order
   * @rmtoll CFG2         LSBFRST       LL_SPI_GetTransferBitOrder
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -1310,7 +1310,7 @@ __STATIC_INLINE void LL_SPI_SetTransferDirection(SPI_TypeDef *SPIx, uint32_t Tra
 }
 
 /**
-  * @brief  Get Transfer Mode
+  * @brief  get Transfer Mode
   * @rmtoll CR1          HDDIR         LL_SPI_GetTransferDirection\n
   *         CFG2         COMM          LL_SPI_GetTransferDirection
   * @param  SPIx SPI Instance
@@ -1344,7 +1344,7 @@ __STATIC_INLINE void LL_SPI_SetHalfDuplexDirection(SPI_TypeDef *SPIx, uint32_t H
 }
 
 /**
-  * @brief  Get direction for Half-Duplex Mode
+  * @brief  get direction for Half-Duplex Mode
   * @note   In master mode the MOSI pin is used and in slave mode the MISO pin is used for Half-Duplex.
   * @rmtoll CR1          HDDIR         LL_SPI_GetHalfDuplexDirection
   * @param  SPIx SPI Instance
@@ -1358,7 +1358,7 @@ __STATIC_INLINE uint32_t LL_SPI_GetHalfDuplexDirection(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Set Frame Data Size
+  * @brief  Set Frame Data size
   * @note   This configuration can not be changed when SPI is enabled.
   * @rmtoll CFG1         DSIZE         LL_SPI_SetDataWidth
   * @param  SPIx SPI Instance
@@ -1400,7 +1400,7 @@ __STATIC_INLINE void LL_SPI_SetDataWidth(SPI_TypeDef *SPIx, uint32_t DataWidth)
 }
 
 /**
-  * @brief  Get Frame Data Size
+  * @brief  get Frame Data size
   * @rmtoll CFG1         DSIZE         LL_SPI_GetDataWidth
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -1469,7 +1469,7 @@ __STATIC_INLINE void LL_SPI_SetFIFOThreshold(SPI_TypeDef *SPIx, uint32_t Thresho
 }
 
 /**
-  * @brief  Get threshold of FIFO that triggers a transfer event
+  * @brief  get threshold of FIFO that triggers a transfer event
   * @rmtoll CFG1         FTHLV         LL_SPI_GetFIFOThreshold
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -1572,7 +1572,7 @@ __STATIC_INLINE void LL_SPI_SetCRCWidth(SPI_TypeDef *SPIx, uint32_t CRCLength)
 }
 
 /**
-  * @brief  Get CRC Length
+  * @brief  get CRC Length
   * @rmtoll CFG1          CRCSIZE       LL_SPI_GetCRCWidth
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -1745,7 +1745,7 @@ __STATIC_INLINE uint32_t LL_SPI_IsActiveFlag_TXTF(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Get Underrun error flag
+  * @brief  get Underrun error flag
   * @rmtoll SR           UDR           LL_SPI_IsActiveFlag_UDR
   * @param  SPIx SPI Instance
   * @retval State of bit (1 or 0).
@@ -1756,7 +1756,7 @@ __STATIC_INLINE uint32_t LL_SPI_IsActiveFlag_UDR(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Get CRC error flag
+  * @brief  get CRC error flag
   * @rmtoll SR           CRCE        LL_SPI_IsActiveFlag_CRCERR
   * @param  SPIx SPI Instance
   * @retval State of bit (1 or 0).
@@ -1767,7 +1767,7 @@ __STATIC_INLINE uint32_t LL_SPI_IsActiveFlag_CRCERR(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Get  Mode fault error flag
+  * @brief  get  Mode fault error flag
   * @rmtoll SR           MODF          LL_SPI_IsActiveFlag_MODF
   * @param  SPIx SPI Instance
   * @retval State of bit (1 or 0).
@@ -1778,7 +1778,7 @@ __STATIC_INLINE uint32_t LL_SPI_IsActiveFlag_MODF(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Get Overrun error flag
+  * @brief  get Overrun error flag
   * @rmtoll SR           OVR           LL_SPI_IsActiveFlag_OVR
   * @param  SPIx SPI Instance
   * @retval State of bit (1 or 0).
@@ -1789,7 +1789,7 @@ __STATIC_INLINE uint32_t LL_SPI_IsActiveFlag_OVR(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Get TI Frame format error flag
+  * @brief  get TI Frame format error flag
   * @rmtoll SR           TIFRE         LL_SPI_IsActiveFlag_FRE
   * @param  SPIx SPI Instance
   * @retval State of bit (1 or 0).
@@ -1844,7 +1844,7 @@ __STATIC_INLINE uint32_t LL_SPI_IsActiveFlag_RXWNE(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Get number of data framed remaining in current TSIZE
+  * @brief  get number of data framed remaining in current TSIZE
   * @rmtoll SR           CTSIZE           LL_SPI_GetRemainingDataFrames
   * @param  SPIx SPI Instance
   * @retval 0..0xFFFF
@@ -1855,7 +1855,7 @@ __STATIC_INLINE uint32_t LL_SPI_GetRemainingDataFrames(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Get RxFIFO packing Level
+  * @brief  get RxFIFO packing Level
   * @rmtoll SR           RXPLVL        LL_SPI_GetRxFIFOPackingLevel
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -1870,7 +1870,7 @@ __STATIC_INLINE uint32_t LL_SPI_GetRxFIFOPackingLevel(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Clear End Of Transfer flag
+  * @brief  clear End Of Transfer flag
   * @rmtoll IFCR         EOTC          LL_SPI_ClearFlag_EOT
   * @param  SPIx SPI Instance
   * @retval None
@@ -1881,7 +1881,7 @@ __STATIC_INLINE void LL_SPI_ClearFlag_EOT(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Clear TXTF flag
+  * @brief  clear TXTF flag
   * @rmtoll IFCR         TXTFC         LL_SPI_ClearFlag_TXTF
   * @param  SPIx SPI Instance
   * @retval None
@@ -1892,7 +1892,7 @@ __STATIC_INLINE void LL_SPI_ClearFlag_TXTF(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Clear Underrun error flag
+  * @brief  clear Underrun error flag
   * @rmtoll IFCR         UDRC          LL_SPI_ClearFlag_UDR
   * @param  SPIx SPI Instance
   * @retval None
@@ -1903,7 +1903,7 @@ __STATIC_INLINE void LL_SPI_ClearFlag_UDR(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Clear Overrun error flag
+  * @brief  clear Overrun error flag
   * @rmtoll IFCR         OVRC          LL_SPI_ClearFlag_OVR
   * @param  SPIx SPI Instance
   * @retval None
@@ -1914,7 +1914,7 @@ __STATIC_INLINE void LL_SPI_ClearFlag_OVR(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Clear CRC error flag
+  * @brief  clear CRC error flag
   * @rmtoll IFCR         CRCEC        LL_SPI_ClearFlag_CRCERR
   * @param  SPIx SPI Instance
   * @retval None
@@ -1925,7 +1925,7 @@ __STATIC_INLINE void LL_SPI_ClearFlag_CRCERR(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Clear  Mode fault error flag
+  * @brief  clear  Mode fault error flag
   * @rmtoll IFCR         MODFC         LL_SPI_ClearFlag_MODF
   * @param  SPIx SPI Instance
   * @retval None
@@ -1936,7 +1936,7 @@ __STATIC_INLINE void LL_SPI_ClearFlag_MODF(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Clear Frame format error flag
+  * @brief  clear Frame format error flag
   * @rmtoll IFCR         TIFREC        LL_SPI_ClearFlag_FRE
   * @param  SPIx SPI Instance
   * @retval None
@@ -1947,7 +1947,7 @@ __STATIC_INLINE void LL_SPI_ClearFlag_FRE(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Clear TSER flag
+  * @brief  clear TSER flag
   * @rmtoll IFCR         TSERFC        LL_SPI_ClearFlag_TSER
   * @param  SPIx SPI Instance
   * @retval None
@@ -1958,7 +1958,7 @@ __STATIC_INLINE void LL_SPI_ClearFlag_TSER(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Clear SUSP flag
+  * @brief  clear SUSP flag
   * @rmtoll IFCR         SUSPC         LL_SPI_ClearFlag_SUSP
   * @param  SPIx SPI Instance
   * @retval None
@@ -2413,7 +2413,7 @@ __STATIC_INLINE uint32_t LL_SPI_IsEnabledDMAReq_TX(SPI_TypeDef *SPIx)
   return ((READ_BIT(SPIx->CFG1, SPI_CFG1_TXDMAEN) == (SPI_CFG1_TXDMAEN)) ? 1UL : 0UL);
 }
 /**
-  * @brief  Get the data register address used for DMA transfer
+  * @brief  get the data register address used for DMA transfer
   * @rmtoll TXDR           TXDR            LL_SPI_DMA_GetTxRegAddr
   * @param  SPIx SPI Instance
   * @retval Address of data register
@@ -2424,7 +2424,7 @@ __STATIC_INLINE uint32_t LL_SPI_DMA_GetTxRegAddr(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Get the data register address used for DMA transfer
+  * @brief  get the data register address used for DMA transfer
   * @rmtoll RXDR           RXDR            LL_SPI_DMA_GetRxRegAddr
   * @param  SPIx SPI Instance
   * @retval Address of data register
@@ -2442,7 +2442,7 @@ __STATIC_INLINE uint32_t LL_SPI_DMA_GetRxRegAddr(SPI_TypeDef *SPIx)
   */
 
 /**
-  * @brief  Read Data Register
+  * @brief  read Data Register
   * @rmtoll RXDR         .       LL_SPI_ReceiveData8
   * @param  SPIx SPI Instance
   * @retval 0..0xFF
@@ -2453,7 +2453,7 @@ __STATIC_INLINE uint8_t LL_SPI_ReceiveData8(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Read Data Register
+  * @brief  read Data Register
   * @rmtoll RXDR         .       LL_SPI_ReceiveData16
   * @param  SPIx SPI Instance
   * @retval 0..0xFFFF
@@ -2469,7 +2469,7 @@ __STATIC_INLINE uint16_t LL_SPI_ReceiveData16(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Read Data Register
+  * @brief  read Data Register
   * @rmtoll RXDR         .       LL_SPI_ReceiveData32
   * @param  SPIx SPI Instance
   * @retval  0..0xFFFFFFFF
@@ -2533,7 +2533,7 @@ __STATIC_INLINE void LL_SPI_SetCRCPolynomial(SPI_TypeDef *SPIx, uint32_t CRCPoly
 }
 
 /**
-  * @brief  Get polynomial for CRC calcul
+  * @brief  get polynomial for CRC calcul
   * @rmtoll CRCPOLY      CRCPOLY       LL_SPI_GetCRCPolynomial
   * @param  SPIx SPI Instance
   * @retval 0..0xFFFFFFFF
@@ -2556,7 +2556,7 @@ __STATIC_INLINE void LL_SPI_SetUDRPattern(SPI_TypeDef *SPIx, uint32_t Pattern)
 }
 
 /**
-  * @brief  Get the underrun pattern
+  * @brief  get the underrun pattern
   * @rmtoll UDRDR        UDRDR         LL_SPI_GetUDRPattern
   * @param  SPIx SPI Instance
   * @retval 0..0xFFFFFFFF
@@ -2567,7 +2567,7 @@ __STATIC_INLINE uint32_t LL_SPI_GetUDRPattern(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Get Rx CRC
+  * @brief  get Rx CRC
   * @rmtoll RXCRCR       RXCRC         LL_SPI_GetRxCRC
   * @param  SPIx SPI Instance
   * @retval 0..0xFFFFFFFF
@@ -2578,7 +2578,7 @@ __STATIC_INLINE uint32_t LL_SPI_GetRxCRC(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Get Tx CRC
+  * @brief  get Tx CRC
   * @rmtoll TXCRCR       TXCRC         LL_SPI_GetTxCRC
   * @param  SPIx SPI Instance
   * @retval 0..0xFFFFFFFF
@@ -2827,7 +2827,7 @@ typedef struct
 #define LL_I2S_WriteReg(__INSTANCE__, __REG__, __VALUE__) WRITE_REG(__INSTANCE__->__REG__, (__VALUE__))
 
 /**
-  * @brief  Read a value in I2S register
+  * @brief  read a value in I2S register
   * @param  __INSTANCE__ I2S Instance
   * @param  __REG__ Register to be read
   * @retval Register value
@@ -2872,7 +2872,7 @@ __STATIC_INLINE void LL_I2S_SetDataFormat(SPI_TypeDef *SPIx, uint32_t DataLength
 }
 
 /**
-  * @brief  Get I2S Data frame format
+  * @brief  get I2S Data frame format
   * @rmtoll I2SCFGR      DATLEN        LL_I2S_GetDataFormat\n
   *         I2SCFGR      CHLEN         LL_I2S_GetDataFormat\n
   *         I2SCFGR      DATFMT        LL_I2S_GetDataFormat
@@ -2905,7 +2905,7 @@ __STATIC_INLINE void LL_I2S_SetChannelLengthType(SPI_TypeDef *SPIx, uint32_t Cha
 }
 
 /**
-  * @brief  Get I2S Channel Length Type
+  * @brief  get I2S Channel Length Type
   * @note   This feature is useful with SLAVE only
   * @rmtoll I2SCFGR      FIXCH         LL_I2S_GetChannelLengthType
   * @param  SPIx SPI Handle
@@ -2966,7 +2966,7 @@ __STATIC_INLINE void LL_I2S_SetClockPolarity(SPI_TypeDef *SPIx, uint32_t ClockPo
 }
 
 /**
-  * @brief  Get 2S Clock Polarity
+  * @brief  get 2S Clock Polarity
   * @rmtoll I2SCFGR      CKPOL         LL_I2S_GetClockPolarity
   * @param  SPIx SPI Handle
   * @retval Return value can be one of the following values:
@@ -2997,7 +2997,7 @@ __STATIC_INLINE void LL_I2S_SetStandard(SPI_TypeDef *SPIx, uint32_t Standard)
 }
 
 /**
-  * @brief  Get I2S standard
+  * @brief  get I2S standard
   * @rmtoll I2SCFGR      I2SSTD        LL_I2S_GetStandard\n
   *         I2SCFGR      PCMSYNC       LL_I2S_GetStandard
   * @param  SPIx SPI Handle
@@ -3032,7 +3032,7 @@ __STATIC_INLINE void LL_I2S_SetTransferMode(SPI_TypeDef *SPIx, uint32_t Standard
 }
 
 /**
-  * @brief  Get I2S config
+  * @brief  get I2S config
   * @rmtoll I2SCFGR      I2SCFG        LL_I2S_GetTransferMode
   * @param  SPIx SPI Handle
   * @retval Return value can be one of the following values:
@@ -3183,7 +3183,7 @@ __STATIC_INLINE void LL_I2S_SetTransferBitOrder(SPI_TypeDef *SPIx, uint32_t BitO
   LL_SPI_SetTransferBitOrder(SPIx, BitOrder);
 }
 /**
-  * @brief  Get Transfer Bit Order
+  * @brief  get Transfer Bit Order
   * @rmtoll CFG2         LSBFRST       LL_I2S_GetTransferBitOrder
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -3196,7 +3196,7 @@ __STATIC_INLINE uint32_t LL_I2S_GetTransferBitOrder(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Start effective transfer on wire
+  * @brief  start effective transfer on wire
   * @rmtoll CR1          CSTART        LL_I2S_StartTransfer
   * @param  SPIx SPI Instance
   * @retval None
@@ -3239,7 +3239,7 @@ __STATIC_INLINE void LL_I2S_SetFIFOThreshold(SPI_TypeDef *SPIx, uint32_t Thresho
 }
 
 /**
-  * @brief  Get threshold of FIFO that triggers a transfer event
+  * @brief  get threshold of FIFO that triggers a transfer event
   * @rmtoll CFG1         FTHLV         LL_I2S_GetFIFOThreshold
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -3271,7 +3271,7 @@ __STATIC_INLINE void LL_I2S_SetPrescalerLinear(SPI_TypeDef *SPIx, uint32_t Presc
 }
 
 /**
-  * @brief  Get I2S linear prescaler
+  * @brief  get I2S linear prescaler
   * @rmtoll I2SCFGR        I2SDIV        LL_I2S_GetPrescalerLinear
   * @param  SPIx SPI Instance
   * @retval PrescalerLinear Value between Min_Data=0x00 and Max_Data=0xFF
@@ -3296,7 +3296,7 @@ __STATIC_INLINE void LL_I2S_SetPrescalerParity(SPI_TypeDef *SPIx, uint32_t Presc
 }
 
 /**
-  * @brief  Get I2S parity prescaler
+  * @brief  get I2S parity prescaler
   * @rmtoll I2SCFGR        ODD           LL_I2S_GetPrescalerParity
   * @param  SPIx SPI Instance
   * @retval Returned value can be one of the following values:
@@ -3373,7 +3373,7 @@ __STATIC_INLINE uint32_t LL_I2S_IsActiveFlag_TXP(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Get Underrun error flag
+  * @brief  get Underrun error flag
   * @rmtoll SR           UDR           LL_I2S_IsActiveFlag_UDR
   * @param  SPIx SPI Instance
   * @retval State of bit (1 or 0)
@@ -3384,7 +3384,7 @@ __STATIC_INLINE uint32_t LL_I2S_IsActiveFlag_UDR(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Get Overrun error flag
+  * @brief  get Overrun error flag
   * @rmtoll SR           OVR           LL_I2S_IsActiveFlag_OVR
   * @param  SPIx SPI Instance
   * @retval State of bit (1 or 0).
@@ -3395,7 +3395,7 @@ __STATIC_INLINE uint32_t LL_I2S_IsActiveFlag_OVR(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Get TI Frame format error flag
+  * @brief  get TI Frame format error flag
   * @rmtoll SR           TIFRE         LL_I2S_IsActiveFlag_FRE
   * @param  SPIx SPI Instance
   * @retval State of bit (1 or 0).
@@ -3406,7 +3406,7 @@ __STATIC_INLINE uint32_t LL_I2S_IsActiveFlag_FRE(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Clear Underrun error flag
+  * @brief  clear Underrun error flag
   * @rmtoll IFCR         UDRC          LL_I2S_ClearFlag_UDR
   * @param  SPIx SPI Instance
   * @retval None
@@ -3417,7 +3417,7 @@ __STATIC_INLINE void LL_I2S_ClearFlag_UDR(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Clear Overrun error flag
+  * @brief  clear Overrun error flag
   * @rmtoll IFCR         OVRC          LL_I2S_ClearFlag_OVR
   * @param  SPIx SPI Instance
   * @retval None
@@ -3428,7 +3428,7 @@ __STATIC_INLINE void LL_I2S_ClearFlag_OVR(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Clear Frame format error flag
+  * @brief  clear Frame format error flag
   * @rmtoll IFCR         TIFREC        LL_I2S_ClearFlag_FRE
   * @param  SPIx SPI Instance
   * @retval None
@@ -3694,7 +3694,7 @@ __STATIC_INLINE uint32_t LL_I2S_IsEnabledDMAReq_TX(SPI_TypeDef *SPIx)
   */
 
 /**
-  * @brief  Read Data Register
+  * @brief  read Data Register
   * @rmtoll RXDR         .       LL_I2S_ReceiveData16
   * @param  SPIx SPI Instance
   * @retval 0..0xFFFF
@@ -3705,7 +3705,7 @@ __STATIC_INLINE uint16_t LL_I2S_ReceiveData16(SPI_TypeDef *SPIx)
 }
 
 /**
-  * @brief  Read Data Register
+  * @brief  read Data Register
   * @rmtoll RXDR         .       LL_I2S_ReceiveData32
   * @param  SPIx SPI Instance
   * @retval  0..0xFFFFFFFF

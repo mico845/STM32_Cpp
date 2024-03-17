@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: STM32::GPIO类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_s_t_m32_1_1_g_p_i_o.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_s_t_m32_1_1_g_p_i_o-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">STM32::GPIO类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>GPIO类  
+ <a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a48abdda3cd5998812d62563cadae4ede" id="r_a48abdda3cd5998812d62563cadae4ede"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48abdda3cd5998812d62563cadae4ede">GPIO</a> ()=default</td></tr>
+<tr class="separator:a48abdda3cd5998812d62563cadae4ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dcddecd8635f3449a579ebeb08f2c3d" id="r_a9dcddecd8635f3449a579ebeb08f2c3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9dcddecd8635f3449a579ebeb08f2c3d">~GPIO</a> ()=default</td></tr>
+<tr class="separator:a9dcddecd8635f3449a579ebeb08f2c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c3e47ee29f93c18e6edf4069b164ac1" id="r_a4c3e47ee29f93c18e6edf4069b164ac1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c3e47ee29f93c18e6edf4069b164ac1">GPIO</a> (GPIO_TypeDef *Port, uint8_t Pin, <a class="el" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696">STM32::GPIO_Mode</a> Mode=<a class="el" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696a2ebee616e8d2624ce8b2e4e4add9809f">STM32::out</a>, <a class="el" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0f">STM32::GPIO_OutPutType</a> PutType=<a class="el" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0fa736b56067eef30dba1ca7c7333b3e946">STM32::pp</a>, <a class="el" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98">STM32::GPIO_Pull</a> Pull=<a class="el" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98a14d130b53b4d0abe5046e818edc63f52">STM32::pullno</a>, <a class="el" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37e">STM32::GPIO_Speed</a> Speed=<a class="el" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37ea08edeaf6874b169e34cdba5278389258">STM32::fast</a>)</td></tr>
+<tr class="memdesc:a4c3e47ee29f93c18e6edf4069b164ac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO类构造函数  <br /></td></tr>
+<tr class="separator:a4c3e47ee29f93c18e6edf4069b164ac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a945e5b5a9e0e032dae1dda653484e41b" id="r_a945e5b5a9e0e032dae1dda653484e41b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a945e5b5a9e0e032dae1dda653484e41b">low</a> (void)</td></tr>
+<tr class="memdesc:a945e5b5a9e0e032dae1dda653484e41b"><td class="mdescLeft">&#160;</td><td class="mdescRight">将GPIO引脚置为低电平  <br /></td></tr>
+<tr class="separator:a945e5b5a9e0e032dae1dda653484e41b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad87fe8e2a90a74f7b05084738c5b2600" id="r_ad87fe8e2a90a74f7b05084738c5b2600"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad87fe8e2a90a74f7b05084738c5b2600">high</a> (void)</td></tr>
+<tr class="memdesc:ad87fe8e2a90a74f7b05084738c5b2600"><td class="mdescLeft">&#160;</td><td class="mdescRight">将GPIO引脚置为高电平  <br /></td></tr>
+<tr class="separator:ad87fe8e2a90a74f7b05084738c5b2600"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb325f1f1677b9aa02d608a87e6f1d01" id="r_acb325f1f1677b9aa02d608a87e6f1d01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb325f1f1677b9aa02d608a87e6f1d01">toggle</a> (void)</td></tr>
+<tr class="memdesc:acb325f1f1677b9aa02d608a87e6f1d01"><td class="mdescLeft">&#160;</td><td class="mdescRight">翻转GPIO引脚的电平状态  <br /></td></tr>
+<tr class="separator:acb325f1f1677b9aa02d608a87e6f1d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ebfe491b3d608f43ea7ed4c8dea46a" id="r_a12ebfe491b3d608f43ea7ed4c8dea46a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12ebfe491b3d608f43ea7ed4c8dea46a">read</a> (void)</td></tr>
+<tr class="memdesc:a12ebfe491b3d608f43ea7ed4c8dea46a"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取GPIO引脚的电平状态  <br /></td></tr>
+<tr class="separator:a12ebfe491b3d608f43ea7ed4c8dea46a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3519280390ddcb2d3f8ef633a85053d" id="r_aa3519280390ddcb2d3f8ef633a85053d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3519280390ddcb2d3f8ef633a85053d">setValue</a> (bool)</td></tr>
+<tr class="memdesc:aa3519280390ddcb2d3f8ef633a85053d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置GPIO引脚的电平状态  <br /></td></tr>
+<tr class="separator:aa3519280390ddcb2d3f8ef633a85053d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad40273ed844471c343c0792365d1cbea" id="r_ad40273ed844471c343c0792365d1cbea"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad40273ed844471c343c0792365d1cbea">readPort</a> (void)</td></tr>
+<tr class="memdesc:ad40273ed844471c343c0792365d1cbea"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取GPIO端口的输入数据寄存器的值  <br /></td></tr>
+<tr class="separator:ad40273ed844471c343c0792365d1cbea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5be0131f534c2675953ff8403e0d953" id="r_af5be0131f534c2675953ff8403e0d953"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5be0131f534c2675953ff8403e0d953">setConfig</a> (<a class="el" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696">STM32::GPIO_Mode</a> Mode=<a class="el" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696a2ebee616e8d2624ce8b2e4e4add9809f">STM32::out</a>, <a class="el" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0f">STM32::GPIO_OutPutType</a> PutType=<a class="el" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0fa736b56067eef30dba1ca7c7333b3e946">STM32::pp</a>, <a class="el" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98">STM32::GPIO_Pull</a> Pull=<a class="el" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98a14d130b53b4d0abe5046e818edc63f52">STM32::pullno</a>, <a class="el" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37e">GPIO_Speed</a> Speed=<a class="el" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37ea08edeaf6874b169e34cdba5278389258">fast</a>)</td></tr>
+<tr class="memdesc:af5be0131f534c2675953ff8403e0d953"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置GPIO配置  <br /></td></tr>
+<tr class="separator:af5be0131f534c2675953ff8403e0d953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>GPIO类 </p>
+<p>用于控制GPIO。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a48abdda3cd5998812d62563cadae4ede" name="a48abdda3cd5998812d62563cadae4ede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48abdda3cd5998812d62563cadae4ede">&#9670;&#160;</a></span>GPIO() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">STM32::GPIO::GPIO </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9dcddecd8635f3449a579ebeb08f2c3d" name="a9dcddecd8635f3449a579ebeb08f2c3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dcddecd8635f3449a579ebeb08f2c3d">&#9670;&#160;</a></span>~GPIO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">STM32::GPIO::~GPIO </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c3e47ee29f93c18e6edf4069b164ac1" name="a4c3e47ee29f93c18e6edf4069b164ac1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c3e47ee29f93c18e6edf4069b164ac1">&#9670;&#160;</a></span>GPIO() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GPIO::GPIO </td>
+          <td>(</td>
+          <td class="paramtype">GPIO_TypeDef *</td>          <td class="paramname"><span class="paramname"><em>Port</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>Pin</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696">STM32::GPIO_Mode</a></td>          <td class="paramname"><span class="paramname"><em>Mode</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696a2ebee616e8d2624ce8b2e4e4add9809f">STM32::out</a></span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0f">STM32::GPIO_OutPutType</a></td>          <td class="paramname"><span class="paramname"><em>PutType</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0fa736b56067eef30dba1ca7c7333b3e946">STM32::pp</a></span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98">STM32::GPIO_Pull</a></td>          <td class="paramname"><span class="paramname"><em>Pull</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98a14d130b53b4d0abe5046e818edc63f52">STM32::pullno</a></span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37e">STM32::GPIO_Speed</a></td>          <td class="paramname"><span class="paramname"><em>Speed</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37ea08edeaf6874b169e34cdba5278389258">STM32::fast</a></span></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO类构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Port</td><td>GPIO端口 </td></tr>
+    <tr><td class="paramname">Pin</td><td>GPIO引脚号 </td></tr>
+    <tr><td class="paramname">Mode</td><td>GPIO模式，默认为输出模式 </td></tr>
+    <tr><td class="paramname">PutType</td><td>GPIO输出类型，默认为推挽输出 </td></tr>
+    <tr><td class="paramname">Pull</td><td>GPIO上拉/下拉，默认为不上拉/下拉 </td></tr>
+    <tr><td class="paramname">Speed</td><td>GPIO输出速度，默认为快速 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ad87fe8e2a90a74f7b05084738c5b2600" name="ad87fe8e2a90a74f7b05084738c5b2600"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad87fe8e2a90a74f7b05084738c5b2600">&#9670;&#160;</a></span>high()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void STM32::GPIO::high </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将GPIO引脚置为高电平 </p>
+
+</div>
+</div>
+<a id="a945e5b5a9e0e032dae1dda653484e41b" name="a945e5b5a9e0e032dae1dda653484e41b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a945e5b5a9e0e032dae1dda653484e41b">&#9670;&#160;</a></span>low()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void STM32::GPIO::low </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将GPIO引脚置为低电平 </p>
+
+</div>
+</div>
+<a id="a12ebfe491b3d608f43ea7ed4c8dea46a" name="a12ebfe491b3d608f43ea7ed4c8dea46a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12ebfe491b3d608f43ea7ed4c8dea46a">&#9670;&#160;</a></span>read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool STM32::GPIO::read </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>读取GPIO引脚的电平状态 </p>
+<dl class="section return"><dt>返回</dt><dd>true GPIO引脚处于高电平状态 </dd>
+<dd>
+false GPIO引脚处于低电平状态 </dd></dl>
+
+</div>
+</div>
+<a id="ad40273ed844471c343c0792365d1cbea" name="ad40273ed844471c343c0792365d1cbea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad40273ed844471c343c0792365d1cbea">&#9670;&#160;</a></span>readPort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t STM32::GPIO::readPort </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>读取GPIO端口的输入数据寄存器的值 </p>
+<dl class="section return"><dt>返回</dt><dd>uint32_t 返回GPIO端口的输入数据寄存器的值 </dd></dl>
+
+</div>
+</div>
+<a id="af5be0131f534c2675953ff8403e0d953" name="af5be0131f534c2675953ff8403e0d953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5be0131f534c2675953ff8403e0d953">&#9670;&#160;</a></span>setConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GPIO::setConfig </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696">STM32::GPIO_Mode</a></td>          <td class="paramname"><span class="paramname"><em>Mode</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_s_t_m32.html#a51eae231b0c699eb696cf1baf5508696a2ebee616e8d2624ce8b2e4e4add9809f">STM32::out</a></span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0f">STM32::GPIO_OutPutType</a></td>          <td class="paramname"><span class="paramname"><em>PutType</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_s_t_m32.html#a5d0725f1a4f50c363a07f20517379a0fa736b56067eef30dba1ca7c7333b3e946">STM32::pp</a></span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98">STM32::GPIO_Pull</a></td>          <td class="paramname"><span class="paramname"><em>Pull</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_s_t_m32.html#ae318e101c1d25137bbcd2a3395368e98a14d130b53b4d0abe5046e818edc63f52">STM32::pullno</a></span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37e">GPIO_Speed</a></td>          <td class="paramname"><span class="paramname"><em>Speed</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_s_t_m32.html#a8cb6d08f56ce63f58551b3067d1dc37ea08edeaf6874b169e34cdba5278389258">fast</a></span></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置GPIO配置 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Mode</td><td>GPIO模式 </td></tr>
+    <tr><td class="paramname">PutType</td><td>GPIO输出类型 </td></tr>
+    <tr><td class="paramname">Pull</td><td>GPIO上拉/下拉 </td></tr>
+    <tr><td class="paramname">Speed</td><td>GPIO输出速度 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa3519280390ddcb2d3f8ef633a85053d" name="aa3519280390ddcb2d3f8ef633a85053d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3519280390ddcb2d3f8ef633a85053d">&#9670;&#160;</a></span>setValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void STM32::GPIO::setValue </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置GPIO引脚的电平状态 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>true为高电平，false为低电平 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acb325f1f1677b9aa02d608a87e6f1d01" name="acb325f1f1677b9aa02d608a87e6f1d01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb325f1f1677b9aa02d608a87e6f1d01">&#9670;&#160;</a></span>toggle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void STM32::GPIO::toggle </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>翻转GPIO引脚的电平状态 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespace_s_t_m32.html">STM32</a></li><li class="navelem"><a class="el" href="class_s_t_m32_1_1_g_p_i_o.html">GPIO</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

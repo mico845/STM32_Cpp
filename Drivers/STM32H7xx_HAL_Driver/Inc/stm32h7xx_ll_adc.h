@@ -839,7 +839,7 @@ typedef struct
   * @}
   */
 
-/** @defgroup ADC_LL_EC_LP_MODE  ADC instance - Low power mode
+/** @defgroup ADC_LL_EC_LP_MODE  ADC instance - low power mode
   * @{
   */
 #define LL_ADC_LP_MODE_NONE                (0x00000000UL)                      /*!< No ADC low power mode activated */
@@ -1588,7 +1588,7 @@ typedef struct
 #define LL_ADC_WriteReg(__INSTANCE__, __REG__, __VALUE__) WRITE_REG(__INSTANCE__->__REG__, (__VALUE__))
 
 /**
-  * @brief  Read a value in ADC register
+  * @brief  read a value in ADC register
   * @param  __INSTANCE__ ADC Instance
   * @param  __REG__ Register to be read
   * @retval Register value
@@ -2659,7 +2659,7 @@ __STATIC_INLINE void LL_ADC_SetCommonClock(ADC_Common_TypeDef *ADCxy_COMMON, uin
 }
 
 /**
-  * @brief  Get parameter common to several ADC: Clock source and prescaler.
+  * @brief  get parameter common to several ADC: Clock source and prescaler.
   * @rmtoll CCR      CKMODE         LL_ADC_GetCommonClock\n
   *         CCR      PRESC          LL_ADC_GetCommonClock
   * @param  ADCxy_COMMON ADC common instance
@@ -2727,7 +2727,7 @@ __STATIC_INLINE void LL_ADC_SetCommonPathInternalCh(ADC_Common_TypeDef *ADCxy_CO
 }
 
 /**
-  * @brief  Get parameter common to several ADC: measurement path to internal
+  * @brief  get parameter common to several ADC: measurement path to internal
   *         channels (VrefInt, temperature sensor, ...).
   * @note   One or several values can be selected.
   *         Example: (LL_ADC_PATH_INTERNAL_VREFINT |
@@ -2863,7 +2863,7 @@ __STATIC_INLINE void LL_ADC_SetCalibrationOffsetFactor(ADC_TypeDef *ADCx, uint32
 }
 
 /**
-  * @brief  Get ADC calibration factor in the mode single-ended
+  * @brief  get ADC calibration factor in the mode single-ended
   *         or differential (for devices with differential mode available).
   * @note   Calibration factors are set by hardware after performing
   *         a calibration run using function @ref LL_ADC_StartCalibration().
@@ -2940,7 +2940,7 @@ __STATIC_INLINE void LL_ADC_SetCalibrationLinearFactor(ADC_TypeDef *ADCx, uint32
 }
 
 /**
-  * @brief  Get ADC Linear calibration factor in the mode single-ended.
+  * @brief  get ADC Linear calibration factor in the mode single-ended.
   * @note   Calibration factors are set by hardware after performing
   *         a calibration run using function @ref LL_ADC_StartCalibration().
   * @rmtoll CALFACT2  LINCALFACT      LL_ADC_GetCalibrationLinearFactor\n
@@ -3037,7 +3037,7 @@ __STATIC_INLINE void LL_ADC_SetResolution(ADC_TypeDef *ADCx, uint32_t Resolution
 }
 
 /**
-  * @brief  Get ADC resolution.
+  * @brief  get ADC resolution.
   *         Refer to reference manual for alignments formats
   *         dependencies to ADC resolutions.
   * @rmtoll CFGR     RES            LL_ADC_GetResolution
@@ -3118,7 +3118,7 @@ __STATIC_INLINE uint32_t LL_ADC_GetResolution(ADC_TypeDef *ADCx)
   *             Auto wait will work but fort a very short time, discarding
   *             its intended benefit (except specific case of high load of CPU
   *             or DMA transfers which can justify usage of auto wait).
-  *           - Do use with polling: 1. Start conversion,
+  *           - Do use with polling: 1. start conversion,
   *             2. Later on, when conversion data is needed: poll for end of
   *             conversion  to ensure that conversion is completed and
   *             retrieve ADC conversion data. This will trig another
@@ -3152,7 +3152,7 @@ __STATIC_INLINE void LL_ADC_SetLowPowerMode(ADC_TypeDef *ADCx, uint32_t LowPower
 }
 
 /**
-  * @brief  Get ADC low power mode:
+  * @brief  get ADC low power mode:
   * @note   Description of ADC low power modes:
   *         - ADC low power mode "auto wait": Dynamic low power mode,
   *           ADC conversions occurrences are limited to the minimum necessary
@@ -3174,7 +3174,7 @@ __STATIC_INLINE void LL_ADC_SetLowPowerMode(ADC_TypeDef *ADCx, uint32_t LowPower
   *             Auto wait will work but fort a very short time, discarding
   *             its intended benefit (except specific case of high load of CPU
   *             or DMA transfers which can justify usage of auto wait).
-  *           - Do use with polling: 1. Start conversion,
+  *           - Do use with polling: 1. start conversion,
   *             2. Later on, when conversion data is needed: poll for end of
   *             conversion  to ensure that conversion is completed and
   *             retrieve ADC conversion data. This will trig another
@@ -3248,7 +3248,7 @@ __STATIC_INLINE void LL_ADC_SetChannelPreselection(ADC_TypeDef *ADCx, uint32_t C
 }
 
 /**
-  * @brief  Gets ADC pre-selected Channel.
+  * @brief  gets ADC pre-selected Channel.
   * @note   This function gets the pre-selected ADC channel.
   * @note   Caution: Channel selections is dependent to ADC instance and IP version:
   *         For STM32H72x/3x This is applicable only for ADC1/ADC2
@@ -3389,7 +3389,7 @@ __STATIC_INLINE void LL_ADC_SetOffset(ADC_TypeDef *ADCx, uint32_t Offsety, uint3
 }
 
 /**
-  * @brief  Get for the ADC selected offset number 1, 2, 3 or 4:
+  * @brief  get for the ADC selected offset number 1, 2, 3 or 4:
   *         Channel to which the offset programmed will be applied
   *         (independently of channel mapped on ADC group regular
   *         or group injected)
@@ -3459,7 +3459,7 @@ __STATIC_INLINE uint32_t LL_ADC_GetOffsetChannel(ADC_TypeDef *ADCx, uint32_t Off
 }
 
 /**
-  * @brief  Get for the ADC selected offset number 1, 2, 3 or 4:
+  * @brief  get for the ADC selected offset number 1, 2, 3 or 4:
   *         Offset level (offset to be subtracted from the raw
   *         converted data).
   * @note   Caution: Offset format is dependent to ADC resolution:
@@ -3506,7 +3506,7 @@ __STATIC_INLINE void LL_ADC_SetDataRightShift(ADC_TypeDef *ADCx, uint32_t Offset
 }
 
 /**
-  * @brief  Get data right shift for the ADC selected offset number 1, 2, 3 or 4:
+  * @brief  get data right shift for the ADC selected offset number 1, 2, 3 or 4:
   *         signed offset saturation if enabled or disabled.
   * @rmtoll CFGR2    RSHIFT          LL_ADC_GetDataRightShift\n
   * @param  ADCx ADC instance
@@ -3558,7 +3558,7 @@ __STATIC_INLINE void LL_ADC_SetOffsetSignedSaturation(ADC_TypeDef *ADCx, uint32_
 }
 
 /**
-  * @brief  Get signed saturation for the ADC selected offset number 1, 2, 3 or 4:
+  * @brief  get signed saturation for the ADC selected offset number 1, 2, 3 or 4:
   *         signed offset saturation if enabled or disabled.
   * @rmtoll OFR1     SSATE          LL_ADC_GetOffsetSignedSaturation\n
   *         OFR2     SSATE          LL_ADC_GetOffsetSignedSaturation\n
@@ -3853,7 +3853,7 @@ __STATIC_INLINE void LL_ADC_REG_SetTriggerSource(ADC_TypeDef *ADCx, uint32_t Tri
 }
 
 /**
-  * @brief  Get ADC group regular conversion trigger source:
+  * @brief  get ADC group regular conversion trigger source:
   *         internal (SW start) or from external peripheral (timer event,
   *         external interrupt line).
   * @note   To determine whether group regular trigger source is
@@ -3908,7 +3908,7 @@ __STATIC_INLINE uint32_t LL_ADC_REG_GetTriggerSource(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get ADC group regular conversion trigger source internal (SW start)
+  * @brief  get ADC group regular conversion trigger source internal (SW start)
   *         or external.
   * @note   In case of group regular trigger source set to external trigger,
   *         to determine which peripheral is selected as external trigger,
@@ -3944,7 +3944,7 @@ __STATIC_INLINE void LL_ADC_REG_SetTriggerEdge(ADC_TypeDef *ADCx, uint32_t Exter
 }
 
 /**
-  * @brief  Get ADC group regular conversion trigger polarity.
+  * @brief  get ADC group regular conversion trigger polarity.
   * @note   Applicable only for trigger source set to external trigger.
   * @rmtoll CFGR     EXTEN          LL_ADC_REG_GetTriggerEdge
   * @param  ADCx ADC instance
@@ -4050,7 +4050,7 @@ __STATIC_INLINE void LL_ADC_REG_SetSequencerLength(ADC_TypeDef *ADCx, uint32_t S
 }
 
 /**
-  * @brief  Get ADC group regular sequencer length and scan direction.
+  * @brief  get ADC group regular sequencer length and scan direction.
   * @note   Description of ADC group regular sequencer features:
   *         - For devices with sequencer fully configurable
   *           (function "LL_ADC_REG_SetSequencerRanks()" available):
@@ -4136,7 +4136,7 @@ __STATIC_INLINE void LL_ADC_REG_SetSequencerDiscont(ADC_TypeDef *ADCx, uint32_t 
 }
 
 /**
-  * @brief  Get ADC group regular sequencer discontinuous mode:
+  * @brief  get ADC group regular sequencer discontinuous mode:
   *         sequence subdivided and scan conversions interrupted every selected
   *         number of ranks.
   * @rmtoll CFGR     DISCEN         LL_ADC_REG_GetSequencerDiscont\n
@@ -4259,7 +4259,7 @@ __STATIC_INLINE void LL_ADC_REG_SetSequencerRanks(ADC_TypeDef *ADCx, uint32_t Ra
 }
 
 /**
-  * @brief  Get ADC group regular sequence: channel on the selected
+  * @brief  get ADC group regular sequence: channel on the selected
   *         scan sequence rank.
   * @note   On this STM32 series, ADC group regular sequencer is
   *         fully configurable: sequencer length and each rank
@@ -4382,7 +4382,7 @@ __STATIC_INLINE void LL_ADC_REG_SetContinuousMode(ADC_TypeDef *ADCx, uint32_t Co
 }
 
 /**
-  * @brief  Get ADC continuous conversion mode on ADC group regular.
+  * @brief  get ADC continuous conversion mode on ADC group regular.
   * @note   Description of ADC continuous conversion mode:
   *         - single mode: one conversion per trigger
   *         - continuous mode: after the first trigger, following
@@ -4523,7 +4523,7 @@ __STATIC_INLINE uint32_t LL_ADC_REG_GetDMATransferMode(ADC_TypeDef *ADCx)
 #endif  /* ADC_VER_V5_V90 */
 
 /**
-  * @brief  Get ADC data transfer mode
+  * @brief  get ADC data transfer mode
   * @note   Conversion data can be either:
   *            - Available in Data Register
   *            - Transferred by DMA in one shot mode
@@ -4569,7 +4569,7 @@ __STATIC_INLINE void LL_ADC_REG_SetOverrun(ADC_TypeDef *ADCx, uint32_t Overrun)
 }
 
 /**
-  * @brief  Get ADC group regular behavior in case of overrun:
+  * @brief  get ADC group regular behavior in case of overrun:
   *         data preserved or overwritten.
   * @rmtoll CFGR     OVRMOD         LL_ADC_REG_GetOverrun
   * @param  ADCx ADC instance
@@ -4640,7 +4640,7 @@ __STATIC_INLINE void LL_ADC_INJ_SetTriggerSource(ADC_TypeDef *ADCx, uint32_t Tri
 }
 
 /**
-  * @brief  Get ADC group injected conversion trigger source:
+  * @brief  get ADC group injected conversion trigger source:
   *         internal (SW start) or from external peripheral (timer event,
   *         external interrupt line).
   * @note   To determine whether group injected trigger source is
@@ -4695,7 +4695,7 @@ __STATIC_INLINE uint32_t LL_ADC_INJ_GetTriggerSource(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get ADC group injected conversion trigger source internal (SW start)
+  * @brief  get ADC group injected conversion trigger source internal (SW start)
             or external
   * @note   In case of group injected trigger source set to external trigger,
   *         to determine which peripheral is selected as external trigger,
@@ -4731,7 +4731,7 @@ __STATIC_INLINE void LL_ADC_INJ_SetTriggerEdge(ADC_TypeDef *ADCx, uint32_t Exter
 }
 
 /**
-  * @brief  Get ADC group injected conversion trigger polarity.
+  * @brief  get ADC group injected conversion trigger polarity.
   *         Applicable only for trigger source set to external trigger.
   * @rmtoll JSQR     JEXTEN         LL_ADC_INJ_GetTriggerEdge
   * @param  ADCx ADC instance
@@ -4772,7 +4772,7 @@ __STATIC_INLINE void LL_ADC_INJ_SetSequencerLength(ADC_TypeDef *ADCx, uint32_t S
 }
 
 /**
-  * @brief  Get ADC group injected sequencer length and scan direction.
+  * @brief  get ADC group injected sequencer length and scan direction.
   * @note   This function retrieves:
   *         - Sequence length: Number of ranks in the scan sequence.
   *         - Sequence direction: Unless specified in parameters, sequencer
@@ -4811,7 +4811,7 @@ __STATIC_INLINE void LL_ADC_INJ_SetSequencerDiscont(ADC_TypeDef *ADCx, uint32_t 
 }
 
 /**
-  * @brief  Get ADC group injected sequencer discontinuous mode:
+  * @brief  get ADC group injected sequencer discontinuous mode:
   *         sequence subdivided and scan conversions interrupted every selected
   *         number of ranks.
   * @rmtoll CFGR     JDISCEN        LL_ADC_INJ_GetSequencerDiscont
@@ -4895,7 +4895,7 @@ __STATIC_INLINE void LL_ADC_INJ_SetSequencerRanks(ADC_TypeDef *ADCx, uint32_t Ra
 }
 
 /**
-  * @brief  Get ADC group injected sequence: channel on the selected
+  * @brief  get ADC group injected sequence: channel on the selected
   *         sequence rank.
   * @note   Depending on devices and packages, some channels may not be available.
   *         Refer to device datasheet for channels availability.
@@ -4999,7 +4999,7 @@ __STATIC_INLINE void LL_ADC_INJ_SetTrigAuto(ADC_TypeDef *ADCx, uint32_t TrigAuto
 }
 
 /**
-  * @brief  Get ADC group injected conversion trigger:
+  * @brief  get ADC group injected conversion trigger:
   *         independent or from ADC group regular.
   * @rmtoll CFGR     JAUTO          LL_ADC_INJ_GetTrigAuto
   * @param  ADCx ADC instance
@@ -5059,7 +5059,7 @@ __STATIC_INLINE void LL_ADC_INJ_SetQueueMode(ADC_TypeDef *ADCx, uint32_t QueueMo
 }
 
 /**
-  * @brief  Get ADC group injected context queue mode.
+  * @brief  get ADC group injected context queue mode.
   * @rmtoll CFGR     JQM            LL_ADC_INJ_GetQueueMode\n
   *         CFGR     JQDIS          LL_ADC_INJ_GetQueueMode
   * @param  ADCx ADC instance
@@ -5413,7 +5413,7 @@ __STATIC_INLINE void LL_ADC_SetChannelSamplingTime(ADC_TypeDef *ADCx, uint32_t C
 }
 
 /**
-  * @brief  Get sampling time of the selected ADC channel
+  * @brief  get sampling time of the selected ADC channel
   *         Unit: ADC clock cycles.
   * @note   On this device, sampling time is on channel scope: independently
   *         of channel mapped on ADC group regular or injected.
@@ -5574,7 +5574,7 @@ __STATIC_INLINE void LL_ADC_SetChannelSingleDiff(ADC_TypeDef *ADCx, uint32_t Cha
 }
 
 /**
-  * @brief  Get mode single-ended or differential input of the selected
+  * @brief  get mode single-ended or differential input of the selected
   *         ADC channel.
   * @note   When configuring a channel 'i' in differential mode,
   *         the channel 'i+1' is not usable separately.
@@ -5779,7 +5779,7 @@ __STATIC_INLINE void LL_ADC_SetAnalogWDMonitChannels(ADC_TypeDef *ADCx, uint32_t
 }
 
 /**
-  * @brief  Get ADC analog watchdog monitored channel.
+  * @brief  get ADC analog watchdog monitored channel.
   * @note   Usage of the returned channel number:
   *         - To reinject this channel into another function LL_ADC_xxx:
   *           the returned channel number is only partly formatted on definition
@@ -6056,7 +6056,7 @@ __STATIC_INLINE void LL_ADC_SetAnalogWDThresholds(ADC_TypeDef *ADCx, uint32_t AW
 }
 
 /**
-  * @brief  Get ADC analog watchdog threshold value of threshold high,
+  * @brief  get ADC analog watchdog threshold value of threshold high,
   *         threshold low or raw data with ADC thresholds high and low
   *         concatenated.
   * @note   In case of ADC resolution different of 12 bits,
@@ -6278,7 +6278,7 @@ __STATIC_INLINE void LL_ADC_SetOverSamplingScope(ADC_TypeDef *ADCx, uint32_t Ovs
 }
 
 /**
-  * @brief  Get ADC oversampling scope: ADC groups regular and-or injected
+  * @brief  get ADC oversampling scope: ADC groups regular and-or injected
   *         (availability of ADC group injected depends on STM32 families).
   * @note   If both groups regular and injected are selected,
   *         specify behavior of ADC group injected interrupting
@@ -6330,7 +6330,7 @@ __STATIC_INLINE void LL_ADC_SetOverSamplingDiscont(ADC_TypeDef *ADCx, uint32_t O
 }
 
 /**
-  * @brief  Get ADC oversampling discontinuous mode (triggered mode)
+  * @brief  get ADC oversampling discontinuous mode (triggered mode)
   *         on the selected ADC group.
   * @note   Number of oversampled conversions are done either in:
   *         - continuous mode (all conversions of oversampling ratio
@@ -6405,7 +6405,7 @@ __STATIC_INLINE void LL_ADC_ConfigOverSamplingRatioShift(ADC_TypeDef *ADCx, uint
 }
 
 /**
-  * @brief  Get ADC oversampling ratio
+  * @brief  get ADC oversampling ratio
   *        (impacting both ADC groups regular and injected)
   * @rmtoll CFGR2    OVSR           LL_ADC_GetOverSamplingRatio
   * @param  ADCx ADC instance
@@ -6439,7 +6439,7 @@ __STATIC_INLINE uint32_t LL_ADC_GetOverSamplingRatio(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get ADC oversampling shift
+  * @brief  get ADC oversampling shift
   *        (impacting both ADC groups regular and injected)
   * @rmtoll CFGR2    OVSS           LL_ADC_GetOverSamplingShift
   * @param  ADCx ADC instance
@@ -6506,7 +6506,7 @@ __STATIC_INLINE void LL_ADC_SetBoostMode(ADC_TypeDef *ADCx, uint32_t BoostMode)
 
 
 /**
-  * @brief  Get ADC boost mode.
+  * @brief  get ADC boost mode.
   * @note   On this STM32 series, setting of this feature is conditioned to
   *         ADC state:
   *         ADC boost must be configured, without calibration on going, without conversion
@@ -6559,7 +6559,7 @@ __STATIC_INLINE void LL_ADC_SetMultimode(ADC_Common_TypeDef *ADCxy_COMMON, uint3
 }
 
 /**
-  * @brief  Get ADC multimode configuration to operate in independent mode
+  * @brief  get ADC multimode configuration to operate in independent mode
   *         or multimode (for devices with several ADC instances).
   * @note   If multimode configuration: the selected ADC instance is
   *         either master or slave depending on hardware.
@@ -6631,7 +6631,7 @@ __STATIC_INLINE void LL_ADC_SetMultiDMATransfer(ADC_Common_TypeDef *ADCxy_COMMON
 }
 
 /**
-  * @brief  Get ADC multimode conversion data transfer: no transfer
+  * @brief  get ADC multimode conversion data transfer: no transfer
   *         or transfer by DMA.
   * @note   If ADC multimode transfer by DMA is not selected:
   *         each ADC uses its own DMA channel, with its individual
@@ -6719,7 +6719,7 @@ __STATIC_INLINE void LL_ADC_SetMultiTwoSamplingDelay(ADC_Common_TypeDef *ADCxy_C
 }
 
 /**
-  * @brief  Get ADC multimode delay between 2 sampling phases.
+  * @brief  get ADC multimode delay between 2 sampling phases.
   * @rmtoll CCR      DELAY          LL_ADC_GetMultiTwoSamplingDelay
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -6759,7 +6759,7 @@ __STATIC_INLINE uint32_t LL_ADC_GetMultiTwoSamplingDelay(ADC_Common_TypeDef *ADC
   */
 
 /**
-  * @brief  Put ADC instance in deep power down state.
+  * @brief  put ADC instance in deep power down state.
   * @note   In case of ADC calibration necessary: When ADC is in deep-power-down
   *         state, the internal analog calibration is lost. After exiting from
   *         deep power down, calibration must be relaunched or calibration factor
@@ -6803,7 +6803,7 @@ __STATIC_INLINE void LL_ADC_DisableDeepPowerDown(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get the selected ADC instance deep power down state.
+  * @brief  get the selected ADC instance deep power down state.
   * @rmtoll CR       DEEPPWD        LL_ADC_IsDeepPowerDownEnabled
   * @param  ADCx ADC instance
   * @retval 0: deep power down is disabled, 1: deep power down is enabled.
@@ -6852,7 +6852,7 @@ __STATIC_INLINE void LL_ADC_DisableInternalRegulator(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get the selected ADC instance internal voltage regulator state.
+  * @brief  get the selected ADC instance internal voltage regulator state.
   * @rmtoll CR       ADVREGEN       LL_ADC_IsInternalRegulatorEnabled
   * @param  ADCx ADC instance
   * @retval 0: internal regulator is disabled, 1: internal regulator is enabled.
@@ -6909,7 +6909,7 @@ __STATIC_INLINE void LL_ADC_Disable(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get the selected ADC instance enable state.
+  * @brief  get the selected ADC instance enable state.
   * @note   On this STM32 series, flag LL_ADC_FLAG_ADRDY is raised when the ADC
   *         is enabled and when conversion clock is active.
   *         (not only core clock: this ADC has a dual clock domain)
@@ -6923,7 +6923,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsEnabled(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get the selected ADC instance disable state.
+  * @brief  get the selected ADC instance disable state.
   * @rmtoll CR       ADDIS          LL_ADC_IsDisableOngoing
   * @param  ADCx ADC instance
   * @retval 0: no ADC disable command on going.
@@ -6934,7 +6934,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsDisableOngoing(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Start ADC calibration in the mode single-ended
+  * @brief  start ADC calibration in the mode single-ended
   *         or differential (for devices with differential mode available).
   * @note   On this STM32 series, a minimum number of ADC clock cycles
   *         are required between ADC end of calibration and ADC enable.
@@ -6977,7 +6977,7 @@ __STATIC_INLINE void LL_ADC_StartCalibration(ADC_TypeDef *ADCx, uint32_t Calibra
 }
 
 /**
-  * @brief  Get ADC calibration state.
+  * @brief  get ADC calibration state.
   * @rmtoll CR       ADCAL          LL_ADC_IsCalibrationOnGoing
   * @param  ADCx ADC instance
   * @retval 0: calibration complete, 1: calibration in progress.
@@ -6996,7 +6996,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsCalibrationOnGoing(ADC_TypeDef *ADCx)
   */
 
 /**
-  * @brief  Start ADC group regular conversion.
+  * @brief  start ADC group regular conversion.
   * @note   On this STM32 series, this function is relevant for both
   *         internal trigger (SW start) and external trigger:
   *         - If ADC trigger has been set to software start, ADC conversion
@@ -7024,7 +7024,7 @@ __STATIC_INLINE void LL_ADC_REG_StartConversion(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Stop ADC group regular conversion.
+  * @brief  stop ADC group regular conversion.
   * @note   On this STM32 series, setting of this feature is conditioned to
   *         ADC state:
   *         ADC must be enabled with conversion on going on group regular,
@@ -7044,7 +7044,7 @@ __STATIC_INLINE void LL_ADC_REG_StopConversion(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get ADC group regular conversion state.
+  * @brief  get ADC group regular conversion state.
   * @rmtoll CR       ADSTART        LL_ADC_REG_IsConversionOngoing
   * @param  ADCx ADC instance
   * @retval 0: no conversion is on going on ADC group regular.
@@ -7055,7 +7055,7 @@ __STATIC_INLINE uint32_t LL_ADC_REG_IsConversionOngoing(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get ADC group regular command of conversion stop state
+  * @brief  get ADC group regular command of conversion stop state
   * @rmtoll CR       ADSTP          LL_ADC_REG_IsStopConversionOngoing
   * @param  ADCx ADC instance
   * @retval 0: no command of conversion stop is on going on ADC group regular.
@@ -7066,7 +7066,7 @@ __STATIC_INLINE uint32_t LL_ADC_REG_IsStopConversionOngoing(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get ADC group regular conversion data, range fit for
+  * @brief  get ADC group regular conversion data, range fit for
   *         all ADC configurations: all ADC resolutions and
   *         all oversampling increased data width (for devices
   *         with feature oversampling).
@@ -7080,7 +7080,7 @@ __STATIC_INLINE uint32_t LL_ADC_REG_ReadConversionData32(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get ADC group regular conversion data, range fit for
+  * @brief  get ADC group regular conversion data, range fit for
   *         ADC resolution 16 bits.
   * @note   For devices with feature oversampling: Oversampling
   *         can increase data width, function for extended range
@@ -7095,7 +7095,7 @@ __STATIC_INLINE uint16_t LL_ADC_REG_ReadConversionData16(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get ADC group regular conversion data, range fit for
+  * @brief  get ADC group regular conversion data, range fit for
   *         ADC resolution 14 bits.
   * @note   For devices with feature oversampling: Oversampling
   *         can increase data width, function for extended range
@@ -7110,7 +7110,7 @@ __STATIC_INLINE uint16_t LL_ADC_REG_ReadConversionData14(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get ADC group regular conversion data, range fit for
+  * @brief  get ADC group regular conversion data, range fit for
   *         ADC resolution 12 bits.
   * @note   For devices with feature oversampling: Oversampling
   *         can increase data width, function for extended range
@@ -7125,7 +7125,7 @@ __STATIC_INLINE uint16_t LL_ADC_REG_ReadConversionData12(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get ADC group regular conversion data, range fit for
+  * @brief  get ADC group regular conversion data, range fit for
   *         ADC resolution 10 bits.
   * @note   For devices with feature oversampling: Oversampling
   *         can increase data width, function for extended range
@@ -7140,7 +7140,7 @@ __STATIC_INLINE uint16_t LL_ADC_REG_ReadConversionData10(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get ADC group regular conversion data, range fit for
+  * @brief  get ADC group regular conversion data, range fit for
   *         ADC resolution 8 bits.
   * @note   For devices with feature oversampling: Oversampling
   *         can increase data width, function for extended range
@@ -7154,7 +7154,7 @@ __STATIC_INLINE uint8_t LL_ADC_REG_ReadConversionData8(ADC_TypeDef *ADCx)
   return (uint8_t)(READ_BIT(ADCx->DR, ADC_DR_RDATA));
 }
 /**
-  * @brief  Get ADC multimode conversion data of ADC master, ADC slave
+  * @brief  get ADC multimode conversion data of ADC master, ADC slave
   *         or raw data with ADC master and slave concatenated.
   * @note   If raw data with ADC master and slave concatenated is retrieved,
   *         a macro is available to get the conversion data of
@@ -7191,7 +7191,7 @@ __STATIC_INLINE uint32_t LL_ADC_REG_ReadMultiConversionData32(ADC_Common_TypeDef
   */
 
 /**
-  * @brief  Start ADC group injected conversion.
+  * @brief  start ADC group injected conversion.
   * @note   On this STM32 series, this function is relevant for both
   *         internal trigger (SW start) and external trigger:
   *         - If ADC trigger has been set to software start, ADC conversion
@@ -7219,7 +7219,7 @@ __STATIC_INLINE void LL_ADC_INJ_StartConversion(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Stop ADC group injected conversion.
+  * @brief  stop ADC group injected conversion.
   * @note   On this STM32 series, setting of this feature is conditioned to
   *         ADC state:
   *         ADC must be enabled with conversion on going on group injected,
@@ -7239,7 +7239,7 @@ __STATIC_INLINE void LL_ADC_INJ_StopConversion(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get ADC group injected conversion state.
+  * @brief  get ADC group injected conversion state.
   * @rmtoll CR       JADSTART       LL_ADC_INJ_IsConversionOngoing
   * @param  ADCx ADC instance
   * @retval 0: no conversion is on going on ADC group injected.
@@ -7250,7 +7250,7 @@ __STATIC_INLINE uint32_t LL_ADC_INJ_IsConversionOngoing(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get ADC group injected command of conversion stop state
+  * @brief  get ADC group injected command of conversion stop state
   * @rmtoll CR       JADSTP         LL_ADC_INJ_IsStopConversionOngoing
   * @param  ADCx ADC instance
   * @retval 0: no command of conversion stop is on going on ADC group injected.
@@ -7261,7 +7261,7 @@ __STATIC_INLINE uint32_t LL_ADC_INJ_IsStopConversionOngoing(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get ADC group injected conversion data, range fit for
+  * @brief  get ADC group injected conversion data, range fit for
   *         all ADC configurations: all ADC resolutions and
   *         all oversampling increased data width (for devices
   *         with feature oversampling).
@@ -7287,7 +7287,7 @@ __STATIC_INLINE uint32_t LL_ADC_INJ_ReadConversionData32(ADC_TypeDef *ADCx, uint
 }
 
 /**
-  * @brief  Get ADC group injected conversion data, range fit for
+  * @brief  get ADC group injected conversion data, range fit for
   *         ADC resolution 16 bits.
   * @note   For devices with feature oversampling: Oversampling
   *         can increase data width, function for extended range
@@ -7314,7 +7314,7 @@ __STATIC_INLINE uint16_t LL_ADC_INJ_ReadConversionData16(ADC_TypeDef *ADCx, uint
 }
 
 /**
-  * @brief  Get ADC group injected conversion data, range fit for
+  * @brief  get ADC group injected conversion data, range fit for
   *         ADC resolution 14 bits.
   * @note   For devices with feature oversampling: Oversampling
   *         can increase data width, function for extended range
@@ -7341,7 +7341,7 @@ __STATIC_INLINE uint16_t LL_ADC_INJ_ReadConversionData14(ADC_TypeDef *ADCx, uint
 }
 
 /**
-  * @brief  Get ADC group injected conversion data, range fit for
+  * @brief  get ADC group injected conversion data, range fit for
   *         ADC resolution 12 bits.
   * @note   For devices with feature oversampling: Oversampling
   *         can increase data width, function for extended range
@@ -7368,7 +7368,7 @@ __STATIC_INLINE uint16_t LL_ADC_INJ_ReadConversionData12(ADC_TypeDef *ADCx, uint
 }
 
 /**
-  * @brief  Get ADC group injected conversion data, range fit for
+  * @brief  get ADC group injected conversion data, range fit for
   *         ADC resolution 10 bits.
   * @note   For devices with feature oversampling: Oversampling
   *         can increase data width, function for extended range
@@ -7395,7 +7395,7 @@ __STATIC_INLINE uint16_t LL_ADC_INJ_ReadConversionData10(ADC_TypeDef *ADCx, uint
 }
 
 /**
-  * @brief  Get ADC group injected conversion data, range fit for
+  * @brief  get ADC group injected conversion data, range fit for
   *         ADC resolution 8 bits.
   * @note   For devices with feature oversampling: Oversampling
   *         can increase data width, function for extended range
@@ -7430,7 +7430,7 @@ __STATIC_INLINE uint8_t LL_ADC_INJ_ReadConversionData8(ADC_TypeDef *ADCx, uint32
   */
 
 /**
-  * @brief  Get flag ADC ready.
+  * @brief  get flag ADC ready.
   * @note   On this STM32 series, flag LL_ADC_FLAG_ADRDY is raised when the ADC
   *         is enabled and when conversion clock is active.
   *         (not only core clock: this ADC has a dual clock domain)
@@ -7444,7 +7444,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_ADRDY(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get flag ADC group regular end of unitary conversion.
+  * @brief  get flag ADC group regular end of unitary conversion.
   * @rmtoll ISR      EOC            LL_ADC_IsActiveFlag_EOC
   * @param  ADCx ADC instance
   * @retval State of bit (1 or 0).
@@ -7455,7 +7455,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_EOC(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get flag ADC group regular end of sequence conversions.
+  * @brief  get flag ADC group regular end of sequence conversions.
   * @rmtoll ISR      EOS            LL_ADC_IsActiveFlag_EOS
   * @param  ADCx ADC instance
   * @retval State of bit (1 or 0).
@@ -7466,7 +7466,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_EOS(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get flag ADC group regular overrun.
+  * @brief  get flag ADC group regular overrun.
   * @rmtoll ISR      OVR            LL_ADC_IsActiveFlag_OVR
   * @param  ADCx ADC instance
   * @retval State of bit (1 or 0).
@@ -7477,7 +7477,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_OVR(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get flag ADC group regular end of sampling phase.
+  * @brief  get flag ADC group regular end of sampling phase.
   * @rmtoll ISR      EOSMP          LL_ADC_IsActiveFlag_EOSMP
   * @param  ADCx ADC instance
   * @retval State of bit (1 or 0).
@@ -7488,7 +7488,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_EOSMP(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get flag ADC group injected end of unitary conversion.
+  * @brief  get flag ADC group injected end of unitary conversion.
   * @rmtoll ISR      JEOC           LL_ADC_IsActiveFlag_JEOC
   * @param  ADCx ADC instance
   * @retval State of bit (1 or 0).
@@ -7499,7 +7499,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_JEOC(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get flag ADC group injected end of sequence conversions.
+  * @brief  get flag ADC group injected end of sequence conversions.
   * @rmtoll ISR      JEOS           LL_ADC_IsActiveFlag_JEOS
   * @param  ADCx ADC instance
   * @retval State of bit (1 or 0).
@@ -7510,7 +7510,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_JEOS(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get flag ADC group injected contexts queue overflow.
+  * @brief  get flag ADC group injected contexts queue overflow.
   * @rmtoll ISR      JQOVF          LL_ADC_IsActiveFlag_JQOVF
   * @param  ADCx ADC instance
   * @retval State of bit (1 or 0).
@@ -7521,7 +7521,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_JQOVF(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get flag ADC LDO output voltage ready bit.
+  * @brief  get flag ADC LDO output voltage ready bit.
   * @rmtoll ISR      LDORDY          LL_ADC_IsActiveFlag_LDORDY
   * @param  ADCx ADC instance
   * @retval State of bit (1 or 0).
@@ -7532,7 +7532,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_LDORDY(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get flag ADC analog watchdog 1 flag
+  * @brief  get flag ADC analog watchdog 1 flag
   * @rmtoll ISR      AWD1           LL_ADC_IsActiveFlag_AWD1
   * @param  ADCx ADC instance
   * @retval State of bit (1 or 0).
@@ -7543,7 +7543,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_AWD1(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get flag ADC analog watchdog 2.
+  * @brief  get flag ADC analog watchdog 2.
   * @rmtoll ISR      AWD2           LL_ADC_IsActiveFlag_AWD2
   * @param  ADCx ADC instance
   * @retval State of bit (1 or 0).
@@ -7554,7 +7554,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_AWD2(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get flag ADC analog watchdog 3.
+  * @brief  get flag ADC analog watchdog 3.
   * @rmtoll ISR      AWD3           LL_ADC_IsActiveFlag_AWD3
   * @param  ADCx ADC instance
   * @retval State of bit (1 or 0).
@@ -7565,7 +7565,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_AWD3(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Clear flag ADC ready.
+  * @brief  clear flag ADC ready.
   * @note   On this STM32 series, flag LL_ADC_FLAG_ADRDY is raised when the ADC
   *         is enabled and when conversion clock is active.
   *         (not only core clock: this ADC has a dual clock domain)
@@ -7579,7 +7579,7 @@ __STATIC_INLINE void LL_ADC_ClearFlag_ADRDY(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Clear flag ADC group regular end of unitary conversion.
+  * @brief  clear flag ADC group regular end of unitary conversion.
   * @rmtoll ISR      EOC            LL_ADC_ClearFlag_EOC
   * @param  ADCx ADC instance
   * @retval None
@@ -7590,7 +7590,7 @@ __STATIC_INLINE void LL_ADC_ClearFlag_EOC(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Clear flag ADC group regular end of sequence conversions.
+  * @brief  clear flag ADC group regular end of sequence conversions.
   * @rmtoll ISR      EOS            LL_ADC_ClearFlag_EOS
   * @param  ADCx ADC instance
   * @retval None
@@ -7601,7 +7601,7 @@ __STATIC_INLINE void LL_ADC_ClearFlag_EOS(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Clear flag ADC group regular overrun.
+  * @brief  clear flag ADC group regular overrun.
   * @rmtoll ISR      OVR            LL_ADC_ClearFlag_OVR
   * @param  ADCx ADC instance
   * @retval None
@@ -7612,7 +7612,7 @@ __STATIC_INLINE void LL_ADC_ClearFlag_OVR(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Clear flag ADC group regular end of sampling phase.
+  * @brief  clear flag ADC group regular end of sampling phase.
   * @rmtoll ISR      EOSMP          LL_ADC_ClearFlag_EOSMP
   * @param  ADCx ADC instance
   * @retval None
@@ -7623,7 +7623,7 @@ __STATIC_INLINE void LL_ADC_ClearFlag_EOSMP(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Clear flag ADC group injected end of unitary conversion.
+  * @brief  clear flag ADC group injected end of unitary conversion.
   * @rmtoll ISR      JEOC           LL_ADC_ClearFlag_JEOC
   * @param  ADCx ADC instance
   * @retval None
@@ -7634,7 +7634,7 @@ __STATIC_INLINE void LL_ADC_ClearFlag_JEOC(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Clear flag ADC group injected end of sequence conversions.
+  * @brief  clear flag ADC group injected end of sequence conversions.
   * @rmtoll ISR      JEOS           LL_ADC_ClearFlag_JEOS
   * @param  ADCx ADC instance
   * @retval None
@@ -7645,7 +7645,7 @@ __STATIC_INLINE void LL_ADC_ClearFlag_JEOS(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Clear flag ADC group injected contexts queue overflow.
+  * @brief  clear flag ADC group injected contexts queue overflow.
   * @rmtoll ISR      JQOVF          LL_ADC_ClearFlag_JQOVF
   * @param  ADCx ADC instance
   * @retval None
@@ -7656,7 +7656,7 @@ __STATIC_INLINE void LL_ADC_ClearFlag_JQOVF(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Clear flag ADC analog watchdog 1.
+  * @brief  clear flag ADC analog watchdog 1.
   * @rmtoll ISR      AWD1           LL_ADC_ClearFlag_AWD1
   * @param  ADCx ADC instance
   * @retval None
@@ -7667,7 +7667,7 @@ __STATIC_INLINE void LL_ADC_ClearFlag_AWD1(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Clear flag ADC analog watchdog 2.
+  * @brief  clear flag ADC analog watchdog 2.
   * @rmtoll ISR      AWD2           LL_ADC_ClearFlag_AWD2
   * @param  ADCx ADC instance
   * @retval None
@@ -7678,7 +7678,7 @@ __STATIC_INLINE void LL_ADC_ClearFlag_AWD2(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Clear flag ADC analog watchdog 3.
+  * @brief  clear flag ADC analog watchdog 3.
   * @rmtoll ISR      AWD3           LL_ADC_ClearFlag_AWD3
   * @param  ADCx ADC instance
   * @retval None
@@ -7689,7 +7689,7 @@ __STATIC_INLINE void LL_ADC_ClearFlag_AWD3(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get flag multimode ADC ready of the ADC master.
+  * @brief  get flag multimode ADC ready of the ADC master.
   * @rmtoll CSR      ADRDY_MST      LL_ADC_IsActiveFlag_MST_ADRDY
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7701,7 +7701,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_MST_ADRDY(ADC_Common_TypeDef *ADCxy
 }
 
 /**
-  * @brief  Get flag multimode ADC ready of the ADC slave.
+  * @brief  get flag multimode ADC ready of the ADC slave.
   * @rmtoll CSR      ADRDY_SLV      LL_ADC_IsActiveFlag_SLV_ADRDY
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7713,7 +7713,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_SLV_ADRDY(ADC_Common_TypeDef *ADCxy
 }
 
 /**
-  * @brief  Get flag multimode ADC group regular end of unitary conversion of the ADC master.
+  * @brief  get flag multimode ADC group regular end of unitary conversion of the ADC master.
   * @rmtoll CSR      EOC_MST        LL_ADC_IsActiveFlag_MST_EOC
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7725,7 +7725,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_MST_EOC(ADC_Common_TypeDef *ADCxy_C
 }
 
 /**
-  * @brief  Get flag multimode ADC group regular end of unitary conversion of the ADC slave.
+  * @brief  get flag multimode ADC group regular end of unitary conversion of the ADC slave.
   * @rmtoll CSR      EOC_SLV        LL_ADC_IsActiveFlag_SLV_EOC
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7737,7 +7737,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_SLV_EOC(ADC_Common_TypeDef *ADCxy_C
 }
 
 /**
-  * @brief  Get flag multimode ADC group regular end of sequence conversions of the ADC master.
+  * @brief  get flag multimode ADC group regular end of sequence conversions of the ADC master.
   * @rmtoll CSR      EOS_MST        LL_ADC_IsActiveFlag_MST_EOS
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7749,7 +7749,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_MST_EOS(ADC_Common_TypeDef *ADCxy_C
 }
 
 /**
-  * @brief  Get flag multimode ADC group regular end of sequence conversions of the ADC slave.
+  * @brief  get flag multimode ADC group regular end of sequence conversions of the ADC slave.
   * @rmtoll CSR      EOS_SLV        LL_ADC_IsActiveFlag_SLV_EOS
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7761,7 +7761,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_SLV_EOS(ADC_Common_TypeDef *ADCxy_C
 }
 
 /**
-  * @brief  Get flag multimode ADC group regular overrun of the ADC master.
+  * @brief  get flag multimode ADC group regular overrun of the ADC master.
   * @rmtoll CSR      OVR_MST        LL_ADC_IsActiveFlag_MST_OVR
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7773,7 +7773,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_MST_OVR(ADC_Common_TypeDef *ADCxy_C
 }
 
 /**
-  * @brief  Get flag multimode ADC group regular overrun of the ADC slave.
+  * @brief  get flag multimode ADC group regular overrun of the ADC slave.
   * @rmtoll CSR      OVR_SLV        LL_ADC_IsActiveFlag_SLV_OVR
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7785,7 +7785,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_SLV_OVR(ADC_Common_TypeDef *ADCxy_C
 }
 
 /**
-  * @brief  Get flag multimode ADC group regular end of sampling of the ADC master.
+  * @brief  get flag multimode ADC group regular end of sampling of the ADC master.
   * @rmtoll CSR      EOSMP_MST      LL_ADC_IsActiveFlag_MST_EOSMP
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7797,7 +7797,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_MST_EOSMP(ADC_Common_TypeDef *ADCxy
 }
 
 /**
-  * @brief  Get flag multimode ADC group regular end of sampling of the ADC slave.
+  * @brief  get flag multimode ADC group regular end of sampling of the ADC slave.
   * @rmtoll CSR      EOSMP_SLV      LL_ADC_IsActiveFlag_SLV_EOSMP
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7809,7 +7809,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_SLV_EOSMP(ADC_Common_TypeDef *ADCxy
 }
 
 /**
-  * @brief  Get flag multimode ADC group injected end of unitary conversion of the ADC master.
+  * @brief  get flag multimode ADC group injected end of unitary conversion of the ADC master.
   * @rmtoll CSR      JEOC_MST       LL_ADC_IsActiveFlag_MST_JEOC
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7821,7 +7821,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_MST_JEOC(ADC_Common_TypeDef *ADCxy_
 }
 
 /**
-  * @brief  Get flag multimode ADC group injected end of unitary conversion of the ADC slave.
+  * @brief  get flag multimode ADC group injected end of unitary conversion of the ADC slave.
   * @rmtoll CSR      JEOC_SLV       LL_ADC_IsActiveFlag_SLV_JEOC
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7833,7 +7833,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_SLV_JEOC(ADC_Common_TypeDef *ADCxy_
 }
 
 /**
-  * @brief  Get flag multimode ADC group injected end of sequence conversions of the ADC master.
+  * @brief  get flag multimode ADC group injected end of sequence conversions of the ADC master.
   * @rmtoll CSR      JEOS_MST       LL_ADC_IsActiveFlag_MST_JEOS
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7845,7 +7845,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_MST_JEOS(ADC_Common_TypeDef *ADCxy_
 }
 
 /**
-  * @brief  Get flag multimode ADC group injected end of sequence conversions of the ADC slave.
+  * @brief  get flag multimode ADC group injected end of sequence conversions of the ADC slave.
   * @rmtoll CSR      JEOS_SLV       LL_ADC_IsActiveFlag_SLV_JEOS
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7857,7 +7857,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_SLV_JEOS(ADC_Common_TypeDef *ADCxy_
 }
 
 /**
-  * @brief  Get flag multimode ADC group injected context queue overflow of the ADC master.
+  * @brief  get flag multimode ADC group injected context queue overflow of the ADC master.
   * @rmtoll CSR      JQOVF_MST      LL_ADC_IsActiveFlag_MST_JQOVF
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7869,7 +7869,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_MST_JQOVF(ADC_Common_TypeDef *ADCxy
 }
 
 /**
-  * @brief  Get flag multimode ADC group injected context queue overflow of the ADC slave.
+  * @brief  get flag multimode ADC group injected context queue overflow of the ADC slave.
   * @rmtoll CSR      JQOVF_SLV      LL_ADC_IsActiveFlag_SLV_JQOVF
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7881,7 +7881,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_SLV_JQOVF(ADC_Common_TypeDef *ADCxy
 }
 
 /**
-  * @brief  Get flag multimode ADC analog watchdog 1 of the ADC master.
+  * @brief  get flag multimode ADC analog watchdog 1 of the ADC master.
   * @rmtoll CSR      AWD1_MST       LL_ADC_IsActiveFlag_MST_AWD1
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7893,7 +7893,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_MST_AWD1(ADC_Common_TypeDef *ADCxy_
 }
 
 /**
-  * @brief  Get flag multimode analog watchdog 1 of the ADC slave.
+  * @brief  get flag multimode analog watchdog 1 of the ADC slave.
   * @rmtoll CSR      AWD1_SLV       LL_ADC_IsActiveFlag_SLV_AWD1
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7905,7 +7905,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_SLV_AWD1(ADC_Common_TypeDef *ADCxy_
 }
 
 /**
-  * @brief  Get flag multimode ADC analog watchdog 2 of the ADC master.
+  * @brief  get flag multimode ADC analog watchdog 2 of the ADC master.
   * @rmtoll CSR      AWD2_MST       LL_ADC_IsActiveFlag_MST_AWD2
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7917,7 +7917,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_MST_AWD2(ADC_Common_TypeDef *ADCxy_
 }
 
 /**
-  * @brief  Get flag multimode ADC analog watchdog 2 of the ADC slave.
+  * @brief  get flag multimode ADC analog watchdog 2 of the ADC slave.
   * @rmtoll CSR      AWD2_SLV       LL_ADC_IsActiveFlag_SLV_AWD2
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7929,7 +7929,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_SLV_AWD2(ADC_Common_TypeDef *ADCxy_
 }
 
 /**
-  * @brief  Get flag multimode ADC analog watchdog 3 of the ADC master.
+  * @brief  get flag multimode ADC analog watchdog 3 of the ADC master.
   * @rmtoll CSR      AWD3_MST       LL_ADC_IsActiveFlag_MST_AWD3
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -7941,7 +7941,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_MST_AWD3(ADC_Common_TypeDef *ADCxy_
 }
 
 /**
-  * @brief  Get flag multimode ADC analog watchdog 3 of the ADC slave.
+  * @brief  get flag multimode ADC analog watchdog 3 of the ADC slave.
   * @rmtoll CSR      AWD3_SLV       LL_ADC_IsActiveFlag_SLV_AWD3
   * @param  ADCxy_COMMON ADC common instance
   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )
@@ -8203,7 +8203,7 @@ __STATIC_INLINE void LL_ADC_DisableIT_AWD3(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get state of interruption ADC ready
+  * @brief  get state of interruption ADC ready
   *         (0: interrupt disabled, 1: interrupt enabled).
   * @rmtoll IER      ADRDYIE        LL_ADC_IsEnabledIT_ADRDY
   * @param  ADCx ADC instance
@@ -8215,7 +8215,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsEnabledIT_ADRDY(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get state of interruption ADC group regular end of unitary conversion
+  * @brief  get state of interruption ADC group regular end of unitary conversion
   *         (0: interrupt disabled, 1: interrupt enabled).
   * @rmtoll IER      EOCIE          LL_ADC_IsEnabledIT_EOC
   * @param  ADCx ADC instance
@@ -8227,7 +8227,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsEnabledIT_EOC(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get state of interruption ADC group regular end of sequence conversions
+  * @brief  get state of interruption ADC group regular end of sequence conversions
   *         (0: interrupt disabled, 1: interrupt enabled).
   * @rmtoll IER      EOSIE          LL_ADC_IsEnabledIT_EOS
   * @param  ADCx ADC instance
@@ -8239,7 +8239,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsEnabledIT_EOS(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get state of interruption ADC group regular overrun
+  * @brief  get state of interruption ADC group regular overrun
   *         (0: interrupt disabled, 1: interrupt enabled).
   * @rmtoll IER      OVRIE          LL_ADC_IsEnabledIT_OVR
   * @param  ADCx ADC instance
@@ -8251,7 +8251,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsEnabledIT_OVR(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get state of interruption ADC group regular end of sampling
+  * @brief  get state of interruption ADC group regular end of sampling
   *         (0: interrupt disabled, 1: interrupt enabled).
   * @rmtoll IER      EOSMPIE        LL_ADC_IsEnabledIT_EOSMP
   * @param  ADCx ADC instance
@@ -8263,7 +8263,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsEnabledIT_EOSMP(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get state of interruption ADC group injected end of unitary conversion
+  * @brief  get state of interruption ADC group injected end of unitary conversion
   *         (0: interrupt disabled, 1: interrupt enabled).
   * @rmtoll IER      JEOCIE         LL_ADC_IsEnabledIT_JEOC
   * @param  ADCx ADC instance
@@ -8275,7 +8275,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsEnabledIT_JEOC(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get state of interruption ADC group injected end of sequence conversions
+  * @brief  get state of interruption ADC group injected end of sequence conversions
   *         (0: interrupt disabled, 1: interrupt enabled).
   * @rmtoll IER      JEOSIE         LL_ADC_IsEnabledIT_JEOS
   * @param  ADCx ADC instance
@@ -8287,7 +8287,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsEnabledIT_JEOS(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get state of interruption ADC group injected context queue overflow interrupt state
+  * @brief  get state of interruption ADC group injected context queue overflow interrupt state
   *         (0: interrupt disabled, 1: interrupt enabled).
   * @rmtoll IER      JQOVFIE        LL_ADC_IsEnabledIT_JQOVF
   * @param  ADCx ADC instance
@@ -8299,7 +8299,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsEnabledIT_JQOVF(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get state of interruption ADC analog watchdog 1
+  * @brief  get state of interruption ADC analog watchdog 1
   *         (0: interrupt disabled, 1: interrupt enabled).
   * @rmtoll IER      AWD1IE         LL_ADC_IsEnabledIT_AWD1
   * @param  ADCx ADC instance
@@ -8311,7 +8311,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsEnabledIT_AWD1(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get state of interruption Get ADC analog watchdog 2
+  * @brief  get state of interruption Get ADC analog watchdog 2
   *         (0: interrupt disabled, 1: interrupt enabled).
   * @rmtoll IER      AWD2IE         LL_ADC_IsEnabledIT_AWD2
   * @param  ADCx ADC instance
@@ -8323,7 +8323,7 @@ __STATIC_INLINE uint32_t LL_ADC_IsEnabledIT_AWD2(ADC_TypeDef *ADCx)
 }
 
 /**
-  * @brief  Get state of interruption Get ADC analog watchdog 3
+  * @brief  Get state of interruption get ADC analog watchdog 3
   *         (0: interrupt disabled, 1: interrupt enabled).
   * @rmtoll IER      AWD3IE         LL_ADC_IsEnabledIT_AWD3
   * @param  ADCx ADC instance

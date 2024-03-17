@@ -1,19 +1,12 @@
-//
-// Created by Whisky on 12/29/2023.
-//
+#ifndef __PLATFORM_MACHINE_H__
+#define __PLATFORM_MACHINE_H__
 
-#ifndef CODE_MACHINE_H
-#define CODE_MACHINE_H
+#include "platform-drivers/STM32/Platform-STM32.hpp"
+#include "platform-lib/Lib.hpp"
 
-#include "Platform-lib.hpp"
-
-extern      LED_RGB      led;
-extern      USART        cout;
-extern      Timer        timer;
-extern      ADC          adc;
-extern      PWM          pwm;
-extern      DAC          dac;
-extern      DDS          dds;
-extern      LCD_SPI      lcd;
-
-#endif //CODE_MACHINE_H
+/**< 用于存放全局调用的对象 */
+extern LED_RGB             led;
+extern STM32::ADC          adc;
+extern STM32::DAC          dac;
+extern STM32::DDS          dds;
+#endif

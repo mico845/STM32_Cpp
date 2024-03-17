@@ -250,7 +250,7 @@ typedef struct
   */
 
 /**
-  * @brief  Get Word0 of the unique device identifier (UID based on 96 bits)
+  * @brief  get Word0 of the unique device identifier (UID based on 96 bits)
   * @retval UID[31:0]
   */
 __STATIC_INLINE uint32_t LL_GetUID_Word0(void)
@@ -259,7 +259,7 @@ __STATIC_INLINE uint32_t LL_GetUID_Word0(void)
 }
 
 /**
-  * @brief  Get Word1 of the unique device identifier (UID based on 96 bits)
+  * @brief  get Word1 of the unique device identifier (UID based on 96 bits)
   * @retval UID[63:32]
   */
 __STATIC_INLINE uint32_t LL_GetUID_Word1(void)
@@ -268,7 +268,7 @@ __STATIC_INLINE uint32_t LL_GetUID_Word1(void)
 }
 
 /**
-  * @brief  Get Word2 of the unique device identifier (UID based on 96 bits)
+  * @brief  get Word2 of the unique device identifier (UID based on 96 bits)
   * @retval UID[95:64]
   */
 __STATIC_INLINE uint32_t LL_GetUID_Word2(void)
@@ -277,7 +277,7 @@ __STATIC_INLINE uint32_t LL_GetUID_Word2(void)
 }
 
 /**
-  * @brief  Get Flash memory size
+  * @brief  get Flash memory size
   * @note   This bitfield indicates the size of the device Flash memory expressed in
   *         Kbytes. As an example, 0x040 corresponds to 64 Kbytes.
   * @retval FLASH_SIZE[15:0]: Flash memory size
@@ -288,7 +288,7 @@ __STATIC_INLINE uint32_t LL_GetFlashSize(void)
 }
 
 /**
-  * @brief  Get Package type
+  * @brief  get Package type
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_UTILS_PACKAGETYPE_LQFP100
   *         @arg @ref LL_UTILS_PACKAGETYPE_TQFP144

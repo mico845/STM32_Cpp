@@ -33,7 +33,7 @@
  */
 
 /**
-  @addtogroup Fill
+  @addtogroup fill
   @{
  */
 
@@ -130,5 +130,5 @@ void arm_fill_q31(
 #endif /* defined(ARM_MATH_MVEI) */
 
 /**
-  @} end of Fill group
+  @} end of fill group
  */

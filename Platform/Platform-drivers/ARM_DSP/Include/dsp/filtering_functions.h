@@ -2236,7 +2236,7 @@ void arm_correlate_fast_q31(
 
 
   /**
-   * @brief floating-point Circular Read function.
+   * @brief floating-point Circular read function.
    */
   __STATIC_FORCEINLINE void arm_circularRead_f32(
   int32_t * circBuffer,
@@ -2336,7 +2336,7 @@ void arm_correlate_fast_q31(
 
 
   /**
-   * @brief Q15 Circular Read function.
+   * @brief Q15 Circular read function.
    */
   __STATIC_FORCEINLINE void arm_circularRead_q15(
   q15_t * circBuffer,
@@ -2437,7 +2437,7 @@ void arm_correlate_fast_q31(
 
 
   /**
-   * @brief Q7 Circular Read function.
+   * @brief Q7 Circular read function.
    */
   __STATIC_FORCEINLINE void arm_circularRead_q7(
   q7_t * circBuffer,

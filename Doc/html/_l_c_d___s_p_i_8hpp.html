@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-lib/HardWare/LCD_SPI/LCD_SPI.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_l_c_d___s_p_i_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">LCD_SPI.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_g_p_i_o_8hpp_source.html">platform-drivers/STM32/GPIO/GPIO.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_l_c_d___lib_8hpp_source.html">platform-lib/HardWare/LCD_SPI/LCD_Lib.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_sys_8hpp_source.html">platform-drivers/STM32/System/Sys.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_s_p_i_8hpp_source.html">platform-drivers/STM32/SPI/SPI.hpp</a>&quot;</code><br />
+</div>
+<p><a href="_l_c_d___s_p_i_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_c_d___s_p_i.html">LCD_SPI</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD_SPI类  <a href="class_l_c_d___s_p_i.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ace33abb9f24aa3d6d056e4327c32f3ff" id="r_ace33abb9f24aa3d6d056e4327c32f3ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace33abb9f24aa3d6d056e4327c32f3ff">LCD_SPI_HANDEL</a>&#160;&#160;&#160;(SPI6)</td></tr>
+<tr class="memdesc:ace33abb9f24aa3d6d056e4327c32f3ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD使用的SPI指针  <br /></td></tr>
+<tr class="separator:ace33abb9f24aa3d6d056e4327c32f3ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93265c090fc78bed43c2aa9c786cfb40" id="r_a93265c090fc78bed43c2aa9c786cfb40"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93265c090fc78bed43c2aa9c786cfb40">LCD_DC_GPIO</a></td></tr>
+<tr class="separator:a93265c090fc78bed43c2aa9c786cfb40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d7ba5e3ae28efced2a48e390fd38434" id="r_a9d7ba5e3ae28efced2a48e390fd38434"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d7ba5e3ae28efced2a48e390fd38434">LCD_DC_PORT</a>&#160;&#160;&#160;(GPIOB)</td></tr>
+<tr class="memdesc:a9d7ba5e3ae28efced2a48e390fd38434"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD_DC的GPIO端口  <br /></td></tr>
+<tr class="separator:a9d7ba5e3ae28efced2a48e390fd38434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a402d8ccd0bb0a6cc377222e75b8e050e" id="r_a402d8ccd0bb0a6cc377222e75b8e050e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a402d8ccd0bb0a6cc377222e75b8e050e">LCD_DC_PIN</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="memdesc:a402d8ccd0bb0a6cc377222e75b8e050e"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD_DC的GPIO引脚号  <br /></td></tr>
+<tr class="separator:a402d8ccd0bb0a6cc377222e75b8e050e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addda83d3c22042f740b41d54de0e3ea0" id="r_addda83d3c22042f740b41d54de0e3ea0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addda83d3c22042f740b41d54de0e3ea0">LCD_RST_GPIO</a></td></tr>
+<tr class="separator:addda83d3c22042f740b41d54de0e3ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a774d1462751965473d6cc3a4ec270336" id="r_a774d1462751965473d6cc3a4ec270336"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a774d1462751965473d6cc3a4ec270336">LCD_RST_PORT</a>&#160;&#160;&#160;(GPIOD)</td></tr>
+<tr class="memdesc:a774d1462751965473d6cc3a4ec270336"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD_RST的GPIO端口  <br /></td></tr>
+<tr class="separator:a774d1462751965473d6cc3a4ec270336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d11073f149e02e0a07937196d1e5a8e" id="r_a9d11073f149e02e0a07937196d1e5a8e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d11073f149e02e0a07937196d1e5a8e">LCD_RST_PIN</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="memdesc:a9d11073f149e02e0a07937196d1e5a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD_RST的GPIO引脚号  <br /></td></tr>
+<tr class="separator:a9d11073f149e02e0a07937196d1e5a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1799323ab2e080192d628c2bd2d6575" id="r_aa1799323ab2e080192d628c2bd2d6575"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1799323ab2e080192d628c2bd2d6575">LCD_PWR_GPIO</a></td></tr>
+<tr class="separator:aa1799323ab2e080192d628c2bd2d6575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64738cb8430b3ffe5557ec9a6234f5b0" id="r_a64738cb8430b3ffe5557ec9a6234f5b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64738cb8430b3ffe5557ec9a6234f5b0">LCD_PWR_PORT</a>&#160;&#160;&#160;(GPIOD)</td></tr>
+<tr class="memdesc:a64738cb8430b3ffe5557ec9a6234f5b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD_PWR的GPIO引脚号  <br /></td></tr>
+<tr class="separator:a64738cb8430b3ffe5557ec9a6234f5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa614e7e68f3a60ccaaf3e8b3c8093c61" id="r_aa614e7e68f3a60ccaaf3e8b3c8093c61"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa614e7e68f3a60ccaaf3e8b3c8093c61">LCD_PWR_PIN</a>&#160;&#160;&#160;(3)</td></tr>
+<tr class="memdesc:aa614e7e68f3a60ccaaf3e8b3c8093c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD_PWR的GPIO引脚号  <br /></td></tr>
+<tr class="separator:aa614e7e68f3a60ccaaf3e8b3c8093c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f548ee3a22cc84caae1ff9fe3e506d9" id="r_a3f548ee3a22cc84caae1ff9fe3e506d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f548ee3a22cc84caae1ff9fe3e506d9">LCD_TOTAL_BUF_SIZE</a>&#160;&#160;&#160;(240*135*2)</td></tr>
+<tr class="memdesc:a3f548ee3a22cc84caae1ff9fe3e506d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD缓存大小设置  <br /></td></tr>
+<tr class="separator:a3f548ee3a22cc84caae1ff9fe3e506d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c0a29559fd012050f5ede5966f83082" id="r_a1c0a29559fd012050f5ede5966f83082"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c0a29559fd012050f5ede5966f83082">LCD_BUF_SIZE</a>&#160;&#160;&#160;(1152)</td></tr>
+<tr class="separator:a1c0a29559fd012050f5ede5966f83082"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44be1662a157fa282888c626f8d090b5" id="r_a44be1662a157fa282888c626f8d090b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44be1662a157fa282888c626f8d090b5">LCD_STREAM_FLOAT_PRECISION</a>&#160;&#160;&#160;(3)</td></tr>
+<tr class="memdesc:a44be1662a157fa282888c626f8d090b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD输出流的小数显示位数  <br /></td></tr>
+<tr class="separator:a44be1662a157fa282888c626f8d090b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a482d39b27dd7206d40b11919a9dee953" id="r_a482d39b27dd7206d40b11919a9dee953"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a482d39b27dd7206d40b11919a9dee953">LCD_SPI_SendBytes</a> (const uint8_t *data, uint16_t size)</td></tr>
+<tr class="separator:a482d39b27dd7206d40b11919a9dee953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57d156c32bad6fcdb09631e54c738391" id="r_a57d156c32bad6fcdb09631e54c738391"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57d156c32bad6fcdb09631e54c738391">LCD_SPI_SendByte</a> (const uint8_t data)</td></tr>
+<tr class="separator:a57d156c32bad6fcdb09631e54c738391"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:ab274148aa95d0e436212a703d19582a3" id="r_ab274148aa95d0e436212a703d19582a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab274148aa95d0e436212a703d19582a3">DEFAULT_PENCIL_COLOR</a></td></tr>
+<tr class="memdesc:ab274148aa95d0e436212a703d19582a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD默认画笔颜色  <br /></td></tr>
+<tr class="separator:ab274148aa95d0e436212a703d19582a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46899b87954bec3d2ca158543a2fbdc8" id="r_a46899b87954bec3d2ca158543a2fbdc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46899b87954bec3d2ca158543a2fbdc8">DEFAULT_BACK_COLOR</a></td></tr>
+<tr class="memdesc:a46899b87954bec3d2ca158543a2fbdc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD默认背景颜色  <br /></td></tr>
+<tr class="separator:a46899b87954bec3d2ca158543a2fbdc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a861dac9013af3a7d4e6aee9cd06f7d6b" id="r_a861dac9013af3a7d4e6aee9cd06f7d6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_c_d___lib_8hpp.html#ab4c2600f00c83150c5a124f21f7887c8">LCD_FontSize_TypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a861dac9013af3a7d4e6aee9cd06f7d6b">DEFAULT_FONT_SIZE</a></td></tr>
+<tr class="memdesc:a861dac9013af3a7d4e6aee9cd06f7d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD默认字体大小  <br /></td></tr>
+<tr class="separator:a861dac9013af3a7d4e6aee9cd06f7d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a1c0a29559fd012050f5ede5966f83082" name="a1c0a29559fd012050f5ede5966f83082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c0a29559fd012050f5ede5966f83082">&#9670;&#160;</a></span>LCD_BUF_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_BUF_SIZE&#160;&#160;&#160;(1152)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a93265c090fc78bed43c2aa9c786cfb40" name="a93265c090fc78bed43c2aa9c786cfb40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93265c090fc78bed43c2aa9c786cfb40">&#9670;&#160;</a></span>LCD_DC_GPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_DC_GPIO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a402d8ccd0bb0a6cc377222e75b8e050e" name="a402d8ccd0bb0a6cc377222e75b8e050e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a402d8ccd0bb0a6cc377222e75b8e050e">&#9670;&#160;</a></span>LCD_DC_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_DC_PIN&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LCD_DC的GPIO引脚号 </p>
+
+</div>
+</div>
+<a id="a9d7ba5e3ae28efced2a48e390fd38434" name="a9d7ba5e3ae28efced2a48e390fd38434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d7ba5e3ae28efced2a48e390fd38434">&#9670;&#160;</a></span>LCD_DC_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_DC_PORT&#160;&#160;&#160;(GPIOB)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LCD_DC的GPIO端口 </p>
+
+</div>
+</div>
+<a id="aa1799323ab2e080192d628c2bd2d6575" name="aa1799323ab2e080192d628c2bd2d6575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1799323ab2e080192d628c2bd2d6575">&#9670;&#160;</a></span>LCD_PWR_GPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_PWR_GPIO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa614e7e68f3a60ccaaf3e8b3c8093c61" name="aa614e7e68f3a60ccaaf3e8b3c8093c61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa614e7e68f3a60ccaaf3e8b3c8093c61">&#9670;&#160;</a></span>LCD_PWR_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_PWR_PIN&#160;&#160;&#160;(3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LCD_PWR的GPIO引脚号 </p>
+
+</div>
+</div>
+<a id="a64738cb8430b3ffe5557ec9a6234f5b0" name="a64738cb8430b3ffe5557ec9a6234f5b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64738cb8430b3ffe5557ec9a6234f5b0">&#9670;&#160;</a></span>LCD_PWR_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_PWR_PORT&#160;&#160;&#160;(GPIOD)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LCD_PWR的GPIO引脚号 </p>
+
+</div>
+</div>
+<a id="addda83d3c22042f740b41d54de0e3ea0" name="addda83d3c22042f740b41d54de0e3ea0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addda83d3c22042f740b41d54de0e3ea0">&#9670;&#160;</a></span>LCD_RST_GPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_RST_GPIO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d11073f149e02e0a07937196d1e5a8e" name="a9d11073f149e02e0a07937196d1e5a8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d11073f149e02e0a07937196d1e5a8e">&#9670;&#160;</a></span>LCD_RST_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_RST_PIN&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LCD_RST的GPIO引脚号 </p>
+
+</div>
+</div>
+<a id="a774d1462751965473d6cc3a4ec270336" name="a774d1462751965473d6cc3a4ec270336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a774d1462751965473d6cc3a4ec270336">&#9670;&#160;</a></span>LCD_RST_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_RST_PORT&#160;&#160;&#160;(GPIOD)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LCD_RST的GPIO端口 </p>
+
+</div>
+</div>
+<a id="ace33abb9f24aa3d6d056e4327c32f3ff" name="ace33abb9f24aa3d6d056e4327c32f3ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace33abb9f24aa3d6d056e4327c32f3ff">&#9670;&#160;</a></span>LCD_SPI_HANDEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_SPI_HANDEL&#160;&#160;&#160;(SPI6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LCD使用的SPI指针 </p>
+
+</div>
+</div>
+<a id="a44be1662a157fa282888c626f8d090b5" name="a44be1662a157fa282888c626f8d090b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44be1662a157fa282888c626f8d090b5">&#9670;&#160;</a></span>LCD_STREAM_FLOAT_PRECISION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_STREAM_FLOAT_PRECISION&#160;&#160;&#160;(3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LCD输出流的小数显示位数 </p>
+
+</div>
+</div>
+<a id="a3f548ee3a22cc84caae1ff9fe3e506d9" name="a3f548ee3a22cc84caae1ff9fe3e506d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f548ee3a22cc84caae1ff9fe3e506d9">&#9670;&#160;</a></span>LCD_TOTAL_BUF_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_TOTAL_BUF_SIZE&#160;&#160;&#160;(240*135*2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LCD缓存大小设置 </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a57d156c32bad6fcdb09631e54c738391" name="a57d156c32bad6fcdb09631e54c738391"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57d156c32bad6fcdb09631e54c738391">&#9670;&#160;</a></span>LCD_SPI_SendByte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void LCD_SPI_SendByte </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a482d39b27dd7206d40b11919a9dee953" name="a482d39b27dd7206d40b11919a9dee953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a482d39b27dd7206d40b11919a9dee953">&#9670;&#160;</a></span>LCD_SPI_SendBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void LCD_SPI_SendBytes </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a46899b87954bec3d2ca158543a2fbdc8" name="a46899b87954bec3d2ca158543a2fbdc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46899b87954bec3d2ca158543a2fbdc8">&#9670;&#160;</a></span>DEFAULT_BACK_COLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> DEFAULT_BACK_COLOR</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>LCD默认背景颜色 </p>
+
+</div>
+</div>
+<a id="a861dac9013af3a7d4e6aee9cd06f7d6b" name="a861dac9013af3a7d4e6aee9cd06f7d6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a861dac9013af3a7d4e6aee9cd06f7d6b">&#9670;&#160;</a></span>DEFAULT_FONT_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_c_d___lib_8hpp.html#ab4c2600f00c83150c5a124f21f7887c8">LCD_FontSize_TypeDef</a> DEFAULT_FONT_SIZE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>LCD默认字体大小 </p>
+
+</div>
+</div>
+<a id="ab274148aa95d0e436212a703d19582a3" name="ab274148aa95d0e436212a703d19582a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab274148aa95d0e436212a703d19582a3">&#9670;&#160;</a></span>DEFAULT_PENCIL_COLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_c_d___lib_8hpp.html#a8d314c0721065f3cd4613369f418ef07">LCD_Color_TypeDef</a> DEFAULT_PENCIL_COLOR</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>LCD默认画笔颜色 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_bc2597cfbec14760d23b28ac592ac7af.html">platform-lib</a></li><li class="navelem"><a class="el" href="dir_0608fb62d33f45ab68406becc139393f.html">HardWare</a></li><li class="navelem"><a class="el" href="dir_c15988983daa88687b2d54c870b2701a.html">LCD_SPI</a></li><li class="navelem"><a class="el" href="_l_c_d___s_p_i_8hpp.html">LCD_SPI.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

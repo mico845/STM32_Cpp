@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STM32_CPP_Library: C:/Users/Whisky/MYProjects/Project_STM32/STM32_Cpp/H743/STM32_Cpp/Code/Platform/platform-drivers/STM32/ADC/ADC.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">STM32_CPP_Library<span id="projectnumber">&#160;beta 1.01</span>
+   </div>
+   <div id="projectbrief">STM32 Library with C++ by Ricky</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_a_d_c_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#enum-members">枚举</a>  </div>
+  <div class="headertitle"><div class="title">ADC.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_p_w_m_8hpp_source.html">platform-drivers/STM32/PWM/PWM.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_fifo_8hpp_source.html">platform-lib/DataStructre/Fifo.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_d_m_a_8hpp_source.html">platform-drivers/STM32/DMA/DMA.hpp</a>&quot;</code><br />
+</div>
+<p><a href="_a_d_c_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_t_m32_1_1_a_d_c.html">STM32::ADC</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC类  <a href="class_s_t_m32_1_1_a_d_c.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespace_s_t_m32" id="r_namespace_s_t_m32"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_t_m32.html">STM32</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a1c114ef4a5f64b0d9b5baa79deb15e3a" id="r_a1c114ef4a5f64b0d9b5baa79deb15e3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c114ef4a5f64b0d9b5baa79deb15e3a">USE_IRQ_FOR_DATA_HANDLING</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:a1c114ef4a5f64b0d9b5baa79deb15e3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">在中断服务函数里进行数据搬运（双缓冲）  <br /></td></tr>
+<tr class="separator:a1c114ef4a5f64b0d9b5baa79deb15e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d61e0a5809d3f78210067e6306198c1" id="r_a8d61e0a5809d3f78210067e6306198c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d61e0a5809d3f78210067e6306198c1">USE_POLLFOR_FOR_DATA_HANDLING</a>&#160;&#160;&#160;(1)</td></tr>
+<tr class="memdesc:a8d61e0a5809d3f78210067e6306198c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">在CPU循环函数中轮询扫描进行数据搬运（双缓冲）  <br /></td></tr>
+<tr class="separator:a8d61e0a5809d3f78210067e6306198c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43b26b63912d90bce991b3fcf083f2d5" id="r_a43b26b63912d90bce991b3fcf083f2d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43b26b63912d90bce991b3fcf083f2d5">USE_YOURSELF_DMAIRQ</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:a43b26b63912d90bce991b3fcf083f2d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用自定义的DMA中断处理  <br /></td></tr>
+<tr class="separator:a43b26b63912d90bce991b3fcf083f2d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a602abb8ec84dcb3b6f854a738310ea46" id="r_a602abb8ec84dcb3b6f854a738310ea46"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a602abb8ec84dcb3b6f854a738310ea46">ADC_BUFFER_SIZE</a>&#160;&#160;&#160;(1024)</td></tr>
+<tr class="memdesc:a602abb8ec84dcb3b6f854a738310ea46"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC的缓存区FIFO大小  <br /></td></tr>
+<tr class="separator:a602abb8ec84dcb3b6f854a738310ea46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad26be876c434128f9b942a1172f86f7b" id="r_ad26be876c434128f9b942a1172f86f7b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad26be876c434128f9b942a1172f86f7b">ADC_DMA_BUFFER_SIZE</a>&#160;&#160;&#160;(<a class="el" href="#a602abb8ec84dcb3b6f854a738310ea46">ADC_BUFFER_SIZE</a>)</td></tr>
+<tr class="memdesc:ad26be876c434128f9b942a1172f86f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC的DMA缓存区大小  <br /></td></tr>
+<tr class="separator:ad26be876c434128f9b942a1172f86f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:a4de993b51cb9d81ddb0e2adcfe501a6b" id="r_a4de993b51cb9d81ddb0e2adcfe501a6b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6b">STM32::ADC_CalibrationMode</a> { <a class="el" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6ba1fe747e151c96c94ace2eb366106cbcf">STM32::offset</a> = LL_ADC_CALIB_OFFSET
+, <a class="el" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6baf412f4cebedb540a5b43770bf26b87db">STM32::linearity</a> = LL_ADC_CALIB_LINEARITY
+, <a class="el" href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6ba6889f5822f40d21fd168540198e65de8">STM32::offset_linearity</a> = LL_ADC_CALIB_OFFSET_LINEARITY
+ }</td></tr>
+<tr class="memdesc:a4de993b51cb9d81ddb0e2adcfe501a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC校准模式  <a href="namespace_s_t_m32.html#a4de993b51cb9d81ddb0e2adcfe501a6b">更多...</a><br /></td></tr>
+<tr class="separator:a4de993b51cb9d81ddb0e2adcfe501a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a895017a7b0440b97d435429803b66d64" id="r_a895017a7b0440b97d435429803b66d64"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64">STM32::ADC_SingleDiff</a> { <a class="el" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64a964d17c4f4e65acfa7ead1639c17fabf">STM32::single</a> = LL_ADC_SINGLE_ENDED
+, <a class="el" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64ad7e8010bb109f2320f70f35bb1525274">STM32::differential</a> = LL_ADC_DIFFERENTIAL_ENDED
+, <a class="el" href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64a564be97f69bbc678b6849f66f86131b5">STM32::botn_single_diff</a> = LL_ADC_BOTH_SINGLE_DIFF_ENDED
+ }</td></tr>
+<tr class="memdesc:a895017a7b0440b97d435429803b66d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC单端/差分模式  <a href="namespace_s_t_m32.html#a895017a7b0440b97d435429803b66d64">更多...</a><br /></td></tr>
+<tr class="separator:a895017a7b0440b97d435429803b66d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a602abb8ec84dcb3b6f854a738310ea46" name="a602abb8ec84dcb3b6f854a738310ea46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a602abb8ec84dcb3b6f854a738310ea46">&#9670;&#160;</a></span>ADC_BUFFER_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADC_BUFFER_SIZE&#160;&#160;&#160;(1024)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC的缓存区FIFO大小 </p>
+
+</div>
+</div>
+<a id="ad26be876c434128f9b942a1172f86f7b" name="ad26be876c434128f9b942a1172f86f7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad26be876c434128f9b942a1172f86f7b">&#9670;&#160;</a></span>ADC_DMA_BUFFER_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADC_DMA_BUFFER_SIZE&#160;&#160;&#160;(<a class="el" href="#a602abb8ec84dcb3b6f854a738310ea46">ADC_BUFFER_SIZE</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC的DMA缓存区大小 </p>
+
+</div>
+</div>
+<a id="a1c114ef4a5f64b0d9b5baa79deb15e3a" name="a1c114ef4a5f64b0d9b5baa79deb15e3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c114ef4a5f64b0d9b5baa79deb15e3a">&#9670;&#160;</a></span>USE_IRQ_FOR_DATA_HANDLING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_IRQ_FOR_DATA_HANDLING&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在中断服务函数里进行数据搬运（双缓冲） </p>
+
+</div>
+</div>
+<a id="a8d61e0a5809d3f78210067e6306198c1" name="a8d61e0a5809d3f78210067e6306198c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d61e0a5809d3f78210067e6306198c1">&#9670;&#160;</a></span>USE_POLLFOR_FOR_DATA_HANDLING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_POLLFOR_FOR_DATA_HANDLING&#160;&#160;&#160;(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在CPU循环函数中轮询扫描进行数据搬运（双缓冲） </p>
+
+</div>
+</div>
+<a id="a43b26b63912d90bce991b3fcf083f2d5" name="a43b26b63912d90bce991b3fcf083f2d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43b26b63912d90bce991b3fcf083f2d5">&#9670;&#160;</a></span>USE_YOURSELF_DMAIRQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_YOURSELF_DMAIRQ&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用自定义的DMA中断处理 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_46f0a310448968fe371c870cd868aa1f.html">Platform</a></li><li class="navelem"><a class="el" href="dir_84d8ddb176e16ca8bccaaa5eeae31ee8.html">platform-drivers</a></li><li class="navelem"><a class="el" href="dir_4c7ecf3a8e2e1382144ef720f571f877.html">STM32</a></li><li class="navelem"><a class="el" href="dir_315e1dcbc90e98f1b0e48a68a85f48f0.html">ADC</a></li><li class="navelem"><a class="el" href="_a_d_c_8hpp.html">ADC.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

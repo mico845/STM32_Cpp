@@ -65,14 +65,14 @@ void arm_bitreversal_q31(
                  The input and output formats for different FFT sizes and number of bits to upscale are mentioned in the tables below for CFFT and CIFFT:
   @par
 
-| CFFT Size | Input format  | Output format | Number of bits to upscale |
+| CFFT size | Input format  | Output format | Number of bits to upscale |
 | --------: | ------------: | ------------: | ------------------------: |
 | 16        | 1.31          | 5.27          | 4                         |
 | 64        | 1.31          | 7.25          | 6                         |
 | 256       | 1.31          | 9.23          | 8                         |
 | 1024      | 1.31          | 11.21         | 10                        |
 
-| CIFFT Size | Input format  | Output format | Number of bits to upscale |
+| CIFFT size | Input format  | Output format | Number of bits to upscale |
 | ---------: | ------------: | ------------: | ------------------------: |
 | 16         | 1.31          | 5.27          | 0                         |
 | 64         | 1.31          | 7.25          | 0                         |

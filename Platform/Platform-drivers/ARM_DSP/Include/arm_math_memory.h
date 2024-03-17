@@ -69,7 +69,7 @@ extern "C"
 
 
 /**
-  @brief         Read 2 Q15 from Q15 pointer.
+  @brief         read 2 Q15 from Q15 pointer.
   @param[in]     pQ15      points to input value
   @return        Q31 value
  */
@@ -88,14 +88,14 @@ __STATIC_FORCEINLINE q31_t read_q15x2 (
 }
 
 /**
-  @brief         Read 2 Q15 from Q15 pointer and increment pointer afterwards.
+  @brief         read 2 Q15 from Q15 pointer and increment pointer afterwards.
   @param[in]     pQ15      points to input value
   @return        Q31 value
  */
 #define read_q15x2_ia(pQ15) read_q15x2((*(pQ15) += 2) - 2)
 
 /**
-  @brief         Read 2 Q15 from Q15 pointer and decrement pointer afterwards.
+  @brief         read 2 Q15 from Q15 pointer and decrement pointer afterwards.
   @param[in]     pQ15      points to input value
   @return        Q31 value
  */
@@ -142,7 +142,7 @@ __STATIC_FORCEINLINE void write_q15x2 (
 
 
 /**
-  @brief         Read 4 Q7 from Q7 pointer
+  @brief         read 4 Q7 from Q7 pointer
   @param[in]     pQ7       points to input value
   @return        Q31 value
  */
@@ -160,14 +160,14 @@ __STATIC_FORCEINLINE q31_t read_q7x4 (
 }
 
 /**
-  @brief         Read 4 Q7 from Q7 pointer and increment pointer afterwards.
+  @brief         read 4 Q7 from Q7 pointer and increment pointer afterwards.
   @param[in]     pQ7       points to input value
   @return        Q31 value
  */
 #define read_q7x4_ia(pQ7) read_q7x4((*(pQ7) += 4) - 4)
 
 /**
-  @brief         Read 4 Q7 from Q7 pointer and decrement pointer afterwards.
+  @brief         read 4 Q7 from Q7 pointer and decrement pointer afterwards.
   @param[in]     pQ7       points to input value
   @return        Q31 value
  */

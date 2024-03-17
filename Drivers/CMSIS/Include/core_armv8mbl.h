@@ -352,11 +352,11 @@ typedef struct
 {
   __IOM uint32_t ISER[16U];              /*!< Offset: 0x000 (R/W)  Interrupt Set Enable Register */
         uint32_t RESERVED0[16U];
-  __IOM uint32_t ICER[16U];              /*!< Offset: 0x080 (R/W)  Interrupt Clear Enable Register */
+  __IOM uint32_t ICER[16U];              /*!< Offset: 0x080 (R/W)  Interrupt clear Enable Register */
         uint32_t RSERVED1[16U];
   __IOM uint32_t ISPR[16U];              /*!< Offset: 0x100 (R/W)  Interrupt Set Pending Register */
         uint32_t RESERVED2[16U];
-  __IOM uint32_t ICPR[16U];              /*!< Offset: 0x180 (R/W)  Interrupt Clear Pending Register */
+  __IOM uint32_t ICPR[16U];              /*!< Offset: 0x180 (R/W)  Interrupt clear Pending Register */
         uint32_t RESERVED3[16U];
   __IOM uint32_t IABR[16U];              /*!< Offset: 0x200 (R/W)  Interrupt Active bit Register */
         uint32_t RESERVED4[16U];
@@ -1261,7 +1261,7 @@ __STATIC_INLINE void __NVIC_EnableIRQ(IRQn_Type IRQn)
 
 
 /**
-  \brief   Get Interrupt Enable status
+  \brief   get Interrupt Enable status
   \details Returns a device specific interrupt enable status from the NVIC interrupt controller.
   \param [in]      IRQn  Device specific interrupt number.
   \return             0  Interrupt is not enabled.
@@ -1299,7 +1299,7 @@ __STATIC_INLINE void __NVIC_DisableIRQ(IRQn_Type IRQn)
 
 
 /**
-  \brief   Get Pending Interrupt
+  \brief   get Pending Interrupt
   \details Reads the NVIC pending register and returns the pending bit for the specified device specific interrupt.
   \param [in]      IRQn  Device specific interrupt number.
   \return             0  Interrupt status is not pending.
@@ -1335,7 +1335,7 @@ __STATIC_INLINE void __NVIC_SetPendingIRQ(IRQn_Type IRQn)
 
 
 /**
-  \brief   Clear Pending Interrupt
+  \brief   clear Pending Interrupt
   \details Clears the pending bit of a device specific interrupt in the NVIC pending register.
   \param [in]      IRQn  Device specific interrupt number.
   \note    IRQn must not be negative.
@@ -1350,7 +1350,7 @@ __STATIC_INLINE void __NVIC_ClearPendingIRQ(IRQn_Type IRQn)
 
 
 /**
-  \brief   Get Active Interrupt
+  \brief   get Active Interrupt
   \details Reads the active register in the NVIC and returns the active bit for the device specific interrupt.
   \param [in]      IRQn  Device specific interrupt number.
   \return             0  Interrupt status is not active.
@@ -1462,7 +1462,7 @@ __STATIC_INLINE void __NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
 
 
 /**
-  \brief   Get Interrupt Priority
+  \brief   get Interrupt Priority
   \details Reads the priority of a device specific interrupt or a processor exception.
            The interrupt number can be positive to specify a device specific interrupt,
            or negative to specify a processor exception.
@@ -1559,7 +1559,7 @@ __STATIC_INLINE void __NVIC_SetVector(IRQn_Type IRQn, uint32_t vector)
 
 
 /**
-  \brief   Get Interrupt Vector
+  \brief   get Interrupt Vector
   \details Reads an interrupt vector from interrupt vector table.
            The interrupt number can be positive to specify a device specific interrupt,
            or negative to specify a processor exception.

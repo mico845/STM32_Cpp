@@ -60,7 +60,7 @@
                    Floating-point normalizing factors are mentioned in the table below for different DCT sizes:
 
  
-| DCT Size  | Normalizing factor value  | 
+| DCT size  | Normalizing factor value  |
 | --------: | ------------------------: | 
 | 2048      | 0.03125                   | 
 | 512       | 0.0625                    | 
