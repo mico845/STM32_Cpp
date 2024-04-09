@@ -250,7 +250,7 @@ typedef struct
   */
 
 /**
-  * @brief  get Word0 of the unique device identifier (UID based on 96 bits)
+  * @brief  Get Word0 of the unique device identifier (UID based on 96 bits)
   * @retval UID[31:0]
   */
 __STATIC_INLINE uint32_t LL_GetUID_Word0(void)
@@ -259,7 +259,7 @@ __STATIC_INLINE uint32_t LL_GetUID_Word0(void)
 }
 
 /**
-  * @brief  get Word1 of the unique device identifier (UID based on 96 bits)
+  * @brief  Get Word1 of the unique device identifier (UID based on 96 bits)
   * @retval UID[63:32]
   */
 __STATIC_INLINE uint32_t LL_GetUID_Word1(void)
@@ -268,7 +268,7 @@ __STATIC_INLINE uint32_t LL_GetUID_Word1(void)
 }
 
 /**
-  * @brief  get Word2 of the unique device identifier (UID based on 96 bits)
+  * @brief  Get Word2 of the unique device identifier (UID based on 96 bits)
   * @retval UID[95:64]
   */
 __STATIC_INLINE uint32_t LL_GetUID_Word2(void)
@@ -277,7 +277,7 @@ __STATIC_INLINE uint32_t LL_GetUID_Word2(void)
 }
 
 /**
-  * @brief  get Flash memory size
+  * @brief  Get Flash memory size
   * @note   This bitfield indicates the size of the device Flash memory expressed in
   *         Kbytes. As an example, 0x040 corresponds to 64 Kbytes.
   * @retval FLASH_SIZE[15:0]: Flash memory size
@@ -288,7 +288,7 @@ __STATIC_INLINE uint32_t LL_GetFlashSize(void)
 }
 
 /**
-  * @brief  get Package type
+  * @brief  Get Package type
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_UTILS_PACKAGETYPE_LQFP100
   *         @arg @ref LL_UTILS_PACKAGETYPE_TQFP144
@@ -345,7 +345,7 @@ __STATIC_INLINE uint32_t LL_GetPackageType(void)
   * @param  HCLKFrequency HCLK frequency in Hz (can be calculated thanks to RCC helper macro)
   * @note   When a RTOS is used, it is recommended to avoid changing the SysTick
   *         configuration by calling this function, for a delay use rather osDelay RTOS service.
-  * @param  Ticks Number of ticks
+  * @param  Ticks Frequency of Ticks (Hz)
   * @retval None
   */
 __STATIC_INLINE void LL_InitTick(uint32_t HCLKFrequency, uint32_t Ticks)

@@ -69,6 +69,7 @@ void MX_SPI6_Init(void)
   SPI_InitStruct.CRCPoly = 0x0;
   LL_SPI_Init(SPI6, &SPI_InitStruct);
   LL_SPI_SetStandard(SPI6, LL_SPI_PROTOCOL_MOTOROLA);
+  LL_SPI_SetFIFOThreshold(SPI6, LL_SPI_FIFO_TH_01DATA);
   LL_SPI_EnableNSSPulseMgt(SPI6);
   /* USER CODE BEGIN SPI6_Init 2 */
 

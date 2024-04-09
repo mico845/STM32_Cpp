@@ -85,98 +85,107 @@ static const uint8_t LL_DMA_STR_OFFSET_TAB[] =
   */
 typedef struct
 {
-  uint32_t PeriphOrM2MSrcAddress;  /*!< Specifies the peripheral base address for DMA transfer
-                                        or as Source base address in case of memory to memory transfer direction.
+  uint32_t PeriphOrM2MSrcAddress;       /*!< Specifies the peripheral base address for DMA transfer
+                                             or as Source base address in case of memory to memory transfer direction.
 
-                                        This parameter must be a value between Min_Data = 0 and Max_Data = 0xFFFFFFFF. */
+                                             This parameter must be a value between Min_Data = 0 and Max_Data = 0xFFFFFFFF. */
 
-  uint32_t MemoryOrM2MDstAddress;  /*!< Specifies the memory base address for DMA transfer
-                                        or as Destination base address in case of memory to memory transfer direction.
+  uint32_t MemoryOrM2MDstAddress;       /*!< Specifies the memory base address for DMA transfer
+                                             or as Destination base address in case of memory to memory transfer direction.
 
-                                        This parameter must be a value between Min_Data = 0 and Max_Data = 0xFFFFFFFF. */
+                                             This parameter must be a value between Min_Data = 0 and Max_Data = 0xFFFFFFFF. */
 
-  uint32_t Direction;              /*!< Specifies if the data will be transferred from memory to peripheral,
-                                        from memory to memory or from peripheral to memory.
-                                        This parameter can be a value of @ref DMA_LL_EC_DIRECTION
+  uint32_t Direction;                   /*!< Specifies if the data will be transferred from memory to peripheral,
+                                             from memory to memory or from peripheral to memory.
+                                             This parameter can be a value of @ref DMA_LL_EC_DIRECTION
 
-                                        This feature can be modified afterwards using unitary function @ref LL_DMA_SetDataTransferDirection(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_DMA_SetDataTransferDirection(). */
 
-  uint32_t Mode;                   /*!< Specifies the normal or circular operation mode.
-                                        This parameter can be a value of @ref DMA_LL_EC_MODE
-                                        @note The circular buffer mode cannot be used if the memory to memory
-                                              data transfer direction is configured on the selected Stream
+  uint32_t Mode;                        /*!< Specifies the normal or circular operation mode.
+                                             This parameter can be a value of @ref DMA_LL_EC_MODE
+                                             @note The circular buffer mode cannot be used if the memory to memory
+                                                   data transfer direction is configured on the selected Stream
 
-                                        This feature can be modified afterwards using unitary function @ref LL_DMA_SetMode(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_DMA_SetMode(). */
 
-  uint32_t PeriphOrM2MSrcIncMode;  /*!< Specifies whether the Peripheral address or Source address in case of memory to memory transfer direction
-                                        is incremented or not.
-                                        This parameter can be a value of @ref DMA_LL_EC_PERIPH
+  uint32_t PeriphOrM2MSrcIncMode;       /*!< Specifies whether the Peripheral address or Source address in case of memory to memory transfer direction
+                                             is incremented or not.
+                                             This parameter can be a value of @ref DMA_LL_EC_PERIPH
 
-                                        This feature can be modified afterwards using unitary function @ref LL_DMA_SetPeriphIncMode(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_DMA_SetPeriphIncMode(). */
 
-  uint32_t MemoryOrM2MDstIncMode;  /*!< Specifies whether the Memory address or Destination address in case of memory to memory transfer direction
-                                        is incremented or not.
-                                        This parameter can be a value of @ref DMA_LL_EC_MEMORY
+  uint32_t MemoryOrM2MDstIncMode;       /*!< Specifies whether the Memory address or Destination address in case of memory to memory transfer direction
+                                             is incremented or not.
+                                             This parameter can be a value of @ref DMA_LL_EC_MEMORY
 
-                                        This feature can be modified afterwards using unitary function @ref LL_DMA_SetMemoryIncMode(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_DMA_SetMemoryIncMode(). */
 
-  uint32_t PeriphOrM2MSrcDataSize; /*!< Specifies the Peripheral data size alignment or Source data size alignment (byte, half word, word)
-                                        in case of memory to memory transfer direction.
-                                        This parameter can be a value of @ref DMA_LL_EC_PDATAALIGN
+  uint32_t PeriphOrM2MSrcDataSize;      /*!< Specifies the Peripheral data size alignment or Source data size alignment (byte, half word, word)
+                                             in case of memory to memory transfer direction.
+                                             This parameter can be a value of @ref DMA_LL_EC_PDATAALIGN
 
-                                        This feature can be modified afterwards using unitary function @ref LL_DMA_SetPeriphSize(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_DMA_SetPeriphSize(). */
 
-  uint32_t MemoryOrM2MDstDataSize; /*!< Specifies the Memory data size alignment or Destination data size alignment (byte, half word, word)
-                                        in case of memory to memory transfer direction.
-                                        This parameter can be a value of @ref DMA_LL_EC_MDATAALIGN
+  uint32_t MemoryOrM2MDstDataSize;      /*!< Specifies the Memory data size alignment or Destination data size alignment (byte, half word, word)
+                                             in case of memory to memory transfer direction.
+                                             This parameter can be a value of @ref DMA_LL_EC_MDATAALIGN
 
-                                        This feature can be modified afterwards using unitary function @ref LL_DMA_SetMemorySize(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_DMA_SetMemorySize(). */
 
-  uint32_t NbData;                 /*!< Specifies the number of data to transfer, in data unit.
-                                        The data unit is equal to the source buffer configuration set in PeripheralSize
-                                        or MemorySize parameters depending in the transfer direction.
-                                        This parameter must be a value between Min_Data = 0 and Max_Data = 0x0000FFFF
+  uint32_t NbData;                      /*!< Specifies the number of data to transfer, in data unit.
+                                             The data unit is equal to the source buffer configuration set in PeripheralSize
+                                             or MemorySize parameters depending in the transfer direction.
+                                             This parameter must be a value between Min_Data = 0 and Max_Data = 0x0000FFFF
 
-                                        This feature can be modified afterwards using unitary function @ref LL_DMA_SetDataLength(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_DMA_SetDataLength(). */
 
-  uint32_t PeriphRequest;          /*!< Specifies the peripheral request.
-                                        This parameter can be a value of @ref DMAMUX1_Request_selection
+  uint32_t PeriphRequest;               /*!< Specifies the peripheral request.
+                                             This parameter can be a value of @ref DMAMUX1_Request_selection
 
-                                        This feature can be modified afterwards using unitary function @ref LL_DMA_SetPeriphRequest(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_DMA_SetPeriphRequest(). */
 
-  uint32_t Priority;               /*!< Specifies the channel priority level.
-                                        This parameter can be a value of @ref DMA_LL_EC_PRIORITY
+  uint32_t Priority;                    /*!< Specifies the channel priority level.
+                                             This parameter can be a value of @ref DMA_LL_EC_PRIORITY
 
-                                        This feature can be modified afterwards using unitary function @ref LL_DMA_SetStreamPriorityLevel(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_DMA_SetStreamPriorityLevel(). */
 
-  uint32_t FIFOMode;               /*!< Specifies if the FIFO mode or Direct mode will be used for the specified stream.
-                                        This parameter can be a value of @ref DMA_LL_FIFOMODE
-                                        @note The Direct mode (FIFO mode disabled) cannot be used if the
-                                        memory-to-memory data transfer is configured on the selected stream
+  uint32_t FIFOMode;                    /*!< Specifies if the FIFO mode or Direct mode will be used for the specified stream.
+                                             This parameter can be a value of @ref DMA_LL_FIFOMODE
+                                             @note The Direct mode (FIFO mode disabled) cannot be used if the
+                                             memory-to-memory data transfer is configured on the selected stream
 
-                                        This feature can be modified afterwards using unitary functions @ref LL_DMA_EnableFifoMode() or @ref LL_DMA_EnableFifoMode() . */
+                                             This feature can be modified afterwards using unitary functions @ref LL_DMA_EnableFifoMode() or @ref LL_DMA_EnableFifoMode() . */
 
-  uint32_t FIFOThreshold;          /*!< Specifies the FIFO threshold level.
-                                        This parameter can be a value of @ref DMA_LL_EC_FIFOTHRESHOLD
+  uint32_t FIFOThreshold;               /*!< Specifies the FIFO threshold level.
+                                             This parameter can be a value of @ref DMA_LL_EC_FIFOTHRESHOLD
 
-                                        This feature can be modified afterwards using unitary function @ref LL_DMA_SetFIFOThreshold(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_DMA_SetFIFOThreshold(). */
 
-  uint32_t MemBurst;               /*!< Specifies the Burst transfer configuration for the memory transfers.
-                                        It specifies the amount of data to be transferred in a single non interruptible
-                                        transaction.
-                                        This parameter can be a value of @ref DMA_LL_EC_MBURST
-                                        @note The burst mode is possible only if the address Increment mode is enabled.
+  uint32_t MemBurst;                    /*!< Specifies the Burst transfer configuration for the memory transfers.
+                                             It specifies the amount of data to be transferred in a single non interruptible
+                                             transaction.
+                                             This parameter can be a value of @ref DMA_LL_EC_MBURST
+                                             @note The burst mode is possible only if the address Increment mode is enabled.
 
-                                        This feature can be modified afterwards using unitary function @ref LL_DMA_SetMemoryBurstxfer(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_DMA_SetMemoryBurstxfer(). */
 
-  uint32_t PeriphBurst;            /*!< Specifies the Burst transfer configuration for the peripheral transfers.
-                                        It specifies the amount of data to be transferred in a single non interruptible
-                                        transaction.
-                                        This parameter can be a value of @ref DMA_LL_EC_PBURST
-                                        @note The burst mode is possible only if the address Increment mode is enabled.
+  uint32_t PeriphBurst;                 /*!< Specifies the Burst transfer configuration for the peripheral transfers.
+                                             It specifies the amount of data to be transferred in a single non interruptible
+                                             transaction.
+                                             This parameter can be a value of @ref DMA_LL_EC_PBURST
+                                             @note The burst mode is possible only if the address Increment mode is enabled.
 
-                                        This feature can be modified afterwards using unitary function @ref LL_DMA_SetPeriphBurstxfer(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_DMA_SetPeriphBurstxfer(). */
 
+  uint32_t DoubleBufferMode;            /*!< Specifies the double buffer mode.
+                                             This parameter can be a value of @ref DMA_LL_EC_DOUBLEBUFFER_MODE
+
+                                             This feature can be modified afterwards using unitary function @ref LL_DMA_EnableDoubleBufferMode() & LL_DMA_DisableDoubleBufferMode(). */
+
+  uint32_t TargetMemInDoubleBufferMode; /*!< Specifies the target memory in double buffer mode.
+                                             This parameter can be a value of @ref DMA_LL_EC_CURRENTTARGETMEM
+
+                                             This feature can be modified afterwards using unitary function @ref LL_DMA_SetCurrentTargetMem(). */
 } LL_DMA_InitTypeDef;
 /**
   * @}
@@ -233,6 +242,15 @@ typedef struct
   * @}
   */
 
+/** @defgroup DMA_LL_EC_CURRENTTARGETMEM CURRENTTARGETMEM
+  * @{
+  */
+#define LL_DMA_CURRENTTARGETMEM0          0x00000000U                             /*!< Set CurrentTarget Memory to Memory 0  */
+#define LL_DMA_CURRENTTARGETMEM1          DMA_SxCR_CT                             /*!< Set CurrentTarget Memory to Memory 1  */
+/**
+  * @}
+  */
+
 /** @defgroup DMA_LL_EC_PERIPH PERIPH
   * @{
   */
@@ -283,9 +301,9 @@ typedef struct
 /** @defgroup DMA_LL_EC_PRIORITY PRIORITY
   * @{
   */
-#define LL_DMA_PRIORITY_LOW               0x00000000U               /*!< Priority level : low       */
+#define LL_DMA_PRIORITY_LOW               0x00000000U               /*!< Priority level : Low       */
 #define LL_DMA_PRIORITY_MEDIUM            DMA_SxCR_PL_0             /*!< Priority level : Medium    */
-#define LL_DMA_PRIORITY_HIGH              DMA_SxCR_PL_1             /*!< Priority level : high      */
+#define LL_DMA_PRIORITY_HIGH              DMA_SxCR_PL_1             /*!< Priority level : High      */
 #define LL_DMA_PRIORITY_VERYHIGH          DMA_SxCR_PL               /*!< Priority level : Very_High */
 /**
   * @}
@@ -347,15 +365,6 @@ typedef struct
   * @}
   */
 
-/** @defgroup DMA_LL_EC_CURRENTTARGETMEM CURRENTTARGETMEM
-  * @{
-  */
-#define LL_DMA_CURRENTTARGETMEM0          0x00000000U                             /*!< Set CurrentTarget Memory to Memory 0  */
-#define LL_DMA_CURRENTTARGETMEM1          DMA_SxCR_CT                             /*!< Set CurrentTarget Memory to Memory 1  */
-/**
-  * @}
-  */
-
 /**
   * @}
   */
@@ -378,7 +387,7 @@ typedef struct
 #define LL_DMA_WriteReg(__INSTANCE__, __REG__, __VALUE__) WRITE_REG((__INSTANCE__)->__REG__, (__VALUE__))
 
 /**
-  * @brief  read a value in DMA register
+  * @brief  Read a value in DMA register
   * @param  __INSTANCE__ DMA Instance
   * @param  __REG__ Register to be read
   * @retval Register value
@@ -537,7 +546,9 @@ __STATIC_INLINE uint32_t LL_DMA_IsEnabledStream(DMA_TypeDef *DMAx, uint32_t Stre
   *         CR          PSIZE         LL_DMA_ConfigTransfer\n
   *         CR          MSIZE         LL_DMA_ConfigTransfer\n
   *         CR          PL            LL_DMA_ConfigTransfer\n
-  *         CR          PFCTRL        LL_DMA_ConfigTransfer
+  *         CR          PFCTRL        LL_DMA_ConfigTransfer\n
+  *         CR          DBM           LL_DMA_ConfigTransfer\n
+  *         CR          CT            LL_DMA_ConfigTransfer
   * @param  DMAx DMAx Instance
   * @param  Stream This parameter can be one of the following values:
   *         @arg @ref LL_DMA_STREAM_0
@@ -556,6 +567,8 @@ __STATIC_INLINE uint32_t LL_DMA_IsEnabledStream(DMA_TypeDef *DMAx, uint32_t Stre
   *         @arg @ref LL_DMA_PDATAALIGN_BYTE or @ref LL_DMA_PDATAALIGN_HALFWORD or @ref LL_DMA_PDATAALIGN_WORD
   *         @arg @ref LL_DMA_MDATAALIGN_BYTE or @ref LL_DMA_MDATAALIGN_HALFWORD or @ref LL_DMA_MDATAALIGN_WORD
   *         @arg @ref LL_DMA_PRIORITY_LOW or @ref LL_DMA_PRIORITY_MEDIUM or @ref LL_DMA_PRIORITY_HIGH or @ref LL_DMA_PRIORITY_VERYHIGH
+  *         @arg @ref LL_DMA_DOUBLEBUFFER_MODE_DISABLE or @ref LL_DMA_DOUBLEBUFFER_MODE_ENABLE
+  *         @arg @ref LL_DMA_CURRENTTARGETMEM0 or @ref LL_DMA_CURRENTTARGETMEM1
   *@retval None
   */
 __STATIC_INLINE void LL_DMA_ConfigTransfer(DMA_TypeDef *DMAx, uint32_t Stream, uint32_t Configuration)
@@ -563,8 +576,8 @@ __STATIC_INLINE void LL_DMA_ConfigTransfer(DMA_TypeDef *DMAx, uint32_t Stream, u
   uint32_t dma_base_addr = (uint32_t)DMAx;
 
   MODIFY_REG(((DMA_Stream_TypeDef *)(dma_base_addr + LL_DMA_STR_OFFSET_TAB[Stream]))->CR,
-             DMA_SxCR_DIR | DMA_SxCR_CIRC | DMA_SxCR_PINC | DMA_SxCR_MINC | DMA_SxCR_PSIZE | DMA_SxCR_MSIZE | DMA_SxCR_PL | DMA_SxCR_PFCTRL,
-             Configuration);
+             DMA_SxCR_DIR | DMA_SxCR_CIRC | DMA_SxCR_PINC | DMA_SxCR_MINC | DMA_SxCR_PSIZE | DMA_SxCR_MSIZE | DMA_SxCR_PL | \
+             DMA_SxCR_PFCTRL | DMA_SxCR_DBM | DMA_SxCR_CT, Configuration);
 }
 
 /**
@@ -594,7 +607,7 @@ __STATIC_INLINE void LL_DMA_SetDataTransferDirection(DMA_TypeDef *DMAx, uint32_t
 }
 
 /**
-  * @brief get Data transfer direction (read from peripheral or from memory).
+  * @brief Get Data transfer direction (read from peripheral or from memory).
   * @rmtoll CR          DIR           LL_DMA_GetDataTransferDirection
   * @param  DMAx DMAx Instance
   * @param  Stream This parameter can be one of the following values:
@@ -646,7 +659,7 @@ __STATIC_INLINE void LL_DMA_SetMode(DMA_TypeDef *DMAx, uint32_t Stream, uint32_t
 }
 
 /**
-  * @brief get DMA mode normal, circular or peripheral flow control.
+  * @brief Get DMA mode normal, circular or peripheral flow control.
   * @rmtoll CR          CIRC           LL_DMA_GetMode\n
   *         CR          PFCTRL         LL_DMA_GetMode
   * @param  DMAx DMAx Instance
@@ -697,7 +710,7 @@ __STATIC_INLINE void LL_DMA_SetPeriphIncMode(DMA_TypeDef *DMAx, uint32_t Stream,
 }
 
 /**
-  * @brief get Peripheral increment mode.
+  * @brief Get Peripheral increment mode.
   * @rmtoll CR          PINC           LL_DMA_GetPeriphIncMode
   * @param  DMAx DMAx Instance
   * @param  Stream This parameter can be one of the following values:
@@ -746,7 +759,7 @@ __STATIC_INLINE void LL_DMA_SetMemoryIncMode(DMA_TypeDef *DMAx, uint32_t Stream,
 }
 
 /**
-  * @brief get Memory increment mode.
+  * @brief Get Memory increment mode.
   * @rmtoll CR          MINC           LL_DMA_GetMemoryIncMode
   * @param  DMAx DMAx Instance
   * @param  Stream This parameter can be one of the following values:
@@ -796,7 +809,7 @@ __STATIC_INLINE void LL_DMA_SetPeriphSize(DMA_TypeDef *DMAx, uint32_t Stream, ui
 }
 
 /**
-  * @brief get Peripheral size.
+  * @brief Get Peripheral size.
   * @rmtoll CR          PSIZE           LL_DMA_GetPeriphSize
   * @param  DMAx DMAx Instance
   * @param  Stream This parameter can be one of the following values:
@@ -847,7 +860,7 @@ __STATIC_INLINE void LL_DMA_SetMemorySize(DMA_TypeDef *DMAx, uint32_t Stream, ui
 }
 
 /**
-  * @brief get Memory size.
+  * @brief Get Memory size.
   * @rmtoll CR          MSIZE           LL_DMA_GetMemorySize
   * @param  DMAx DMAx Instance
   * @param  Stream This parameter can be one of the following values:
@@ -897,7 +910,7 @@ __STATIC_INLINE void LL_DMA_SetIncOffsetSize(DMA_TypeDef *DMAx, uint32_t Stream,
 }
 
 /**
-  * @brief get Peripheral increment offset size.
+  * @brief Get Peripheral increment offset size.
   * @rmtoll CR          PINCOS           LL_DMA_GetIncOffsetSize
   * @param  DMAx DMAx Instance
   * @param  Stream This parameter can be one of the following values:
@@ -948,7 +961,7 @@ __STATIC_INLINE void LL_DMA_SetStreamPriorityLevel(DMA_TypeDef *DMAx, uint32_t S
 }
 
 /**
-  * @brief get Stream priority level.
+  * @brief Get Stream priority level.
   * @rmtoll CR          PL           LL_DMA_GetStreamPriorityLevel
   * @param  DMAx DMAx Instance
   * @param  Stream This parameter can be one of the following values:
@@ -1043,7 +1056,7 @@ __STATIC_INLINE void LL_DMA_SetDataLength(DMA_TypeDef *DMAx, uint32_t Stream, ui
 }
 
 /**
-  * @brief get Number of data to transfer.
+  * @brief Get Number of data to transfer.
   * @rmtoll NDTR          NDT           LL_DMA_GetDataLength
   * @note   Once the stream is enabled, the return value indicate the
   *         remaining bytes to be transmitted.
@@ -1228,7 +1241,7 @@ __STATIC_INLINE void LL_DMA_SetPeriphRequest(DMA_TypeDef *DMAx, uint32_t Stream,
 }
 
 /**
-  * @brief  get DMA request for DMA Channels on DMAMUX Channel x.
+  * @brief  Get DMA request for DMA Channels on DMAMUX Channel x.
   * @note   DMAMUX channel 0 to 7 are mapped to DMA1 stream 0 to 7.
   *         DMAMUX channel 8 to 15 are mapped to DMA2 stream 0 to 7.
   * @rmtoll CxCR         DMAREQ_ID     LL_DMA_GetPeriphRequest
@@ -1416,7 +1429,7 @@ __STATIC_INLINE void LL_DMA_SetMemoryBurstxfer(DMA_TypeDef *DMAx, uint32_t Strea
 }
 
 /**
-  * @brief get Memory burst transfer configuration.
+  * @brief Get Memory burst transfer configuration.
   * @rmtoll CR          MBURST           LL_DMA_GetMemoryBurstxfer
   * @param  DMAx DMAx Instance
   * @param  Stream This parameter can be one of the following values:
@@ -1469,7 +1482,7 @@ __STATIC_INLINE void LL_DMA_SetPeriphBurstxfer(DMA_TypeDef *DMAx, uint32_t Strea
 }
 
 /**
-  * @brief get Peripheral burst transfer configuration.
+  * @brief Get Peripheral burst transfer configuration.
   * @rmtoll CR          PBURST           LL_DMA_GetPeriphBurstxfer
   * @param  DMAx DMAx Instance
   * @param  Stream This parameter can be one of the following values:
@@ -1588,7 +1601,29 @@ __STATIC_INLINE void LL_DMA_DisableDoubleBufferMode(DMA_TypeDef *DMAx, uint32_t 
 }
 
 /**
-  * @brief get FIFO status.
+  * @brief  Check if double buffer mode is enabled or not.
+  * @rmtoll CR          DBM           LL_DMA_IsEnabledDoubleBufferMode
+  * @param  DMAx DMAx Instance
+  * @param  Stream This parameter can be one of the following values:
+  *         @arg @ref LL_DMA_STREAM_0
+  *         @arg @ref LL_DMA_STREAM_1
+  *         @arg @ref LL_DMA_STREAM_2
+  *         @arg @ref LL_DMA_STREAM_3
+  *         @arg @ref LL_DMA_STREAM_4
+  *         @arg @ref LL_DMA_STREAM_5
+  *         @arg @ref LL_DMA_STREAM_6
+  *         @arg @ref LL_DMA_STREAM_7
+  * @retval State of bit (1 or 0).
+  */
+__STATIC_INLINE uint32_t LL_DMA_IsEnabledDoubleBufferMode(DMA_TypeDef *DMAx, uint32_t Stream)
+{
+  register uint32_t dma_base_addr = (uint32_t)DMAx;
+
+  return ((READ_BIT(((DMA_Stream_TypeDef *)(dma_base_addr + LL_DMA_STR_OFFSET_TAB[Stream]))->CR, DMA_SxCR_DBM) == (DMA_SxCR_DBM)) ? 1UL : 0UL);
+}
+
+/**
+  * @brief Get FIFO status.
   * @rmtoll FCR          FS          LL_DMA_GetFIFOStatus
   * @param  DMAx DMAx Instance
   * @param  Stream This parameter can be one of the following values:
@@ -1687,7 +1722,7 @@ __STATIC_INLINE void LL_DMA_SetFIFOThreshold(DMA_TypeDef *DMAx, uint32_t Stream,
 }
 
 /**
-  * @brief get FIFO threshold.
+  * @brief Get FIFO threshold.
   * @rmtoll FCR         FTH          LL_DMA_GetFIFOThreshold
   * @param  DMAx DMAx Instance
   * @param  Stream This parameter can be one of the following values:
@@ -1835,7 +1870,7 @@ __STATIC_INLINE void LL_DMA_SetPeriphAddress(DMA_TypeDef *DMAx, uint32_t Stream,
 }
 
 /**
-  * @brief  get the Memory address.
+  * @brief  Get the Memory address.
   * @rmtoll M0AR        M0A         LL_DMA_GetMemoryAddress
   * @note   Interface used for direction LL_DMA_DIRECTION_PERIPH_TO_MEMORY or LL_DMA_DIRECTION_MEMORY_TO_PERIPH only.
   * @param  DMAx DMAx Instance
@@ -1858,7 +1893,7 @@ __STATIC_INLINE uint32_t LL_DMA_GetMemoryAddress(DMA_TypeDef *DMAx, uint32_t Str
 }
 
 /**
-  * @brief  get the Peripheral address.
+  * @brief  Get the Peripheral address.
   * @rmtoll PAR        PA         LL_DMA_GetPeriphAddress
   * @note   Interface used for direction LL_DMA_DIRECTION_PERIPH_TO_MEMORY or LL_DMA_DIRECTION_MEMORY_TO_PERIPH only.
   * @param  DMAx DMAx Instance
@@ -1931,7 +1966,7 @@ __STATIC_INLINE void LL_DMA_SetM2MDstAddress(DMA_TypeDef *DMAx, uint32_t Stream,
 }
 
 /**
-  * @brief  get the Memory to Memory Source address.
+  * @brief  Get the Memory to Memory Source address.
   * @rmtoll PAR        PA         LL_DMA_GetM2MSrcAddress
   * @note   Interface used for direction LL_DMA_DIRECTION_MEMORY_TO_MEMORY only.
   * @param  DMAx DMAx Instance
@@ -1954,7 +1989,7 @@ __STATIC_INLINE uint32_t LL_DMA_GetM2MSrcAddress(DMA_TypeDef *DMAx, uint32_t Str
 }
 
 /**
-  * @brief  get the Memory to Memory Destination address.
+  * @brief  Get the Memory to Memory Destination address.
   * @rmtoll M0AR        M0A         LL_DMA_GetM2MDstAddress
   * @note   Interface used for direction LL_DMA_DIRECTION_MEMORY_TO_MEMORY only.
   * @param  DMAx DMAx Instance
@@ -2000,7 +2035,7 @@ __STATIC_INLINE void LL_DMA_SetMemory1Address(DMA_TypeDef *DMAx, uint32_t Stream
 }
 
 /**
-  * @brief get Memory 1 address (used in case of Double buffer mode).
+  * @brief Get Memory 1 address (used in case of Double buffer mode).
   * @rmtoll M1AR        M1A         LL_DMA_GetMemory1Address
   * @param  DMAx DMAx Instance
   * @param  Stream This parameter can be one of the following values:
@@ -2030,7 +2065,7 @@ __STATIC_INLINE uint32_t LL_DMA_GetMemory1Address(DMA_TypeDef *DMAx, uint32_t St
   */
 
 /**
-  * @brief get Stream 0 half transfer flag.
+  * @brief Get Stream 0 half transfer flag.
   * @rmtoll LISR  HTIF0    LL_DMA_IsActiveFlag_HT0
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2041,7 +2076,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_HT0(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 1 half transfer flag.
+  * @brief Get Stream 1 half transfer flag.
   * @rmtoll LISR  HTIF1    LL_DMA_IsActiveFlag_HT1
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2052,7 +2087,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_HT1(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 2 half transfer flag.
+  * @brief Get Stream 2 half transfer flag.
   * @rmtoll LISR  HTIF2    LL_DMA_IsActiveFlag_HT2
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2063,7 +2098,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_HT2(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 3 half transfer flag.
+  * @brief Get Stream 3 half transfer flag.
   * @rmtoll LISR  HTIF3    LL_DMA_IsActiveFlag_HT3
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2074,7 +2109,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_HT3(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 4 half transfer flag.
+  * @brief Get Stream 4 half transfer flag.
   * @rmtoll HISR  HTIF4    LL_DMA_IsActiveFlag_HT4
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2085,7 +2120,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_HT4(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 5 half transfer flag.
+  * @brief Get Stream 5 half transfer flag.
   * @rmtoll HISR  HTIF0    LL_DMA_IsActiveFlag_HT5
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2096,7 +2131,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_HT5(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 6 half transfer flag.
+  * @brief Get Stream 6 half transfer flag.
   * @rmtoll HISR  HTIF6    LL_DMA_IsActiveFlag_HT6
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2107,7 +2142,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_HT6(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 7 half transfer flag.
+  * @brief Get Stream 7 half transfer flag.
   * @rmtoll HISR  HTIF7    LL_DMA_IsActiveFlag_HT7
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2118,7 +2153,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_HT7(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 0 transfer complete flag.
+  * @brief Get Stream 0 transfer complete flag.
   * @rmtoll LISR  TCIF0    LL_DMA_IsActiveFlag_TC0
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2129,7 +2164,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TC0(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 1 transfer complete flag.
+  * @brief Get Stream 1 transfer complete flag.
   * @rmtoll LISR  TCIF1    LL_DMA_IsActiveFlag_TC1
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2140,7 +2175,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TC1(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 2 transfer complete flag.
+  * @brief Get Stream 2 transfer complete flag.
   * @rmtoll LISR  TCIF2    LL_DMA_IsActiveFlag_TC2
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2151,7 +2186,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TC2(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 3 transfer complete flag.
+  * @brief Get Stream 3 transfer complete flag.
   * @rmtoll LISR  TCIF3    LL_DMA_IsActiveFlag_TC3
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2162,7 +2197,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TC3(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 4 transfer complete flag.
+  * @brief Get Stream 4 transfer complete flag.
   * @rmtoll HISR  TCIF4    LL_DMA_IsActiveFlag_TC4
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2173,7 +2208,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TC4(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 5 transfer complete flag.
+  * @brief Get Stream 5 transfer complete flag.
   * @rmtoll HISR  TCIF0    LL_DMA_IsActiveFlag_TC5
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2184,7 +2219,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TC5(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 6 transfer complete flag.
+  * @brief Get Stream 6 transfer complete flag.
   * @rmtoll HISR  TCIF6    LL_DMA_IsActiveFlag_TC6
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2195,7 +2230,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TC6(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 7 transfer complete flag.
+  * @brief Get Stream 7 transfer complete flag.
   * @rmtoll HISR  TCIF7    LL_DMA_IsActiveFlag_TC7
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2206,7 +2241,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TC7(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 0 transfer error flag.
+  * @brief Get Stream 0 transfer error flag.
   * @rmtoll LISR  TEIF0    LL_DMA_IsActiveFlag_TE0
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2217,7 +2252,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TE0(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 1 transfer error flag.
+  * @brief Get Stream 1 transfer error flag.
   * @rmtoll LISR  TEIF1    LL_DMA_IsActiveFlag_TE1
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2228,7 +2263,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TE1(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 2 transfer error flag.
+  * @brief Get Stream 2 transfer error flag.
   * @rmtoll LISR  TEIF2    LL_DMA_IsActiveFlag_TE2
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2239,7 +2274,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TE2(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 3 transfer error flag.
+  * @brief Get Stream 3 transfer error flag.
   * @rmtoll LISR  TEIF3    LL_DMA_IsActiveFlag_TE3
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2250,7 +2285,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TE3(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 4 transfer error flag.
+  * @brief Get Stream 4 transfer error flag.
   * @rmtoll HISR  TEIF4    LL_DMA_IsActiveFlag_TE4
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2261,7 +2296,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TE4(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 5 transfer error flag.
+  * @brief Get Stream 5 transfer error flag.
   * @rmtoll HISR  TEIF0    LL_DMA_IsActiveFlag_TE5
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2272,7 +2307,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TE5(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 6 transfer error flag.
+  * @brief Get Stream 6 transfer error flag.
   * @rmtoll HISR  TEIF6    LL_DMA_IsActiveFlag_TE6
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2283,7 +2318,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TE6(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 7 transfer error flag.
+  * @brief Get Stream 7 transfer error flag.
   * @rmtoll HISR  TEIF7    LL_DMA_IsActiveFlag_TE7
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2294,7 +2329,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TE7(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 0 direct mode error flag.
+  * @brief Get Stream 0 direct mode error flag.
   * @rmtoll LISR  DMEIF0    LL_DMA_IsActiveFlag_DME0
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2305,7 +2340,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_DME0(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 1 direct mode error flag.
+  * @brief Get Stream 1 direct mode error flag.
   * @rmtoll LISR  DMEIF1    LL_DMA_IsActiveFlag_DME1
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2316,7 +2351,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_DME1(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 2 direct mode error flag.
+  * @brief Get Stream 2 direct mode error flag.
   * @rmtoll LISR  DMEIF2    LL_DMA_IsActiveFlag_DME2
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2327,7 +2362,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_DME2(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 3 direct mode error flag.
+  * @brief Get Stream 3 direct mode error flag.
   * @rmtoll LISR  DMEIF3    LL_DMA_IsActiveFlag_DME3
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2338,7 +2373,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_DME3(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 4 direct mode error flag.
+  * @brief Get Stream 4 direct mode error flag.
   * @rmtoll HISR  DMEIF4    LL_DMA_IsActiveFlag_DME4
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2349,7 +2384,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_DME4(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 5 direct mode error flag.
+  * @brief Get Stream 5 direct mode error flag.
   * @rmtoll HISR  DMEIF0    LL_DMA_IsActiveFlag_DME5
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2360,7 +2395,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_DME5(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 6 direct mode error flag.
+  * @brief Get Stream 6 direct mode error flag.
   * @rmtoll HISR  DMEIF6    LL_DMA_IsActiveFlag_DME6
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2371,7 +2406,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_DME6(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 7 direct mode error flag.
+  * @brief Get Stream 7 direct mode error flag.
   * @rmtoll HISR  DMEIF7    LL_DMA_IsActiveFlag_DME7
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2382,7 +2417,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_DME7(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 0 FIFO error flag.
+  * @brief Get Stream 0 FIFO error flag.
   * @rmtoll LISR  FEIF0    LL_DMA_IsActiveFlag_FE0
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2393,7 +2428,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_FE0(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 1 FIFO error flag.
+  * @brief Get Stream 1 FIFO error flag.
   * @rmtoll LISR  FEIF1    LL_DMA_IsActiveFlag_FE1
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2404,7 +2439,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_FE1(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 2 FIFO error flag.
+  * @brief Get Stream 2 FIFO error flag.
   * @rmtoll LISR  FEIF2    LL_DMA_IsActiveFlag_FE2
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2415,7 +2450,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_FE2(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 3 FIFO error flag.
+  * @brief Get Stream 3 FIFO error flag.
   * @rmtoll LISR  FEIF3    LL_DMA_IsActiveFlag_FE3
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2426,7 +2461,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_FE3(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 4 FIFO error flag.
+  * @brief Get Stream 4 FIFO error flag.
   * @rmtoll HISR  FEIF4    LL_DMA_IsActiveFlag_FE4
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2437,7 +2472,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_FE4(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 5 FIFO error flag.
+  * @brief Get Stream 5 FIFO error flag.
   * @rmtoll HISR  FEIF0    LL_DMA_IsActiveFlag_FE5
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2448,7 +2483,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_FE5(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 6 FIFO error flag.
+  * @brief Get Stream 6 FIFO error flag.
   * @rmtoll HISR  FEIF6    LL_DMA_IsActiveFlag_FE6
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2459,7 +2494,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_FE6(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief get Stream 7 FIFO error flag.
+  * @brief Get Stream 7 FIFO error flag.
   * @rmtoll HISR  FEIF7    LL_DMA_IsActiveFlag_FE7
   * @param  DMAx DMAx Instance
   * @retval State of bit (1 or 0).
@@ -2470,7 +2505,7 @@ __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_FE7(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 0 half transfer flag.
+  * @brief Clear Stream 0 half transfer flag.
   * @rmtoll LIFCR  CHTIF0    LL_DMA_ClearFlag_HT0
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2481,7 +2516,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_HT0(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 1 half transfer flag.
+  * @brief Clear Stream 1 half transfer flag.
   * @rmtoll LIFCR  CHTIF1    LL_DMA_ClearFlag_HT1
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2492,7 +2527,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_HT1(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 2 half transfer flag.
+  * @brief Clear Stream 2 half transfer flag.
   * @rmtoll LIFCR  CHTIF2    LL_DMA_ClearFlag_HT2
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2503,7 +2538,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_HT2(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 3 half transfer flag.
+  * @brief Clear Stream 3 half transfer flag.
   * @rmtoll LIFCR  CHTIF3    LL_DMA_ClearFlag_HT3
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2514,7 +2549,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_HT3(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 4 half transfer flag.
+  * @brief Clear Stream 4 half transfer flag.
   * @rmtoll HIFCR  CHTIF4    LL_DMA_ClearFlag_HT4
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2525,7 +2560,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_HT4(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 5 half transfer flag.
+  * @brief Clear Stream 5 half transfer flag.
   * @rmtoll HIFCR  CHTIF5    LL_DMA_ClearFlag_HT5
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2536,7 +2571,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_HT5(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 6 half transfer flag.
+  * @brief Clear Stream 6 half transfer flag.
   * @rmtoll HIFCR  CHTIF6    LL_DMA_ClearFlag_HT6
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2547,7 +2582,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_HT6(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 7 half transfer flag.
+  * @brief Clear Stream 7 half transfer flag.
   * @rmtoll HIFCR  CHTIF7    LL_DMA_ClearFlag_HT7
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2558,7 +2593,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_HT7(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 0 transfer complete flag.
+  * @brief Clear Stream 0 transfer complete flag.
   * @rmtoll LIFCR  CTCIF0    LL_DMA_ClearFlag_TC0
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2569,7 +2604,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TC0(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 1 transfer complete flag.
+  * @brief Clear Stream 1 transfer complete flag.
   * @rmtoll LIFCR  CTCIF1    LL_DMA_ClearFlag_TC1
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2580,7 +2615,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TC1(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 2 transfer complete flag.
+  * @brief Clear Stream 2 transfer complete flag.
   * @rmtoll LIFCR  CTCIF2    LL_DMA_ClearFlag_TC2
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2591,7 +2626,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TC2(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 3 transfer complete flag.
+  * @brief Clear Stream 3 transfer complete flag.
   * @rmtoll LIFCR  CTCIF3    LL_DMA_ClearFlag_TC3
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2602,7 +2637,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TC3(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 4 transfer complete flag.
+  * @brief Clear Stream 4 transfer complete flag.
   * @rmtoll HIFCR  CTCIF4    LL_DMA_ClearFlag_TC4
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2613,7 +2648,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TC4(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 5 transfer complete flag.
+  * @brief Clear Stream 5 transfer complete flag.
   * @rmtoll HIFCR  CTCIF5    LL_DMA_ClearFlag_TC5
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2624,7 +2659,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TC5(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 6 transfer complete flag.
+  * @brief Clear Stream 6 transfer complete flag.
   * @rmtoll HIFCR  CTCIF6    LL_DMA_ClearFlag_TC6
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2635,7 +2670,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TC6(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 7 transfer complete flag.
+  * @brief Clear Stream 7 transfer complete flag.
   * @rmtoll HIFCR  CTCIF7    LL_DMA_ClearFlag_TC7
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2646,7 +2681,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TC7(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 0 transfer error flag.
+  * @brief Clear Stream 0 transfer error flag.
   * @rmtoll LIFCR  CTEIF0    LL_DMA_ClearFlag_TE0
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2657,7 +2692,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TE0(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 1 transfer error flag.
+  * @brief Clear Stream 1 transfer error flag.
   * @rmtoll LIFCR  CTEIF1    LL_DMA_ClearFlag_TE1
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2668,7 +2703,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TE1(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 2 transfer error flag.
+  * @brief Clear Stream 2 transfer error flag.
   * @rmtoll LIFCR  CTEIF2    LL_DMA_ClearFlag_TE2
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2679,7 +2714,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TE2(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 3 transfer error flag.
+  * @brief Clear Stream 3 transfer error flag.
   * @rmtoll LIFCR  CTEIF3    LL_DMA_ClearFlag_TE3
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2690,7 +2725,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TE3(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 4 transfer error flag.
+  * @brief Clear Stream 4 transfer error flag.
   * @rmtoll HIFCR  CTEIF4    LL_DMA_ClearFlag_TE4
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2701,7 +2736,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TE4(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 5 transfer error flag.
+  * @brief Clear Stream 5 transfer error flag.
   * @rmtoll HIFCR  CTEIF5    LL_DMA_ClearFlag_TE5
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2712,7 +2747,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TE5(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 6 transfer error flag.
+  * @brief Clear Stream 6 transfer error flag.
   * @rmtoll HIFCR  CTEIF6    LL_DMA_ClearFlag_TE6
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2723,7 +2758,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TE6(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 7 transfer error flag.
+  * @brief Clear Stream 7 transfer error flag.
   * @rmtoll HIFCR  CTEIF7    LL_DMA_ClearFlag_TE7
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2734,7 +2769,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_TE7(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 0 direct mode error flag.
+  * @brief Clear Stream 0 direct mode error flag.
   * @rmtoll LIFCR  CDMEIF0    LL_DMA_ClearFlag_DME0
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2745,7 +2780,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_DME0(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 1 direct mode error flag.
+  * @brief Clear Stream 1 direct mode error flag.
   * @rmtoll LIFCR  CDMEIF1    LL_DMA_ClearFlag_DME1
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2756,7 +2791,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_DME1(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 2 direct mode error flag.
+  * @brief Clear Stream 2 direct mode error flag.
   * @rmtoll LIFCR  CDMEIF2    LL_DMA_ClearFlag_DME2
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2767,7 +2802,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_DME2(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 3 direct mode error flag.
+  * @brief Clear Stream 3 direct mode error flag.
   * @rmtoll LIFCR  CDMEIF3    LL_DMA_ClearFlag_DME3
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2778,7 +2813,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_DME3(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 4 direct mode error flag.
+  * @brief Clear Stream 4 direct mode error flag.
   * @rmtoll HIFCR  CDMEIF4    LL_DMA_ClearFlag_DME4
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2789,7 +2824,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_DME4(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 5 direct mode error flag.
+  * @brief Clear Stream 5 direct mode error flag.
   * @rmtoll HIFCR  CDMEIF5    LL_DMA_ClearFlag_DME5
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2800,7 +2835,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_DME5(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 6 direct mode error flag.
+  * @brief Clear Stream 6 direct mode error flag.
   * @rmtoll HIFCR  CDMEIF6    LL_DMA_ClearFlag_DME6
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2811,7 +2846,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_DME6(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 7 direct mode error flag.
+  * @brief Clear Stream 7 direct mode error flag.
   * @rmtoll HIFCR  CDMEIF7    LL_DMA_ClearFlag_DME7
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2822,7 +2857,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_DME7(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 0 FIFO error flag.
+  * @brief Clear Stream 0 FIFO error flag.
   * @rmtoll LIFCR  CFEIF0    LL_DMA_ClearFlag_FE0
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2833,7 +2868,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_FE0(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 1 FIFO error flag.
+  * @brief Clear Stream 1 FIFO error flag.
   * @rmtoll LIFCR  CFEIF1    LL_DMA_ClearFlag_FE1
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2844,7 +2879,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_FE1(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 2 FIFO error flag.
+  * @brief Clear Stream 2 FIFO error flag.
   * @rmtoll LIFCR  CFEIF2    LL_DMA_ClearFlag_FE2
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2855,7 +2890,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_FE2(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 3 FIFO error flag.
+  * @brief Clear Stream 3 FIFO error flag.
   * @rmtoll LIFCR  CFEIF3    LL_DMA_ClearFlag_FE3
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2866,7 +2901,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_FE3(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 4 FIFO error flag.
+  * @brief Clear Stream 4 FIFO error flag.
   * @rmtoll HIFCR  CFEIF4    LL_DMA_ClearFlag_FE4
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2877,7 +2912,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_FE4(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 5 FIFO error flag.
+  * @brief Clear Stream 5 FIFO error flag.
   * @rmtoll HIFCR  CFEIF5    LL_DMA_ClearFlag_FE5
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2888,7 +2923,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_FE5(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 6 FIFO error flag.
+  * @brief Clear Stream 6 FIFO error flag.
   * @rmtoll HIFCR  CFEIF6    LL_DMA_ClearFlag_FE6
   * @param  DMAx DMAx Instance
   * @retval None
@@ -2899,7 +2934,7 @@ __STATIC_INLINE void LL_DMA_ClearFlag_FE6(DMA_TypeDef *DMAx)
 }
 
 /**
-  * @brief clear Stream 7 FIFO error flag.
+  * @brief Clear Stream 7 FIFO error flag.
   * @rmtoll HIFCR  CFEIF7    LL_DMA_ClearFlag_FE7
   * @param  DMAx DMAx Instance
   * @retval None

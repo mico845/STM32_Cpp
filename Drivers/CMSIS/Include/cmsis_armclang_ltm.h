@@ -160,7 +160,7 @@
 
 
 /**
-  \brief   get Control Register
+  \brief   Get Control Register
   \details Returns the content of the Control Register.
   \return               Control Register value
  */
@@ -214,7 +214,7 @@ __STATIC_FORCEINLINE void __TZ_set_CONTROL_NS(uint32_t control)
 
 
 /**
-  \brief   get IPSR Register
+  \brief   Get IPSR Register
   \details Returns the content of the IPSR Register.
   \return               IPSR Register value
  */
@@ -228,7 +228,7 @@ __STATIC_FORCEINLINE uint32_t __get_IPSR(void)
 
 
 /**
-  \brief   get APSR Register
+  \brief   Get APSR Register
   \details Returns the content of the APSR Register.
   \return               APSR Register value
  */
@@ -242,7 +242,7 @@ __STATIC_FORCEINLINE uint32_t __get_APSR(void)
 
 
 /**
-  \brief   get xPSR Register
+  \brief   Get xPSR Register
   \details Returns the content of the xPSR Register.
   \return               xPSR Register value
  */
@@ -256,7 +256,7 @@ __STATIC_FORCEINLINE uint32_t __get_xPSR(void)
 
 
 /**
-  \brief   get Process Stack Pointer
+  \brief   Get Process Stack Pointer
   \details Returns the current value of the Process Stack Pointer (PSP).
   \return               PSP Register value
  */
@@ -310,7 +310,7 @@ __STATIC_FORCEINLINE void __TZ_set_PSP_NS(uint32_t topOfProcStack)
 
 
 /**
-  \brief   get Main Stack Pointer
+  \brief   Get Main Stack Pointer
   \details Returns the current value of the Main Stack Pointer (MSP).
   \return               MSP Register value
  */
@@ -391,7 +391,7 @@ __STATIC_FORCEINLINE void __TZ_set_SP_NS(uint32_t topOfStack)
 
 
 /**
-  \brief   get Priority Mask
+  \brief   Get Priority Mask
   \details Returns the current state of the priority mask bit from the Priority Mask Register.
   \return               Priority Mask value
  */
@@ -464,7 +464,7 @@ __STATIC_FORCEINLINE void __TZ_set_PRIMASK_NS(uint32_t priMask)
 
 
 /**
-  \brief   get Base Priority
+  \brief   Get Base Priority
   \details Returns the current value of the Base Priority register.
   \return               Base Priority register value
  */
@@ -530,7 +530,7 @@ __STATIC_FORCEINLINE void __set_BASEPRI_MAX(uint32_t basePri)
 
 
 /**
-  \brief   get Fault Mask
+  \brief   Get Fault Mask
   \details Returns the current value of the Fault Mask register.
   \return               Fault Mask register value
  */
@@ -768,7 +768,7 @@ __STATIC_FORCEINLINE void __TZ_set_MSPLIM_NS(uint32_t MainStackPtrLimit)
            (defined (__ARM_ARCH_8M_BASE__ ) && (__ARM_ARCH_8M_BASE__ == 1))    ) */
 
 /**
-  \brief   get FPSCR
+  \brief   Get FPSCR
   \details Returns the current value of the Floating Point Status/Control register.
   \return               Floating Point Status/Control register value
  */

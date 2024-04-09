@@ -112,12 +112,17 @@ namespace STM32
          */
         inline void setValue(bool);
         /**
+         * @brief 设置GPIO引脚的电平状态
+         *
+         * @param value 1为高电平，其他值为低电平
+         */
+        inline GPIO& operator=(int value);
+        /**
          * @brief 读取GPIO端口的输入数据寄存器的值
          *
          * @return uint32_t 返回GPIO端口的输入数据寄存器的值
          */
         inline uint32_t readPort(void);
-
         /**
          * @brief 设置GPIO配置
          *
@@ -162,6 +167,11 @@ namespace STM32
     inline uint32_t GPIO::readPort(void)
     {
         return (uint32_t)(READ_REG(port->IDR));
+    }
+
+    GPIO& GPIO::operator=(int value) {
+        setValue(value);
+        return *this;
     }
 }//namespace STM32
 

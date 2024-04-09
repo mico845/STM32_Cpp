@@ -48,7 +48,7 @@ extern "C" {
   * @{
   */
 
-/** @defgroup CRS_LL_EC_GET_FLAG get Flags Defines
+/** @defgroup CRS_LL_EC_GET_FLAG Get Flags Defines
   * @brief    Flags defines which can be used with LL_CRS_ReadReg function
   * @{
   */
@@ -167,7 +167,7 @@ extern "C" {
 #define LL_CRS_WriteReg(__INSTANCE__, __REG__, __VALUE__) WRITE_REG(__INSTANCE__->__REG__, (__VALUE__))
 
 /**
-  * @brief  read a value in CRS register
+  * @brief  Read a value in CRS register
   * @param  __INSTANCE__ CRS Instance
   * @param  __REG__ Register to be read
   * @retval Register value
@@ -286,7 +286,7 @@ __STATIC_INLINE void LL_CRS_SetHSI48SmoothTrimming(uint32_t Value)
 }
 
 /**
-  * @brief  get HSI48 oscillator smooth trimming
+  * @brief  Get HSI48 oscillator smooth trimming
   * @rmtoll CR           TRIM          LL_CRS_GetHSI48SmoothTrimming
   * @retval a number between Min_Data = 0 and Max_Data = 127
   */
@@ -309,7 +309,7 @@ __STATIC_INLINE void LL_CRS_SetReloadCounter(uint32_t Value)
 }
 
 /**
-  * @brief  get counter reload value
+  * @brief  Get counter reload value
   * @rmtoll CFGR         RELOAD        LL_CRS_GetReloadCounter
   * @retval a number between Min_Data = 0 and Max_Data = 0xFFFF
   */
@@ -331,7 +331,7 @@ __STATIC_INLINE void LL_CRS_SetFreqErrorLimit(uint32_t Value)
 }
 
 /**
-  * @brief  get frequency error limit
+  * @brief  Get frequency error limit
   * @rmtoll CFGR         FELIM         LL_CRS_GetFreqErrorLimit
   * @retval A number between Min_Data = 0 and Max_Data = 255
   */
@@ -360,7 +360,7 @@ __STATIC_INLINE void LL_CRS_SetSyncDivider(uint32_t Divider)
 }
 
 /**
-  * @brief  get division factor for SYNC signal
+  * @brief  Get division factor for SYNC signal
   * @rmtoll CFGR         SYNCDIV       LL_CRS_GetSyncDivider
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_CRS_SYNC_DIV_1
@@ -392,7 +392,7 @@ __STATIC_INLINE void LL_CRS_SetSyncSignalSource(uint32_t Source)
 }
 
 /**
-  * @brief  get SYNC signal source
+  * @brief  Get SYNC signal source
   * @rmtoll CFGR         SYNCSRC       LL_CRS_GetSyncSignalSource
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_CRS_SYNC_SOURCE_GPIO
@@ -418,7 +418,7 @@ __STATIC_INLINE void LL_CRS_SetSyncPolarity(uint32_t Polarity)
 }
 
 /**
-  * @brief  get input polarity for the SYNC signal source
+  * @brief  Get input polarity for the SYNC signal source
   * @rmtoll CFGR         SYNCPOL       LL_CRS_GetSyncPolarity
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_CRS_SYNC_POLARITY_RISING
@@ -474,7 +474,7 @@ __STATIC_INLINE void LL_CRS_GenerateEvent_SWSYNC(void)
 }
 
 /**
-  * @brief  get the frequency error direction latched in the time of the last
+  * @brief  Get the frequency error direction latched in the time of the last
   * SYNC event
   * @rmtoll ISR          FEDIR         LL_CRS_GetFreqErrorDirection
   * @retval Returned value can be one of the following values:
@@ -487,7 +487,7 @@ __STATIC_INLINE uint32_t LL_CRS_GetFreqErrorDirection(void)
 }
 
 /**
-  * @brief  get the frequency error counter value latched in the time of the last SYNC event
+  * @brief  Get the frequency error counter value latched in the time of the last SYNC event
   * @rmtoll ISR          FECAP         LL_CRS_GetFreqErrorCapture
   * @retval A number between Min_Data = 0x0000 and Max_Data = 0xFFFF
   */
@@ -575,7 +575,7 @@ __STATIC_INLINE uint32_t LL_CRS_IsActiveFlag_TRIMOVF(void)
 }
 
 /**
-  * @brief  clear the SYNC event OK flag
+  * @brief  Clear the SYNC event OK flag
   * @rmtoll ICR          SYNCOKC       LL_CRS_ClearFlag_SYNCOK
   * @retval None
   */
@@ -585,7 +585,7 @@ __STATIC_INLINE void LL_CRS_ClearFlag_SYNCOK(void)
 }
 
 /**
-  * @brief  clear the  SYNC warning flag
+  * @brief  Clear the  SYNC warning flag
   * @rmtoll ICR          SYNCWARNC     LL_CRS_ClearFlag_SYNCWARN
   * @retval None
   */
@@ -595,7 +595,7 @@ __STATIC_INLINE void LL_CRS_ClearFlag_SYNCWARN(void)
 }
 
 /**
-  * @brief  clear TRIMOVF, SYNCMISS and SYNCERR bits and consequently also
+  * @brief  Clear TRIMOVF, SYNCMISS and SYNCERR bits and consequently also
   * the ERR flag
   * @rmtoll ICR          ERRC          LL_CRS_ClearFlag_ERR
   * @retval None
@@ -606,7 +606,7 @@ __STATIC_INLINE void LL_CRS_ClearFlag_ERR(void)
 }
 
 /**
-  * @brief  clear Expected SYNC flag
+  * @brief  Clear Expected SYNC flag
   * @rmtoll ICR          ESYNCC        LL_CRS_ClearFlag_ESYNC
   * @retval None
   */

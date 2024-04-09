@@ -253,7 +253,7 @@ typedef struct
   * @}
   */
 
-/** @defgroup EXTI_LL_D3_PEND_CLR D3 Pend clear Source
+/** @defgroup EXTI_LL_D3_PEND_CLR D3 Pend Clear Source
   * @{
   */
 #define LL_EXTI_D3_PEND_CLR_DMACH6      ((uint8_t)0x00U) /*!< DMA ch6 event selected as D3 domain pendclear source */
@@ -298,7 +298,7 @@ typedef struct
 #define LL_EXTI_WriteReg(__REG__, __VALUE__) WRITE_REG(EXTI->__REG__, (__VALUE__))
 
 /**
-  * @brief  read a value in EXTI register
+  * @brief  Read a value in EXTI register
   * @param  __REG__ Register to be read
   * @retval Register value
   */
@@ -2525,7 +2525,7 @@ __STATIC_INLINE uint32_t LL_EXTI_IsActiveFlag_64_95(uint32_t ExtiLine)
 
 
 /**
-  * @brief  read ExtLine Combination Flag for Lines in range 0 to 31
+  * @brief  Read ExtLine Combination Flag for Lines in range 0 to 31
   * @note This bit is set when the selected edge event arrives on the interrupt
   *       line. This bit is cleared by writing a 1 to the bit.
   * @rmtoll PR1          PIFx           LL_EXTI_ReadFlag_0_31
@@ -2561,7 +2561,7 @@ __STATIC_INLINE uint32_t LL_EXTI_ReadFlag_0_31(uint32_t ExtiLine)
 
 
 /**
-  * @brief  read ExtLine Combination Flag for  Lines in range 32 to 63
+  * @brief  Read ExtLine Combination Flag for  Lines in range 32 to 63
   * @note This bit is set when the selected edge event arrives on the interrupt
   *       line. This bit is cleared by writing a 1 to the bit.
   * @rmtoll PR2          PIFx           LL_EXTI_ReadFlag_32_63
@@ -2577,7 +2577,7 @@ __STATIC_INLINE uint32_t LL_EXTI_ReadFlag_32_63(uint32_t ExtiLine)
 
 
 /**
-  * @brief  read ExtLine Combination Flag for  Lines in range 64 to 95
+  * @brief  Read ExtLine Combination Flag for  Lines in range 64 to 95
   * @note This bit is set when the selected edge event arrives on the interrupt
   *       line. This bit is cleared by writing a 1 to the bit.
   * @rmtoll PR3          PIFx           LL_EXTI_ReadFlag_64_95
@@ -2597,7 +2597,7 @@ __STATIC_INLINE uint32_t LL_EXTI_ReadFlag_64_95(uint32_t ExtiLine)
 }
 
 /**
-  * @brief  clear ExtLine Flags for Lines in range 0 to 31
+  * @brief  Clear ExtLine Flags for Lines in range 0 to 31
   * @note This bit is set when the selected edge event arrives on the interrupt
   *       line. This bit is cleared by writing a 1 to the bit.
   * @rmtoll PR1          PIFx           LL_EXTI_ClearFlag_0_31
@@ -2632,7 +2632,7 @@ __STATIC_INLINE void LL_EXTI_ClearFlag_0_31(uint32_t ExtiLine)
 }
 
 /**
-  * @brief  clear ExtLine Flags for Lines in range 32 to 63
+  * @brief  Clear ExtLine Flags for Lines in range 32 to 63
   * @note This bit is set when the selected edge event arrives on the interrupt
   *       line. This bit is cleared by writing a 1 to the bit.
   * @rmtoll PR2          PIFx           LL_EXTI_ClearFlag_32_63
@@ -2647,7 +2647,7 @@ __STATIC_INLINE void LL_EXTI_ClearFlag_32_63(uint32_t ExtiLine)
 }
 
 /**
-  * @brief  clear ExtLine Flags for Lines in range 64 to 95
+  * @brief  Clear ExtLine Flags for Lines in range 64 to 95
   * @note This bit is set when the selected edge event arrives on the interrupt
   *       line. This bit is cleared by writing a 1 to the bit.
   * @rmtoll PR3          PIFx           LL_EXTI_ClearFlag_64_95
@@ -3028,7 +3028,7 @@ __STATIC_INLINE uint32_t LL_D3_EXTI_IsEnabledPendMask_32_63(uint32_t ExtiLine)
 }
 
 /**
-  * @brief  Set ExtLine D3 Domain Pend clear Source selection for Lines in range 0 to 15
+  * @brief  Set ExtLine D3 Domain Pend Clear Source selection for Lines in range 0 to 15
   * @rmtoll D3PCR1L          PCSx           LL_D3_EXTI_SetPendClearSel_0_15
   * @param  ExtiLine This parameter can be one of the following values:
   *         @arg @ref LL_EXTI_LINE_0
@@ -3064,7 +3064,7 @@ __STATIC_INLINE void LL_D3_EXTI_SetPendClearSel_0_15(uint32_t ExtiLine, uint32_t
 }
 
 /**
-  * @brief  Set ExtLine D3 Domain Pend clear Source selection for Lines in range 16 to 31
+  * @brief  Set ExtLine D3 Domain Pend Clear Source selection for Lines in range 16 to 31
   * @rmtoll D3PCR1H          PCSx           LL_D3_EXTI_SetPendClearSel_16_31
   * @param  ExtiLine This parameter can be one of the following values:
   *         @arg @ref LL_EXTI_LINE_19
@@ -3089,7 +3089,7 @@ __STATIC_INLINE void LL_D3_EXTI_SetPendClearSel_16_31(uint32_t ExtiLine, uint32_
 
 
 /**
-  * @brief  Set ExtLine D3 Domain Pend clear Source selection for Lines in range 32 to 47
+  * @brief  Set ExtLine D3 Domain Pend Clear Source selection for Lines in range 32 to 47
   * @rmtoll D3PCR2L          PCSx           LL_D3_EXTI_SetPendClearSel_32_47
   * @param  ExtiLine This parameter can be one of the following values:
   *         @arg @ref LL_EXTI_LINE_34
@@ -3112,7 +3112,7 @@ __STATIC_INLINE void LL_D3_EXTI_SetPendClearSel_32_47(uint32_t ExtiLine, uint32_
 }
 
 /**
-  * @brief  Set ExtLine D3 Domain Pend clear Source selection for Lines in range 48 to 63
+  * @brief  Set ExtLine D3 Domain Pend Clear Source selection for Lines in range 48 to 63
   * @rmtoll D3PCR2H          PCSx           LL_D3_EXTI_SetPendClearSel_48_63
   * @param  ExtiLine This parameter can be one of the following values:
   *         @arg @ref LL_EXTI_LINE_48
@@ -3138,7 +3138,7 @@ __STATIC_INLINE void LL_D3_EXTI_SetPendClearSel_48_63(uint32_t ExtiLine, uint32_
 }
 
 /**
-  * @brief  get ExtLine D3 Domain Pend clear Source selection for Lines in range 0 to 15
+  * @brief  Get ExtLine D3 Domain Pend Clear Source selection for Lines in range 0 to 15
   * @rmtoll D3PCR1L          PCSx           LL_D3_EXTI_GetPendClearSel_0_15
   * @param  ExtiLine This parameter can be one of the following values:
   *         @arg @ref LL_EXTI_LINE_0
@@ -3173,7 +3173,7 @@ __STATIC_INLINE uint32_t LL_D3_EXTI_GetPendClearSel_0_15(uint32_t ExtiLine)
 }
 
 /**
-  * @brief  get ExtLine D3 Domain Pend clear Source selection for Lines in range 16 to 31
+  * @brief  Get ExtLine D3 Domain Pend Clear Source selection for Lines in range 16 to 31
   * @rmtoll D3PCR1H          PCSx           LL_D3_EXTI_GetPendClearSel_16_31
   * @param  ExtiLine This parameter can be one of the following values:
   *         @arg @ref LL_EXTI_LINE_19
@@ -3196,7 +3196,7 @@ __STATIC_INLINE uint32_t LL_D3_EXTI_GetPendClearSel_16_31(uint32_t ExtiLine)
 }
 
 /**
-  * @brief  get ExtLine D3 Domain Pend clear Source selection for Lines in range 32 to 47
+  * @brief  Get ExtLine D3 Domain Pend Clear Source selection for Lines in range 32 to 47
   * @rmtoll D3PCR2L          PCSx           LL_D3_EXTI_GetPendClearSel_32_47
   * @param  ExtiLine This parameter can be one of the following values:
   *         @arg @ref LL_EXTI_LINE_34
@@ -3218,7 +3218,7 @@ __STATIC_INLINE uint32_t LL_D3_EXTI_GetPendClearSel_32_47(uint32_t ExtiLine)
 }
 
 /**
-  * @brief  get ExtLine D3 Domain Pend clear Source selection for Lines in range 48 to 63
+  * @brief  Get ExtLine D3 Domain Pend Clear Source selection for Lines in range 48 to 63
   * @rmtoll D3PCR2H          PCSx           LL_D3_EXTI_GetPendClearSel_48_63
   * @param  ExtiLine This parameter can be one of the following values:
   *         @arg @ref LL_EXTI_LINE_48

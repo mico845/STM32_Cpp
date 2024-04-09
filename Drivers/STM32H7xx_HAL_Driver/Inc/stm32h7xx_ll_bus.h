@@ -737,7 +737,7 @@ __STATIC_INLINE void LL_AHB3_GRP1_ReleaseReset(uint32_t Periphs)
 }
 
 /**
-  * @brief  Enable AHB3 peripherals clock during low Power (Sleep) mode.
+  * @brief  Enable AHB3 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll AHB3LPENR    MDMALPEN      LL_AHB3_GRP1_EnableClockSleep\n
   *         AHB3LPENR    DMA2DLPEN     LL_AHB3_GRP1_EnableClockSleep\n
   *         AHB3LPENR    JPGDECLPEN    LL_AHB3_GRP1_EnableClockSleep\n
@@ -786,7 +786,7 @@ __STATIC_INLINE void LL_AHB3_GRP1_EnableClockSleep(uint32_t Periphs)
 }
 
 /**
-  * @brief  Disable AHB3 peripherals clock during low Power (Sleep) mode.
+  * @brief  Disable AHB3 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll AHB3LPENR    MDMALPEN      LL_AHB3_GRP1_DisableClockSleep\n
   *         AHB3LPENR    DMA2DLPEN     LL_AHB3_GRP1_DisableClockSleep\n
   *         AHB3LPENR    JPGDECLPEN    LL_AHB3_GRP1_DisableClockSleep\n
@@ -1007,7 +1007,7 @@ __STATIC_INLINE void LL_AHB1_GRP1_ReleaseReset(uint32_t Periphs)
 }
 
 /**
-  * @brief  Enable AHB1 peripherals clock during low Power (Sleep) mode.
+  * @brief  Enable AHB1 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll AHB1LPENR    DMA1LPEN      LL_AHB1_GRP1_EnableClockSleep\n
   *         AHB1LPENR    DMA2LPEN      LL_AHB1_GRP1_EnableClockSleep\n
   *         AHB1LPENR    ADC12LPEN     LL_AHB1_GRP1_EnableClockSleep\n
@@ -1047,7 +1047,7 @@ __STATIC_INLINE void LL_AHB1_GRP1_EnableClockSleep(uint32_t Periphs)
 }
 
 /**
-  * @brief  Disable AHB1 peripherals clock during low Power (Sleep) mode.
+  * @brief  Disable AHB1 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll AHB1LPENR    DMA1LPEN      LL_AHB1_GRP1_DisableClockSleep\n
   *         AHB1LPENR    DMA2LPEN      LL_AHB1_GRP1_DisableClockSleep\n
   *         AHB1LPENR    ADC12LPEN     LL_AHB1_GRP1_DisableClockSleep\n
@@ -1263,7 +1263,7 @@ __STATIC_INLINE void LL_AHB2_GRP1_ReleaseReset(uint32_t Periphs)
 }
 
 /**
-  * @brief  Enable AHB2 peripherals clock during low Power (Sleep) mode.
+  * @brief  Enable AHB2 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll AHB2LPENR    DCMILPEN      LL_AHB2_GRP1_EnableClockSleep\n
   *         AHB2LPENR    CRYPLPEN      LL_AHB2_GRP1_EnableClockSleep\n  (*)
   *         AHB2LPENR    HASHLPEN      LL_AHB2_GRP1_EnableClockSleep\n  (*)
@@ -1301,7 +1301,7 @@ __STATIC_INLINE void LL_AHB2_GRP1_EnableClockSleep(uint32_t Periphs)
 }
 
 /**
-  * @brief  Disable AHB2 peripherals clock during low Power (Sleep) mode.
+  * @brief  Disable AHB2 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll AHB2LPENR    DCMILPEN      LL_AHB2_GRP1_DisableClockSleep\n
   *         AHB2LPENR    CRYPLPEN      LL_AHB2_GRP1_DisableClockSleep\n (*)
   *         AHB2LPENR    HASHLPEN      LL_AHB2_GRP1_DisableClockSleep\n (*)
@@ -1567,7 +1567,7 @@ __STATIC_INLINE void LL_AHB4_GRP1_ReleaseReset(uint32_t Periphs)
 }
 
 /**
-  * @brief  Enable AHB4 peripherals clock during low Power (Sleep) mode.
+  * @brief  Enable AHB4 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll AHB4LPENR    GPIOALPEN     LL_AHB4_GRP1_EnableClockSleep\n
   *         AHB4LPENR    GPIOBLPEN     LL_AHB4_GRP1_EnableClockSleep\n
   *         AHB4LPENR    GPIOCLPEN     LL_AHB4_GRP1_EnableClockSleep\n
@@ -1613,7 +1613,7 @@ __STATIC_INLINE void LL_AHB4_GRP1_EnableClockSleep(uint32_t Periphs)
 }
 
 /**
-  * @brief  Disable AHB4 peripherals clock during low Power (Sleep) mode.
+  * @brief  Disable AHB4 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll AHB4LPENR    GPIOALPEN     LL_AHB4_GRP1_DisableClockSleep\n
   *         AHB4LPENR    GPIOBLPEN     LL_AHB4_GRP1_DisableClockSleep\n
   *         AHB4LPENR    GPIOCLPEN     LL_AHB4_GRP1_DisableClockSleep\n
@@ -1753,7 +1753,7 @@ __STATIC_INLINE void LL_APB3_GRP1_ReleaseReset(uint32_t Periphs)
 }
 
 /**
-  * @brief  Enable APB3 peripherals clock during low Power (Sleep) mode.
+  * @brief  Enable APB3 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll APB3LPENR    LTDCLPEN      LL_APB3_GRP1_EnableClockSleep\n (*)
   *         APB3LPENR    DSILPEN       LL_APB3_GRP1_EnableClockSleep\n (*)
   *         APB3LPENR    WWDG1LPEN     LL_APB3_GRP1_EnableClockSleep
@@ -1775,7 +1775,7 @@ __STATIC_INLINE void LL_APB3_GRP1_EnableClockSleep(uint32_t Periphs)
 }
 
 /**
-  * @brief  Disable APB3 peripherals clock during low Power (Sleep) mode.
+  * @brief  Disable APB3 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll APB3LPENR    LTDCLPEN      LL_APB3_GRP1_DisableClockSleep\n (*)
   *         APB3LPENR    DSILPEN       LL_APB3_GRP1_DisableClockSleep\n (*)
   *         APB3LPENR    WWDG1LPEN     LL_APB3_GRP1_DisableClockSleep
@@ -2121,7 +2121,7 @@ __STATIC_INLINE void LL_APB1_GRP1_ReleaseReset(uint32_t Periphs)
 }
 
 /**
-  * @brief  Enable APB1 peripherals clock during low Power (Sleep) mode.
+  * @brief  Enable APB1 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll APB1LLPENR   TIM2LPEN      LL_APB1_GRP1_EnableClockSleep\n
   *         APB1LLPENR   TIM3LPEN      LL_APB1_GRP1_EnableClockSleep\n
   *         APB1LLPENR   TIM4LPEN      LL_APB1_GRP1_EnableClockSleep\n
@@ -2189,7 +2189,7 @@ __STATIC_INLINE void LL_APB1_GRP1_EnableClockSleep(uint32_t Periphs)
 }
 
 /**
-  * @brief  Disable APB1 peripherals clock during low Power (Sleep) mode.
+  * @brief  Disable APB1 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll APB1LLPENR   TIM2LPEN      LL_APB1_GRP1_DisableClockSleep\n
   *         APB1LLPENR   TIM3LPEN      LL_APB1_GRP1_DisableClockSleep\n
   *         APB1LLPENR   TIM4LPEN      LL_APB1_GRP1_DisableClockSleep\n
@@ -2377,7 +2377,7 @@ __STATIC_INLINE void LL_APB1_GRP2_ReleaseReset(uint32_t Periphs)
 }
 
 /**
-  * @brief  Enable APB1 peripherals clock during low Power (Sleep) mode.
+  * @brief  Enable APB1 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll APB1HLPENR   CRSLPEN       LL_APB1_GRP2_EnableClockSleep\n
   *         APB1HLPENR   SWPMILPEN     LL_APB1_GRP2_EnableClockSleep\n
   *         APB1HLPENR   OPAMPLPEN     LL_APB1_GRP2_EnableClockSleep\n
@@ -2405,7 +2405,7 @@ __STATIC_INLINE void LL_APB1_GRP2_EnableClockSleep(uint32_t Periphs)
 }
 
 /**
-  * @brief  Disable APB1 peripherals clock during low Power (Sleep) mode.
+  * @brief  Disable APB1 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll APB1HLPENR   CRSLPEN       LL_APB1_GRP2_DisableClockSleep\n
   *         APB1HLPENR   SWPMILPEN     LL_APB1_GRP2_DisableClockSleep\n
   *         APB1HLPENR   OPAMPLPEN     LL_APB1_GRP2_DisableClockSleep\n
@@ -2671,7 +2671,7 @@ __STATIC_INLINE void LL_APB2_GRP1_ReleaseReset(uint32_t Periphs)
 }
 
 /**
-  * @brief  Enable APB2 peripherals clock during low Power (Sleep) mode.
+  * @brief  Enable APB2 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll APB2LPENR    TIM1LPEN      LL_APB2_GRP1_EnableClockSleep\n
   *         APB2LPENR    TIM8LPEN      LL_APB2_GRP1_EnableClockSleep\n
   *         APB2LPENR    USART1LPEN    LL_APB2_GRP1_EnableClockSleep\n
@@ -2721,7 +2721,7 @@ __STATIC_INLINE void LL_APB2_GRP1_EnableClockSleep(uint32_t Periphs)
 }
 
 /**
-  * @brief  Disable APB2 peripherals clock during low Power (Sleep) mode.
+  * @brief  Disable APB2 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll APB2LPENR    TIM1LPEN      LL_APB2_GRP1_DisableClockSleep\n
   *         APB2LPENR    TIM8LPEN      LL_APB2_GRP1_DisableClockSleep\n
   *         APB2LPENR    USART1LPEN    LL_APB2_GRP1_DisableClockSleep\n
@@ -2985,7 +2985,7 @@ __STATIC_INLINE void LL_APB4_GRP1_ReleaseReset(uint32_t Periphs)
 }
 
 /**
-  * @brief  Enable APB4 peripherals clock during low Power (Sleep) mode.
+  * @brief  Enable APB4 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll APB4LPENR    SYSCFGLPEN    LL_APB4_GRP1_EnableClockSleep\n
   *         APB4LPENR    LPUART1LPEN   LL_APB4_GRP1_EnableClockSleep\n
   *         APB4LPENR    SPI6LPEN      LL_APB4_GRP1_EnableClockSleep\n
@@ -3031,7 +3031,7 @@ __STATIC_INLINE void LL_APB4_GRP1_EnableClockSleep(uint32_t Periphs)
 }
 
 /**
-  * @brief  Disable APB4 peripherals clock during low Power (Sleep) mode.
+  * @brief  Disable APB4 peripherals clock during Low Power (Sleep) mode.
   * @rmtoll APB4LPENR    SYSCFGLPEN    LL_APB4_GRP1_DisableClockSleep\n
   *         APB4LPENR    LPUART1LPEN   LL_APB4_GRP1_DisableClockSleep\n
   *         APB4LPENR    SPI6LPEN      LL_APB4_GRP1_DisableClockSleep\n

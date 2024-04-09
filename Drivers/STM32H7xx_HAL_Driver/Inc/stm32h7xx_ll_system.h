@@ -455,7 +455,7 @@ __STATIC_INLINE void LL_SYSCFG_SetPHYInterface(uint32_t Interface)
 }
 
 /**
-  * @brief  get Ethernet PHY interface
+  * @brief  Get Ethernet PHY interface
   * @rmtoll PMCR    EPIS_SEL    LL_SYSCFG_GetPHYInterface
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_SYSCFG_ETH_MII
@@ -621,7 +621,7 @@ __STATIC_INLINE void LL_SYSCFG_SetEXTISource(uint32_t Port, uint32_t Line)
 }
 
 /**
-  * @brief  get the configured defined for specific EXTI Line
+  * @brief  Get the configured defined for specific EXTI Line
   * @rmtoll SYSCFG_EXTICR1 EXTIx         LL_SYSCFG_GetEXTISource\n
   *         SYSCFG_EXTICR2 EXTIx         LL_SYSCFG_GetEXTISource\n
   *         SYSCFG_EXTICR3 EXTIx         LL_SYSCFG_GetEXTISource\n
@@ -715,7 +715,7 @@ __STATIC_INLINE void LL_SYSCFG_SetTIMBreakInputs(uint32_t Break)
 }
 
 /**
-  * @brief  get connections to TIM1/8/15/16/17 and HRTIM Break inputs
+  * @brief  Get connections to TIM1/8/15/16/17 and HRTIM Break inputs
   * @note this feature is available on STM32H7 rev.B and above
   * @rmtoll SYSCFG_CFGR AXISRAML       LL_SYSCFG_GetTIMBreakInputs\n
   *         SYSCFG_CFGR ITCML          LL_SYSCFG_GetTIMBreakInputs\n
@@ -802,7 +802,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_IsEnabledCompensationCell(void)
 }
 
 /**
-  * @brief  get Compensation Cell ready Flag
+  * @brief  Get Compensation Cell ready Flag
   * @rmtoll CCCSR   READY   LL_SYSCFG_IsActiveFlag_CMPCR
   * @retval State of bit (1 or 0).
   */
@@ -989,7 +989,7 @@ __STATIC_INLINE void LL_SYSCFG_SetCellCompensationCode(uint32_t CompCode)
 }
 
 /**
-  * @brief  get the code selected for the I/O Compensation cell
+  * @brief  Get the code selected for the I/O Compensation cell
   * @rmtoll CCCSR   CS    LL_SYSCFG_GetCellCompensationCode
   * @retval Returned value can be one of the following values:
   *   @arg LL_SYSCFG_CELL_CODE : Selected Code is from the cell (available in the SYSCFG_CCVR)
@@ -1016,7 +1016,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_MMCGetCellCompensationCode(void)
 #endif /*SYSCFG_CCCSR_CS_MMC*/
 
 /**
-  * @brief  get I/O compensation cell value for PMOS transistors
+  * @brief  Get I/O compensation cell value for PMOS transistors
   * @rmtoll CCVR    PCV   LL_SYSCFG_GetPMOSCompensationValue
   * @retval Returned value is the I/O compensation cell value for PMOS transistors
   */
@@ -1026,7 +1026,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_GetPMOSCompensationValue(void)
 }
 
 /**
-  * @brief  get I/O compensation cell value for NMOS transistors
+  * @brief  Get I/O compensation cell value for NMOS transistors
   * @rmtoll CCVR    NCV   LL_SYSCFG_GetNMOSCompensationValue
   * @retval Returned value is the I/O compensation cell value for NMOS transistors
   */
@@ -1049,7 +1049,7 @@ __STATIC_INLINE void LL_SYSCFG_SetPMOSCompensationCode(uint32_t PMOSCode)
 }
 
 /**
-  * @brief  get I/O compensation cell code for PMOS transistors
+  * @brief  Get I/O compensation cell code for PMOS transistors
   * @rmtoll CCCR    PCC   LL_SYSCFG_GetPMOSCompensationCode
   * @retval Returned value is the I/O compensation cell code for PMOS transistors
   */
@@ -1098,7 +1098,7 @@ __STATIC_INLINE void LL_SYSCFG_SetNMOSCompensationCode(uint32_t NMOSCode)
 }
 
 /**
-  * @brief  get I/O compensation cell code for NMOS transistors
+  * @brief  Get I/O compensation cell code for NMOS transistors
   * @rmtoll CCCR    NCC   LL_SYSCFG_GetNMOSCompensationCode
   * @retval Returned value is the I/O compensation cell code for NMOS transistors
   */
@@ -1135,7 +1135,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_VDMMCGetNMOSCompensationCode(void)
 
 #ifdef SYSCFG_PKGR_PKG
 /**
-  * @brief  get the device package
+  * @brief  Get the device package
   * @rmtoll PKGR    PKG   LL_SYSCFG_GetPackage
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_SYSCFG_LQFP100_PACKAGE (*)
@@ -1165,7 +1165,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_GetPackage(void)
 
 #ifdef SYSCFG_UR0_RDP
 /**
-  * @brief  get the Flash memory protection level
+  * @brief  Get the Flash memory protection level
   * @rmtoll UR0   RDP   LL_SYSCFG_GetFLashProtectionLevel
   * @retval Returned value can be one of the following values:
   *         0xAA : RDP level 0
@@ -1189,7 +1189,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_IsFLashBankAddressesSwaped(void)
 #endif /*SYSCFG_UR0_BKS*/
 
 /**
-  * @brief  get the BOR Threshold Reset Level
+  * @brief  Get the BOR Threshold Reset Level
   * @rmtoll UR2   BORH    LL_SYSCFG_GetBrownoutResetLevel
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_SYSCFG_BOR_HIGH_RESET_LEVEL
@@ -1219,7 +1219,7 @@ __STATIC_INLINE void LL_SYSCFG_SetCM7BootAddress0(uint16_t BootAddress)
 }
 
 /**
-  * @brief  get BootCM7 address 0
+  * @brief  Get BootCM7 address 0
   * @rmtoll UR2   BOOT_ADD0   LL_SYSCFG_GetCM7BootAddress0
   * @retval Returned the CM7 Boot Address0
   */
@@ -1250,7 +1250,7 @@ __STATIC_INLINE void LL_SYSCFG_SetCM7BootAddress1(uint16_t BootAddress)
 }
 
 /**
-  * @brief  get BootCM7 address 1
+  * @brief  Get BootCM7 address 1
   * @rmtoll UR3   BOOT_ADD1   LL_SYSCFG_GetCM7BootAddress1
   * @retval Returned the CM7 Boot Address0
   */
@@ -1413,7 +1413,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_IsFlashB1Sector7WriteProtected(void)
 }
 
 /**
-  * @brief  get the protected area start address for Flash bank 1
+  * @brief  Get the protected area start address for Flash bank 1
   * @rmtoll UR6   PABEG_BANK1    LL_SYSCFG_GetFlashB1ProtectedAreaStartAddress
   * @retval Returned the protected area start address for Flash bank 1
   */
@@ -1423,7 +1423,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_GetFlashB1ProtectedAreaStartAddress(void)
 }
 
 /**
-  * @brief  get the protected area end address for Flash bank 1
+  * @brief  Get the protected area end address for Flash bank 1
   * @rmtoll UR6   PAEND_BANK1   LL_SYSCFG_GetFlashB1ProtectedAreaEndAddress
   * @retval Returned the protected area end address for Flash bank 1
   */
@@ -1433,7 +1433,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_GetFlashB1ProtectedAreaEndAddress(void)
 }
 
 /**
-  * @brief  get the secured area start address for Flash bank 1
+  * @brief  Get the secured area start address for Flash bank 1
   * @rmtoll UR7   SABEG_BANK1   LL_SYSCFG_GetFlashB1SecuredAreaStartAddress
   * @retval Returned the secured area start address for Flash bank 1
   */
@@ -1443,7 +1443,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_GetFlashB1SecuredAreaStartAddress(void)
 }
 
 /**
-  * @brief  get the secured area end address for Flash bank 1
+  * @brief  Get the secured area end address for Flash bank 1
   * @rmtoll UR7   SAEND_BANK1   LL_SYSCFG_GetFlashB1SecuredAreaEndAddress
   * @retval Returned the secured area end address for Flash bank 1
   */
@@ -1556,7 +1556,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_IsFlashB2Sector7WriteProtected(void)
 }
 
 /**
-  * @brief  get the protected area start address for Flash bank 2
+  * @brief  Get the protected area start address for Flash bank 2
   * @rmtoll UR9   PABEG_BANK2   LL_SYSCFG_GetFlashB2ProtectedAreaStartAddress
   * @retval Returned the protected area start address for Flash bank 2
   */
@@ -1568,7 +1568,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_GetFlashB2ProtectedAreaStartAddress(void)
 
 #ifdef SYSCFG_UR10_PAEND_BANK2
 /**
-  * @brief  get the protected area end address for Flash bank 2
+  * @brief  Get the protected area end address for Flash bank 2
   * @rmtoll UR10    PAEND_BANK2   LL_SYSCFG_GetFlashB2ProtectedAreaEndAddress
   * @retval Returned the protected area end address for Flash bank 2
   */
@@ -1578,7 +1578,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_GetFlashB2ProtectedAreaEndAddress(void)
 }
 
 /**
-  * @brief  get the secured area start address for Flash bank 2
+  * @brief  Get the secured area start address for Flash bank 2
   * @rmtoll UR10    SABEG_BANK2   LL_SYSCFG_GetFlashB2SecuredAreaStartAddress
   * @retval Returned the secured area start address for Flash bank 2
   */
@@ -1590,7 +1590,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_GetFlashB2SecuredAreaStartAddress(void)
 
 #ifdef SYSCFG_UR11_SAEND_BANK2
 /**
-  * @brief  get the secured area end address for Flash bank 2
+  * @brief  Get the secured area end address for Flash bank 2
   * @rmtoll UR11    SAEND_BANK2   LL_SYSCFG_GetFlashB2SecuredAreaEndAddress
   * @retval Returned the secured area end address for Flash bank 2
   */
@@ -1601,7 +1601,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_GetFlashB2SecuredAreaEndAddress(void)
 #endif /*SYSCFG_UR11_SAEND_BANK2*/
 
 /**
-  * @brief  get the Independent Watchdog 1 control mode (Software or Hardware)
+  * @brief  Get the Independent Watchdog 1 control mode (Software or Hardware)
   * @rmtoll UR11    IWDG1M    LL_SYSCFG_GetIWDG1ControlMode
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_SYSCFG_IWDG1_SW_CONTROL_MODE
@@ -1647,7 +1647,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_IsD1StandbyGenerateReset(void)
 }
 
 /**
-  * @brief  get the secured DTCM RAM size
+  * @brief  Get the secured DTCM RAM size
   * @rmtoll UR13    SDRS    LL_SYSCFG_GetSecuredDTCMSize
   * @retval Returned value can be one of the following values:
   *           @arg @ref LL_SYSCFG_DTCM_RAM_SIZE_2KB
@@ -1703,7 +1703,7 @@ __STATIC_INLINE uint32_t LL_SYSCFG_IsIWDGFrozenInStandbyMode(void)
 }
 
 /**
-  * @brief  Indicates if the independent watchdog is frozen in stop mode
+  * @brief  Indicates if the independent watchdog is frozen in Stop mode
   * @rmtoll UR16    FZIWDGSTP   LL_SYSCFG_IsIWDGFrozenInStopMode
   * @retval State of bit (1 or 0).
   */
@@ -2038,7 +2038,7 @@ __STATIC_INLINE void LL_DBGMCU_SetExternalTriggerPinDirection(uint32_t PinDirect
 }
 
 /**
-  * @brief  get the direction of the bi-directional trigger pin TRGIO
+  * @brief  Get the direction of the bi-directional trigger pin TRGIO
   * @rmtoll DBGMCU_CR    TRGOEN    LL_DBGMCU_GetExternalTriggerPinDirection\n
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_DBGMCU_TRGIO_INPUT_DIRECTION
@@ -2336,7 +2336,7 @@ __STATIC_INLINE void LL_FLASH_SetLatency(uint32_t Latency)
 }
 
 /**
-  * @brief  get FLASH Latency
+  * @brief  Get FLASH Latency
   * @rmtoll FLASH_ACR    LATENCY       LL_FLASH_GetLatency
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_FLASH_LATENCY_0

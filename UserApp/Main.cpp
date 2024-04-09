@@ -6,15 +6,29 @@ using namespace STM32;
 static void Task_Led_Flash(void);
 static void Task_Key(void);
 
+AD9959 ad9959;
+
 void Init(void)
 {
     led.pinkishRed();//初始粉色
     sysTimer.registerCallback(KeyScan10ms).start(100);
+
+    ad9959 = AD9959(GPIO(GPIOD, 0), GPIO(GPIOD, 1), GPIO(GPIOD, 2), GPIO(GPIOD, 3),
+           GPIO(GPIOD, 4), GPIO(GPIOD, 5), GPIO(GPIOD, 6), GPIO(GPIOD, 7),
+           GPIO(GPIOB, 3), GPIO(GPIOB, 4), GPIO(GPIOB, 5), GPIO(GPIOB, 6),
+           GPIO(GPIOB, 7));
+    ad9959.setPhaseSweep(Channel0,					0, 		16383,			1,							1,				250,		250,	10000,	1023).update();
 }
+
 void Loop(void)
 {
-    Task_Led_Flash();
-    Task_Key();
+    ad9959.update_SK(0b1111);
+    delay_ms(33);
+    ad9959.update_SK(0);
+    delay_ms(33);
+ //   delay_ms(2);
+ //   Task_Led_Flash();
+ //   Task_Key();
 }
 
 static void Task_Led_Flash(void)

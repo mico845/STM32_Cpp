@@ -40,7 +40,7 @@
 /** \brief Attribute for normal memory (outer and inner)
 * \param NT Non-Transient: Set to 1 for non-transient data.
 * \param WB Write-Back: Set to 1 to use write-back update policy.
-* \param RA read Allocation: Set to 1 to use cache allocation on read miss.
+* \param RA Read Allocation: Set to 1 to use cache allocation on read miss.
 * \param WA Write Allocation: Set to 1 to use cache allocation on write miss.
 */
 #define ARM_MPU_ATTR_MEMORY_(NT, WB, RA, WA) \
@@ -74,7 +74,7 @@
 #define ARM_MPU_SH_INNER (3U)
 
 /** \brief Memory access permissions
-* \param RO read-Only: Set to 1 for read-only memory.
+* \param RO Read-Only: Set to 1 for read-only memory.
 * \param NP Non-Privileged: Set to 1 for non-privileged memory.
 */
 #define ARM_MPU_AP_(RO, NP) (((RO & 1U) << 1U) | (NP & 1U))
@@ -82,7 +82,7 @@
 /** \brief Region Base Address Register value
 * \param BASE The base address bits [31:5] of a memory region. The value is zero extended. Effective address gets 32 byte aligned.
 * \param SH Defines the Shareability domain for this memory region.
-* \param RO read-Only: Set to 1 for a read-only memory region.
+* \param RO Read-Only: Set to 1 for a read-only memory region.
 * \param NP Non-Privileged: Set to 1 for a non-privileged memory region.
 * \oaram XN eXecute Never: Set to 1 for a non-executable memory region.
 */
@@ -212,7 +212,7 @@ __STATIC_INLINE void ARM_MPU_SetMemAttr_NS(uint8_t idx, uint8_t attr)
 }
 #endif
 
-/** clear and disable the given MPU region of the given MPU.
+/** Clear and disable the given MPU region of the given MPU.
 * \param mpu Pointer to MPU to be used.
 * \param rnr Region number to be cleared.
 */
@@ -222,7 +222,7 @@ __STATIC_INLINE void ARM_MPU_ClrRegionEx(MPU_Type* mpu, uint32_t rnr)
   mpu->RLAR = 0U;
 }
 
-/** clear and disable the given MPU region.
+/** Clear and disable the given MPU region.
 * \param rnr Region number to be cleared.
 */
 __STATIC_INLINE void ARM_MPU_ClrRegion(uint32_t rnr)

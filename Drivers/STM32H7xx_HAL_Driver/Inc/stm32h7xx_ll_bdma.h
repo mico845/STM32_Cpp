@@ -77,70 +77,79 @@ static const uint8_t LL_BDMA_CH_OFFSET_TAB[] =
   */
 typedef struct
 {
-  uint32_t PeriphOrM2MSrcAddress;  /*!< Specifies the peripheral base address for BDMA transfer
-                                        or as Source base address in case of memory to memory transfer direction.
+  uint32_t PeriphOrM2MSrcAddress;       /*!< Specifies the peripheral base address for BDMA transfer
+                                             or as Source base address in case of memory to memory transfer direction.
 
-                                        This parameter must be a value between Min_Data = 0 and Max_Data = 0xFFFFFFFF. */
+                                             This parameter must be a value between Min_Data = 0 and Max_Data = 0xFFFFFFFF. */
 
-  uint32_t MemoryOrM2MDstAddress;  /*!< Specifies the memory base address for DMA transfer
-                                        or as Destination base address in case of memory to memory transfer direction.
+  uint32_t MemoryOrM2MDstAddress;       /*!< Specifies the memory base address for DMA transfer
+                                             or as Destination base address in case of memory to memory transfer direction.
 
-                                        This parameter must be a value between Min_Data = 0 and Max_Data = 0xFFFFFFFF. */
+                                             This parameter must be a value between Min_Data = 0 and Max_Data = 0xFFFFFFFF. */
 
-  uint32_t Direction;              /*!< Specifies if the data will be transferred from memory to peripheral,
-                                        from memory to memory or from peripheral to memory.
-                                        This parameter can be a value of @ref BDMA_LL_EC_DIRECTION
+  uint32_t Direction;                   /*!< Specifies if the data will be transferred from memory to peripheral,
+                                             from memory to memory or from peripheral to memory.
+                                             This parameter can be a value of @ref BDMA_LL_EC_DIRECTION
 
-                                        This feature can be modified afterwards using unitary function @ref LL_BDMA_SetDataTransferDirection(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_BDMA_SetDataTransferDirection(). */
 
-  uint32_t Mode;                   /*!< Specifies the normal or circular operation mode.
-                                        This parameter can be a value of @ref BDMA_LL_EC_MODE
-                                        @note: The circular buffer mode cannot be used if the memory to memory
-                                               data transfer direction is configured on the selected Channel
+  uint32_t Mode;                        /*!< Specifies the normal or circular operation mode.
+                                             This parameter can be a value of @ref BDMA_LL_EC_MODE
+                                             @note: The circular buffer mode cannot be used if the memory to memory
+                                                    data transfer direction is configured on the selected Channel
 
-                                        This feature can be modified afterwards using unitary function @ref LL_BDMA_SetMode(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_BDMA_SetMode(). */
 
-  uint32_t PeriphOrM2MSrcIncMode;  /*!< Specifies whether the Peripheral address or Source address in case of memory to memory transfer direction
-                                        is incremented or not.
-                                        This parameter can be a value of @ref BDMA_LL_EC_PERIPH
+  uint32_t PeriphOrM2MSrcIncMode;       /*!< Specifies whether the Peripheral address or Source address in case of memory to memory transfer direction
+                                             is incremented or not.
+                                             This parameter can be a value of @ref BDMA_LL_EC_PERIPH
 
-                                        This feature can be modified afterwards using unitary function @ref LL_BDMA_SetPeriphIncMode(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_BDMA_SetPeriphIncMode(). */
 
-  uint32_t MemoryOrM2MDstIncMode;  /*!< Specifies whether the Memory address or Destination address in case of memory to memory transfer direction
-                                        is incremented or not.
-                                        This parameter can be a value of @ref BDMA_LL_EC_MEMORY
+  uint32_t MemoryOrM2MDstIncMode;       /*!< Specifies whether the Memory address or Destination address in case of memory to memory transfer direction
+                                             is incremented or not.
+                                             This parameter can be a value of @ref BDMA_LL_EC_MEMORY
 
-                                        This feature can be modified afterwards using unitary function @ref LL_BDMA_SetMemoryIncMode(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_BDMA_SetMemoryIncMode(). */
 
-  uint32_t PeriphOrM2MSrcDataSize; /*!< Specifies the Peripheral data size alignment or Source data size alignment (byte, half word, word)
-                                        in case of memory to memory transfer direction.
-                                        This parameter can be a value of @ref BDMA_LL_EC_PDATAALIGN
+  uint32_t PeriphOrM2MSrcDataSize;      /*!< Specifies the Peripheral data size alignment or Source data size alignment (byte, half word, word)
+                                             in case of memory to memory transfer direction.
+                                             This parameter can be a value of @ref BDMA_LL_EC_PDATAALIGN
 
-                                        This feature can be modified afterwards using unitary function @ref LL_BDMA_SetPeriphSize(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_BDMA_SetPeriphSize(). */
 
-  uint32_t MemoryOrM2MDstDataSize; /*!< Specifies the Memory data size alignment or Destination data size alignment (byte, half word, word)
-                                        in case of memory to memory transfer direction.
-                                        This parameter can be a value of @ref BDMA_LL_EC_MDATAALIGN
+  uint32_t MemoryOrM2MDstDataSize;      /*!< Specifies the Memory data size alignment or Destination data size alignment (byte, half word, word)
+                                             in case of memory to memory transfer direction.
+                                             This parameter can be a value of @ref BDMA_LL_EC_MDATAALIGN
 
-                                        This feature can be modified afterwards using unitary function @ref LL_BDMA_SetMemorySize(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_BDMA_SetMemorySize(). */
 
-  uint32_t NbData;                 /*!< Specifies the number of data to transfer, in data unit.
-                                        The data unit is equal to the source buffer configuration set in PeripheralSize
-                                        or MemorySize parameters depending in the transfer direction.
-                                        This parameter must be a value between Min_Data = 0 and Max_Data = 0x0000FFFF
+  uint32_t NbData;                      /*!< Specifies the number of data to transfer, in data unit.
+                                             The data unit is equal to the source buffer configuration set in PeripheralSize
+                                             or MemorySize parameters depending in the transfer direction.
+                                             This parameter must be a value between Min_Data = 0 and Max_Data = 0x0000FFFF
 
-                                        This feature can be modified afterwards using unitary function @ref LL_BDMA_SetDataLength(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_BDMA_SetDataLength(). */
 
-  uint32_t PeriphRequest;          /*!< Specifies the peripheral request.
-                                        This parameter can be a value of @ref DMAMUX2_Request_selection
+  uint32_t PeriphRequest;               /*!< Specifies the peripheral request.
+                                             This parameter can be a value of @ref DMAMUX2_Request_selection
 
-                                        This feature can be modified afterwards using unitary function @ref LL_BDMA_SetPeriphRequest(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_BDMA_SetPeriphRequest(). */
 
-  uint32_t Priority;               /*!< Specifies the channel priority level.
-                                        This parameter can be a value of @ref BDMA_LL_EC_PRIORITY
+  uint32_t Priority;                    /*!< Specifies the channel priority level.
+                                             This parameter can be a value of @ref BDMA_LL_EC_PRIORITY
 
-                                        This feature can be modified afterwards using unitary function @ref LL_BDMA_SetChannelPriorityLevel(). */
+                                             This feature can be modified afterwards using unitary function @ref LL_BDMA_SetChannelPriorityLevel(). */
 
+  uint32_t DoubleBufferMode;            /*!< Specifies the double buffer mode.
+                                             This parameter can be a value of @ref BDMA_LL_EC_DOUBLEBUFFER_MODE
+
+                                             This feature can be modified afterwards using unitary function @ref LL_BDMA_EnableDoubleBufferMode() & LL_BDMA_DisableDoubleBufferMode(). */
+
+  uint32_t TargetMemInDoubleBufferMode; /*!< Specifies the target memory in double buffer mode.
+                                             This parameter can be a value of @ref BDMA_LL_EC_CURRENTTARGETMEM
+
+                                             This feature can be modified afterwards using unitary function @ref LL_BDMA_SetCurrentTargetMem(). */
 } LL_BDMA_InitTypeDef;
 /**
   * @}
@@ -151,7 +160,7 @@ typedef struct
 /** @defgroup BDMA_LL_Exported_Constants BDMA Exported Constants
   * @{
   */
-/** @defgroup BDMA_LL_EC_CLEAR_FLAG clear Flags Defines
+/** @defgroup BDMA_LL_EC_CLEAR_FLAG Clear Flags Defines
   * @brief    Flags defines which can be used with LL_BDMA_WriteReg function
   * @{
   */
@@ -187,7 +196,7 @@ typedef struct
   * @}
   */
 
-/** @defgroup BDMA_LL_EC_GET_FLAG get Flags Defines
+/** @defgroup BDMA_LL_EC_GET_FLAG Get Flags Defines
   * @brief    Flags defines which can be used with LL_BDMA_ReadReg function
   * @{
   */
@@ -275,11 +284,20 @@ typedef struct
   * @}
   */
 
-/** @defgroup DMA_LL_EC_DOUBLEBUFFER_MODE DOUBLE BUFFER MODE
+/** @defgroup BDMA_LL_EC_DOUBLEBUFFER_MODE DOUBLE BUFFER MODE
   * @{
   */
 #define LL_BDMA_DOUBLEBUFFER_MODE_DISABLE  0x00000000U              /*!< Disable double buffering mode        */
 #define LL_BDMA_DOUBLEBUFFER_MODE_ENABLE   BDMA_CCR_DBM             /*!< Enable double buffering mode         */
+/**
+  * @}
+  */
+
+/** @defgroup BDMA_LL_EC_CURRENTTARGETMEM CURRENTTARGETMEM
+  * @{
+  */
+#define LL_BDMA_CURRENTTARGETMEM0          0x00000000U              /*!< Set CurrentTarget Memory to Memory 0 */
+#define LL_BDMA_CURRENTTARGETMEM1          BDMA_CCR_CT              /*!< Set CurrentTarget Memory to Memory 1 */
 /**
   * @}
   */
@@ -325,22 +343,14 @@ typedef struct
 /** @defgroup BDMA_LL_EC_PRIORITY Transfer Priority level
   * @{
   */
-#define LL_BDMA_PRIORITY_LOW               0x00000000U              /*!< Priority level : low                 */
+#define LL_BDMA_PRIORITY_LOW               0x00000000U              /*!< Priority level : Low                 */
 #define LL_BDMA_PRIORITY_MEDIUM            BDMA_CCR_PL_0            /*!< Priority level : Medium              */
-#define LL_BDMA_PRIORITY_HIGH              BDMA_CCR_PL_1            /*!< Priority level : high                */
+#define LL_BDMA_PRIORITY_HIGH              BDMA_CCR_PL_1            /*!< Priority level : High                */
 #define LL_BDMA_PRIORITY_VERYHIGH          BDMA_CCR_PL              /*!< Priority level : Very_High           */
 /**
   * @}
   */
 
-/** @defgroup DMA_LL_EC_CURRENTTARGETMEM CURRENTTARGETMEM
-  * @{
-  */
-#define LL_BDMA_CURRENTTARGETMEM0          0x00000000U              /*!< Set CurrentTarget Memory to Memory 0 */
-#define LL_BDMA_CURRENTTARGETMEM1          BDMA_CCR_CT              /*!< Set CurrentTarget Memory to Memory 1 */
-/**
-  * @}
-  */
 
 /**
   * @}
@@ -363,7 +373,7 @@ typedef struct
 #define LL_BDMA_WriteReg(__INSTANCE__, __REG__, __VALUE__) WRITE_REG((__INSTANCE__)->__REG__, (__VALUE__))
 
 /**
-  * @brief  read a value in BDMA register
+  * @brief  Read a value in BDMA register
   * @param  __INSTANCE__ BDMA Instance
   * @param  __REG__ Register to be read
   * @retval Register value
@@ -549,7 +559,9 @@ __STATIC_INLINE uint32_t LL_BDMA_IsEnabledChannel(BDMA_TypeDef *BDMAx, uint32_t 
   *         CCR          MINC          LL_BDMA_ConfigTransfer\n
   *         CCR          PSIZE         LL_BDMA_ConfigTransfer\n
   *         CCR          MSIZE         LL_BDMA_ConfigTransfer\n
-  *         CCR          PL            LL_BDMA_ConfigTransfer
+  *         CCR          PL            LL_BDMA_ConfigTransfer\n
+  *         CCR          DBM           LL_BDMA_ConfigTransfer\n
+  *         CCR          CT            LL_BDMA_ConfigTransfer
   * @param  BDMAx BDMA Instance
   * @param  Channel This parameter can be one of the following values:
   *         @arg @ref LL_BDMA_CHANNEL_0
@@ -568,6 +580,8 @@ __STATIC_INLINE uint32_t LL_BDMA_IsEnabledChannel(BDMA_TypeDef *BDMAx, uint32_t 
   *         @arg @ref LL_BDMA_PDATAALIGN_BYTE or @ref LL_BDMA_PDATAALIGN_HALFWORD or @ref LL_BDMA_PDATAALIGN_WORD
   *         @arg @ref LL_BDMA_MDATAALIGN_BYTE or @ref LL_BDMA_MDATAALIGN_HALFWORD or @ref LL_BDMA_MDATAALIGN_WORD
   *         @arg @ref LL_BDMA_PRIORITY_LOW or @ref LL_BDMA_PRIORITY_MEDIUM or @ref LL_BDMA_PRIORITY_HIGH or @ref LL_BDMA_PRIORITY_VERYHIGH
+  *         @arg @ref LL_BDMA_DOUBLEBUFFER_MODE_DISABLE or @ref LL_BDMA_DOUBLEBUFFER_MODE_ENABLE
+  *         @arg @ref LL_BDMA_CURRENTTARGETMEM0 or @ref LL_BDMA_CURRENTTARGETMEM1
   * @retval None
   */
 __STATIC_INLINE void LL_BDMA_ConfigTransfer(BDMA_TypeDef *BDMAx, uint32_t Channel, uint32_t Configuration)
@@ -575,8 +589,8 @@ __STATIC_INLINE void LL_BDMA_ConfigTransfer(BDMA_TypeDef *BDMAx, uint32_t Channe
   uint32_t bdma_base_addr = (uint32_t)BDMAx;
 
   MODIFY_REG(((BDMA_Channel_TypeDef *)(bdma_base_addr + LL_BDMA_CH_OFFSET_TAB[Channel]))->CCR,
-             BDMA_CCR_DIR | BDMA_CCR_MEM2MEM | BDMA_CCR_CIRC | BDMA_CCR_PINC | BDMA_CCR_MINC | BDMA_CCR_PSIZE | BDMA_CCR_MSIZE | BDMA_CCR_PL,
-             Configuration);
+             BDMA_CCR_DIR | BDMA_CCR_MEM2MEM | BDMA_CCR_CIRC | BDMA_CCR_PINC | BDMA_CCR_MINC | BDMA_CCR_PSIZE | BDMA_CCR_MSIZE | BDMA_CCR_PL | \
+             BDMA_CCR_DBM | BDMA_CCR_CT, Configuration);
 }
 
 /**
@@ -608,7 +622,7 @@ __STATIC_INLINE void LL_BDMA_SetDataTransferDirection(BDMA_TypeDef *BDMAx, uint3
 }
 
 /**
-  * @brief  get Data transfer direction (read from peripheral or from memory).
+  * @brief  Get Data transfer direction (read from peripheral or from memory).
   * @rmtoll CCR          DIR           LL_BDMA_GetDataTransferDirection\n
   *         CCR          MEM2MEM       LL_BDMA_GetDataTransferDirection
   * @param  BDMAx BDMA Instance
@@ -663,7 +677,7 @@ __STATIC_INLINE void LL_BDMA_SetMode(BDMA_TypeDef *BDMAx, uint32_t Channel, uint
 }
 
 /**
-  * @brief  get BDMA mode circular or normal.
+  * @brief  Get BDMA mode circular or normal.
   * @rmtoll CCR          CIRC          LL_BDMA_GetMode
   * @param  BDMAx BDMA Instance
   * @param  Channel This parameter can be one of the following values:
@@ -714,7 +728,7 @@ __STATIC_INLINE void LL_BDMA_SetPeriphIncMode(BDMA_TypeDef *BDMAx, uint32_t Chan
 }
 
 /**
-  * @brief  get Peripheral increment mode.
+  * @brief  Get Peripheral increment mode.
   * @rmtoll CCR          PINC          LL_BDMA_GetPeriphIncMode
   * @param  BDMAx BDMA Instance
   * @param  Channel This parameter can be one of the following values:
@@ -765,7 +779,7 @@ __STATIC_INLINE void LL_BDMA_SetMemoryIncMode(BDMA_TypeDef *BDMAx, uint32_t Chan
 }
 
 /**
-  * @brief  get Memory increment mode.
+  * @brief  Get Memory increment mode.
   * @rmtoll CCR          MINC          LL_BDMA_GetMemoryIncMode
   * @param  BDMAx BDMA Instance
   * @param  Channel This parameter can be one of the following values:
@@ -817,7 +831,7 @@ __STATIC_INLINE void LL_BDMA_SetPeriphSize(BDMA_TypeDef *BDMAx, uint32_t Channel
 }
 
 /**
-  * @brief  get Peripheral size.
+  * @brief  Get Peripheral size.
   * @rmtoll CCR          PSIZE         LL_BDMA_GetPeriphSize
   * @param  BDMAx BDMA Instance
   * @param  Channel This parameter can be one of the following values:
@@ -870,7 +884,7 @@ __STATIC_INLINE void LL_BDMA_SetMemorySize(BDMA_TypeDef *BDMAx, uint32_t Channel
 }
 
 /**
-  * @brief  get Memory size.
+  * @brief  Get Memory size.
   * @rmtoll CCR          MSIZE         LL_BDMA_GetMemorySize
   * @param  BDMAx BDMA Instance
   * @param  Channel This parameter can be one of the following values:
@@ -924,7 +938,7 @@ __STATIC_INLINE void LL_BDMA_SetChannelPriorityLevel(BDMA_TypeDef *BDMAx, uint32
 }
 
 /**
-  * @brief  get Channel priority level.
+  * @brief  Get Channel priority level.
   * @rmtoll CCR          PL            LL_BDMA_GetChannelPriorityLevel
   * @param  BDMAx BDMA Instance
   * @param  Channel This parameter can be one of the following values:
@@ -977,7 +991,7 @@ __STATIC_INLINE void LL_BDMA_SetDataLength(BDMA_TypeDef *BDMAx, uint32_t Channel
 }
 
 /**
-  * @brief  get Number of data to transfer.
+  * @brief  Get Number of data to transfer.
   * @note   Once the channel is enabled, the return value indicate the
   *         remaining bytes to be transmitted.
   * @rmtoll CNDTR        NDT           LL_BDMA_GetDataLength
@@ -1095,6 +1109,28 @@ __STATIC_INLINE void LL_BDMA_DisableDoubleBufferMode(BDMA_TypeDef *BDMAx, uint32
 }
 
 /**
+  * @brief  Check if double buffer mode is enabled or not.
+  * @rmtoll CCR          DBM           LL_BDMA_IsEnabledDoubleBufferMode
+  * @param  BDMAx BDMAx Instance
+  * @param  Channel This parameter can be one of the following values:
+  *         @arg @ref LL_BDMA_CHANNEL_0
+  *         @arg @ref LL_BDMA_CHANNEL_1
+  *         @arg @ref LL_BDMA_CHANNEL_2
+  *         @arg @ref LL_BDMA_CHANNEL_3
+  *         @arg @ref LL_BDMA_CHANNEL_4
+  *         @arg @ref LL_BDMA_CHANNEL_5
+  *         @arg @ref LL_BDMA_CHANNEL_6
+  *         @arg @ref LL_BDMA_CHANNEL_7
+  * @retval State of bit (1 or 0).
+  */
+__STATIC_INLINE uint32_t LL_BDMA_IsEnabledDoubleBufferMode(BDMA_TypeDef *BDMAx, uint32_t Channel)
+{
+  register uint32_t bdma_base_addr = (uint32_t)BDMAx;
+
+  return ((READ_BIT(((BDMA_Channel_TypeDef *)(bdma_base_addr + LL_BDMA_CH_OFFSET_TAB[Channel]))->CCR, BDMA_CCR_DBM) == (BDMA_CCR_DBM)) ? 1UL : 0UL);
+}
+
+/**
   * @brief  Configure the Source and Destination addresses.
   * @note   This API must not be called when the BDMA channel is enabled.
   * @note   Each IP using BDMA provides an API to get directly the register address (LL_PPP_BDMA_GetRegAddr).
@@ -1188,7 +1224,7 @@ __STATIC_INLINE void LL_BDMA_SetPeriphAddress(BDMA_TypeDef *BDMAx, uint32_t Chan
 }
 
 /**
-  * @brief  get Memory address.
+  * @brief  Get Memory address.
   * @note   Interface used for direction LL_BDMA_DIRECTION_PERIPH_TO_MEMORY or LL_BDMA_DIRECTION_MEMORY_TO_PERIPH only.
   * @rmtoll CMAR         MA            LL_BDMA_GetMemoryAddress
   * @param  BDMAx BDMA Instance
@@ -1211,7 +1247,7 @@ __STATIC_INLINE uint32_t LL_BDMA_GetMemoryAddress(BDMA_TypeDef *BDMAx, uint32_t 
 }
 
 /**
-  * @brief  get Peripheral address.
+  * @brief  Get Peripheral address.
   * @note   Interface used for direction LL_BDMA_DIRECTION_PERIPH_TO_MEMORY or LL_BDMA_DIRECTION_MEMORY_TO_PERIPH only.
   * @rmtoll CPAR         PA            LL_BDMA_GetPeriphAddress
   * @param  BDMAx BDMA Instance
@@ -1284,7 +1320,7 @@ __STATIC_INLINE void LL_BDMA_SetM2MDstAddress(BDMA_TypeDef *BDMAx, uint32_t Chan
 }
 
 /**
-  * @brief  get the Memory to Memory Source address.
+  * @brief  Get the Memory to Memory Source address.
   * @note   Interface used for direction LL_BDMA_DIRECTION_MEMORY_TO_MEMORY only.
   * @rmtoll CPAR         PA            LL_BDMA_GetM2MSrcAddress
   * @param  BDMAx BDMA Instance
@@ -1307,7 +1343,7 @@ __STATIC_INLINE uint32_t LL_BDMA_GetM2MSrcAddress(BDMA_TypeDef *BDMAx, uint32_t 
 }
 
 /**
-  * @brief  get the Memory to Memory Destination address.
+  * @brief  Get the Memory to Memory Destination address.
   * @note   Interface used for direction LL_BDMA_DIRECTION_MEMORY_TO_MEMORY only.
   * @rmtoll CMAR         MA            LL_BDMA_GetM2MDstAddress
   * @param  BDMAx BDMA Instance
@@ -1353,7 +1389,7 @@ __STATIC_INLINE void LL_BDMA_SetMemory1Address(BDMA_TypeDef *BDMAx, uint32_t Cha
 }
 
 /**
-  * @brief get Memory 1 address (used in case of Double buffer mode).
+  * @brief Get Memory 1 address (used in case of Double buffer mode).
   * @rmtoll M1AR        M1A         LL_BDMA_GetMemory1Address
   * @param  BDMAx BDMAx Instance
   * @param  Channel This parameter can be one of the following values:
@@ -1420,7 +1456,7 @@ __STATIC_INLINE void LL_BDMA_SetPeriphRequest(BDMA_TypeDef *BDMAx, uint32_t Chan
 }
 
 /**
-  * @brief  get BDMA request for BDMA Channels on DMAMUX Channel x.
+  * @brief  Get BDMA request for BDMA Channels on DMAMUX Channel x.
   * @note   DMAMUX channel 0 to 7 are mapped to BDMA channel 0 to 7.
   * @rmtoll CxCR         DMAREQ_ID     LL_BDMA_GetPeriphRequest
   * @param  BDMAx BDMAx Instance
@@ -1472,7 +1508,7 @@ __STATIC_INLINE uint32_t LL_BDMA_GetPeriphRequest(BDMA_TypeDef *BDMAx, uint32_t 
   * @{
   */
 /**
-  * @brief  get Channel 0 global interrupt flag.
+  * @brief  Get Channel 0 global interrupt flag.
   * @rmtoll ISR          GIF0          LL_BDMA_IsActiveFlag_GI0
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1483,7 +1519,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_GI0(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 1 global interrupt flag.
+  * @brief  Get Channel 1 global interrupt flag.
   * @rmtoll ISR          GIF1          LL_BDMA_IsActiveFlag_GI1
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1494,7 +1530,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_GI1(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 2 global interrupt flag.
+  * @brief  Get Channel 2 global interrupt flag.
   * @rmtoll ISR          GIF2          LL_BDMA_IsActiveFlag_GI2
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1505,7 +1541,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_GI2(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 3 global interrupt flag.
+  * @brief  Get Channel 3 global interrupt flag.
   * @rmtoll ISR          GIF3          LL_BDMA_IsActiveFlag_GI3
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1516,7 +1552,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_GI3(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 4 global interrupt flag.
+  * @brief  Get Channel 4 global interrupt flag.
   * @rmtoll ISR          GIF4          LL_BDMA_IsActiveFlag_GI4
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1527,7 +1563,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_GI4(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 5 global interrupt flag.
+  * @brief  Get Channel 5 global interrupt flag.
   * @rmtoll ISR          GIF5          LL_BDMA_IsActiveFlag_GI5
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1538,7 +1574,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_GI5(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 6 global interrupt flag.
+  * @brief  Get Channel 6 global interrupt flag.
   * @rmtoll ISR          GIF6          LL_BDMA_IsActiveFlag_GI6
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1549,7 +1585,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_GI6(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 7 global interrupt flag.
+  * @brief  Get Channel 7 global interrupt flag.
   * @rmtoll ISR          GIF7          LL_BDMA_IsActiveFlag_GI7
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1560,7 +1596,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_GI7(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 0 transfer complete flag.
+  * @brief  Get Channel 0 transfer complete flag.
   * @rmtoll ISR          TCIF0         LL_BDMA_IsActiveFlag_TC0
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1570,7 +1606,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TC0(BDMA_TypeDef *BDMAx)
   return ((READ_BIT(BDMAx->ISR, BDMA_ISR_TCIF0) == (BDMA_ISR_TCIF0)) ? 1UL : 0UL);
 }
 /**
-  * @brief  get Channel 1 transfer complete flag.
+  * @brief  Get Channel 1 transfer complete flag.
   * @rmtoll ISR          TCIF1         LL_BDMA_IsActiveFlag_TC1
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1581,7 +1617,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TC1(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 2 transfer complete flag.
+  * @brief  Get Channel 2 transfer complete flag.
   * @rmtoll ISR          TCIF2         LL_BDMA_IsActiveFlag_TC2
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1592,7 +1628,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TC2(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 3 transfer complete flag.
+  * @brief  Get Channel 3 transfer complete flag.
   * @rmtoll ISR          TCIF3         LL_BDMA_IsActiveFlag_TC3
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1603,7 +1639,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TC3(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 4 transfer complete flag.
+  * @brief  Get Channel 4 transfer complete flag.
   * @rmtoll ISR          TCIF4         LL_BDMA_IsActiveFlag_TC4
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1614,7 +1650,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TC4(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 5 transfer complete flag.
+  * @brief  Get Channel 5 transfer complete flag.
   * @rmtoll ISR          TCIF5         LL_BDMA_IsActiveFlag_TC5
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1625,7 +1661,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TC5(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 6 transfer complete flag.
+  * @brief  Get Channel 6 transfer complete flag.
   * @rmtoll ISR          TCIF6         LL_BDMA_IsActiveFlag_TC6
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1636,7 +1672,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TC6(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 7 transfer complete flag.
+  * @brief  Get Channel 7 transfer complete flag.
   * @rmtoll ISR          TCIF7         LL_BDMA_IsActiveFlag_TC7
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1647,7 +1683,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TC7(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 0 half transfer flag.
+  * @brief  Get Channel 0 half transfer flag.
   * @rmtoll ISR          HTIF0         LL_BDMA_IsActiveFlag_HT0
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1658,7 +1694,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_HT0(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 1 half transfer flag.
+  * @brief  Get Channel 1 half transfer flag.
   * @rmtoll ISR          HTIF1         LL_BDMA_IsActiveFlag_HT1
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1669,7 +1705,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_HT1(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 2 half transfer flag.
+  * @brief  Get Channel 2 half transfer flag.
   * @rmtoll ISR          HTIF2         LL_BDMA_IsActiveFlag_HT2
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1680,7 +1716,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_HT2(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 3 half transfer flag.
+  * @brief  Get Channel 3 half transfer flag.
   * @rmtoll ISR          HTIF3         LL_BDMA_IsActiveFlag_HT3
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1691,7 +1727,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_HT3(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 4 half transfer flag.
+  * @brief  Get Channel 4 half transfer flag.
   * @rmtoll ISR          HTIF4         LL_BDMA_IsActiveFlag_HT4
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1702,7 +1738,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_HT4(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 5 half transfer flag.
+  * @brief  Get Channel 5 half transfer flag.
   * @rmtoll ISR          HTIF5         LL_BDMA_IsActiveFlag_HT5
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1713,7 +1749,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_HT5(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 6 half transfer flag.
+  * @brief  Get Channel 6 half transfer flag.
   * @rmtoll ISR          HTIF6         LL_BDMA_IsActiveFlag_HT6
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1724,7 +1760,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_HT6(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 7 half transfer flag.
+  * @brief  Get Channel 7 half transfer flag.
   * @rmtoll ISR          HTIF7         LL_BDMA_IsActiveFlag_HT7
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1735,7 +1771,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_HT7(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 0 transfer error flag.
+  * @brief  Get Channel 0 transfer error flag.
   * @rmtoll ISR          TEIF0         LL_BDMA_IsActiveFlag_TE0
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1746,7 +1782,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TE0(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 1 transfer error flag.
+  * @brief  Get Channel 1 transfer error flag.
   * @rmtoll ISR          TEIF1         LL_BDMA_IsActiveFlag_TE1
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1757,7 +1793,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TE1(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 2 transfer error flag.
+  * @brief  Get Channel 2 transfer error flag.
   * @rmtoll ISR          TEIF2         LL_BDMA_IsActiveFlag_TE2
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1768,7 +1804,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TE2(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 3 transfer error flag.
+  * @brief  Get Channel 3 transfer error flag.
   * @rmtoll ISR          TEIF3         LL_BDMA_IsActiveFlag_TE3
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1779,7 +1815,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TE3(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 4 transfer error flag.
+  * @brief  Get Channel 4 transfer error flag.
   * @rmtoll ISR          TEIF4         LL_BDMA_IsActiveFlag_TE4
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1790,7 +1826,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TE4(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 5 transfer error flag.
+  * @brief  Get Channel 5 transfer error flag.
   * @rmtoll ISR          TEIF5         LL_BDMA_IsActiveFlag_TE5
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1801,7 +1837,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TE5(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 6 transfer error flag.
+  * @brief  Get Channel 6 transfer error flag.
   * @rmtoll ISR          TEIF6         LL_BDMA_IsActiveFlag_TE6
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1812,7 +1848,7 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TE6(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  get Channel 7 transfer error flag.
+  * @brief  Get Channel 7 transfer error flag.
   * @rmtoll ISR          TEIF7         LL_BDMA_IsActiveFlag_TE7
   * @param  BDMAx BDMA Instance
   * @retval State of bit (1 or 0).
@@ -1823,8 +1859,8 @@ __STATIC_INLINE uint32_t LL_BDMA_IsActiveFlag_TE7(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 0 global interrupt flag.
-  * @note Do not clear Channel 0 global interrupt flag when the channel in ON.
+  * @brief  Clear Channel 0 global interrupt flag.
+  * @note Do not Clear Channel 0 global interrupt flag when the channel in ON.
     Instead clear specific flags transfer complete, half transfer & transfer
     error flag with LL_DMA_ClearFlag_TC0, LL_DMA_ClearFlag_HT0,
     LL_DMA_ClearFlag_TE0. bug id 2.3.1 in Product Errata Sheet.
@@ -1838,8 +1874,8 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_GI0(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 1 global interrupt flag.
-  * @note Do not clear Channel 1 global interrupt flag when the channel in ON.
+  * @brief  Clear Channel 1 global interrupt flag.
+  * @note Do not Clear Channel 1 global interrupt flag when the channel in ON.
     Instead clear specific flags transfer complete, half transfer & transfer
     error flag with LL_DMA_ClearFlag_TC1, LL_DMA_ClearFlag_HT1,
     LL_DMA_ClearFlag_TE1. bug id 2.3.1 in Product Errata Sheet.
@@ -1853,8 +1889,8 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_GI1(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 2 global interrupt flag.
-  * @note Do not clear Channel 2 global interrupt flag when the channel in ON.
+  * @brief  Clear Channel 2 global interrupt flag.
+  * @note Do not Clear Channel 2 global interrupt flag when the channel in ON.
     Instead clear specific flags transfer complete, half transfer & transfer
     error flag with LL_DMA_ClearFlag_TC2, LL_DMA_ClearFlag_HT2,
     LL_DMA_ClearFlag_TE2. bug id 2.3.1 in Product Errata Sheet.
@@ -1868,8 +1904,8 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_GI2(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 3 global interrupt flag.
-  * @note Do not clear Channel 3 global interrupt flag when the channel in ON.
+  * @brief  Clear Channel 3 global interrupt flag.
+  * @note Do not Clear Channel 3 global interrupt flag when the channel in ON.
     Instead clear specific flags transfer complete, half transfer & transfer
     error flag with LL_DMA_ClearFlag_TC3, LL_DMA_ClearFlag_HT3,
     LL_DMA_ClearFlag_TE3. bug id 2.3.1 in Product Errata Sheet.
@@ -1883,8 +1919,8 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_GI3(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 4 global interrupt flag.
-  * @note Do not clear Channel 4 global interrupt flag when the channel in ON.
+  * @brief  Clear Channel 4 global interrupt flag.
+  * @note Do not Clear Channel 4 global interrupt flag when the channel in ON.
     Instead clear specific flags transfer complete, half transfer & transfer
     error flag with LL_DMA_ClearFlag_TC4, LL_DMA_ClearFlag_HT4,
     LL_DMA_ClearFlag_TE4. bug id 2.3.1 in Product Errata Sheet.
@@ -1898,8 +1934,8 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_GI4(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 5 global interrupt flag.
-  * @note Do not clear Channel 5 global interrupt flag when the channel in ON.
+  * @brief  Clear Channel 5 global interrupt flag.
+  * @note Do not Clear Channel 5 global interrupt flag when the channel in ON.
     Instead clear specific flags transfer complete, half transfer & transfer
     error flag with LL_DMA_ClearFlag_TC5, LL_DMA_ClearFlag_HT5,
     LL_DMA_ClearFlag_TE5. bug id 2.3.1 in Product Errata Sheet.
@@ -1913,8 +1949,8 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_GI5(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 6 global interrupt flag.
-  * @note Do not clear Channel 6 global interrupt flag when the channel in ON.
+  * @brief  Clear Channel 6 global interrupt flag.
+  * @note Do not Clear Channel 6 global interrupt flag when the channel in ON.
     Instead clear specific flags transfer complete, half transfer & transfer
     error flag with LL_DMA_ClearFlag_TC6, LL_DMA_ClearFlag_HT6,
     LL_DMA_ClearFlag_TE6. bug id 2.3.1 in Product Errata Sheet.
@@ -1928,8 +1964,8 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_GI6(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 7 global interrupt flag.
-  * @note Do not clear Channel 7 global interrupt flag when the channel in ON.
+  * @brief  Clear Channel 7 global interrupt flag.
+  * @note Do not Clear Channel 7 global interrupt flag when the channel in ON.
     Instead clear specific flags transfer complete, half transfer & transfer
     error flag with LL_DMA_ClearFlag_TC7, LL_DMA_ClearFlag_HT7,
     LL_DMA_ClearFlag_TE7. bug id 2.3.1 in Product Errata Sheet.
@@ -1943,7 +1979,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_GI7(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 0  transfer complete flag.
+  * @brief  Clear Channel 0  transfer complete flag.
   * @rmtoll IFCR         CTCIF0        LL_BDMA_ClearFlag_TC0
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -1954,7 +1990,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_TC0(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 1  transfer complete flag.
+  * @brief  Clear Channel 1  transfer complete flag.
   * @rmtoll IFCR         CTCIF1        LL_BDMA_ClearFlag_TC1
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -1965,7 +2001,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_TC1(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 2  transfer complete flag.
+  * @brief  Clear Channel 2  transfer complete flag.
   * @rmtoll IFCR         CTCIF2        LL_BDMA_ClearFlag_TC2
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -1976,7 +2012,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_TC2(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 3  transfer complete flag.
+  * @brief  Clear Channel 3  transfer complete flag.
   * @rmtoll IFCR         CTCIF3        LL_BDMA_ClearFlag_TC3
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -1987,7 +2023,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_TC3(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 4  transfer complete flag.
+  * @brief  Clear Channel 4  transfer complete flag.
   * @rmtoll IFCR         CTCIF4        LL_BDMA_ClearFlag_TC4
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -1998,7 +2034,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_TC4(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 5  transfer complete flag.
+  * @brief  Clear Channel 5  transfer complete flag.
   * @rmtoll IFCR         CTCIF5        LL_BDMA_ClearFlag_TC5
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2009,7 +2045,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_TC5(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 6  transfer complete flag.
+  * @brief  Clear Channel 6  transfer complete flag.
   * @rmtoll IFCR         CTCIF6        LL_BDMA_ClearFlag_TC6
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2020,7 +2056,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_TC6(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 7  transfer complete flag.
+  * @brief  Clear Channel 7  transfer complete flag.
   * @rmtoll IFCR         CTCIF7        LL_BDMA_ClearFlag_TC7
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2031,7 +2067,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_TC7(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 0  half transfer flag.
+  * @brief  Clear Channel 0  half transfer flag.
   * @rmtoll IFCR         CHTIF0        LL_BDMA_ClearFlag_HT0
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2042,7 +2078,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_HT0(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 1  half transfer flag.
+  * @brief  Clear Channel 1  half transfer flag.
   * @rmtoll IFCR         CHTIF1        LL_BDMA_ClearFlag_HT1
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2053,7 +2089,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_HT1(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 2  half transfer flag.
+  * @brief  Clear Channel 2  half transfer flag.
   * @rmtoll IFCR         CHTIF2        LL_BDMA_ClearFlag_HT2
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2064,7 +2100,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_HT2(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 3  half transfer flag.
+  * @brief  Clear Channel 3  half transfer flag.
   * @rmtoll IFCR         CHTIF3        LL_BDMA_ClearFlag_HT3
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2075,7 +2111,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_HT3(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 4  half transfer flag.
+  * @brief  Clear Channel 4  half transfer flag.
   * @rmtoll IFCR         CHTIF4        LL_BDMA_ClearFlag_HT4
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2086,7 +2122,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_HT4(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 5  half transfer flag.
+  * @brief  Clear Channel 5  half transfer flag.
   * @rmtoll IFCR         CHTIF5        LL_BDMA_ClearFlag_HT5
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2097,7 +2133,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_HT5(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 6  half transfer flag.
+  * @brief  Clear Channel 6  half transfer flag.
   * @rmtoll IFCR         CHTIF6        LL_BDMA_ClearFlag_HT6
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2108,7 +2144,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_HT6(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 7  half transfer flag.
+  * @brief  Clear Channel 7  half transfer flag.
   * @rmtoll IFCR         CHTIF7        LL_BDMA_ClearFlag_HT7
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2119,7 +2155,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_HT7(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 0 transfer error flag.
+  * @brief  Clear Channel 0 transfer error flag.
   * @rmtoll IFCR         CTEIF0        LL_BDMA_ClearFlag_TE0
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2130,7 +2166,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_TE0(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 1 transfer error flag.
+  * @brief  Clear Channel 1 transfer error flag.
   * @rmtoll IFCR         CTEIF1        LL_BDMA_ClearFlag_TE1
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2141,7 +2177,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_TE1(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 2 transfer error flag.
+  * @brief  Clear Channel 2 transfer error flag.
   * @rmtoll IFCR         CTEIF2        LL_BDMA_ClearFlag_TE2
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2152,7 +2188,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_TE2(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 3 transfer error flag.
+  * @brief  Clear Channel 3 transfer error flag.
   * @rmtoll IFCR         CTEIF3        LL_BDMA_ClearFlag_TE3
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2163,7 +2199,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_TE3(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 4 transfer error flag.
+  * @brief  Clear Channel 4 transfer error flag.
   * @rmtoll IFCR         CTEIF4        LL_BDMA_ClearFlag_TE4
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2174,7 +2210,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_TE4(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 5 transfer error flag.
+  * @brief  Clear Channel 5 transfer error flag.
   * @rmtoll IFCR         CTEIF5        LL_BDMA_ClearFlag_TE5
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2185,7 +2221,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_TE5(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 6 transfer error flag.
+  * @brief  Clear Channel 6 transfer error flag.
   * @rmtoll IFCR         CTEIF6        LL_BDMA_ClearFlag_TE6
   * @param  BDMAx BDMA Instance
   * @retval None
@@ -2196,7 +2232,7 @@ __STATIC_INLINE void LL_BDMA_ClearFlag_TE6(BDMA_TypeDef *BDMAx)
 }
 
 /**
-  * @brief  clear Channel 7 transfer error flag.
+  * @brief  Clear Channel 7 transfer error flag.
   * @rmtoll IFCR         CTEIF7        LL_BDMA_ClearFlag_TE7
   * @param  BDMAx BDMA Instance
   * @retval None
