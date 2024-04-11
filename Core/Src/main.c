@@ -131,6 +131,7 @@ int main(void)
   MX_TIM6_Init();
   MX_SPI6_Init();
   MX_TIM2_Init();
+  MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -171,13 +172,14 @@ void SystemClock_Config(void)
   }
   LL_RCC_PLL_SetSource(LL_RCC_PLLSOURCE_HSE);
   LL_RCC_PLL1P_Enable();
+  LL_RCC_PLL1Q_Enable();
   LL_RCC_PLL1R_Enable();
   LL_RCC_PLL1_SetVCOInputRange(LL_RCC_PLLINPUTRANGE_4_8);
   LL_RCC_PLL1_SetVCOOutputRange(LL_RCC_PLLVCORANGE_WIDE);
   LL_RCC_PLL1_SetM(5);
   LL_RCC_PLL1_SetN(192);
   LL_RCC_PLL1_SetP(2);
-  LL_RCC_PLL1_SetQ(2);
+  LL_RCC_PLL1_SetQ(5);
   LL_RCC_PLL1_SetR(2);
   LL_RCC_PLL1_Enable();
 
@@ -215,11 +217,11 @@ void SystemClock_Config(void)
 void PeriphCommonClock_Config(void)
 {
   LL_RCC_PLL2P_Enable();
-  LL_RCC_PLL2_SetVCOInputRange(LL_RCC_PLLINPUTRANGE_1_2);
-  LL_RCC_PLL2_SetVCOOutputRange(LL_RCC_PLLVCORANGE_WIDE);
-  LL_RCC_PLL2_SetM(25);
-  LL_RCC_PLL2_SetN(504);
-  LL_RCC_PLL2_SetP(7);
+  LL_RCC_PLL2_SetVCOInputRange(LL_RCC_PLLINPUTRANGE_8_16);
+  LL_RCC_PLL2_SetVCOOutputRange(LL_RCC_PLLVCORANGE_MEDIUM);
+  LL_RCC_PLL2_SetM(2);
+  LL_RCC_PLL2_SetN(12);
+  LL_RCC_PLL2_SetP(2);
   LL_RCC_PLL2_SetQ(2);
   LL_RCC_PLL2_SetR(2);
   LL_RCC_PLL2_Enable();

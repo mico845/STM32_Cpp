@@ -13,7 +13,7 @@ void Key_Detect(uint8_t index);
 Key::Key(Key_ID Key_ID, GPIO_TypeDef *Port, uint8_t Pin, GPIO_Pull Pull, bool Active_Level)
                                 : id(Key_ID), active_level(Active_Level)
 {
-    key_gpio = GPIO(Port, Pin, in, pp, Pull, very_fast);
+    key_gpio = GPIO(Port, Pin, Pull, in, pp, very_fast);
     long_count = KEY_LONG_TIME;
     filter_count = KEY_FILTER_TIME / 2;
     state = Key_Nothing;

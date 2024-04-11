@@ -5,6 +5,19 @@
 
 namespace STM32{
 
+/**
+ * @brief GPIO_EXTI的触发模式
+ *
+ * GPIO_EXTI的触发模式。
+ */
+typedef enum
+{
+    none = LL_EXTI_TRIGGER_NONE,   /*!< No Trigger Mode */
+    rising = LL_EXTI_TRIGGER_RISING,         /*!< Trigger Rising Mode */
+    falling = LL_EXTI_TRIGGER_FALLING,         /*!< Trigger Falling Mode */
+    rising_falling = LL_EXTI_TRIGGER_RISING_FALLING,   /*!< Trigger Rising & Falling Mode */
+}EXTI_Trigger;
+
 #ifndef __TYPEDEF_GPIO_EXTI_CALLBACK__
     /**
      * @brief GPIO外部中断回调函数类型定义
@@ -22,12 +35,11 @@ class GPIO_EXTI
 {
 private:
     /* Variables */
-    GPIO_TypeDef* port;
-    uint32_t pin;
     uint32_t exti_line;
     Platform_GPIOEXTI_CallBack_fun callback_fun;
 public:
     /* Variables */
+    GPIO gpio;
 
     /* Constructor */
     GPIO_EXTI() = default;
@@ -39,7 +51,9 @@ public:
      * @param Pin GPIO引脚号
      * @param CallBack_fun 中断回调函数，默认为nullptr
      */
-    GPIO_EXTI(GPIO_TypeDef* Port, uint8_t Pin, Platform_GPIOEXTI_CallBack_fun CallBack_fun = nullptr);
+    GPIO_EXTI(GPIO_TypeDef* Port, uint8_t Pin, GPIO_Pull pull = pullno, EXTI_Trigger trigger = rising, Platform_GPIOEXTI_CallBack_fun CallBack_fun = nullptr, uint32_t PreemptPriority = 2, uint32_t SubPriority = 0);
+
+    GPIO_EXTI(GPIO EXTI_GPIO, EXTI_Trigger trigger = rising, Platform_GPIOEXTI_CallBack_fun CallBack_fun = nullptr, uint32_t PreemptPriority = 2, uint32_t SubPriority = 0);
     /* Functions */
     /**
      * @brief 注册中断回调函数
@@ -63,6 +77,9 @@ public:
      * @brief 外部中断服务函数
      */
     void irq(void);
+    uint32_t getExtiLine(void);
+    void enableIT(void);
+    void disableIT(void);
 };
 
 } //namespace STM32

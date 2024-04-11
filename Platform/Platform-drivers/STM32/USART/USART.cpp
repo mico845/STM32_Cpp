@@ -192,6 +192,25 @@ USART &USART::operator<<(int val) {
     return *this;
 }
 
+USART &USART::operator<<(int32_t val) {
+    uint8_t sign = 0, len = 0,data[15];
+    if(val<0)
+    {
+        sign = 1;
+        val = -val;
+    }
+    do
+    {
+        len++;
+        data[15-len] = val%10 + '0';
+        val = val/10;
+    }while(val);
+    if(sign==1)
+        data[15-(++len)] = '-';
+    (this->*pSendData)(data+15-len,len);
+    return *this;
+}
+
 USART &USART::operator<<(double val) {
     uint8_t sign = 0, len = 0,data[20];
     if(val<0)

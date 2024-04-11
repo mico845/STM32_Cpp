@@ -22,9 +22,9 @@ LCD_SPI::LCD_SPI(bool IsUseHorizontal)
     {
         width = 135;height = 240;
     }
-    gpio_dc  = GPIO(LCD_DC_PORT, LCD_DC_PIN, out, pp, pullup, very_fast);
-    gpio_rst = GPIO(LCD_RST_PORT, LCD_RST_PIN, out, pp, pullup, very_fast);
-    gpio_pwr = GPIO(LCD_PWR_PORT, LCD_PWR_PIN, out, pp, pullup, very_fast);
+    gpio_dc  = GPIO(LCD_DC_PORT, LCD_DC_PIN, pullup, out, pp,very_fast);
+    gpio_rst = GPIO(LCD_RST_PORT, LCD_RST_PIN, pullup, out, pp,very_fast);
+    gpio_pwr = GPIO(LCD_PWR_PORT, LCD_PWR_PIN, pullup, out, pp,very_fast);
 
     gpio_pwr.low();
     delay_ms(120);

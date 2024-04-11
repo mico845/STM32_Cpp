@@ -67,6 +67,8 @@ namespace STM32
      */
     class GPIO
     {
+    public:
+        friend class GPIO_EXTI;
     private:
         GPIO_TypeDef* port;
         uint32_t pin;
@@ -78,13 +80,13 @@ namespace STM32
          *
          * @param Port GPIO端口
          * @param Pin GPIO引脚号
+         * @param Pull GPIO上拉/下拉，默认为不上拉/下拉
          * @param Mode GPIO模式，默认为输出模式
          * @param PutType GPIO输出类型，默认为推挽输出
-         * @param Pull GPIO上拉/下拉，默认为不上拉/下拉
          * @param Speed GPIO输出速度，默认为快速
          */
-        GPIO(GPIO_TypeDef* Port, uint8_t Pin, STM32::GPIO_Mode Mode = STM32::out, STM32::GPIO_OutPutType PutType = STM32::pp,
-                                STM32::GPIO_Pull Pull = STM32::pullno, STM32::GPIO_Speed Speed = STM32::fast);
+        GPIO(GPIO_TypeDef* Port, uint8_t Pin, STM32::GPIO_Pull Pull = STM32::pullno, STM32::GPIO_Mode Mode = STM32::out,
+             STM32::GPIO_OutPutType PutType = STM32::pp, STM32::GPIO_Speed Speed = STM32::fast);
 
         /**
          * @brief 将GPIO引脚置为低电平
@@ -131,7 +133,7 @@ namespace STM32
          * @param Pull GPIO上拉/下拉
          * @param Speed GPIO输出速度
          */
-        void setConfig(STM32::GPIO_Mode Mode = STM32::out, STM32::GPIO_OutPutType PutType = STM32::pp, STM32::GPIO_Pull Pull = STM32::pullno, GPIO_Speed Speed = fast);
+        void setConfig(STM32::GPIO_Pull Pull = STM32::pullno, STM32::GPIO_Mode Mode = STM32::out, STM32::GPIO_OutPutType PutType = STM32::pp, GPIO_Speed Speed = fast);
     };
 
 

@@ -18,7 +18,7 @@ Platform
 用户需要操作的文件夹为UserApp文件夹
 **UserApp**
 - [ `common_inc.h` ]    C和C++混编头文件
-- [ `Irq.cpp` ]         中断服务函数
+- [ `irq.cpp` ]         中断服务函数
 - [ `Machine.hpp` ]     声明全局对象
 - [ `Main.cpp` ]        主函数
 
@@ -61,7 +61,7 @@ void Loop(void)
 
 }
 ```
-3. 为其在`Irq.cpp`中添加中断服务函数。
+3. 为其在`irq.cpp`中添加中断服务函数。
 ```cpp
 TIM_IRQ(6)
 {
@@ -86,7 +86,7 @@ void Init(void)
     timer = Timer(6, true);
 }
 ```
-4. 如果有中断需求，在`Irq.cpp`中添加中断服务函数。
+4. 如果有中断需求，在`irq.cpp`中添加中断服务函数。
 ```cpp
 TIM_IRQ(6)
 {
@@ -147,7 +147,7 @@ void Fun(void)
 ```
 
 代码使用示例：
-`Irq.cpp`
+`irq.cpp`
 使能需要的中断
 ```cpp
 /* TIM */
@@ -192,7 +192,7 @@ static void Task_Led_Flash(void)
 
 ### （二）按键检测
 
-`Irq.cpp`
+`irq.cpp`
 ```cpp
 /* TIM */
 TIM_IRQ(SYSTIM_TIM_ID)
@@ -274,7 +274,7 @@ static void Task_Key(void)
 #endif // !COUT_USARTx
 ```
 
-`Irq.cpp`
+`irq.cpp`
 ```cpp
 /* USART */
 USART_IRQ(COUT_USART_ID)
@@ -339,7 +339,7 @@ static void Task_UART_Finished(void)
 /**< 用于存放全局调用的对象 */
 extern STM32::ADC          adc;
 ```
-`Irq.cpp`
+`irq.cpp`
 ```cpp
 /* ADC */
 DMA_IRQ(2, 0)
@@ -394,7 +394,7 @@ static void Task_ADC_Finished(void)
 /**< 用于存放全局调用的对象 */
 extern STM32::DAC          dac;
 ```
-`Irq.cpp`
+`irq.cpp`
 ```cpp
 /* DAC */
 DMA_IRQ(2, 1)
@@ -445,7 +445,7 @@ static void DAC_WaveStart(void)
 extern STM32::DAC          dac;
 extern STM32::DDS          dds;
 ```
-`Irq.cpp`
+`irq.cpp`
 ```cpp
 /* DDS */
 DMA_IRQ(2, 1)

@@ -9,11 +9,20 @@ TIM_IRQ(SYSTIM_TIM_ID)
     sysTimer.irq();
 }
 
+EXTI_IRQ(3)
+{
+    ads1256.irq();
+}
+
+
 /* ADC */
+#if 0
 DMA_IRQ(2, 0)
 {
     adc.irq_DMA();
 }
+#endif
+
 
 #if 0
 /* DAC */

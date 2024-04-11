@@ -2,7 +2,7 @@
 
 using namespace STM32;
 
-GPIO::GPIO(GPIO_TypeDef* Port, uint8_t Pin, GPIO_Mode Mode, GPIO_OutPutType PutType, GPIO_Pull Pull, GPIO_Speed Speed)
+GPIO::GPIO(GPIO_TypeDef* Port, uint8_t Pin, GPIO_Pull Pull, GPIO_Mode Mode, GPIO_OutPutType PutType, GPIO_Speed Speed)
                 : port(Port), pin(MapGPIOPin[Pin])
 {
     LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -35,7 +35,7 @@ GPIO::GPIO(GPIO_TypeDef* Port, uint8_t Pin, GPIO_Mode Mode, GPIO_OutPutType PutT
 }
 
 
-void GPIO::setConfig(GPIO_Mode Mode, GPIO_OutPutType PutType, GPIO_Pull Pull, GPIO_Speed Speed) {
+void GPIO::setConfig(GPIO_Pull Pull, GPIO_Mode Mode, GPIO_OutPutType PutType, GPIO_Speed Speed) {
     LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
 
     GPIO_InitStruct.Pin = pin;

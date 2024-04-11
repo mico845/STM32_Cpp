@@ -147,6 +147,12 @@ namespace STM32
          */
         USART& operator <<(int val);
         /**
+          * @brief <<运算符重载，用于发送整数
+          * @param val 整数 int32_t
+          * @return USART& 返回USART引用
+          */
+        USART& operator <<(int32_t val);
+        /**
          * @brief <<运算符重载，用于发送浮点数
          *
          * 修改宏USART_DMA_TX_FLOAT_PRECISION，可以扩展小数显示位数

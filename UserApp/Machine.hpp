@@ -9,4 +9,5 @@ extern LED_RGB             led;
 extern STM32::ADC          adc;
 extern STM32::DAC          dac;
 extern STM32::DDS          dds;
+extern ADS1256 ads1256;
 #endif
